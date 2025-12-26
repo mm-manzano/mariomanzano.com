@@ -1,1 +1,3 @@
+About Me
+
 Based in Leander and serving the Greater Austin area, I can help sell, buy, and invest with clarity and confidence. My approach is calm and thoughtful, focused on carefully guiding my clients through their options so that they can make informed decisions when timing and details matter.

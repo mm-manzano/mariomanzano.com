@@ -9,7 +9,7 @@ params:
     enabled: true
     title: "Mario Manzano"
     subtitle: "Austin REALTOR®"
-    imageUrl: "../assets/profile.jpg"
+    imageUrl: "../assets/profile.png"
     imageTitle: Image of Mario Manzano
     imageWidth: 256
     imageHeight: 256
@@ -25,3 +25,9 @@ params:
       url: "https://www.facebook.com/mariomanzanorealtor"
     - name: other
       url: "https://mariomanzano.exprealty.com"
+menu:
+  main:
+    - identifier: aboutme
+      name: About Me
+      url: /aboutme/
+      weight: 10

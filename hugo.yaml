@@ -29,5 +29,5 @@ menu:
   main:
     - identifier: aboutme
       name: About Me
-      url: /aboutme/
+      url: /aboutme
       weight: 10

@@ -1,16 +1,16 @@
-baseURL: "https://nathanmanzano.com/"
+baseURL: "https://mariomanzano.com/"
 languageCode: en-us
-title: Nathan Manzano
+title: Mario Manzano
 theme: ["PaperMod"]
 
 params:
   env: production
   profileMode:
     enabled: true
-    title: "Nathan Manzano"
+    title: "Mario Manzano"
     subtitle:
     imageUrl: "../assets/profile.jpeg"
-    imageTitle: Image of Nathan Manzano
+    imageTitle: Image of Mario Manzano
     imageWidth: 256
     imageHeight: 256
 

@@ -8,16 +8,20 @@ params:
   profileMode:
     enabled: true
     title: "Mario Manzano"
-    subtitle:
-    imageUrl: "/assets/profile.jpg"
+    subtitle: "Austin REALTOR®"
+    imageUrl: "../assets/profile.jpg"
     imageTitle: Image of Mario Manzano
     imageWidth: 256
     imageHeight: 256
 
   socialIcons:
-    - name: bluesky
-      url: "https://bsky.app/profile/nathanmanzano.com"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/nathan-manzano"
-    - name: github
-      url: "https://github.com/nathan-manzano"
+    - name: phone
+      url: "tel:+15126959255"
+    - name: email
+      url: "mailto:realtor@mariomanzano.com"
+    - name: instagram
+      url: "https://www.instagram.com/mariomanzanoatx"
+    - name: facebook
+      url: "https://www.facebook.com/mariomanzanorealtor"
+    - name: other
+      url: "https://mariomanzano.exprealty.com"

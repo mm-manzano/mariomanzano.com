@@ -1,0 +1,23 @@
+baseURL: "https://nathanmanzano.com/"
+languageCode: en-us
+title: Nathan Manzano
+theme: ["PaperMod"]
+
+params:
+  env: production
+  profileMode:
+    enabled: true
+    title: "Nathan Manzano"
+    subtitle:
+    imageUrl: "../assets/profile.jpeg"
+    imageTitle: Image of Nathan Manzano
+    imageWidth: 256
+    imageHeight: 256
+
+  socialIcons:
+    - name: bluesky
+      url: "https://bsky.app/profile/nathanmanzano.com"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/nathan-manzano"
+    - name: github
+      url: "https://github.com/nathan-manzano"

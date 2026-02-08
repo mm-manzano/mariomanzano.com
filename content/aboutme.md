@@ -4,4 +4,4 @@ Based in Leander and serving the Greater Austin area, I help homeowners make sma
 
 My approach is calm and practical. I focus on explaining trade-offs, identifying what actually matters, and helping you avoid rushing into the wrong move.
 
-Whether you’re preparing to sell, unsure if you should keep your home as a rental, or just need a clear plan, my goal is simple: no pressure, just clarity.
+Whether you’re preparing to sell, deciding whether to keep your home as a rental, or simply need a clear plan, my goal is simple: no pressure, just clarity.

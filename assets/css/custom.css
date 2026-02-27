@@ -1,12 +1,14 @@
-/* Center profile menu under name */
+/* ===== Profile menu layout under name ===== */
 
 .profile_inner > .buttons {
   display: flex;
   justify-content: center;
   gap: 18px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
+/* Button style */
 .profile_inner > .buttons a {
   padding: 6px 14px;
   border-radius: 6px;
@@ -14,8 +16,24 @@
   font-size: 14px;
 }
 
+/* About under name alignment */
+.profile_inner > .buttons a:first-child {
+  order: 1;
+}
+
+/* Seller slightly right */
+.profile_inner > .buttons a:last-child {
+  order: 2;
+  margin-left: 6px;
+}
+
+/* Mobile fine-tune */
 @media (max-width: 480px) {
   .profile_inner > .buttons {
-    gap: 12px;
+    gap: 14px;
+  }
+
+  .profile_inner > .buttons a:last-child {
+    margin-left: 10px;
   }
 }

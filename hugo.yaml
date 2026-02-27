@@ -33,8 +33,6 @@ menu:
       name: About Me
       url: /aboutme/
       weight: 10
-      menu:
-  main:
     - name: Seller Guide
       url: /sellerguide/
       weight: 3

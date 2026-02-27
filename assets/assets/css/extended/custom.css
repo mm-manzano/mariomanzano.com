@@ -12,7 +12,8 @@
 }
 
 /* Seller Guide button */
-#menu a[href="/sellerguide/"] {
+#menu a[href="/sellerguide"],
+#menu a[href="/sellerguide/"]
   background: #ffffff;
   color: #111111 !important;
   padding: 6px 12px;

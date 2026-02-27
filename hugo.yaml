@@ -5,12 +5,13 @@ theme: ["PaperMod"]
 
 params:
   env: production
+
   profileMode:
     enabled: true
     title: "Mario Manzano"
     subtitle: "Leander REALTOR®"
-    imageUrl: "../assets/profile.png"
-    imageTitle: Image of Mario Manzano
+    imageUrl: "profile.png"
+    imageTitle: "Image of Mario Manzano"
     imageWidth: 256
     imageHeight: 256
 
@@ -27,19 +28,21 @@ params:
       url: "https://www.facebook.com/mariomanzanorealtor"
     - name: other
       url: "https://mariomanzano.exprealty.com"
+
+  customCSS:
+    - css/custom.css
+
 menu:
   main:
+    - name: Seller Guide
+      url: /sellerguide/
+      weight: 3
     - identifier: aboutme
       name: About Me
       url: /aboutme/
       weight: 10
-    - name: Seller Guide
-      url: /sellerguide/
-      weight: 3
+
 markup:
   goldmark:
     renderer:
       unsafe: true
-params:
-  customCSS:
-    - css/custom.css

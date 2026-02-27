@@ -25,3 +25,6 @@
 #menu a[href="/sellerguide/"]:hover {
   opacity: 0.85;
 }
+params:
+  customCSS:
+    - css/custom.css

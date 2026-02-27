@@ -1,0 +1,21 @@
+/* Center profile menu under name */
+
+.profile_inner > .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.profile_inner > .buttons a {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .profile_inner > .buttons {
+    gap: 12px;
+  }
+}

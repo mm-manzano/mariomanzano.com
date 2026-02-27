@@ -3,16 +3,21 @@
 
     <div class="logo_block">
       {{- partial "logo.html" . }}
+
       <div class="about_link">
-        {{ with .Site.Menus.main.ByName "About Me" }}
-          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ range .Site.Menus.main }}
+          {{ if eq .Name "About Me" }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
         {{ end }}
       </div>
     </div>
 
     <div class="seller_link">
-      {{ with .Site.Menus.main.ByName "Seller Guide" }}
-        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ range .Site.Menus.main }}
+        {{ if eq .Name "Seller Guide" }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
       {{ end }}
     </div>
 

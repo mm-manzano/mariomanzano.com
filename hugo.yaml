@@ -33,3 +33,7 @@ menu:
       name: About Me
       url: /aboutme/
       weight: 10
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

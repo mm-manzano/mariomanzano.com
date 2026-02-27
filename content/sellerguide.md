@@ -2,4 +2,4 @@
 title: "Seller Guide"
 ---
 
-<meta http-equiv="refresh" content="0; url=https://gamma.app/docs/Seller-Guide-31dncywbj6nb68l?mode=doc">
+<iframe src="https://gamma.app/embed/31dncywbj6nb68l" style="width: 700px; max-width: 100%; height: 450px" allow="fullscreen" title="Seller Guide"></iframe>

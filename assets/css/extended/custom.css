@@ -1,22 +1,23 @@
-.header_inner {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-}
+/* === Center profile menu under name === */
 
-.logo_block {
+.profile_inner > .buttons {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
 }
 
-.about_link {
-  margin-top: 4px;
+/* Stack About under name clean */
+.profile_inner > .buttons a {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.25);
+  font-size: 14px;
 }
 
-.seller_center {
-  text-align: center;
-}
-
-.theme_toggle {
-  justify-self: end;
+/* Mobile adjustment */
+@media (max-width: 480px) {
+  .profile_inner > .buttons {
+    gap: 12px;
+  }
 }

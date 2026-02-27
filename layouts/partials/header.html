@@ -1,24 +1,30 @@
 <header class="header">
   <div class="header_inner">
 
+    <!-- LEFT: logo + About -->
     <div class="logo_block">
       {{- partial "logo.html" . }}
 
       <div class="about_link">
         {{ range .Site.Menus.main }}
-          {{ if eq .Name "About Me" }}
+          {{ if eq .Identifier "about" }}
             <a href="{{ .URL }}">{{ .Name }}</a>
           {{ end }}
         {{ end }}
       </div>
     </div>
 
-    <div class="seller_link">
-      {{ range .Site.Menus.main }}
-        {{ if eq .Name "Seller Guide" }}
-          <a href="{{ .URL }}">{{ .Name }}</a>
+    <!-- RIGHT: Seller + theme toggle -->
+    <div class="right_block">
+      <div class="seller_link">
+        {{ range .Site.Menus.main }}
+          {{ if eq .Identifier "seller" }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          {{ end }}
         {{ end }}
-      {{ end }}
+      </div>
+
+      {{- partial "theme-toggle.html" . }}
     </div>
 
   </div>

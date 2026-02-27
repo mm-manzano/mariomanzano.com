@@ -42,3 +42,4 @@
 #menu li:first-child a:hover {
   opacity: 0.85;
 }
+body { background: red !important; }

@@ -29,18 +29,17 @@ params:
     - name: other
       url: "https://mariomanzano.exprealty.com"
 
-  customCSS:
-    - css/custom.css
-
 menu:
   main:
-    - name: Seller Guide
-      url: /sellerguide/
-      weight: 3
-    - identifier: aboutme
+    - identifier: about
       name: About Me
       url: /aboutme/
-      weight: 10
+      weight: 1
+
+    - identifier: seller
+      name: Seller Guide
+      url: /sellerguide/
+      weight: 2
 
 markup:
   goldmark:

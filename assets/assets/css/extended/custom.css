@@ -1,0 +1,27 @@
+.header__inner {
+display: flex;
+flex-wrap: wrap;
+}
+
+.header__inner .logo {
+flex: 1 1 100%;
+}
+
+#menu {
+display: flex;
+justify-content: space-between;
+width: 100%;
+align-items: center;
+}
+
+#menu a[href="/sellerguide/"] {
+background: #ffffff;
+color: #111;
+padding: 6px 12px;
+border-radius: 6px;
+font-weight: 600;
+}
+
+#menu a[href="/sellerguide/"]:hover {
+opacity: 0.85;
+}

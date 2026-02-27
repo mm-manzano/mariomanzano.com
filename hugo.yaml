@@ -34,6 +34,11 @@ params:
 
 menu:
   main:
+    - identifier: aboutme
+      name: About Me
+      url: /aboutme/
+      weight: 2
+
     - name: Seller Guide
       url: /sellerguide/
       weight: 3
@@ -41,11 +46,6 @@ menu:
     - name: Guía del Vendedor
       url: /guia-del-vendedor/
       weight: 4
-
-    - identifier: aboutme
-      name: About Me
-      url: /aboutme/
-      weight: 10
 
 markup:
   goldmark:

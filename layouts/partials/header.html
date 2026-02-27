@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="header_inner">
+
+    <div class="logo_block">
+      {{- partial "logo.html" . }}
+      <div class="about_link">
+        {{ with .Site.Menus.main.ByName "About Me" }}
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="seller_link">
+      {{ with .Site.Menus.main.ByName "Seller Guide" }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </div>
+
+  </div>
+</header>

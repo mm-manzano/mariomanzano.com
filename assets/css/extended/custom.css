@@ -1,0 +1,22 @@
+.header_inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.logo_block {
+  display: flex;
+  flex-direction: column;
+}
+
+.about_link {
+  margin-top: 4px;
+}
+
+.seller_center {
+  text-align: center;
+}
+
+.theme_toggle {
+  justify-self: end;
+}

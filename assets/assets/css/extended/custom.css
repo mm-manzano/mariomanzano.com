@@ -1,34 +1,27 @@
-.header__inner {
-display: flex;
-flex-wrap: wrap;
+/* Header layout */
+.header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header__inner .logo {
-flex: 1 1 100%;
-}
-
+/* Menu layout */
 #menu {
-display: flex;
-justify-content: space-between;
-width: 100%;
-align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
+/* Seller Guide button */
 #menu a[href="/sellerguide/"] {
-background: #ffffff;
-color: #111;
-padding: 6px 12px;
-border-radius: 6px;
-font-weight: 600;
+  background: #ffffff;
+  color: #111;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
+/* Hover */
 #menu a[href="/sellerguide/"]:hover {
-opacity: 0.85;
-}
-.header a[href="/sellerguide/"] {
-background: #ffffff;
-color: #111 !important;
-padding: 6px 12px;
-border-radius: 6px;
-font-weight: 600;
+  opacity: 0.85;
 }

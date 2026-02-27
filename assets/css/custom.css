@@ -1,28 +1,47 @@
-/* Header layout */
+/* ===== Header layout ===== */
+
 .header_inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  padding-bottom: 10px;
 }
 
-/* Menu spacing */
+/* Stack site title */
+.logo a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Allow menu repositioning */
 #menu {
-  display: flex;
-  gap: 16px;
+  display: contents;
 }
 
-/* Seller Guide button */
-#menu a[href="/sellerguide"],
-#menu a[href="/sellerguide/"] {
-  background: #ffffff;
-  color: #111111 !important;
-  padding: 6px 12px;
+/* About Me under name */
+#menu li:nth-child(2) {
+  grid-column: 1;
+  margin-top: 4px;
+}
+
+/* Seller Guide right */
+#menu li:first-child {
+  grid-column: 3;
+  justify-self: end;
+  align-self: start;
+}
+
+/* Seller Guide button — luxury outline */
+#menu li:first-child a {
+  background: transparent;
+  color: inherit !important;
+  padding: 4px 10px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.35);
 }
 
-/* Hover */
-#menu a[href="/sellerguide"]:hover,
-#menu a[href="/sellerguide/"]:hover {
-  opacity: 0.85;
+#menu li:first-child a:hover {
+  border-color: rgba(255,255,255,0.7);
 }

@@ -12,8 +12,7 @@
 }
 
 /* Seller Guide button */
-/* Seller Guide button */
-#menu a:contains("Seller Guide") {
+#menu li:first-child a {
   background: #ffffff;
   color: #111111 !important;
   padding: 6px 12px;
@@ -22,6 +21,6 @@
 }
 
 /* Hover */
-#menu a[href="/sellerguide/"]:hover {
+#menu li:first-child a:hover {
   opacity: 0.85;
 }

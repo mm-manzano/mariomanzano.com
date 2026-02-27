@@ -37,6 +37,11 @@ menu:
     - name: Seller Guide
       url: /sellerguide/
       weight: 3
+
+    - name: Guía del Vendedor
+      url: /guia-del-vendedor/
+      weight: 4
+
     - identifier: aboutme
       name: About Me
       url: /aboutme/

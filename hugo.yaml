@@ -9,7 +9,7 @@ params:
   profileMode:
     enabled: true
     title: "Mario Manzano"
-    subtitle: "Leander REALTOR®"
+    subtitle: "Seller Strategist"
     imageUrl: "profile.png"
     imageTitle: "Image of Mario Manzano"
     imageWidth: 256

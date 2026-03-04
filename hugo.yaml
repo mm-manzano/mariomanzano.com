@@ -39,12 +39,12 @@ menu:
       url: /aboutme/
       weight: 2
 
-    - name: Seller Guide
-      url: /sellerguide/
+    - name: Homeowner Guide
+      url: /homeownerguide/
       weight: 3
 
-    - name: Guía del Vendedor
-      url: /guia-del-vendedor/
+    - name: Guía para Propietarios
+      url: /guíaparapietarios/
       weight: 4
 
 markup:

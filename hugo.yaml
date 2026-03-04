@@ -44,7 +44,7 @@ menu:
       weight: 3
 
     - name: Guía para Propietarios
-      url: /guíaparapietarios/
+      url: /guíaparapropietarios/
       weight: 4
 
 markup:

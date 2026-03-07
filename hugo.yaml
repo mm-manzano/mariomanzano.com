@@ -9,7 +9,7 @@ params:
   profileMode:
     enabled: true
     title: "Mario Manzano"
-    subtitle: "Seller Strategist"
+    subtitle: "SELLER STRATEGIST"
     imageUrl: "profile.png"
     imageTitle: "Image of Mario Manzano"
     imageWidth: 256

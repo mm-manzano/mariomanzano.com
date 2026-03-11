@@ -1,10 +1,6 @@
 ---
 title: "Homeowner Guide"
-ShowReadingTime: false
-ShowBreadCrumbs: false
-ShowPostNavLinks: false
-ShowToc: false
-hideSummary: true
+hideTitle: true
 ---
 
 <iframe src="https://gamma.app/embed/31dncywbj6nb68l"

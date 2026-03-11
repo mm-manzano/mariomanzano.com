@@ -1,5 +1,7 @@
 ---
 title: "Guía para Propietarios"
+params:
+  hideTitle: true
 ---
 
 <iframe src="https://gamma.app/embed/kpizqfjpjwxp5tb"

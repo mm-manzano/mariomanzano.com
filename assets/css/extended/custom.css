@@ -1,7 +1,7 @@
 /* Boxed menu buttons (Seller + Spanish) */
 
-#menu a[href="/sellerguide/"],
-#menu a[href="/guia-del-vendedor/"] {
+#menu a[href="/homeownerguide/"],
+#menu a[href="/guia-para-propietarios/"] {
 border: 1px solid rgba(255,255,255,0.4);
 padding: 6px 14px;
 border-radius: 8px;

@@ -2,12 +2,19 @@
 
 #menu a[href="/sellerguide/"],
 #menu a[href="/guia-del-vendedor/"] {
-  border: 1px solid rgba(255,255,255,0.4);
-  padding: 6px 14px;
-  border-radius: 8px;
+border: 1px solid rgba(255,255,255,0.4);
+padding: 6px 14px;
+border-radius: 8px;
 }
 
 /* spacing between menu items */
+
 #menu a {
-  margin-left: 10px;
+margin-left: 10px;
+}
+
+/* hide page title on guide pages */
+
+.post-title {
+display: none;
 }

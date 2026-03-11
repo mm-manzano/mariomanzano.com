@@ -1,5 +1,5 @@
 ---
-title: "Homeowner Guide"
+title: ""
 ---
 
 <iframe src="https://gamma.app/embed/31dncywbj6nb68l"

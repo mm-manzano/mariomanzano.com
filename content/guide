@@ -1,0 +1,13 @@
+---
+title: "Sell Guide"
+layout: "redirect"
+url: "/sellguide/"
+draft: false
+sitemap: false
+robots: "noindex"
+_build:
+  list: false
+  render: true
+  publishResources: false
+redirect_url: "https://mariomanzano.exprealty.com/ask/3f856a19476317b7f6250ebe7e17f33a"
+---

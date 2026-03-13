@@ -22,14 +22,15 @@ jobs:
 
       - run: pnpm install --no-frozen-lockfile
 
-      - run: |
+      - name: Install and build
+        run: | 
           cd client
           pnpm install --no-frozen-lockfile
           pnpm build
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: client/dist
+          path: ./dist
 
   deploy:
     needs: build

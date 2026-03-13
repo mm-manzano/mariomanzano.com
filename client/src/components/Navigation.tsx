@@ -91,7 +91,7 @@ export default function Navigation() {
                       scrolled || !isHome ? "text-[#B8974A]" : "text-[#D4B878]"
                     }`}
                   >
-                    Seller Strategist
+                    Austin Realtor | Seller Strategy
                   </span>
                 </div>
               </div>

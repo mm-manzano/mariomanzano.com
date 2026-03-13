@@ -276,19 +276,22 @@ export default function Home() {
       <section className="bg-[#1A1A18] py-20 md:py-28">
         <div className="container">
           <RevealDiv>
-            <div className="max-w-3xl mx-auto text-center">
-              <div className="font-display text-6xl text-[#B8974A]/30 mb-4 leading-none">"</div>
-              <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl font-light text-white leading-relaxed italic mb-8">
-                "The most valuable thing was understanding all my options before making a decision. I didn't feel pressured to sell."
-              </blockquote>
-              <div className="flex items-center justify-center gap-4">
-                <span className="section-rule" style={{ background: "#B8974A" }} />
-                <div className="text-center">
-                  <div className="font-body text-sm font-medium text-white">
-                    Client testimonial
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="text-center">
+                <blockquote className="font-display text-lg md:text-xl lg:text-2xl font-light text-white leading-relaxed italic mb-6">
+                  "Mario went above and beyond to help us sell our home. He set a great impression that led to a positive experience. Well organized and willing to go above and beyond, getting us more money than what our original realtor said we'd get."
+                </blockquote>
+                <div className="font-body text-sm font-medium text-[#D4B878]">
+                  Alma S.
                 </div>
-                <span className="section-rule" style={{ background: "#B8974A" }} />
+              </div>
+              <div className="text-center">
+                <blockquote className="font-display text-lg md:text-xl lg:text-2xl font-light text-white leading-relaxed italic mb-6">
+                  "Mario is someone you can actually trust in real estate. He listens, he's honest, and he looks out for you. Not a lot of agents operate that way. Grateful to have him as my go-to in Austin."
+                </blockquote>
+                <div className="font-body text-sm font-medium text-[#D4B878]">
+                  ImVaryn
+                </div>
               </div>
             </div>
           </RevealDiv>

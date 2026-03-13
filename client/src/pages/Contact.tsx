@@ -98,7 +98,7 @@ export default function Contact() {
                     {
                       icon: <MapPin size={16} className="text-[#B8974A]" />,
                       title: "Phone, Zoom, or In-Person",
-                      desc: "Whatever works for you. I serve Cedar Park, Leander, and surrounding areas.",
+                      desc: "Whatever works for you. I serve Cedar Park, Leander, and the greater Austin area.",
                     },
                     {
                       icon: <ArrowRight size={16} className="text-[#B8974A]" />,
@@ -122,17 +122,17 @@ export default function Contact() {
                     Prefer to Reach Out Directly?
                   </div>
                   <div className="flex flex-col gap-3">
-                    <a href="tel:+15125551234" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
+                    <a href="tel:+15126959255" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
                       <Phone size={14} />
-                      (512) 555-1234
+                      (512) 695-9255
                     </a>
-                    <a href="mailto:mario@mariomanzano.com" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
+                    <a href="mailto:realtor@mariomanzano.com" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
                       <Mail size={14} />
-                      mario@mariomanzano.com
+                      realtor@mariomanzano.com
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
+                    <a href="https://www.instagram.com/mariomanzanoatx/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
                       <Instagram size={14} />
-                      @mariomanzano
+                      @mariomanzanoatx
                     </a>
                   </div>
                 </div>

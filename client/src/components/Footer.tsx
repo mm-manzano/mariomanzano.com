@@ -91,7 +91,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 font-body text-sm text-white/70 hover:text-[#B8974A] transition-colors duration-300 mt-2"
               >
-                eXp Realty Profile
+                Search Homes
               </a>
             </div>
             <div className="mt-6">

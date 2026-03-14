@@ -60,8 +60,7 @@ export default function Navigation() {
   "/es/guia-para-propietarios": "/es/guia-para-propietarios",
   "/es/acerca": "/es/acerca",
   "/es/contacto": "/es/contacto",
-};
-      };
+  };
       setLocation(esRoutes[location.split("?")[0]] || "/es");
     } else {
       const enRoutes: { [key: string]: string } = {

@@ -48,12 +48,19 @@ export default function Navigation() {
     setLanguage(lang);
     localStorage.setItem("language", lang);
     if (lang === "es") {
-      const esRoutes: { [key: string]: string } = {
-        "/": "/es",
-        "/home-value": "/es/valor-de-casa",
-        "/homeowner-guide": "/es/guia-para-propietarios",
-        "/about": "/es/acerca",
-        "/contact": "/es/contacto",
+  const esRoutes = {
+  "/": "/es",
+  "/home-value": "/es/valor-de-casa",
+  "/homeowner-guide": "/es/guia-para-propietarios",
+  "/about": "/es/acerca",
+  "/contact": "/es/contacto",
+
+  "/es": "/es",
+  "/es/valor-de-casa": "/es/valor-de-casa",
+  "/es/guia-para-propietarios": "/es/guia-para-propietarios",
+  "/es/acerca": "/es/acerca",
+  "/es/contacto": "/es/contacto",
+};
       };
       setLocation(esRoutes[location.split("?")[0]] || "/es");
     } else {

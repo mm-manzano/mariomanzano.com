@@ -20,11 +20,13 @@ jobs:
         with:
           version: 10
 
-      - name: Install and build
-        run: | 
-          cd client
-          pnpm install --no-frozen-lockfile
-          pnpm build
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+        working-directory: client
+
+      - name: Build
+        run: pnpm build
+        working-directory: client
 
       - uses: actions/upload-pages-artifact@v3
         with:

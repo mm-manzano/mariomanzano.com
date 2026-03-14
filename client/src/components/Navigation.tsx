@@ -53,7 +53,7 @@ export default function Navigation() {
         "/about": "/es/acerca",
         "/contact": "/es/contacto",
       };
-      window.location.href = esRoutes[location] || "/es";
+      window.location.href = esRoutes[location.split("?")[0]] || "/es";
     } else {
       const enRoutes: { [key: string]: string } = {
         "/es": "/",
@@ -62,7 +62,7 @@ export default function Navigation() {
         "/es/acerca": "/about",
         "/es/contacto": "/contact",
       };
-      window.location.href = enRoutes[location] || "/";
+      window.location.href = enRoutes[location.split("?")[0]] || "/";
     }
   };
 

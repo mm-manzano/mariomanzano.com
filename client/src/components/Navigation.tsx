@@ -27,7 +27,9 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location, setLocation] = useLocation();
-  const isSpanish = location?.startsWith("/es");
+  const isSpanish =
+  location === "/es" ||
+  location.startsWith("/es/");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
   useEffect(() => {

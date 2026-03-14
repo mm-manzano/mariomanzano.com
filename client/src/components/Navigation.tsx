@@ -26,7 +26,7 @@ const navLinksES = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const isSpanish = location?.startsWith("/es");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
@@ -53,7 +53,7 @@ export default function Navigation() {
         "/about": "/es/acerca",
         "/contact": "/es/contacto",
       };
-      window.location.href = esRoutes[location.split("?")[0]] || "/es";
+      setLocation(esRoutes[location.split("?")[0]] || "/es");
     } else {
       const enRoutes: { [key: string]: string } = {
         "/es": "/",
@@ -62,7 +62,7 @@ export default function Navigation() {
         "/es/acerca": "/about",
         "/es/contacto": "/contact",
       };
-      window.location.href = enRoutes[location.split("?")[0]] || "/";
+      setLocation(enRoutes[location.split("?")[0]] || "/");
     }
   };
 

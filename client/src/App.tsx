@@ -36,6 +36,7 @@ function Router() {
       <Route exact path="/" component={Home} />
       <Route path="/home-value" component={HomeValue} />
       <Route path="/homeowner-guide" component={HomeownerGuide} />
+      <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       

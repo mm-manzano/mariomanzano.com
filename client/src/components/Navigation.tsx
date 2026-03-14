@@ -186,7 +186,7 @@ export default function Navigation() {
       >
         <div className="container flex flex-col h-full pt-24 pb-12">
           <nav className="flex flex-col gap-8 flex-1">
-            {navLinks.map((link, i) => (
+            {(isSpanish ? navLinksES : navLinks).map((link, i) => (
               <Link key={link.href} href={link.href}>
                 <span
                   className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"

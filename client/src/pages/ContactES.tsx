@@ -119,14 +119,14 @@ export default function ContactoES() {
                 {/* Direct contact */}
                 <div className="border-t border-[#E8E0D5] pt-8">
                   <div className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">
-                    Prefer to Reach Out Directly?
+                    Prefiere contactarme directamente?
                   </div>
                   <div className="flex flex-col gap-3">
-                    <a href="tel:+15125551234" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
+                    <a href="tel:+15126959255" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
                       <Phone size={14} />
                       (512) 695-9255
                     </a>
-                    <a href="mailto:mario@mariomanzano.com" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
+                    <a href="mailto:realtor@mariomanzano.com" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
                       <Mail size={14} />
                       realtor@mariomanzano.com
                     </a>

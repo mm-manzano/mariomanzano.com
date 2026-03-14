@@ -130,10 +130,6 @@ export default function Contact() {
                       <Mail size={14} />
                       realtor@mariomanzano.com
                     </a>
-                    <a href="https://www.instagram.com/mariomanzanoatx/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
-                      <Instagram size={14} />
-                      @mariomanzanoatx
-                    </a>
                   </div>
                 </div>
               </RevealDiv>

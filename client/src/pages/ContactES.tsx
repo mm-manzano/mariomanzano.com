@@ -78,14 +78,14 @@ export default function ContactoES() {
               <RevealDiv>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="section-rule" />
-                  <span className="section-number">What to Expect</span>
+                  <span className="section-number">Qué esperar</span>
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6">
-                  A conversation,<br />
-                  <em className="italic">not a sales call.</em>
+                  Una conversación,<br />
+                  <em className="italic">no una llamada de ventas.</em>
                 </h2>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-8">
-                  Our first conversation is about understanding your situation: your home, your timeline, your goals. I'll ask questions and listen. There's no pitch, no pressure, and no commitment required.
+                  Nuestra primera conversación es para entender tu situación: tu casa, tus tiempos y tus objetivos. Haré preguntas y escucharé. No hay intento de venta, ni presión, ni compromiso requerido.
                 </p>
 
                 <div className="flex flex-col gap-6 mb-10">
@@ -130,10 +130,7 @@ export default function ContactoES() {
                       <Mail size={14} />
                       mario@mariomanzano.com
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
-                      <Instagram size={14} />
-                      @mariomanzano
-                    </a>
+          
                   </div>
                 </div>
               </RevealDiv>

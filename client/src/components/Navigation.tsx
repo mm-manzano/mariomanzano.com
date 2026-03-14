@@ -112,7 +112,7 @@ export default function Navigation() {
     className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
       scrolled || isHome
         ? "text-[#1A1A18]"
-        : "text-white/90 hover:text-white"
+        : "text-[#1A1A18]"
     }`}
   >
     {link.label}

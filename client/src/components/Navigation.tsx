@@ -16,11 +16,18 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
+const navLinksES = [
+  { label: "Valor de Casa", href: "/es/valor-de-casa" },
+  { label: "Guía para Propietarios", href: "/es/guia-para-propietarios" },
+  { label: "Acerca", href: "/es/acerca" },
+  { label: "Contacto", href: "/es/contacto" },
+];
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location] = useLocation();
+  const isSpanish = location.startsWith("/es");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
   useEffect(() => {
@@ -99,7 +106,7 @@ export default function Navigation() {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
+              (isSpanish ? navLinksES : navLinks).map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span
                     className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${

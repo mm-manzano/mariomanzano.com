@@ -55,15 +55,15 @@ export default function ContactoES() {
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                Let's Talk
+                Hablemos
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Develop Your<br />
-              <em className="italic">Selling Strategy.</em>
+              Desarolla Tu<br />
+              <em className="italic">Estrategi de Venta.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              A free, no-obligation consultation to discuss your home, your goals, and your selling strategy. No pressure. Just clarity.
+              Una consulta gratuita y sin compromiso para hablar sobre tu casa, tus objetivos y tu estrategia de venta.
             </p>
           </div>
         </div>

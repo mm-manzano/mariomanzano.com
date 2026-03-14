@@ -107,17 +107,17 @@ export default function Navigation() {
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
               (isSpanish ? navLinksES : navLinks).map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <span
-                    className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
-                      scrolled || !isHome
-                        ? "text-[#1A1A18]"
-                        : "text-white/90 hover:text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </span>
-                </Link>
+  <Link key={link.href} href={link.href}>
+  <span
+    className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+      scrolled || isHome
+        ? "text-[#1A1A18]"
+        : "text-white/90 hover:text-white"
+    }`}
+  >
+    {link.label}
+  </span>
+</Link>
               ))}
               
               {/* Language Toggle */}

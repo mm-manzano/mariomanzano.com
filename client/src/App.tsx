@@ -26,19 +26,18 @@ import NotFound from "./pages/NotFound";
 function Router() {
   return (
     <Switch>
+            {/* Spanish Routes */}
+      <Route exact path="/es" component={HomeES} />
+      <Route path="/es/valor-de-casa" component={HomeValueES} />
+      <Route path="/es/guia-para-propietarios" component={GuiaParaPropietarios} />
+      <Route path="/es/acerca" component={AboutES} />
+      <Route path="/es/contacto" component={ContactES} />
       {/* English Routes */}
       <Route exact path="/" component={Home} />
       <Route path="/home-value" component={HomeValue} />
       <Route path="/homeowner-guide" component={HomeownerGuide} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      
-      {/* Spanish Routes */}
-      <Route exact path="/es" component={HomeES} />
-      <Route path="/es/valor-de-casa" component={HomeValueES} />
-      <Route path="/es/guia-para-propietarios" component={GuiaParaPropietarios} />
-      <Route path="/es/acerca" component={AboutES} />
-      <Route path="/es/contacto" component={ContactES} />
       
       {/* Fallback */}
       <Route component={NotFound} />

@@ -55,15 +55,15 @@ export default function ContactoES() {
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                Let's Talk
+                Hablemos
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Develop Your<br />
-              <em className="italic">Selling Strategy.</em>
+              Desarrolla Tu<br />
+              <em className="italic">Estrategia de Venta.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              A free, no-obligation consultation to discuss your home, your goals, and your selling strategy. No pressure. Just clarity.
+              Una consulta gratuita y sin obligación para discutir tu casa, tus objetivos y tu estrategia de venta. Sin presión. Solo claridad.
             </p>
           </div>
         </div>
@@ -78,32 +78,32 @@ export default function ContactoES() {
               <RevealDiv>
                 <div className="flex items-center gap-3 mb-6">
                   <span className="section-rule" />
-                  <span className="section-number">What to Expect</span>
+                  <span className="section-number">Qué Esperar</span>
                 </div>
                 <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6">
-                  A conversation,<br />
-                  <em className="italic">not a sales call.</em>
+                  Una conversación,<br />
+                  <em className="italic">no una llamada de ventas.</em>
                 </h2>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-8">
-                  Our first conversation is about understanding your situation: your home, your timeline, your goals. I'll ask questions and listen. There's no pitch, no pressure, and no commitment required.
+                  Nuestra primera conversación es sobre entender tu situación: tu casa, tu cronograma, tus objetivos. Haré preguntas y escucharé. No hay discurso de ventas, sin presión, y sin compromiso requerido.
                 </p>
 
                 <div className="flex flex-col gap-6 mb-10">
                   {[
                     {
                       icon: <Clock size={16} className="text-[#B8974A]" />,
-                      title: "30-45 minutes",
-                      desc: "Enough time to cover your situation thoroughly without wasting your afternoon.",
+                      title: "30-45 minutos",
+                      desc: "Tiempo suficiente para cubrir tu situación completamente sin desperdiciar tu tarde.",
                     },
                     {
                       icon: <MapPin size={16} className="text-[#B8974A]" />,
-                      title: "Phone, Zoom, or In-Person",
-                      desc: "Whatever works for you. I serve Cedar Park, Leander, and surrounding areas.",
+                      title: "Teléfono, Zoom o En Persona",
+                      desc: "Lo que funcione para ti. Sirvo Cedar Park, Leander y áreas circundantes.",
                     },
                     {
                       icon: <ArrowRight size={16} className="text-[#B8974A]" />,
-                      title: "You leave with a plan",
-                      desc: "Even if you're not ready to sell, you'll leave with clarity on your options and next steps.",
+                      title: "Te vas con un plan",
+                      desc: "Incluso si no estás listo para vender, te irás con claridad sobre tus opciones y próximos pasos.",
                     },
                   ].map((item) => (
                     <div key={item.title} className="flex gap-4">
@@ -119,7 +119,7 @@ export default function ContactoES() {
                 {/* Direct contact */}
                 <div className="border-t border-[#E8E0D5] pt-8">
                   <div className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">
-                    Prefer to Reach Out Directly?
+                    ¿Prefieres Comunicarte Directamente?
                   </div>
                   <div className="flex flex-col gap-3">
                     <a href="tel:+15125551234" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
@@ -146,14 +146,14 @@ export default function ContactoES() {
                   <div className="bg-[#1A1A18] p-10 md:p-12 text-center">
                     <div className="font-display text-5xl text-[#B8974A] mb-4">✓</div>
                     <h3 className="font-display text-3xl font-light text-white mb-4">
-                      Message Received
+                      Mensaje Recibido
                     </h3>
                     <p className="font-body text-base text-white/60 leading-relaxed mb-8">
-                      Thank you for reaching out. I'll be in touch within 24 hours to schedule our conversation.
+                      Gracias por comunicarte. Me pondré en contacto dentro de 24 horas para programar nuestra conversación.
                     </p>
-                    <Link href="/">
+                    <Link href="/es">
                       <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                        Back to Home
+                        Volver al Inicio
                         <ArrowRight size={14} />
                       </span>
                     </Link>
@@ -161,18 +161,18 @@ export default function ContactoES() {
                 ) : (
                   <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
                     <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
-                      Book a Free Consultation
+                      Agenda una Consulta Gratuita
                     </h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                       <div>
                         <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                          Full Name *
+                          Nombre Completo *
                         </label>
                         <input
                           type="text"
                           required
-                          placeholder="Your name"
+                          placeholder="Tu nombre"
                           className="input-luxury"
                           value={form.name}
                           onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -180,7 +180,7 @@ export default function ContactoES() {
                       </div>
                       <div>
                         <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                          Phone Number
+                          Número de Teléfono
                         </label>
                         <input
                           type="tel"
@@ -194,12 +194,12 @@ export default function ContactoES() {
 
                     <div className="mb-5">
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Email Address *
+                        Correo Electrónico *
                       </label>
                       <input
                         type="email"
                         required
-                        placeholder="your@email.com"
+                        placeholder="tu@correo.com"
                         className="input-luxury"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
@@ -208,7 +208,7 @@ export default function ContactoES() {
 
                     <div className="mb-5">
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Property Address (if applicable)
+                        Dirección de la Propiedad (si aplica)
                       </label>
                       <input
                         type="text"
@@ -221,47 +221,47 @@ export default function ContactoES() {
 
                     <div className="mb-5">
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        What Would You Like to Discuss?
+                        ¿Qué te Gustaría Discutir?
                       </label>
                       <select
                         className="input-luxury bg-transparent"
                         value={form.topic}
                         onChange={(e) => setForm({ ...form, topic: e.target.value })}
                       >
-                        <option value="">Select a topic</option>
-                        <option value="sell">I'm thinking about selling</option>
-                        <option value="value">I want to know my home's value</option>
-                        <option value="options">I want to understand all my options</option>
-                        <option value="timing">I'm trying to figure out the right timing</option>
-                        <option value="other">Something else</option>
+                        <option value="">Selecciona un tema</option>
+                        <option value="sell">Estoy pensando en vender</option>
+                        <option value="value">Quiero saber el valor de mi casa</option>
+                        <option value="options">Quiero entender todas mis opciones</option>
+                        <option value="timing">Estoy tratando de determinar el momento correcto</option>
+                        <option value="other">Algo más</option>
                       </select>
                     </div>
 
                     <div className="mb-5">
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Your Timeline
+                        Tu Cronograma
                       </label>
                       <select
                         className="input-luxury bg-transparent"
                         value={form.timeline}
                         onChange={(e) => setForm({ ...form, timeline: e.target.value })}
                       >
-                        <option value="">Select a timeline</option>
-                        <option value="asap">As soon as possible</option>
-                        <option value="3months">Within 3 months</option>
-                        <option value="6months">3–6 months</option>
-                        <option value="year">Within a year</option>
-                        <option value="exploring">Just exploring</option>
+                        <option value="">Selecciona un cronograma</option>
+                        <option value="asap">Lo antes posible</option>
+                        <option value="3months">Dentro de 3 meses</option>
+                        <option value="6months">3 a 6 meses</option>
+                        <option value="year">Dentro de un año</option>
+                        <option value="exploring">Solo explorando</option>
                       </select>
                     </div>
 
                     <div className="mb-8">
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Anything Else I Should Know?
+                        ¿Hay Algo Más Que Deba Saber?
                       </label>
                       <textarea
                         rows={4}
-                        placeholder="Tell me about your situation, goals, or any questions you have..."
+                        placeholder="Cuéntame sobre tu situación, objetivos o cualquier pregunta que tengas..."
                         className="input-luxury resize-none"
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -269,12 +269,12 @@ export default function ContactoES() {
                     </div>
 
                     <button type="submit" className="btn-luxury w-full justify-center text-center">
-                      Send My Request
+                      Enviar Mi Solicitud
                       <ArrowRight size={14} />
                     </button>
 
                     <p className="font-body text-[11px] text-[#1A1A18]/40 text-center mt-4 leading-relaxed">
-                      I respond to all inquiries within 24 hours. Your information is private and never shared.
+                      Respondo a todas las consultas dentro de 24 horas. Tu información es privada y nunca se comparte.
                     </p>
                   </form>
                 )}
@@ -293,9 +293,9 @@ export default function ContactoES() {
         <div className="relative z-10 container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
-              { title: "No Obligation", desc: "Our conversation doesn't commit you to anything. You're free to take the information and decide on your own timeline." },
-              { title: "No Pressure", desc: "I don't believe in high-pressure sales tactics. If selling isn't right for you right now, I'll tell you." },
-              { title: "No Spam", desc: "Your contact information will only be used to follow up on your specific inquiry. Nothing else." },
+              { title: "Sin Obligación", desc: "Nuestra conversación no te compromete a nada. Eres libre de tomar la información y decidir en tu propio cronograma." },
+              { title: "Sin Presión", desc: "No creo en tácticas de ventas de alta presión. Si vender no es lo correcto para ti ahora, te lo diré." },
+              { title: "Sin Spam", desc: "Tu información de contacto solo se usará para hacer seguimiento de tu consulta específica. Nada más." },
             ].map((item) => (
               <div key={item.title}>
                 <div className="font-display text-xl font-light text-[#B8974A] mb-2">{item.title}</div>

@@ -34,7 +34,7 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 
 export default function HomeValue() {
   const [formState, setFormState] = useState({
-    address: "", city: "Cedar Park", bedrooms: "", bathrooms: "", sqft: "", name: "", email: "", phone: "", timeline: "",
+    address: "", city: "", bedrooms: "", bathrooms: "", sqft: "", name: "", email: "", phone: "", timeline: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);

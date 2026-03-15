@@ -49,15 +49,15 @@ export default function AcercaES() {
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                Acerca Mario
+                Acerca de Mario
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              The Advisor<br />
-              <em className="italic">Behind the Strategy.</em>
+              El Asesor<br />
+              <em className="italic">Detrás de la Estrategia.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              A licensed REALTOR® who believes the best real estate advice sometimes means telling you not to sell.
+              Un REALTOR® licenciado que cree que el mejor consejo inmobiliario a veces significa decirte que no vendas.
             </p>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function AcercaES() {
                 <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
                   <img
                     src={INTERIOR_IMG}
-                    alt="Mario Manzano's office"
+                    alt="Oficina de Mario Manzano"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = INTERIOR_IMG;
@@ -89,24 +89,24 @@ export default function AcercaES() {
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01 — My Story</span>
+                <span className="section-number">01 — Mi Historia</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
-                I help homeowners<br />
-                develop <em className="italic">seller strategy.</em>
+                Ayudo a propietarios a<br />
+                desarrollar <em className="italic">estrategia de venta.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Too often, homeowners feel pressured to make a quick decision without fully understanding their options. I wanted to create a different kind of conversation focused on clarity and your best interests, not on closing a transaction.
+                Con frecuencia, los propietarios se sienten presionados a tomar una decisión rápida sin entender completamente sus opciones. Quería crear un tipo diferente de conversación enfocada en la claridad y tus intereses, no en cerrar una transacción.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                As a licensed REALTOR® and Seller Strategist, I work with homeowners in Cedar Park and Leander to explore all their options: selling, remodeling, renting, or holding. My role is to provide honest analysis and guidance so you can make the decision that makes sense for your situation.
+                Como REALTOR® licenciado y Estratega de Ventas, trabajo con propietarios en Cedar Park y Leander para explorar todas sus opciones: vender, remodelar, alquilar o mantener. Mi rol es proporcionar análisis honesto y orientación para que puedas tomar la decisión correcta para tu situación.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                I know these neighborhoods well and understand how local market conditions, school districts, and seasonal trends affect property values and buyer demand.
+                Conozco bien estos vecindarios y entiendo cómo las condiciones del mercado local, los distritos escolares y las tendencias estacionales afectan los valores de las propiedades y la demanda de compradores.
               </p>
               <div className="border-l-2 border-[#B8974A] pl-6 mb-8">
                 <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed">
-                  "My goal is for you to leave every conversation feeling more confident, not more pressured."
+                  "Mi objetivo es que salgas de cada conversación sintiéndote más confiado, no más presionado."
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/50 mt-2">— Mario Manzano</p>
               </div>
@@ -125,11 +125,11 @@ export default function AcercaES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">02 — My Philosophy</span>
+              <span className="section-number">02 — Mi Filosofía</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-xl">
-              Four principles that guide<br />
-              <em className="italic">every client relationship.</em>
+              Cuatro principios que guían<br />
+              <em className="italic">cada relación con clientes.</em>
             </h2>
           </RevealDiv>
 
@@ -137,23 +137,23 @@ export default function AcercaES() {
             {[
               {
                 num: "01",
-                title: "Clarity Before Action",
-                desc: "Before we talk about listing, staging, or pricing, I want you to understand exactly what you're working with. Your equity, your market, your options. Clarity first.",
+                title: "Claridad Antes de Actuar",
+                desc: "Antes de hablar sobre listar, preparar o fijar precios, quiero que entiendas exactamente con qué estás trabajando. Tu equidad, tu mercado, tus opciones. Claridad primero.",
               },
               {
                 num: "02",
-                title: "Your Timeline Matters",
-                desc: "Your decision timeline is what matters most. Whether you're ready to move in three months or want to explore options over the next year, we'll work at your pace.",
+                title: "Tu Cronograma Importa",
+                desc: "Tu cronograma de decisión es lo que más importa. Ya sea que estés listo para mudarte en tres meses o quieras explorar opciones durante el próximo año, trabajaremos a tu ritmo.",
               },
               {
                 num: "03",
-                title: "Decisions Grounded in Data",
-                desc: "Your decision should be based on solid information. I bring the data: comparable sales, market absorption rates, buyer demand patterns. This gives you a realistic foundation for your choice.",
+                title: "Decisiones Basadas en Datos",
+                desc: "Tu decisión debe basarse en información sólida. Traigo los datos: ventas comparables, tasas de absorción del mercado, patrones de demanda de compradores. Esto te da una base realista para tu decisión.",
               },
               {
                 num: "04",
-                title: "Straightforward Guidance",
-                desc: "If your home needs updates before selling, I'll let you know. If market timing suggests waiting, I'll share that perspective. You get honest guidance without pressure.",
+                title: "Orientación Directa",
+                desc: "Si tu casa necesita actualizaciones antes de vender, te lo haré saber. Si el momento del mercado sugiere esperar, compartiré esa perspectiva. Recibes orientación honesta sin presión.",
               },
             ].map((item, i) => (
               <RevealDiv key={item.num} delay={i * 80} className="bg-[#F8F5F0] p-8 md:p-10">
@@ -172,30 +172,30 @@ export default function AcercaES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">03 — Credentials</span>
+              <span className="section-number">03 — Credenciales</span>
             </div>
             <h2 className="font-display text-4xl font-light text-[#1A1A18] mb-10 max-w-xl">
-              Expertise you can verify.
+              Experiencia que puedes verificar.
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Licensed REALTOR®",
-                body: "Active member in good standing with the National Association of REALTORS®.",
+                title: "REALTOR® Licenciado",
+                body: "Miembro activo en buena posición con la Asociación Nacional de REALTORS®.",
               },
               {
-                title: "Pricing Strategy Advisor (PSA)",
-                body: "Specialized training in market analysis, pricing strategy, and seller consultation.",
+                title: "Asesor de Estrategia de Precios (PSA)",
+                body: "Capacitación especializada en análisis de mercado, estrategia de precios y consultoría de vendedores.",
               },
               {
-                title: "Member, Austin Board of REALTORS® (ABOR)",
-                body: "Serving the greater Austin metropolitan area with local market expertise.",
+                title: "Miembro, Junta de REALTORS® de Austin (ABOR)",
+                body: "Sirviendo al área metropolitana de Austin con experiencia local del mercado.",
               },
               {
-                title: "Member, National Association of REALTORS® (NAR)",
-                body: "Part of the largest professional real estate organization in the United States.",
+                title: "Miembro, Asociación Nacional de REALTORS® (NAR)",
+                body: "Parte de la organización profesional de bienes raíces más grande de los Estados Unidos.",
               },
             ].map((cred, i) => (
               <RevealDiv key={cred.title} delay={i * 100} className="border-t border-[#E8E0D5] pt-6">
@@ -213,20 +213,20 @@ export default function AcercaES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-10">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">What Clients Say</span>
+              <span className="section-number text-[#B8974A]">Lo Que Dicen los Clientes</span>
             </div>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                quote: "The most helpful part was understanding all my options before making any decision. I didn't feel pressured.",
-                name: "Client",
+                quote: "La parte más útil fue entender todas mis opciones antes de tomar cualquier decisión. No me sentí presionado.",
+                name: "Cliente",
                 location: "Cedar Park, TX",
               },
               {
-                quote: "I appreciated the clear, honest analysis. No sales pitch, just data and guidance.",
-                name: "Client",
+                quote: "Aprecié el análisis claro y honesto. Sin discurso de ventas, solo datos y orientación.",
+                name: "Cliente",
                 location: "Leander, TX",
               },
             ].map((t) => (
@@ -250,21 +250,21 @@ export default function AcercaES() {
         <div className="container text-center">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-xl mx-auto">
-              Ready to have a real conversation about your home?
+              ¿Listo para una conversación real sobre tu casa?
             </h2>
             <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
-              No pressure. No pitch. Just an honest conversation about your options.
+              Sin presión. Sin discurso de ventas. Solo una conversación honesta sobre tus opciones.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/es/contacto">
                 <span className="btn-luxury inline-flex items-center gap-3">
-                  Book a Free Consultation
+                  Agenda una Consulta Gratuita
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/home-value">
+              <Link href="/es/valor-de-casa">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
-                  Get My Valor de Casa
+                  Obtén Mi Valor de Casa
                 </span>
               </Link>
             </div>

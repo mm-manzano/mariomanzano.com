@@ -186,30 +186,30 @@ export default function HomeES() {
               {
                 num: "01",
                 title: "Vender",
-                desc: "Entiende el mercado, el tiempo y los costos involucrados. Te guiaré a través de cómo sería una venta para tu hogar específico.",
+                desc: "Entiende el mercado, el tiempo y los costos involucrados en vender tu hogar.",
                 link: "/es/guia-para-propietarios",
-                cta: "Aprende Más",
+                cta: "Más en la Guía para Propietarios",
               },
               {
                 num: "02",
                 title: "Renovar",
-                desc: "Explora qué mejoras tienen sentido para tu hogar y situación. No toda renovación agrega valor.",
+                desc: "Explora qué mejoras tienen sentido para tu hogar y situación financiera.",
                 link: "/es/guia-para-propietarios",
-                cta: "Aprende Más",
+                cta: "Más en la Guía para Propietarios",
               },
               {
                 num: "03",
                 title: "Rentar",
-                desc: "Considera si mantener como propiedad de alquiler podría servir mejor tus objetivos financieros que vender hoy.",
+                desc: "Considera si mantener como alquiler puede servir mejor tus objetivos financieros a largo plazo.",
                 link: "/es/guia-para-propietarios",
-                cta: "Aprende Más",
+                cta: "Más en la Guía para Propietarios",
               },
               {
                 num: "04",
                 title: "Mantener",
-                desc: "A veces esperar es la decisión correcta. Te mostraré los datos para que decidas qué tiene sentido.",
+                desc: "Evalúa si esperar podría fortalecer tu posición antes de vender.",
                 link: "/es/guia-para-propietarios",
-                cta: "Aprende Más",
+                cta: "Más en la Guía para Propietarios",
               },
             ].map((service, i) => (
               <RevealDiv
@@ -227,9 +227,8 @@ export default function HomeES() {
                   {service.desc}
                 </p>
                 <Link href={service.link}>
-                  <span className="font-body text-[11px] tracking-[0.15em] uppercase text-[#B8974A] group-hover:text-[#D4B878] flex items-center gap-2 transition-colors duration-500">
+                  <span className="font-body text-xs text-[#B8974A] group-hover:text-[#D4B878] transition-colors duration-500 inline-block">
                     {service.cta}
-                    <ArrowRight size={12} />
                   </span>
                 </Link>
               </RevealDiv>

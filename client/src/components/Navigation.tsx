@@ -214,7 +214,7 @@ export default function Navigation() {
                 language === "en" ? "text-[#B8974A]" : "opacity-50 hover:opacity-100"
               }`}
             >
-              EN
+              English
             </button>
             <span className="opacity-50">|</span>
             <button
@@ -223,7 +223,7 @@ export default function Navigation() {
                 language === "es" ? "text-[#B8974A]" : "opacity-50 hover:opacity-100"
               }`}
             >
-              ES
+              Español
             </button>
           </div>
 

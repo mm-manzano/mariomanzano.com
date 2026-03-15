@@ -194,18 +194,14 @@ export default function HomeValueES() {
                     <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
                       Ciudad *
                     </label>
-                    <select
+                    <input
+                      type="text"
                       required
-                      className="input-luxury bg-transparent"
+                      placeholder="Cedar Park"
+                      className="input-luxury"
                       value={formState.city}
                       onChange={(e) => setFormState({ ...formState, city: e.target.value })}
-                    >
-                      <option value="Cedar Park">Cedar Park</option>
-                      <option value="Leander">Leander</option>
-                      <option value="Austin">Austin</option>
-                      <option value="Round Rock">Round Rock</option>
-                      <option value="Georgetown">Georgetown</option>
-                    </select>
+                    />
                   </div>
 
                   {/* Bed / Bath / SqFt */}

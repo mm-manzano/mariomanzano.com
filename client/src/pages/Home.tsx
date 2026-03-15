@@ -199,12 +199,12 @@ export default function Home() {
               {
                 num: "03",
                 title: "Rent",
-                desc: "Consider whether holding as a rental might serve your financial goals better.",
+                desc: "Consider whether holding as a rental may serve your long-term financial goals better.",
               },
               {
                 num: "04",
                 title: "Hold",
-                desc: "Sometimes waiting is the right move. I'll show you the data to help you decide.",
+                desc: "Evaluate whether waiting could strengthen your position before selling."
               },
             ].map((service, i) => (
               <RevealDiv
@@ -212,15 +212,20 @@ export default function Home() {
                 delay={i * 80}
                 className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
-                  {service.num}
-                </div>
-                <h3 className="font-display text-3xl font-light text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
-                  {service.title}
-                </h3>
-                <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed transition-colors duration-500">
-                  {service.desc}
-                </p>
+                <Link href="/homeowner-guide" className="block h-full cursor-pointer">
+                  <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
+                    {service.num}
+                  </div>
+                  <h3 className="font-display text-3xl font-light text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
+                    {service.title}
+                  </h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed transition-colors duration-500 mb-4">
+                    {service.desc}
+                  </p>
+                  <span className="font-body text-xs text-[#B8974A] group-hover:text-[#D4B878] transition-colors duration-500 inline-block">
+                    More in the Homeowner Guide
+                  </span>
+                </Link>
               </RevealDiv>
             ))}
           </div>

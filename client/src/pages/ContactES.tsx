@@ -122,17 +122,13 @@ export default function ContactoES() {
                     ¿Prefieres Comunicarte Directamente?
                   </div>
                   <div className="flex flex-col gap-3">
-                    <a href="tel:+15125551234" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
+                    <a href="tel:+15126959255" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
                       <Phone size={14} />
-                      (512) 555-1234
+                      (512) 695-9255
                     </a>
-                    <a href="mailto:mario@mariomanzano.com" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
+                    <a href="mailto:realtor@mariomanzano.com" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
                       <Mail size={14} />
-                      mario@mariomanzano.com
-                    </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
-                      <Instagram size={14} />
-                      @mariomanzano
+                      realtor@mariomanzano.com
                     </a>
                   </div>
                 </div>

@@ -186,7 +186,7 @@ export default function HomeValue() {
                     Request Received
                   </h3>
                   <p className="font-body text-base text-white/60 leading-relaxed mb-8">
-                    Thank you. I'll prepare your personalized home value report and reach out within 24 hours to walk through the findings.
+                    Thank you. Your home value request has been received. I will review your property and send your report shortly.
                   </p>
                   <Link href="/">
                     <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">

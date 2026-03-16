@@ -6,7 +6,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight, MapPin, TrendingUp, Clock, CheckCircle } from "lucide-react";
+import { ArrowRight, MapPin, TrendingUp, Clock, CheckCircle, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
@@ -36,10 +37,36 @@ export default function HomeValueES() {
     address: "", city: "", bedrooms: "", bathrooms: "", sqft: "", name: "", email: "", phone: "", timeline: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/submit-home-value", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formState.name,
+          propertyAddress: `${formState.address}, ${formState.city}`,
+          email: formState.email,
+          phone: formState.phone,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        toast.success("¡Solicitud de valor de hogar enviada exitosamente!");
+      } else {
+        toast.error("Failed to submit request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -159,7 +186,7 @@ export default function HomeValueES() {
                     Solicitud Recibida
                   </h3>
                   <p className="font-body text-base text-white/60 leading-relaxed mb-8">
-                    Gracias. Prepararé tu reporte personalizado de valor de hogar y me comunicaré dentro de 24 horas para discutir los hallazgos.
+                    Gracias. Tu solicitud de valor de hogar ha sido recibida. Revisaré tu propiedad y enviaré tu reporte pronto.
                   </p>
                   <Link href="/es">
                     <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
@@ -312,9 +339,18 @@ export default function HomeValueES() {
                     </div>
                   </div>
 
-                  <button type="submit" className="btn-luxury w-full justify-center text-center">
-                    Solicita Mi Reporte de Valor de Hogar
-                    <ArrowRight size={14} />
+                  <button type="submit" disabled={loading} className="btn-luxury w-full justify-center text-center disabled:opacity-50 disabled:cursor-not-allowed">
+                    {loading ? (
+                      <>
+                        <Loader2 size={14} className="animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        Solicita Mi Reporte de Valor de Hogar
+                        <ArrowRight size={14} />
+                      </>
+                    )}
                   </button>
 
                   <p className="font-body text-[11px] text-[#1A1A18]/40 text-center mt-4 leading-relaxed">

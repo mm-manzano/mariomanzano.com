@@ -117,7 +117,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-6">
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
@@ -147,7 +147,7 @@ export default function Navigation() {
               ))}
               
               {/* Language Toggle */}
-              <div className={`flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-current pl-8 ml-4 ${
+              <div className={`flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-current pl-4 ml-2 ${
                 scrolled || !isHome ? "text-[#1A1A18]" : "text-white/90"
               }`}>
                 <button

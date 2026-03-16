@@ -44,7 +44,7 @@ export default function HomeValueES() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/submit-home-value", {
+      const response = await fetch("/api/home-value", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

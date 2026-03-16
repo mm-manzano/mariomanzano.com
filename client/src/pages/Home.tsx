@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
       {/* ─── HERO ──────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen md:h-screen flex items-start overflow-hidden">
+      <section className="relative md:h-screen flex items-start overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -97,13 +97,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 right-8 z-10 flex flex-col items-center gap-2 opacity-60">
-          <span className="font-body text-[9px] tracking-[0.2em] uppercase text-white rotate-90 origin-center mb-4">
-            Scroll
-          </span>
-          <ChevronDown size={16} className="text-white animate-bounce" />
-        </div>
+
       </section>
 
       {/* ─── INTRO STRIP ─────────────────────────────────────────────── */}

@@ -80,13 +80,7 @@ export default function Navigation() {
 
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || !isHome
-            ? "bg-[#F8F5F0]/95 backdrop-blur-sm border-b border-[#E8E0D5] shadow-sm"
-            : "bg-transparent"
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F5F0]/95 backdrop-blur-sm border-b border-[#E8E0D5] shadow-sm">
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo and Wordmark */}
@@ -99,16 +93,12 @@ export default function Navigation() {
                 />
                 <div className="flex flex-col leading-none">
                   <span
-                    className={`font-display text-lg md:text-xl font-light tracking-[0.04em] transition-colors duration-300 ${
-                      scrolled || !isHome ? "text-[#1A1A18]" : "text-white"
-                    }`}
+                    className="font-display text-lg md:text-xl font-light tracking-[0.04em] text-[#1A1A18]"
                   >
                     Mario Manzano
                   </span>
                   <span
-                    className={`font-body text-[8px] tracking-[0.2em] uppercase mt-0.5 transition-colors duration-300 ${
-                      scrolled || !isHome ? "text-[#B8974A]" : "text-[#D4B878]"
-                    }`}
+                    className="font-body text-[8px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A]"
                   >
                     Austin Realtor | Seller Strategy
                   </span>
@@ -117,7 +107,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6 flex-wrap justify-center">
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
@@ -147,16 +137,12 @@ export default function Navigation() {
               ))}
               
               {/* Language Toggle */}
-              <div className={`flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-current pl-4 ml-2 ${
-                scrolled || !isHome ? "text-[#1A1A18]" : "text-white/90"
-              }`}>
+              <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] pl-4 ml-2 text-[#1A1A18]">
                 <button
                   onClick={() => handleLanguageChange("en")}
                   className={`transition-colors duration-300 ${
                     language === "en"
-                      ? scrolled || !isHome
-                        ? "text-[#B8974A]"
-                        : "text-[#D4B878]"
+                      ? "text-[#B8974A]"
                       : "opacity-50 hover:opacity-100"
                   }`}
                 >
@@ -167,9 +153,7 @@ export default function Navigation() {
                   onClick={() => handleLanguageChange("es")}
                   className={`transition-colors duration-300 ${
                     language === "es"
-                      ? scrolled || !isHome
-                        ? "text-[#B8974A]"
-                        : "text-[#D4B878]"
+                      ? "text-[#B8974A]"
                       : "opacity-50 hover:opacity-100"
                   }`}
                 >
@@ -178,13 +162,7 @@ export default function Navigation() {
               </div>
 
               <Link href={language === "es" ? "/es/contacto" : "/contact"}>
-                <span
-                  className={`btn-luxury text-[10px] py-2.5 px-5 transition-all duration-300 ${
-                    scrolled || !isHome
-                      ? ""
-                      : "bg-white/10 border-white/60 text-white hover:bg-white hover:text-[#1A1A18]"
-                  }`}
-                >
+                <span className="btn-luxury text-[10px] py-2.5 px-5">
                   {language === "es" ? "Agendar Consulta" : "Book Consultation"}
                 </span>
               </Link>
@@ -192,9 +170,7 @@ export default function Navigation() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className={`md:hidden p-2 transition-colors duration-300 ${
-                scrolled || !isHome ? "text-[#1A1A18]" : "text-white"
-              }`}
+              className="md:hidden p-2 text-[#1A1A18]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >

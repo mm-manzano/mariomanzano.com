@@ -6,7 +6,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Phone, Mail, Instagram, Clock, MapPin } from "lucide-react";
+import { ArrowRight, Phone, Mail, Instagram, Clock, MapPin, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
 const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
@@ -36,10 +37,39 @@ export default function ContactoES() {
     name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/submit-contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          address: form.address,
+          topic: form.topic,
+          message: form.message,
+          timeline: form.timeline,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        toast.success("¡Gracias! Tu mensaje ha sido recibido.");
+      } else {
+        toast.error("Error al enviar. Por favor intenta de nuevo.");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("Ocurrió un error. Por favor intenta de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -264,9 +294,18 @@ export default function ContactoES() {
                       />
                     </div>
 
-                    <button type="submit" className="btn-luxury w-full justify-center text-center">
-                      Enviar Mi Solicitud
-                      <ArrowRight size={14} />
+                    <button type="submit" disabled={loading} className="btn-luxury w-full justify-center text-center disabled:opacity-50 disabled:cursor-not-allowed">
+                      {loading ? (
+                        <>
+                          <Loader2 size={14} className="animate-spin" />
+                          Enviando...
+                        </>
+                      ) : (
+                        <>
+                          Enviar Mi Solicitud
+                          <ArrowRight size={14} />
+                        </>
+                      )}
                     </button>
 
                     <p className="font-body text-[11px] text-[#1A1A18]/40 text-center mt-4 leading-relaxed">

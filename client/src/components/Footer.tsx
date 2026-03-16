@@ -85,14 +85,6 @@ export default function Footer() {
                 <Facebook size={14} />
                 Facebook
               </a>
-              <a
-                href="https://mariomanzano.exprealty.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 font-body text-sm text-white/70 hover:text-[#B8974A] transition-colors duration-300 mt-2"
-              >
-                Search Homes
-              </a>
             </div>
             <div className="mt-6">
               <div className="text-[10px] tracking-[0.15em] uppercase text-white/40 mb-1 font-body">

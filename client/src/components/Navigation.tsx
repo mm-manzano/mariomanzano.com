@@ -11,14 +11,18 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "Home Value", href: "/home-value" },
   { label: "Homeowner Guide", href: "/homeowner-guide" },
+  { label: "Search Homes", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 const navLinksES = [
+  { label: "Inicio", href: "/es" },
   { label: "Valor de Casa", href: "/es/valor-de-casa" },
   { label: "Guía para Propietarios", href: "/es/guia-para-propietarios" },
+  { label: "Buscar Casas", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "Acerca", href: "/es/acerca" },
   { label: "Contacto", href: "/es/contacto" },
 ];
@@ -115,17 +119,31 @@ export default function Navigation() {
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
               {(isSpanish ? navLinksES : navLinks).map((link) => (
-  <Link key={link.href} to={link.href}>
-  <span
-    className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
-      scrolled || isHome
-        ? "text-[#1A1A18]"
-        : "text-[#1A1A18]"
-    }`}
-  >
-    {link.label}
-  </span>
-</Link>
+                link.external ? (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                    <span
+                      className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+                        scrolled || isHome
+                          ? "text-[#1A1A18]"
+                          : "text-[#1A1A18]"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  </a>
+                ) : (
+                  <Link key={link.href} to={link.href}>
+                    <span
+                      className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+                        scrolled || isHome
+                          ? "text-[#1A1A18]"
+                          : "text-[#1A1A18]"
+                      }`}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                )
               ))}
               
               {/* Language Toggle */}
@@ -195,14 +213,25 @@ export default function Navigation() {
         <div className="container flex flex-col h-full pt-24 pb-12">
           <nav className="flex flex-col gap-8 flex-1">
             {(isSpanish ? navLinksES : navLinks).map((link, i) => (
-              <Link key={link.href} to={link.href}>
-                <span
-                  className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
-                  style={{ transitionDelay: `${i * 60}ms` }}
-                >
-                  {link.label}
-                </span>
-              </Link>
+              link.external ? (
+                <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                  <span
+                    className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
+                    style={{ transitionDelay: `${i * 60}ms` }}
+                  >
+                    {link.label}
+                  </span>
+                </a>
+              ) : (
+                <Link key={link.href} to={link.href}>
+                  <span
+                    className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
+                    style={{ transitionDelay: `${i * 60}ms` }}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              )
             ))}
           </nav>
 

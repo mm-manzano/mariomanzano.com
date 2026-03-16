@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
       {/* ─── HERO ──────────────────────────────────────────────────── */}
-      <section className="relative h-screen md:h-screen flex items-start overflow-hidden">
+      <section className="relative min-h-screen md:h-screen flex items-start overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img

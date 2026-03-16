@@ -65,7 +65,7 @@ export default function HomeES() {
         {/* Hero Content */}
         <div className="relative z-10 container py-16 md:py-0 md:pt-32 lg:pt-40 md:pb-16 lg:pb-24">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
                 BIENES RAÍCES EN CEDAR PARK Y LEANDER

@@ -100,14 +100,16 @@ export default function Navigation() {
                   <span
                     className="font-body text-[8px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A]"
                   >
-                    Austin Realtor | Seller Strategy
+                    {isSpanish ? "Agente Inmobiliario | Estrategia de Venta" : "Austin Realtor | Seller Strategy"}
                   </span>
                 </div>
               </div>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-6 flex-wrap justify-center">
+            <nav className={`hidden md:flex items-center flex-wrap justify-center ${
+              isSpanish ? "gap-3" : "gap-6"
+            }`}>
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
@@ -137,7 +139,9 @@ export default function Navigation() {
               ))}
               
               {/* Language Toggle */}
-              <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] pl-4 ml-2 text-[#1A1A18]">
+              <div className={`flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] ${
+                isSpanish ? "pl-2 ml-1" : "pl-4 ml-2"
+              }`}>
                 <button
                   onClick={() => handleLanguageChange("en")}
                   className={`transition-colors duration-300 ${
@@ -162,7 +166,9 @@ export default function Navigation() {
               </div>
 
               <Link href={language === "es" ? "/es/contacto" : "/contact"}>
-                <span className="btn-luxury text-[10px] py-2.5 px-5">
+                <span className={`btn-luxury text-[10px] py-2.5 ${
+                  isSpanish ? "px-3" : "px-5"
+                }`}>
                   {language === "es" ? "Agendar Consulta" : "Book Consultation"}
                 </span>
               </Link>

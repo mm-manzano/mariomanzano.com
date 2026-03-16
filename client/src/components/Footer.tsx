@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-[#1A1A18] text-[#F8F5F0]">
       <div className="container py-16 md:py-20">
         {/* Top Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 pb-12 border-b border-white/10">
           {/* Brand */}
           <div>
             <div className="font-display text-2xl font-light tracking-wide mb-2">
@@ -24,27 +24,6 @@ export default function Footer() {
             <p className="font-body text-sm text-white/60 leading-relaxed max-w-xs">
               Helping Cedar Park & Leander homeowners develop clear strategy around selling, remodeling, renting, or holding.
             </p>
-          </div>
-
-          {/* Navigation */}
-          <div>
-            <div className="text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-5 font-body">
-              Navigate
-            </div>
-            <nav className="flex flex-col gap-3">
-              {[
-                { label: "Home Value", href: "/home-value" },
-                { label: "Homeowner Guide", href: "/homeowner-guide" },
-                { label: "About Mario", href: "/about" },
-                { label: "Book Consultation", href: "/contact" },
-              ].map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <span className="font-body text-sm text-white/70 hover:text-[#B8974A] transition-colors duration-300 block">
-                    {link.label}
-                  </span>
-                </Link>
-              ))}
-            </nav>
           </div>
 
           {/* Contact */}

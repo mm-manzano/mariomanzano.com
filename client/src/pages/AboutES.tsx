@@ -220,14 +220,14 @@ export default function AcercaES() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                quote: "La parte más útil fue entender todas mis opciones antes de tomar cualquier decisión. No me sentí presionado.",
-                name: "Cliente",
-                location: "Cedar Park, TX",
+                quote: "Mario es alguien en quien realmente puedes confiar en bienes raíces. Escucha, es honesto y siempre busca lo mejor para ti. No muchos agentes trabajan de esa manera. Estoy agradecido de tenerlo como mi agente de confianza en Austin.",
+                name: "imVaryn",
+                location: "",
               },
               {
-                quote: "Aprecié el análisis claro y honesto. Sin discurso de ventas, solo datos y orientación.",
-                name: "Cliente",
-                location: "Leander, TX",
+                quote: "Mario hizo todo lo posible para ayudarnos a vender nuestra casa. Después de trabajar con otro agente, estábamos dudosos al principio, pero Mario rápidamente demostró que estábamos en buenas manos. Fue organizado, proactivo y logró que vendiéramos por más de lo que nuestro agente anterior esperaba.",
+                name: "Alma S",
+                location: "Austin, TX",
               },
             ].map((t) => (
               <RevealDiv key={t.name} className="border border-white/10 p-8">
@@ -237,7 +237,7 @@ export default function AcercaES() {
                 </p>
                 <div>
                   <div className="font-body text-sm font-medium text-white">{t.name}</div>
-                  <div className="font-body text-xs tracking-wide text-white/40 mt-0.5">{t.location}</div>
+                  {t.location && <div className="font-body text-xs tracking-wide text-white/40 mt-0.5">{t.location}</div>}
                 </div>
               </RevealDiv>
             ))}

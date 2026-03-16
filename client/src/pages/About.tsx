@@ -220,7 +220,12 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                quote: "Mario went above and beyond to help us sell our home. We had a previous realtor we were working with before our son recommended Mario. Hesitant at first, I'm glad I made the decision to meet with Mario because he set a great impression the lead to a positive experience. Well organized and willing to go above and beyond, getting us more money than what our original realtor said we'd get. Never had such a pleasant experience with any realtor like the one we did with Mario.",
+                quote: "Mario is someone you can actually trust in real estate. He listens, he's honest, and he looks out for you. Not many agents operate that way. I'm grateful to have him as my go to in Austin.",
+                name: "imVaryn",
+                location: "",
+              },
+              {
+                quote: "Mario went above and beyond to help us sell our home. After working with another realtor, we were hesitant at first, but Mario quickly proved we were in the right hands. He was organized, proactive, and helped us sell for more than our previous realtor expected.",
                 name: "Alma S",
                 location: "Austin, TX",
               },
@@ -232,7 +237,7 @@ export default function About() {
                 </p>
                 <div>
                   <div className="font-body text-sm font-medium text-white">{t.name}</div>
-                  <div className="font-body text-xs tracking-wide text-white/40 mt-0.5">{t.location}</div>
+                  {t.location && <div className="font-body text-xs tracking-wide text-white/40 mt-0.5">{t.location}</div>}
                 </div>
               </RevealDiv>
             ))}

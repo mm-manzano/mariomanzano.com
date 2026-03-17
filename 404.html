@@ -2,7 +2,11 @@
 <html>
 <head>
 <script>
-window.location.replace("/homeowner-guide/");
+// Don't redirect API requests
+if (!location.pathname.startsWith('/api/')) {
+  sessionStorage.redirect = location.pathname;
+  location.replace("/");
+}
 </script>
 </head>
 <body></body>

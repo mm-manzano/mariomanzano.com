@@ -1,4 +1,4 @@
-import axios from 'axios';
+const axios = require('axios');
 
 async function submitToBoldTrail(leadData) {
   const boldtrailToken = process.env.BOLDTRAIL_API_TOKEN;
@@ -21,7 +21,7 @@ async function submitToBoldTrail(leadData) {
   return response.data;
 }
 
-export default async (req, res) => {
+module.exports = async (req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');

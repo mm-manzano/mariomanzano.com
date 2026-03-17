@@ -4,5 +4,16 @@
   "framework": "vite",
   "env": {
     "BOLDTRAIL_API_TOKEN": "@boldtrail_api_token"
+  },
+  "functions": {
+    "api/home-value.js": {
+      "runtime": "nodejs18.x"
+    },
+    "api/contact.js": {
+      "runtime": "nodejs18.x"
+    },
+    "api/consultation.js": {
+      "runtime": "nodejs18.x"
+    }
   }
 }

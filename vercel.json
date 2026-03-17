@@ -6,7 +6,7 @@
     "BOLDTRAIL_API_TOKEN": "@boldtrail_api_token"
   },
   "functions": {
-    "api/*.ts": {
+    "api/*.js": {
       "runtime": "nodejs18.x",
       "memory": 1024,
       "maxDuration": 30

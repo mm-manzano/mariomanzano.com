@@ -1,7 +1,6 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
 import axios from 'axios';
 
-async function submitToBoldTrail(leadData: any) {
+async function submitToBoldTrail(leadData) {
   const boldtrailToken = process.env.BOLDTRAIL_API_TOKEN;
   if (!boldtrailToken) {
     console.error("BoldTrail API token not configured");
@@ -22,7 +21,18 @@ async function submitToBoldTrail(leadData: any) {
   return response.data;
 }
 
-export default async (req: VercelRequest, res: VercelResponse) => {
+export default async (req, res) => {
+  // Enable CORS
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -53,7 +63,7 @@ export default async (req: VercelRequest, res: VercelResponse) => {
     console.log(`Lead created in BoldTrail: ${name} (${email}) - Home Value`);
 
     res.json({ success: true, message: "Thank you. Your home value request has been received. I will review your property and send your report shortly." });
-  } catch (error: any) {
+  } catch (error) {
     console.error("BoldTrail API error:", error.response?.data || error.message);
     res.status(500).json({ error: "Failed to submit request. Please try again." });
   }

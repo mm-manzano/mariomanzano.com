@@ -1,7 +1,12 @@
 {
-  "buildCommand": "cd client && pnpm install && pnpm run build",
-  "outputDirectory": "client/dist",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist",
   "env": {
     "BOLDTRAIL_API_TOKEN": "@boldtrail_api_token"
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs18.x"
+    }
   }
 }

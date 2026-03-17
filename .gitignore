@@ -3,7 +3,6 @@
 .pnpm-store/
 
 # Build outputs
-dist/
 build/
 *.dist
 
@@ -107,4 +106,3 @@ temp/
 
 # Webdev artifacts (checkpoint zips, migrations, etc.)
 .webdev/
-dist/

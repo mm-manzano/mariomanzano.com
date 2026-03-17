@@ -1,7 +1,4 @@
 {
-  "routes": [
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/(.*\\..*)", "dest": "/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist"
 }

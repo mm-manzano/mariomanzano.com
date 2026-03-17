@@ -5,8 +5,20 @@
     "BOLDTRAIL_API_TOKEN": "@boldtrail_api_token"
   },
   "functions": {
-    "api/**/*.ts": {
+    "api/home-value.ts": {
+      "runtime": "nodejs18.x"
+    },
+    "api/contact.ts": {
+      "runtime": "nodejs18.x"
+    },
+    "api/consultation.ts": {
       "runtime": "nodejs18.x"
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ]
 }

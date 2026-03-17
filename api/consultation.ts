@@ -1,6 +1,7 @@
-const axios = require('axios');
+import { VercelRequest, VercelResponse } from '@vercel/node';
+import axios from 'axios';
 
-async function submitToBoldTrail(leadData) {
+async function submitToBoldTrail(leadData: any) {
   const boldtrailToken = process.env.BOLDTRAIL_API_TOKEN;
   if (!boldtrailToken) {
     console.error("BoldTrail API token not configured");
@@ -21,7 +22,7 @@ async function submitToBoldTrail(leadData) {
   return response.data;
 }
 
-module.exports = async (req, res) => {
+export default async (req: VercelRequest, res: VercelResponse) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -38,7 +39,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { name, email, phone, address, topic, message, timeline } = req.body;
+    const { name, email, phone, address, timeline, message } = req.body;
 
     // Validate required fields
     if (!name || !email) {
@@ -55,19 +56,19 @@ module.exports = async (req, res) => {
       email: email,
       phone: phone || undefined,
       address: address || undefined,
-      lead_source: "Website - Contact Form",
-      notes: `Topic: ${topic || "Not specified"}\nMessage: ${message || "No message"}\nTimeline: ${timeline || "Not specified"}\nSubmitted via: Mario Manzano Website - Contact Form`
+      lead_source: "Website - Book Consultation",
+      notes: `Timeline: ${timeline || "Not specified"}\nMessage: ${message || "No message"}\nSubmitted via: Mario Manzano Website - Book Consultation`
     };
 
     // Remove undefined fields
     Object.keys(leadData).forEach(key => leadData[key] === undefined && delete leadData[key]);
 
     await submitToBoldTrail(leadData);
-    console.log(`Lead created in BoldTrail: ${name} (${email}) - Contact Form`);
+    console.log(`Lead created in BoldTrail: ${name} (${email}) - Book Consultation`);
 
-    res.json({ success: true, message: "Thank you! Your message has been received." });
-  } catch (error) {
+    res.json({ success: true, message: "Thank you! Your consultation request has been received." });
+  } catch (error: any) {
     console.error("BoldTrail API error:", error.response?.data || error.message);
-    res.status(500).json({ error: "Failed to submit contact. Please try again." });
+    res.status(500).json({ error: "Failed to submit consultation request. Please try again." });
   }
 };

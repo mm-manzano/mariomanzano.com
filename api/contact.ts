@@ -1,6 +1,7 @@
-const axios = require('axios');
+import { VercelRequest, VercelResponse } from '@vercel/node';
+import axios from 'axios';
 
-async function submitToBoldTrail(leadData) {
+async function submitToBoldTrail(leadData: any) {
   const boldtrailToken = process.env.BOLDTRAIL_API_TOKEN;
   if (!boldtrailToken) {
     console.error("BoldTrail API token not configured");
@@ -21,7 +22,7 @@ async function submitToBoldTrail(leadData) {
   return response.data;
 }
 
-module.exports = async (req, res) => {
+export default async (req: VercelRequest, res: VercelResponse) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -38,10 +39,10 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { name, propertyAddress, email, phone, timeline } = req.body;
+    const { name, email, phone, address, topic, message, timeline } = req.body;
 
     // Validate required fields
-    if (!name || !propertyAddress || !email || !phone) {
+    if (!name || !email) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
@@ -53,18 +54,21 @@ module.exports = async (req, res) => {
       first_name: firstName,
       last_name: lastName,
       email: email,
-      phone: phone,
-      address: propertyAddress,
-      lead_source: "Website - Home Value Request",
-      notes: `Property Address: ${propertyAddress}\nSelling Timeline: ${timeline || "Not specified"}\nSubmitted via: Mario Manzano Website - Home Value Form`
+      phone: phone || undefined,
+      address: address || undefined,
+      lead_source: "Website - Contact Form",
+      notes: `Topic: ${topic || "Not specified"}\nMessage: ${message || "No message"}\nTimeline: ${timeline || "Not specified"}\nSubmitted via: Mario Manzano Website - Contact Form`
     };
 
-    await submitToBoldTrail(leadData);
-    console.log(`Lead created in BoldTrail: ${name} (${email}) - Home Value`);
+    // Remove undefined fields
+    Object.keys(leadData).forEach(key => leadData[key] === undefined && delete leadData[key]);
 
-    res.json({ success: true, message: "Thank you. Your home value request has been received. I will review your property and send your report shortly." });
-  } catch (error) {
+    await submitToBoldTrail(leadData);
+    console.log(`Lead created in BoldTrail: ${name} (${email}) - Contact Form`);
+
+    res.json({ success: true, message: "Thank you! Your message has been received." });
+  } catch (error: any) {
     console.error("BoldTrail API error:", error.response?.data || error.message);
-    res.status(500).json({ error: "Failed to submit request. Please try again." });
+    res.status(500).json({ error: "Failed to submit contact. Please try again." });
   }
 };

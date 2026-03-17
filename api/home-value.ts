@@ -1,6 +1,7 @@
-const axios = require('axios');
+import { VercelRequest, VercelResponse } from '@vercel/node';
+import axios from 'axios';
 
-async function submitToBoldTrail(leadData) {
+async function submitToBoldTrail(leadData: any) {
   const boldtrailToken = process.env.BOLDTRAIL_API_TOKEN;
   if (!boldtrailToken) {
     console.error("BoldTrail API token not configured");
@@ -21,7 +22,7 @@ async function submitToBoldTrail(leadData) {
   return response.data;
 }
 
-module.exports = async (req, res) => {
+export default async (req: VercelRequest, res: VercelResponse) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -38,10 +39,10 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { name, email, phone, address, timeline, message } = req.body;
+    const { name, propertyAddress, email, phone, timeline } = req.body;
 
     // Validate required fields
-    if (!name || !email) {
+    if (!name || !propertyAddress || !email || !phone) {
       return res.status(400).json({ error: "Missing required fields" });
     }
 
@@ -53,21 +54,18 @@ module.exports = async (req, res) => {
       first_name: firstName,
       last_name: lastName,
       email: email,
-      phone: phone || undefined,
-      address: address || undefined,
-      lead_source: "Website - Book Consultation",
-      notes: `Timeline: ${timeline || "Not specified"}\nMessage: ${message || "No message"}\nSubmitted via: Mario Manzano Website - Book Consultation`
+      phone: phone,
+      address: propertyAddress,
+      lead_source: "Website - Home Value Request",
+      notes: `Property Address: ${propertyAddress}\nSelling Timeline: ${timeline || "Not specified"}\nSubmitted via: Mario Manzano Website - Home Value Form`
     };
 
-    // Remove undefined fields
-    Object.keys(leadData).forEach(key => leadData[key] === undefined && delete leadData[key]);
-
     await submitToBoldTrail(leadData);
-    console.log(`Lead created in BoldTrail: ${name} (${email}) - Book Consultation`);
+    console.log(`Lead created in BoldTrail: ${name} (${email}) - Home Value`);
 
-    res.json({ success: true, message: "Thank you! Your consultation request has been received." });
-  } catch (error) {
+    res.json({ success: true, message: "Thank you. Your home value request has been received. I will review your property and send your report shortly." });
+  } catch (error: any) {
     console.error("BoldTrail API error:", error.response?.data || error.message);
-    res.status(500).json({ error: "Failed to submit consultation request. Please try again." });
+    res.status(500).json({ error: "Failed to submit request. Please try again." });
   }
 };

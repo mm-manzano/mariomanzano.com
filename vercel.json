@@ -6,13 +6,13 @@
     "BOLDTRAIL_API_TOKEN": "@boldtrail_api_token"
   },
   "functions": {
-    "api/home-value.js": {
+    "api/home-value.ts": {
       "runtime": "nodejs18.x"
     },
-    "api/contact.js": {
+    "api/contact.ts": {
       "runtime": "nodejs18.x"
     },
-    "api/consultation.js": {
+    "api/consultation.ts": {
       "runtime": "nodejs18.x"
     }
   }

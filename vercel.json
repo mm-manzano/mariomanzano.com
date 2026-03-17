@@ -1,7 +1,6 @@
 {
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist",
-  "framework": "vite",
   "env": {
     "BOLDTRAIL_API_TOKEN": "@boldtrail_api_token"
   },

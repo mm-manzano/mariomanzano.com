@@ -1,7 +1,7 @@
 /*
- * DESIGN: Quiet Luxury Editorial - Acerca Page
- * Goal: Build trust and personal connection with Mario's brand positioning
- * Sections: Hero, Story, Philosophy, Credentials, Values, CTA
+ * DESIGN: Quiet Luxury Editorial - About Page (Spanish)
+ * Goal: Personal, real, based on lived experience
+ * Sections: Intro, How It Started, Real Experience, Approach, Family, How I Work, Close
  */
 
 import { useEffect, useRef } from "react";
@@ -9,11 +9,8 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
-const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
+const MARIO_HEADSHOT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg";
 const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
-
-// Mario's headshot from the live site (circular crop)
-const MARIO_HEADSHOT = "https://mariomanzano.com/images/avatar.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,10 +32,10 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
   return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
-export default function AcercaES() {
+export default function AboutES() {
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
+      {/* SECTION 1: INTRO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
@@ -63,59 +60,121 @@ export default function AcercaES() {
         </div>
       </section>
 
-      {/* ─── STORY ─────────────────────────────────────────────────── */}
+      {/* SECTION 2: HOW IT STARTED */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Image */}
             <RevealDiv>
               <div className="relative">
-                {/* Try to load Mario's actual headshot, fallback to interior */}
                 <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
                   <img
-                    src={INTERIOR_IMG}
-                    alt="Oficina de Mario Manzano"
+                    src={MARIO_HEADSHOT}
+                    alt="Mario Manzano"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = INTERIOR_IMG;
-                    }}
                   />
                 </div>
-
               </div>
             </RevealDiv>
 
-            {/* Text */}
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01. Mi Historia</span>
+                <span className="section-number">01. Cómo Empezó</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
-                Ayudo a propietarios a<br />
-                desarrollar <em className="italic">estrategia de venta.</em>
+                De la deuda a<br />
+                <em className="italic">bienes raíces.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Con frecuencia, los propietarios se sienten presionados a tomar una decisión rápida sin entender completamente sus opciones. Quería crear un tipo diferente de conversación enfocada en la claridad y tus intereses, no en cerrar una transacción.
+                Encontré a Dave Ramsey mientras estaba miles de dólares en deuda. Eso lo cambió todo. Me comprometí a salir de la deuda, vendí cosas que no necesitaba, ahorré agresivamente y cambié cómo pensaba sobre el dinero.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Como REALTOR® licenciado y Estratega de Ventas, trabajo con propietarios en Cedar Park y Leander para explorar todas sus opciones: vender, remodelar, alquilar o mantener. Mi rol es proporcionar análisis honesto y orientación para que puedas tomar la decisión correcta para tu situación.
+                Una vez que salí de la deuda, comencé a investigar bienes raíces. Pasé tiempo en BiggerPockets, leí libros y aprendí cómo la gente realmente construye riqueza. Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante fue que me llevó a invertir en bienes raíces yo mismo.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                Conozco bien estos vecindarios y entiendo cómo las condiciones del mercado local, los distritos escolares y las tendencias estacionales afectan los valores de las propiedades y la demanda de compradores.
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Los bienes raíces siempre han estado alrededor de mí. Mis padres y hermanos son todos propietarios de inmuebles.
               </p>
-              <div className="border-l-2 border-[#B8974A] pl-6 mb-8">
-                <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed">
-                  "Mi objetivo es que salgas de cada conversación sintiéndote más confiado, no más presionado."
+            </RevealDiv>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3: REAL EXPERIENCE */}
+      <section className="py-20 md:py-32 bg-[#1A1A18]">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" style={{ background: "#D4B878" }} />
+              <span className="section-number text-[#D4B878]">02. Experiencia Real</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-12 max-w-2xl">
+              He vivido a través de<br />
+              <em className="italic">las decisiones.</em>
+            </h2>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+            <RevealDiv delay={100}>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                No solo aprendí bienes raíces de cursos. He tenido que tomar las decisiones yo mismo.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                He comprado y vendido propiedades, comprado deals de mayoristas y volteado terrenos. He tomado proyectos como demoler una propiedad y vender el terreno, e incluso planificar una construcción nueva que actualmente está en espera porque, con las tasas de hoy, los números simplemente no tienen sentido.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                Mi esposa y yo construimos y operamos un Airbnb. Lo renovamos y amueblamos nosotros mismos y nos convertimos en anfitriones de 5 estrellas. Cuando dejó de funcionar, lo cerramos y pasamos al alquiler a largo plazo, que funcionó mejor.
+              </p>
+            </RevealDiv>
+
+            <RevealDiv delay={200}>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                He hecho renovaciones de vivienda, poseído alquileres y he sido propietario durante aproximadamente una década. También he usado préstamos DSCR en mis propias inversiones, así que entiendo cómo se evalúan los deals basados en el desempeño de la propiedad, no solo en los ingresos personales.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                Estas no fueron solo ideas. Fueron decisiones reales que afectaron mi tiempo, mi dinero y mi familia.
+              </p>
+            </RevealDiv>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: APPROACH */}
+      <section className="py-20 md:py-32">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">03. Mi Enfoque</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+              Vender no siempre es<br />
+              <em className="italic">la mejor opción.</em>
+            </h2>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+            <RevealDiv delay={100}>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+                La mayoría de las personas se sienten presionadas a tomar una decisión rápida sobre su hogar. No están seguros de cuáles son sus opciones. No tienen números claros. Así que se apresuran.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Ayudo a las personas a pensar en sus decisiones en lugar de presionarlas. Mantener puede crear más valor que vender. Alquilar puede tener más sentido que vender. Mejorar la propiedad primero puede cambiarlo todo.
+              </p>
+            </RevealDiv>
+
+            <RevealDiv delay={200}>
+              <div className="border-l-2 border-[#B8974A] pl-6">
+                <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed mb-4">
+                  "El mejor consejo que puedo dar a veces es esperar. O mantener. O mejorar la propiedad primero. Lo que tenga sentido para tu situación."
                 </p>
-                <p className="font-body text-sm text-[#1A1A18]/50 mt-2">Mario Manzano</p>
+                <p className="font-body text-sm text-[#1A1A18]/50">Mario Manzano</p>
               </div>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── PHILOSOPHY ────────────────────────────────────────────── */}
+      {/* SECTION 5: FAMILY */}
       <section
         className="py-20 md:py-28 relative"
         style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover" }}
@@ -123,148 +182,139 @@ export default function AcercaES() {
         <div className="absolute inset-0 bg-[#F8F5F0]/90" />
         <div className="relative z-10 container">
           <RevealDiv>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">02. Mi Filosofía</span>
+              <span className="section-number">04. Familia</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-xl">
-              Cuatro principios que guían<br />
-              <em className="italic">cada relación con clientes.</em>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+              Casado con<br />
+              <em className="italic">dos hijos.</em>
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E0D5]">
-            {[
-              {
-                num: "01",
-                title: "Claridad Antes de Actuar",
-                desc: "Antes de hablar sobre listar, preparar o fijar precios, quiero que entiendas exactamente con qué estás trabajando. Tu equidad, tu mercado, tus opciones. Claridad primero.",
-              },
-              {
-                num: "02",
-                title: "Tu Cronograma Importa",
-                desc: "Tu cronograma de decisión es lo que más importa. Ya sea que estés listo para mudarte en tres meses o quieras explorar opciones durante el próximo año, trabajaremos a tu ritmo.",
-              },
-              {
-                num: "03",
-                title: "Decisiones Basadas en Datos",
-                desc: "Tu decisión debe basarse en información sólida. Traigo los datos: ventas comparables, tasas de absorción del mercado, patrones de demanda de compradores. Esto te da una base realista para tu decisión.",
-              },
-              {
-                num: "04",
-                title: "Orientación Directa",
-                desc: "Si tu casa necesita actualizaciones antes de vender, te lo haré saber. Si el momento del mercado sugiere esperar, compartiré esa perspectiva. Recibes orientación honesta sin presión.",
-              },
-            ].map((item, i) => (
-              <RevealDiv key={item.num} delay={i * 80} className="bg-[#F8F5F0] p-8 md:p-10">
-                <div className="font-display text-5xl font-light text-[#E8E0D5] mb-4">{item.num}</div>
-                <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">{item.desc}</p>
-              </RevealDiv>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+            <RevealDiv delay={100}>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+                Estoy casado con mi amor de la secundaria. Tenemos dos hijos y ahora somos nidos vacíos. Mi hijo hizo un house hack en su primer hogar después de la universidad, lo cual fue una gran experiencia para ambos.
+              </p>
+            </RevealDiv>
+
+            <RevealDiv delay={200}>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Mi hija está estudiando Gestión del Diseño con especialidades en Marketing y Decoración del Hogar. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
+              </p>
+            </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── CREDENTIALS ───────────────────────────────────────────── */}
-      <section className="py-20 md:py-28">
+      {/* SECTION 6: HOW I WORK */}
+      <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03. Credenciales</span>
+              <span className="section-number">05. Cómo Trabajo</span>
             </div>
-            <h2 className="font-display text-4xl font-light text-[#1A1A18] mb-10 max-w-xl">
-              Experiencia que puedes verificar.
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+              Tres principios que<br />
+              <em className="italic">guían todo lo que hago.</em>
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "REALTOR® Licenciado",
-                body: "Miembro activo en buena posición con la Asociación Nacional de REALTORS®.",
-              },
-              {
-                title: "Asesor de Estrategia de Precios (PSA)",
-                body: "Capacitación especializada en análisis de mercado, estrategia de precios y consultoría de vendedores.",
-              },
-              {
-                title: "Miembro, Junta de REALTORS® de Austin (ABOR)",
-                body: "Sirviendo al área metropolitana de Austin con experiencia local del mercado.",
-              },
-              {
-                title: "Miembro, Asociación Nacional de REALTORS® (NAR)",
-                body: "Parte de la organización profesional de bienes raíces más grande de los Estados Unidos.",
-              },
-            ].map((cred, i) => (
-              <RevealDiv key={cred.title} delay={i * 100} className="border-t border-[#E8E0D5] pt-6">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{cred.title}</h3>
-                <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">{cred.body}</p>
-              </RevealDiv>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── TESTIMONIALS ──────────────────────────────────────────── */}
-      <section className="py-20 md:py-24 bg-[#1A1A18]">
-        <div className="container">
-          <RevealDiv>
-            <div className="flex items-center gap-3 mb-10">
-              <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">Lo Que Dicen los Clientes</span>
-            </div>
-          </RevealDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                quote: "Mario es alguien en quien realmente puedes confiar en bienes raíces. Escucha, es honesto y siempre busca lo mejor para ti. No muchos agentes trabajan de esa manera. Estoy agradecido de tenerlo como mi agente de confianza en Austin.",
-                name: "imVaryn",
-                location: "",
-              },
-              {
-                quote: "Mario hizo todo lo posible para ayudarnos a vender nuestra casa. Después de trabajar con otro agente, estábamos dudosos al principio, pero Mario rápidamente demostró que estábamos en buenas manos. Fue organizado, proactivo y logró que vendiéramos por más de lo que nuestro agente anterior esperaba.",
-                name: "Alma S",
-                location: "Austin, TX",
-              },
-            ].map((t) => (
-              <RevealDiv key={t.name} className="border border-white/10 p-8">
-                <div className="font-display text-4xl text-[#B8974A]/30 mb-3 leading-none">"</div>
-                <p className="font-display text-xl font-light text-white italic leading-relaxed mb-6">
-                  {t.quote}
-                </p>
-                <div>
-                  <div className="font-body text-sm font-medium text-white">{t.name}</div>
-                  {t.location && <div className="font-body text-xs tracking-wide text-white/40 mt-0.5">{t.location}</div>}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+            <RevealDiv delay={100}>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#B8974A] text-white font-display text-lg font-light">
+                    1
+                  </div>
                 </div>
-              </RevealDiv>
-            ))}
+                <div>
+                  <h3 className="font-display text-lg font-light text-[#1A1A18] mb-2">Claridad Sobre Presión</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    Quiero que entiendas exactamente qué tienes, cuál es tu mercado y cuáles son tus opciones. Claridad primero.
+                  </p>
+                </div>
+              </div>
+            </RevealDiv>
+
+            <RevealDiv delay={150}>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#B8974A] text-white font-display text-lg font-light">
+                    2
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-light text-[#1A1A18] mb-2">Compensaciones Sobre Opiniones</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    Cada opción tiene compensaciones. Vender, alquilar, mejorar o esperar. Quiero que las entiendas todas.
+                  </p>
+                </div>
+              </div>
+            </RevealDiv>
+
+            <RevealDiv delay={200}>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#B8974A] text-white font-display text-lg font-light">
+                    3
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-light text-[#1A1A18] mb-2">El Tiempo Importa</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    Tu cronograma es lo que importa. Trabajaremos al tuyo, no al mío.
+                  </p>
+                </div>
+              </div>
+            </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── CTA ───────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28">
-        <div className="container text-center">
+      {/* SECTION 7: CREDENTIALS */}
+      <section className="py-20 md:py-32 bg-[#1A1A18]">
+        <div className="container">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-xl mx-auto">
-              ¿Listo para una conversación real sobre tu casa?
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" style={{ background: "#D4B878" }} />
+              <span className="section-number text-[#D4B878]">06. Credenciales</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+              Licenciado, pero<br />
+              <em className="italic">no perfecto.</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
-              Sin presión. Sin discurso de ventas. Solo una conversación honesta sobre tus opciones.
+            <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
+              Soy un REALTOR® licenciado en Texas, miembro de la Asociación Nacional de REALTORS® y la Asociación de REALTORS® de Austin. He trabajado con docenas de clientes en el área de Austin. He aprendido qué funciona y qué no.
+            </p>
+            <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl">
+              Pero lo más importante es que he vivido estas decisiones yo mismo. Eso me da empatía. Eso me da perspectiva. Y eso me hace mejor para mis clientes.
+            </p>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* SECTION 8: CLOSE */}
+      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#1A1A18]/85" />
+        </div>
+        <div className="relative z-10 container text-center">
+          <RevealDiv>
+            <h2 className="font-display text-4xl md:text-6xl font-light text-white mb-6 max-w-2xl mx-auto">
+              Entendiendo tu situación.
+            </h2>
+            <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
+              Una consulta donde revisamos tu hogar, tus opciones y qué tiene sentido para tu situación específica.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/es/contacto">
-                <span className="btn-luxury inline-flex items-center gap-3">
-                  Agenda una Consulta Gratuita
+              <Link href="/contacto">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+                  Programar una Consulta
                   <ArrowRight size={14} />
-                </span>
-              </Link>
-              <Link href="/es/valor-de-casa">
-                <span className="btn-luxury-outline inline-flex items-center gap-3">
-                  Obtén Mi Valor de Casa
                 </span>
               </Link>
             </div>

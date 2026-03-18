@@ -92,7 +92,7 @@ export default function About() {
                 Once I got out of debt, I started researching real estate. I spent time on BiggerPockets, read books, and learned how people actually build wealth. That research led me to get licensed as a REALTOR. But more importantly, it led me to actually invest in real estate myself.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Real estate wasn't new to my family. My parents and siblings are all landlords. So when I got into it, I had examples around me of how to do it right.
+                Real estate has always been around me. My parents and siblings are all landlords.
               </p>
             </RevealDiv>
           </div>
@@ -116,19 +116,22 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I've wholesaled a property. I've built and run an Airbnb with my wife, furnished it, and became a 5-star host. When it wasn't sustainable anymore, I shut it down and moved into long-term renting, which performed better.
+                I didn't just learn real estate from courses. I've had to make the decisions myself.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                I've wholesaled properties, bought deals from wholesalers, and flipped land. I've taken on projects like demoing a property and selling the land, and even planning a new build that's currently on hold because, with today's rates, the numbers just don't make sense.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                I've done live-in flips. I've held rentals. I've been a landlord for about a decade. These weren't transactions on paper. They were decisions that affected my family, my cash flow, and my time.
+                My wife and I built and ran an Airbnb. We renovated and furnished it ourselves and became a 5-star host. When it stopped performing, we shut it down and moved to long-term renting, which worked better.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I've had to decide whether to sell, rent, or hold based on real numbers and real life. I've felt the pressure of bad decisions and the relief of good ones. I've learned what works and what doesn't.
+                I've done live-in flips, owned rentals, and been a landlord for about a decade. I've also used DSCR loans in my own investing, so I understand how deals are evaluated based on the property's performance, not just personal income.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                That's why I can talk to homeowners about their options without pushing them toward a sale. I've been on both sides of these decisions. I know what they're thinking about because I've thought about it too.
+                These weren't just ideas. These were real decisions that affected my time, my money, and my family.
               </p>
             </RevealDiv>
           </div>
@@ -192,13 +195,13 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-                My wife and I have two kids. We're now empty nesters. I helped my son house hack his first home, which was a great experience for both of us. He's learning what it means to build wealth through real estate.
+                I'm married to my high school sweetheart. We have two kids and are now empty nesters. My son house hacked his first home after college, which was a great experience for both of us.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                My daughter is graduating in interior design and planning to join real estate. So real estate isn't just my work. It's part of our family's life and future.
+                My daughter is studying Design Management with minors in Marketing and Home Furnishings. Real estate is part of our family's life, not just my work.
               </p>
             </RevealDiv>
           </div>

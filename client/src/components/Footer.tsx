@@ -22,7 +22,7 @@ export default function Footer() {
               Seller Strategist
             </div>
             <p className="font-body text-sm text-white/60 leading-relaxed max-w-xs">
-              Helping Cedar Park & Leander homeowners develop clear strategy around selling, remodeling, renting, or holding.
+              Helping homeowners across the Austin area develop a clear strategy around selling, remodeling, renting, or holding.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function Footer() {
                 Serving
               </div>
               <div className="font-body text-sm text-white/60">
-                Cedar Park · Leander · Austin, TX
+                Austin Area · Cedar Park · Leander
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ export default function Footer() {
             </p>
           </div>
           <p className="font-body text-xs text-white/30">
-            Seller Strategy for Cedar Park & Leander
+            Seller Strategy for the Austin Area
           </p>
         </div>
       </div>

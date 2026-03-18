@@ -70,7 +70,7 @@ export default function Home() {
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                CEDAR PARK & LEANDER REAL ESTATE
+                AUSTIN AREA REAL ESTATE
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.0] mb-6">
@@ -100,7 +100,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
-              I help Cedar Park and Leander homeowners develop a clear strategy around selling, remodeling, renting, or holding. My role is to provide clarity so you can make the decision that's right for your family.
+              I help homeowners across the Austin area develop a clear strategy around selling, remodeling, renting, or holding. My role is to provide clarity so you can make the decision that's right for your family.
             </p>
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function Home() {
                 <em className="italic">any decision.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I'm Mario Manzano, a licensed REALTOR® and Seller Strategist based in Cedar Park, Texas. Before you decide anything about your home, you deserve to understand all your options.
+                I'm Mario Manzano, a licensed REALTOR® and Seller Strategist based in Leander, Texas, serving the greater Austin area. Before you decide anything about your home, you deserve to understand all your options.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 That might mean selling, or it might mean something else. My job is to walk you through the data, the costs, and the timing so you can make the decision that makes sense for your situation.
@@ -233,10 +233,13 @@ export default function Home() {
               </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
               Understanding the<br />
-              <em className="italic">Cedar Park and Leander market.</em>
+              <em className="italic">Austin area market.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-              The Austin metro market has shifted, but Cedar Park and Leander have their own dynamics. Inventory levels, buyer demand, and pricing patterns vary by neighborhood and season.
+              The market isn't one number.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+              What a home can sell for depends on the property, the neighborhood, and what buyers are doing right now.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
               Whether now is the right time to sell depends on your specific property, your neighborhood, and your personal situation. I can walk you through the current data so you understand what's realistic for your home.

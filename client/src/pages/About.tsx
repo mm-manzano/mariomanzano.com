@@ -86,10 +86,13 @@ export default function About() {
                 <em className="italic">real estate.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I found Dave Ramsey while I was thousands in debt. That changed everything. I committed to getting out of debt, sold things I didn't need, saved aggressively, and changed how I thought about money.
+                I found Dave Ramsey while I was thousands in debt. That changed everything. I committed to getting out of debt, saved aggressively, and changed how I thought about money.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Once I got out of debt, I started researching real estate. I spent time on BiggerPockets, read books, and learned how people actually build wealth. That research led me to get licensed as a REALTOR®. But more importantly, it led me to actually invest in real estate myself.
+                Once I got out of debt, I wanted financial independence. As I started researching what to do next, everything kept pointing back to real estate.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+                That research led me to get licensed as a REALTOR®. But more importantly, it led me to actually invest in real estate myself.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
                 Real estate has always been around me. My parents and siblings are all landlords.
@@ -121,12 +124,21 @@ export default function About() {
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 I've wholesaled properties, bought deals from wholesalers, and flipped land. I've taken on projects like demoing a property and selling the land, and even planning a new build that's currently on hold.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed">
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 My wife and I built and ran an Airbnb. We renovated and furnished it ourselves and became a 5-star host. When it stopped performing, we shut it down and moved to long-term renting, which worked better.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                My wife and I also have a strong eye for design, which has played a big role in how we approach homes. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                That includes everything from full remodel decisions to simple changes like furniture placement, organization, and finishing touches that make a home feel right to buyers.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                On our first home sale, the appraiser even asked if we were interior designers.
+              </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 I've done live-in flips, owned rentals, and been a landlord for about a decade. I've also used DSCR loans in my own investing, so I understand how deals are evaluated based on the property's performance, not just personal income.
               </p>

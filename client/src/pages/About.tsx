@@ -54,7 +54,7 @@ export default function About() {
               <em className="italic">Behind the Strategy.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              A licensed REALTOR who believes the best real estate advice sometimes means telling you not to sell.
+              A licensed REALTOR® who believes the best real estate advice sometimes means telling you not to sell.
             </p>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function About() {
                 I found Dave Ramsey while I was thousands in debt. That changed everything. I committed to getting out of debt, sold things I didn't need, saved aggressively, and changed how I thought about money.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Once I got out of debt, I started researching real estate. I spent time on BiggerPockets, read books, and learned how people actually build wealth. That research led me to get licensed as a REALTOR. But more importantly, it led me to actually invest in real estate myself.
+                Once I got out of debt, I started researching real estate. I spent time on BiggerPockets, read books, and learned how people actually build wealth. That research led me to get licensed as a REALTOR®. But more importantly, it led me to actually invest in real estate myself.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
                 Real estate has always been around me. My parents and siblings are all landlords.
@@ -119,7 +119,7 @@ export default function About() {
                 I didn't just learn real estate from courses. I've had to make the decisions myself.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I've wholesaled properties, bought deals from wholesalers, and flipped land. I've taken on projects like demoing a property and selling the land, and even planning a new build that's currently on hold because, with today's rates, the numbers just don't make sense.
+                I've wholesaled properties, bought deals from wholesalers, and flipped land. I've taken on projects like demoing a property and selling the land, and even planning a new build that's currently on hold.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
                 My wife and I built and ran an Airbnb. We renovated and furnished it ourselves and became a 5-star host. When it stopped performing, we shut it down and moved to long-term renting, which worked better.
@@ -131,7 +131,7 @@ export default function About() {
                 I've done live-in flips, owned rentals, and been a landlord for about a decade. I've also used DSCR loans in my own investing, so I understand how deals are evaluated based on the property's performance, not just personal income.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                These weren't just ideas. These were real decisions that affected my time, my money, and my family.
+                These were real decisions with real consequences. The kind you don't forget, and the kind that change how you guide others.
               </p>
             </RevealDiv>
           </div>
@@ -262,19 +262,19 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
             {[
               {
-                title: "Licensed REALTOR",
-                body: "Active member in good standing with the National Association of REALTORS.",
+                title: "Licensed REALTOR®",
+                body: "Active member in good standing with the National Association of REALTORS®.",
               },
               {
                 title: "Pricing Strategy Advisor (PSA)",
                 body: "Focused training in pricing strategy, market analysis, and helping sellers make data-driven decisions.",
               },
               {
-                title: "Member, Austin Board of REALTORS (ABOR)",
+                title: "Member, Austin Board of REALTORS® (ABOR)",
                 body: "Serving the greater Austin metropolitan area with local market expertise.",
               },
               {
-                title: "Member, National Association of REALTORS (NAR)",
+                title: "Member, National Association of REALTORS® (NAR)",
                 body: "Part of the largest professional real estate organization in the United States.",
               },
             ].map((cred, i) => (

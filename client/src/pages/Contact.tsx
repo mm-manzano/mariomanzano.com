@@ -83,7 +83,7 @@ export default function Contact() {
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                Let's Talk
+                Start the Conversation
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
@@ -185,7 +185,7 @@ export default function Contact() {
                 ) : (
                   <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
                     <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
-                      Book a Free Consultation
+                      Schedule a Consultation
                     </h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">

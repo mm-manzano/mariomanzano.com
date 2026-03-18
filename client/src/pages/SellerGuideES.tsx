@@ -284,7 +284,7 @@ export default function SellerGuideES() {
               </Link>
               <Link href="/contact">
                 <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
-                  Book a Consultation
+                  Programar una Consulta
                 </span>
               </Link>
             </div>

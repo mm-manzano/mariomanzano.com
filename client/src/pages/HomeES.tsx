@@ -88,7 +88,7 @@ export default function HomeES() {
               </Link>
               <Link href="/es/contacto">
                 <span className="btn-luxury-outline border-white/60 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
-                  Agendar Consulta Gratuita
+                  Programar una Consulta
                 </span>
               </Link>
             </div>
@@ -333,7 +333,7 @@ export default function HomeES() {
               </Link>
               <Link href="/es/contacto">
                 <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
-                  Agendar una Consulta
+                  Programar una Consulta
                 </span>
               </Link>
             </div>

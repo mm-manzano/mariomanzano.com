@@ -262,11 +262,7 @@ export default function About() {
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/home-value">
-                <span className="btn-luxury-outline inline-flex items-center gap-3">
-                  Get My Home Value
-                </span>
-              </Link>
+
             </div>
           </RevealDiv>
         </div>

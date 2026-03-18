@@ -82,15 +82,10 @@ export default function Home() {
               Before you decide to sell, remodel, rent, or hold, you deserve clarity from someone who puts your interests first.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/home-value">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Get My Home Value
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
               <Link href="/contact">
-                <span className="btn-luxury-outline border-white/60 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
-                  Book a Free Consultation
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+                  Schedule a Consultation
+                  <ArrowRight size={14} />
                 </span>
               </Link>
             </div>
@@ -246,12 +241,7 @@ export default function Home() {
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
               Whether now is the right time to sell depends on your specific property, your neighborhood, and your personal situation. I can walk you through the current data so you understand what's realistic for your home.
             </p>
-              <Link href="/home-value">
-                <span className="btn-luxury inline-flex items-center gap-3">
-                  Get My Home Value
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
+
             </RevealDiv>
 
             {/* Aerial Image */}
@@ -362,21 +352,16 @@ export default function Home() {
         <div className="relative z-10 container text-center">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-6xl font-light text-white mb-6 max-w-2xl mx-auto">
-              Get clarity about your home.
+              Understanding your situation.
             </h2>
             <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
-              A free home value analysis based on current market data. No obligation, no pressure to decide.
+              A consultation where we review your home, your options, and what makes sense for your specific situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/home-value">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Get My Free Home Value
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
               <Link href="/contact">
-                <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Schedule a Consultation
+                  <ArrowRight size={14} />
                 </span>
               </Link>
             </div>

@@ -12,7 +12,6 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Home Value", href: "/home-value" },
   { label: "Homeowner Guide", href: "/homeowner-guide" },
   { label: "Search Homes", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "About", href: "/about" },
@@ -20,7 +19,6 @@ const navLinks = [
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es" },
-  { label: "Valor de Casa", href: "/es/valor-de-casa" },
   { label: "Guía para Propietarios", href: "/es/guia-para-propietarios" },
   { label: "Buscar Casas", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "Acerca", href: "/es/acerca" },

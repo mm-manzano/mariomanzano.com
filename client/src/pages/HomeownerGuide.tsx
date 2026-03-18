@@ -64,7 +64,7 @@ export default function HomeownerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">01 — Your Options</span>
+              <span className="section-number">01. Your Options</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               A clear look at your options.
@@ -94,7 +94,7 @@ export default function HomeownerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">02 — Preparing vs Selling</span>
+              <span className="section-number text-[#B8974A]">02. Preparing vs Selling</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Know the difference before listing.
@@ -134,7 +134,7 @@ export default function HomeownerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03 — Pricing Strategy</span>
+              <span className="section-number">03. Pricing Strategy</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Your most important decision.
@@ -167,7 +167,7 @@ export default function HomeownerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">04 — Selling vs Renting</span>
+              <span className="section-number text-[#B8974A]">04. Selling vs Renting</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Understanding your tradeoffs.
@@ -210,7 +210,7 @@ export default function HomeownerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">05 — Holding</span>
+              <span className="section-number">05. Holding</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Doing nothing can be strategic.
@@ -252,7 +252,7 @@ export default function HomeownerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">06 — Selling As-Is</span>
+              <span className="section-number text-[#B8974A]">06. Selling As-Is</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Understanding the tradeoffs.
@@ -283,7 +283,7 @@ export default function HomeownerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">07 — Putting It Together</span>
+              <span className="section-number">07. Putting It Together</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               The best choice depends on four key factors.

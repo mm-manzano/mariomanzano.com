@@ -128,7 +128,7 @@ export default function HomeES() {
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01 — Acerca de</span>
+                <span className="section-number">01. Acerca de</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
                 Claridad antes de<br />
@@ -165,7 +165,7 @@ export default function HomeES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">02 — Cómo Ayudo</span>
+              <span className="section-number">02. Cómo Ayudo</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-3 max-w-xl">
               Cuatro caminos para explorar.
@@ -260,7 +260,7 @@ export default function HomeES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">04 — Proceso</span>
+              <span className="section-number">04. Proceso</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-lg">
               Tres conversaciones.<br />

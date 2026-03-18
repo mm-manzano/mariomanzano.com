@@ -126,7 +126,7 @@ export default function Home() {
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01 — About</span>
+                <span className="section-number">01. About</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
                 Clarity before<br />
@@ -163,7 +163,7 @@ export default function Home() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">02 — How I Help</span>
+              <span className="section-number">02. How I Help</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-3 max-w-xl">
               Four paths homeowners often consider.
@@ -229,7 +229,7 @@ export default function Home() {
             <RevealDiv>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">03 — Market</span>
+                <span className="section-number">03. Market</span>
               </div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
               Understanding the<br />
@@ -296,7 +296,7 @@ export default function Home() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">04 — Process</span>
+              <span className="section-number">04. Process</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-lg">
               Three conversations.<br />
@@ -319,7 +319,7 @@ export default function Home() {
               {
                 step: "03",
                 title: "Your Decision",
-                desc: "Armed with real data, you decide. I execute whatever path you choose — with full commitment and no judgment.",
+                desc: "Armed with real data, you decide. I execute whatever path you choose. with full commitment and no judgment.",
               },
             ].map((item, i) => (
               <RevealDiv

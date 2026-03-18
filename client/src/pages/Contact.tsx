@@ -43,13 +43,28 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 500));
-      setSubmitted(true);
-      toast.success("Thank you! Your request has been received.");
-      console.log("Form submitted");
+      const response = await fetch("https://formspree.io/f/xyzqwpkj", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          address: form.address,
+          topic: form.topic,
+          timeline: form.timeline,
+          message: form.message,
+        }),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+        toast.success("Got it. I'll reach out shortly.");
+      } else {
+        toast.error("An error occurred. Please try again or call me directly.");
+      }
     } catch (error) {
       console.error("Form error:", error);
-      toast.error("An error occurred. Please try again.");
+      toast.error("An error occurred. Please try again or call (512) 695-9255.");
     } finally {
       setLoading(false);
     }

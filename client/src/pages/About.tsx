@@ -1,7 +1,7 @@
 /*
- * DESIGN: Quiet Luxury Editorial - About Page (Rewritten)
- * Goal: Personal, grounded, differentiated - who Mario is and why he thinks this way
- * Sections: Intro, Origin, Philosophy, Experience, Approach, Location Close
+ * DESIGN: Quiet Luxury Editorial - About Page
+ * Goal: Personal, real, based on lived experience
+ * Sections: Intro, How It Started, Real Experience, Approach, Family, How I Work, Close
  */
 
 import { useEffect, useRef } from "react";
@@ -35,7 +35,7 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 export default function About() {
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── SECTION 1: INTRO ──────────────────────────────────────────── */}
+      {/* SECTION 1: INTRO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
@@ -54,17 +54,16 @@ export default function About() {
               <em className="italic">Behind the Strategy.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              A licensed REALTOR® who believes the best real estate advice sometimes means telling you not to sell.
+              A licensed REALTOR who believes the best real estate advice sometimes means telling you not to sell.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── SECTION 2: ORIGIN ─────────────────────────────────────────── */}
+      {/* SECTION 2: HOW IT STARTED */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Image */}
             <RevealDiv>
               <div className="relative">
                 <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
@@ -77,109 +76,102 @@ export default function About() {
               </div>
             </RevealDiv>
 
-            {/* Text */}
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01 — How I Got Here</span>
+                <span className="section-number">01. How It Started</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
-                Learning through<br />
-                <em className="italic">real decisions.</em>
+                From debt to<br />
+                <em className="italic">real estate.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I didn't start in real estate. I started by buying properties, renovating them, and living through the actual decisions that homeowners face.
+                I found Dave Ramsey while I was thousands in debt. That changed everything. I committed to getting out of debt, sold things I didn't need, saved aggressively, and changed how I thought about money.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I've done live-in flips. I've held properties through market shifts. I've had to decide whether to sell, rent, or hold based on real financial and personal tradeoffs. These weren't transactions—they were decisions that mattered.
+                Once I got out of debt, I started researching real estate. I spent time on BiggerPockets, read books, and learned how people actually build wealth. That research led me to get licensed as a REALTOR. But more importantly, it led me to actually invest in real estate myself.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                That experience taught me something important: most people don't need a salesperson. They need someone who understands both the financial side and the practical side of real estate decisions.
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Real estate wasn't new to my family. My parents and siblings are all landlords. So when I got into it, I had examples around me of how to do it right.
               </p>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── SECTION 3: WHY I THINK DIFFERENTLY ────────────────────────── */}
+      {/* SECTION 3: REAL EXPERIENCE */}
       <section className="py-20 md:py-32 bg-[#1A1A18]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="section-number text-[#D4B878]">02 — Why I Don't Push Selling</span>
+              <span className="section-number text-[#D4B878]">02. Real Experience</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-12 max-w-2xl">
-              Most people need clarity,<br />
-              <em className="italic">not urgency.</em>
+              I've lived through<br />
+              <em className="italic">the decisions.</em>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I've seen what happens when people feel pressured to make a quick decision about their home. They rush. They second-guess themselves. They sometimes make moves they regret.
+                I've wholesaled a property. I've built and run an Airbnb with my wife, furnished it, and became a 5-star host. When it wasn't sustainable anymore, I shut it down and moved into long-term renting, which performed better.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                That's not how I work. Selling is just one option. For some people, it's the right move. For others, holding, renting, or remodeling makes more sense. My job is to help you see all the options clearly so you can make the decision that's right for your situation.
+                I've done live-in flips. I've held rentals. I've been a landlord for about a decade. These weren't transactions on paper. They were decisions that affected my family, my cash flow, and my time.
+              </p>
+            </RevealDiv>
+
+            <RevealDiv delay={200}>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                I've had to decide whether to sell, rent, or hold based on real numbers and real life. I've felt the pressure of bad decisions and the relief of good ones. I've learned what works and what doesn't.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                That's why I can talk to homeowners about their options without pushing them toward a sale. I've been on both sides of these decisions. I know what they're thinking about because I've thought about it too.
+              </p>
+            </RevealDiv>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: APPROACH */}
+      <section className="py-20 md:py-32">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">03. My Approach</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+              Selling isn't always<br />
+              <em className="italic">the best move.</em>
+            </h2>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+            <RevealDiv delay={100}>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+                Most people feel pressured to make a quick decision about their home. They're not sure what their options are. They don't have clear numbers. So they rush.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                I help people think through their decisions instead of pushing them. Holding can create more value than selling. Renting can make more sense than selling. Improving the property first can change everything.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <div className="border-l-2 border-[#B8974A] pl-6">
-                <p className="font-display text-xl italic font-light text-white leading-relaxed mb-4">
-                  "The best advice I can give is sometimes to wait. Or to hold. Or to improve the property first. Whatever makes sense for you."
+                <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed mb-4">
+                  "The best advice I can give is sometimes to wait. Or to hold. Or to improve the property first. Whatever makes sense for your situation."
                 </p>
-                <p className="font-body text-sm text-white/50">— Mario Manzano</p>
+                <p className="font-body text-sm text-[#1A1A18]/50">Mario Manzano</p>
               </div>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── SECTION 4: EXPERIENCE ─────────────────────────────────────── */}
-      <section className="py-20 md:py-32">
-        <div className="container">
-          <RevealDiv>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" />
-              <span className="section-number">03 — What I Bring</span>
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
-              Real experience,<br />
-              <em className="italic">honestly positioned.</em>
-            </h2>
-          </RevealDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
-            <RevealDiv delay={100}>
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Licensed REALTOR®</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                Active member of the National Association of REALTORS® and the Austin Board of REALTORS®. I follow professional standards and keep current with market regulations and practices.
-              </p>
-
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Personal Investing Experience</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                I've bought, renovated, held, and sold properties. I understand the financial side—equity, cash flow, timing—and the practical side of living through these decisions.
-              </p>
-            </RevealDiv>
-
-            <RevealDiv delay={200}>
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Client Work</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                I've helped a small number of clients sell, and I've worked with homeowners exploring their options. I'm not claiming to be the busiest or the biggest. I focus on doing good work with people I can genuinely help.
-              </p>
-
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Market Knowledge</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                I track the Austin area market closely. I understand pricing patterns, buyer demand, and neighborhood dynamics. This gives you a solid foundation for your decisions.
-              </p>
-            </RevealDiv>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── SECTION 5: HOW I APPROACH DECISIONS ────────────────────────── */}
+      {/* SECTION 5: FAMILY */}
       <section
         className="py-20 md:py-28 relative"
         style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover" }}
@@ -189,11 +181,41 @@ export default function About() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">04 — My Approach</span>
+              <span className="section-number">04. Family</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
-              Three principles that<br />
-              <em className="italic">guide everything.</em>
+              Married with<br />
+              <em className="italic">two kids.</em>
+            </h2>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+            <RevealDiv delay={100}>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+                My wife and I have two kids. We're now empty nesters. I helped my son house hack his first home, which was a great experience for both of us. He's learning what it means to build wealth through real estate.
+              </p>
+            </RevealDiv>
+
+            <RevealDiv delay={200}>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                My daughter is graduating in interior design and planning to join real estate. So real estate isn't just my work. It's part of our family's life and future.
+              </p>
+            </RevealDiv>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6: HOW I WORK */}
+      <section className="py-20 md:py-32">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">05. How I Work</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+              Three principles<br />
+              <em className="italic">that guide everything.</em>
             </h2>
           </RevealDiv>
 
@@ -204,12 +226,12 @@ export default function About() {
                 desc: "Before we talk about anything else, you understand your situation. Your equity, your market, your timeline. Clarity first, always.",
               },
               {
-                title: "Tradeoffs Over Opinions",
-                desc: "Every option has tradeoffs. I help you see them clearly—the financial side, the practical side, the timing. Then you decide.",
+                title: "Tradeoffs Explained",
+                desc: "Every option has tradeoffs. I help you see them clearly, the financial side, the practical side, the timing. Then you decide.",
               },
               {
-                title: "Timing Matters",
-                desc: "Your timeline is what matters. Whether you're ready to move in three months or want to explore options over the next year, we work at your pace.",
+                title: "Decisions Based on Real Numbers",
+                desc: "Your decision should be based on solid information. Comparable sales, market absorption rates, buyer demand. This gives you a realistic foundation.",
               },
             ].map((item, i) => (
               <RevealDiv key={item.title} delay={i * 100} className="bg-[#F8F5F0] p-8 border-t-2 border-[#B8974A]">
@@ -221,34 +243,56 @@ export default function About() {
         </div>
       </section>
 
-      {/* ─── SECTION 6: LOCATION CLOSE ─────────────────────────────────── */}
-      <section className="py-20 md:py-28">
+      {/* SECTION 7: CREDENTIALS */}
+      <section className="py-20 md:py-28 bg-[#1A1A18]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" />
-              <span className="section-number">05 — Where I Work</span>
+              <span className="section-rule" style={{ background: "#D4B878" }} />
+              <span className="section-number text-[#D4B878]">Credentials</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
-              Based in Leander,<br />
-              <em className="italic">serving Greater Austin.</em>
+            <h2 className="font-display text-4xl font-light text-white mb-10 max-w-xl">
+              Expertise you can verify.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
-              I help homeowners across the Austin area think through decisions clearly before making a move. Whether you're in Leander, Cedar Park, Austin proper, or anywhere in between, I'm here to provide the clarity and honest guidance you deserve.
-            </p>
           </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+            {[
+              {
+                title: "Licensed REALTOR",
+                body: "Active member in good standing with the National Association of REALTORS.",
+              },
+              {
+                title: "Pricing Strategy Advisor (PSA)",
+                body: "Focused training in pricing strategy, market analysis, and helping sellers make data-driven decisions.",
+              },
+              {
+                title: "Member, Austin Board of REALTORS (ABOR)",
+                body: "Serving the greater Austin metropolitan area with local market expertise.",
+              },
+              {
+                title: "Member, National Association of REALTORS (NAR)",
+                body: "Part of the largest professional real estate organization in the United States.",
+              },
+            ].map((cred, i) => (
+              <RevealDiv key={cred.title} delay={i * 100} className="border-t border-white/10 pt-6">
+                <h3 className="font-display text-lg font-light text-white mb-2">{cred.title}</h3>
+                <p className="font-body text-sm text-white/60 leading-relaxed">{cred.body}</p>
+              </RevealDiv>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ─── CTA ───────────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1A1A18]">
+      {/* SECTION 8: CLOSE */}
+      <section className="py-20 md:py-28">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6 max-w-xl mx-auto">
-              Ready to have a real conversation?
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-xl mx-auto">
+              Based in Leander and working across the Austin area.
             </h2>
-            <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
-              No pressure. No pitch. Just an honest conversation about your options.
+            <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
+              I help homeowners make decisions with clarity and confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">

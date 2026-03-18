@@ -89,7 +89,7 @@ export default function AcercaES() {
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01 — Mi Historia</span>
+                <span className="section-number">01. Mi Historia</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
                 Ayudo a propietarios a<br />
@@ -108,7 +108,7 @@ export default function AcercaES() {
                 <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed">
                   "Mi objetivo es que salgas de cada conversación sintiéndote más confiado, no más presionado."
                 </p>
-                <p className="font-body text-sm text-[#1A1A18]/50 mt-2">— Mario Manzano</p>
+                <p className="font-body text-sm text-[#1A1A18]/50 mt-2">Mario Manzano</p>
               </div>
             </RevealDiv>
           </div>
@@ -125,7 +125,7 @@ export default function AcercaES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">02 — Mi Filosofía</span>
+              <span className="section-number">02. Mi Filosofía</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-xl">
               Cuatro principios que guían<br />
@@ -172,7 +172,7 @@ export default function AcercaES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">03 — Credenciales</span>
+              <span className="section-number">03. Credenciales</span>
             </div>
             <h2 className="font-display text-4xl font-light text-[#1A1A18] mb-10 max-w-xl">
               Experiencia que puedes verificar.

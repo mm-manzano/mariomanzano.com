@@ -67,7 +67,7 @@ export default function SellerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">01 — The First Question</span>
+              <span className="section-number">01. The First Question</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-xl">
               Should you actually sell?
@@ -131,7 +131,7 @@ export default function SellerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">02 — The Timeline</span>
+              <span className="section-number">02. The Timeline</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-xl">
               What happens between<br />
@@ -172,7 +172,7 @@ export default function SellerGuide() {
             <RevealDiv>
               <div className="flex items-center gap-3 mb-4">
                 <span className="section-rule" />
-                <span className="section-number">03 — Pricing</span>
+                <span className="section-number">03. Pricing</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
                 The pricing decision<br />
@@ -223,13 +223,13 @@ export default function SellerGuide() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">04 — What It Costs to Sell</span>
+              <span className="section-number">04. What It Costs to Sell</span>
             </div>
             <h2 className="font-display text-4xl font-light text-[#1A1A18] mb-4 max-w-xl">
               Know your net proceeds before you decide.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/60 leading-relaxed max-w-2xl mb-10">
-              Selling a home involves several costs. Here's a realistic breakdown so you can calculate your actual take-home — not just the sale price.
+              Selling a home involves several costs. Here's a realistic breakdown so you can calculate your actual take-home. not just the sale price.
             </p>
           </RevealDiv>
 

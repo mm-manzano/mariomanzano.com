@@ -63,7 +63,7 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">01 — Tus Opciones</span>
+              <span className="section-number">01. Tus Opciones</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Una vista clara a tus opciones.
@@ -93,7 +93,7 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">02 — Preparar vs Vender</span>
+              <span className="section-number text-[#B8974A]">02. Preparar vs Vender</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Entiende la diferencia.
@@ -133,7 +133,7 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03 — Estrategia de Precio</span>
+              <span className="section-number">03. Estrategia de Precio</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Tu decisión más importante.
@@ -166,7 +166,7 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">04 — Vender o Rentar</span>
+              <span className="section-number text-[#B8974A]">04. Vender o Rentar</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Entiende tus ventajas y desventajas.
@@ -209,7 +209,7 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">05 — Mantener</span>
+              <span className="section-number">05. Mantener</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               No hacer nada también puede ser estratégico.
@@ -251,7 +251,7 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">06 — Vender Tal Como Está</span>
+              <span className="section-number text-[#B8974A]">06. Vender Tal Como Está</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Entendiendo los puntos a favor y en contra.
@@ -282,7 +282,7 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">07 — Integrando Todo</span>
+              <span className="section-number">07. Integrando Todo</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               La mejor decisión depende de cuatro factores clave.

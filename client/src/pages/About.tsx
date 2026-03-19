@@ -203,14 +203,14 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-                I'm married to my high school sweetheart. We have two kids and are now empty nesters. My son house hacked his first home after college, which was a great experience for both of us.
+                 <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
+                I'm married to my high school sweetheart. We have two kids and are now empty nesters. Our son house hacked his first home after college, which was a great experience for both of us.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                My daughter is studying Design Management with minors in Marketing and Home Furnishings, and plans to get her real estate license so we can work together and help clients at a deeper level. Real estate is part of our family's life, not just my work.
+                Our daughter is studying Design Management with minors in Marketing and Home Furnishings, and plans to get her real estate license so we can work together and help clients at a deeper level. Real estate is part of our family's life, not just my work.
               </p>
             </RevealDiv>
           </div>

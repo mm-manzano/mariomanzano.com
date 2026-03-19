@@ -203,14 +203,14 @@ export default function AboutES() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-                Estoy casado con mi amor de la secundaria. Tenemos dos hijos y ahora somos nidos vacíos. Mi hijo hizo un house hack en su primer hogar después de la universidad, lo cual fue una gran experiencia para ambos.
+                <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
+                Estoy casado con mi amor de la secundaria. Tenemos dos hijos y ahora somos nidos vacíos. Nuestro hijo hizo un house hack en su primer hogar después de la universidad, lo cual fue una gran experiencia para ambos.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Mi hija está estudiando Gestión del Diseño con especialidades en Marketing y Decoración del Hogar, y planea obtener su licencia de bienes raíces para que podamos trabajar juntos y ayudar a los clientes a un nivel más profundo. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
+                Nuestra hija está estudiando Gestión del Diseño con especialidades en Marketing y Decoración del Hogar, y planea obtener su licencia de bienes raíces para que podamos trabajar juntos y ayudar a los clientes a un nivel más profundo. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
               </p>
             </RevealDiv>
           </div>

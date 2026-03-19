@@ -52,13 +52,12 @@ export default function Navigation() {
     if (lang === "es") {
   const esRoutes = {
   "/": "/es",
-  "/home-value": "/es/valor-de-casa",
+  "/home-value": "/es",
   "/homeowner-guide": "/es/guia-para-propietarios",
   "/about": "/es/acerca",
   "/contact": "/es/contacto",
 
   "/es": "/es",
-  "/es/valor-de-casa": "/es/valor-de-casa",
   "/es/guia-para-propietarios": "/es/guia-para-propietarios",
   "/es/acerca": "/es/acerca",
   "/es/contacto": "/es/contacto",
@@ -67,7 +66,6 @@ export default function Navigation() {
     } else {
       const enRoutes: { [key: string]: string } = {
         "/es": "/",
-        "/es/valor-de-casa": "/home-value",
         "/es/guia-para-propietarios": "/homeowner-guide",
         "/es/acerca": "/about",
         "/es/contacto": "/contact",

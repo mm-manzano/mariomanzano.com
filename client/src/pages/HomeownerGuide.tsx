@@ -333,7 +333,7 @@ export default function HomeownerGuide() {
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                Book a Free Consultation
+                Schedule a Consultation
                 <ArrowRight size={14} />
               </span>
             </Link>

@@ -18,7 +18,6 @@ import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import HomeES from "./pages/HomeES";
-import HomeValueES from "./pages/HomeValueES";
 import GuiaParaPropietarios from "./pages/GuiaParaPropietarios";
 import AboutES from "./pages/AboutES";
 import ContactES from "./pages/ContactES";
@@ -37,7 +36,6 @@ function Router() {
     <Switch>
             {/* Spanish Routes */}
       <Route exact path="/es" component={HomeES} />
-      <Route path="/es/valor-de-casa" component={HomeValueES} />
       <Route path="/es/guia-para-propietarios" component={GuiaParaPropietarios} />
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />

@@ -2,12 +2,16 @@
  * DESIGN: Quiet Luxury Editorial
  * Footer: Deep charcoal background, warm off-white text, gold accents.
  * Minimal: wordmark, navigation, contact, legal.
+ * Language-aware: English and Spanish translations
  */
 
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import { Instagram, Phone, Mail, Facebook } from "lucide-react";
 
 export default function Footer() {
+  const [location] = useLocation();
+  const isSpanish = location.startsWith("/es");
+
   return (
     <footer className="bg-[#1A1A18] text-[#F8F5F0]">
       <div className="container py-16 md:py-20">
@@ -19,17 +23,19 @@ export default function Footer() {
               Mario Manzano
             </div>
             <div className="text-[10px] tracking-[0.25em] uppercase text-[#B8974A] mb-4">
-              Seller Strategist
+              {isSpanish ? "Estratega de Venta" : "Seller Strategist"}
             </div>
             <p className="font-body text-sm text-white/60 leading-relaxed max-w-xs">
-              Helping homeowners across the Austin area develop a clear strategy around selling, remodeling, renting, or holding.
+              {isSpanish
+                ? "Ayudando a propietarios en el área de Austin a desarrollar una estrategia clara sobre vender, remodelar, rentar o mantener."
+                : "Helping homeowners across the Austin area develop a clear strategy around selling, remodeling, renting, or holding."}
             </p>
           </div>
 
           {/* Contact */}
           <div>
             <div className="text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-5 font-body">
-              Contact
+              {isSpanish ? "Contacto" : "Contact"}
             </div>
             <div className="flex flex-col gap-3">
               <a
@@ -67,10 +73,10 @@ export default function Footer() {
             </div>
             <div className="mt-6">
               <div className="text-[10px] tracking-[0.15em] uppercase text-white/40 mb-1 font-body">
-                Serving
+                {isSpanish ? "Sirviendo" : "Serving"}
               </div>
               <div className="font-body text-sm text-white/60">
-                Austin Area · Cedar Park · Leander
+                {isSpanish ? "Área de Austin · Cedar Park · Leander" : "Austin Area · Cedar Park · Leander"}
               </div>
             </div>
           </div>
@@ -80,14 +86,14 @@ export default function Footer() {
         <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex flex-col gap-2">
             <p className="font-body text-xs text-white/40">
-              © {new Date().getFullYear()} Mario Manzano. All rights reserved. Licensed REALTOR® in Texas.
+              © {new Date().getFullYear()} Mario Manzano. {isSpanish ? "Todos los derechos reservados. Agente REALTOR® con licencia en Texas." : "All rights reserved. Licensed REALTOR® in Texas."}
             </p>
             <p className="font-body text-xs text-white/50">
-              Brokered by eXp Realty
+              {isSpanish ? "Representado por eXp Realty" : "Brokered by eXp Realty"}
             </p>
           </div>
           <p className="font-body text-xs text-white/30">
-            Seller Strategy for the Austin Area
+            {isSpanish ? "Estrategia de Venta para el Área de Austin" : "Seller Strategy for the Austin Area"}
           </p>
         </div>
       </div>

@@ -292,8 +292,8 @@ export default function AboutES() {
               <span className="section-number text-[#D4B878]">06. Credenciales</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
-              Licenciado, pero<br />
-              <em className="italic">no perfecto.</em>
+              Experiencia<br />
+              <em className="italic">comprobable.</em>
             </h2>
             <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
               Soy un REALTOR® licenciado en Texas, miembro de la Asociación Nacional de REALTORS® y la Asociación de REALTORS® de Austin. He trabajado con docenas de clientes en el área de Austin. He aprendido qué funciona y qué no.

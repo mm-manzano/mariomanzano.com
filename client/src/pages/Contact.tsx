@@ -60,16 +60,15 @@ export default function Contact() {
       const response = await fetch("https://formspree.io/f/xyzqwpkj", {
         method: "POST",
         body: formData,
-        headers: {
-          "Accept": "application/json",
-        },
       });
 
-      if (response.ok) {
+      if (response.ok || response.status === 200 || response.status === 201) {
         setSubmitted(true);
         toast.success("Got it. I'll reach out shortly.");
         setForm({ name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "" });
       } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Form submission error:", errorData);
         toast.error("An error occurred. Please try again or call me directly.");
       }
     } catch (error) {

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+// Don't redirect API requests
+if (!location.pathname.startsWith('/api/')) {
+  sessionStorage.redirect = location.pathname;
+  location.replace("/");
+}
+</script>
+</head>
+<body></body>
+</html>

@@ -134,7 +134,7 @@ export default function AboutES() {
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                Mi esposa y yo también tenemos un ojo fuerte para el diseño, lo cual ha jugado un papel importante en cómo abordamos los hogares. Ella es especialmente fuerte en esta área. Desde nuestro Airbnb hasta nuestra propia casa y propiedades que hemos vendido, hemos estado muy involucrados en el diseño, la distribución y la presentación. Ella ahora es parte del equipo, y eso se refleja en cómo ayudamos a los clientes a preparar y presentar sus hogares de una manera que conecta con los compradores.
+                Una gran parte de cómo abordamos los hogares proviene de nuestro ojo para el diseño. Ella es especialmente fuerte en esta área. Desde nuestro Airbnb hasta nuestra propia casa y propiedades que hemos vendido, hemos estado muy involucrados en el diseño, la distribución y la presentación. Ella ahora es parte del equipo, y eso se refleja en cómo ayudamos a los clientes a preparar y presentar sus hogares de una manera que conecta con los compradores.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 Eso incluye todo, desde decisiones de renovación completa hasta cambios simples como la colocación de muebles, la organización y los toques finales que hacen que un hogar se sienta bien para los compradores.

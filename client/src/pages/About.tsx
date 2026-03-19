@@ -134,7 +134,7 @@ export default function About() {
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                My wife and I also have a strong eye for design, which has played a big role in how we approach homes. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation. She's now part of the team, and that shows up in how we help clients prepare and present their homes in a way that connects with buyers.
+                A big part of how we approach homes comes from our eye for design. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation. She's now part of the team, and that shows up in how we help clients prepare and present their homes in a way that connects with buyers.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 That includes everything from full remodel decisions to simple changes like furniture placement, organization, and finishing touches that make a home feel right to buyers.

@@ -276,13 +276,13 @@ export default function SellerGuideES() {
               A free, no-pressure consultation where we review your home's value, your options, and what makes sense for your situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/home-value">
+              <Link href="/es/home-value">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Get My Valor de Casa
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/contact">
+              <Link href="/es/consulta">
                 <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
                   Agendar una Consulta
                 </span>

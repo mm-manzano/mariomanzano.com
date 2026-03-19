@@ -330,7 +330,7 @@ export default function GuiaParaPropietarios() {
             <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
               Si quieres hablar sobre tu situación o entender en cuánto podría venderse o rentarse tu casa de forma realista, estoy disponible.
             </p>
-            <Link href="/contact">
+            <Link href="/es/consulta">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                 Agendar una Consulta
                 <ArrowRight size={14} />

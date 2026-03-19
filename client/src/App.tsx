@@ -21,6 +21,7 @@ import HomeES from "./pages/HomeES";
 import GuiaParaPropietarios from "./pages/GuiaParaPropietarios";
 import AboutES from "./pages/AboutES";
 import ContactES from "./pages/ContactES";
+import ConsultaES from "./pages/ConsultaES";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -39,6 +40,7 @@ function Router() {
       <Route path="/es/guia-para-propietarios" component={GuiaParaPropietarios} />
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />
+      <Route path="/es/consulta" component={ConsultaES} />
       {/* English Routes */}
       <Route exact path="/" component={Home} />
       <Route path="/home-value" component={HomeValue} />

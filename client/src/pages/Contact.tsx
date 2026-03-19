@@ -57,7 +57,7 @@ export default function Contact() {
       formData.append("timeline", form.timeline);
       formData.append("message", form.message);
 
-      const response = await fetch("https://formspree.io/f/xyzqwpkj", {
+      const response = await fetch("https://formspree.io/f/xdawbgyw", {
         method: "POST",
         body: formData,
       });

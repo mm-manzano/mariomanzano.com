@@ -149,7 +149,6 @@ export default function ContactES() {
                       <input
                         type="text"
                         name="name"
-                        required
                         placeholder="Tu nombre"
                         className="input-luxury"
                       />
@@ -174,7 +173,6 @@ export default function ContactES() {
                     <input
                       type="email"
                       name="email"
-                      required
                       placeholder="tu@correo.com"
                       className="input-luxury"
                     />

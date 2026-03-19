@@ -149,7 +149,6 @@ export default function Contact() {
                       <input
                         type="text"
                         name="name"
-                        required
                         placeholder="Your name"
                         className="input-luxury"
                       />
@@ -174,7 +173,6 @@ export default function Contact() {
                     <input
                       type="email"
                       name="email"
-                      required
                       placeholder="your@email.com"
                       className="input-luxury"
                     />

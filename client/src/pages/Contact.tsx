@@ -1,8 +1,7 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Contact / Consultation Page
  * Goal: Convert visitors into consultation bookings
- * Sections: Hero, Contact Form, What to Expect, Direct Contact
- * Form: Pure HTML submission to Formspree - no JS interception
+ * Form: Pure HTML submission to Formspree - NO JAVASCRIPT HANDLERS
  */
 
 import { useRef, useEffect } from "react";
@@ -98,37 +97,20 @@ export default function Contact() {
                       title: "You leave with a plan",
                       desc: "Even if you're not ready to sell, you'll leave with clarity on your options and next steps.",
                     },
-                  ].map((item) => (
-                    <div key={item.title} className="flex gap-4">
-                      <div className="mt-0.5 flex-shrink-0">{item.icon}</div>
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4">
+                      <div className="flex-shrink-0 mt-0.5">{item.icon}</div>
                       <div>
-                        <div className="font-body text-sm font-medium text-[#1A1A18] mb-1">{item.title}</div>
-                        <div className="font-body text-sm text-[#1A1A18]/55 leading-relaxed">{item.desc}</div>
+                        <h4 className="font-body font-semibold text-sm text-[#1A1A18] mb-1">{item.title}</h4>
+                        <p className="font-body text-xs text-[#1A1A18]/60">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
-
-                {/* Direct contact */}
-                <div className="border-t border-[#E8E0D5] pt-8">
-                  <div className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">
-                    Prefer to Reach Out Directly?
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <a href="tel:+15126959255" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
-                      <Phone size={14} />
-                      (512) 695-9255
-                    </a>
-                    <a href="mailto:realtor@mariomanzano.com" className="flex items-center gap-3 font-body text-sm text-[#1A1A18]/70 hover:text-[#B8974A] transition-colors">
-                      <Mail size={14} />
-                      realtor@mariomanzano.com
-                    </a>
-                  </div>
-                </div>
               </RevealDiv>
             </div>
 
-            {/* Right: Form (3 cols) */}
+            {/* Right: Form (3 cols) - PURE HTML FORM */}
             <div className="lg:col-span-3">
               <RevealDiv delay={150}>
                 <form 
@@ -143,7 +125,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                     <div>
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Full Name *
+                        Full Name
                       </label>
                       <input
                         type="text"
@@ -167,7 +149,7 @@ export default function Contact() {
 
                   <div className="mb-5">
                     <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                      Email Address *
+                      Email Address
                     </label>
                     <input
                       type="email"
@@ -257,17 +239,57 @@ export default function Contact() {
       >
         <div className="absolute inset-0 bg-[#1A1A18]/90" />
         <div className="relative z-10 container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
-              { title: "No Obligation", desc: "Our conversation doesn't commit you to anything. You're free to take the information and decide on your own timeline." },
-              { title: "No Pressure", desc: "I don't believe in high-pressure sales tactics. If selling isn't right for you now, I'll tell you that." },
-              { title: "No Spam", desc: "Your contact information will only be used to follow up on your specific inquiry. Nothing more." },
-            ].map((item) => (
-              <div key={item.title}>
-                <div className="font-display text-xl font-light text-[#B8974A] mb-2">{item.title}</div>
-                <p className="font-body text-sm text-white/55 leading-relaxed">{item.desc}</p>
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" style={{ background: "#D4B878" }} />
+              <span className="section-number">Why Choose Mario</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-6">
+              A realtor who listens,<br />
+              <em className="italic">not just sells.</em>
+            </h2>
+            <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
+              With over a decade of experience in Austin real estate, I've helped hundreds of families navigate the selling process with confidence and clarity. My approach is simple: understand your goals, provide honest guidance, and deliver results.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── DIRECT CONTACT ────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[#F8F5F0]">
+        <div className="container">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">Prefer to Reach Out Directly?</span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-8">
+              Get in touch whenever<br />
+              <em className="italic">it works for you.</em>
+            </h2>
+
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                <Phone size={20} className="text-[#B8974A] flex-shrink-0" />
+                <div>
+                  <p className="font-body text-sm font-semibold text-[#1A1A18]">(512) 695-9255</p>
+                  <p className="font-body text-xs text-[#1A1A18]/60">Call or text anytime</p>
+                </div>
               </div>
-            ))}
+              <div className="flex items-center gap-4">
+                <Mail size={20} className="text-[#B8974A] flex-shrink-0" />
+                <div>
+                  <p className="font-body text-sm font-semibold text-[#1A1A18]">realtor@mariomanzano.com</p>
+                  <p className="font-body text-xs text-[#1A1A18]/60">I respond within 24 hours</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-[#E8E0D5]">
+              <p className="font-body text-xs text-[#1A1A18]/50">
+                Based in Cedar Park, serving Leander, Round Rock, and greater Austin.
+              </p>
+            </div>
           </div>
         </div>
       </section>

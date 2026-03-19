@@ -43,13 +43,28 @@ export default function ContactoES() {
     e.preventDefault();
     setLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 500));
-      setSubmitted(true);
-      toast.success("Thank you! Your request has been received.");
-      console.log("Form submitted");
+      const response = await fetch("https://mariomanzano-com.vercel.app/api/send-consultation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          address: form.address,
+          topic: form.topic,
+          timeline: form.timeline,
+          message: form.message,
+        }),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+        toast.success("Gracias. Nos pondremos en contacto pronto.");
+      } else {
+        toast.error("Ocurrió un error. Por favor, intenta de nuevo o llámame directamente.");
+      }
     } catch (error) {
       console.error("Form error:", error);
-      toast.error("An error occurred. Please try again.");
+      toast.error("Ocurrió un error. Por favor, intenta de nuevo o llama al (512) 695-9255.");
     } finally {
       setLoading(false);
     }

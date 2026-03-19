@@ -134,7 +134,7 @@ export default function About() {
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                A big part of how we approach homes comes from our eye for design. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation. She's now part of the team, and that shows up in how we help clients prepare and present their homes in a way that connects with buyers.
+                A big part of how we approach homes comes from our eye for design. She's especially strong in this area. From our Airbnb to our own home, properties we've sold, and the clients we've helped, we've been hands-on with design, layout, and presentation. That shows up in how we help clients prepare and present their homes in a way that connects with buyers.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 That includes everything from full remodel decisions to simple changes like furniture placement, organization, and finishing touches that make a home feel right to buyers.

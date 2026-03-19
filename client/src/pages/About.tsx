@@ -201,7 +201,7 @@ export default function About() {
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-4xl">
             <RevealDiv delay={100}>
                  <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
                 I'm married to my high school sweetheart. We have two kids and are now empty nesters. Our son house hacked his first home after college, which was a great experience for both of us.

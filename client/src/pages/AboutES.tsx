@@ -201,7 +201,7 @@ export default function AboutES() {
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-4xl">
             <RevealDiv delay={100}>
                 <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
                 Estoy casado con mi amor de la secundaria. Tenemos dos hijos y ahora somos nidos vacíos. Nuestro hijo hizo un house hack en su primer hogar después de la universidad, lo cual fue una gran experiencia para ambos.

@@ -61,16 +61,16 @@ export default function About() {
       </section>
 
       {/* SECTION 2: HOW IT STARTED */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 md:py-28">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <RevealDiv>
               <div className="relative">
-                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
+                <div className="overflow-hidden bg-[#E8E0D5]">
                   <img
                     src={MARIO_HEADSHOT}
                     alt="Mario Manzano"
-                    className="w-full h-full object-cover max-h-96"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -106,7 +106,7 @@ export default function About() {
       </section>
 
       {/* SECTION 3: REAL EXPERIENCE */}
-      <section className="py-20 md:py-32 bg-[#1A1A18]">
+      <section className="py-16 md:py-28 bg-[#1A1A18]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
@@ -119,7 +119,7 @@ export default function About() {
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl items-start">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 I didn't learn real estate from courses alone. I've had to make the decisions myself.
@@ -151,7 +151,7 @@ export default function About() {
       </section>
 
       {/* SECTION 4: APPROACH */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 md:py-28">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">

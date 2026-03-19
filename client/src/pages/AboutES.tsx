@@ -66,11 +66,11 @@ export default function AboutES() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <RevealDiv>
               <div className="relative">
-                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5] max-w-xs">
+                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
                   <img
                     src={MARIO_HEADSHOT}
                     alt="Mario Manzano"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover max-h-96"
                   />
                 </div>
               </div>
@@ -90,6 +90,9 @@ export default function AboutES() {
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
                 Una vez que salí de la deuda, quería independencia financiera. Mientras comenzaba a investigar qué hacer a continuación, todo seguía apuntando hacia bienes raíces.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+                Pasé tiempo en BiggerPockets, leí libros y comencé a entender cómo la gente realmente construye riqueza a través de bienes raíces.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
                 Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante fue que me llevó a invertir en bienes raíces yo mismo.
@@ -127,15 +130,15 @@ export default function AboutES() {
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 Mi esposa y yo construimos y operamos un Airbnb. Lo renovamos y amueblamos nosotros mismos y nos convertimos en anfitriones de 5 estrellas. Cuando dejó de funcionar, lo cerramos y pasamos al alquiler a largo plazo, que funcionó mejor.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                Mi esposa y yo también tenemos un ojo fuerte para el diseño, lo cual ha jugado un papel importante en cómo abordamos los hogares. Ella es especialmente fuerte en esta área. Desde nuestro Airbnb hasta nuestra propia casa y propiedades que hemos vendido, hemos estado muy involucrados en el diseño, la distribución y la presentación.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed">
-                Eso incluye todo, desde decisiones de renovación completa hasta cambios simples como la colocación de muebles, la organización y los toques finales que hacen que un hogar se sienta bien para los compradores.
-              </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                Mi esposa y yo también tenemos un ojo fuerte para el diseño, lo cual ha jugado un papel importante en cómo abordamos los hogares. Ella es especialmente fuerte en esta área. Desde nuestro Airbnb hasta nuestra propia casa y propiedades que hemos vendido, hemos estado muy involucrados en el diseño, la distribución y la presentación.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                Eso incluye todo, desde decisiones de renovación completa hasta cambios simples como la colocación de muebles, la organización y los toques finales que hacen que un hogar se sienta bien para los compradores.
+              </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 He hecho renovaciones de vivienda, poseído alquileres y he sido propietario durante aproximadamente una década. También he usado préstamos DSCR en mis propias inversiones, así que entiendo cómo se evalúan los deals basados en el desempeño de la propiedad, no solo en los ingresos personales.
               </p>

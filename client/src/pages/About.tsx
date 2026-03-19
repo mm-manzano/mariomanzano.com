@@ -66,11 +66,11 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <RevealDiv>
               <div className="relative">
-                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5] max-w-xs">
+                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
                   <img
                     src={MARIO_HEADSHOT}
                     alt="Mario Manzano"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover max-h-96"
                   />
                 </div>
               </div>
@@ -90,6 +90,9 @@ export default function About() {
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
                 Once I got out of debt, I wanted financial independence. As I started researching what to do next, everything kept pointing back to real estate.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+                I spent time on BiggerPockets, read books, and started understanding how people actually build wealth through real estate.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
                 That research led me to get licensed as a REALTOR®. But more importantly, it led me to actually invest in real estate myself.
@@ -127,12 +130,15 @@ export default function About() {
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 My wife and I built and ran an Airbnb. We renovated and furnished it ourselves and became a 5-star host. When it stopped performing, we shut it down and moved to long-term renting, which worked better.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                My wife and I also have a strong eye for design, which has played a big role in how we approach homes. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation.
-              </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                My wife and I also have a strong eye for design, which has played a big role in how we approach homes. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                That includes everything from full remodel decisions to simple changes like furniture placement, organization, and finishing touches that make a home feel right to buyers.
+              </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 I've done live-in flips, owned rentals, and been a landlord for about a decade. I've also used DSCR loans in my own investing, so I understand how deals are evaluated based on the property's performance, not just personal income.
               </p>

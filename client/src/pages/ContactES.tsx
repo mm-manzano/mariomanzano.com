@@ -145,7 +145,7 @@ export default function ContactES() {
                 <em className="italic">no solo vende.</em>
               </h2>
               <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
-                Con más de una década de experiencia en bienes raíces de Austin, he ayudado a cientos de familias a navegar el proceso de venta con confianza y claridad. Mi enfoque es simple: entender tus objetivos, proporcionar orientación honesta y entregar resultados.
+                Primero entiendo tu situación, luego te guío hacia la opción que realmente tiene sentido.
               </p>
             </RevealDiv>
           </div>

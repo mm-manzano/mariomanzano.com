@@ -145,7 +145,7 @@ export default function Contact() {
                 <em className="italic">not just sells.</em>
               </h2>
               <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
-                With over a decade of experience in Austin real estate, I've helped hundreds of families navigate the selling process with confidence and clarity. My approach is simple: understand your goals, provide honest guidance, and deliver results.
+                I start by understanding your situation, then guide you toward the option that actually makes sense.
               </p>
             </RevealDiv>
           </div>

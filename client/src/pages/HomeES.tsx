@@ -98,7 +98,7 @@ export default function HomeES() {
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
-              Ayudo a los propietarios de Cedar Park y Leander a desarrollar una estrategia clara para vender, renovar, rentar o mantener. Mi papel es proporcionar claridad para que puedas tomar la decisión correcta para tu familia.
+              Ayudo a propietarios en el área de Austin a desarrollar una estrategia clara para vender, renovar, rentar o mantener, especialmente en Cedar Park y Leander. Mi papel es brindarte claridad para que tomes la mejor decisión para tu familia.
             </p>
           </div>
         </div>

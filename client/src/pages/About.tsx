@@ -66,7 +66,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <RevealDiv>
               <div className="relative">
-                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
+                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5] max-w-xs">
                   <img
                     src={MARIO_HEADSHOT}
                     alt="Mario Manzano"
@@ -119,7 +119,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I didn't just learn real estate from courses. I've had to make the decisions myself.
+                I didn't learn real estate from courses alone. I've had to make the decisions myself.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 I've wholesaled properties, bought deals from wholesalers, and flipped land. I've taken on projects like demoing a property and selling the land, and even planning a new build that's currently on hold.
@@ -130,15 +130,9 @@ export default function About() {
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 My wife and I also have a strong eye for design, which has played a big role in how we approach homes. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed">
-                That includes everything from full remodel decisions to simple changes like furniture placement, organization, and finishing touches that make a home feel right to buyers.
-              </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                On our first home sale, the appraiser even asked if we were interior designers.
-              </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 I've done live-in flips, owned rentals, and been a landlord for about a decade. I've also used DSCR loans in my own investing, so I understand how deals are evaluated based on the property's performance, not just personal income.
               </p>

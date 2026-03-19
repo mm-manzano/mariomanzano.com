@@ -66,7 +66,7 @@ export default function AboutES() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <RevealDiv>
               <div className="relative">
-                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5]">
+                <div className="aspect-[3/4] overflow-hidden bg-[#E8E0D5] max-w-xs">
                   <img
                     src={MARIO_HEADSHOT}
                     alt="Mario Manzano"
@@ -86,10 +86,13 @@ export default function AboutES() {
                 <em className="italic">bienes raíces.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Encontré a Dave Ramsey mientras estaba miles de dólares en deuda. Eso lo cambió todo. Me comprometí a salir de la deuda, vendí cosas que no necesitaba, ahorré agresivamente y cambié cómo pensaba sobre el dinero.
+                Encontré a Dave Ramsey mientras estaba miles de dólares en deuda. Eso lo cambió todo. Me comprometí a salir de la deuda, ahorré agresivamente y cambié cómo pensaba sobre el dinero.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Una vez que salí de la deuda, comencé a investigar bienes raíces. Pasé tiempo en BiggerPockets, leí libros y aprendí cómo la gente realmente construye riqueza. Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante fue que me llevó a invertir en bienes raíces yo mismo.
+                Una vez que salí de la deuda, quería independencia financiera. Mientras comenzaba a investigar qué hacer a continuación, todo seguía apuntando hacia bienes raíces.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+                Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante fue que me llevó a invertir en bienes raíces yo mismo.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
                 Los bienes raíces siempre han estado alrededor de mí. Mis padres y hermanos son todos propietarios de inmuebles.
@@ -116,13 +119,19 @@ export default function AboutES() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                No solo aprendí bienes raíces de cursos. He tenido que tomar las decisiones yo mismo.
+                No aprendí bienes raíces solo de cursos. He tenido que tomar las decisiones yo mismo.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                He comprado y vendido propiedades, comprado deals de mayoristas y volteado terrenos. He tomado proyectos como demoler una propiedad y vender el terreno, e incluso planificar una construcción nueva que actualmente está en espera porque, con las tasas de hoy, los números simplemente no tienen sentido.
+                He comprado y vendido propiedades, comprado deals de mayoristas y volteado terrenos. He tomado proyectos como demoler una propiedad y vender el terreno, e incluso planificar una construcción nueva que actualmente está en espera.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                Mi esposa y yo construimos y operamos un Airbnb. Lo renovamos y amueblamos nosotros mismos y nos convertimos en anfitriones de 5 estrellas. Cuando dejó de funcionar, lo cerramos y pasamos al alquiler a largo plazo, que funcionó mejor.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                Mi esposa y yo también tenemos un ojo fuerte para el diseño, lo cual ha jugado un papel importante en cómo abordamos los hogares. Ella es especialmente fuerte en esta área. Desde nuestro Airbnb hasta nuestra propia casa y propiedades que hemos vendido, hemos estado muy involucrados en el diseño, la distribución y la presentación.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                Mi esposa y yo construimos y operamos un Airbnb. Lo renovamos y amueblamos nosotros mismos y nos convertimos en anfitriones de 5 estrellas. Cuando dejó de funcionar, lo cerramos y pasamos al alquiler a largo plazo, que funcionó mejor.
+                Eso incluye todo, desde decisiones de renovación completa hasta cambios simples como la colocación de muebles, la organización y los toques finales que hacen que un hogar se sienta bien para los compradores.
               </p>
             </RevealDiv>
 
@@ -131,7 +140,7 @@ export default function AboutES() {
                 He hecho renovaciones de vivienda, poseído alquileres y he sido propietario durante aproximadamente una década. También he usado préstamos DSCR en mis propias inversiones, así que entiendo cómo se evalúan los deals basados en el desempeño de la propiedad, no solo en los ingresos personales.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                Estas no fueron solo ideas. Fueron decisiones reales que afectaron mi tiempo, mi dinero y mi familia.
+                Estas fueron decisiones reales con consecuencias reales. El tipo que no olvidas, y el tipo que cambia cómo guías a otros.
               </p>
             </RevealDiv>
           </div>

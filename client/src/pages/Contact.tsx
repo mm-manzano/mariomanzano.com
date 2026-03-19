@@ -4,9 +4,9 @@
  * Sections: Hero, Contact Form, What to Expect, Direct Contact
  */
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Phone, Mail, Instagram, Clock, MapPin, Loader2 } from "lucide-react";
+import { ArrowRight, Phone, Mail, Clock, MapPin, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
@@ -14,22 +14,25 @@ const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do5
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+  const [visible, setVisible] = useState(false);
+  
+  React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.disconnect(); } },
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
       { threshold: 0.12 }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-  return ref;
+  
+  return { ref, visible };
 }
 
 function RevealDiv({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const ref = useScrollReveal();
-  return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
+  const { ref, visible } = useScrollReveal();
+  return <div ref={ref} className={`fade-in-up ${visible ? 'visible' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
 export default function Contact() {
@@ -38,27 +41,34 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    
     try {
-      const response = await fetch("https://mariomanzano-com.vercel.app/api/send-consultation", {
+      const formData = new FormData();
+      formData.append("name", form.name);
+      formData.append("email", form.email);
+      formData.append("phone", form.phone);
+      formData.append("address", form.address);
+      formData.append("topic", form.topic);
+      formData.append("timeline", form.timeline);
+      formData.append("message", form.message);
+
+      const response = await fetch("https://formspree.io/f/xyzqwpkj", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          address: form.address,
-          topic: form.topic,
-          timeline: form.timeline,
-          message: form.message,
-        }),
+        body: formData,
+        headers: {
+          "Accept": "application/json",
+        },
       });
+
       if (response.ok) {
         setSubmitted(true);
         toast.success("Got it. I'll reach out shortly.");
+        setForm({ name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "" });
       } else {
         toast.error("An error occurred. Please try again or call me directly.");
       }
@@ -183,7 +193,7 @@ export default function Contact() {
                     </Link>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
+                  <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
                     <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
                       Schedule a Consultation
                     </h3>
@@ -195,6 +205,7 @@ export default function Contact() {
                         </label>
                         <input
                           type="text"
+                          name="name"
                           required
                           placeholder="Your name"
                           className="input-luxury"
@@ -208,6 +219,7 @@ export default function Contact() {
                         </label>
                         <input
                           type="tel"
+                          name="phone"
                           placeholder="(512) 555-0000"
                           className="input-luxury"
                           value={form.phone}
@@ -222,6 +234,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="your@email.com"
                         className="input-luxury"
@@ -236,6 +249,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="text"
+                        name="address"
                         placeholder="123 Oak Creek Drive, Cedar Park"
                         className="input-luxury"
                         value={form.address}
@@ -248,6 +262,7 @@ export default function Contact() {
                         What Would You Like to Discuss?
                       </label>
                       <select
+                        name="topic"
                         className="input-luxury bg-transparent"
                         value={form.topic}
                         onChange={(e) => setForm({ ...form, topic: e.target.value })}
@@ -266,6 +281,7 @@ export default function Contact() {
                         Your Timeline
                       </label>
                       <select
+                        name="timeline"
                         className="input-luxury bg-transparent"
                         value={form.timeline}
                         onChange={(e) => setForm({ ...form, timeline: e.target.value })}
@@ -284,6 +300,7 @@ export default function Contact() {
                         Anything Else I Should Know?
                       </label>
                       <textarea
+                        name="message"
                         rows={4}
                         placeholder="Tell me about your situation, goals, or any questions you have..."
                         className="input-luxury resize-none"

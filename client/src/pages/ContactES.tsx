@@ -4,9 +4,9 @@
  * Sections: Hero, Contacto Form, What to Expect, Direct Contacto
  */
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Phone, Mail, Instagram, Clock, MapPin, Loader2 } from "lucide-react";
+import { ArrowRight, Phone, Mail, Clock, MapPin, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
@@ -14,22 +14,25 @@ const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do5
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+  const [visible, setVisible] = useState(false);
+  
+  React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.disconnect(); } },
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
       { threshold: 0.12 }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-  return ref;
+  
+  return { ref, visible };
 }
 
 function RevealDiv({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const ref = useScrollReveal();
-  return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
+  const { ref, visible } = useScrollReveal();
+  return <div ref={ref} className={`fade-in-up ${visible ? 'visible' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
 export default function ContactoES() {
@@ -38,27 +41,34 @@ export default function ContactoES() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    
     try {
-      const response = await fetch("https://mariomanzano-com.vercel.app/api/send-consultation", {
+      const formData = new FormData();
+      formData.append("name", form.name);
+      formData.append("email", form.email);
+      formData.append("phone", form.phone);
+      formData.append("address", form.address);
+      formData.append("topic", form.topic);
+      formData.append("timeline", form.timeline);
+      formData.append("message", form.message);
+
+      const response = await fetch("https://formspree.io/f/xyzqwpkj", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          address: form.address,
-          topic: form.topic,
-          timeline: form.timeline,
-          message: form.message,
-        }),
+        body: formData,
+        headers: {
+          "Accept": "application/json",
+        },
       });
+
       if (response.ok) {
         setSubmitted(true);
         toast.success("Gracias. Nos pondremos en contacto pronto.");
+        setForm({ name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "" });
       } else {
         toast.error("Ocurrió un error. Por favor, intenta de nuevo o llámame directamente.");
       }
@@ -183,7 +193,7 @@ export default function ContactoES() {
                     </Link>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
+                  <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
                     <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
                       Programar una Consulta
                     </h3>
@@ -195,6 +205,7 @@ export default function ContactoES() {
                         </label>
                         <input
                           type="text"
+                          name="name"
                           required
                           placeholder="Tu nombre"
                           className="input-luxury"
@@ -208,6 +219,7 @@ export default function ContactoES() {
                         </label>
                         <input
                           type="tel"
+                          name="phone"
                           placeholder="(512) 555-0000"
                           className="input-luxury"
                           value={form.phone}
@@ -222,6 +234,7 @@ export default function ContactoES() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="tu@correo.com"
                         className="input-luxury"
@@ -236,6 +249,7 @@ export default function ContactoES() {
                       </label>
                       <input
                         type="text"
+                        name="address"
                         placeholder="123 Oak Creek Drive, Cedar Park"
                         className="input-luxury"
                         value={form.address}
@@ -248,6 +262,7 @@ export default function ContactoES() {
                         ¿Qué te Gustaría Discutir?
                       </label>
                       <select
+                        name="topic"
                         className="input-luxury bg-transparent"
                         value={form.topic}
                         onChange={(e) => setForm({ ...form, topic: e.target.value })}
@@ -256,8 +271,8 @@ export default function ContactoES() {
                         <option value="sell">Estoy pensando en vender</option>
                         <option value="value">Quiero saber el valor de mi casa</option>
                         <option value="options">Quiero entender todas mis opciones</option>
-                        <option value="timing">Estoy tratando de determinar el momento correcto</option>
-                        <option value="other">Algo más</option>
+                        <option value="timing">Estoy tratando de determinar el momento adecuado</option>
+                        <option value="other">Otra cosa</option>
                       </select>
                     </div>
 
@@ -266,6 +281,7 @@ export default function ContactoES() {
                         Tu Cronograma
                       </label>
                       <select
+                        name="timeline"
                         className="input-luxury bg-transparent"
                         value={form.timeline}
                         onChange={(e) => setForm({ ...form, timeline: e.target.value })}
@@ -273,7 +289,7 @@ export default function ContactoES() {
                         <option value="">Selecciona un cronograma</option>
                         <option value="asap">Lo antes posible</option>
                         <option value="3months">Dentro de 3 meses</option>
-                        <option value="6months">3 a 6 meses</option>
+                        <option value="6months">3–6 meses</option>
                         <option value="year">Dentro de un año</option>
                         <option value="exploring">Solo explorando</option>
                       </select>
@@ -281,9 +297,10 @@ export default function ContactoES() {
 
                     <div className="mb-8">
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        ¿Hay Algo Más Que Deba Saber?
+                        ¿Algo Más que Deba Saber?
                       </label>
                       <textarea
+                        name="message"
                         rows={4}
                         placeholder="Cuéntame sobre tu situación, objetivos o cualquier pregunta que tengas..."
                         className="input-luxury resize-none"
@@ -328,7 +345,7 @@ export default function ContactoES() {
             {[
               { title: "Sin Obligación", desc: "Nuestra conversación no te compromete a nada. Eres libre de tomar la información y decidir en tu propio cronograma." },
               { title: "Sin Presión", desc: "No creo en tácticas de ventas de alta presión. Si vender no es lo correcto para ti ahora, te lo diré." },
-              { title: "Sin Spam", desc: "Tu información de contacto solo se usará para hacer seguimiento de tu consulta específica. Nada más." },
+              { title: "Sin Spam", desc: "Tu información de contacto solo se utilizará para hacer seguimiento a tu consulta específica. Nada más." },
             ].map((item) => (
               <div key={item.title}>
                 <div className="font-display text-xl font-light text-[#B8974A] mb-2">{item.title}</div>

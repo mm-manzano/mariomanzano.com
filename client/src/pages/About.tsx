@@ -130,7 +130,7 @@ export default function About() {
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 My wife and I built and ran an Airbnb. We renovated and furnished it ourselves and became a 5-star host. When it stopped performing, we shut it down and moved to long-term renting, which worked better.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-3">
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 My wife and I also have a strong eye for design, which has played a big role in how we approach homes. She's especially strong in this area. From our Airbnb to our own home and properties we've sold, we've been hands-on with design, layout, and presentation.
               </p>
             </RevealDiv>

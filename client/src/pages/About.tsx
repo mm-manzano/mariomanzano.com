@@ -208,7 +208,7 @@ export default function About() {
               </p>
             </RevealDiv>
 
-            <RevealDiv delay={200} className="-mt-6 md:mt-0">
+            <RevealDiv delay={200} className="-mt-3 md:mt-0">
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
                 Our daughter is studying Design Management with minors in Marketing and Home Furnishings, and plans to get her real estate license so we can work together and help clients at a deeper level. Real estate is part of our family's life, not just my work.
               </p>

@@ -238,7 +238,7 @@ export default function Navigation() {
 
           <Link href={language === "es" ? "/es/contacto" : "/contact"}>
             <span className="btn-luxury w-full justify-center text-center">
-              {language === "es" ? "Agendar Consulta" : "Book Consultation"}
+              {language === "es" ? "Programar una Consulta" : "Schedule a Consultation"}
             </span>
           </Link>
         </div>

@@ -134,7 +134,6 @@ export default function ContactES() {
                 <form 
                   action="https://formspree.io/f/xdawbgyw" 
                   method="POST"
-                  target="_blank"
                   className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
                 >
                   <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">

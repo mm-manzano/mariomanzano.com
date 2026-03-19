@@ -130,7 +130,7 @@ export default function AboutES() {
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 Mi esposa y yo construimos y operamos un Airbnb. Lo renovamos y amueblamos nosotros mismos y nos convertimos en anfitriones de 5 estrellas. Cuando dejó de funcionar, lo cerramos y pasamos al alquiler a largo plazo, que funcionó mejor.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+              <p className="font-body text-base text-white/70 leading-relaxed mb-3">
                 Mi esposa y yo también tenemos un ojo fuerte para el diseño, lo cual ha jugado un papel importante en cómo abordamos los hogares. Ella es especialmente fuerte en esta área. Desde nuestro Airbnb hasta nuestra propia casa y propiedades que hemos vendido, hemos estado muy involucrados en el diseño, la distribución y la presentación.
               </p>
             </RevealDiv>

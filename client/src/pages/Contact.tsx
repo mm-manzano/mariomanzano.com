@@ -4,7 +4,7 @@
  * Sections: Hero, Contact Form, What to Expect, Direct Contact
  */
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight, Phone, Mail, Clock, MapPin, Loader2 } from "lucide-react";
 import { toast } from "sonner";
@@ -16,7 +16,7 @@ function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   
-  React.useEffect(() => {
+  useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
@@ -36,48 +36,22 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 }
 
 export default function Contact() {
-  const [form, setForm] = useState({
-    name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "",
-  });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    try {
-      const formData = new FormData();
-      formData.append("name", form.name);
-      formData.append("email", form.email);
-      formData.append("phone", form.phone);
-      formData.append("address", form.address);
-      formData.append("topic", form.topic);
-      formData.append("timeline", form.timeline);
-      formData.append("message", form.message);
-
-      const response = await fetch("https://formspree.io/f/xdawbgyw", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok || response.status === 200 || response.status === 201) {
-        setSubmitted(true);
-        toast.success("Got it. I'll reach out shortly.");
-        setForm({ name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "" });
-      } else {
-        const errorData = await response.json().catch(() => ({}));
-        console.error("Form submission error:", errorData);
-        toast.error("An error occurred. Please try again or call me directly.");
-      }
-    } catch (error) {
-      console.error("Form error:", error);
-      toast.error("An error occurred. Please try again or call (512) 695-9255.");
-    } finally {
-      setLoading(false);
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // Let the form submit naturally to Formspree
+    // This will redirect to Formspree's success page
+    // We'll handle the redirect in useEffect
   };
+
+  useEffect(() => {
+    // Check if we're returning from Formspree success
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submitted') === 'true') {
+      setSubmitted(true);
+      toast.success("Got it. I'll reach out shortly.");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
@@ -122,20 +96,20 @@ export default function Contact() {
                   <em className="italic">not a sales call.</em>
                 </h2>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-8">
-                  Our first conversation is about understanding your situation: your home, your timeline, your goals. I'll ask questions and listen. There's no pitch, no pressure, and no commitment required.
+                  Our first conversation is about understanding your situation: your home, your timeline, your goals. I'll ask questions and listen. No sales pitch, no pressure, and no commitment required.
                 </p>
 
                 <div className="flex flex-col gap-6 mb-10">
                   {[
                     {
                       icon: <Clock size={16} className="text-[#B8974A]" />,
-                      title: "30-45 minutes",
+                      title: "30–45 minutes",
                       desc: "Enough time to cover your situation thoroughly without wasting your afternoon.",
                     },
                     {
                       icon: <MapPin size={16} className="text-[#B8974A]" />,
-                      title: "Phone, Zoom, or In-Person",
-                      desc: "Whatever works for you. I serve Cedar Park, Leander, and the greater Austin area.",
+                      title: "Phone, Zoom, or In Person",
+                      desc: "Whatever works for you. I serve Cedar Park, Leander, and surrounding areas.",
                     },
                     {
                       icon: <ArrowRight size={16} className="text-[#B8974A]" />,
@@ -192,7 +166,12 @@ export default function Contact() {
                     </Link>
                   </div>
                 ) : (
-                  <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
+                  <form 
+                    action="https://formspree.io/f/xdawbgyw" 
+                    method="POST"
+                    onSubmit={handleSubmit}
+                    className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
+                  >
                     <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
                       Schedule a Consultation
                     </h3>
@@ -208,8 +187,6 @@ export default function Contact() {
                           required
                           placeholder="Your name"
                           className="input-luxury"
-                          value={form.name}
-                          onChange={(e) => setForm({ ...form, name: e.target.value })}
                         />
                       </div>
                       <div>
@@ -221,8 +198,6 @@ export default function Contact() {
                           name="phone"
                           placeholder="(512) 555-0000"
                           className="input-luxury"
-                          value={form.phone}
-                          onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         />
                       </div>
                     </div>
@@ -237,8 +212,6 @@ export default function Contact() {
                         required
                         placeholder="your@email.com"
                         className="input-luxury"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
                       />
                     </div>
 
@@ -251,8 +224,6 @@ export default function Contact() {
                         name="address"
                         placeholder="123 Oak Creek Drive, Cedar Park"
                         className="input-luxury"
-                        value={form.address}
-                        onChange={(e) => setForm({ ...form, address: e.target.value })}
                       />
                     </div>
 
@@ -263,14 +234,12 @@ export default function Contact() {
                       <select
                         name="topic"
                         className="input-luxury bg-transparent"
-                        value={form.topic}
-                        onChange={(e) => setForm({ ...form, topic: e.target.value })}
                       >
                         <option value="">Select a topic</option>
                         <option value="sell">I'm thinking about selling</option>
                         <option value="value">I want to know my home's value</option>
                         <option value="options">I want to understand all my options</option>
-                        <option value="timing">I'm trying to figure out the right timing</option>
+                        <option value="timing">I'm trying to determine the right timing</option>
                         <option value="other">Something else</option>
                       </select>
                     </div>
@@ -282,8 +251,6 @@ export default function Contact() {
                       <select
                         name="timeline"
                         className="input-luxury bg-transparent"
-                        value={form.timeline}
-                        onChange={(e) => setForm({ ...form, timeline: e.target.value })}
                       >
                         <option value="">Select a timeline</option>
                         <option value="asap">As soon as possible</option>
@@ -303,23 +270,12 @@ export default function Contact() {
                         rows={4}
                         placeholder="Tell me about your situation, goals, or any questions you have..."
                         className="input-luxury resize-none"
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
                       />
                     </div>
 
-                    <button type="submit" disabled={loading} className="btn-luxury w-full justify-center text-center disabled:opacity-50 disabled:cursor-not-allowed">
-                      {loading ? (
-                        <>
-                          <Loader2 size={14} className="animate-spin" />
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          Send My Request
-                          <ArrowRight size={14} />
-                        </>
-                      )}
+                    <button type="submit" className="btn-luxury w-full justify-center text-center">
+                      Send My Request
+                      <ArrowRight size={14} />
                     </button>
 
                     <p className="font-body text-[11px] text-[#1A1A18]/40 text-center mt-4 leading-relaxed">
@@ -343,8 +299,8 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
               { title: "No Obligation", desc: "Our conversation doesn't commit you to anything. You're free to take the information and decide on your own timeline." },
-              { title: "No Pressure", desc: "I don't believe in high-pressure sales tactics. If selling isn't right for you right now, I'll tell you." },
-              { title: "No Spam", desc: "Your contact information will only be used to follow up on your specific inquiry. Nothing else." },
+              { title: "No Pressure", desc: "I don't believe in high-pressure sales tactics. If selling isn't right for you now, I'll tell you that." },
+              { title: "No Spam", desc: "Your contact information will only be used to follow up on your specific inquiry. Nothing more." },
             ].map((item) => (
               <div key={item.title}>
                 <div className="font-display text-xl font-light text-[#B8974A] mb-2">{item.title}</div>

@@ -4,9 +4,9 @@
  * Sections: Hero, Contacto Form, What to Expect, Direct Contacto
  */
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Phone, Mail, Clock, MapPin, Loader2 } from "lucide-react";
+import { ArrowRight, Phone, Mail, Clock, MapPin } from "lucide-react";
 import { toast } from "sonner";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
@@ -16,7 +16,7 @@ function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   
-  React.useEffect(() => {
+  useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
@@ -36,48 +36,20 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 }
 
 export default function ContactoES() {
-  const [form, setForm] = useState({
-    name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "",
-  });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    try {
-      const formData = new FormData();
-      formData.append("name", form.name);
-      formData.append("email", form.email);
-      formData.append("phone", form.phone);
-      formData.append("address", form.address);
-      formData.append("topic", form.topic);
-      formData.append("timeline", form.timeline);
-      formData.append("message", form.message);
-
-      const response = await fetch("https://formspree.io/f/xdawbgyw", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok || response.status === 200 || response.status === 201) {
-        setSubmitted(true);
-        toast.success("Gracias. Nos pondremos en contacto pronto.");
-        setForm({ name: "", email: "", phone: "", address: "", topic: "", message: "", timeline: "" });
-      } else {
-        const errorData = await response.json().catch(() => ({}));
-        console.error("Form submission error:", errorData);
-        toast.error("Ocurrió un error. Por favor, intenta de nuevo o llámame directamente.");
-      }
-    } catch (error) {
-      console.error("Form error:", error);
-      toast.error("Ocurrió un error. Por favor, intenta de nuevo o llama al (512) 695-9255.");
-    } finally {
-      setLoading(false);
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // Let the form submit naturally to Formspree
   };
+
+  useEffect(() => {
+    // Check if we're returning from Formspree success
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submitted') === 'true') {
+      setSubmitted(true);
+      toast.success("Gracias. Nos pondremos en contacto pronto.");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
@@ -192,7 +164,12 @@ export default function ContactoES() {
                     </Link>
                   </div>
                 ) : (
-                  <form ref={formRef} onSubmit={handleSubmit} className="bg-white p-8 md:p-10 border border-[#E8E0D5]">
+                  <form 
+                    action="https://formspree.io/f/xdawbgyw" 
+                    method="POST"
+                    onSubmit={handleSubmit}
+                    className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
+                  >
                     <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
                       Programar una Consulta
                     </h3>
@@ -208,8 +185,6 @@ export default function ContactoES() {
                           required
                           placeholder="Tu nombre"
                           className="input-luxury"
-                          value={form.name}
-                          onChange={(e) => setForm({ ...form, name: e.target.value })}
                         />
                       </div>
                       <div>
@@ -221,8 +196,6 @@ export default function ContactoES() {
                           name="phone"
                           placeholder="(512) 555-0000"
                           className="input-luxury"
-                          value={form.phone}
-                          onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         />
                       </div>
                     </div>
@@ -237,8 +210,6 @@ export default function ContactoES() {
                         required
                         placeholder="tu@correo.com"
                         className="input-luxury"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
                       />
                     </div>
 
@@ -251,8 +222,6 @@ export default function ContactoES() {
                         name="address"
                         placeholder="123 Oak Creek Drive, Cedar Park"
                         className="input-luxury"
-                        value={form.address}
-                        onChange={(e) => setForm({ ...form, address: e.target.value })}
                       />
                     </div>
 
@@ -263,8 +232,6 @@ export default function ContactoES() {
                       <select
                         name="topic"
                         className="input-luxury bg-transparent"
-                        value={form.topic}
-                        onChange={(e) => setForm({ ...form, topic: e.target.value })}
                       >
                         <option value="">Selecciona un tema</option>
                         <option value="sell">Estoy pensando en vender</option>
@@ -282,8 +249,6 @@ export default function ContactoES() {
                       <select
                         name="timeline"
                         className="input-luxury bg-transparent"
-                        value={form.timeline}
-                        onChange={(e) => setForm({ ...form, timeline: e.target.value })}
                       >
                         <option value="">Selecciona un cronograma</option>
                         <option value="asap">Lo antes posible</option>
@@ -303,23 +268,12 @@ export default function ContactoES() {
                         rows={4}
                         placeholder="Cuéntame sobre tu situación, objetivos o cualquier pregunta que tengas..."
                         className="input-luxury resize-none"
-                        value={form.message}
-                        onChange={(e) => setForm({ ...form, message: e.target.value })}
                       />
                     </div>
 
-                    <button type="submit" disabled={loading} className="btn-luxury w-full justify-center text-center disabled:opacity-50 disabled:cursor-not-allowed">
-                      {loading ? (
-                        <>
-                          <Loader2 size={14} className="animate-spin" />
-                          Enviando...
-                        </>
-                      ) : (
-                        <>
-                          Enviar Mi Solicitud
-                          <ArrowRight size={14} />
-                        </>
-                      )}
+                    <button type="submit" className="btn-luxury w-full justify-center text-center">
+                      Enviar Mi Solicitud
+                      <ArrowRight size={14} />
                     </button>
 
                     <p className="font-body text-[11px] text-[#1A1A18]/40 text-center mt-4 leading-relaxed">

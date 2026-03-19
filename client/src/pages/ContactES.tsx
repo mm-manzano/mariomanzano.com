@@ -119,7 +119,7 @@ export default function ContactES() {
                   className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
                 >
                   <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
-                    Programar una Consulta
+                    Agendar una Consulta
                   </h3>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">

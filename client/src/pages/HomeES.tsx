@@ -68,7 +68,7 @@ export default function HomeES() {
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                BIENES RAÍCES EN CEDAR PARK Y LEANDER
+                BIENES RAÍCES EN EL ÁREA DE AUSTIN
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.0] mb-6">

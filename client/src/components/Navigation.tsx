@@ -165,7 +165,7 @@ export default function Navigation() {
                 <span className={`btn-luxury text-[10px] py-2.5 ${
                   isSpanish ? "px-3" : "px-5"
                 }`}>
-                  {language === "es" ? "Programar una Consulta" : "Schedule a Consultation"}
+                  {language === "es" ? "Agendar una Consulta" : "Schedule a Consultation"}
                 </span>
               </Link>
             </nav>
@@ -236,7 +236,7 @@ export default function Navigation() {
 
           <Link href={language === "es" ? "/es/contacto" : "/contact"}>
             <span className="btn-luxury w-full justify-center text-center">
-              {language === "es" ? "Programar una Consulta" : "Schedule a Consultation"}
+              {language === "es" ? "Agendar una Consulta" : "Schedule a Consultation"}
             </span>
           </Link>
         </div>

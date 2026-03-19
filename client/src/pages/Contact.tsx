@@ -2,57 +2,39 @@
  * DESIGN: Quiet Luxury Editorial - Contact / Consultation Page
  * Goal: Convert visitors into consultation bookings
  * Sections: Hero, Contact Form, What to Expect, Direct Contact
+ * Form: Pure HTML submission to Formspree - no JS interception
  */
 
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "wouter";
-import { ArrowRight, Phone, Mail, Clock, MapPin, Loader2 } from "lucide-react";
-import { toast } from "sonner";
+import { ArrowRight, Phone, Mail, Clock, MapPin } from "lucide-react";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
 const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
   
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.disconnect(); } },
       { threshold: 0.12 }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
   
-  return { ref, visible };
+  return ref;
 }
 
 function RevealDiv({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const { ref, visible } = useScrollReveal();
-  return <div ref={ref} className={`fade-in-up ${visible ? 'visible' : ''} ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
+  const ref = useScrollReveal();
+  return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // Let the form submit naturally to Formspree
-    // This will redirect to Formspree's success page
-    // We'll handle the redirect in useEffect
-  };
-
-  useEffect(() => {
-    // Check if we're returning from Formspree success
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('submitted') === 'true') {
-      setSubmitted(true);
-      toast.success("Got it. I'll reach out shortly.");
-    }
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
       {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
@@ -149,140 +131,121 @@ export default function Contact() {
             {/* Right: Form (3 cols) */}
             <div className="lg:col-span-3">
               <RevealDiv delay={150}>
-                {submitted ? (
-                  <div className="bg-[#1A1A18] p-10 md:p-12 text-center">
-                    <div className="font-display text-5xl text-[#B8974A] mb-4">✓</div>
-                    <h3 className="font-display text-3xl font-light text-white mb-4">
-                      Message Received
-                    </h3>
-                    <p className="font-body text-base text-white/60 leading-relaxed mb-8">
-                      Thank you for reaching out. I'll be in touch within 24 hours to schedule our conversation.
-                    </p>
-                    <Link href="/">
-                      <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                        Back to Home
-                        <ArrowRight size={14} />
-                      </span>
-                    </Link>
-                  </div>
-                ) : (
-                  <form 
-                    action="https://formspree.io/f/xdawbgyw" 
-                    method="POST"
-                    onSubmit={handleSubmit}
-                    className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
-                  >
-                    <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
-                      Schedule a Consultation
-                    </h3>
+                <form 
+                  action="https://formspree.io/f/xdawbgyw" 
+                  method="POST"
+                  className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
+                >
+                  <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">
+                    Schedule a Consultation
+                  </h3>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                      <div>
-                        <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          required
-                          placeholder="Your name"
-                          className="input-luxury"
-                        />
-                      </div>
-                      <div>
-                        <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          placeholder="(512) 555-0000"
-                          className="input-luxury"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="mb-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+                    <div>
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        placeholder="your@email.com"
-                        className="input-luxury"
-                      />
-                    </div>
-
-                    <div className="mb-5">
-                      <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Property Address (if applicable)
+                        Full Name *
                       </label>
                       <input
                         type="text"
-                        name="address"
-                        placeholder="123 Oak Creek Drive, Cedar Park"
+                        name="name"
+                        required
+                        placeholder="Your name"
                         className="input-luxury"
                       />
                     </div>
-
-                    <div className="mb-5">
+                    <div>
                       <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        What Would You Like to Discuss?
+                        Phone Number
                       </label>
-                      <select
-                        name="topic"
-                        className="input-luxury bg-transparent"
-                      >
-                        <option value="">Select a topic</option>
-                        <option value="sell">I'm thinking about selling</option>
-                        <option value="value">I want to know my home's value</option>
-                        <option value="options">I want to understand all my options</option>
-                        <option value="timing">I'm trying to determine the right timing</option>
-                        <option value="other">Something else</option>
-                      </select>
-                    </div>
-
-                    <div className="mb-5">
-                      <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Your Timeline
-                      </label>
-                      <select
-                        name="timeline"
-                        className="input-luxury bg-transparent"
-                      >
-                        <option value="">Select a timeline</option>
-                        <option value="asap">As soon as possible</option>
-                        <option value="3months">Within 3 months</option>
-                        <option value="6months">3–6 months</option>
-                        <option value="year">Within a year</option>
-                        <option value="exploring">Just exploring</option>
-                      </select>
-                    </div>
-
-                    <div className="mb-8">
-                      <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
-                        Anything Else I Should Know?
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={4}
-                        placeholder="Tell me about your situation, goals, or any questions you have..."
-                        className="input-luxury resize-none"
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="(512) 555-0000"
+                        className="input-luxury"
                       />
                     </div>
+                  </div>
 
-                    <button type="submit" className="btn-luxury w-full justify-center text-center">
-                      Send My Request
-                      <ArrowRight size={14} />
-                    </button>
+                  <div className="mb-5">
+                    <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="your@email.com"
+                      className="input-luxury"
+                    />
+                  </div>
 
-                    <p className="font-body text-[11px] text-[#1A1A18]/40 text-center mt-4 leading-relaxed">
-                      I respond to all inquiries within 24 hours. Your information is private and never shared.
-                    </p>
-                  </form>
-                )}
+                  <div className="mb-5">
+                    <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
+                      Property Address (if applicable)
+                    </label>
+                    <input
+                      type="text"
+                      name="address"
+                      placeholder="123 Oak Creek Drive, Cedar Park"
+                      className="input-luxury"
+                    />
+                  </div>
+
+                  <div className="mb-5">
+                    <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
+                      What Would You Like to Discuss?
+                    </label>
+                    <select
+                      name="topic"
+                      className="input-luxury bg-transparent"
+                    >
+                      <option value="">Select a topic</option>
+                      <option value="sell">I'm thinking about selling</option>
+                      <option value="value">I want to know my home's value</option>
+                      <option value="options">I want to understand all my options</option>
+                      <option value="timing">I'm trying to determine the right timing</option>
+                      <option value="other">Something else</option>
+                    </select>
+                  </div>
+
+                  <div className="mb-5">
+                    <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
+                      Your Timeline
+                    </label>
+                    <select
+                      name="timeline"
+                      className="input-luxury bg-transparent"
+                    >
+                      <option value="">Select a timeline</option>
+                      <option value="asap">As soon as possible</option>
+                      <option value="3months">Within 3 months</option>
+                      <option value="6months">3–6 months</option>
+                      <option value="year">Within a year</option>
+                      <option value="exploring">Just exploring</option>
+                    </select>
+                  </div>
+
+                  <div className="mb-8">
+                    <label className="font-body text-[10px] tracking-[0.15em] uppercase text-[#1A1A18]/50 block mb-2">
+                      Anything Else I Should Know?
+                    </label>
+                    <textarea
+                      name="message"
+                      rows={4}
+                      placeholder="Tell me about your situation, goals, or any questions you have..."
+                      className="input-luxury resize-none"
+                    />
+                  </div>
+
+                  <button type="submit" className="btn-luxury w-full justify-center text-center">
+                    Send My Request
+                    <ArrowRight size={14} />
+                  </button>
+
+                  <p className="font-body text-[11px] text-[#1A1A18]/40 text-center mt-4 leading-relaxed">
+                    I respond to all inquiries within 24 hours. Your information is private and never shared.
+                  </p>
+                </form>
               </RevealDiv>
             </div>
           </div>

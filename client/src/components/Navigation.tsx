@@ -34,6 +34,19 @@ export default function Navigation() {
   location.startsWith("/es/");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
+  const handleNavClick = (href: string) => {
+    // Close mobile menu
+    setMobileOpen(false);
+    
+    // If clicking the same page, scroll to top
+    if (location === href) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Navigate to different page
+      setLocation(href);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -120,7 +133,7 @@ export default function Navigation() {
                     </span>
                   </a>
                 ) : (
-                  <Link key={link.href} to={link.href}>
+                  <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                     <span
                       className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
                         scrolled || isHome
@@ -130,7 +143,7 @@ export default function Navigation() {
                     >
                       {link.label}
                     </span>
-                  </Link>
+                  </a>
                 )
               ))}
               
@@ -201,14 +214,14 @@ export default function Navigation() {
                   </span>
                 </a>
               ) : (
-                <Link key={link.href} to={link.href}>
+                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                   <span
                     className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}
                   >
                     {link.label}
                   </span>
-                </Link>
+                </a>
               )
             ))}
           </nav>

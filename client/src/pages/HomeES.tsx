@@ -292,6 +292,47 @@ export default function HomeES() {
         </div>
       </section>
 
+      {/* ─── CREDENTIALS ────────────────────────────────────────────── */}
+      <section className="bg-[#1A1A18] py-20 md:py-28">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" style={{ background: "#D4B878" }} />
+              <span className="section-number text-[#D4B878]">Experiencia</span>
+            </div>
+            <h2 className="font-display text-4xl font-light text-white mb-10 max-w-xl">
+              Experiencia que puedes verificar.
+            </h2>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
+            {[
+              {
+                title: "REALTOR® Licenciado",
+                body: "Miembro activo en buen estado con la Asociación Nacional de REALTORS®.",
+              },
+              {
+                title: "Asesor en Estrategia de Precios (PSA)",
+                body: "Formación especializada en estrategia de precios, análisis de mercado y toma de decisiones basada en datos.",
+              },
+              {
+                title: "Miembro, Asociación de REALTORS® de Austin (ABOR)",
+                body: "Sirviendo el área metropolitana de Austin con experiencia local.",
+              },
+              {
+                title: "Miembro, Asociación Nacional de REALTORS® (NAR)",
+                body: "Parte de la organización profesional inmobiliaria más grande de Estados Unidos.",
+              },
+            ].map((cred, i) => (
+              <RevealDiv key={cred.title} delay={i * 100} className="border-t border-white/10 pt-6">
+                <h3 className="font-display text-lg font-light text-white mb-2">{cred.title}</h3>
+                <p className="font-body text-sm text-white/60 leading-relaxed">{cred.body}</p>
+              </RevealDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── PROCESS STRIP ─────────────────────────────────────────── */}
       <section className="py-20 md:py-28">
         <div className="container">

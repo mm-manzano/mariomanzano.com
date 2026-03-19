@@ -78,7 +78,7 @@ export default function ContactES() {
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="font-display text-2xl font-light text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline">
+                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline">
                     (512) 695-9255
                   </a>
                   <p className="font-body text-base text-[#1A1A18]/65">

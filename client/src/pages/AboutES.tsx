@@ -92,10 +92,10 @@ export default function AboutES() {
                 Una vez que salí de la deuda, quería independencia financiera. Mientras comenzaba a investigar qué hacer a continuación, todo seguía apuntando hacia bienes raíces.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Pasé tiempo en BiggerPockets, leí libros y comencé a entender cómo la gente realmente construye riqueza a través de bienes raíces.
+                Pasé tiempo en BiggerPockets, leí libros y comencé a entender cómo la gente realmente construye riqueza a través de invertir.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante fue que me llevó a invertir en bienes raíces yo mismo.
+                Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante fue que cambió cómo abordé la inversión, me impulsó a seguir construyendo mi cartera, y me permitió ayudar a otros a navegar sus propias decisiones de bienes raíces.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
                 Los bienes raíces siempre han estado alrededor de mí. Mis padres y hermanos son todos propietarios de inmuebles.
@@ -210,7 +210,7 @@ export default function AboutES() {
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Mi hija está estudiando Gestión del Diseño con especialidades en Marketing y Decoración del Hogar. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
+                Mi hija está estudiando Gestión del Diseño con especialidades en Marketing y Decoración del Hogar, y planea obtener su licencia de bienes raíces para que podamos trabajar juntos y ayudar a los clientes a un nivel más profundo. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
               </p>
             </RevealDiv>
           </div>

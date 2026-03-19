@@ -92,10 +92,10 @@ export default function About() {
                 Once I got out of debt, I wanted financial independence. As I started researching what to do next, everything kept pointing back to real estate.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I spent time on BiggerPockets, read books, and started understanding how people actually build wealth through real estate.
+                I spent time on BiggerPockets, read books, and started understanding how people actually build wealth through investing.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                That research led me to get licensed as a REALTOR®. But more importantly, it led me to actually invest in real estate myself.
+                That research led me to get licensed as a REALTOR®. But more importantly, it changed how I approached investing, pushed me to keep building my portfolio, and allowed me to help others navigate their own real estate decisions.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
                 Real estate has always been around me. My parents and siblings are all landlords.
@@ -210,7 +210,7 @@ export default function About() {
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                My daughter is studying Design Management with minors in Marketing and Home Furnishings. Real estate is part of our family's life, not just my work.
+                My daughter is studying Design Management with minors in Marketing and Home Furnishings, and plans to get her real estate license so we can work together and help clients at a deeper level. Real estate is part of our family's life, not just my work.
               </p>
             </RevealDiv>
           </div>

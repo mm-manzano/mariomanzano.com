@@ -208,7 +208,7 @@ export default function AboutES() {
               </p>
             </RevealDiv>
 
-            <RevealDiv delay={200}>
+            <RevealDiv delay={200} className="-mt-6 md:mt-0">
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
                 Nuestra hija está estudiando Gestión del Diseño con especialidades en Marketing y Decoración del Hogar, y planea obtener su licencia de bienes raíces para que podamos trabajar juntos y ayudar a los clientes a un nivel más profundo. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
               </p>

@@ -119,7 +119,7 @@ export default function About() {
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl items-start lg:gap-12 md:gap-8 gap-0">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
                 I didn't learn real estate from courses alone. I've had to make the decisions myself.

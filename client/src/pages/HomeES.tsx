@@ -11,6 +11,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
+const AERIAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/cedar-park-aerial-SPVZiqyQFqbArbkNwV7GJu.webp";
 const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
 
 function useScrollReveal() {
@@ -129,7 +130,7 @@ export default function HomeES() {
                 <em className="italic">cualquier decisión.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Soy Mario Manzano, REALTOR® autorizado y Asesor de Estrategia de Venta basado en Cedar Park, Texas. Antes de que decidas algo sobre tu hogar, mereces entender todas tus opciones.
+                Soy Mario Manzano, REALTOR® autorizado y Asesor de Estrategia de Venta basado en Leander, Texas, sirviendo el área mayor de Austin. Antes de que decidas algo sobre tu hogar, mereces entender todas tus opciones.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 Eso podría significar vender, o podría significar algo más. Mi trabajo es guiarte a través de los datos, los costos y el tiempo para que tomes la decisión que tenga sentido para tu situación.
@@ -221,6 +222,49 @@ export default function HomeES() {
                 </Link>
               </RevealDiv>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MARKET INSIGHT ────────────────────────────────────────── */}
+      <section className="py-20 md:py-32">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Text */}
+            <RevealDiv>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="section-rule" />
+                <span className="section-number">03. Mercado</span>
+              </div>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+              Entendiendo el<br />
+              <em className="italic">mercado de Austin.</em>
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+              El mercado no es un solo número.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+              Lo que una casa puede venderse depende de la propiedad, el vecindario, y qué están haciendo los compradores ahora mismo.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
+              Si ahora es el momento correcto para vender depende de tu propiedad específica, tu vecindario, y tu situación personal. Puedo guiarte a través de los datos actuales para que entiendas qué es realista para tu hogar.
+            </p>
+
+            </RevealDiv>
+
+            {/* Aerial Image */}
+            <RevealDiv delay={150}>
+              <div className="relative">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={AERIAL_IMG}
+                    alt="Cedar Park Texas neighborhood aerial view"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+              </div>
+            </RevealDiv>
           </div>
         </div>
       </section>

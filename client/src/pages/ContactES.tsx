@@ -115,7 +115,7 @@ export default function ContactES() {
               <RevealDiv delay={150}>
                 <form 
                   action="https://formspree.io/f/xdawbgyw" 
-                  method="GET"
+                  method="POST"
                   className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
                 >
                   <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">

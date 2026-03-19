@@ -35,6 +35,12 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 }
 
 export default function Contact() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // Force full page navigation to Formspree (breaks out of React router)
+    const form = e.currentTarget;
+    window.location.href = `https://formspree.io/f/xdawbgyw?name=${encodeURIComponent((form.elements.namedItem('name') as HTMLInputElement).value)}&email=${encodeURIComponent((form.elements.namedItem('email') as HTMLInputElement).value)}`;
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
       {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
@@ -134,6 +140,7 @@ export default function Contact() {
                 <form 
                   action="https://formspree.io/f/xdawbgyw" 
                   method="POST"
+                  onSubmit={handleSubmit}
                   className="bg-white p-8 md:p-10 border border-[#E8E0D5]"
                 >
                   <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">

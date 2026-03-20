@@ -291,30 +291,9 @@ export default function AboutES() {
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="section-number text-[#D4B878]">06. Credenciales</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-10 max-w-2xl">
               Experiencia<br />
               <em className="italic">comprobable.</em>
-            </h2>
-            <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
-              Soy un REALTOR® licenciado en Texas, miembro de la Asociación Nacional de REALTORS® y la Asociación de REALTORS® de Austin. He trabajado con docenas de clientes en el área de Austin. He aprendido qué funciona y qué no.
-            </p>
-            <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl">
-              Pero lo más importante es que he vivido estas decisiones yo mismo. Eso me da empatía. Eso me da perspectiva. Y eso me hace mejor para mis clientes.
-            </p>
-          </RevealDiv>
-        </div>
-      </section>
-
-      {/* SECTION 7: CREDENTIALS */}
-      <section className="bg-[#1A1A18] py-20 md:py-28">
-        <div className="container">
-          <RevealDiv>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="section-number text-[#D4B878]">Experiencia</span>
-            </div>
-            <h2 className="font-display text-4xl font-light text-white mb-10 max-w-xl">
-              Experiencia que puedes verificar.
             </h2>
           </RevealDiv>
 

@@ -261,10 +261,11 @@ export default function About() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="section-number text-[#D4B878]">Credentials</span>
+              <span className="section-number text-[#D4B878]">06. CREDENTIALS</span>
             </div>
-            <h2 className="font-display text-4xl font-light text-white mb-10 max-w-xl">
-              Expertise you can verify.
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-10 max-w-2xl">
+              Expertise<br />
+              <em className="italic">you can verify.</em>
             </h2>
           </RevealDiv>
 

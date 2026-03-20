@@ -109,7 +109,7 @@ export default function Navigation() {
                   <span
                     className="font-body text-[8px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A]"
                   >
-                    {isSpanish ? "Agente Inmobiliario | Estrategia de Venta" : "Austin Realtor | Seller Strategy"}
+                    {isSpanish ? "Agente Inmobiliario | Estrategia de Venta" : "Austin Realtor | Seller Strategist"}
                   </span>
                 </div>
               </div>

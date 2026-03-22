@@ -35,7 +35,7 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 export default function SellingProcessES() {
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
+      {/* PAGE HERO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src={PROCESS_BG} alt="" className="w-full h-full object-cover" />
@@ -60,7 +60,7 @@ export default function SellingProcessES() {
         </div>
       </section>
 
-      {/* ─── BEFORE YOU LIST ─────────────────────────────────────────── */}
+      {/* BEFORE YOU LIST */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -72,19 +72,22 @@ export default function SellingProcessES() {
               Preparándose para salir al mercado.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Antes de que tu casa salga al mercado, tendremos una conversación detallada sobre tu propiedad, tu cronograma y lo que esperas lograr. Aquí es donde alineamos la estrategia y establecemos expectativas realistas.
+              Antes de que tu casa salga al mercado, nos alinearemos en tu propiedad, tu cronograma y tus objetivos.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Prepararé un análisis de mercado que muestre casas comparables, demanda actual de compradores y un rango de precio recomendado. Esto nos da un punto de partida claro basado en datos reales, no en conjeturas.
+              Prepararé un análisis de mercado con casas comparables, demanda actual y un rango de precio recomendado para que comencemos desde datos, no desde conjeturas.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+              También cubriremos cualquier preparación que tenga sentido. No renovaciones mayores, solo lo que ayuda a los compradores a ver tu casa claramente.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              También discutiremos cualquier preparación que tenga sentido—no renovaciones mayores, pero lo básico que ayuda a los compradores a ver tu casa claramente. El objetivo es posicionamiento, no perfección.
+              Si aún estás decidiendo cuánto hacer antes de vender, la Guía para Propietarios desglosa esto más.
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── GOING LIVE ─────────────────────────────────────────────── */}
+      {/* GOING LIVE */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -96,7 +99,7 @@ export default function SellingProcessES() {
               Tu casa en el mercado.
             </h2>
             <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
-              Una vez listada, tu casa aparece en todas las plataformas principales—MLS, Zillow, Realtor.com y más. Fotografía profesional, descripciones detalladas y precios estratégicos trabajan juntos para atraer a los compradores correctos.
+              Una vez listada, tu casa aparece en plataformas principales como MLS, Zillow y Realtor.com. Fotos profesionales, presentación clara y precios estratégicos trabajan juntos para atraer a los compradores correctos.
             </p>
           </RevealDiv>
 
@@ -104,20 +107,20 @@ export default function SellingProcessES() {
             <RevealDiv delay={100} className="border border-white/10 p-8">
               <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Primeras Dos Semanas</h3>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                El período inicial de visualización es crítico. La mayoría del interés de los compradores ocurre temprano. Monitorearemos las visualizaciones, recopilaremos retroalimentación y ajustaremos la estrategia si es necesario.
+                Las primeras dos semanas son cuando tu casa recibe más atención. Aquí es donde vemos cómo responden los compradores y si se necesitan ajustes.
               </p>
             </RevealDiv>
             <RevealDiv delay={150} className="border border-white/10 p-8">
               <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Actividad Continua</h3>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                Te mantendré actualizado sobre visualizaciones, interés de compradores y retroalimentación del mercado. Sabrás qué está funcionando y qué podría necesitar ajuste.
+                A medida que continúan las visualizaciones, te mantendré actualizado sobre la actividad de compradores, retroalimentación y cómo el mercado está respondiendo para que siempre sepas dónde están las cosas.
               </p>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── OFFERS & NEGOTIATION ─────────────────────────────────── */}
+      {/* OFFERS AND NEGOTIATION */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -129,19 +132,19 @@ export default function SellingProcessES() {
               Cuando llegan las ofertas.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Una oferta no es solo un número. Incluye contingencias, cronograma, financiamiento y términos de inspección. Te guiaré a través de cada uno para que entiendas exactamente en qué estás de acuerdo.
+              Una oferta es más que un número. Incluye términos, cronograma, financiamiento y condiciones de inspección. Te guiaré a través de cada parte para que entiendas exactamente en qué estás de acuerdo.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Evaluaremos las ofertas estratégicamente. A veces el precio más alto no es el mejor trato si viene con contingencias riesgosas o un cronograma de cierre largo. Te ayudaré a ver el panorama completo.
+              Evaluaremos las ofertas estratégicamente. A veces el precio más alto no es el mejor trato si viene con riesgo o un cronograma largo. Te ayudaré a ver el panorama completo antes de tomar una decisión.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              Si se necesita negociación, la manejaremos profesionalmente. El objetivo es llegar a un acuerdo que funcione para ti—no ganar una batalla.
+              Si se necesita negociación, la manejaremos profesionalmente. El objetivo es llegar a un acuerdo que funcione para ti.
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── UNDER CONTRACT TO CLOSING ─────────────────────────────── */}
+      {/* UNDER CONTRACT TO CLOSING */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -153,7 +156,7 @@ export default function SellingProcessES() {
               De la aceptación a las llaves.
             </h2>
             <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
-              Una vez aceptada una oferta, comienza el trabajo real. El prestamista del comprador ordenará una tasación e inspección. Podrías recibir solicitudes de reparaciones o créditos. Te ayudaré a navegar cada paso.
+              Una vez aceptada una oferta, el proceso continúa con inspecciones, tasación y aprobación del prestamista. Podrías recibir solicitudes de reparaciones o créditos, y decidiremos cómo manejarlos.
             </p>
           </RevealDiv>
 
@@ -161,19 +164,19 @@ export default function SellingProcessES() {
             <RevealDiv delay={100} className="border border-white/10 p-8">
               <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Período de Inspección</h3>
               <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                El comprador inspeccionará tu casa. Podrían surgir problemas. Decidiremos juntos qué abordar y qué negociar.
+                El comprador inspeccionará tu casa. Problemas pueden surgir. Revisaremos todo y decidiremos qué abordar y qué negociar.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed text-sm">
-                Cronograma típico: 7-10 días
+                Cronograma típico: 7 a 10 días
               </p>
             </RevealDiv>
             <RevealDiv delay={150} className="border border-white/10 p-8">
               <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Tasación y Suscripción</h3>
               <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                El prestamista verificará el valor de tu casa y la situación financiera del comprador. Esto generalmente ocurre en paralelo con la inspección.
+                El prestamista verifica el valor de tu casa y la posición financiera del comprador. Esto generalmente ocurre junto con el período de inspección.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed text-sm">
-                Cronograma típico: 10-14 días
+                Cronograma típico: 10 a 14 días
               </p>
             </RevealDiv>
           </div>
@@ -181,16 +184,16 @@ export default function SellingProcessES() {
           <RevealDiv delay={200} className="mt-8 border border-white/10 p-8">
             <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Recorrido Final y Cierre</h3>
             <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-              Unos días antes del cierre, el comprador hace un recorrido final para confirmar que la casa está en la condición acordada. Luego firmarás documentos de cierre y transferirás las llaves.
+              Unos días antes del cierre, el comprador completa un recorrido final. Luego firmarás documentos y transferirás la propiedad.
             </p>
             <p className="font-body text-base text-white/70 leading-relaxed text-sm">
-              Cronograma típico: 30-45 días de contrato a cierre
+              Cronograma típico: 30 a 45 días de contrato a cierre
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── SELLER PROCEEDS ─────────────────────────────────────────── */}
+      {/* SELLER PROCEEDS */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -201,33 +204,19 @@ export default function SellingProcessES() {
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Entendiendo tus ganancias netas.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-8">
-              Tu precio de venta no es lo que llevas a casa. Hay costos involucrados: comisión de agente inmobiliario, seguro de título, impuestos sobre la propiedad, cuotas de HOA y cualquier reparación negociada después de la inspección.
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+              Tu precio de venta no es lo que llevas a casa. Hay costos involucrados, incluyendo compensación del agente, costos de cierre, impuestos y cualquier reparación o crédito negociado.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+              Lo que te llevas depende de tu situación específica. El objetivo es entender tu ganancia neta antes de tomar cualquier decisión.
             </p>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <RevealDiv delay={100} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Costos Típicos</h3>
-              <ul className="font-body text-base text-[#1A1A18]/65 leading-relaxed space-y-2">
-                <li>• Comisión de agente inmobiliario (típicamente 5-6%)</li>
-                <li>• Seguro de título y costos de cierre</li>
-                <li>• Impuestos sobre la propiedad (prorrateados)</li>
-                <li>• Cuotas de transferencia de HOA (si aplica)</li>
-                <li>• Créditos de reparación o concesiones</li>
-              </ul>
-            </RevealDiv>
-            <RevealDiv delay={150} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Lo Que Recibes</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Tus ganancias netas = Precio de Venta − Todos los Costos. Proporcionaré una estimación detallada antes de listar para que sepas exactamente qué esperar en el cierre.
-              </p>
-            </RevealDiv>
-          </div>
+
         </div>
       </section>
 
-      {/* ─── CTA SECTION ───────────────────────────────────────────── */}
+      {/* CTA SECTION */}
       <section className="py-20 md:py-28 bg-[#1A1A18]">
         <div className="container">
           <RevealDiv>

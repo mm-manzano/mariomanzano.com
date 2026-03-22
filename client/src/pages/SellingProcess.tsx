@@ -10,7 +10,6 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
 const PROCESS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
-const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,7 +34,7 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 export default function SellingProcess() {
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
+      {/* PAGE HERO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <img src={PROCESS_BG} alt="" className="w-full h-full object-cover" />
@@ -60,7 +59,7 @@ export default function SellingProcess() {
         </div>
       </section>
 
-      {/* ─── BEFORE YOU LIST ─────────────────────────────────────────── */}
+      {/* BEFORE YOU LIST */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -72,19 +71,22 @@ export default function SellingProcess() {
               Getting ready to go live.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Before your home hits the market, we'll have a detailed conversation about your property, your timeline, and what you're hoping to achieve. This is where we align on strategy and set realistic expectations.
+              Before your home hits the market, we'll align on your property, your timeline, and your goals.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              I'll prepare a market analysis showing comparable homes, current buyer demand, and a recommended price range. This gives us a clear starting point based on real data, not guesswork.
+              I'll prepare a market analysis with comparable homes, current demand, and a recommended price range so we're starting from data, not guesswork.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+              We'll also cover any preparation that makes sense. Not major renovations, just what helps buyers see your home clearly.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              We'll also discuss any preparation that makes sense—not major renovations, but the basics that help buyers see your home clearly. The goal is positioning, not perfection.
+              If you're still deciding how much to do before selling, the Homeowner Guide breaks this down further.
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── GOING LIVE ─────────────────────────────────────────────── */}
+      {/* GOING LIVE */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -96,52 +98,55 @@ export default function SellingProcess() {
               Your home on the market.
             </h2>
             <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
-              Once listed, your home appears on all major platforms—MLS, Zillow, Realtor.com, and more. Professional photography, detailed descriptions, and strategic pricing work together to attract the right buyers.
+              Once listed, your home appears on major platforms like MLS, Zillow, and Realtor.com. Professional photos, clear presentation, and pricing work together to attract the right buyers.
             </p>
-          </RevealDiv>
+            
+            <div className="mb-12">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
+                First Two Weeks
+              </h3>
+              <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl">
+                The first couple of weeks are when your home gets the most attention. This is where we see how buyers respond and whether adjustments are needed.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <RevealDiv delay={100} className="border border-white/10 p-8">
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">First Two Weeks</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed">
-                The initial showing period is critical. Most buyer interest happens early. We'll monitor showings, gather feedback, and adjust strategy if needed.
+            <div>
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
+                Ongoing Activity
+              </h3>
+              <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl">
+                As showings continue, I'll keep you updated on buyer activity, feedback, and how the market is responding so you always know where things stand.
               </p>
-            </RevealDiv>
-            <RevealDiv delay={150} className="border border-white/10 p-8">
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Ongoing Activity</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed">
-                I'll keep you updated on showings, buyer interest, and market feedback. You'll know what's working and what might need adjustment.
-              </p>
-            </RevealDiv>
-          </div>
+            </div>
+          </RevealDiv>
         </div>
       </section>
 
-      {/* ─── OFFERS & NEGOTIATION ─────────────────────────────────── */}
+      {/* OFFERS AND NEGOTIATION */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03. Offers & Negotiation</span>
+              <span className="section-number">03. Offers and Negotiation</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               When offers come in.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              An offer isn't just a number. It includes contingencies, timeline, financing, and inspection terms. I'll walk you through each one so you understand what you're actually agreeing to.
+              An offer is more than a number. It includes terms, timeline, financing, and inspection conditions. I'll walk you through each part so you understand what you're agreeing to.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              We'll evaluate offers strategically. Sometimes the highest price isn't the best deal if it comes with risky contingencies or a long closing timeline. I'll help you see the full picture.
+              We'll evaluate offers strategically. Sometimes the highest price is not the best deal if it comes with risk or a long timeline. I'll help you see the full picture before making a decision.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              If negotiation is needed, we'll handle it professionally. The goal is reaching an agreement that works for you—not winning a battle.
+              If negotiation is needed, we'll handle it professionally. The goal is reaching an agreement that works for you.
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── UNDER CONTRACT TO CLOSING ─────────────────────────────── */}
+      {/* UNDER CONTRACT TO CLOSING */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -153,44 +158,46 @@ export default function SellingProcess() {
               From acceptance to keys.
             </h2>
             <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
-              Once an offer is accepted, the real work begins. The buyer's lender will order an appraisal and inspection. You may get requests for repairs or credits. I'll help you navigate each step.
+              Once an offer is accepted, the process continues with inspections, appraisal, and lender approval. You may receive requests for repairs or credits, and we'll decide how to handle them.
             </p>
-          </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <RevealDiv delay={100} className="border border-white/10 p-8">
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Inspection Period</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                The buyer will inspect your home. Issues may come up. We'll decide together what to address and what to negotiate.
+            <div className="mb-12">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
+                Inspection Period
+              </h3>
+              <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-4">
+                The buyer will inspect your home. Issues may come up. We'll review everything and decide what to address and what to negotiate.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed text-sm">
-                Typical timeline: 7-10 days
+              <p className="font-body text-sm text-white/60">
+                Typical timeline: 7 to 10 days
               </p>
-            </RevealDiv>
-            <RevealDiv delay={150} className="border border-white/10 p-8">
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Appraisal & Underwriting</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                The lender will verify your home's value and the buyer's financial situation. This usually happens in parallel with inspection.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed text-sm">
-                Typical timeline: 10-14 days
-              </p>
-            </RevealDiv>
-          </div>
+            </div>
 
-          <RevealDiv delay={200} className="mt-8 border border-white/10 p-8">
-            <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Final Walk-Through & Closing</h3>
-            <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-              A few days before closing, the buyer does a final walk-through to confirm the home is in agreed-upon condition. Then you'll sign closing documents and transfer the keys.
-            </p>
-            <p className="font-body text-base text-white/70 leading-relaxed text-sm">
-              Typical timeline: 30-45 days from contract to closing
-            </p>
+            <div className="mb-12">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
+                Appraisal and Underwriting
+              </h3>
+              <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-4">
+                The lender verifies the home's value and the buyer's financial position. This usually happens alongside the inspection period.
+              </p>
+              <p className="font-body text-sm text-white/60">
+                Typical timeline: 10 to 14 days
+              </p>
+            </div>
+
+            <div>
+              <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-4">
+                A few days before closing, the buyer completes a final walkthrough. Then you'll sign documents and transfer ownership.
+              </p>
+              <p className="font-body text-sm text-white/60">
+                Typical timeline: 30 to 45 days from contract to closing
+              </p>
+            </div>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── SELLER PROCEEDS ─────────────────────────────────────────── */}
+      {/* SELLER PROCEEDS */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -201,51 +208,33 @@ export default function SellingProcess() {
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Understanding your net proceeds.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-8">
-              Your sale price isn't what you take home. There are costs involved: realtor commission, title insurance, property taxes, HOA fees, and any repairs negotiated after inspection.
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+              Your sale price is not what you take home. There are costs involved, including agent compensation, closing costs, taxes, and any negotiated repairs or credits.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+              What you walk away with depends on your specific situation. The goal is understanding your net before making any decisions.
             </p>
           </RevealDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <RevealDiv delay={100} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Typical Costs</h3>
-              <ul className="font-body text-base text-[#1A1A18]/65 leading-relaxed space-y-2">
-                <li>• Realtor commission (typically 5-6%)</li>
-                <li>• Title insurance and closing costs</li>
-                <li>• Property taxes (prorated)</li>
-                <li>• HOA transfer fees (if applicable)</li>
-                <li>• Repair credits or concessions</li>
-              </ul>
-            </RevealDiv>
-            <RevealDiv delay={150} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">What You Get</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Your net proceeds = Sale Price − All Costs. I'll provide a detailed estimate before listing so you know exactly what to expect at closing.
-              </p>
-            </RevealDiv>
-          </div>
         </div>
       </section>
 
-      {/* ─── CTA SECTION ───────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1A1A18]">
+      {/* CTA SECTION */}
+      <section className="py-20 md:py-28 bg-gradient-to-b from-[#F8F5F0] to-[#1A1A18]">
         <div className="container">
-          <RevealDiv>
-            <div className="max-w-2xl">
-              <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
-                Ready to move<br />
-                <em className="italic">forward?</em>
-              </h2>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-10 max-w-lg">
-                Let's talk through your specific situation and create a clear plan for your sale.
-              </p>
-              <Link href="/contact">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Start the Conversation
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
-            </div>
+          <RevealDiv className="max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
+              Ready to move<br />
+              <em className="italic">forward?</em>
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8 max-w-lg">
+              Let's talk through your situation and create a clear plan for your sale.
+            </p>
+            <Link href="/contact">
+              <a className="inline-flex items-center gap-3 px-8 py-4 bg-[#1A1A18] text-white font-body text-sm tracking-widest uppercase hover:bg-[#2A2A28] transition-colors">
+                Start the Conversation
+                <ArrowRight size={16} />
+              </a>
+            </Link>
           </RevealDiv>
         </div>
       </section>

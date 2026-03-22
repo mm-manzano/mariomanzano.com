@@ -13,6 +13,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Homeowner Guide", href: "/homeowner-guide" },
+  { label: "Selling Process", href: "/selling-process" },
   { label: "Search Homes", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -20,6 +21,7 @@ const navLinks = [
 const navLinksES = [
   { label: "Inicio", href: "/es" },
   { label: "Guía para Propietarios", href: "/es/guia-para-propietarios" },
+  { label: "Proceso de Venta", href: "/es/proceso-de-venta" },
   { label: "Buscar Casas", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "Acerca", href: "/es/acerca" },
   { label: "Contacto", href: "/es/contacto" },
@@ -67,11 +69,13 @@ export default function Navigation() {
   "/": "/es",
   "/home-value": "/es",
   "/homeowner-guide": "/es/guia-para-propietarios",
+  "/selling-process": "/es/proceso-de-venta",
   "/about": "/es/acerca",
   "/contact": "/es/contacto",
 
   "/es": "/es",
   "/es/guia-para-propietarios": "/es/guia-para-propietarios",
+  "/es/proceso-de-venta": "/es/proceso-de-venta",
   "/es/acerca": "/es/acerca",
   "/es/contacto": "/es/contacto",
   };
@@ -80,6 +84,7 @@ export default function Navigation() {
       const enRoutes: { [key: string]: string } = {
         "/es": "/",
         "/es/guia-para-propietarios": "/homeowner-guide",
+        "/es/proceso-de-venta": "/selling-process",
         "/es/acerca": "/about",
         "/es/contacto": "/contact",
       };

@@ -22,6 +22,8 @@ import GuiaParaPropietarios from "./pages/GuiaParaPropietarios";
 import AboutES from "./pages/AboutES";
 import ContactES from "./pages/ContactES";
 import ConsultaES from "./pages/ConsultaES";
+import SellingProcess from "./pages/SellingProcess";
+import SellingProcessES from "./pages/SellingProcessES";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -41,11 +43,13 @@ function Router() {
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />
       <Route path="/es/consulta" component={ConsultaES} />
+      <Route path="/es/proceso-de-venta" component={SellingProcessES} />
       {/* English Routes */}
       <Route exact path="/" component={Home} />
       <Route path="/home-value" component={HomeValue} />
       <Route path="/homeowner-guide" component={HomeownerGuide} />
       <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
+      <Route path="/selling-process" component={SellingProcess} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       

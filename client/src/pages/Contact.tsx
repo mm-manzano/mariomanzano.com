@@ -1,11 +1,13 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Contact / Consultation Page
- * Goal: Direct call-to-action layout with contact information
+ * Goal: Conversion-focused with primary CTA button above the fold
+ * Structure: Hero with primary CTA → Secondary options → Reassurance
  * NO FORMS - Direct contact channels only
  */
 
 import { useRef, useEffect } from "react";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, MessageSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
 const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
@@ -35,8 +37,8 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 export default function Contact() {
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── HERO SECTION ──────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+      {/* ─── HERO SECTION WITH PRIMARY CTA ──────────────────────────── */}
+      <section className="relative pt-24 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#1A1A18]/70" />
@@ -48,58 +50,83 @@ export default function Contact() {
                 Start the<br />
                 <em className="italic">conversation.</em>
               </h1>
-              <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-                Reach out directly and I'll help you think through your next move. No pressure. Just clarity.
+              <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed mb-10">
+                Reach out and I'll help you think through your options and what actually makes sense for your situation. No pressure. Just clarity.
               </p>
+              
+              {/* PRIMARY CTA BUTTON */}
+              <a href="#book-call">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 text-lg">
+                  Book a Call
+                  <ArrowRight size={18} />
+                </span>
+              </a>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── CONTACT OPTIONS ───────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#F8F5F0]">
+      {/* ─── SECONDARY CONTACT OPTIONS ─────────────────────────────── */}
+      <section className="py-16 md:py-20 bg-[#F8F5F0]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">Get in touch whenever it works for you.</span>
+              <span className="section-number">Or reach me directly</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
-              Reach me<br />
-              <em className="italic">directly.</em>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-10 max-w-2xl">
+              Choose what works<br />
+              <em className="italic">for you.</em>
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-3xl">
-            {/* Phone */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 max-w-3xl">
+            {/* Call or Text */}
             <RevealDiv delay={100}>
-              <div className="flex gap-6">
+              <div className="flex gap-4">
                 <div className="flex-shrink-0">
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline">
+                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
                     (512) 695-9255
                   </a>
-                  <p className="font-body text-base text-[#1A1A18]/65">
+                  <p className="font-body text-sm text-[#1A1A18]/65">
                     Call or text anytime
                   </p>
                 </div>
               </div>
             </RevealDiv>
 
-            {/* Email */}
+            {/* Send a Message */}
             <RevealDiv delay={150}>
-              <div className="flex gap-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <MessageSquare size={24} className="text-[#B8974A]" />
+                </div>
+                <div>
+                  <a href="#contact-message" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
+                    Send a Message
+                  </a>
+                  <p className="font-body text-sm text-[#1A1A18]/65">
+                    I respond within 24 hours
+                  </p>
+                </div>
+              </div>
+            </RevealDiv>
+
+            {/* Email */}
+            <RevealDiv delay={200}>
+              <div className="flex gap-4">
                 <div className="flex-shrink-0">
                   <Mail size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="mailto:realtor@mariomanzano.com" className="font-display text-2xl font-light text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline">
+                  <a href="mailto:realtor@mariomanzano.com" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
                     realtor@mariomanzano.com
                   </a>
-                  <p className="font-body text-base text-[#1A1A18]/65">
-                    I respond within 24 hours
+                  <p className="font-body text-sm text-[#1A1A18]/65">
+                    Email anytime
                   </p>
                 </div>
               </div>
@@ -109,14 +136,14 @@ export default function Contact() {
       </section>
 
       {/* ─── EXPECTATION SETTING ───────────────────────────────────── */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-20">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">What to expect</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6 max-w-2xl">
               A conversation,<br />
               <em className="italic">not a sales call.</em>
             </h2>

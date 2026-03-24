@@ -40,6 +40,7 @@
   --color-charcoal: var(--charcoal);
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
+  --color-dark-bg: #1A1A18;
 }
 
 :root {

@@ -107,12 +107,12 @@ export default function Navigation() {
                 />
                 <div className="flex flex-col leading-none">
                   <span
-                    className="font-display text-lg md:text-xl font-light tracking-[0.04em] text-[#1A1A18]"
+                    className="font-display text-xl md:text-2xl font-light tracking-[0.04em] text-[#1A1A18]"
                   >
                     Mario Manzano
                   </span>
                   <span
-                    className="font-body text-[8px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A]"
+                    className="font-body text-[9px] md:text-[10px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A]"
                   >
                     {isSpanish ? "Agente Inmobiliario | Estrategia de Venta" : "Austin Realtor | Seller Strategist"}
                   </span>
@@ -121,8 +121,8 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className={`hidden md:flex items-center flex-wrap justify-center ${
-              isSpanish ? "gap-3" : "gap-6"
+            <nav className={`hidden md:flex items-center justify-center ${
+              isSpanish ? "gap-2" : "gap-4"
             }`}>
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 link.external ? (
@@ -180,10 +180,10 @@ export default function Navigation() {
               </div>
 
               <Link href={language === "es" ? "/es/contacto" : "/contact"}>
-                <span className={`btn-luxury text-[10px] py-2.5 ${
-                  isSpanish ? "px-3" : "px-5"
+                <span className={`btn-luxury text-[10px] py-2 ${
+                  isSpanish ? "px-3" : "px-4"
                 }`}>
-                  {language === "es" ? "Agendar una Consulta" : "Schedule a Consultation"}
+                  {language === "es" ? "Reservar una Llamada" : "Book a Call"}
                 </span>
               </Link>
             </nav>

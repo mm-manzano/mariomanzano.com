@@ -65,19 +65,19 @@ export default function SellingProcessES() {
               <span className="section-rule" />
               <span className="section-number">01. Antes de Listar</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Preparándose para salir al mercado.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-6">
               Antes de que tu hogar salga al mercado, nos alinearemos en tu propiedad, tu cronograma y tus objetivos.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-6">
               Prepararé un análisis de mercado con casas comparables, demanda actual y un rango de precio recomendado para que comencemos con datos, no con adivinanzas.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-6">
               También cubriremos cualquier preparación que tenga sentido. No renovaciones mayores, solo lo que ayuda a los compradores a ver tu hogar claramente.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl">
               Si aún estás decidiendo cuánto hacer antes de vender, la Guía para Propietarios lo desgrana más.
             </p>
           </RevealDiv>
@@ -92,27 +92,27 @@ export default function SellingProcessES() {
               <span className="section-rule" />
               <span className="section-number">02. Saliendo al Mercado</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Tu hogar en el mercado.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-8">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-8">
               Una vez listado, tu hogar aparece en plataformas principales como MLS, Zillow y Realtor.com. Fotos profesionales, presentación clara y precio trabajan juntos para atraer a los compradores correctos.
             </p>
             
             <div className="mb-12">
-              <h3 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
                 Primeras Dos Semanas
               </h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+              <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl">
                 Las primeras dos semanas son cuando tu hogar recibe más atención. Aquí es donde vemos cómo responden los compradores y si se necesitan ajustes.
               </p>
             </div>
 
             <div>
-              <h3 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
                 Actividad Continua
               </h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+              <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl">
                 Conforme continúan las visitas, te mantendré actualizado sobre la actividad de compradores, retroalimentación y cómo el mercado está respondiendo para que siempre sepas dónde estamos.
               </p>
             </div>
@@ -128,16 +128,16 @@ export default function SellingProcessES() {
               <span className="section-rule" />
               <span className="section-number">03. Ofertas y Negociación</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Cuando llegan las ofertas.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-6">
               Una oferta es más que un número. Incluye términos, cronograma, financiamiento y condiciones de inspección. Te guiaré a través de cada parte para que entiendas a qué te estás comprometiendo.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-6">
               Evaluaremos las ofertas estratégicamente. A veces el precio más alto no es el mejor trato si viene con riesgo o un cronograma largo. Te ayudaré a ver el panorama completo antes de tomar una decisión.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl">
               Si se necesita negociación, la manejaremos profesionalmente. El objetivo es llegar a un acuerdo que funcione para ti.
             </p>
           </RevealDiv>
@@ -152,42 +152,42 @@ export default function SellingProcessES() {
               <span className="section-rule" />
               <span className="section-number">04. Bajo Contrato hasta el Cierre</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               De la aceptación a las llaves.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-8">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-8">
               Una vez que se acepta una oferta, el proceso continúa con inspecciones, tasación y aprobación del prestamista. Puedes recibir solicitudes de reparaciones o créditos, y decidiremos cómo manejarlos.
             </p>
 
             <div className="mb-12">
-              <h3 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
                 Período de Inspección
               </h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-4">
+              <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-4">
                 El comprador inspeccionará tu hogar. Pueden surgir problemas. Revisaremos todo y decidiremos qué abordar y qué negociar.
               </p>
-              <p className="font-body text-sm text-[#1A1A18]/50">
+              <p className="font-body text-sm text-white/50">
                 Cronograma típico: 7 a 10 días
               </p>
             </div>
 
             <div className="mb-12">
-              <h3 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
                 Tasación y Suscripción
               </h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-4">
+              <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-4">
                 El prestamista verifica el valor del hogar y la posición financiera del comprador. Esto generalmente ocurre junto con el período de inspección.
               </p>
-              <p className="font-body text-sm text-[#1A1A18]/50">
+              <p className="font-body text-sm text-white/50">
                 Cronograma típico: 10 a 14 días
               </p>
             </div>
 
             <div>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-4">
+              <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-4">
                 Unos días antes del cierre, el comprador completa una caminata final. Luego firmarás documentos y transferirás la propiedad.
               </p>
-              <p className="font-body text-sm text-[#1A1A18]/50">
+              <p className="font-body text-sm text-white/50">
                 Cronograma típico: 30 a 45 días desde contrato hasta cierre
               </p>
             </div>
@@ -203,13 +203,13 @@ export default function SellingProcessES() {
               <span className="section-rule" />
               <span className="section-number">05. Ganancias del Vendedor</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Entendiendo tus ganancias netas.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-6">
               Tu precio de venta no es lo que te llevas a casa. Hay costos involucrados, incluyendo compensación del agente, costos de cierre, impuestos y cualquier reparación o crédito negociado.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl">
               Lo que te llevas depende de tu situación específica. El objetivo es entender tu neto antes de tomar cualquier decisión.
             </p>
           </RevealDiv>
@@ -220,14 +220,14 @@ export default function SellingProcessES() {
       <section className="py-20 md:py-28 bg-[#F8F5F0]">
         <div className="container">
           <RevealDiv className="max-w-2xl">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
               Listo para avanzar<br />
               <em className="italic">adelante?</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8 max-w-lg">
+            <p className="font-body text-base text-white/65 leading-relaxed mb-8 max-w-lg">
               Hablemos sobre tu situación y creemos un plan claro para tu venta.
             </p>
-            <a href="#book-call" className="inline-flex items-center gap-3 px-8 py-4 bg-[#B8974A] text-white font-body text-sm tracking-widest uppercase hover:bg-[#9A7D3A] transition-colors">
+            <a href="#get-plan" className="inline-flex items-center gap-3 px-8 py-4 bg-[#B8974A] text-white font-body text-sm tracking-widest uppercase hover:bg-[#9A7D3A] transition-colors">
               Reservar una Llamada
               <ArrowRight size={16} />
             </a>

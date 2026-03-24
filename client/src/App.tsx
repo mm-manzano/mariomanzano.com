@@ -4,6 +4,9 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
+// Build version: v2.1 - Force cache bust
+const BUILD_VERSION = "2.1.0";
+
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch, useLocation } from "wouter";

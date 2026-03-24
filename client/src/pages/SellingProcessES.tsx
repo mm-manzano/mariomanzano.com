@@ -88,7 +88,7 @@ export default function SellingProcessES() {
       </section>
 
       {/* SALIENDO AL MERCADO */}
-      <section className="py-20 md:py-28 bg-[#1A1A18]">
+      <section className="py-20 md:py-28" style={{ backgroundColor: '#1A1A18' }}>
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
@@ -129,7 +129,7 @@ export default function SellingProcessES() {
       </section>
 
       {/* OFERTAS Y NEGOCIACIÓN */}
-      <section className="py-20 md:py-28 bg-[#F8F5F0]">
+      <section className="py-20 md:py-28" style={{ backgroundColor: '#1A1A18' }}>
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">

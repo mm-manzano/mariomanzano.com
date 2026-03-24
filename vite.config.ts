@@ -150,7 +150,30 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+// Cache-bust plugin: Force new hashes and add cache-control headers
+function vitePluginCacheBust(): Plugin {
+  return {
+    name: "cache-bust",
+    transformIndexHtml(html) {
+      const timestamp = Date.now();
+      const randomSuffix = Math.random().toString(36).substring(2, 8);
+      
+      // Add cache-control meta tags
+      let modified = html.replace(
+        /<meta charset="UTF-8" \/>/,
+        `<meta charset="UTF-8" /><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="0" /><meta name="cache-bust" content="${timestamp}-${randomSuffix}" />`
+      );
+      
+      // Add query parameters to all script and link tags
+      modified = modified.replace(/(<script[^>]*src="[^"]*)"/g, `$1?v=${timestamp}"`)
+                        .replace(/(<link[^>]*href="[^"]*)"/g, `$1?v=${timestamp}"`);
+      
+      return modified;
+    },
+  };
+}
+
+const plugins = [react(), tailwindcss(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginCacheBust()];
 
 export default defineConfig({
   base: '/',

@@ -187,8 +187,10 @@ export default defineConfig({
   },
   envDir: path.resolve(import.meta.dirname),
   root: "client",
+  // Force new build output directory to bypass CDN cache
+  // GitHub Pages will serve from /build-v2 instead of /dist
   build: {
-    outDir: "../dist",
+    outDir: "../build-v2",
     emptyOutDir: true,
   },
   server: {

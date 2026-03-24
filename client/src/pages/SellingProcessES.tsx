@@ -88,7 +88,7 @@ export default function SellingProcessES() {
       </section>
 
       {/* SALIENDO AL MERCADO */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-20 md:py-28 bg-[#1A1A18]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
@@ -98,29 +98,29 @@ export default function SellingProcessES() {
                 <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40">Going Live</span>
               </div>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               Tu hogar en el mercado.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed max-w-2xl mb-8">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-8">
               Una vez listado, tu hogar aparece en plataformas principales como MLS, Zillow y Realtor.com. Fotos profesionales, presentación clara y precio trabajan juntos para atraer a los compradores correctos.
             </p>
 
             {/* Subsection: Primeras Dos Semanas */}
             <div className="mb-8">
-              <h3 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
                 Primeras Dos Semanas
               </h3>
-              <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed max-w-2xl">
+              <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl">
                 Las primeras dos semanas son cuando tu hogar recibe más atención. Aquí es donde vemos cómo responden los compradores y si se necesitan ajustes.
               </p>
             </div>
 
             {/* Subsection: Actividad Continua */}
             <div>
-              <h3 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+              <h3 className="font-display text-2xl md:text-3xl font-light text-white mb-4">
                 Actividad Continua
               </h3>
-              <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed max-w-2xl">
+              <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl">
                 Conforme continúan las visitas, te mantendré actualizado sobre la actividad de compradores, retroalimentación y cómo el mercado está respondiendo para que siempre sepas dónde estamos.
               </p>
             </div>
@@ -156,7 +156,7 @@ export default function SellingProcessES() {
       </section>
 
       {/* BAJO CONTRATO HASTA EL CIERRE */}
-      <section className="py-20 md:py-28" style={{ backgroundColor: "#1A1A18" }}>
+      <section className="py-20 md:py-28 bg-[#1A1A18]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
@@ -166,10 +166,10 @@ export default function SellingProcessES() {
                 <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40">Under Contract to Closing</span>
               </div>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               De la aceptación a las llaves.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed max-w-2xl mb-8">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-2xl mb-8">
               Una vez que se acepta una oferta, el proceso continúa con inspecciones, tasación y aprobación del prestamista. Puedes recibir solicitudes de reparaciones o créditos, y decidiremos cómo manejarlos.
             </p>
 
@@ -177,10 +177,10 @@ export default function SellingProcessES() {
             <div className="grid md:grid-cols-3 gap-8">
               {/* Período de Inspección */}
               <div>
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">
+                <h3 className="font-display text-xl font-light text-white mb-3">
                   Período de Inspección
                 </h3>
-                <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-4">
+                <p className="font-body text-base text-white/65 leading-relaxed mb-4">
                   El comprador inspeccionará tu hogar. Pueden surgir problemas. Revisaremos todo y decidiremos qué abordar y qué negociar.
                 </p>
                 <p className="font-body text-sm text-[#B8974A] font-semibold">
@@ -190,10 +190,10 @@ export default function SellingProcessES() {
 
               {/* Tasación y Suscripción */}
               <div>
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">
+                <h3 className="font-display text-xl font-light text-white mb-3">
                   Tasación y Suscripción
                 </h3>
-                <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-4">
+                <p className="font-body text-base text-white/65 leading-relaxed mb-4">
                   El prestamista verifica el valor del hogar y la posición financiera del comprador. Esto generalmente ocurre junto con el período de inspección.
                 </p>
                 <p className="font-body text-sm text-[#B8974A] font-semibold">
@@ -203,10 +203,10 @@ export default function SellingProcessES() {
 
               {/* Cierre */}
               <div>
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">
+                <h3 className="font-display text-xl font-light text-white mb-3">
                   Cierre
                 </h3>
-                <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-4">
+                <p className="font-body text-base text-white/65 leading-relaxed mb-4">
                   Unos días antes del cierre, el comprador completa una caminata final. Luego firmarás documentos y transferirás la propiedad.
                 </p>
                 <p className="font-body text-sm text-[#B8974A] font-semibold">

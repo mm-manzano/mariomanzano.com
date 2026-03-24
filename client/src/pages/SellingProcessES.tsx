@@ -63,7 +63,10 @@ export default function SellingProcessES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">01. Antes de Listar</span>
+              <div className="flex flex-col">
+                <span className="section-number">01. Antes de Listar</span>
+                <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/40">Before You List</span>
+              </div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Preparándose para salir al mercado.
@@ -89,8 +92,11 @@ export default function SellingProcessES() {
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" />
-              <span className="section-number">02. Saliendo al Mercado</span>
+              <span className="section-rule" style={{ background: "#D4B878" }} />
+              <div className="flex flex-col">
+                <span className="section-number" style={{ color: "#D4B878" }}>02. Saliendo al Mercado</span>
+                <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40">Going Live</span>
+              </div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Tu hogar en el mercado.
@@ -128,7 +134,10 @@ export default function SellingProcessES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03. Ofertas y Negociación</span>
+              <div className="flex flex-col">
+                <span className="section-number">03. Ofertas y Negociación</span>
+                <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/40">Offers and Negotiation</span>
+              </div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Cuando llegan las ofertas.
@@ -151,8 +160,11 @@ export default function SellingProcessES() {
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" />
-              <span className="section-number">04. Bajo Contrato hasta el Cierre</span>
+              <span className="section-rule" style={{ background: "#D4B878" }} />
+              <div className="flex flex-col">
+                <span className="section-number" style={{ color: "#D4B878" }}>04. Bajo Contrato hasta el Cierre</span>
+                <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40">Under Contract to Closing</span>
+              </div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               De la aceptación a las llaves.
@@ -212,7 +224,10 @@ export default function SellingProcessES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">05. Ganancias del Vendedor</span>
+              <div className="flex flex-col">
+                <span className="section-number">05. Ganancias del Vendedor</span>
+                <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/40">Seller Proceeds</span>
+              </div>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Entendiendo tus ganancias netas.

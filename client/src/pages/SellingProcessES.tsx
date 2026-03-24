@@ -88,7 +88,7 @@ export default function SellingProcessES() {
       </section>
 
       {/* SALIENDO AL MERCADO */}
-      <section className="py-20 md:py-28 bg-dark-bg">
+      <section className="py-20 md:py-28" style={{ backgroundColor: "#1A1A18" }}>
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
@@ -156,7 +156,7 @@ export default function SellingProcessES() {
       </section>
 
       {/* BAJO CONTRATO HASTA EL CIERRE */}
-      <section className="py-20 md:py-28 bg-dark-bg">
+      <section className="py-20 md:py-28" style={{ backgroundColor: "#1A1A18" }}>
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">

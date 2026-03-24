@@ -112,7 +112,7 @@ export default function Navigation() {
                     Mario Manzano
                   </span>
                   <span
-                    className="font-body text-[9px] md:text-[10px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A]"
+                    className={`font-body ${isSpanish ? "text-[8px] md:text-[9px]" : "text-[9px] md:text-[10px]"} tracking-[0.2em] uppercase mt-0.5 text-[#B8974A] whitespace-nowrap`}
                   >
                     {isSpanish ? "Agente Inmobiliario | Estrategia de Venta" : "Austin Realtor | Seller Strategist"}
                   </span>
@@ -122,13 +122,13 @@ export default function Navigation() {
 
             {/* Desktop Nav */}
             <nav className={`hidden md:flex items-center justify-center ${
-              isSpanish ? "gap-2" : "gap-4"
+              isSpanish ? "gap-1" : "gap-4"
             }`}>
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
                     <span
-                      className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+                      className={`nav-link ${isSpanish ? "text-[9px]" : "text-[11px]"} tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap ${
                         scrolled || isHome
                           ? "text-[#1A1A18]"
                           : "text-[#1A1A18]"
@@ -140,7 +140,7 @@ export default function Navigation() {
                 ) : (
                   <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                     <span
-                      className={`nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 ${
+                      className={`nav-link ${isSpanish ? "text-[9px]" : "text-[11px]"} tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap ${
                         scrolled || isHome
                           ? "text-[#1A1A18]"
                           : "text-[#1A1A18]"
@@ -153,7 +153,7 @@ export default function Navigation() {
               ))}
               
               {/* Language Toggle */}
-              <div className={`flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] ${
+              <div className={`flex items-center gap-2 ${isSpanish ? "text-[9px]" : "text-[11px]"} tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] ${
                 isSpanish ? "pl-2 ml-1" : "pl-4 ml-2"
               }`}>
                 <button

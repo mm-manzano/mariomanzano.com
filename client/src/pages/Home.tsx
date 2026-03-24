@@ -82,12 +82,12 @@ export default function Home() {
               Before you decide to sell, remodel, rent, or hold, you deserve clarity from someone who puts your interests first.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
+              <a href="#book-call">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Schedule a Consultation
+                  Book a Call
                   <ArrowRight size={14} />
                 </span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -361,12 +361,12 @@ export default function Home() {
               A consultation where we review your home, your options, and what makes sense for your specific situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <a href="#book-call">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Schedule a Consultation
+                  Book a Call
                   <ArrowRight size={14} />
                 </span>
-              </Link>
+              </a>
             </div>
           </RevealDiv>
         </div>

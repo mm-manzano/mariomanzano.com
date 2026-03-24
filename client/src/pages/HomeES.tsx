@@ -81,9 +81,9 @@ export default function HomeES() {
               Antes de decidir vender, renovar, rentar o mantener, mereces claridad de alguien que pone tus intereses primero.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/es/contacto">
+              <Link href="#book-call">
                 <span className="btn-luxury-outline border-white/60 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
-                  Agendar una Consulta
+                  Reservar una Llamada
                 </span>
               </Link>
             </div>
@@ -407,9 +407,9 @@ export default function HomeES() {
               Un análisis gratuito del valor de tu hogar basado en datos de mercado actuales. Sin obligación, sin presión para decidir.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/es/contacto">
+              <Link href="#book-call">
                 <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
-                  Agendar una Consulta
+                  Reservar una Llamada
                 </span>
               </Link>
             </div>

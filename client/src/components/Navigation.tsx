@@ -121,18 +121,12 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className={`hidden md:flex items-center justify-center ${
-              isSpanish ? "gap-1" : "gap-4"
-            }`}>
+            <nav className="hidden md:flex items-center justify-center gap-4">
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
                     <span
-                      className={`nav-link ${isSpanish ? "text-[9px]" : "text-[11px]"} tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap ${
-                        scrolled || isHome
-                          ? "text-[#1A1A18]"
-                          : "text-[#1A1A18]"
-                      }`}
+                      className="nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
                     >
                       {link.label}
                     </span>
@@ -140,11 +134,7 @@ export default function Navigation() {
                 ) : (
                   <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                     <span
-                      className={`nav-link ${isSpanish ? "text-[9px]" : "text-[11px]"} tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap ${
-                        scrolled || isHome
-                          ? "text-[#1A1A18]"
-                          : "text-[#1A1A18]"
-                      }`}
+                      className="nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
                     >
                       {link.label}
                     </span>
@@ -153,9 +143,7 @@ export default function Navigation() {
               ))}
               
               {/* Language Toggle */}
-              <div className={`flex items-center gap-2 ${isSpanish ? "text-[9px]" : "text-[11px]"} tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] ${
-                isSpanish ? "pl-2 ml-1" : "pl-4 ml-2"
-              }`}>
+              <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-4 ml-2">
                 <button
                   onClick={() => handleLanguageChange("en")}
                   className={`transition-colors duration-300 ${
@@ -180,9 +168,7 @@ export default function Navigation() {
               </div>
 
               <Link href={language === "es" ? "/es/contacto" : "/contact"}>
-                <span className={`btn-luxury text-[10px] py-2 ${
-                  isSpanish ? "px-3" : "px-4"
-                }`}>
+                <span className="btn-luxury text-[10px] py-2 px-4">
                   {language === "es" ? "Reservar una Llamada" : "Book a Call"}
                 </span>
               </Link>

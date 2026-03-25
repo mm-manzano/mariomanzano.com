@@ -239,7 +239,7 @@ export default function Navigation() {
           </div>
 
           <Link href={language === "es" ? "/es/contacto" : "/contact"}>
-            <span className="btn-luxury w-full justify-center text-center">
+            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center">
               {language === "es" ? "Agendar una Consulta" : "Schedule a Consultation"}
             </span>
           </Link>

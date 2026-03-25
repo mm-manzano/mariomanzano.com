@@ -122,14 +122,14 @@ export default function Navigation() {
 
             {/* Desktop Nav */}
             <nav className={`hidden md:flex items-center justify-center ${
-              isSpanish ? "gap-2" : "gap-4"
+              isSpanish ? "gap-3" : "gap-4"
             }`}>
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
                     <span
                       className={`nav-link ${
-                        isSpanish ? "text-[9px]" : "text-[11px]"
+                        isSpanish ? "text-[9.5px]" : "text-[11px]"
                       } tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]`}
                     >
                       {link.label}
@@ -139,7 +139,7 @@ export default function Navigation() {
                   <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                     <span
                       className={`nav-link ${
-                        isSpanish ? "text-[9px]" : "text-[11px]"
+                        isSpanish ? "text-[9.5px]" : "text-[11px]"
                       } tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]`}
                     >
                       {link.label}
@@ -252,7 +252,7 @@ export default function Navigation() {
 
           <Link href={language === "es" ? "/es/contacto" : "/contact"}>
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center">
-              {language === "es" ? "Agendar una Consulta" : "Schedule a Consultation"}
+              {language === "es" ? "Agendar una Consulta" : "Book a Call"}
             </span>
           </Link>
         </div>

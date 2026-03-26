@@ -310,7 +310,7 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#book-call">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Book a Call
+                  Start a conversation
                   <ArrowRight size={14} />
                 </span>
               </a>

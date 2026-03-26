@@ -181,7 +181,7 @@ export default function Navigation() {
                 <span className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
                 }`}>
-                  {language === "es" ? "Reservar una Llamada" : "Book a Call"}
+                  {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
                 </span>
               </Link>
             </nav>
@@ -252,7 +252,7 @@ export default function Navigation() {
 
           <Link href={language === "es" ? "/es/contacto" : "/contact"}>
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center">
-              {language === "es" ? "Agendar una Consulta" : "Book a Call"}
+              {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
             </span>
           </Link>
         </div>

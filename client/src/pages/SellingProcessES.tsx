@@ -229,7 +229,7 @@ export default function SellingProcessES() {
               Hablemos sobre tu situación y creemos un plan claro para tu venta.
             </p>
             <a href="#get-plan" className="inline-flex items-center gap-3 px-8 py-4 bg-[#B8974A] text-white font-body text-sm tracking-widest uppercase hover:bg-[#9A7D3A] transition-colors">
-              Reservar una Llamada
+              Obtener un plan
               <ArrowRight size={16} />
             </a>
           </RevealDiv>

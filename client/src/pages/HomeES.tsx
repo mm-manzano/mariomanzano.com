@@ -410,7 +410,7 @@ export default function HomeES() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={getCTALink("start-conversation", "es")}>
-                <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Iniciar una Conversación
                 </span>
               </a>

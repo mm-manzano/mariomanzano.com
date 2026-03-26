@@ -8,6 +8,7 @@
 import { useRef, useEffect } from "react";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 import { ArrowRight } from "lucide-react";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
 const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
@@ -55,7 +56,7 @@ export default function ContactES() {
               </p>
               
               {/* PRIMARY CTA BUTTON */}
-              <a href="#book-call">
+              <a href={getCTALink("start-conversation", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-2 md:gap-3 text-sm md:text-lg">
                   Iniciar una Conversación
                   <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />

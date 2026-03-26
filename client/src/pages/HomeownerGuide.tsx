@@ -7,6 +7,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
 
@@ -331,7 +332,7 @@ export default function HomeownerGuide() {
             <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
               If you'd like to talk through your situation or understand what your home could realistically sell or rent for, I'm available.
             </p>
-            <a href="#book-call">
+            <a href={getCTALink("get-plan", "en")}>
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                 Get a plan
                 <ArrowRight size={14} />

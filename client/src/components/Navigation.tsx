@@ -9,6 +9,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -177,13 +178,13 @@ export default function Navigation() {
                 </button>
               </div>
 
-              <Link href={language === "es" ? "/es/contacto" : "/contact"}>
+              <a href={getCTALink("start-conversation", language as "en" | "es")}>
                 <span className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
                 }`}>
                   {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
                 </span>
-              </Link>
+              </a>
             </nav>
 
             {/* Mobile Menu Toggle */}
@@ -250,11 +251,11 @@ export default function Navigation() {
             </button>
           </div>
 
-          <Link href={language === "es" ? "/es/contacto" : "/contact"}>
+          <a href={getCTALink("start-conversation", language as "en" | "es")}>
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center">
               {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
             </span>
-          </Link>
+          </a>
         </div>
       </div>
     </>

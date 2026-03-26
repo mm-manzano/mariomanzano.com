@@ -7,6 +7,7 @@
 
 import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const PROCESS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
 
@@ -228,7 +229,7 @@ export default function SellingProcessES() {
             <p className="font-body text-base text-white/65 leading-relaxed mb-8 max-w-lg">
               Hablemos sobre tu situación y creemos un plan claro para tu venta.
             </p>
-            <a href="#get-plan" className="inline-flex items-center gap-3 px-8 py-4 bg-[#B8974A] text-white font-body text-sm tracking-widest uppercase hover:bg-[#9A7D3A] transition-colors">
+            <a href={getCTALink("get-plan", "es")} className="inline-flex items-center gap-3 px-8 py-4 bg-[#B8974A] text-white font-body text-sm tracking-widest uppercase hover:bg-[#9A7D3A] transition-colors">
               Obtener un plan
               <ArrowRight size={16} />
             </a>

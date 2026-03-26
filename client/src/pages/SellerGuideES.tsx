@@ -3,10 +3,10 @@
  * Goal: Build trust and educate homeowners on the selling process
  * Sections: Hero, Sell vs. Hold, Timeline, Pricing Strategy, Costs, CTA
  */
-
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight, DollarSign, Calendar, BarChart3, Home, AlertCircle } from "lucide-react";
+import { ArrowRight, BarChart3, Home, AlertCircle } from "lucide-react";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const AERIAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/cedar-park-aerial-SPVZiqyQFqbArbkNwV7GJu.webp";
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
@@ -281,12 +281,12 @@ export default function SellerGuideES() {
                   Get My Valor de Casa
                   <ArrowRight size={14} />
                 </span>
-              </Link>
-              <Link href="/es/consulta">
+              </a>
+              <a href={getCTALink("get-plan", "es")}>
                 <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
                   Obtener un plan
                 </span>
-              </Link>
+              </a>
             </div>
           </RevealDiv>
         </div>

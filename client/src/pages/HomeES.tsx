@@ -8,6 +8,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
@@ -81,12 +82,12 @@ export default function HomeES() {
               Antes de decidir vender, renovar, rentar o mantener, mereces claridad de alguien que pone tus intereses primero.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#book-call">
+              <a href={getCTALink("start-conversation", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Iniciar una Conversación
                   <ArrowRight size={14} />
                 </span>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -136,12 +137,12 @@ export default function HomeES() {
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 Eso podría significar vender, o podría significar algo más. Mi trabajo es guiarte a través de los datos, los costos y el tiempo para que tomes la decisión que tenga sentido para tu situación.
               </p>
-              <Link href="/es/acerca">
+              <a href="/es/acerca">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   Mi Historia
                   <ArrowRight size={14} />
                 </span>
-              </Link>
+              </a>
             </RevealDiv>
           </div>
         </div>
@@ -216,11 +217,11 @@ export default function HomeES() {
                 <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed mb-6 transition-colors duration-500">
                   {service.desc}
                 </p>
-                <Link href={service.link}>
+                <a href={service.link}>
                   <span className="font-body text-xs text-[#B8974A] group-hover:text-[#D4B878] transition-colors duration-500 inline-block">
                     {service.cta}
                   </span>
-                </Link>
+                </a>
               </RevealDiv>
             ))}
           </div>
@@ -408,11 +409,11 @@ export default function HomeES() {
               Un análisis gratuito del valor de tu hogar basado en datos de mercado actuales. Sin obligación, sin presión para decidir.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="#book-call">
+              <a href={getCTALink("start-conversation", "es")}>
                 <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
                   Iniciar una Conversación
                 </span>
-              </Link>
+              </a>
             </div>
           </RevealDiv>
         </div>

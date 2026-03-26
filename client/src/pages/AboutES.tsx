@@ -7,6 +7,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
 const MARIO_HEADSHOT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg";
@@ -340,12 +341,12 @@ export default function AboutES() {
               Una consulta donde revisamos tu hogar, tus opciones y qué tiene sentido para tu situación específica.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/es/consulta">
+              <a href={getCTALink("start-conversation", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Iniciar una Conversación
                   <ArrowRight size={14} />
                 </span>
-              </Link>
+              </a>
             </div>
           </RevealDiv>
         </div>

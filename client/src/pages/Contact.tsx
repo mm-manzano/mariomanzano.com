@@ -55,8 +55,8 @@ export default function Contact() {
               </p>
               
               {/* PRIMARY CTA BUTTON */}
-              <a href="#book-call">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-2 md:gap-3 text-sm md:text-lg">
+              <a href="#book-call" className="w-full md:w-auto">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] flex md:inline-flex items-center justify-center md:justify-start gap-2 md:gap-3 text-sm md:text-lg w-full md:w-auto">
                   Start a conversation
                   <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
                 </span>

@@ -13,7 +13,7 @@ import { Route, Switch, useLocation } from "wouter";
 import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { useMetaPixel } from "./hooks/useMetaPixel";
+
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -38,10 +38,6 @@ function ScrollToTop() {
   return null;
 }
 
-function MetaPixelTracker() {
-  useMetaPixel();
-  return null;
-}
 
 function Router() {
   return (
@@ -75,7 +71,6 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <ScrollToTop />
-          <MetaPixelTracker />
           <div className="flex flex-col min-h-screen">
             <Navigation />
             <main className="flex-1">

@@ -1,10 +1,12 @@
 /**
  * CTA Link Utility
- * Handles mobile (SMS) vs desktop (Contact page) routing for CTA buttons
- * Pre-fills messages based on button type and language
+ * Handles routing for CTA buttons:
+ * - "get-guide": Routes to GoHighLevel funnel (both mobile & desktop)
+ * - "start-conversation": SMS on mobile, Contact page on desktop
  */
 
 const PHONE_NUMBER_ENCODED = "5126959255";
+const FUNNEL_URL = "https://go.mariomanzano.com/homeowner-guide";
 
 const SMS_MESSAGES = {
   en: {
@@ -17,13 +19,13 @@ const SMS_MESSAGES = {
   },
 };
 
-export type ButtonType = "start-conversation" | "get-plan";
+export type ButtonType = "start-conversation" | "get-plan" | "get-guide";
 export type Language = "en" | "es";
 
 /**
  * Detect if device is mobile
  */
-function isMobileDevice(): boolean {
+function isMobileDevice( ): boolean {
   if (typeof window === "undefined") return false;
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
@@ -32,10 +34,17 @@ function isMobileDevice(): boolean {
 
 /**
  * Get the appropriate link for CTA button
- * Mobile: SMS link with pre-filled message
- * Desktop: Contact page link
+ * "get-guide": Always routes to funnel (mobile & desktop)
+ * "start-conversation": SMS on mobile, Contact page on desktop
+ * "get-plan": SMS on mobile, Contact page on desktop (legacy)
  */
 export function getCTALink(buttonType: ButtonType, language: Language): string {
+  // "get-guide" always routes to funnel, regardless of device
+  if (buttonType === "get-guide") {
+    return FUNNEL_URL;
+  }
+
+  // "start-conversation" and "get-plan" use mobile/desktop logic
   const isMobile = isMobileDevice();
   const message = SMS_MESSAGES[language][buttonType];
 

@@ -275,16 +275,11 @@ export default function SellerGuideES() {
             <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
               A free, no-pressure consultation where we review your home's value, your options, and what makes sense for your situation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/es/home-value">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={getCTALink("start-conversation", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Get My Valor de Casa
+                  Iniciar una Conversación
                   <ArrowRight size={14} />
-                </span>
-              </a>
-              <a href={getCTALink("get-plan", "es")}>
-                <span className="btn-luxury-outline border-white/50 text-white hover:bg-white hover:text-[#1A1A18] inline-flex items-center gap-3">
-                  Obtener un plan
                 </span>
               </a>
             </div>

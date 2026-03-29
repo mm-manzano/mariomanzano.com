@@ -202,7 +202,7 @@ export default function Home() {
                 delay={i * 80}
                 className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <Link href="/homeowner-guide" className="block h-full cursor-pointer">
+                                <a href={getCTALink("get-guide", "en")} className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -213,9 +213,9 @@ export default function Home() {
                     {service.desc}
                   </p>
                   <span className="font-body text-xs text-[#B8974A] group-hover:text-[#D4B878] transition-colors duration-500 inline-block">
-                    More in the Homeowner Guide
+                    Get the Homeowner Guide
                   </span>
-                </Link>
+                </a>
               </RevealDiv>
             ))}
           </div>
@@ -361,10 +361,10 @@ export default function Home() {
             <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
               A consultation where we review your home, your options, and what makes sense for your specific situation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={getCTALink("start-conversation", "en")}>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={getCTALink("get-guide", "en")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Start a conversation
+                  Get the Homeowner Guide
                   <ArrowRight size={14} />
                 </span>
               </a>

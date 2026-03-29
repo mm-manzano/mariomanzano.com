@@ -82,10 +82,10 @@ export default function Home() {
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
               Before you decide to sell, remodel, rent, or hold, you deserve clarity from someone who puts your interests first.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={getCTALink("start-conversation", "en")}>
+                       <div className="flex flex-col sm:flex-row gap-4">
+              <a href={getCTALink("get-guide", "en")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Start a conversation
+                  Get the Homeowner Guide
                   <ArrowRight size={14} />
                 </span>
               </a>

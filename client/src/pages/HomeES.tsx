@@ -217,11 +217,21 @@ export default function HomeES() {
                 <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed mb-6 transition-colors duration-500">
                   {service.desc}
                 </p>
-                <a href={service.link}>
+                                <a href={getCTALink("get-guide", "es")} className="block h-full cursor-pointer">
+                  <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
+                    {service.num}
+                  </div>
+                  <h3 className="font-display text-3xl font-light text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
+                    {service.title}
+                  </h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed transition-colors duration-500 mb-4">
+                    {service.desc}
+                  </p>
                   <span className="font-body text-xs text-[#B8974A] group-hover:text-[#D4B878] transition-colors duration-500 inline-block">
-                    {service.cta}
+                    Obtén la Guía para Propietarios
                   </span>
                 </a>
+
               </RevealDiv>
             ))}
           </div>
@@ -408,10 +418,11 @@ export default function HomeES() {
             <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
               Un análisis gratuito del valor de tu hogar basado en datos de mercado actuales. Sin obligación, sin presión para decidir.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={getCTALink("start-conversation", "es")}>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={getCTALink("get-guide", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Iniciar una Conversación
+                  Obtén la Guía para Propietarios
+                  <ArrowRight size={14} />
                 </span>
               </a>
             </div>

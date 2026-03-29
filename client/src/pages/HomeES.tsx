@@ -81,10 +81,10 @@ export default function HomeES() {
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
               Antes de decidir vender, renovar, rentar o mantener, mereces claridad de alguien que pone tus intereses primero.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={getCTALink("start-conversation", "es")}>
+                        <div className="flex flex-col sm:flex-row gap-4">
+              <a href={getCTALink("get-guide", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Iniciar una Conversación
+                  Obtén la Guía para Propietarios
                   <ArrowRight size={14} />
                 </span>
               </a>

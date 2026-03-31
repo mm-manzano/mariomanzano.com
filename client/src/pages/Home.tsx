@@ -82,7 +82,7 @@ export default function Home() {
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
               Before you decide to sell, remodel, rent, or hold, you deserve clarity from someone who puts your interests first.
             </p>
-                       <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href={getCTALink("get-guide", "en")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Get the Homeowner Guide
@@ -202,7 +202,7 @@ export default function Home() {
                 delay={i * 80}
                 className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                                <a href={getCTALink("get-guide", "en")} className="block h-full cursor-pointer">
+                <a href={getCTALink("get-guide", "en")} className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -361,7 +361,7 @@ export default function Home() {
             <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
               A consultation where we review your home, your options, and what makes sense for your specific situation.
             </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={getCTALink("get-guide", "en")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Get the Homeowner Guide

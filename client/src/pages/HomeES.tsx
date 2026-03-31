@@ -81,7 +81,7 @@ export default function HomeES() {
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
               Antes de decidir vender, renovar, rentar o mantener, mereces claridad de alguien que pone tus intereses primero.
             </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <a href={getCTALink("get-guide", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Obtén la Guía para Propietarios
@@ -178,29 +178,21 @@ export default function HomeES() {
                 num: "01",
                 title: "Vender",
                 desc: "Entiende el mercado, el tiempo y los costos involucrados en vender tu hogar.",
-                link: "/es/guia-para-propietarios",
-                cta: "Más en la Guía para Propietarios",
               },
               {
                 num: "02",
                 title: "Renovar",
                 desc: "Explora qué mejoras tienen sentido para tu hogar y situación financiera.",
-                link: "/es/guia-para-propietarios",
-                cta: "Más en la Guía para Propietarios",
               },
               {
                 num: "03",
                 title: "Rentar",
                 desc: "Considera si mantener como alquiler puede servir mejor tus objetivos financieros a largo plazo.",
-                link: "/es/guia-para-propietarios",
-                cta: "Más en la Guía para Propietarios",
               },
               {
                 num: "04",
                 title: "Mantener",
                 desc: "Evalúa si esperar podría fortalecer tu posición antes de vender.",
-                link: "/es/guia-para-propietarios",
-                cta: "Más en la Guía para Propietarios",
               },
             ].map((service, i) => (
               <RevealDiv
@@ -217,7 +209,7 @@ export default function HomeES() {
                 <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed mb-6 transition-colors duration-500">
                   {service.desc}
                 </p>
-                                <a href={getCTALink("get-guide", "es")} className="block h-full cursor-pointer">
+                <a href={getCTALink("get-guide", "es")} className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -231,7 +223,6 @@ export default function HomeES() {
                     Obtén la Guía para Propietarios
                   </span>
                 </a>
-
               </RevealDiv>
             ))}
           </div>
@@ -418,7 +409,7 @@ export default function HomeES() {
             <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
               Un análisis gratuito del valor de tu hogar basado en datos de mercado actuales. Sin obligación, sin presión para decidir.
             </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={getCTALink("get-guide", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Obtén la Guía para Propietarios

@@ -89,8 +89,16 @@ export default function Footer() {
               © {new Date().getFullYear()} Mario Manzano. {isSpanish ? "Todos los derechos reservados. Agente REALTOR® con licencia en Texas." : "All rights reserved. Licensed REALTOR® in Texas."}
             </p>
             <p className="font-body text-xs text-white/50">
-              {isSpanish ? "Representado por eXp Realty" : "Brokered by eXp Realty"}
+              {isSpanish ? "Representado por eXp Realty · Leander, TX" : "Brokered by eXp Realty · Leander, TX"}
             </p>
+            <div className="flex gap-4 mt-2">
+              <a href={isSpanish ? "/es/privacy-policy" : "/privacy-policy"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
+                {isSpanish ? "Política de Privacidad" : "Privacy Policy"}
+              </a>
+              <a href={isSpanish ? "/es/terms-of-service" : "/terms-of-service"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
+                {isSpanish ? "Términos de Servicio" : "Terms of Service"}
+              </a>
+            </div>
           </div>
           <p className="font-body text-xs text-white/30">
             {isSpanish ? "Estrategia de Venta para el Área de Austin" : "Seller Strategy for the Austin Area"}

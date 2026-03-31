@@ -28,6 +28,10 @@ import ContactES from "./pages/ContactES";
 import ConsultaES from "./pages/ConsultaES";
 import SellingProcess from "./pages/SellingProcess";
 import SellingProcessES from "./pages/SellingProcessES";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import PrivacyPolicyES from "./pages/PrivacyPolicyES";
+import TermsOfService from "./pages/TermsOfService";
+import TermsOfServiceES from "./pages/TermsOfServiceES";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -57,6 +61,10 @@ function Router() {
       <Route path="/selling-process" component={SellingProcess} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
+      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/es/terms-of-service" component={TermsOfServiceES} />
       
       {/* Fallback */}
       <Route component={NotFound} />

@@ -341,12 +341,10 @@ export default function AboutES() {
               Una consulta donde revisamos tu hogar, tus opciones y qué tiene sentido para tu situación específica.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={getCTALink("start-conversation", "es")}>
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Iniciar una Conversación
-                  <ArrowRight size={14} />
-                </span>
-              </a>
+              <button onClick={() => { if (typeof window !== 'undefined' && window.LC_API) { window.LC_API.open_chat_window(); } }} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
+                Iniciar una Conversación
+                <ArrowRight size={14} />
+              </button>
             </div>
           </RevealDiv>
         </div>

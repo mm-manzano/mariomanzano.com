@@ -309,12 +309,10 @@ export default function About() {
               I help homeowners make decisions with clarity and confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={getCTALink("start-conversation", "en")}>
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Start a conversation
-                  <ArrowRight size={14} />
-                </span>
-              </a>
+              <button onClick={() => { if (typeof window !== 'undefined' && window.LC_API) { window.LC_API.open_chat_window(); } }} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
+                Start a conversation
+                <ArrowRight size={14} />
+              </button>
             </div>
           </RevealDiv>
         </div>

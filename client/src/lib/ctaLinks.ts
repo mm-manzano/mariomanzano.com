@@ -5,6 +5,8 @@
  * - "start-conversation": SMS on mobile, Contact page on desktop
  */
 
+const FUNNEL_URL = "https://go.mariomanzano.com/homeowner-guide";
+
 export type ButtonType = "start-conversation" | "get-plan" | "get-guide";
 export type Language = "en" | "es";
 

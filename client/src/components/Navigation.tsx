@@ -27,13 +27,13 @@ const navLinksES = [
   { label: "Contacto", href: "/es/contacto" },
 ];
 
-export default function Navigation() {
+export default function Navigation( ) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location, setLocation] = useLocation();
   const isSpanish =
-  location === "/es" ||
-  location.startsWith("/es/");
+    location === "/es" ||
+    location.startsWith("/es/");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
   const handleNavClick = (href: string) => {
@@ -59,26 +59,34 @@ export default function Navigation() {
     setMobileOpen(false);
   }, [location]);
 
+  // Sync language state with current location
+  useEffect(() => {
+    if (isSpanish && language === "en") {
+      setLanguage("es");
+    } else if (!isSpanish && language === "es") {
+      setLanguage("en");
+    }
+  }, [isSpanish, language]);
+
   const isHome = location === "/";
 
   const handleLanguageChange = (lang: "en" | "es") => {
     setLanguage(lang);
     localStorage.setItem("language", lang);
     if (lang === "es") {
-  const esRoutes = {
-  "/": "/es",
-  "/home-value": "/es",
-  "/homeowner-guide": "/es/guia-para-propietarios",
-  "/selling-process": "/es/proceso-de-venta",
-  "/about": "/es/acerca",
-  "/contact": "/es/contacto",
-
-  "/es": "/es",
-  "/es/guia-para-propietarios": "/es/guia-para-propietarios",
-  "/es/proceso-de-venta": "/es/proceso-de-venta",
-  "/es/acerca": "/es/acerca",
-  "/es/contacto": "/es/contacto",
-  };
+      const esRoutes = {
+        "/": "/es",
+        "/home-value": "/es",
+        "/homeowner-guide": "/es/guia-para-propietarios",
+        "/selling-process": "/es/proceso-de-venta",
+        "/about": "/es/acerca",
+        "/contact": "/es/contacto",
+        "/es": "/es",
+        "/es/guia-para-propietarios": "/es/guia-para-propietarios",
+        "/es/proceso-de-venta": "/es/proceso-de-venta",
+        "/es/acerca": "/es/acerca",
+        "/es/contacto": "/es/contacto",
+      };
       setLocation(esRoutes[location.split("?")[0]] || "/es");
     } else {
       const enRoutes: { [key: string]: string } = {
@@ -124,7 +132,7 @@ export default function Navigation() {
             <nav className={`hidden md:flex items-center justify-center ${
               isSpanish ? "gap-3" : "gap-4"
             }`}>
-              {(isSpanish ? navLinksES : navLinks).map((link) => (
+              {(isSpanish ? navLinksES : navLinks ).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
                     <span
@@ -135,8 +143,18 @@ export default function Navigation() {
                       {link.label}
                     </span>
                   </a>
-                ) : (
+                ) : link.href === "/contact" || link.href === "/es/contacto" ? (
                   <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); openChatWidget(); }}>
+                    <span
+                      className={`nav-link ${
+                        isSpanish ? "text-[9.5px]" : "text-[11px]"
+                      } tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]`}
+                    >
+                      {link.label}
+                    </span>
+                  </a>
+                ) : (
+                  <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                     <span
                       className={`nav-link ${
                         isSpanish ? "text-[9.5px]" : "text-[11px]"
@@ -214,17 +232,17 @@ export default function Navigation() {
                     {link.label}
                   </span>
                 </a>
+              ) : link.href === "/contact" || link.href === "/es/contacto" ? (
+                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); openChatWidget(); }}>
+                  <span
+                    className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
+                    style={{ transitionDelay: `${i * 60}ms` }}
+                  >
+                    {link.label}
+                  </span>
+                </a>
               ) : (
-  <a
-  key={link.href}
-  href={link.href}
-  onClick={(e) => {
-    if (link.href === "/contact" || link.href === "/es/contacto") {
-      e.preventDefault();
-      openChatWidget();
-    }
-  }}
->
+                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                   <span
                     className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}

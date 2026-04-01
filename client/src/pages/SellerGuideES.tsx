@@ -6,7 +6,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, BarChart3, Home, AlertCircle } from "lucide-react";
-import { getCTALink } from "@/lib/ctaLinks";
+import { openChatWidget } from "@/lib/chatWidget";
 
 const AERIAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/cedar-park-aerial-SPVZiqyQFqbArbkNwV7GJu.webp";
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
@@ -276,12 +276,10 @@ export default function SellerGuideES() {
               A free, no-pressure consultation where we review your home's value, your options, and what makes sense for your situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={getCTALink("start-conversation", "es")}>
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Iniciar una Conversación
-                  <ArrowRight size={14} />
-                </span>
-              </a>
+              <button onClick={openChatWidget} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 border-0 cursor-pointer">
+                Iniciar una Conversación
+                <ArrowRight size={14} />
+              </button>
             </div>
           </RevealDiv>
         </div>

@@ -216,17 +216,15 @@ export default function Navigation() {
                 </a>
               ) : (
   <a
-    key={link.href}
-    href="#"
-    onClick={(e) => {
-      if (link.href === "/contact" || link.href === "/es/contacto") {
-        e.preventDefault();
-        openChatWidget();
-      } else {
-        handleNavClick(link.href);
-      }
-    }}
-  >
+  key={link.href}
+  href={link.href}
+  onClick={(e) => {
+    if (link.href === "/contact" || link.href === "/es/contacto") {
+      e.preventDefault();
+      openChatWidget();
+    }
+  }}
+>
                   <span
                     className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}

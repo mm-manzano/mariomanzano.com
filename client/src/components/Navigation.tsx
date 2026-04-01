@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
+import { openChatWidget } from "@/lib/chatWidget";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -97,7 +98,7 @@ export default function Navigation() {
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo and Wordmark */}
-            <Link href="/">
+            <Link to="/">
               <div className="flex items-center gap-3 cursor-pointer">
                 <img
                   src="https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-logo_f81eb6dd.png"
@@ -176,13 +177,11 @@ export default function Navigation() {
                 </button>
               </div>
 
-              <a href={getCTALink("start-conversation", language as "en" | "es")}>
-                <span className={`btn-luxury text-[10px] py-2 ${
+              <button onClick={openChatWidget} className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
-                }`}>
+                } cursor-pointer border-0 bg-transparent hover:text-[#B8974A]`}>
                   {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
-                </span>
-              </a>
+              </button>
             </nav>
 
             {/* Mobile Menu Toggle */}
@@ -249,11 +248,9 @@ export default function Navigation() {
             </button>
           </div>
 
-          <a href={getCTALink("start-conversation", language as "en" | "es")}>
-            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center">
-              {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
-            </span>
-          </a>
+          <button onClick={openChatWidget} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center cursor-pointer border-0">
+            {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
+          </button>
         </div>
       </div>
     </>

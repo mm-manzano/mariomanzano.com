@@ -136,7 +136,7 @@ export default function Navigation() {
                     </span>
                   </a>
                 ) : (
-                  <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
+                  <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); openChatWidget(); }}>
                     <span
                       className={`nav-link ${
                         isSpanish ? "text-[9.5px]" : "text-[11px]"
@@ -215,7 +215,7 @@ export default function Navigation() {
                   </span>
                 </a>
               ) : (
-                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
+                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); openChatWidget(); }}>
                   <span
                     className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}

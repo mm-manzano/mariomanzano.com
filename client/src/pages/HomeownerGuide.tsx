@@ -332,10 +332,12 @@ export default function HomeownerGuide() {
             <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
               If you'd like to talk through your situation or understand what your home could realistically sell or rent for, I'm available.
             </p>
-            <button onClick={() => { if (typeof window !== 'undefined' && window.LC_API) { window.LC_API.open_chat_window(); } }} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
-              Get a plan
-              <ArrowRight size={14} />
-            </button>
+            <a href={getCTALink("get-plan", "en")}>
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+                Get a plan
+                <ArrowRight size={14} />
+              </span>
+            </a>
           </RevealDiv>
         </div>
       </section>

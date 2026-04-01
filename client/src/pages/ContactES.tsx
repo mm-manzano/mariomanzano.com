@@ -56,10 +56,12 @@ export default function ContactES() {
               </p>
               
               {/* PRIMARY CTA BUTTON */}
-              <button onClick={() => { if (typeof window !== 'undefined' && window.LC_API) { window.LC_API.open_chat_window(); } }} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-2 md:gap-3 text-sm md:text-lg cursor-pointer border-0">
-                Iniciar una Conversación
-                <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
-              </button>
+              <a href={getCTALink("start-conversation", "es")}>
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-2 md:gap-3 text-sm md:text-lg">
+                  Iniciar una Conversación
+                  <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
+                </span>
+              </a>
             </RevealDiv>
           </div>
         </div>

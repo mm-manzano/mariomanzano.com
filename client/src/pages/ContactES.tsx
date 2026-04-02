@@ -106,7 +106,7 @@ export default function ContactES() {
                   <MessageSquare size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="#contact-message" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
+                  href="sms:+15126959255?body=Hola%20Mario,%20tengo%20una%20pregunta%20sobre%20mi%20casa."
                     Enviar un Mensaje
                   </a>
                   <p className="font-body text-sm text-[#1A1A18]/65">

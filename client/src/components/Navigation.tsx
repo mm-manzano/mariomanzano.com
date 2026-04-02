@@ -144,7 +144,7 @@ export default function Navigation( ) {
                     </span>
                   </a>
                 ) : link.href === "/contact" || link.href === "/es/contacto" ? (
-                  <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); openChatWidget(); }}>
+                  <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); getCTALink("start-conversation", language); }}>
                     <span
                       className={`nav-link ${
                         isSpanish ? "text-[9.5px]" : "text-[11px]"
@@ -195,7 +195,7 @@ export default function Navigation( ) {
                 </button>
               </div>
 
-              <button onClick={openChatWidget} className={`btn-luxury text-[10px] py-2 ${
+              <button href={getCTALink("start-conversation", language)} className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
                 } cursor-pointer border-0 bg-transparent hover:text-[#B8974A]`}>
                   {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
@@ -233,7 +233,7 @@ export default function Navigation( ) {
                   </span>
                 </a>
               ) : link.href === "/contact" || link.href === "/es/contacto" ? (
-                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); openChatWidget(); }}>
+                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); href={getCTALink("start-conversation", language)} and restore styling; }}>
                   <span
                     className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}

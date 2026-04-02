@@ -6,13 +6,13 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, BarChart3, Home, AlertCircle } from "lucide-react";
-import { openChatWidget } from "@/lib/chatWidget";
+import { getCTALink } from "@/lib/ctaLinks";
 
 const AERIAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/cedar-park-aerial-SPVZiqyQFqbArbkNwV7GJu.webp";
 const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
 
-function useScrollReveal() {
+function useScrollReveal( ) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -50,8 +50,10 @@ export default function SellerGuideES() {
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Your Seller<br />
-              Strategy Guide<br />
+              Your Seller  
+
+              Strategy Guide  
+
               <em className="italic">for Cedar Park & Leander.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
@@ -134,7 +136,8 @@ export default function SellerGuideES() {
               <span className="section-number">02. The Timeline</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-xl">
-              What happens between<br />
+              What happens between  
+
               <em className="italic">"I want to sell" and closing day.</em>
             </h2>
           </RevealDiv>
@@ -175,7 +178,8 @@ export default function SellerGuideES() {
                 <span className="section-number">03. Pricing</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
-                The pricing decision<br />
+                The pricing decision  
+
                 <em className="italic">is everything.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
@@ -276,10 +280,10 @@ export default function SellerGuideES() {
               A free, no-pressure consultation where we review your home's value, your options, and what makes sense for your situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={openChatWidget} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 border-0 cursor-pointer">
+              <a href={getCTALink("start-conversation", "es")} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 border-0 cursor-pointer">
                 Iniciar una Conversación
                 <ArrowRight size={14} />
-              </button>
+              </a>
             </div>
           </RevealDiv>
         </div>

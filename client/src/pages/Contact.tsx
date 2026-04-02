@@ -107,7 +107,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <a 
-                    href="sms:+15126959255?body=Hi%20Mario,%20Im%20interested%20in%20getting%20a%20plan." 
+                    href="sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question."
                     className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A]"
                   >
                     Send a Message

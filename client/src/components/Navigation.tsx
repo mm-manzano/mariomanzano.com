@@ -10,7 +10,6 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
-import { openChatWidget } from "@/lib/chatWidget";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -27,7 +26,7 @@ const navLinksES = [
   { label: "Contacto", href: "/es/contacto" },
 ];
 
-export default function Navigation( ) {
+export default function Navigation(  ) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [location, setLocation] = useLocation();
@@ -132,7 +131,7 @@ export default function Navigation( ) {
             <nav className={`hidden md:flex items-center justify-center ${
               isSpanish ? "gap-3" : "gap-4"
             }`}>
-              {(isSpanish ? navLinksES : navLinks ).map((link) => (
+              {(isSpanish ? navLinksES : navLinks  ).map((link) => (
                 link.external ? (
                   <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
                     <span
@@ -144,7 +143,7 @@ export default function Navigation( ) {
                     </span>
                   </a>
                 ) : link.href === "/contact" || link.href === "/es/contacto" ? (
-                  <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); getCTALink("start-conversation", language); }}>
+                  <a key={link.href} href={getCTALink("start-conversation", link.href === "/es/contacto" ? "es" : "en")}>
                     <span
                       className={`nav-link ${
                         isSpanish ? "text-[9.5px]" : "text-[11px]"
@@ -195,11 +194,11 @@ export default function Navigation( ) {
                 </button>
               </div>
 
-              <button href={getCTALink("start-conversation", language)} className={`btn-luxury text-[10px] py-2 ${
+              <a href={getCTALink("start-conversation", language)} className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
-                } cursor-pointer border-0 bg-transparent hover:text-[#B8974A]`}>
+                } cursor-pointer border-0 bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A]`}>
                   {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
-              </button>
+              </a>
             </nav>
 
             {/* Mobile Menu Toggle */}
@@ -233,7 +232,7 @@ export default function Navigation( ) {
                   </span>
                 </a>
               ) : link.href === "/contact" || link.href === "/es/contacto" ? (
-                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); href={getCTALink("start-conversation", language)} and restore styling; }}>
+                <a key={link.href} href={getCTALink("start-conversation", link.href === "/es/contacto" ? "es" : "en")}>
                   <span
                     className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}
@@ -275,9 +274,9 @@ export default function Navigation( ) {
             </button>
           </div>
 
-          <button onClick={openChatWidget} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center cursor-pointer border-0">
+          <a href={getCTALink("start-conversation", language)} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center cursor-pointer border-0">
             {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
-          </button>
+          </a>
         </div>
       </div>
     </>

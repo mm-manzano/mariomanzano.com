@@ -41,6 +41,16 @@ export default function HomeownerGuide() {
           <div className="absolute inset-0 bg-[#1A1A18]/65" />
         </div>
         <div className="relative z-10 container">
+          <div className="flex justify-end mb-4">
+            <a
+              href="/homeowner-guide.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-xs underline opacity-80 hover:opacity-100"
+            >
+              Download PDF
+            </a>
+          </div>
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />

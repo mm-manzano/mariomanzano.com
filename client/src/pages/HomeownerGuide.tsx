@@ -37,7 +37,6 @@ export default function HomeownerGuide() {
       {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
-          {/* <img src={GUIDE_BG} alt="" className="w-full h-full object-cover" /> */}
           <div className="absolute inset-0 bg-[#1A1A18]/65" />
         </div>
         <div className="relative z-10 container">

@@ -46,7 +46,7 @@ export default function HomeownerGuide() {
               href="/homeowner-guide.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-xs underline opacity-80 hover:opacity-100"
+              className="text-white text-sm md:text-base opacity-90 hover:opacity-100 font-light tracking-wide border-b border-white/40 pb-1"
             >
               Download PDF
             </a>

@@ -73,6 +73,14 @@ function Router() {
 }
 
 function App() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, [location]);
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">

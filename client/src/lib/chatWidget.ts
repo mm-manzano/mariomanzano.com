@@ -17,12 +17,5 @@ export function openChatWidget(): void {
   } else if (widget && typeof widget.open === "function") {
     // Alternative method name
     widget.open();
-  } else {
-    // Fallback: try to trigger via the widget's chat button
-    // The LeadConnector widget creates a chat button element
-    const chatButton = document.querySelector('[data-widget-id="69cc1af2f10632131670f57c"]') as HTMLElement;
-    if (chatButton) {
-      chatButton.click();
-    }
   }
 }

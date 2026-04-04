@@ -309,7 +309,20 @@ export default function About() {
               I help homeowners make decisions with clarity and confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={getCTALink("start-conversation", "en")}>
+ <a
+  href={getCTALink("start-conversation", "en")}
+  onClick={(e) => {
+    e.preventDefault();
+
+    if (window.fbq) {
+      window.fbq('track', 'Contact');
+    }
+
+    setTimeout(() => {
+      window.location.href = getCTALink("start-conversation", "en");
+    }, 150);
+  }}
+>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Start a conversation
                   <ArrowRight size={14} />

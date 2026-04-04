@@ -277,9 +277,9 @@ export default function SellerGuide() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Book a Consultation
-                  <ArrowRight size={14} />
+                <a href={getCTALink("start-conversation", "en")} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
+                  Get a Plan
+                <ArrowRight size={16} />
                 </span>
               </Link>
             </div>

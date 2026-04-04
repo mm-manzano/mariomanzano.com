@@ -83,7 +83,7 @@ export default function Home() {
               Before you decide to sell, remodel, rent, or hold, you deserve clarity from someone who puts your interests first.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href={getCTALink("get-guide", "en")}>
+              <a href="#" onClick={(e) => { e.preventDefault(); if (window.fbq) { window.fbq("trackCustom", "GuideDownload"); } setTimeout(() => { window.location.href = getCTALink("get-guide", "en"); }, 500); }}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Get the Homeowner Guide
                   <ArrowRight size={14} />
@@ -362,7 +362,7 @@ export default function Home() {
               A consultation where we review your home, your options, and what makes sense for your specific situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href={getCTALink("get-guide", "en")}>
+              <a href="#" onClick={(e) => { e.preventDefault(); if (window.fbq) { window.fbq("trackCustom", "GuideDownload"); } setTimeout(() => { window.location.href = getCTALink("get-guide", "en"); }, 500); }}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                   Get the Homeowner Guide
                   <ArrowRight size={14} />

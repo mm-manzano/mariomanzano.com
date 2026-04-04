@@ -19,14 +19,20 @@ export type Language = "en" | "es";
  */
 export function getCTALink(buttonType: ButtonType, language: Language): string {
   switch (buttonType) {
-    case "get-guide":
-      return FUNNEL_URL;
+  case "get-guide":
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("trackCustom", "GuideDownload");
+    }
+    return FUNNEL_URL;
 
-    case "get-plan":
-    case "start-conversation":
-      return PLAN_URL;
+  case "get-plan":
+  case "start-conversation":
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("trackCustom", "StartConversation");
+    }
+    return PLAN_URL;
 
-    default:
-      return "#";
-  }
+  default:
+    return "#";
+}
 }

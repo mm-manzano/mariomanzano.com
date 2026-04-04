@@ -228,10 +228,20 @@ export default function SellingProcess() {
             <p className="font-body text-base text-white/65 leading-relaxed mb-8 max-w-lg">
               Let's talk through your situation and create a clear plan for your sale.
             </p>
-            <a href={getCTALink("start-conversation", "en")} className="inline-flex items-center gap-3 px-8 py-4 bg-[#B8974A] text-white font-body text-sm tracking-widest uppercase hover:bg-[#9A7D3A] transition-colors">
-              Get a Plan
-              <ArrowRight size={16} />
-            </a>
+            <a
+  href={getCTALink("start-conversation", "en")}
+  target="_blank"
+  rel="noopener noreferrer"
+  onClick={() => {
+    if (window.fbq) {
+      window.fbq('track', 'Contact');
+    }
+  }}
+  className="inline-flex items-center gap-3 px-8 py-4 bg-[#B8974A] text-white font-body text-sm tracking-widest uppercase hover:bg-[#9A7D3A] transition-colors"
+>
+  Get a Plan
+  <ArrowRight size={16} />
+</a>
           </RevealDiv>
         </div>
       </section>

@@ -313,8 +313,6 @@ export default function About() {
   Start a conversation
   <ArrowRight size={14} />
 </a>
->
-              </a>
             </div>
           </RevealDiv>
         </div>

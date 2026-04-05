@@ -217,11 +217,8 @@ export default function Navigation(  ) {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div
-        className={`md:hidden fixed inset-0 z-40 bg-[#F8F5F0] flex flex-col transition-all duration-500 ${
-          mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
-      >
+      {mobileOpen && (
+  <div className="fixed inset-0 z-40 bg-[#F8F5F0] flex flex-col transition-all duration-500">
         <div className="container flex flex-col h-full pt-24 pb-12">
           <nav className="flex flex-col gap-8 flex-1">
             {(isSpanish ? navLinksES : navLinks).map((link, i) => (
@@ -246,7 +243,7 @@ export default function Navigation(  ) {
               )
             ))}
           </nav>
-
+          )}
           {/* Mobile Language Toggle */}
           <div className="flex items-center gap-3 mb-8 text-sm tracking-[0.15em] uppercase font-medium text-[#1A1A18]">
             <button

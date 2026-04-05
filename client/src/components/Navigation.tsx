@@ -276,8 +276,6 @@ export default function Navigation(  ) {
               window.fbq("track", "Contact");
             }
           }}
-          className={`text-[10px] py-2 ${
-          isSpanish ? "px-3" : "px-4"
           className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
         >
           {language === "es"

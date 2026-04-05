@@ -67,9 +67,19 @@ export default function Navigation(  ) {
     }
   }, [isSpanish, language]);
 
-  const isHome = location === "/";
+const isHome = location === "/";
 
-  const handleLanguageChange = (lang: "en" | "es") => {
+const handleNavClick = (href: string) => {
+  console.log("NAV CLICK:", href);
+
+  if (window.fbq) {
+    window.fbq("track", "Contact");
+  }
+
+  window.location.href = href;
+};
+
+const handleLanguageChange = (lang: "en" | "es") => {
     setLanguage(lang);
     localStorage.setItem("language", lang);
     if (lang === "es") {

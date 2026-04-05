@@ -67,13 +67,15 @@ export default function Navigation(  ) {
     }
   }, [isSpanish, language]);
 
-const isHome = location === "/";
+const isHome = typeof window !== "undefined" 
+  ? window.location.pathname === "/" 
+  : false;
 
 const handleNavClick = (href: string) => {
   console.log("NAV CLICK:", href);
 
-  if (window.fbq) {
-    window.fbq("track", "Contact");
+  if ((window as any).fbq) {
+    (window as any).fbq("track", "Contact");
   }
 
   window.location.href = href;

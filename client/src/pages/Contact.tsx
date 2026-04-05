@@ -56,7 +56,7 @@ export default function Contact() {
               </p>
               
               {/* PRIMARY CTA BUTTON */}
-             <a
+              <a
                 href={getCTALink("start-conversation", "en")}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -64,12 +64,12 @@ export default function Contact() {
                   if (window.fbq) {
                     window.fbq("track", "Contact");
                   }
-                }}
-                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] flex md:inline-flex items-center justify-center md:justify-start gap-2 md:gap-3 text-sm md:text-lg w-full md:w-auto">
+              }}
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
               >
                 Start a conversation
-                  <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
-            </a>
+                <ArrowRight size={14} />
+              </a>
             </RevealDiv>
           </div>
         </div>

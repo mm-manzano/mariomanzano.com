@@ -242,7 +242,7 @@ const handleLanguageChange = (lang: "en" | "es") => {
                     {link.label}
                   </span>
                 </a>
-            )    
+              )    
             ))}
           </nav>
       

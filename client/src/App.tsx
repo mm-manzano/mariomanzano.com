@@ -41,7 +41,15 @@ function ScrollToTop() {
   }, [location]);
   return null;
 }
+function usePageTracking() {
+  const [location] = useLocation();
 
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq("track", "PageView");
+    }
+  }, [location]);
+}
 
 function Router() {
   return (
@@ -73,13 +81,7 @@ function Router() {
 }
 
 function App() {
-  const [location] = useLocation();
-
-  useEffect(() => {
-    if (window.fbq) {
-      window.fbq('track', 'PageView');
-    }
-  }, [location]);
+  usePageTracking();
 
   return (
     <ErrorBoundary>

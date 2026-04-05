@@ -189,6 +189,7 @@ export default function Navigation(  ) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
+                  console.log("DESKTOP CTA CLICK");
                   if (window.fbq) {
                     window.fbq("track", "Contact");
                   }

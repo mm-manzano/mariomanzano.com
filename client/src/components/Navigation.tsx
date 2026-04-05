@@ -243,7 +243,7 @@ const handleLanguageChange = (lang: "en" | "es") => {
                   </span>
                 </a>
               )
-            ))
+            ))}
           </nav>
           )}
           {/* Mobile Language Toggle */}

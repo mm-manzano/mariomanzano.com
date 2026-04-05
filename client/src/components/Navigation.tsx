@@ -71,16 +71,6 @@ const isHome = typeof window !== "undefined"
   ? window.location.pathname === "/" 
   : false;
 
-const handleNavClick = (href: string) => {
-  console.log("NAV CLICK:", href);
-
-  if ((window as any).fbq) {
-    (window as any).fbq("track", "Contact");
-  }
-
-  window.location.href = href;
-};
-
 const handleLanguageChange = (lang: "en" | "es") => {
     setLanguage(lang);
     localStorage.setItem("language", lang);
@@ -253,7 +243,7 @@ const handleLanguageChange = (lang: "en" | "es") => {
                   </span>
                 </a>
               )
-            ))}
+            ))
           </nav>
           )}
           {/* Mobile Language Toggle */}

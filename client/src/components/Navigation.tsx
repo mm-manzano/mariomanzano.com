@@ -218,7 +218,7 @@ export default function Navigation(  ) {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[#F8F5F0] flex flex-col transition-all duration-500 ${
+        className={`md:hidden fixed inset-0 z-40 bg-[#F8F5F0] flex flex-col transition-all duration-500 ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >

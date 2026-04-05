@@ -267,9 +267,21 @@ export default function Navigation(  ) {
             </button>
           </div>
 
-          <a href={getCTALink("start-conversation", language)} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] w-full justify-center text-center cursor-pointer border-0">
-            {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
-          </a>
+          <a
+            href={getCTALink("start-conversation", language)}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              if (window.fbq) {
+                window.fbq("track", "Contact");
+              }
+            }}
+            className="btn-luxury ..."
+          >
+            {language === "es"
+            ? "Iniciar una Conversación"
+            : "Start a conversation"}
+        </a>
         </div>
       </div>
     </>

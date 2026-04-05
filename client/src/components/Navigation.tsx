@@ -284,6 +284,6 @@ const handleLanguageChange = (lang: "en" | "es") => {
         </a>
         </div>
       </div>
-    )
+      </>
   );
 }

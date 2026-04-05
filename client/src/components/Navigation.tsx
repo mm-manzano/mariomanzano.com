@@ -242,10 +242,10 @@ const handleLanguageChange = (lang: "en" | "es") => {
                     {link.label}
                   </span>
                 </a>
-              )
+            )    
             ))}
           </nav>
-          )}
+      
           {/* Mobile Language Toggle */}
           <div className="flex items-center gap-3 mb-8 text-sm tracking-[0.15em] uppercase font-medium text-[#1A1A18]">
             <button

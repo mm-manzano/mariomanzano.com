@@ -198,7 +198,7 @@ onClick={(e) => {
 
   setTimeout(() => {
     window.open(url, "_blank");
-  }, 150);
+  }, 300);
 }}
   className="btn-luxury text-[10px] py-2 ..."
 >

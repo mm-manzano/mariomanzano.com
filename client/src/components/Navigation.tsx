@@ -202,7 +202,7 @@ const handleLanguageChange = (lang: "en" | "es") => {
   };
 
   if (window.fbq) {
-    window.fbq("track", "Contact", {}, {
+    window.fbq("track", "ContactClick", {}, {
       event_callback: openOnce,
     });
   } else {

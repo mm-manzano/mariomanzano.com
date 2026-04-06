@@ -192,13 +192,25 @@ const handleLanguageChange = (lang: "en" | "es") => {
 
   const url = getCTALink("start-conversation", language);
 
+  let opened = false;
+
+  const openOnce = () => {
+    if (!opened) {
+      opened = true;
+      window.open(url, "_blank");
+    }
+  };
+
   if (window.fbq) {
-    window.fbq("track", "Contact");
+    window.fbq("track", "Contact", {}, {
+      event_callback: openOnce,
+    });
+  } else {
+    openOnce();
   }
 
-  setTimeout(() => {
-    window.open(url, "_blank");
-  }, 150);
+  // fallback in case callback fails
+  setTimeout(openOnce, 500);
 }}
   className="btn-luxury text-[10px] py-2 ..."
 >

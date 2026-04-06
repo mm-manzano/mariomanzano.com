@@ -190,16 +190,16 @@ const handleLanguageChange = (lang: "en" | "es") => {
   onClick={(e) => {
   e.preventDefault();
 
-  console.log("DESKTOP CTA CLICK");
-
   const url = getCTALink("start-conversation", language);
 
   if (window.fbq) {
-    window.fbq("track", "Contact", {}, {
-      event_callback: () => {
-        window.open(url, "_blank");
-      }
-    });
+    window.fbq("track", "Contact");
+  }
+
+  setTimeout(() => {
+    window.open(url, "_blank");
+  }, 300);
+}}
 
     // Fallback in case callback fails
     setTimeout(() => {
@@ -281,15 +281,19 @@ const handleLanguageChange = (lang: "en" | "es") => {
           </div>
 
         <a
-          href={getCTALink("start-conversation", language)}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => {
-            if (window.fbq) {
-              window.fbq("track", "Contact");
-            }
-            setMobileOpen(false);
-          }}
+          onClick={(e) => {
+  e.preventDefault();
+
+  const url = getCTALink("start-conversation", language);
+
+  if (window.fbq) {
+    window.fbq("track", "Contact");
+  }
+
+  setTimeout(() => {
+    window.open(url, "_blank");
+  }, 300);
+}}
           className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
         >
           {language === "es"

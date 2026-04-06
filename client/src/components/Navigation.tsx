@@ -188,18 +188,22 @@ const handleLanguageChange = (lang: "en" | "es") => {
 
               <a
   onClick={(e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    console.log("DESKTOP CTA CLICK");
+  console.log("DESKTOP CTA CLICK");
 
-    if (window.fbq) {
-      window.fbq("track", "Contact");
-    }
+  const url = getCTALink("start-conversation", language);
 
-    setTimeout(() => {
-      window.open(getCTALink("start-conversation", language), "_blank");
-    }, 150);
-  }}
+  if (window.fbq) {
+    window.fbq("track", "Contact");
+  } else {
+    console.log("FBQ NOT FOUND");
+  }
+
+  setTimeout(() => {
+    window.open(url, "_blank");
+  }, 500);
+}}
                 className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
                 } cursor-pointer border-0 bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A]`}

@@ -187,15 +187,21 @@ const handleLanguageChange = (lang: "en" | "es") => {
               </div>
 
               <a
-                href={getCTALink("start-conversation", language)}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  console.log("DESKTOP CTA CLICK");
-                  if (window.fbq) {
-                    window.fbq("track", "Contact");
-                  }
-                }}
+  onClick={(e) => {
+    e.preventDefault();
+
+    console.log("DESKTOP CTA CLICK");
+
+    if (window.fbq) {
+      window.fbq("track", "Contact");
+    }
+
+    setTimeout(() => {
+      window.open(getCTALink("start-conversation", language), "_blank");
+    }, 150);
+  }}
+  className="btn-luxury ..."
+>
                 className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
                 } cursor-pointer border-0 bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A]`}

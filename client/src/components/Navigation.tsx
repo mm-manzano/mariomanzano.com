@@ -207,14 +207,6 @@ const handleLanguageChange = (lang: "en" | "es") => {
     : "Start a conversation"}
 </a>
 
-    // Fallback in case callback fails
-    setTimeout(() => {
-      window.open(url, "_blank");
-    }, 800);
-  } else {
-    window.open(url, "_blank");
-  }
-}}
                 className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"
                 } cursor-pointer border-0 bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A]`}

@@ -188,18 +188,18 @@ const handleLanguageChange = (lang: "en" | "es") => {
 
              <a
   onClick={(e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const url = getCTALink("start-conversation", language);
+  const url = getCTALink("start-conversation", language);
 
-    if (window.fbq) {
-      window.fbq("track", "Contact");
-    }
+  if (window.fbq) {
+    window.fbq("track", "Contact");
+  }
 
-    setTimeout(() => {
-      window.open(url, "_blank");
-    }, 300);
-  }}
+  setTimeout(() => {
+    window.open(url, "_blank");
+  }, 150);
+}}
   className="btn-luxury text-[10px] py-2 ..."
 >
   {language === "es"

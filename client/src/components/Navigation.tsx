@@ -192,13 +192,16 @@ onClick={(e) => {
 
   const url = getCTALink("start-conversation", language);
 
-  if (window.fbq) {
+  try {
     window.fbq("track", "Contact");
+    console.log("Contact event fired");
+  } catch (e) {
+    console.log("fbq not ready");
   }
 
   setTimeout(() => {
     window.open(url, "_blank");
-  }, 300);
+  }, 500);
 }}
   className="btn-luxury text-[10px] py-2 ..."
 >

@@ -187,30 +187,18 @@ const handleLanguageChange = (lang: "en" | "es") => {
               </div>
 
              <a
-  onClick={(e) => {
+onClick={(e) => {
   e.preventDefault();
 
   const url = getCTALink("start-conversation", language);
 
-  let opened = false;
-
-  const openOnce = () => {
-    if (!opened) {
-      opened = true;
-      window.open(url, "_blank");
-    }
-  };
-
   if (window.fbq) {
-    window.fbq("track", "ContactClick", {}, {
-      event_callback: openOnce,
-    });
-  } else {
-    openOnce();
+    window.fbq("track", "Contact");
   }
 
-  // fallback in case callback fails
-  setTimeout(openOnce, 500);
+  setTimeout(() => {
+    window.open(url, "_blank");
+  }, 150);
 }}
   className="btn-luxury text-[10px] py-2 ..."
 >

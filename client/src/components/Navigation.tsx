@@ -195,14 +195,19 @@ const handleLanguageChange = (lang: "en" | "es") => {
   const url = getCTALink("start-conversation", language);
 
   if (window.fbq) {
-    window.fbq("track", "Contact");
-  } else {
-    console.log("FBQ NOT FOUND");
-  }
+    window.fbq("track", "Contact", {}, {
+      event_callback: () => {
+        window.open(url, "_blank");
+      }
+    });
 
-  setTimeout(() => {
+    // Fallback in case callback fails
+    setTimeout(() => {
+      window.open(url, "_blank");
+    }, 800);
+  } else {
     window.open(url, "_blank");
-  }, 500);
+  }
 }}
                 className={`btn-luxury text-[10px] py-2 ${
                   isSpanish ? "px-3" : "px-4"

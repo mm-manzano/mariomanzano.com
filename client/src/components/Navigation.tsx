@@ -206,15 +206,6 @@ const handleLanguageChange = (lang: "en" | "es") => {
     ? "Iniciar una Conversación"
     : "Start a conversation"}
 </a>
-
-                className={`btn-luxury text-[10px] py-2 ${
-                  isSpanish ? "px-3" : "px-4"
-                } cursor-pointer border-0 bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A]`}
-              >
-                {language === "es"
-                  ? "Iniciar una Conversación"
-                  : "Start a conversation"}
-              </a>
             </nav>
 
             {/* Mobile Menu Toggle */}

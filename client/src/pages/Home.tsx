@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* ─── INTRO STRIP ─────────────────────────────────────────────── */}
-      <section className="bg-[#1A1A18] py-12">
+      <section className="bg-[#1A1A18] py-8">
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">

@@ -103,7 +103,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <p className="font-body text-xs text-white/30">
+          <p className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
             {isSpanish ? "Estrategia de Venta para el Área de Austin" : "Seller Strategy for the Austin Area"}
           </p>
         </div>

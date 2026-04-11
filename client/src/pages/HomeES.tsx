@@ -200,15 +200,6 @@ export default function HomeES() {
                 delay={i * 80}
                 className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
-                  {service.num}
-                </div>
-                <h3 className="font-display text-3xl font-light text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
-                  {service.title}
-                </h3>
-                <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed mb-6 transition-colors duration-500">
-                  {service.desc}
-                </p>
                 <a href={getCTALink("get-guide", "es")} className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}

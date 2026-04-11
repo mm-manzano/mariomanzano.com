@@ -2,11 +2,13 @@
  * DESIGN: Quiet Luxury Editorial - Homeowner Guide
  * Content extracted from Gamma guide
  * Sections: Hero, Clear Look at Options, Preparing vs Selling, Pricing Strategy, Selling vs Renting, Holding, As-Is, Putting It Together, CTA
+ * Optimization: Added Comparison Table, FAQ Section, and JSON-LD Schema for AI Visibility.
  */
 
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus, Minus } from "lucide-react";
+import { useState } from "react";
 import { getCTALink } from "@/lib/ctaLinks";
 
 const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
@@ -31,9 +33,86 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
   return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-[#E8E0D5] py-6">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between text-left group"
+      >
+        <span className="font-display text-xl md:text-2xl font-light text-[#1A1A18] group-hover:text-[#B8974A] transition-colors">
+          {question}
+        </span>
+        <span className="text-[#B8974A] ml-4">
+          {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+        </span>
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+          {answer}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function HomeownerGuide() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When should I sell my home as-is in Austin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It’s ideal if the property needs significant work you aren't prepared to manage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is renting better than selling in Leander or Cedar Park?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In our local market, renting is typically a long-term appreciation play. If your current mortgage rate is significantly lower than market rents, it may be a strong wealth-building tool. However, if you need that equity for your next down payment or want to avoid the responsibilities of being a landlord, selling is often the cleaner financial move."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if a remodel will actually increase my home's value?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it’s likely not a strategic move before selling."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the biggest risk of Holding and doing nothing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The primary risk is the Opportunity Cost. While holding avoids immediate stress, your equity remains illiquid and you continue to incur costs for taxes, insurance, and maintenance. Holding is a valid strategy for clarity, but it shouldn't be used to avoid an inevitable decision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is pricing the most important decision in the selling process?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing dictates how the market perceives your home. Underpricing leaves money on the table, while overpricing makes your home invisible to qualified buyers. A strategic price positions your home to attract the right interest immediately."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      {/* ─── FAQ SCHEMA ───────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
@@ -91,9 +170,57 @@ export default function HomeownerGuide() {
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
               Selling, remodeling, renting, or holding can all make sense depending on your goals, timeline, and stress level. The key is understanding which direction truly fits your situation.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
               This guide slows the decision down, lays out the tradeoffs clearly, and helps you avoid unnecessary or costly moves before you commit.
             </p>
+
+            {/* ─── COMPARISON TABLE ─────────────────────────────────── */}
+            <div className="mt-16 overflow-x-auto">
+              <div className="min-w-[800px] bg-white border border-[#E8E0D5] p-8 md:p-12">
+                <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">The Four Paths Strategy</h3>
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="border-b border-[#E8E0D5]">
+                      <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Strategy</th>
+                      <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/4">When It Makes Sense</th>
+                      <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Financial Upside</th>
+                      <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Risks & Tradeoffs</th>
+                      <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Best For</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-body text-sm text-[#1A1A18]/75 leading-relaxed">
+                    <tr className="border-b border-[#F8F5F0]">
+                      <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Sell</td>
+                      <td className="py-6 pr-4">You need liquidity, a different space, or want to capture current equity.</td>
+                      <td className="py-6 pr-4">Immediate access to net proceeds for your next move or investment.</td>
+                      <td className="py-6 pr-4">Giving up future appreciation and potential rental income.</td>
+                      <td className="py-6">Homeowners ready for a clean break and financial flexibility.</td>
+                    </tr>
+                    <tr className="border-b border-[#F8F5F0]">
+                      <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Remodel</td>
+                      <td className="py-6 pr-4">Your current home has the right "bones" but lacks the function or style you need.</td>
+                      <td className="py-6 pr-4">Potential increase in future resale value and improved quality of life.</td>
+                      <td className="py-6 pr-4">High upfront costs; luxury upgrades rarely deliver a 100% ROI.</td>
+                      <td className="py-6">Those who love their location but need their home to work better.</td>
+                    </tr>
+                    <tr className="border-b border-[#F8F5F0]">
+                      <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Rent</td>
+                      <td className="py-6 pr-4">Your mortgage payment is low and you want to build long-term wealth.</td>
+                      <td className="py-6 pr-4">Long-term equity growth and potential for future appreciation.</td>
+                      <td className="py-6 pr-4">Ongoing maintenance, tenant management, and vacancy risks.</td>
+                      <td className="py-6">Investors focused on long-term wealth rather than immediate cash flow.</td>
+                    </tr>
+                    <tr>
+                      <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Hold</td>
+                      <td className="py-6 pr-4">You need more time to decide or market conditions don't favor your goals.</td>
+                      <td className="py-6 pr-4">Avoids transaction costs and allows for more clarity before acting.</td>
+                      <td className="py-6 pr-4">Equity remains tied up; ongoing taxes, insurance, and maintenance costs.</td>
+                      <td className="py-6">Homeowners who aren't under pressure and value certainty over speed.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </RevealDiv>
         </div>
       </section>
@@ -327,6 +454,37 @@ export default function HomeownerGuide() {
                 <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
               </RevealDiv>
             ))}
+          </div>
+
+          {/* ─── FAQ SECTION ────────────────────────────────────────── */}
+          <div className="mt-24 max-w-3xl mx-auto">
+            <RevealDiv>
+              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-12 text-center">
+                Common Questions & Clarity
+              </h2>
+              <div className="bg-white border border-[#E8E0D5] p-8 md:p-12">
+                <FAQItem 
+                  question="When should I sell my home 'as-is' in Austin?" 
+                  answer="Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It’s ideal if the property needs significant work you aren't prepared to manage."
+                />
+                <FAQItem 
+                  question="Is renting better than selling in Leander or Cedar Park?" 
+                  answer="In our local market, renting is typically a long-term appreciation play. If your current mortgage rate is significantly lower than market rents, it may be a strong wealth-building tool. However, if you need that equity for your next down payment or want to avoid the responsibilities of being a landlord, selling is often the cleaner financial move."
+                />
+                <FAQItem 
+                  question="How do I know if a remodel will actually increase my home's value?" 
+                  answer="Focus on 'What Matters': functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it’s likely not a strategic move before selling."
+                />
+                <FAQItem 
+                  question="What is the biggest risk of 'Holding' and doing nothing?" 
+                  answer="The primary risk is the 'Opportunity Cost.' While holding avoids immediate stress, your equity remains illiquid and you continue to incur costs for taxes, insurance, and maintenance. Holding is a valid strategy for clarity, but it shouldn't be used to avoid an inevitable decision."
+                />
+                <FAQItem 
+                  question="Why is pricing the most important decision in the selling process?" 
+                  answer="Pricing dictates how the market perceives your home. Underpricing leaves money on the table, while overpricing makes your home 'invisible' to qualified buyers. A strategic price positions your home to attract the right interest immediately, which is critical in the Austin area's competitive landscape."
+                />
+              </div>
+            </RevealDiv>
           </div>
         </div>
       </section>

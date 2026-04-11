@@ -13,6 +13,7 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "Guide", href: "/homeowner-guide" },
   { label: "Selling Process", href: "/selling-process" },
   { label: "Search Homes", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "About", href: "/about" },
@@ -20,6 +21,7 @@ const navLinks = [
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es" },
+  { label: "Guía", href: "/es/homeowner-guide" },
   { label: "Proceso de Venta", href: "/es/proceso-de-venta" },
   { label: "Buscar Casas", href: "https://mariomanzano.exprealty.com", external: true },
   { label: "Acerca", href: "/es/acerca" },

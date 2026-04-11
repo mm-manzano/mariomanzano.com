@@ -3,12 +3,15 @@
  * Sections: Hero, Intro Strip, Advisor Intro, Services Grid, Testimonial, Process, CTA Band
  * Images: Generated AI hero images (CDN URLs)
  * Typography: Cormorant Garamond headlines, DM Sans body
+ * Optimization: Added RealEstateAgent JSON-LD Schema for Local SEO and AI Visibility.
  */
 
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
+// Note: Ensure your project has a Head component or use a standard meta tag approach
+import Head from "next/head"; 
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
@@ -49,8 +52,45 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 }
 
 export default function HomeES() {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Mario Manzano, Realtor",
+    "alternateName": [
+      "Mario Manzano",
+      "Mario Manzano Austin Realtor"
+    ],
+    "@id": "https://mariomanzano.com",
+    "url": "https://mariomanzano.com",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg",
+    "telephone": "+1-512-695-9255",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Austin TX",
+      "Cedar Park TX",
+      "Leander TX"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/mariomanzanoatx",
+      "https://www.tiktok.com/@mariomanzanoatx"
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      {/* ─── LOCAL BUSINESS SCHEMA ────────────────────────────────── */}
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </Head>
+
       {/* ─── HERO ──────────────────────────────────────────────────── */}
       <section className="relative md:h-screen flex items-start overflow-hidden">
         {/* Background Image */}
@@ -91,8 +131,6 @@ export default function HomeES() {
             </div>
           </div>
         </div>
-
-
       </section>
 
       {/* ─── INTRO STRIP ─────────────────────────────────────────────── */}
@@ -230,20 +268,13 @@ export default function HomeES() {
                 <span className="section-rule" />
                 <span className="section-number">03. Mercado</span>
               </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-              Entendiendo el<br />
-              <em className="italic">mercado de Austin.</em>
-            </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-              El mercado no es un solo número.
-            </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-              Lo que una casa puede venderse depende de la propiedad, el vecindario, y qué están haciendo los compradores ahora mismo.
-            </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-              Si ahora es el momento correcto para vender depende de tu propiedad específica, tu vecindario, y tu situación personal. Puedo guiarte a través de los datos actuales para que entiendas qué es realista para tu hogar.
-            </p>
-
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+                Entendiendo el<br />
+                <em className="italic">mercado de Austin.</em>
+              </h2>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+                El mercado no es un solo número. Lo que una casa puede venderse depende de la propiedad, el vecindario, y qué están haciendo los compradores ahora mismo.
+              </p>
             </RevealDiv>
 
             {/* Aerial Image */}
@@ -256,7 +287,6 @@ export default function HomeES() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-
               </div>
             </RevealDiv>
           </div>

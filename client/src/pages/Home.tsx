@@ -86,7 +86,6 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href={getCTALink("get-guide", language)}
-                target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
                   if (window.fbq) {

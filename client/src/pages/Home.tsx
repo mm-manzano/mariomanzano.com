@@ -4,12 +4,16 @@
  *           Market Insight, Testimonial, CTA Band, Footer
  * Images: Generated AI hero images (CDN URLs)
  * Typography: Cormorant Garamond headlines, DM Sans body
+ * Optimization: Added RealEstateAgent JSON-LD Schema for Local SEO and AI Visibility.
  */
 
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
+// Note: Ensure your project has a Head component or use a standard meta tag approach
+// If using a custom framework, replace this with your specific Head implementation.
+import Head from "next/head"; 
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
@@ -51,8 +55,46 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 
 export default function Home() {
   const language = window.location.pathname.startsWith("/es") ? "es" : "en";
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Mario Manzano, Realtor",
+    "alternateName": [
+      "Mario Manzano",
+      "Mario Manzano Austin Realtor"
+    ],
+    "@id": "https://mariomanzano.com",
+    "url": "https://mariomanzano.com",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg",
+    "telephone": "+1-512-695-9255",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Austin",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "Austin TX",
+      "Cedar Park TX",
+      "Leander TX"
+    ],
+    "sameAs": [
+      "https://www.instagram.com/mariomanzanoatx",
+      "https://www.tiktok.com/@mariomanzanoatx"
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      {/* ─── LOCAL BUSINESS SCHEMA ────────────────────────────────── */}
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </Head>
+
       {/* ─── HERO ──────────────────────────────────────────────────── */}
       <section className="relative h-auto md:min-h-screen flex items-start">
         {/* Background Image */}
@@ -101,8 +143,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-
       </section>
 
       {/* ─── INTRO STRIP ─────────────────────────────────────────────── */}
@@ -128,7 +168,6 @@ export default function Home() {
                   alt="Luxury Texas Hill Country interior"
                   className="w-full h-full object-cover"
                 />
-
               </div>
             </RevealDiv>
 
@@ -222,10 +261,10 @@ export default function Home() {
                     {service.desc}
                   </p>
                   <span className="font-body text-base font-medium text-[#b8974a] group-hover:text-[#D4B878] transition-colors duration-500 inline-block mt-2">
-  {language === "es"
-    ? "Ver la Guía del Propietario"
-    : "View the Homeowner Guide"}
-</span>
+                    {language === "es"
+                      ? "Ver la Guía del Propietario"
+                      : "View the Homeowner Guide"}
+                  </span>
                 </a>
               </RevealDiv>
             ))}
@@ -243,20 +282,13 @@ export default function Home() {
                 <span className="section-rule" />
                 <span className="section-number">03. Market</span>
               </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-              Understanding the<br />
-              <em className="italic">Austin area market.</em>
-            </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-              The market isn't one number.
-            </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-              What a home can sell for depends on the property, the neighborhood, and what buyers are doing right now.
-            </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-              Whether now is the right time to sell depends on your specific property, your neighborhood, and your personal situation. I can walk you through the current data so you understand what's realistic for your home.
-            </p>
-
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+                Understanding the<br />
+                <em className="italic">Austin area market.</em>
+              </h2>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+                The market isn't one number. What a home can sell for depends on the property, the neighborhood, and what buyers are doing right now.
+              </p>
             </RevealDiv>
 
             {/* Aerial Image */}
@@ -269,7 +301,6 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-
               </div>
             </RevealDiv>
           </div>
@@ -336,7 +367,7 @@ export default function Home() {
             ].map((item, i) => (
               <RevealDiv
                 key={item.step}
-                delay={i * 100}
+                delay={item.step === "01" ? 0 : i * 100}
                 className="relative md:pr-12 md:border-r md:border-[#E8E0D5] last:border-0 last:pr-0 md:pl-12 first:pl-0"
               >
                 <div className="font-display text-6xl font-light text-[#E8E0D5] mb-4">

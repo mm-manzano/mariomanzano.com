@@ -98,7 +98,7 @@ export default function Footer() {
               <a href={isSpanish ? "/es/terms-of-service" : "/terms-of-service"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
                 {isSpanish ? "Términos de Servicio" : "Terms of Service"}
               </a>
-              <a href={isSpanish ? "/es/guia-para-propietarios" : "/homeowner-guide"}>
+              <a href={isSpanish ? "/es/guia-para-propietarios" : "/homeowner-guide"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
                 {isSpanish ? "Guía del Propietario" : "Homeowner Guide"}
               </a>
             </div>

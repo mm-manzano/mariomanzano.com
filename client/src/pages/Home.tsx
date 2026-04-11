@@ -50,6 +50,7 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 }
 
 export default function Home() {
+  const language = window.location.pathname.startsWith("/es") ? "es" : "en";
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
       {/* ─── HERO ──────────────────────────────────────────────────── */}
@@ -84,7 +85,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href={getCTALink("get-guide", "en")}
+                href={getCTALink("get-guide", language)}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {

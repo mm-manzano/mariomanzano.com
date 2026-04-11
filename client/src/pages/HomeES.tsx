@@ -84,7 +84,7 @@ export default function HomeES() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={getCTALink("get-guide", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Obtén la Guía para Propietarios
+                  Ver la Guía para Propietarios
                   <ArrowRight size={14} />
                 </span>
               </a>
@@ -220,7 +220,7 @@ export default function HomeES() {
                     {service.desc}
                   </p>
                   <span className="font-body text-xs text-[#B8974A] group-hover:text-[#D4B878] transition-colors duration-500 inline-block">
-                    Obtén la Guía para Propietarios
+                    Ver la Guía para Propietarios
                   </span>
                 </a>
               </RevealDiv>
@@ -412,7 +412,7 @@ export default function HomeES() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={getCTALink("get-guide", "es")}>
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  Obtén la Guía para Propietarios
+                  Ver la Guía para Propietarios
                   <ArrowRight size={14} />
                 </span>
               </a>

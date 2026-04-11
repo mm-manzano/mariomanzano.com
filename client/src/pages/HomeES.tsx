@@ -4,14 +4,13 @@
  * Images: Generated AI hero images (CDN URLs)
  * Typography: Cormorant Garamond headlines, DM Sans body
  * Optimization: Added RealEstateAgent JSON-LD Schema for Local SEO and AI Visibility.
+ * Fix: Vite-compatible schema injection (removed next/head).
  */
 
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
-// Note: Ensure your project has a Head component or use a standard meta tag approach
-import Head from "next/head"; 
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
@@ -83,13 +82,11 @@ export default function HomeES() {
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── LOCAL BUSINESS SCHEMA ────────────────────────────────── */}
-      <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
-      </Head>
+      {/* ─── LOCAL BUSINESS SCHEMA (Vite-Compatible) ──────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
 
       {/* ─── HERO ──────────────────────────────────────────────────── */}
       <section className="relative md:h-screen flex items-start overflow-hidden">

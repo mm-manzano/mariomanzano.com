@@ -67,7 +67,7 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-50 container py-10 md:py-0 md:pt-32 lg:pt-40 md:pb-16 lg:pb-24">
+        <div className="relative z-50 container py-16 md:py-0 md:pt-32 lg:pt-40 md:pb-16 lg:pb-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
               <span className="section-rule" style={{ background: "#D4B878" }} />

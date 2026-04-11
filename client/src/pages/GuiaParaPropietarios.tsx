@@ -1,11 +1,13 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Guía para Propietarios
  * Content extracted from Gamma guide (Spanish)
+ * Optimization: Added Comparison Table, FAQ Section, and JSON-LD Schema for AI Visibility.
+ * Fix: Responsive-first layout for Desktop and Mobile visibility.
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus, Minus } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
 
 const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
@@ -30,9 +32,86 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
   return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="border-b border-[#E8E0D5] py-6">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between text-left group focus:outline-none"
+      >
+        <span className="font-display text-xl md:text-2xl font-light text-[#1A1A18] group-hover:text-[#B8974A] transition-colors">
+          {question}
+        </span>
+        <span className="text-[#B8974A] ml-4 flex-shrink-0">
+          {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+        </span>
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+          {answer}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function GuiaParaPropietarios() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuándo debería vender mi casa tal cual (as-is) en Austin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vender tal cual tiene sentido cuando desea evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto es una compensación: acepta una oferta potencialmente más baja a cambio de una salida más rápida y segura. Es ideal si la propiedad necesita trabajos significativos que usted no está dispuesto a gestionar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Es mejor alquilar que vender en Leander o Cedar Park?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En nuestro mercado local, alquilar es típicamente una apuesta por la apreciación a largo plazo. Si su tasa hipotecaria actual es significativamente más baja que los alquileres del mercado, puede ser una herramienta poderosa para generar riqueza. Sin embargo, si necesita esa plusvalía para el pago inicial de su próxima casa o desea evitar las responsabilidades de ser arrendador, vender suele ser el movimiento financiero más limpio."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo sé si una remodelación realmente aumentará el valor de mi casa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enfóquese en limpieza básica, sistemas funcionales y una presentación neutral. Las grandes renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta significativamente la demanda de los compradores o su calidad de vida diaria, probablemente no sea un movimiento estratégico antes de vender."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es el mayor riesgo de Mantener y no hacer nada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El riesgo principal es el Costo de Oportunidad. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento. Mantener es una estrategia válida para obtener claridad, pero no debe usarse para evitar una decisión inevitable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Por qué el precio es la decisión más importante en el proceso de venta?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El precio dicta cómo el mercado percibe su casa. Un precio bajo deja dinero sobre la mesa, mientras que un precio excesivo hace que su casa sea invisible para los compradores calificados. Un precio estratégico posiciona su casa para atraer el interés adecuado de inmediato."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      {/* ─── FAQ SCHEMA ───────────────────────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
@@ -80,9 +159,59 @@ export default function GuiaParaPropietarios() {
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
               Vender, remodelar, rentar o mantener puede tener sentido según tus metas, tu tiempo y tu nivel de estrés. La clave es entender qué opción realmente corresponde con tu situación.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
               Esta guía te ayuda a bajar el proceso de la decisión, ver claramente los pros y contras y evitar movimientos innecesarios o costosos antes de decidir.
             </p>
+
+            {/* ─── TABLA COMPARATIVA ─────────────────────────────────── */}
+            <div className="mt-16 w-full">
+              <div className="bg-white border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
+                <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">Estrategia de los Cuatro Caminos</h3>
+                <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
+                  <table className="w-full text-left border-collapse min-w-[700px]">
+                    <thead>
+                      <tr className="border-b border-[#E8E0D5]">
+                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Estrategia</th>
+                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/4">Cuándo tiene sentido</th>
+                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Ventaja Financiera</th>
+                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Riesgos y Compensaciones</th>
+                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Ideal para</th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-body text-sm text-[#1A1A18]/75 leading-relaxed">
+                      <tr className="border-b border-[#F8F5F0]">
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Vender</td>
+                        <td className="py-6 pr-4">Necesita liquidez, un espacio diferente o desea capturar su plusvalía actual.</td>
+                        <td className="py-6 pr-4">Acceso inmediato a los fondos netos para su próximo movimiento o inversión.</td>
+                        <td className="py-6 pr-4">Renunciar a la apreciación futura y a los posibles ingresos por alquiler.</td>
+                        <td className="py-6">Propietarios listos para un cambio definitivo y flexibilidad financiera.</td>
+                      </tr>
+                      <tr className="border-b border-[#F8F5F0]">
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Renovar</td>
+                        <td className="py-6 pr-4">Su casa actual tiene buena estructura pero le falta la función o el estilo que necesita.</td>
+                        <td className="py-6 pr-4">Aumento potencial en el valor de reventa futuro y mejora en la calidad de vida.</td>
+                        <td className="py-6 pr-4">Altos costos iniciales; las mejoras de lujo rara vez devuelven el 100% de la inversión.</td>
+                        <td className="py-6">Quienes aman su ubicación pero necesitan que su casa funcione mejor.</td>
+                      </tr>
+                      <tr className="border-b border-[#F8F5F0]">
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Rentar</td>
+                        <td className="py-6 pr-4">Su pago de hipoteca es bajo y desea generar riqueza a largo plazo.</td>
+                        <td className="py-6 pr-4">Crecimiento de la plusvalía a largo plazo y potencial de apreciación futura.</td>
+                        <td className="py-6 pr-4">Mantenimiento continuo, gestión de inquilinos y riesgos de desocupación.</td>
+                        <td className="py-6">Inversionistas enfocados en la riqueza a largo plazo más que en el flujo de caja inmediato.</td>
+                      </tr>
+                      <tr>
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Mantener</td>
+                        <td className="py-6 pr-4">Necesita más tiempo para decidir o las condiciones del mercado no favorecen sus metas.</td>
+                        <td className="py-6 pr-4">Evita costos de transacción y permite mayor claridad antes de actuar.</td>
+                        <td className="py-6 pr-4">La plusvalía permanece inmovilizada; impuestos, seguros y mantenimiento continuos.</td>
+                        <td className="py-6">Propietarios que no están bajo presión y valoran la certeza sobre la rapidez.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </RevealDiv>
         </div>
       </section>
@@ -212,7 +341,7 @@ export default function GuiaParaPropietarios() {
               <span className="section-number">05. Mantener</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
-              No hacer nada también puede ser estratégico.
+              No hacer nada puede ser estratégico.
             </h2>
           </RevealDiv>
 
@@ -316,6 +445,37 @@ export default function GuiaParaPropietarios() {
                 <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
               </RevealDiv>
             ))}
+          </div>
+
+          {/* ─── SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) ────────────────── */}
+          <div className="mt-24 max-w-3xl mx-auto w-full">
+            <RevealDiv>
+              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-12 text-center">
+                Preguntas Comunes y Claridad
+              </h2>
+              <div className="bg-white border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
+                <FAQItem 
+                  question="¿Cuándo debería vender mi casa 'tal cual' (as-is) en Austin?" 
+                  answer="Vender tal cual tiene sentido cuando desea evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto es una compensación: acepta una oferta potencialmente más baja a cambio de una salida más rápida y segura. Es ideal si la propiedad necesita trabajos significativos que usted no está dispuesto a gestionar."
+                />
+                <FAQItem 
+                  question="¿Es mejor alquilar que vender en Leander o Cedar Park?" 
+                  answer="En nuestro mercado local, alquilar es típicamente una apuesta por la apreciación a largo plazo. Si su tasa hipotecaria actual es significativamente más baja que los alquileres del mercado, puede ser una herramienta poderosa para generar riqueza. Sin embargo, si necesita esa plusvalía para el pago inicial de su próxima casa o desea evitar las responsabilidades de ser arrendador, vender suele ser el movimiento financiero más limpio."
+                />
+                <FAQItem 
+                  question="¿Cómo sé si una remodelación realmente aumentará el valor de mi casa?" 
+                  answer="Enfóquese en 'Lo que importa': limpieza básica, sistemas funcionales y una presentación neutral. Las grandes renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta significativamente la demanda de los compradores o su calidad de vida diaria, probablemente no sea un movimiento estratégico antes de vender."
+                />
+                <FAQItem 
+                  question="¿Cuál es el mayor riesgo de 'Mantener' y no hacer nada?" 
+                  answer="El riesgo principal es el 'Costo de Oportunidad'. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento. Mantener es una estrategia válida para obtener claridad, pero no debe usarse para evitar una decisión inevitable."
+                />
+                <FAQItem 
+                  question="¿Por qué el precio es la decisión más importante en el proceso de venta?" 
+                  answer="El precio dicta cómo el mercado percibe su casa. Un precio bajo deja dinero sobre la mesa, mientras que un precio excesivo hace que su casa sea 'invisible' para los compradores calificados. Un precio estratégico posiciona su casa para atraer el interés adecuado de inmediato, lo cual es crítico en el competitivo panorama del área de Austin."
+                />
+              </div>
+            </RevealDiv>
           </div>
         </div>
       </section>

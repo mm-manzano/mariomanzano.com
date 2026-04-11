@@ -6,6 +6,7 @@
  */
 
 const FUNNEL_URL = "/homeowner-guide";
+const FUNNEL_URL_ES = "/es/guia-para-propietarios";
 const PLAN_URL = "https://go.mariomanzano.com/get-a-plan";
 
 export type ButtonType = "start-conversation" | "get-plan" | "get-guide";
@@ -20,8 +21,7 @@ export type Language = "en" | "es";
 export function getCTALink(buttonType: ButtonType, language: Language): string {
   switch (buttonType) {
   case "get-guide":
-   
-    return FUNNEL_URL;
+  return language === "es" ? FUNNEL_URL_ES : FUNNEL_URL;
 
   case "get-plan":
   case "start-conversation":

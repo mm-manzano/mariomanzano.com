@@ -221,9 +221,11 @@ export default function Home() {
                   <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed transition-colors duration-500 mb-4">
                     {service.desc}
                   </p>
-                  <span className="font-body text-xs text-[#B8974A] group-hover:text-[#D4B878] transition-colors duration-500 inline-block">
-                    Get the Homeowner Guide
-                  </span>
+                  <span className="font-body text-base font-medium text-[#b8974a] group-hover:text-[#D4B878] transition-colors duration-500 inline-block mt-2">
+  {language === "es"
+    ? "Ver la Guía del Propietario"
+    : "View the Homeowner Guide"}
+</span>
                 </a>
               </RevealDiv>
             ))}

@@ -3,7 +3,7 @@
  * Content extracted from Gamma guide
  * Sections: Hero, Clear Look at Options, Preparing vs Selling, Pricing Strategy, Selling vs Renting, Holding, Selling As-Is, Remodel, Putting It Together, CTA
  * Optimization: Added Comparison Table, FAQ Section, and JSON-LD Schema for AI Visibility.
- * REFINEMENT: Remodel section moved after Selling As-Is. Long dashes removed throughout.
+ * REFINEMENT: Remodel section moved after Selling As-Is. Long dashes removed. Remodel table row simplified for clarity and brevity.
  */
 
 import { useEffect, useRef } from "react";
@@ -200,10 +200,10 @@ export default function HomeownerGuide() {
                     </tr>
                     <tr className="border-b border-[#F8F5F0]">
                       <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Remodel</td>
-                      <td className="py-6 pr-4">Your current home has the right "bones" but lacks the function or style you need. Depending on your situation, it can also be a way to reposition the property for a different use or outcome.</td>
-                      <td className="py-6 pr-4">Potential increase in future resale value and improved quality of life. In some cases, strategic remodeling may create the option to refinance or reposition the property as a long-term asset.</td>
+                      <td className="py-6 pr-4">Your home has good bones but needs updates or improvements.</td>
+                      <td className="py-6 pr-4">Improved quality of life and potential increase in resale value. In some cases, it may also create the option to access equity for a future move.</td>
                       <td className="py-6 pr-4">High upfront costs; luxury upgrades rarely deliver a 100% ROI.</td>
-                      <td className="py-6">Those who love their location but need their home to work better. Also useful for homeowners exploring whether their property could support a different strategy.</td>
+                      <td className="py-6">Homeowners who love their location but want their home to work better.</td>
                     </tr>
                     <tr className="border-b border-[#F8F5F0]">
                       <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Rent</td>

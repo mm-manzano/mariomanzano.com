@@ -3,6 +3,7 @@
  * Content extracted from Gamma guide
  * Sections: Hero, Clear Look at Options, Preparing vs Selling, Pricing Strategy, Selling vs Renting, Holding, As-Is, Putting It Together, CTA
  * Optimization: Added Comparison Table, FAQ Section, and JSON-LD Schema for AI Visibility.
+ * REFINEMENT: Strategic equity layer added subtly throughout
  */
 
 import { useEffect, useRef } from "react";
@@ -13,7 +14,7 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
 
-function useScrollReveal() {
+function useScrollReveal( ) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -67,7 +68,7 @@ export default function HomeownerGuide() {
         "name": "When should I sell my home as-is in Austin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It’s ideal if the property needs significant work you aren't prepared to manage."
+          "text": "Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It's ideal if the property needs significant work you aren't prepared to manage."
         }
       },
       {
@@ -83,7 +84,7 @@ export default function HomeownerGuide() {
         "name": "How do I know if a remodel will actually increase my home's value?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it’s likely not a strategic move before selling."
+          "text": "Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it's likely not a strategic move before selling."
         }
       },
       {
@@ -110,7 +111,7 @@ export default function HomeownerGuide() {
       {/* ─── FAQ SCHEMA ───────────────────────────────────────────── */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema ) }}
       />
 
       {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
@@ -137,7 +138,8 @@ export default function HomeownerGuide() {
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Sell, Remodel,<br />
+              Sell, Remodel,  
+
               <em className="italic">Rent, or Hold.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
@@ -198,10 +200,10 @@ export default function HomeownerGuide() {
                     </tr>
                     <tr className="border-b border-[#F8F5F0]">
                       <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Remodel</td>
-                      <td className="py-6 pr-4">Your current home has the right "bones" but lacks the function or style you need.</td>
-                      <td className="py-6 pr-4">Potential increase in future resale value and improved quality of life.</td>
+                      <td className="py-6 pr-4">Your current home has the right "bones" but lacks the function or style you need. Depending on your situation, it can also be a way to reposition the property for a different use or outcome.</td>
+                      <td className="py-6 pr-4">Potential increase in future resale value and improved quality of life. In some cases, strategic remodeling may create the option to refinance or reposition the property as a long-term asset.</td>
                       <td className="py-6 pr-4">High upfront costs; luxury upgrades rarely deliver a 100% ROI.</td>
-                      <td className="py-6">Those who love their location but need their home to work better.</td>
+                      <td className="py-6">Those who love their location but need their home to work better. Also useful for homeowners exploring whether their property could support a different strategy.</td>
                     </tr>
                     <tr className="border-b border-[#F8F5F0]">
                       <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Rent</td>
@@ -220,6 +222,38 @@ export default function HomeownerGuide() {
                   </tbody>
                 </table>
               </div>
+            </div>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* ─── REMODEL SECTION ─────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#B8974A]">Remodel</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+              Remodel
+            </h2>
+            <div className="max-w-2xl space-y-6">
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                Remodeling can be a way to make your current home work better for your needs or to better position it for resale.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                For many homeowners, this means improving layout, updating key areas, or addressing functional issues that impact daily living or buyer perception.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                Some homeowners approach this moment differently.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                A strategic remodel paired with a refinance can, in certain situations, reposition the property for a different use or outcome, or free up capital for the next move.
+              </p>
+              <p className="font-body text-base text-white/70 leading-relaxed">
+                Like any path, the value of remodeling depends on your goals, timeline, and how the numbers actually play out.
+              </p>
             </div>
           </RevealDiv>
         </div>
@@ -334,7 +368,7 @@ export default function HomeownerGuide() {
                 The tradeoff is giving up future appreciation and potential rental income. Once sold, you no longer participate in future market gains tied to the property.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                Renting and selling can both be smart decisions depending on timing, finances, and goals. The right choice depends on your financial position, risk tolerance, and long-term plans.
+                Renting and selling can both be smart decisions depending on timing, finances, and goals. The right choice depends on your financial position, risk tolerance, and long-term plans. For some homeowners, the equity sitting in this property is the capital that funds the next one.
               </p>
             </RevealDiv>
           </div>
@@ -376,8 +410,11 @@ export default function HomeownerGuide() {
           </div>
 
           <RevealDiv delay={200} className="mt-12 border-t border-[#E8E0D5] pt-8">
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-4">
               Holding your property isn't procrastination. It can be a valid strategy when you need clarity or when market conditions don't favor your goals.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+              In some cases, holding can also be a strategic pause—creating space to explore what this property could support next.
             </p>
           </RevealDiv>
         </div>
@@ -456,6 +493,16 @@ export default function HomeownerGuide() {
             ))}
           </div>
 
+          {/* ─── TWO TYPES OF DECISIONS ────────────────────────────── */}
+          <RevealDiv delay={400} className="mt-16 border-t border-[#E8E0D5] pt-8 max-w-2xl">
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              Some homeowners are deciding what to do next.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              Others are considering how to use this property to create their next opportunity.
+            </p>
+          </RevealDiv>
+
           {/* ─── FAQ SECTION ────────────────────────────────────────── */}
           <div className="mt-24 max-w-3xl mx-auto">
             <RevealDiv>
@@ -465,7 +512,7 @@ export default function HomeownerGuide() {
               <div className="bg-white border border-[#E8E0D5] p-8 md:p-12">
                 <FAQItem 
                   question="When should I sell my home 'as-is' in Austin?" 
-                  answer="Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It’s ideal if the property needs significant work you aren't prepared to manage."
+                  answer="Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It's ideal if the property needs significant work you aren't prepared to manage."
                 />
                 <FAQItem 
                   question="Is renting better than selling in Leander or Cedar Park?" 
@@ -473,7 +520,7 @@ export default function HomeownerGuide() {
                 />
                 <FAQItem 
                   question="How do I know if a remodel will actually increase my home's value?" 
-                  answer="Focus on 'What Matters': functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it’s likely not a strategic move before selling."
+                  answer="Focus on 'What Matters': functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it's likely not a strategic move before selling."
                 />
                 <FAQItem 
                   question="What is the biggest risk of 'Holding' and doing nothing?" 
@@ -481,7 +528,7 @@ export default function HomeownerGuide() {
                 />
                 <FAQItem 
                   question="Why is pricing the most important decision in the selling process?" 
-                  answer="Pricing dictates how the market perceives your home. Underpricing leaves money on the table, while overpricing makes your home 'invisible' to qualified buyers. A strategic price positions your home to attract the right interest immediately, which is critical in the Austin area's competitive landscape."
+                  answer="Pricing dictates how the market perceives your home. Underpricing leaves money on the table, while overpricing makes your home 'invisible' to qualified buyers. A strategic price positions your home to attract the right interest immediately."
                 />
               </div>
             </RevealDiv>

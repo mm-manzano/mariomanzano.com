@@ -1,8 +1,9 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Guía para Propietarios
  * Content extracted from Gamma guide (Spanish)
+ * Sections: Hero, Tus Opciones, Preparar vs Vender, Estrategia de Precio, Vender o Rentar, Mantener, Vender Tal Como Está, Renovar, Integrando Todo, CTA
  * Optimization: Added Comparison Table, FAQ Section, and JSON-LD Schema for AI Visibility.
- * Fix: Responsive-first layout for Desktop and Mobile visibility.
+ * REFINEMENT: Renovar section moved after Vender Tal Como Está. Long dashes removed. Renovar table row simplified for clarity.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -12,7 +13,7 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
 
-function useScrollReveal() {
+function useScrollReveal( ) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -63,7 +64,7 @@ export default function GuiaParaPropietarios() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Cuándo debería vender mi casa tal cual (as-is) en Austin?",
+        "name": "¿Cuándo debería vender mi casa tal cual (as-is ) en Austin?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Vender tal cual tiene sentido cuando desea evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto es una compensación: acepta una oferta potencialmente más baja a cambio de una salida más rápida y segura. Es ideal si la propiedad necesita trabajos significativos que usted no está dispuesto a gestionar."
@@ -87,10 +88,10 @@ export default function GuiaParaPropietarios() {
       },
       {
         "@type": "Question",
-        "name": "¿Cuál es el mayor riesgo de Mantener y no hacer nada?",
+        "name": "¿Cuál es el mayor riesgo de mantener y no hacer nada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El riesgo principal es el Costo de Oportunidad. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento. Mantener es una estrategia válida para obtener claridad, pero no debe usarse para evitar una decisión inevitable."
+          "text": "El riesgo principal es el costo de oportunidad. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento. Mantener es una estrategia válida para obtener claridad, pero no debe usarse para evitar una decisión inevitable."
         }
       },
       {
@@ -106,13 +107,13 @@ export default function GuiaParaPropietarios() {
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── FAQ SCHEMA ───────────────────────────────────────────── */}
+      {/* FAQ SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
+      {/* PAGE HERO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[#1A1A18]/65" />
@@ -126,7 +127,8 @@ export default function GuiaParaPropietarios() {
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-6xl font-light text-white leading-tight mb-6">
-              Vender, Renovar,<br />
+              Vender, Renovar,  
+
               <em className="italic">Rentar o Mantener.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
@@ -136,7 +138,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── UNA VISTA CLARA ─────────────────────────────────────── */}
+      {/* SECTION 01: TUS OPCIONES */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -163,7 +165,7 @@ export default function GuiaParaPropietarios() {
               Esta guía te ayuda a bajar el proceso de la decisión, ver claramente los pros y contras y evitar movimientos innecesarios o costosos antes de decidir.
             </p>
 
-            {/* ─── TABLA COMPARATIVA ─────────────────────────────────── */}
+            {/* COMPARISON TABLE */}
             <div className="mt-16 w-full">
               <div className="bg-white border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
                 <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">Estrategia de los Cuatro Caminos</h3>
@@ -188,10 +190,10 @@ export default function GuiaParaPropietarios() {
                       </tr>
                       <tr className="border-b border-[#F8F5F0]">
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Renovar</td>
-                        <td className="py-6 pr-4">Su casa actual tiene buena estructura pero le falta la función o el estilo que necesita.</td>
-                        <td className="py-6 pr-4">Aumento potencial en el valor de reventa futuro y mejora en la calidad de vida.</td>
+                        <td className="py-6 pr-4">Su casa actual tiene buena estructura pero necesita actualizaciones o mejoras.</td>
+                        <td className="py-6 pr-4">Mejor calidad de vida y potencial aumento en el valor de reventa. En algunos casos, también puede crear la opción de acceder al capital para un próximo paso.</td>
                         <td className="py-6 pr-4">Altos costos iniciales; las mejoras de lujo rara vez devuelven el 100% de la inversión.</td>
-                        <td className="py-6">Quienes aman su ubicación pero necesitan que su casa funcione mejor.</td>
+                        <td className="py-6">Propietarios que aman su ubicación pero quieren que su casa funcione mejor.</td>
                       </tr>
                       <tr className="border-b border-[#F8F5F0]">
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Rentar</td>
@@ -216,7 +218,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── PREPARAR VS VENDER ──────────────────────────────────── */}
+      {/* SECTION 02: PREPARAR VS VENDER */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -256,7 +258,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── ESTRATEGIA DE PRECIO ────────────────────────────────── */}
+      {/* SECTION 03: ESTRATEGIA DE PRECIO */}
       <section className="py-20 md:py-28">
         <div className="container">
           <RevealDiv>
@@ -289,7 +291,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── VENDER O RENTAR ─────────────────────────────────────── */}
+      {/* SECTION 04: VENDER O RENTAR */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -332,7 +334,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── MANTENER LA PROPIEDAD ──────────────────────────────── */}
+      {/* SECTION 05: MANTENER */}
       <section className="py-20 md:py-28">
         <div className="container">
           <RevealDiv>
@@ -374,7 +376,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── VENDER TAL COMO ESTÁ ──────────────────────────────── */}
+      {/* SECTION 06: VENDER TAL COMO ESTÁ */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -386,37 +388,69 @@ export default function GuiaParaPropietarios() {
               Entendiendo los puntos a favor y en contra.
             </h2>
             <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
-              Vender tu casa tal como está significa ofrecerla en su condición actual, sin hacer reparaciones ni mejoras. No es una estrategia de marketing ni una forma de vender rápido.
+              Vender tu casa tal cual significa ofrecerla en su condición actual sin hacer reparaciones ni actualizaciones. Esto no es un truco de marketing ni una forma de vender rápido. Es simplemente reconocer el estado de la propiedad.
             </p>
           </RevealDiv>
 
           <RevealDiv delay={100} className="mt-8 border border-white/10 p-8">
             <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Qué Considerar</h3>
-            <ul className="font-body text-base text-white/70 leading-relaxed space-y-2">
+            <ul className="font-body text-base text-white/70 leading-relaxed space-y-2 mb-6">
               <li>Los compradores van a inspeccionar y negociar según la condición de la casa</li>
               <li>Puedes recibir ofertas más bajas si el precio no refleja la condición</li>
               <li>Puede tomar más tiempo encontrar al comprador adecuado</li>
               <li>No estás obligado a hacer arreglos</li>
             </ul>
-            <p className="font-body text-base text-white/70 leading-relaxed mt-6">
-              Esta opción funciona cuando no quieres invertir tiempo ni dinero en preparar la casa, o cuando la propiedad necesita reparaciones que no quieres hacer.
+            <p className="font-body text-base text-white/70 leading-relaxed">
+              Esta opción funciona cuando no quieres invertir tiempo ni dinero en preparar la casa, o cuando la propiedad necesita reparaciones que no quieres hacer. Es una compensación entre precio, preparación y esfuerzo.
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── INTEGRANDO TODO ────────────────────────────────────── */}
+      {/* RENOVAR SECTION */}
       <section className="py-20 md:py-28">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">07. Integrando Todo</span>
+              <span className="section-number">Renovar</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+              Renovar
+            </h2>
+            <div className="max-w-2xl space-y-6">
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Renovar puede ser una forma de hacer que tu casa actual funcione mejor para tus necesidades o de posicionarla mejor para una reventa.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Para muchos propietarios, esto significa mejorar el diseño, actualizar áreas clave o abordar problemas funcionales que impactan la vida diaria o la percepción del comprador.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Algunos propietarios abordan este momento de manera diferente.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Una renovación estratégica combinada con un refinanciamiento puede, en ciertas situaciones, reposicionar la propiedad para un uso o resultado diferente, o liberar capital para el próximo paso.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Como cualquier camino, el valor de renovar depende de tus metas, tu tiempo y cómo se desarrollan realmente los números.
+              </p>
+            </div>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* SECTION 07: INTEGRANDO TODO */}
+      <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#B8974A]">07. Integrando Todo</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
               La mejor decisión depende de cuatro factores clave.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-8">
+            <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
               No hay una sola respuesta correcta. Solo la respuesta correcta para tu situación.
             </p>
           </RevealDiv>
@@ -440,22 +474,31 @@ export default function GuiaParaPropietarios() {
                 desc: "¿Cuánto esfuerzo y estrés estás dispuesto a manejar? Algunos caminos requieren más participación que otros."
               },
             ].map((item, i) => (
-              <RevealDiv key={item.title} delay={i * 100} className="border-t border-[#E8E0D5] pt-6">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+              <RevealDiv key={item.title} delay={i * 100} className="border-t border-white/10 pt-6">
+                <h3 className="font-display text-xl font-light text-[#B8974A] mb-3">{item.title}</h3>
+                <p className="font-body text-base text-white/70 leading-relaxed">{item.desc}</p>
               </RevealDiv>
             ))}
           </div>
 
-          {/* ─── SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) ────────────────── */}
+          <RevealDiv delay={400} className="mt-16 border-t border-white/10 pt-8 max-w-2xl">
+            <p className="font-body text-base text-white/70 leading-relaxed mb-4">
+              Algunos propietarios están decidiendo qué hacer a continuación.
+            </p>
+            <p className="font-body text-base text-white/70 leading-relaxed">
+              Otros están considerando cómo usar esta propiedad para crear su próxima oportunidad.
+            </p>
+          </RevealDiv>
+
+          {/* FAQ SECTION */}
           <div className="mt-24 max-w-3xl mx-auto w-full">
             <RevealDiv>
-              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-12 text-center">
+              <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-12 text-center">
                 Preguntas Comunes y Claridad
               </h2>
-              <div className="bg-white border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
+              <div className="bg-[#F8F5F0] border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
                 <FAQItem 
-                  question="¿Cuándo debería vender mi casa 'tal cual' (as-is) en Austin?" 
+                  question="¿Cuándo debería vender mi casa tal cual (as-is) en Austin?" 
                   answer="Vender tal cual tiene sentido cuando desea evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto es una compensación: acepta una oferta potencialmente más baja a cambio de una salida más rápida y segura. Es ideal si la propiedad necesita trabajos significativos que usted no está dispuesto a gestionar."
                 />
                 <FAQItem 
@@ -464,15 +507,15 @@ export default function GuiaParaPropietarios() {
                 />
                 <FAQItem 
                   question="¿Cómo sé si una remodelación realmente aumentará el valor de mi casa?" 
-                  answer="Enfóquese en 'Lo que importa': limpieza básica, sistemas funcionales y una presentación neutral. Las grandes renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta significativamente la demanda de los compradores o su calidad de vida diaria, probablemente no sea un movimiento estratégico antes de vender."
+                  answer="Enfóquese en limpieza básica, sistemas funcionales y una presentación neutral. Las grandes renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta significativamente la demanda de los compradores o su calidad de vida diaria, probablemente no sea un movimiento estratégico antes de vender."
                 />
                 <FAQItem 
-                  question="¿Cuál es el mayor riesgo de 'Mantener' y no hacer nada?" 
-                  answer="El riesgo principal es el 'Costo de Oportunidad'. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento. Mantener es una estrategia válida para obtener claridad, pero no debe usarse para evitar una decisión inevitable."
+                  question="¿Cuál es el mayor riesgo de mantener y no hacer nada?" 
+                  answer="El riesgo principal es el costo de oportunidad. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento. Mantener es una estrategia válida para obtener claridad, pero no debe usarse para evitar una decisión inevitable."
                 />
                 <FAQItem 
                   question="¿Por qué el precio es la decisión más importante en el proceso de venta?" 
-                  answer="El precio dicta cómo el mercado percibe su casa. Un precio bajo deja dinero sobre la mesa, mientras que un precio excesivo hace que su casa sea 'invisible' para los compradores calificados. Un precio estratégico posiciona su casa para atraer el interés adecuado de inmediato, lo cual es crítico en el competitivo panorama del área de Austin."
+                  answer="El precio dicta cómo el mercado percibe su casa. Un precio bajo deja dinero sobre la mesa, mientras que un precio excesivo hace que su casa sea invisible para los compradores calificados. Un precio estratégico posiciona su casa para atraer el interés adecuado de inmediato."
                 />
               </div>
             </RevealDiv>
@@ -480,14 +523,14 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── CTA ───────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1A1A18]">
+      {/* CTA */}
+      <section className="py-20 md:py-28 bg-[#F8F5F0]">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6 max-w-2xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
               ¿Listo para explorar tus opciones?
             </h2>
-            <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
+            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
               Si quieres hablar sobre tu situación o entender en cuánto podría venderse o rentarse tu casa de forma realista, estoy disponible.
             </p>
             <a href={getCTALink("get-plan", "es")}>

@@ -1,7 +1,8 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Homepage
  * Sections: Hero (full-bleed), Trust Strip, Advisor Intro, Services Grid,
- *           Market Insight, Testimonial, CTA Band, Footer
+ *           Numbers Section (New), Market Insight, Testimonial, Process Strip, 
+ *           Guide Section (Moved), Final CTA Band
  * Images: Generated AI hero images (CDN URLs)
  * Typography: Cormorant Garamond headlines, DM Sans body
  * Optimization: Added RealEstateAgent JSON-LD Schema for Local SEO and AI Visibility.
@@ -119,23 +120,21 @@ export default function Home() {
               <em className="italic">Your Advisor.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
-              Before you decide to sell, remodel, rent, or hold, you deserve clarity from someone who puts your interests first.
+              Before you decide to sell, remodel, rent, or hold, start with the numbers. Get clarity from someone who puts your interests first.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={getCTALink("get-guide", language)}
-                rel="noopener noreferrer"
-                onClick={() => {
-                  if (window.fbq) {
-                    window.fbq("trackCustom", "GuideDownload");
-                  }
-                }}
-              >
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  View the Homeowner Guide
+              <Link href="/home-value">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                  See what your home is worth
                   <ArrowRight size={14} />
                 </span>
-              </a>
+              </Link>
+              <Link href="/net-sheet">
+                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                  See what you'd walk away with
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -246,7 +245,7 @@ export default function Home() {
                 delay={i * 80}
                 className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <a href={getCTALink("get-guide", "en")} className="block h-full cursor-pointer">
+                <Link href="/home-value" className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -256,15 +255,41 @@ export default function Home() {
                   <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed transition-colors duration-500 mb-4">
                     {service.desc}
                   </p>
-                  <span className="font-body text-base font-medium text-[#b8974a] group-hover:text-[#D4B878] transition-colors duration-500 inline-block mt-2">
-                    {language === "es"
-                      ? "Ver la Guía del Propietario"
-                      : "View the Homeowner Guide"}
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] group-hover:text-white inline-flex items-center gap-2 transition-colors duration-500">
+                    Explore Options <ArrowRight size={12} />
                   </span>
-                </a>
+                </Link>
               </RevealDiv>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── NUMBERS SECTION (NEW) ─────────────────────────────────── */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container text-center">
+          <RevealDiv>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4">
+              Start with the numbers
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/60 mb-12 max-w-lg mx-auto">
+              Before making a decision, understand your home value and net proceeds.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/home-value">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                  Home Value
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+              <Link href="/net-sheet">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
+                  Net Sheet
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </div>
+          </RevealDiv>
         </div>
       </section>
 
@@ -381,7 +406,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── CTA BAND ──────────────────────────────────────────────── */}
+      {/* ─── GUIDE SECTION (MOVED LOWER) ───────────────────────────── */}
+      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+        <div className="container text-center">
+          <RevealDiv>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6">
+              Deeper Learning
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
+              Not ready to talk yet? Explore our comprehensive guide for Austin homeowners.
+            </p>
+            <a
+              href={getCTALink("get-guide", language)}
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (window.fbq) {
+                  window.fbq("trackCustom", "GuideDownload");
+                }
+              }}
+            >
+              <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
+                View the Homeowner Guide
+                <ArrowRight size={14} />
+              </span>
+            </a>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* ─── FINAL CTA BAND ────────────────────────────────────────── */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
@@ -400,20 +453,18 @@ export default function Home() {
               A consultation where we review your home, your options, and what makes sense for your specific situation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={getCTALink("get-guide", "en")}
-                rel="noopener noreferrer"
-                onClick={() => {
-                  if (window.fbq) {
-                    window.fbq("trackCustom", "GuideDownload");
-                  }
-                }}
-              >
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                  View the Homeowner Guide
+              <Link href="/home-value">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                  Home Value
                   <ArrowRight size={14} />
                 </span>
-              </a>
+              </Link>
+              <Link href="/net-sheet">
+                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                  Net Sheet
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </div>
           </RevealDiv>
         </div>

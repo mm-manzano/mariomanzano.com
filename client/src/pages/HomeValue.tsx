@@ -37,7 +37,7 @@ export default function HomeValue() {
           <div className="w-full">
             <iframe
               src="https://mariomanzano.exprealty.com/sellembed.php"
-              style={{ width: "100%", height: "550px", border: "none" }}
+              style={{ width: "100%", height: "160px", border: "none" }}
             />
           </div>
 

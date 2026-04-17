@@ -1,11 +1,11 @@
 /*
  * DESIGN: Quiet Luxury Editorial
- * Routes: Home, HomeValue, HomeownerGuide, About, Contact (English & Spanish)
+ * Routes: Home, HomeValue, NetSheet, HomeownerGuide, About, Contact (English & Spanish)
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.1 - Force cache bust
-const BUILD_VERSION = "2.1.0";
+// Build version: v2.2 - Added NetSheet, Removed SellingProcess
+const BUILD_VERSION = "2.2.0";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +18,7 @@ import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import HomeValue from "./pages/HomeValue";
+import NetSheet from "./pages/NetSheet"; // New Page
 import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -26,8 +27,6 @@ import GuiaParaPropietarios from "./pages/GuiaParaPropietarios";
 import AboutES from "./pages/AboutES";
 import ContactES from "./pages/ContactES";
 import ConsultaES from "./pages/ConsultaES";
-import SellingProcess from "./pages/SellingProcess";
-import SellingProcessES from "./pages/SellingProcessES";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PrivacyPolicyES from "./pages/PrivacyPolicyES";
 import TermsOfService from "./pages/TermsOfService";
@@ -41,6 +40,7 @@ function ScrollToTop() {
   }, [location]);
   return null;
 }
+
 function usePageTracking() {
   const [location] = useLocation();
 
@@ -54,19 +54,19 @@ function usePageTracking() {
 function Router() {
   return (
     <Switch>
-            {/* Spanish Routes */}
+      {/* Spanish Routes */}
       <Route exact path="/es" component={HomeES} />
       <Route path="/es/guia-para-propietarios" component={GuiaParaPropietarios} />
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />
       <Route path="/es/consulta" component={ConsultaES} />
-      <Route path="/es/proceso-de-venta" component={SellingProcessES} />
+      
       {/* English Routes */}
       <Route exact path="/" component={Home} />
       <Route path="/home-value" component={HomeValue} />
+      <Route path="/net-sheet" component={NetSheet} />
       <Route path="/homeowner-guide" component={HomeownerGuide} />
       <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
-      <Route path="/selling-process" component={SellingProcess} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />

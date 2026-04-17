@@ -1,17 +1,16 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Homepage
  * Sections: Hero (full-bleed), Trust Strip, Advisor Intro, Services Grid,
- *           Numbers Section (New), Market Insight, Testimonial, Process Strip, 
- *           Guide Section (Moved), Final CTA Band
+ *           Numbers Section, Market Insight, Testimonial, Process Strip (Updated), 
+ *           Guide Section, Final CTA Band
  * Images: Generated AI hero images (CDN URLs)
  * Typography: Cormorant Garamond headlines, DM Sans body
  * Optimization: Added RealEstateAgent JSON-LD Schema for Local SEO and AI Visibility.
- * Fix: Vite-compatible schema injection (removed next/head).
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
@@ -52,17 +51,36 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
   );
 }
 
+function AccordionItem({ title, children, isOpen, onClick }: { title: string; children: React.ReactNode; isOpen: boolean; onClick: () => void }) {
+  return (
+    <div className="border-b border-[#E8E0D5] last:border-0">
+      <button
+        onClick={onClick}
+        className="w-full py-6 flex items-center justify-between text-left group"
+      >
+        <span className="font-display text-xl md:text-2xl font-light text-[#1A1A18] group-hover:text-[#B8974A] transition-colors">
+          {title}
+        </span>
+        {isOpen ? <Minus size={20} className="text-[#B8974A]" /> : <Plus size={20} className="text-[#1A1A18]/40" />}
+      </button>
+      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[500px] pb-8" : "max-h-0"}`}>
+        <div className="font-body text-sm md:text-base text-[#1A1A18]/60 leading-relaxed">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const language = window.location.pathname.startsWith("/es") ? "es" : "en";
+  const [openStep, setOpenStep] = useState<number | null>(null);
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Mario Manzano, Realtor",
-    "alternateName": [
-      "Mario Manzano",
-      "Mario Manzano Austin Realtor"
-    ],
+    "alternateName": ["Mario Manzano", "Mario Manzano Austin Realtor"],
     "@id": "https://mariomanzano.com",
     "url": "https://mariomanzano.com",
     "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg",
@@ -73,11 +91,7 @@ export default function Home() {
       "addressRegion": "TX",
       "addressCountry": "US"
     },
-    "areaServed": [
-      "Austin TX",
-      "Cedar Park TX",
-      "Leander TX"
-    ],
+    "areaServed": ["Austin TX", "Cedar Park TX", "Leander TX"],
     "sameAs": [
       "https://www.instagram.com/mariomanzanoatx",
       "https://www.tiktok.com/@mariomanzanoatx"
@@ -86,7 +100,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── LOCAL BUSINESS SCHEMA (Vite-Compatible) ──────────────── */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -94,18 +107,11 @@ export default function Home() {
 
       {/* ─── HERO ──────────────────────────────────────────────────── */}
       <section className="relative h-auto md:min-h-screen flex items-start">
-        {/* Background Image */}
         <div className="absolute inset-0">
-          <img
-            src={HERO_IMG}
-            alt="Luxury Cedar Park home at dusk"
-            className="w-full h-full object-cover"
-          />
-          {/* Gradient overlay: dark at bottom for text legibility */}
+          <img src={HERO_IMG} alt="Luxury Cedar Park home" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         </div>
 
-        {/* Hero Content */}
         <div className="relative z-10 container py-16 md:py-0 md:pt-32 lg:pt-40 md:pb-16 lg:pb-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
@@ -155,18 +161,12 @@ export default function Home() {
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Image */}
             <RevealDiv className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={INTERIOR_IMG}
-                  alt="Luxury Texas Hill Country interior"
-                  className="w-full h-full object-cover"
-                />
+                <img src={INTERIOR_IMG} alt="Luxury interior" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
 
-            {/* Text */}
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
@@ -177,7 +177,7 @@ export default function Home() {
                 <em className="italic">any decision.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I'm Mario Manzano, a licensed REALTOR® and Seller Strategist based in Leander, Texas, serving the greater Austin area. Before you decide anything about your home, you deserve to understand all your options.
+                I'm Mario Manzano, a licensed REALTOR® and Seller Strategist based in Leander, Texas. Before you decide anything about your home, you deserve to understand all your options.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 That might mean selling, or it might mean something else. My job is to walk you through the data, the costs, and the timing so you can make the decision that makes sense for your situation.
@@ -196,11 +196,7 @@ export default function Home() {
       {/* ─── SERVICES GRID ─────────────────────────────────────────── */}
       <section
         className="py-20 md:py-32 relative"
-        style={{
-          backgroundImage: `url(${TEXTURE_BG})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="absolute inset-0 bg-[#F8F5F0]/90" />
         <div className="relative z-10 container">
@@ -219,26 +215,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E0D5]">
             {[
-              {
-                num: "01",
-                title: "Sell",
-                desc: "Understand the market, timing, and costs involved in selling your home.",
-              },
-              {
-                num: "02",
-                title: "Remodel",
-                desc: "Explore which improvements make sense for your home and financial situation.",
-              },
-              {
-                num: "03",
-                title: "Rent",
-                desc: "Consider whether holding as a rental may serve your long-term financial goals better.",
-              },
-              {
-                num: "04",
-                title: "Hold",
-                desc: "Evaluate whether waiting could strengthen your position before selling."
-              },
+              { num: "01", title: "Sell", desc: "Understand the market, timing, and costs involved in selling your home." },
+              { num: "02", title: "Remodel", desc: "Explore which improvements make sense for your home and financial situation." },
+              { num: "03", title: "Rent", desc: "Consider whether holding as a rental may serve your long-term financial goals better." },
+              { num: "04", title: "Hold", desc: "Evaluate whether waiting could strengthen your position before selling." }
             ].map((service, i) => (
               <RevealDiv
                 key={service.num}
@@ -265,7 +245,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── NUMBERS SECTION (NEW) ─────────────────────────────────── */}
+      {/* ─── NUMBERS SECTION ───────────────────────────────────────── */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container text-center">
           <RevealDiv>
@@ -293,35 +273,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── MARKET INSIGHT ────────────────────────────────────────── */}
-      <section className="py-20 md:py-32">
+      {/* ─── SELLING PROCESS (INTEGRATED) ──────────────────────────── */}
+      <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Text */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
             <RevealDiv>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">03. Market</span>
+                <span className="section-number">03. Process</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-                Understanding the<br />
-                <em className="italic">Austin area market.</em>
+                What happens<br />
+                <em className="italic">after you decide.</em>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-                The market isn't one number. What a home can sell for depends on the property, the neighborhood, and what buyers are doing right now.
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
+                A clear walkthrough of the selling process. From listing to closing, here's what to expect when we move forward.
               </p>
             </RevealDiv>
 
-            {/* Aerial Image */}
             <RevealDiv delay={150}>
-              <div className="relative">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={AERIAL_IMG}
-                    alt="Cedar Park Texas neighborhood aerial view"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="max-w-xl">
+                <AccordionItem
+                  title="01. Before You List"
+                  isOpen={openStep === 1}
+                  onClick={() => setOpenStep(openStep === 1 ? null : 1)}
+                >
+                  We'll align on your property, timeline, and goals. I'll prepare a market analysis so we start from data, not guesswork. We'll also cover any preparation that helps buyers see your home clearly.
+                </AccordionItem>
+                <AccordionItem
+                  title="02. Going Live"
+                  isOpen={openStep === 2}
+                  onClick={() => setOpenStep(openStep === 2 ? null : 2)}
+                >
+                  Your home hits the MLS, Zillow, and Realtor.com with professional photos. The first two weeks are crucial—we'll monitor buyer response and activity closely.
+                </AccordionItem>
+                <AccordionItem
+                  title="03. Offers & Negotiation"
+                  isOpen={openStep === 3}
+                  onClick={() => setOpenStep(openStep === 3 ? null : 3)}
+                >
+                  We evaluate offers strategically, looking at price, terms, and risk. I'll help you understand the full picture before you sign anything.
+                </AccordionItem>
+                <AccordionItem
+                  title="04. Under Contract to Closing"
+                  isOpen={openStep === 4}
+                  onClick={() => setOpenStep(openStep === 4 ? null : 4)}
+                >
+                  The process continues with inspections (7-10 days), appraisal (10-14 days), and final walkthrough. Typical timeline is 30-45 days from contract to closing.
+                </AccordionItem>
               </div>
             </RevealDiv>
           </div>
@@ -335,99 +334,32 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="text-center">
                 <blockquote className="font-display text-lg md:text-xl lg:text-2xl font-light text-white leading-relaxed italic mb-6">
-                  "Mario went above and beyond to help us sell our home. He set a great impression that led to a positive experience. Well organized and willing to go above and beyond, getting us more money than what our original realtor said we'd get."
+                  "Mario went above and beyond to help us sell our home... getting us more money than what our original realtor said we'd get."
                 </blockquote>
-                <div className="font-body text-sm font-medium text-[#D4B878]">
-                  Alma S.
-                </div>
+                <div className="font-body text-sm font-medium text-[#D4B878]">Alma S.</div>
               </div>
               <div className="text-center">
                 <blockquote className="font-display text-lg md:text-xl lg:text-2xl font-light text-white leading-relaxed italic mb-6">
-                  "Mario is someone you can actually trust in real estate. He listens, he's honest, and he looks out for you. Not a lot of agents operate that way. Grateful to have him as my go-to in Austin."
+                  "Mario is someone you can actually trust in real estate. He listens, he's honest, and he looks out for you."
                 </blockquote>
-                <div className="font-body text-sm font-medium text-[#D4B878]">
-                  ImVaryn
-                </div>
+                <div className="font-body text-sm font-medium text-[#D4B878]">ImVaryn</div>
               </div>
             </div>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── PROCESS STRIP ─────────────────────────────────────────── */}
-      <section className="py-20 md:py-28">
-        <div className="container">
-          <RevealDiv>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="section-rule" />
-              <span className="section-number">04. Process</span>
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-lg">
-              Three conversations.<br />
-              <em className="italic">Total clarity.</em>
-            </h2>
-          </RevealDiv>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
-            {[
-              {
-                step: "01",
-                title: "Discovery Call",
-                desc: "We talk about your property, your timeline, and what matters most to you. No pressure, no pitch.",
-              },
-              {
-                step: "02",
-                title: "Your Options Report",
-                desc: "I prepare a custom analysis showing what your home is worth today, your net proceeds if you sell, and alternative paths.",
-              },
-              {
-                step: "03",
-                title: "Your Decision",
-                desc: "Armed with real data, you decide. I execute whatever path you choose. with full commitment and no judgment.",
-              },
-            ].map((item, i) => (
-              <RevealDiv
-                key={item.step}
-                delay={item.step === "01" ? 0 : i * 100}
-                className="relative md:pr-12 md:border-r md:border-[#E8E0D5] last:border-0 last:pr-0 md:pl-12 first:pl-0"
-              >
-                <div className="font-display text-6xl font-light text-[#E8E0D5] mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-3">
-                  {item.title}
-                </h3>
-                <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
-                  {item.desc}
-                </p>
-              </RevealDiv>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── GUIDE SECTION (MOVED LOWER) ───────────────────────────── */}
+      {/* ─── GUIDE SECTION ─────────────────────────────────────────── */}
       <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6">
-              Deeper Learning
-            </h2>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6">Deeper Learning</h2>
             <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
               Not ready to talk yet? Explore our comprehensive guide for Austin homeowners.
             </p>
-            <a
-              href={getCTALink("get-guide", language)}
-              rel="noopener noreferrer"
-              onClick={() => {
-                if (window.fbq) {
-                  window.fbq("trackCustom", "GuideDownload");
-                }
-              }}
-            >
+            <a href={getCTALink("get-guide", language)} rel="noopener noreferrer">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
-                View the Homeowner Guide
-                <ArrowRight size={14} />
+                View the Homeowner Guide <ArrowRight size={14} />
               </span>
             </a>
           </RevealDiv>
@@ -437,11 +369,7 @@ export default function Home() {
       {/* ─── FINAL CTA BAND ────────────────────────────────────────── */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src={HERO_IMG}
-            alt=""
-            className="w-full h-full object-cover"
-          />
+          <img src={HERO_IMG} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-[#1A1A18]/85" />
         </div>
         <div className="relative z-10 container text-center">
@@ -455,14 +383,12 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/home-value">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                  Home Value
-                  <ArrowRight size={14} />
+                  Home Value <ArrowRight size={14} />
                 </span>
               </Link>
               <Link href="/net-sheet">
                 <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
-                  Net Sheet
-                  <ArrowRight size={14} />
+                  Net Sheet <ArrowRight size={14} />
                 </span>
               </Link>
             </div>

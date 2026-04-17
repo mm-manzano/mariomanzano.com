@@ -305,7 +305,7 @@ export default function Home() {
                   isOpen={openStep === 2}
                   onClick={() => setOpenStep(openStep === 2 ? null : 2)}
                 >
-                  Your home hits the MLS, Zillow, and Realtor.com with professional photos. The first two weeks are crucial—we'll monitor buyer response and activity closely.
+                  Your home hits the MLS, Zillow, and Realtor.com with professional photos. The first two weeks are crucial, we'll monitor buyer response and activity closely.
                 </AccordionItem>
                 <AccordionItem
                   title="03. Offers & Negotiation"

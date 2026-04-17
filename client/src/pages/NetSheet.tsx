@@ -41,10 +41,10 @@ export default function NetSheet() {
               <ArrowRight className="text-[#B8974A]" size={24} />
             </div>
             <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">
-              Net Sheet Calculator Placeholder
+              Net Sheet Calculator Coming Soon
             </h3>
             <p className="font-body text-sm text-[#1A1A18]/40 mb-8">
-              Paste your embedded net sheet calculator code here to start converting high-intent sellers.
+              Coming Soon
             </p>
           </div>
         </div>

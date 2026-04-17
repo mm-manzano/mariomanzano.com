@@ -41,10 +41,10 @@ export default function HomeValue() {
               <ArrowRight className="text-[#B8974A]" size={24} />
             </div>
             <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">
-              Valuation Tool Placeholder
+              Valuation Tool Coming Soon
             </h3>
             <p className="font-body text-sm text-[#1A1A18]/40 mb-8">
-              Paste your embedded valuation tool code here to start capturing high-intent seller leads.
+              Coming Soon
             </p>
           </div>
         </div>

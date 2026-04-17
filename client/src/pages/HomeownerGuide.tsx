@@ -1,7 +1,7 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Homeowner Guide
  * Content extracted from Gamma guide
- * Sections: Hero, Clear Look at Options, Preparing vs Selling, Pricing Strategy, Selling vs Renting, Holding, As-Is, Putting It Together, CTA
+ * Sections: Hero, Clear Look at Options, Preparing vs Selling, Pricing Strategy, Selling vs Renting, Holding, As-Is, Remodel (Updated), Putting It Together, CTA
  * Optimization: Added Comparison Table, FAQ Section, and JSON-LD Schema for AI Visibility.
  * Fix: Responsive-first layout for Desktop and Mobile visibility.
  */
@@ -199,10 +199,10 @@ export default function HomeownerGuide() {
                       </tr>
                       <tr className="border-b border-[#F8F5F0]">
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Remodel</td>
-                        <td className="py-6 pr-4">Your current home has the right "bones" but lacks the function or style you need.</td>
-                        <td className="py-6 pr-4">Potential increase in future resale value and improved quality of life.</td>
+                        <td className="py-6 pr-4">Your home has good bones but needs updates to work better for your needs.</td>
+                        <td className="py-6 pr-4">Improved quality of life and potential increase in resale value.</td>
                         <td className="py-6 pr-4">High upfront costs; luxury upgrades rarely deliver a 100% ROI.</td>
-                        <td className="py-6">Those who love their location but need their home to work better.</td>
+                        <td className="py-6">Homeowners who love their location but want their home to work better.</td>
                       </tr>
                       <tr className="border-b border-[#F8F5F0]">
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Rent</td>
@@ -211,11 +211,11 @@ export default function HomeownerGuide() {
                         <td className="py-6 pr-4">Ongoing maintenance, tenant management, and vacancy risks.</td>
                         <td className="py-6">Investors focused on long-term wealth rather than immediate cash flow.</td>
                       </tr>
-                      <tr>
+                      <tr className="border-b border-[#F8F5F0]">
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Hold</td>
                         <td className="py-6 pr-4">You need more time to decide or market conditions don't favor your goals.</td>
                         <td className="py-6 pr-4">Avoids transaction costs and allows for more clarity before acting.</td>
-                        <td className="py-6 pr-4">Equity remains tied up; ongoing taxes, insurance, and maintenance costs.</td>
+                        <td className="py-6 pr-4">Equity remains tied up; ongoing taxes, insurance, and maintenance.</td>
                         <td className="py-6">Homeowners who aren't under pressure and value certainty over speed.</td>
                       </tr>
                     </tbody>
@@ -228,147 +228,177 @@ export default function HomeownerGuide() {
       </section>
 
       {/* ─── PREPARING VS SELLING ─────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">02. Preparing vs Selling</span>
+              <span className="section-rule" />
+              <span className="section-number">02. Preparation</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Know the difference before listing.
             </h2>
-            <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
               Before listing your home, it's important to understand when preparation makes financial sense and when it doesn't. Many sellers spend money on repairs and upgrades that don't meaningfully increase value or buyer demand.
             </p>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <RevealDiv delay={100} className="border border-white/10 p-8">
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">What Matters</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <RevealDiv delay={100} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4 text-[#B8974A]">What Matters</h3>
+              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
                 Basic cleanliness, functional systems, and neutral presentation help buyers see themselves in the space.
               </p>
             </RevealDiv>
-            <RevealDiv delay={150} className="border border-white/10 p-8">
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">What Doesn't</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed">
+            <RevealDiv delay={200} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4 text-[#B8974A]">What Doesn't</h3>
+              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
                 Major renovations, luxury upgrades, and personal taste projects rarely deliver full return on investment.
               </p>
             </RevealDiv>
+            <RevealDiv delay={300} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4 text-[#B8974A]">Ask Yourself</h3>
+              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                Will this improvement meaningfully increase buyer interest or net proceeds? If the answer isn't clear, reconsider it.
+              </p>
+            </RevealDiv>
           </div>
-
-          <RevealDiv delay={200} className="mt-8 border border-white/10 p-8">
-            <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">Ask Yourself</h3>
-            <p className="font-body text-base text-white/70 leading-relaxed">
-              Will this improvement meaningfully increase buyer interest or net proceeds? If the answer isn't clear, reconsider it.
-            </p>
-          </RevealDiv>
         </div>
       </section>
 
       {/* ─── PRICING STRATEGY ─────────────────────────────────────── */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-32">
         <div className="container">
-          <RevealDiv>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" />
-              <span className="section-number">03. Pricing Strategy</span>
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
-              Your most important decision.
-            </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-8">
-              Pricing your home correctly is one of the most important decisions you'll make. It affects both how your home is perceived and the outcome you ultimately achieve. The right price isn't about chasing the market or maximizing every dollar. It's about positioning your home where it belongs.
-            </p>
-          </RevealDiv>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <RevealDiv>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="section-rule" />
+                <span className="section-number">03. Pricing</span>
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+                Your most important <br />
+                <em className="italic">decision.</em>
+              </h2>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+                Pricing your home correctly is one of the most important decisions you'll make. It affects both how your home is perceived and the outcome you ultimately achieve.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                The right price isn't about chasing the market or maximizing every dollar. It's about positioning your home where it belongs.
+              </p>
+            </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <RevealDiv delay={100} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Underpricing Risk</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Selling too low means leaving money on the table. Buyers may question if there's something wrong with the property.
-              </p>
-            </RevealDiv>
-            <RevealDiv delay={150} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Thoughtful Pricing</h3>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Starting too high can make your home invisible to most buyers and lead to reductions that signal distress.
-              </p>
-            </RevealDiv>
+            <div className="space-y-8">
+              <RevealDiv delay={150} className="border-l-2 border-[#B8974A] pl-8">
+                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-2">Underpricing Risk</h3>
+                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                  Selling too low means leaving money on the table. Buyers may question if there's something wrong with the property.
+                </p>
+              </RevealDiv>
+              <RevealDiv delay={250} className="border-l-2 border-[#B8974A] pl-8">
+                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-2">Thoughtful Pricing</h3>
+                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                  Starting too high can make your home invisible to most buyers and lead to reductions that signal distress.
+                </p>
+              </RevealDiv>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── SELLING VS RENTING ─────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
+      {/* ─── SELLING VS RENTING ───────────────────────────────────── */}
+      <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">04. Selling vs Renting</span>
+              <span className="section-number text-[#B8974A]">04. Strategy</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-12 max-w-2xl">
               Understanding your tradeoffs.
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
             <RevealDiv delay={100}>
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">The Reality of Renting</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                Keeping your home as a rental brings ongoing responsibility. You'll need to handle tenant screening, maintenance, property management, and vacancy periods. There are real monthly costs beyond the mortgage, including insurance, repairs, property taxes, and management fees, and you need cash reserves for unexpected expenses and vacancies.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                In our local market, renting is often more of a long-term equity and appreciation play than a strong cash-flow strategy. It tends to make the most sense when your payment is low relative to rents or when your goal is long-term wealth building rather than immediate income.
+              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-6">The Reality of Renting</h3>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                Keeping your home as a rental brings ongoing responsibility. You'll need to handle tenant screening, maintenance, property management, and vacancy periods.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                Renting can provide future appreciation and possibly some monthly income, but it keeps your equity tied up and limits flexibility. You're still affected by changes in home values and rental demand while responsible for the property.
+                In our local market, renting is often more of a long-term equity and appreciation play than a strong cash-flow strategy. It tends to make the most sense when your payment is low relative to rents.
               </p>
             </RevealDiv>
-
-            <RevealDiv delay={150}>
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">The Reality of Selling</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                Selling provides liquidity and releases you from ongoing property responsibility. You're no longer tied to the home, responsible for repairs, or managing tenants. The equity becomes available for your next move, investment, or other financial goals.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-4">
-                The tradeoff is giving up future appreciation and potential rental income. Once sold, you no longer participate in future market gains tied to the property.
+            <RevealDiv delay={200}>
+              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-6">The Reality of Selling</h3>
+              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+                Selling provides liquidity and releases you from ongoing property responsibility. You're no longer tied to the home, responsible for repairs, or managing tenants.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                Renting and selling can both be smart decisions depending on timing, finances, and goals. The right choice depends on your financial position, risk tolerance, and long-term plans.
+                The tradeoff is giving up future appreciation and potential rental income. Once sold, you no longer participate in future market gains tied to the property.
               </p>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── HOLDING THE PROPERTY ─────────────────────────────────── */}
-      <section className="py-20 md:py-28">
+      {/* ─── REMODEL (UPDATED STRATEGIC WORDING) ──────────────────── */}
+      <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">05. Holding</span>
+              <span className="section-number">05. Remodel</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+              More than just <br />
+              <em className="italic">simply remodeling.</em>
+            </h2>
+            <div className="max-w-2xl space-y-6">
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Remodeling can be a way to make your current home work better for your needs or to better position it for resale. For many homeowners, this means improving layout, updating key areas, or addressing functional issues that impact daily living or buyer perception.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed font-medium text-[#1A1A18]">
+                Some homeowners approach this moment differently.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                A strategic remodel paired with a refinance can, in certain situations, reposition the property for a different use or outcome, or free up capital for the next move.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Like any path, the value of remodeling depends on your goals, timeline, and how the numbers actually play out.
+              </p>
+            </div>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* ─── HOLDING ─────────────────────────────────────────────── */}
+      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">06. Holding</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
               Doing nothing can be strategic.
             </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
+              Holding your property isn't procrastination. It can be a valid strategy when you need clarity or when market conditions don't favor your goals.
+            </p>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <RevealDiv delay={100} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Waiting Makes Sense When</h3>
-              <ul className="font-body text-base text-[#1A1A18]/65 leading-relaxed space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <RevealDiv delay={100}>
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">Waiting Makes Sense When</h3>
+              <ul className="font-body text-sm text-[#1A1A18]/65 leading-relaxed space-y-3 list-disc pl-5">
                 <li>You need time to decide your next move</li>
                 <li>You prefer to wait until conditions feel more favorable</li>
                 <li>You're not ready to commit to selling or renting</li>
               </ul>
             </RevealDiv>
-
-            <RevealDiv delay={150} className="border-t border-[#E8E0D5] pt-6">
-              <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">Consider the Costs</h3>
-              <ul className="font-body text-base text-[#1A1A18]/65 leading-relaxed space-y-2">
+            <RevealDiv delay={200}>
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">Consider the Costs</h3>
+              <ul className="font-body text-sm text-[#1A1A18]/65 leading-relaxed space-y-3 list-disc pl-5">
                 <li>Your equity remains tied up in the home</li>
                 <li>Ongoing maintenance and holding costs</li>
                 <li>Future market timing is impossible to predict</li>
@@ -376,129 +406,79 @@ export default function HomeownerGuide() {
               </ul>
             </RevealDiv>
           </div>
-
-          <RevealDiv delay={200} className="mt-12 border-t border-[#E8E0D5] pt-8">
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              Holding your property isn't procrastination. It can be a valid strategy when you need clarity or when market conditions don't favor your goals.
-            </p>
-          </RevealDiv>
-        </div>
-      </section>
-
-      {/* ─── SELLING AS-IS ─────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
-        <div className="container">
-          <RevealDiv>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">06. Selling As-Is</span>
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
-              Understanding the tradeoffs.
-            </h2>
-            <p className="font-body text-base text-white/70 leading-relaxed max-w-2xl mb-8">
-              Selling your home as-is means offering it in its current condition without making repairs or updates. This isn't a marketing gimmick or a way to get a fast sale. It's simply acknowledging the property's state.
-            </p>
-          </RevealDiv>
-
-          <RevealDiv delay={100} className="mt-8 border border-white/10 p-8">
-            <h3 className="font-display text-2xl font-light text-[#B8974A] mb-4">What to Consider</h3>
-            <ul className="font-body text-base text-white/70 leading-relaxed space-y-2">
-              <li>Buyers will inspect and negotiate based on condition</li>
-              <li>You may receive lower offers if the price doesn't reflect the home's condition</li>
-              <li>It can take longer to find the right buyer</li>
-              <li>You're not obligated to make any improvements</li>
-            </ul>
-            <p className="font-body text-base text-white/70 leading-relaxed mt-6">
-              This option works when you don't want to invest time or money preparing the home, or when the property needs repairs or updates you don't want to take on. It's a tradeoff between price, preparation, and effort.
-            </p>
-          </RevealDiv>
         </div>
       </section>
 
       {/* ─── PUTTING IT TOGETHER ─────────────────────────────────── */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">07. Putting It Together</span>
+              <span className="section-number">07. Summary</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
               The best choice depends on four key factors.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-8">
-              There's no single right answer. Only the right answer for your situation.
-            </p>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                title: "Your Goals",
-                desc: "What are you trying to achieve? More space, financial flexibility, retirement planning, or something else?"
-              },
-              {
-                title: "Your Timeline",
-                desc: "When do you need to make a decision? Are you under pressure, or do you have time to wait?"
-              },
-              {
-                title: "Your Home's Condition",
-                desc: "What shape is your property in? Are there major issues, minor updates, or is it move-in ready?"
-              },
-              {
-                title: "Your Capacity",
-                desc: "How much effort and uncertainty are you willing to handle? Some paths require more involvement than others."
-              },
+              { title: "Your Goals", desc: "What are you trying to achieve? More space, financial flexibility, or retirement planning?" },
+              { title: "Your Timeline", desc: "When do you need to make a decision? Are you under pressure, or do you have time?" },
+              { title: "Your Condition", desc: "What shape is your property in? Major issues, minor updates, or move-in ready?" },
+              { title: "Your Capacity", desc: "How much effort and uncertainty are you willing to handle?" }
             ].map((item, i) => (
               <RevealDiv key={item.title} delay={i * 100} className="border-t border-[#E8E0D5] pt-6">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+                <h3 className="font-display text-lg font-light text-[#B8974A] mb-3">{item.title}</h3>
+                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
               </RevealDiv>
             ))}
-          </div>
-
-          {/* ─── FAQ SECTION ────────────────────────────────────────── */}
-          <div className="mt-24 max-w-3xl mx-auto w-full">
-            <RevealDiv>
-              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-12 text-center">
-                Common Questions & Clarity
-              </h2>
-              <div className="bg-white border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
-                <FAQItem 
-                  question="When should I sell my home 'as-is' in Austin?" 
-                  answer="Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It’s ideal if the property needs significant work you aren't prepared to manage."
-                />
-                <FAQItem 
-                  question="Is renting better than selling in Leander or Cedar Park?" 
-                  answer="In our local market, renting is typically a long-term appreciation play. If your current mortgage rate is significantly lower than market rents, it may be a strong wealth-building tool. However, if you need that equity for your next down payment or want to avoid the responsibilities of being a landlord, selling is often the cleaner financial move."
-                />
-                <FAQItem 
-                  question="How do I know if a remodel will actually increase my home's value?" 
-                  answer="Focus on 'What Matters': functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it’s likely not a strategic move before selling."
-                />
-                <FAQItem 
-                  question="What is the biggest risk of 'Holding' and doing nothing?" 
-                  answer="The primary risk is the 'Opportunity Cost.' While holding avoids immediate stress, your equity remains illiquid and you continue to incur costs for taxes, insurance, and maintenance. Holding is a valid strategy for clarity, but it shouldn't be used to avoid an inevitable decision."
-                />
-                <FAQItem 
-                  question="Why is pricing the most important decision in the selling process?" 
-                  answer="Pricing dictates how the market perceives your home. Underpricing leaves money on the table, while overpricing makes your home 'invisible' to qualified buyers. A strategic price positions your home to attract the right interest immediately, which is critical in the Austin area's competitive landscape."
-                />
-              </div>
-            </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── CTA ───────────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#1A1A18]">
+      {/* ─── FAQ SECTION ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container max-w-3xl">
+          <RevealDiv>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-12 text-center">
+              Common Questions & Clarity
+            </h2>
+            <div className="space-y-2">
+              <FAQItem 
+                question="When should I sell my home as-is in Austin?" 
+                answer="Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit."
+              />
+              <FAQItem 
+                question="Is renting better than selling in Leander or Cedar Park?" 
+                answer="In our local market, renting is typically a long-term appreciation play. If your current mortgage rate is significantly lower than market rents, it may be a strong wealth-building tool."
+              />
+              <FAQItem 
+                question="How do I know if a remodel will actually increase my home's value?" 
+                answer="Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand, it’s likely not strategic."
+              />
+              <FAQItem 
+                question="What is the biggest risk of Holding and doing nothing?" 
+                answer="The primary risk is the Opportunity Cost. While holding avoids immediate stress, your equity remains illiquid and you continue to incur costs for taxes, insurance, and maintenance."
+              />
+              <FAQItem 
+                question="Why is pricing the most important decision in the selling process?" 
+                answer="Pricing dictates how the market perceives your home. Underpricing leaves money on the table, while overpricing makes your home invisible to qualified buyers."
+              />
+            </div>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* ─── FINAL CTA ─────────────────────────────────────────────── */}
+      <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6 max-w-2xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
               Ready to explore your options?
             </h2>
-            <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
+            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
               If you'd like to talk through your situation or understand what your home could realistically sell or rent for, I'm available.
             </p>
             <a href={getCTALink("get-plan", "en")}>

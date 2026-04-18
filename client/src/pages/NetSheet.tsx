@@ -70,7 +70,7 @@ export default function NetSheet() {
             </div>
 
             <div>
-              <label className="block text-sm mb-1">Commission (%)</label>
+              <label className="block text-sm mb-1">Commission (%) avg ~6%</label>
               <input
                 type="number"
                 value={commission * 100}
@@ -82,7 +82,7 @@ export default function NetSheet() {
             </div>
 
             <div>
-              <label className="block text-sm mb-1">Closing Costs (%)</label>
+              <label className="block text-sm mb-1">Closing Costs (%) avg ~2%</label>
               <input
                 type="number"
                 value={closingCosts * 100}

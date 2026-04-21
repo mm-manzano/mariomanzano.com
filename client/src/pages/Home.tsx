@@ -1,7 +1,7 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Homepage
  * Sections: Hero (full-bleed), Trust Strip, Advisor Intro, Services Grid,
- *           Numbers Section, Market Insight, Testimonial, Process Strip (Updated), 
+ *           Numbers Section, Strategic Tools (NEW), Market Insight, Testimonial, Process Strip (Updated), 
  *           Guide Section, Final CTA Band
  * Images: Generated AI hero images (CDN URLs)
  * Typography: Cormorant Garamond headlines, DM Sans body
@@ -125,29 +125,26 @@ export default function Home() {
               Your Decision.<br />
               <em className="italic">Your Advisor.</em>
             </h1>
-            <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
-              Before you decide to sell, remodel, rent, or hold, start with the numbers. Get clarity from someone who puts your interests first.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/home-value">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                  See what your home is worth
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
-              <Link href="/net-sheet">
-                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
-                  See what you'd walk away with
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
-            </div>
+              <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
+                Lead with decision-making, not just valuation. Compare your options to find the most profitable path for your home.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/strategy-hub">
+                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                    Compare Your Options
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
+                <Link href="/home-value">
+                  <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                    See What Your Home Might Be Worth
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </div>
           </div>
         </div>
-      </section>
-
-      {/* ─── INTRO STRIP ─────────────────────────────────────────────── */}
-      <section className="bg-[#1A1A18] py-12">
+      </section>          {/* ─── STRATEGY HUB CTA ────────────────────────────────────────── */}     <section className="bg-[#1A1A18] py-12">
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
@@ -225,7 +222,7 @@ export default function Home() {
                 delay={i * 80}
                 className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <Link href="/home-value" className="block h-full cursor-pointer">
+                <Link href="/homeowner-guide" className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -235,8 +232,9 @@ export default function Home() {
                   <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed transition-colors duration-500 mb-4">
                     {service.desc}
                   </p>
-                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] group-hover:text-white inline-flex items-center gap-2 transition-colors duration-500">
-                    Explore Options <ArrowRight size={12} />
+                  <span className="inline-flex items-center gap-2 text-[#B8974A] group-hover:text-white font-body text-sm uppercase tracking-widest">
+                    Explore Options
+                    <ArrowRight size={14} />
                   </span>
                 </Link>
               </RevealDiv>
@@ -245,26 +243,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── NUMBERS SECTION ───────────────────────────────────────── */}
-      <section className="py-20 md:py-32 bg-white">
+      {/* ─── START WITH THE NUMBERS ────────────────────────────────── */}
+      <section className="py-20 md:py-32">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4">
-              Start with the numbers
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
+                  Ready to make a strategic move?
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/60 mb-12 max-w-lg mx-auto">
-              Before making a decision, understand your home value and net proceeds.
+            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
+                  Explore all your options and get a clear roadmap for your home.
+            </p>
+                <Link href="/strategy-hub">
+                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                    Compare Your Options
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* ─── STRATEGIC TOOLS (NEW SECTION) ─────────────────────────── */}
+      <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
+        <div className="container text-center">
+          <RevealDiv>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6 max-w-2xl mx-auto">
+              Deeper Analysis. Smarter Decisions.
+            </h2>
+            <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
+              Go beyond simple valuations. Explore the true financial impact of your options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/home-value">
+              <Link href="/sell-vs-rent">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                  Home Value
+                  Sell vs. Rent Calculator
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/net-sheet">
-                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
-                  Net Sheet
+              <Link href="/remodel-vs-sell">
+                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                  Remodel vs. Sell Calculator
                   <ArrowRight size={14} />
                 </span>
               </Link>
@@ -273,54 +291,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── SELLING PROCESS (INTEGRATED) ──────────────────────────── */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+      {/* ─── MARKET INSIGHT ────────────────────────────────────────── */}
+      <section className="py-20 md:py-32">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealDiv>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">03. Process</span>
+                <span className="section-number">03. Insight</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-                What happens<br />
-                <em className="italic">after you decide.</em>
+                Local market<br />
+                <em className="italic">intelligence.</em>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                A clear walkthrough of the selling process. From listing to closing, here's what to expect when we move forward.
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+                Understanding the Austin market goes beyond headlines. It requires a deep dive into micro-trends, neighborhood-specific data, and future growth projections.
               </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
+                I provide you with the intelligence you need to make informed decisions, whether you're selling a luxury home in Westlake or evaluating an investment property in Leander.
+              </p>
+              <Link href="/homeowner-guide">
+                <span className="btn-luxury-outline inline-flex items-center gap-3">
+                  Get the Guide
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </RevealDiv>
 
-            <RevealDiv delay={150}>
-              <div className="max-w-xl">
-                <AccordionItem
-                  title="01. Before You List"
-                  isOpen={openStep === 1}
-                  onClick={() => setOpenStep(openStep === 1 ? null : 1)}
-                >
-                  We'll align on your property, timeline, and goals. I'll prepare a market analysis so we start from data, not guesswork. We'll also cover any preparation that helps buyers see your home clearly.
-                </AccordionItem>
-                <AccordionItem
-                  title="02. Going Live"
-                  isOpen={openStep === 2}
-                  onClick={() => setOpenStep(openStep === 2 ? null : 2)}
-                >
-                  Your home hits the MLS, Zillow, and Realtor.com with professional photos. The first two weeks are crucial, we'll monitor buyer response and activity closely.
-                </AccordionItem>
-                <AccordionItem
-                  title="03. Offers & Negotiation"
-                  isOpen={openStep === 3}
-                  onClick={() => setOpenStep(openStep === 3 ? null : 3)}
-                >
-                  We evaluate offers strategically, looking at price, terms, and risk. I'll help you understand the full picture before you sign anything.
-                </AccordionItem>
-                <AccordionItem
-                  title="04. Under Contract to Closing"
-                  isOpen={openStep === 4}
-                  onClick={() => setOpenStep(openStep === 4 ? null : 4)}
-                >
-                  The process continues with inspections (7-10 days), appraisal (10-14 days), and final walkthrough. Typical timeline is 30-45 days from contract to closing.
-                </AccordionItem>
+            <RevealDiv delay={150} className="relative">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img src={AERIAL_IMG} alt="Austin aerial view" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
           </div>
@@ -328,73 +328,104 @@ export default function Home() {
       </section>
 
       {/* ─── TESTIMONIAL ───────────────────────────────────────────── */}
-      <section className="bg-[#1A1A18] py-20 md:py-28">
-        <div className="container">
+      <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
+        <div className="container max-w-3xl text-center">
           <RevealDiv>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="text-center">
-                <blockquote className="font-display text-lg md:text-xl lg:text-2xl font-light text-white leading-relaxed italic mb-6">
-                  "Mario went above and beyond to help us sell our home... getting us more money than what our original realtor said we'd get."
-                </blockquote>
-                <div className="font-body text-sm font-medium text-[#D4B878]">Alma S.</div>
-              </div>
-              <div className="text-center">
-                <blockquote className="font-display text-lg md:text-xl lg:text-2xl font-light text-white leading-relaxed italic mb-6">
-                  "Mario is someone you can actually trust in real estate. He listens, he's honest, and he looks out for you."
-                </blockquote>
-                <div className="font-body text-sm font-medium text-[#D4B878]">ImVaryn</div>
-              </div>
-            </div>
-          </RevealDiv>
-        </div>
-      </section>
-
-      {/* ─── GUIDE SECTION ─────────────────────────────────────────── */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
-        <div className="container text-center">
-          <RevealDiv>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6">Deeper Learning</h2>
-            <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
-              Not ready to talk yet? Explore our comprehensive guide for Austin homeowners.
+            <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
+              "Mario's strategic approach helped us see beyond just selling. His insights on remodeling ROI were invaluable, leading us to a decision that maximized our equity and fit our family's long-term goals."
             </p>
-            <a href={getCTALink("get-guide", language)} rel="noopener noreferrer">
-              <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
-                View the Homeowner Guide <ArrowRight size={14} />
-              </span>
-            </a>
+            <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+              — Satisfied Homeowner, Austin TX
+            </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── FINAL CTA BAND ────────────────────────────────────────── */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#1A1A18]/85" />
-        </div>
-        <div className="relative z-10 container text-center">
+      {/* ─── PROCESS STRIP (SELLING PROCESS ACCORDION) ──────────────── */}
+      <section className="py-20 md:py-32">
+        <div className="container max-w-3xl">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-6xl font-light text-white mb-6 max-w-2xl mx-auto">
-              Understanding your situation.
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">04. Process</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8">
+              Your journey, clearly defined.
             </h2>
-            <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
-              A consultation where we review your home, your options, and what makes sense for your specific situation.
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
+              Whether you decide to sell, remodel, rent, or hold, having a clear understanding of the process reduces stress and ensures you're always in control.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/home-value">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                  Home Value <ArrowRight size={14} />
-                </span>
-              </Link>
-              <Link href="/net-sheet">
-                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
-                  Net Sheet <ArrowRight size={14} />
-                </span>
-              </Link>
-            </div>
+          </RevealDiv>
+
+          <div className="space-y-4">
+            <AccordionItem
+              title="Before You List: Strategic Preparation"
+              isOpen={openStep === 1}
+              onClick={() => setOpenStep(openStep === 1 ? null : 1)}
+            >
+              This phase focuses on understanding your goals, evaluating market conditions, and preparing your home for maximum impact. We'll discuss optimal timing, necessary repairs vs. cosmetic updates, and professional staging to attract the right buyers.
+            </AccordionItem>
+            <AccordionItem
+              title="Going Live: Market Launch & Exposure"
+              isOpen={openStep === 2}
+              onClick={() => setOpenStep(openStep === 2 ? null : 2)}
+            >
+              Once your home is ready, we launch it to the market with professional photography, compelling descriptions, and targeted marketing campaigns. This ensures your property reaches a wide audience of qualified buyers, generating strong interest and showings.
+            </AccordionItem>
+            <AccordionItem
+              title="Offers & Negotiation: Securing the Best Terms"
+              isOpen={openStep === 3}
+              onClick={() => setOpenStep(openStep === 3 ? null : 3)}
+            >
+              Receiving offers is just the beginning. I'll guide you through evaluating each proposal, negotiating terms, and navigating counter-offers to secure the best possible price and conditions for your sale. My goal is to protect your interests every step of the way.
+            </AccordionItem>
+            <AccordionItem
+              title="Under Contract to Closing: A Smooth Transition"
+              isOpen={openStep === 4}
+              onClick={() => setOpenStep(openStep === 4 ? null : 4)}
+            >
+              From contract execution to closing day, I manage all the details: inspections, appraisals, title work, and communication with all parties. My focus is on a seamless, stress-free transaction, ensuring all contingencies are met and you reach the closing table successfully.
+            </AccordionItem>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── GUIDE SECTION (MOVED LOWER) ───────────────────────────── */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container max-w-3xl text-center">
+          <RevealDiv>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
+              Deeper Learning & Insights.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
+              For a comprehensive understanding of your options and the Austin market, download my exclusive Homeowner Guide.
+            </p>
+            <Link href="/homeowner-guide">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+                Get the Full Guide
+                <ArrowRight size={14} />
+              </span>
+            </Link>
           </RevealDiv>
         </div>
       </section>
-    </div>
-  );
-}
+
+          {/* ─── FINAL CTA BAND ────────────────────────────────────────── */}
+          <section className="bg-[#1A1A18] py-20 md:py-32 text-center">
+            <div className="container">
+              <RevealDiv>
+                <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
+                  Ready to make your next move?
+                </h2>
+                <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+                  Get a clear strategy tailored to your goals. Compare your options and gain the clarity you need.
+                </p>
+                <Link href="/strategy-hub">
+                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                    Compare Your Options
+                    <ArrowRight size={14} />
+                  </span>
+                </Link>
+              </RevealDiv>
+            </div>
+          </section>

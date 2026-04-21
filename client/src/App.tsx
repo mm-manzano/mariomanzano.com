@@ -1,11 +1,11 @@
 /*
  * DESIGN: Quiet Luxury Editorial
- * Routes: Home, HomeValue, NetSheet, HomeownerGuide, About, Contact (English & Spanish)
+ * Routes: Home, HomeValue, NetSheet, SellVsRent, RemodelVsSell, HomeownerGuide, About, Contact (English & Spanish)
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.2 - Added NetSheet, Removed SellingProcess
-const BUILD_VERSION = "2.2.0";
+// Build version: v2.3 - Added SellVsRent, RemodelVsSell
+const BUILD_VERSION = "2.3.0";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,8 +17,11 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import StrategyHub from "./pages/StrategyHub"; // New Page
 import HomeValue from "./pages/HomeValue";
-import NetSheet from "./pages/NetSheet"; // New Page
+import NetSheet from "./pages/NetSheet";
+import SellVsRent from "./pages/SellVsRent"; // New Page
+import RemodelVsSell from "./pages/RemodelVsSell"; // New Page
 import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -63,8 +66,11 @@ function Router() {
       
       {/* English Routes */}
       <Route exact path="/" component={Home} />
+      <Route path="/strategy-hub" component={StrategyHub} /> {/* New Route */}
       <Route path="/home-value" component={HomeValue} />
       <Route path="/net-sheet" component={NetSheet} />
+      <Route path="/sell-vs-rent" component={SellVsRent} /> {/* New Route */}
+      <Route path="/remodel-vs-sell" component={RemodelVsSell} /> {/* New Route */}
       <Route path="/homeowner-guide" component={HomeownerGuide} />
       <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
       <Route path="/about" component={About} />

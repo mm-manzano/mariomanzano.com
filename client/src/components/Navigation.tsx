@@ -19,7 +19,7 @@ const navLinks = [
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es" },
-  { label: "Guía", href: "/es/homeowner-guide" },
+  { label: "Guía", href: "/es/guia-para-propietarios" },
   { label: "Acerca", href: "/es/acerca" },
   { label: "Contacto", href: "/es/contacto" },
 ];

@@ -11,7 +11,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
-import { getCTALink } from "@/lib/ctaLinks";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
 const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
@@ -73,7 +72,6 @@ function AccordionItem({ title, children, isOpen, onClick }: { title: string; ch
 }
 
 export default function Home() {
-  const language = window.location.pathname.startsWith("/es") ? "es" : "en";
   const [openStep, setOpenStep] = useState<number | null>(null);
 
   const localBusinessSchema = {
@@ -144,7 +142,10 @@ export default function Home() {
               </div>
           </div>
         </div>
-      </section>          {/* ─── STRATEGY HUB CTA ────────────────────────────────────────── */}     <section className="bg-[#1A1A18] py-12">
+      </section>
+
+      {/* ─── STRATEGY HUB CTA ────────────────────────────────────────── */}
+      <section className="bg-[#1A1A18] py-12">
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
@@ -410,22 +411,25 @@ export default function Home() {
         </div>
       </section>
 
-          {/* ─── FINAL CTA BAND ────────────────────────────────────────── */}
-          <section className="bg-[#1A1A18] py-20 md:py-32 text-center">
-            <div className="container">
-              <RevealDiv>
-                <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
-                  Ready to make your next move?
-                </h2>
-                <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
-                  Get a clear strategy tailored to your goals. Compare your options and gain the clarity you need.
-                </p>
-                <Link href="/strategy-hub">
-                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                    Compare Your Options
-                    <ArrowRight size={14} />
-                  </span>
-                </Link>
-              </RevealDiv>
-            </div>
-          </section>
+      {/* ─── FINAL CTA BAND ────────────────────────────────────────── */}
+      <section className="bg-[#1A1A18] py-20 md:py-32 text-center">
+        <div className="container">
+          <RevealDiv>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
+              Ready to make your next move?
+            </h2>
+            <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+              Get a clear strategy tailored to your goals. Compare your options and gain the clarity you need.
+            </p>
+            <Link href="/strategy-hub">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                Compare Your Options
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+          </RevealDiv>
+        </div>
+      </section>
+    </div>
+  );
+}

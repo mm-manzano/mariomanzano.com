@@ -13,7 +13,7 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
 
-function useScrollReveal() {
+function useScrollReveal( ) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -110,7 +110,7 @@ export default function HomeownerGuide() {
       {/* ─── FAQ SCHEMA ───────────────────────────────────────────── */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema ) }}
       />
 
       {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
@@ -137,7 +137,8 @@ export default function HomeownerGuide() {
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Sell, Remodel,<br />
+              Sell, Remodel,  
+
               <em className="italic">Rent, or Hold.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
@@ -170,7 +171,7 @@ export default function HomeownerGuide() {
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
               Selling, remodeling, renting, or holding can all make sense depending on your goals, timeline, and stress level. The key is understanding which direction truly fits your situation.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
               This guide slows the decision down, lays out the tradeoffs clearly, and helps you avoid unnecessary or costly moves before you commit.
             </p>
 
@@ -276,7 +277,8 @@ export default function HomeownerGuide() {
                 <span className="section-number">03. Pricing</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-                Your most important <br />
+                Your most important   
+
                 <em className="italic">decision.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
@@ -350,7 +352,8 @@ export default function HomeownerGuide() {
               <span className="section-number">05. Remodel</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
-              More than just <br />
+              More than just   
+
               <em className="italic">simply remodeling.</em>
             </h2>
             <div className="max-w-2xl space-y-6">
@@ -397,7 +400,7 @@ export default function HomeownerGuide() {
               </ul>
             </RevealDiv>
             <RevealDiv delay={200}>
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">Consider the Costs</h3>
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">The Risks of Holding</h3>
               <ul className="font-body text-sm text-[#1A1A18]/65 leading-relaxed space-y-3 list-disc pl-5">
                 <li>Your equity remains tied up in the home</li>
                 <li>Ongoing maintenance and holding costs</li>

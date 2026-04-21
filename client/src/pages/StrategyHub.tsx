@@ -1,10 +1,26 @@
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
+
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.disconnect(); } },
+      { threshold: 0.12 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
 
 function RevealDiv({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  // Placeholder for scroll reveal logic, assuming it's handled globally or via a utility
+  const ref = useScrollReveal();
   return (
-    <div className={`fade-in-up ${className}`}
+    <div ref={ref} className={`fade-in-up ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
@@ -41,7 +57,7 @@ export default function StrategyHub() {
                 Beyond the sale price, understand all the costs and fees involved. Get a clear picture of your net proceeds.
               </p>
               <Link href="/net-sheet">
-                <span className="btn-luxury-outline inline-flex items-center gap-3">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Calculate Net Proceeds
                   <ArrowRight size={14} />
                 </span>
@@ -59,7 +75,7 @@ export default function StrategyHub() {
                 Compare the financial implications of selling now versus holding your property as a rental. Understand cash flow, appreciation, and long-term returns.
               </p>
               <Link href="/sell-vs-rent">
-                <span className="btn-luxury-outline inline-flex items-center gap-3">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Compare Sell vs. Rent
                   <ArrowRight size={14} />
                 </span>
@@ -77,7 +93,7 @@ export default function StrategyHub() {
                 Analyze the potential return on investment for renovations. Discover if a remodel will truly increase your net profit or if selling as-is is the better option.
               </p>
               <Link href="/remodel-vs-sell">
-                <span className="btn-luxury-outline inline-flex items-center gap-3">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Analyze Remodel vs. Sell
                   <ArrowRight size={14} />
                 </span>

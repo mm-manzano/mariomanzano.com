@@ -31,31 +31,27 @@ export default function HomeValue() {
         </div>
 
         {/* Tool Container */}
-        <div className="bg-white p-6 md:p-12 shadow-sm border border-[#E8E0D5] min-h-[500px] flex flex-col items-center justify-center text-center">
-          {/* 
-              REPLACE THIS DIV WITH YOUR EMBEDDED VALUATION TOOL 
-              Example: <iframe src="your-valuation-tool-url" className="w-full h-full border-0" />
-          */}
-          <div className="max-w-md">
-            <div className="w-16 h-16 bg-[#F8F5F0] rounded-full flex items-center justify-center mx-auto mb-6">
-              <ArrowRight className="text-[#B8974A]" size={24} />
-            </div>
-            <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-4">
-              Valuation Tool Placeholder
-            </h3>
-            <p className="font-body text-sm text-[#1A1A18]/40 mb-8">
-              Paste your embedded valuation tool code here to start capturing high-intent seller leads.
-            </p>
+        <div className="bg-white p-4 md:p-8 shadow-sm border border-[#E8E0D5] min-h-[200px] flex flex-col items-center justify-center">
+          <div className="w-full">
+            <iframe 
+              style={{ width: '100%', height: '160px' }} 
+              src="https://mariomanzano.exprealty.com/sellembed.php" 
+              allowTransparency={true} 
+              frameBorder="0"
+              title="Home Valuation Tool"
+            ></iframe>
           </div>
         </div>
 
         {/* Disclaimer Text */}
-        <p className="font-display text-xl md:text-2xl font-light text-[#1A1A18] text-center mt-12 mb-6">
-          <em className="italic">This is a starting point.</em>
-        </p>
-        <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed text-center max-w-2xl mx-auto">
-          Real pricing depends on condition, strategy, and timing. For a precise valuation and strategic advice, let's connect.
-        </p>
+        <div className="mt-12 text-center">
+          <p className="font-display text-xl md:text-2xl font-light text-[#1A1A18] mb-6">
+            <em className="italic">This is a starting point.</em>
+          </p>
+          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mx-auto">
+            Real pricing depends on condition, strategy, and timing. These estimates don't account for your home's condition, upgrades, or positioning. I'll walk you through how I'd actually price it in today's market.
+          </p>
+        </div>
 
         {/* Next Step Flow */}
         <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white">

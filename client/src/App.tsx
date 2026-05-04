@@ -4,8 +4,8 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.3.1 - Fixed StrategyHub route
-const BUILD_VERSION = "2.3.1";
+// Build version: v2.4.0 - Added Spanish routes for all tools
+const BUILD_VERSION = "2.4.0";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,11 +25,19 @@ import RemodelVsSell from "./pages/RemodelVsSell";
 import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+
+// Spanish Pages
 import HomeES from "./pages/HomeES";
+import StrategyHubES from "./pages/StrategyHubES";
+import HomeValueES from "./pages/HomeValueES";
+import NetSheetES from "./pages/NetSheetES";
+import SellVsRentES from "./pages/SellVsRentES";
+import RemodelVsSellES from "./pages/RemodelVsSellES";
 import GuiaParaPropietarios from "./pages/GuiaParaPropietarios";
 import AboutES from "./pages/AboutES";
 import ContactES from "./pages/ContactES";
 import ConsultaES from "./pages/ConsultaES";
+
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PrivacyPolicyES from "./pages/PrivacyPolicyES";
 import TermsOfService from "./pages/TermsOfService";
@@ -59,10 +67,17 @@ function Router() {
     <Switch>
       {/* Spanish Routes */}
       <Route exact path="/es" component={HomeES} />
+      <Route path="/es/strategy-hub" component={StrategyHubES} />
+      <Route path="/es/home-value" component={HomeValueES} />
+      <Route path="/es/net-sheet" component={NetSheetES} />
+      <Route path="/es/sell-vs-rent" component={SellVsRentES} />
+      <Route path="/es/remodel-vs-sell" component={RemodelVsSellES} />
       <Route path="/es/guia-para-propietarios" component={GuiaParaPropietarios} />
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />
       <Route path="/es/consulta" component={ConsultaES} />
+      <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
+      <Route path="/es/terms-of-service" component={TermsOfServiceES} />
       
       {/* English Routes */}
       <Route exact path="/" component={Home} />
@@ -76,9 +91,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
-      <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
       <Route path="/terms-of-service" component={TermsOfService} />
-      <Route path="/es/terms-of-service" component={TermsOfServiceES} />
       
       {/* Fallback */}
       <Route component={NotFound} />

@@ -1,3 +1,9 @@
+/*
+ * DESIGN: Quiet Luxury Editorial - Remodel vs. Sell Calculator
+ * Purpose: Helps homeowners analyze the financial impact of renovations.
+ * Layout: Inputs on left, results on right, with optional valuation section.
+ */
+
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight, Hammer, TrendingUp, AlertCircle } from "lucide-react";
@@ -24,9 +30,9 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 
 export default function RemodelVsSell() {
   // State for inputs - using string to allow empty state
-  const [currentValue, setCurrentValue] = useState<string>("0");
-  const [remodelCost, setRemodelCost] = useState<string>("0");
-  const [expectedIncrease, setExpectedIncrease] = useState<string>("0");
+  const [currentValue, setCurrentValue] = useState<string>("");
+  const [remodelCost, setRemodelCost] = useState<string>("");
+  const [expectedIncrease, setExpectedIncrease] = useState<string>("");
 
   // Calculations
   const current = parseFloat(currentValue) || 0;
@@ -37,15 +43,16 @@ export default function RemodelVsSell() {
   const netGain = newValue - current - cost;
 
   const formatCurrency = (num: number) => 
-    new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(num);
+    new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(num);
 
   // Helper to handle input changes and prevent leading zeros
   const handleInputChange = (setter: (val: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/[^0-9.]/g, '');
+    const value = e.target.value.replace(/[^0-9.]/g, "");
     if (value === "") {
       setter("");
     } else {
-      const cleanValue = value.startsWith('0') && value.length > 1 && value[1] !== '.' ? value.substring(1) : value;
+      // Allow single '0' but prevent multiple leading zeros or '0' followed by non-decimal
+      const cleanValue = value.startsWith("0") && value.length > 1 && value[1] !== "." ? value.substring(1) : value;
       setter(cleanValue);
     }
   };
@@ -116,6 +123,9 @@ export default function RemodelVsSell() {
                     />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">%</span>
                   </div>
+                  <p className="font-body text-xs text-[#1A1A18]/50 mt-2 leading-relaxed">
+                    Typical ranges: Cosmetic updates: 3–7% | Kitchen/bath upgrades: 5–12% | Full renovation: 10–20%+
+                  </p>
                 </div>
               </div>
             </div>

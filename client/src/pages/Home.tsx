@@ -6,6 +6,7 @@
  * Images: Generated AI hero images (CDN URLs)
  * Typography: Cormorant Garamond headlines, DM Sans body
  * Optimization: Added RealEstateAgent JSON-LD Schema for Local SEO and AI Visibility.
+ * REFINEMENT: Integrated strategic remodel/refinance wording into the Services section.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -214,7 +215,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E0D5]">
             {[
               { num: "01", title: "Sell", desc: "Understand the market, timing, and costs involved in selling your home." },
-              { num: "02", title: "Remodel", desc: "Explore which improvements make sense for your home and financial situation." },
+              { num: "02", title: "Remodel", desc: "Explore improvements to increase equity or pair with a refinance for your next move." },
               { num: "03", title: "Rent", desc: "Consider whether holding as a rental may serve your long-term financial goals better." },
               { num: "04", title: "Hold", desc: "Evaluate whether waiting could strengthen your position before selling." }
             ].map((service, i) => (
@@ -230,7 +231,7 @@ export default function Home() {
                   <h3 className="font-display text-3xl font-light text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
                     {service.title}
                   </h3>
-                  <p className="font-body text-sm text-[#1A1A18]/60 group-hover:text-white/60 leading-relaxed transition-colors duration-500 mb-4">
+                  <p className="font-body text-base text-[#1A1A18]/60 group-hover:text-white/60 mb-6 transition-colors duration-500">
                     {service.desc}
                   </p>
                   <span className="inline-flex items-center gap-2 text-[#B8974A] group-hover:text-white font-body text-sm uppercase tracking-widest">
@@ -309,7 +310,7 @@ export default function Home() {
                 Understanding the Austin market goes beyond headlines. It requires a deep dive into micro-trends, neighborhood-specific data, and future growth projections.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                I provide you with the intelligence you need to make informed decisions, whether you're selling your home or deciding what to do next.
+                I provide you with the intelligence you need to make informed decisions, whether you're selling a luxury home in Westlake or evaluating an investment property in Leander.
               </p>
               <Link href="/homeowner-guide">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">

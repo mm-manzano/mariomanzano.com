@@ -72,7 +72,7 @@ function AccordionItem({ title, children, isOpen, onClick }: { title: string; ch
   );
 }
 
-export default function Home() {
+export default function HomeES() {
   const [openStep, setOpenStep] = useState<number | null>(null);
 
   const localBusinessSchema = {
@@ -128,13 +128,13 @@ export default function Home() {
                 Toma decisiones basadas en estrategia, no solo en el valor de tu casa. Compara tus opciones para encontrar el camino más rentable para tu propiedad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/strategy-hub-es">
+                <Link href="/es/strategy-hub">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                     Compara Tus Opciones
                     <ArrowRight size={14} />
                   </span>
                 </Link>
-                <Link href="/home-value-es">
+                <Link href="/es/home-value">
                   <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
                     Mira Cuánto Podría Valer Tu Casa
                     <ArrowRight size={14} />
@@ -181,7 +181,7 @@ export default function Home() {
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 Eso puede significar vender, o puede significar algo diferente. Mi trabajo es guiarte a través de los datos, los costos y los tiempos para que tomes la decisión que tenga más sentido para tu situación.
               </p>
-              <Link href="/about-es">
+              <Link href="/es/acerca">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   Mi Historia
                   <ArrowRight size={14} />
@@ -224,7 +224,7 @@ export default function Home() {
                 delay={i * 80}
                 className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <Link href="/guia-para-propietarios-es" className="block h-full cursor-pointer">
+                <Link href="/es/guia-para-propietarios" className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -255,7 +255,7 @@ export default function Home() {
             <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
                   Explora todas tus opciones y obtén una ruta clara para tu hogar.
             </p>
-                <Link href="/strategy-hub-es">
+                <Link href="/es/strategy-hub">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                     Compara Tus Opciones
                     <ArrowRight size={14} />
@@ -276,13 +276,13 @@ export default function Home() {
               Ve más allá de las simples valoraciones. Explora el verdadero impacto financiero de tus opciones.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/sell-vs-rent-es">
+              <Link href="/es/sell-vs-rent">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                   Calculadora Vender vs. Alquilar
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/remodel-vs-sell-es">
+              <Link href="/es/remodel-vs-sell">
                 <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
                   Calculadora Remodelar vs. Vender
                   <ArrowRight size={14} />
@@ -312,7 +312,7 @@ export default function Home() {
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 Te brindo la información que necesitas para tomar decisiones informadas, ya sea que estés vendiendo una casa de lujo en Westlake o evaluando una propiedad de inversión en Leander.
               </p>
-              <Link href="/guia-para-propietarios-es">
+              <Link href="/es/guia-para-propietarios">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   Obtener la Guía
                   <ArrowRight size={14} />
@@ -337,7 +337,7 @@ export default function Home() {
               "La mayoría de los agentes solo me habrían presionado para poner la casa en venta. Mario hizo lo contrario. Me guió a través de cada opción, desde alquilar hasta subdividir, hasta que la decisión correcta fue clara. El proceso fue muy sencillo a partir de ahí."
             </p>
             <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
-              — Propietario Satisfecho, Leander TX
+              - Propietario Satisfecho, Leander TX
             </p>
           </RevealDiv>
         </div>
@@ -402,7 +402,7 @@ export default function Home() {
             <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
               Para una comprensión completa de tus opciones y del mercado de Austin, descarga mi guía exclusiva para propietarios.
             </p>
-            <Link href="/guia-para-propietarios-es">
+            <Link href="/es/guia-para-propietarios">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
                 Obtener la Guía Completa
                 <ArrowRight size={14} />
@@ -422,7 +422,7 @@ export default function Home() {
             <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
               Obtén una estrategia clara adaptada a tus metas. Compara tus opciones y gana la claridad que necesitas.
             </p>
-            <Link href="/strategy-hub-es">
+            <Link href="/es/strategy-hub">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                 Compara Tus Opciones
                 <ArrowRight size={14} />

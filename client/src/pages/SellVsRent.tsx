@@ -27,6 +27,7 @@ export default function SellVsRent() {
   const [homeValue, setHomeValue] = useState<string>("");
   const [mortgageBalance, setMortgageBalance] = useState<string>("");
   const [monthlyMortgagePayment, setMonthlyMortgagePayment] = useState<string>("");
+  const [interestRate, setInterestRate] = useState<string>(""); // New input for interest rate
   const [monthlyRent, setMonthlyRent] = useState<string>("");
   const [otherMonthlyExpenses, setOtherMonthlyExpenses] = useState<string>("");
   const [appreciation, setAppreciation] = useState<string>("");
@@ -35,13 +36,39 @@ export default function SellVsRent() {
 
   // Calculations
   const val = parseFloat(homeValue) || 0;
-  const mortBal = parseFloat(mortgageBalance) || 0;
+  let mortBal = parseFloat(mortgageBalance) || 0;
   const mPayment = parseFloat(monthlyMortgagePayment) || 0;
+  const intRate = parseFloat(interestRate) || 0;
   const rent = parseFloat(monthlyRent) || 0;
   const otherExp = parseFloat(otherMonthlyExpenses) || 0;
   const appr = parseFloat(appreciation) || 0;
   const years = parseFloat(yearsHolding) || 0;
   const vacancyBuffer = parseFloat(vacancyMaintenance) || 0;
+
+  // Amortization calculation for principal paid down
+  let totalPrincipalPaidDown = 0;
+  if (mortBal > 0 && mPayment > 0 && intRate > 0 && years > 0) {
+    let currentBalance = mortBal;
+    const monthlyInterestRate = (intRate / 100) / 12;
+    const totalMonths = years * 12;
+
+    for (let i = 0; i < totalMonths; i++) {
+      if (currentBalance <= 0) break; // Mortgage paid off
+      const interestPayment = currentBalance * monthlyInterestRate;
+      let principalPayment = mPayment - interestPayment;
+
+      if (principalPayment < 0) { // Payment doesn't cover interest, or very low payment
+        principalPayment = 0; // Or handle as an error/warning
+      }
+      
+      if (currentBalance - principalPayment < 0) { // Avoid negative balance
+        principalPayment = currentBalance;
+      }
+
+      totalPrincipalPaidDown += principalPayment;
+      currentBalance -= principalPayment;
+    }
+  }
 
   // Adjusted Rent with buffer
   const adjustedRent = rent * (1 - vacancyBuffer / 100);
@@ -55,11 +82,9 @@ export default function SellVsRent() {
   const annualCashFlowIfRenting = (adjustedRent - totalMonthlyExpensesIfRenting) * 12;
   const futureValue = val * Math.pow(1 + appr / 100, years);
   
-  // Simplified principal paid down for strategic comparison, not exact amortization
-  const estimatedPrincipalPaidDown = mPayment * 0.3 * years * 12; // Assuming ~30% of payment goes to principal initially
-  const futureMortgageBalance = Math.max(0, mortBal - estimatedPrincipalPaidDown); // Cannot go below zero
+  const futureMortgageBalance = Math.max(0, mortBal - totalPrincipalPaidDown); // Cannot go below zero
 
-  const totalGainFromRenting = (futureValue - val) + (annualCashFlowIfRenting * years);
+  const totalGainFromRenting = (futureValue - val) + (annualCashFlowIfRenting * years) + totalPrincipalPaidDown;
   const estimatedNetIfRented = futureValue - futureMortgageBalance - (futureValue * sellingCostPercentage); // Net after selling in the future
 
   const formatCurrency = (num: number) => 
@@ -142,18 +167,34 @@ export default function SellVsRent() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Monthly Mortgage Payment (P&I)</label>
-                  <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Monthly Mortgage Payment (P&I)</label>
+                    <div className="relative">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                      <input 
+                        type="text" 
+                        value={monthlyMortgagePayment}
+                        onChange={handleInputChange(setMonthlyMortgagePayment)}
+                        onFocus={(e) => e.target.value === "0" && setMonthlyMortgagePayment("")}
+                        onBlur={(e) => e.target.value === "" && setMonthlyMortgagePayment("0")}
+                        className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Annual Interest Rate (%)</label>
                     <input 
                       type="text" 
-                      value={monthlyMortgagePayment}
-                      onChange={handleInputChange(setMonthlyMortgagePayment)}
-                      onFocus={(e) => e.target.value === "0" && setMonthlyMortgagePayment("")}
-                      onBlur={(e) => e.target.value === "" && setMonthlyMortgagePayment("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
+                      value={interestRate}
+                      onChange={handleInputChange(setInterestRate)}
+                      onFocus={(e) => e.target.value === "0" && setInterestRate("")}
+                      onBlur={(e) => e.target.value === "" && setInterestRate("0")}
+                      className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
                     />
+                    <p className="font-body text-xs text-[#1A1A18]/50 mt-2 leading-relaxed">
+                      Your current annual interest rate on the mortgage.
+                    </p>
                   </div>
                 </div>
 
@@ -190,7 +231,7 @@ export default function SellVsRent() {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Appreciation (%)</label>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Yearly Appreciation (%)</label>
                     <input 
                       type="text" 
                       value={appreciation}
@@ -199,6 +240,9 @@ export default function SellVsRent() {
                       onBlur={(e) => e.target.value === "" && setAppreciation("0")}
                       className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
                     />
+                    <p className="font-body text-xs text-[#1A1A18]/50 mt-2 leading-relaxed">
+                      Average annual home value growth. e.g., enter 3 for 3%.
+                    </p>
                   </div>
                   <div>
                     <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Years Holding</label>

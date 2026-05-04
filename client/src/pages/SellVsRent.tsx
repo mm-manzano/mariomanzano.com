@@ -68,7 +68,7 @@ export default function SellVsRent() {
             Should you <br /><em className="italic">sell or rent?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            This is not just about numbers—it's about clarity. Compare the financial implications of selling now versus holding your property as a rental.
+            This is not just about numbers, it's about clarity. Compare the financial implications of selling now versus holding your property as a rental.
           </p>
         </RevealDiv>
 

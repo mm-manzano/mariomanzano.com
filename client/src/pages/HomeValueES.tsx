@@ -1,124 +1,72 @@
 /*
- * DESIGN: Quiet Luxury Editorial - Home Value Page (EDUCATIONAL ONLY - SPANISH)
- * Goal: Help homeowners understand home valuation - NO LEAD CAPTURE
- * Sections: Hero, Educational Content
+ * DISEÑO: Editorial de Lujo Silencioso - Página de Valor de la Casa
+ * Propósito: Página de conversión principal para clientes potenciales de venta.
+ * Diseño: Minimalista, primero móvil, enfocado en la herramienta de valoración.
  */
 
-import { useEffect, useRef } from "react";
-
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
-
-function useScrollReveal() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.disconnect(); } },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-  return ref;
-}
-
-function RevealDiv({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const ref = useScrollReveal();
-  return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
-}
+import { Link } from "wouter";
+import { ArrowRight, ChevronLeft } from "lucide-react";
 
 export default function HomeValueES() {
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#1A1A18]/75" />
+    <div className="min-h-screen bg-[#F8F5F0] pt-24 pb-16 md:pt-32">
+      <div className="container max-w-4xl">
+        {/* Enlace de Regreso */}
+        <Link href="/es">
+          <span className="inline-flex items-center gap-2 text-[#1A1A18]/40 hover:text-[#B8974A] transition-colors mb-8 cursor-pointer font-body text-sm uppercase tracking-widest">
+            <ChevronLeft size={16} />
+            Volver a Estrategia
+          </span>
+        </Link>
+
+        {/* Sección de Encabezado */}
+        <div className="mb-12">
+          <h1 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-6">
+            ¿Cuánto vale tu casa <br />
+            <em className="italic">realmente?</em>
+          </h1>
+          <p className="font-body text-base md:text-lg text-[#1A1A18]/60 max-w-2xl leading-relaxed">
+            Obtén una estimación instantánea. Luego, hablemos de lo que realmente significa para tu próximo paso.
+          </p>
         </div>
-        <div className="relative z-10 container">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                Comprendiendo el Valor
-              </span>
-            </div>
-            <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Comprende qué podría<br />
-              <em className="italic">valer tu hogar</em>
-            </h1>
-            <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              Antes de tomar una decisión, es útil entender qué es realista en el mercado actual.
-            </p>
+
+        {/* Contenedor de la Herramienta */}
+        <div className="bg-white p-4 md:p-8 shadow-sm border border-[#E8E0D5] min-h-[200px] flex flex-col items-center justify-center">
+          <div className="w-full">
+            <iframe 
+              style={{ width: '100%', height: '160px' }} 
+              src="https://mariomanzano.exprealty.com/sellembed.php" 
+              allowTransparency={true} 
+              frameBorder="0"
+              title="Herramienta de Valoración de la Casa"
+            ></iframe>
           </div>
         </div>
-      </section>
 
-      {/* ─── EDUCATIONAL CONTENT ──────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container">
-          <RevealDiv>
-            <div className="flex items-center gap-3 mb-4">
-              <span className="section-rule" />
-              <span className="section-number">Cómo Pensar Sobre el Valor</span>
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-10 max-w-2xl">
-              No hay un número fijo.
-            </h2>
-          </RevealDiv>
+        {/* Texto de Descargo de Responsabilidad */}
+        <div className="mt-12 text-center">
+          <p className="font-display text-xl md:text-2xl font-light text-[#1A1A18] mb-6">
+            <em className="italic">Este es un punto de partida.</em>
+          </p>
+          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mx-auto">
+            El precio real depende de la condición, la estrategia y el momento. Estas estimaciones no tienen en cuenta la condición de tu hogar, las mejoras o el posicionamiento. Te guiaré sobre cómo le pondría precio realmente en el mercado actual.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-            <RevealDiv delay={100}>
-              <p className="font-body text-base md:text-lg text-[#1A1A18]/70 leading-relaxed mb-8">
-                Lo que una casa puede vender depende de la propiedad, el vecindario y cómo se posiciona.
-              </p>
-              <p className="font-body text-base md:text-lg text-[#1A1A18]/70 leading-relaxed mb-8">
-                La mayoría de las estimaciones en línea se pierden esto porque no tienen en cuenta la condición, las actualizaciones o el comportamiento del comprador.
-              </p>
-              <p className="font-body text-base md:text-lg text-[#1A1A18]/70 leading-relaxed">
-                Entender el verdadero valor de mercado de tu hogar requiere ver qué casas similares en tu área específica han vendido realmente, no solo lo que predicen los algoritmos.
-              </p>
-            </RevealDiv>
-
-            <RevealDiv delay={150}>
-              <div className="bg-[#F8F5F0] p-8 md:p-10 border border-[#E8E0D5]">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-6">
-                  Lo que importa:
-                </h3>
-                <ul className="space-y-4">
-                  {[
-                    "Ventas comparables recientes en tu vecindario",
-                    "Demanda actual de compradores en tu mercado",
-                    "La condición y presentación de tu hogar",
-                    "Tu cronograma y estrategia de precios",
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-3 font-body text-sm text-[#1A1A18]/70">
-                      <span className="text-[#B8974A] font-light">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </RevealDiv>
+        {/* Flujo del Próximo Paso */}
+        <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white">
+          <div>
+            <h4 className="font-display text-xl font-light mb-2">Próximo Paso: Calcula tus ganancias netas</h4>
+            <p className="font-body text-sm text-white/60">Descubre exactamente con cuánto dinero te quedarás después de los costos.</p>
           </div>
+          <Link href="/es/net-sheet">
+            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
+              Ir a Hoja de Neto
+              <ArrowRight size={14} />
+            </span>
+          </Link>
         </div>
-      </section>
-
-      {/* ─── CLOSING SECTION ──────────────────────────────────────────── */}
-      <section className="py-16 md:py-24 bg-[#1A1A18]">
-        <div className="container">
-          <RevealDiv className="max-w-2xl">
-            <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-6">
-              El enfoque correcto depende de tu situación.
-            </h2>
-            <p className="font-body text-base md:text-lg text-white/70 leading-relaxed">
-              Ya sea que estés pensando en vender, considerando un refinanciamiento, o simplemente quieras claridad sobre la posición de tu hogar en el mercado, entender estos factores te da la base para tomar decisiones informadas.
-            </p>
-          </RevealDiv>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

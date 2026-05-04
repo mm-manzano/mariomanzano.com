@@ -91,7 +91,7 @@ export default function RemodelVsSell() {
             Is remodeling <br /><em className="italic">worth it?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            Understand whether a remodel is likely to improve your outcome—or if selling as-is may be the better path.
+            Understand whether a remodel is likely to improve your outcome, or if selling as-is may be the better path.
           </p>
         </RevealDiv>
 

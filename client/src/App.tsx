@@ -4,8 +4,8 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.4.0 - Added Spanish routes for all tools
-const BUILD_VERSION = "2.4.0";
+// Build version: v2.5.0 - Finalized Spanish routes and file names
+const BUILD_VERSION = "2.5.0";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -26,7 +26,7 @@ import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
-// Spanish Pages
+// Spanish Pages - Matching user's exact file names
 import HomeES from "./pages/HomeES";
 import StrategyHubES from "./pages/StrategyHubES";
 import HomeValueES from "./pages/HomeValueES";

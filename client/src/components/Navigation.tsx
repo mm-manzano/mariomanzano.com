@@ -4,6 +4,7 @@
  * Links: DM Sans, small caps, gold underline on hover.
  * CTA: Single "Request Consultation" button in charcoal.
  * Language: Basic EN | ES toggle in top-right
+ * FIX: Ensured Spanish menu items have the exact same font size and styling as English.
  */
 
 import { useState, useEffect } from "react";
@@ -112,7 +113,7 @@ export default function Navigation() {
                     Mario Manzano
                   </span>
                   <span
-                    className={`font-body ${isSpanish ? "text-[8px] md:text-[9px]" : "text-[9px] md:text-[10px]"} tracking-[0.2em] uppercase mt-0.5 text-[#B8974A] whitespace-nowrap`}
+                    className="font-body text-[9px] md:text-[10px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A] whitespace-nowrap"
                   >
                     {isSpanish ? "Agente Inmobiliario | Estrategia de Venta" : "Austin Realtor | Seller Strategist"}
                   </span>
@@ -121,15 +122,11 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className={`hidden md:flex items-center justify-center ${
-              isSpanish ? "gap-3" : "gap-4"
-            }`}>
+            <nav className="hidden md:flex items-center justify-center gap-4">
               {(isSpanish ? navLinksES : navLinks).map((link) => (
                 <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                   <span
-                    className={`nav-link ${
-                      isSpanish ? "text-[9.5px]" : "text-[11px]"
-                    } tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]`}
+                    className="nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
                   >
                     {link.label}
                   </span>
@@ -137,11 +134,7 @@ export default function Navigation() {
               ))}
               
               {/* Language Toggle */}
-              <div className={`flex items-center gap-2 ${
-                isSpanish ? "text-[9px]" : "text-[11px]"
-              } tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] ${
-                isSpanish ? "pl-2 ml-1" : "pl-4 ml-2"
-              }`}>
+              <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-4 ml-2">
                 <button
                   onClick={() => handleLanguageChange("en")}
                   className={`transition-colors duration-300 ${

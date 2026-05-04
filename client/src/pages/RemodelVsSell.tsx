@@ -42,8 +42,15 @@ export default function RemodelVsSell() {
   const newValue = current * (1 + increase / 100);
   const netGain = newValue - current - cost;
 
+  // New supporting calculations
+  const valueAdded = newValue - current;
+  const roi = cost === 0 ? 0 : (netGain / cost) * 100; // Handle division by zero
+
   const formatCurrency = (num: number) => 
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(num);
+
+  const formatPercentage = (num: number) => 
+    new Intl.NumberFormat("en-US", { style: "percent", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(num / 100);
 
   // Helper to handle input changes and prevent leading zeros
   const handleInputChange = (setter: (val: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,10 +58,25 @@ export default function RemodelVsSell() {
     if (value === "") {
       setter("");
     } else {
-      // Allow single '0' but prevent multiple leading zeros or '0' followed by non-decimal
       const cleanValue = value.startsWith("0") && value.length > 1 && value[1] !== "." ? value.substring(1) : value;
       setter(cleanValue);
     }
+  };
+
+  // ROI Classification
+  const getRoiClassification = (roiValue: number) => {
+    if (roiValue >= 20) return "Strong return";
+    if (roiValue >= 10) return "Moderate return";
+    if (roiValue >= 0) return "Marginal return";
+    return "Negative return";
+  };
+
+  // Strategic Takeaway
+  const getStrategicTakeaway = (roiValue: number) => {
+    if (roiValue >= 20) return "This remodel shows a strong return and may be worth considering depending on your timeline.";
+    if (roiValue >= 10) return "This remodel shows a moderate return. It may make sense if it improves how the home shows and sells.";
+    if (roiValue >= 0) return "This remodel produces a limited return. In many cases, it may not justify the cost, time, and disruption.";
+    return "This scenario suggests the remodel may not be financially beneficial compared to selling as-is.";
   };
 
   return (
@@ -69,7 +91,7 @@ export default function RemodelVsSell() {
             Is remodeling <br /><em className="italic">worth it?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            Analyze the potential return on investment for renovations. Discover if a remodel will truly increase your net profit or if selling as-is is the better option.
+            Understand whether a remodel is likely to improve your outcome—or if selling as-is may be the better path.
           </p>
         </RevealDiv>
 
@@ -160,20 +182,29 @@ export default function RemodelVsSell() {
                 </div>
 
                 <div className="bg-white/5 p-8 border border-white/10">
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Net Profit Difference</p>
-                  <p className={`font-display text-5xl md:text-6xl font-light mb-4 ${netGain >= 0 ? 'text-white' : 'text-red-400'}`}>
+                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Estimated Net Gain After Remodel</p>
+                  <p className={`font-display text-5xl md:text-6xl font-light mb-2 ${netGain >= 0 ? 'text-white' : 'text-red-400'}`}>
                     {formatCurrency(netGain)}
                   </p>
-                  <p className="font-body text-xs text-white/40 leading-relaxed">
-                    This is the additional profit (or loss) you would realize after paying for the remodel compared to selling as-is.
+                  <p className="font-body text-xs text-white/40 leading-relaxed mb-4">
+                    Value added: {formatCurrency(valueAdded)} <br/>
+                    Return on remodel: {formatPercentage(roi)}
+                  </p>
+                  <p className="font-body text-sm text-white/60">
+                    {getRoiClassification(roi)}
                   </p>
                 </div>
               </div>
 
+              {/* Strategic Takeaway Section */}
               <div className="mt-12 pt-12 border-t border-white/10">
+                <h3 className="font-display text-xl font-light text-white mb-4">Strategic Takeaway</h3>
+                <p className="font-body text-base text-white/70 leading-relaxed mb-8">
+                  {getStrategicTakeaway(roi)}
+                </p>
                 <Link href="/contact">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
-                    Get a Custom ROI Report
+                    Walk Through This With Me
                     <ArrowRight size={14} className="ml-2" />
                   </span>
                 </Link>

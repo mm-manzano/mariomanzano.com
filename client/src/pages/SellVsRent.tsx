@@ -24,11 +24,12 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 
 export default function SellVsRent() {
   // State for inputs - using string to allow empty state
-  const [homeValue, setHomeValue] = useState<string>("0");
-  const [monthlyRent, setMonthlyRent] = useState<string>("0");
-  const [monthlyExpenses, setMonthlyExpenses] = useState<string>("0");
-  const [appreciation, setAppreciation] = useState<string>("0");
-  const [yearsHolding, setYearsHolding] = useState<string>("0");
+  const [homeValue, setHomeValue] = useState<string>("");
+  const [monthlyRent, setMonthlyRent] = useState<string>("");
+  const [monthlyExpenses, setMonthlyExpenses] = useState<string>("");
+  const [appreciation, setAppreciation] = useState<string>("");
+  const [yearsHolding, setYearsHolding] = useState<string>("");
+  const [vacancyMaintenance, setVacancyMaintenance] = useState<string>("8"); // Default to 8%
 
   // Calculations
   const val = parseFloat(homeValue) || 0;
@@ -36,23 +37,43 @@ export default function SellVsRent() {
   const exp = parseFloat(monthlyExpenses) || 0;
   const appr = parseFloat(appreciation) || 0;
   const years = parseFloat(yearsHolding) || 0;
+  const vacancyBuffer = parseFloat(vacancyMaintenance) || 0;
 
-  const annualCashFlow = (rent - exp) * 12;
+  // Adjusted Rent with buffer
+  const adjustedRent = rent * (1 - vacancyBuffer / 100);
+
+  const annualCashFlow = (adjustedRent - exp) * 12;
   const futureValue = val * Math.pow(1 + appr / 100, years);
-  const totalGain = (futureValue - val) + (annualCashFlow * years);
+  const totalGainFromRenting = (futureValue - val) + (annualCashFlow * years);
+
+  // Sell Scenario Calculation (7% selling cost)
+  const sellingCostPercentage = 0.07;
+  const estimatedNetIfSoldToday = val * (1 - sellingCostPercentage);
 
   const formatCurrency = (num: number) => 
-    new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(num);
+    new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(num);
 
   // Helper to handle input changes and prevent leading zeros
   const handleInputChange = (setter: (val: string) => void) => (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/[^0-9.]/g, '');
+    const value = e.target.value.replace(/[^0-9.]/g, "");
     if (value === "") {
       setter("");
     } else {
-      // Remove leading zero if it's followed by another digit
-      const cleanValue = value.startsWith('0') && value.length > 1 && value[1] !== '.' ? value.substring(1) : value;
+      const cleanValue = value.startsWith("0") && value.length > 1 && value[1] !== "." ? value.substring(1) : value;
       setter(cleanValue);
+    }
+  };
+
+  // Strategic Takeaway
+  const getStrategicTakeaway = () => {
+    if (val === 0 || years === 0) return "Enter your home details to see a strategic comparison.";
+
+    if (totalGainFromRenting > estimatedNetIfSoldToday * 1.2) { // Renting gain significantly higher
+      return "This scenario leans toward holding as a rental, assuming these numbers hold. It suggests a strong financial benefit over selling now.";
+    } else if (totalGainFromRenting > estimatedNetIfSoldToday * 0.8) { // Renting gain close to selling
+      return "This is a close decision. The financial difference between selling now and holding as a rental is relatively small compared to the effort and risk of renting.";
+    } else { // Selling is stronger
+      return "Selling now may be the more efficient option based on these assumptions. The financial benefits of renting do not significantly outweigh the costs and effort.";
     }
   };
 
@@ -68,7 +89,7 @@ export default function SellVsRent() {
             Should you <br /><em className="italic">sell or rent?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            This is not just about numbers, it's about clarity. Compare the financial implications of selling now versus holding your property as a rental.
+            Compare what selling now looks like versus holding as a rental, so you can decide what actually makes sense for your situation.
           </p>
         </RevealDiv>
 
@@ -110,7 +131,7 @@ export default function SellVsRent() {
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Monthly Expenses</label>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Monthly Expenses (PITI, HOA, etc.)</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
                       <input 
@@ -149,6 +170,21 @@ export default function SellVsRent() {
                     />
                   </div>
                 </div>
+
+                <div>
+                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Vacancy / Maintenance Buffer (%)</label>
+                  <input 
+                    type="text" 
+                    value={vacancyMaintenance}
+                    onChange={handleInputChange(setVacancyMaintenance)}
+                    onFocus={(e) => e.target.value === "0" && setVacancyMaintenance("")}
+                    onBlur={(e) => e.target.value === "" && setVacancyMaintenance("0")}
+                    className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
+                  />
+                  <p className="font-body text-xs text-[#1A1A18]/50 mt-2 leading-relaxed">
+                    Accounts for potential vacancies, repairs, and other holding costs. Typical: 5-10%.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -161,31 +197,36 @@ export default function SellVsRent() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Annual Cash Flow</p>
-                    <p className={`font-display text-4xl font-light ${annualCashFlow >= 0 ? 'text-[#B8974A]' : 'text-red-400'}`}>
-                      {formatCurrency(annualCashFlow)}
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Estimated Net if Sold Today</p>
+                    <p className="font-display text-4xl font-light text-white">
+                      {formatCurrency(estimatedNetIfSoldToday)}
                     </p>
                   </div>
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Future Home Value</p>
-                    <p className="font-display text-4xl font-light text-white">
-                      {formatCurrency(futureValue)}
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Annual Cash Flow (Adjusted)</p>
+                    <p className={`font-display text-4xl font-light ${annualCashFlow >= 0 ? "text-[#B8974A]" : "text-red-400"}`}>
+                      {formatCurrency(annualCashFlow)}
                     </p>
                   </div>
                 </div>
 
                 <div className="bg-white/5 p-8 border border-white/10">
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Total Projected Gain</p>
-                  <p className="font-display text-5xl md:text-6xl font-light text-white mb-4">
-                    {formatCurrency(totalGain)}
+                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Total Gain from Renting</p>
+                  <p className="font-display text-5xl md:text-6xl font-light text-white mb-2">
+                    {formatCurrency(totalGainFromRenting)}
                   </p>
                   <p className="font-body text-xs text-white/40 leading-relaxed">
-                    Includes both equity growth from appreciation and cumulative rental cash flow over {years} years.
+                    Includes appreciation and rental cash flow over {years} years.
                   </p>
                 </div>
               </div>
 
+              {/* Strategic Takeaway Section */}
               <div className="mt-12 pt-12 border-t border-white/10">
+                <h3 className="font-display text-xl font-light text-white mb-4">Strategic Takeaway</h3>
+                <p className="font-body text-base text-white/70 leading-relaxed mb-8">
+                  {getStrategicTakeaway()}
+                </p>
                 <Link href="/contact">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
                     Discuss Your Strategy

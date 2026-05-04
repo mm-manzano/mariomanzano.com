@@ -309,7 +309,7 @@ export default function Home() {
                 Understanding the Austin market goes beyond headlines. It requires a deep dive into micro-trends, neighborhood-specific data, and future growth projections.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                I provide you with the intelligence you need to make informed decisions, whether you're selling a luxury home in Westlake or evaluating an investment property in Leander.
+                I provide you with the intelligence you need to make informed decisions, whether you're selling your home or deciding what to do next.
               </p>
               <Link href="/homeowner-guide">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">

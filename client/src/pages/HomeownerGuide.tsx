@@ -1,9 +1,9 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Homeowner Guide
- * Content extracted from Gamma guide
  * Sections: Hero, Clear Look at Options, Preparing vs Selling, Pricing Strategy, Selling vs Renting, Holding, As-Is, Remodel (Updated), Putting It Together, CTA
  * Optimization: Added Comparison Table, FAQ Section, and JSON-LD Schema for AI Visibility.
  * Fix: Responsive-first layout for Desktop and Mobile visibility.
+ * REFINEMENT: Updated Remodel section with strategic refinance/equity wording. No long dashes.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -67,7 +67,7 @@ export default function HomeownerGuide() {
         "name": "When should I sell my home as-is in Austin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It’s ideal if the property needs significant work you aren't prepared to manage."
+          "text": "Selling as-is makes sense when you want to avoid the time, stress, and upfront cost of repairs. In the Austin market, this is a tradeoff: you accept a potentially lower offer in exchange for a faster, more certain exit. It is ideal if the property needs significant work you aren't prepared to manage."
         }
       },
       {
@@ -83,7 +83,7 @@ export default function HomeownerGuide() {
         "name": "How do I know if a remodel will actually increase my home's value?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it’s likely not a strategic move before selling."
+          "text": "Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand or your daily quality of life, it is likely not a strategic move before selling."
         }
       },
       {
@@ -137,8 +137,7 @@ export default function HomeownerGuide() {
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Sell, Remodel,  
-
+              Sell, Remodel,<br />
               <em className="italic">Rent, or Hold.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
@@ -201,7 +200,7 @@ export default function HomeownerGuide() {
                       <tr className="border-b border-[#F8F5F0]">
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Remodel</td>
                         <td className="py-6 pr-4">Your home has good bones but needs updates to work better for your needs.</td>
-                        <td className="py-6 pr-4">Improved quality of life and potential increase in resale value.</td>
+                        <td className="py-6 pr-4">Improved quality of life and potential increase in resale value. In some cases, it may also create the option to access equity for a future move.</td>
                         <td className="py-6 pr-4">High upfront costs; luxury upgrades rarely deliver a 100% ROI.</td>
                         <td className="py-6">Homeowners who love their location but want their home to work better.</td>
                       </tr>
@@ -277,8 +276,7 @@ export default function HomeownerGuide() {
                 <span className="section-number">03. Pricing</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-                Your most important   
-
+                Your most important <br />
                 <em className="italic">decision.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
@@ -352,8 +350,7 @@ export default function HomeownerGuide() {
               <span className="section-number">05. Remodel</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
-              More than just   
-
+              More than just <br />
               <em className="italic">simply remodeling.</em>
             </h2>
             <div className="max-w-2xl space-y-6">
@@ -400,7 +397,7 @@ export default function HomeownerGuide() {
               </ul>
             </RevealDiv>
             <RevealDiv delay={200}>
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">The Risks of Holding</h3>
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">Consider the Costs</h3>
               <ul className="font-body text-sm text-[#1A1A18]/65 leading-relaxed space-y-3 list-disc pl-5">
                 <li>Your equity remains tied up in the home</li>
                 <li>Ongoing maintenance and holding costs</li>
@@ -459,7 +456,7 @@ export default function HomeownerGuide() {
               />
               <FAQItem 
                 question="How do I know if a remodel will actually increase my home's value?" 
-                answer="Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand, it’s likely not strategic."
+                answer="Focus on functional systems, cleanliness, and neutral presentation. Major luxury renovations rarely return their full cost. If the improvement doesn't meaningfully increase buyer demand, it is likely not strategic."
               />
               <FAQItem 
                 question="What is the biggest risk of Holding and doing nothing?" 

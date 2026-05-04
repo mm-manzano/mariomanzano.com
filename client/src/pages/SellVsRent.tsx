@@ -25,16 +25,20 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 export default function SellVsRent() {
   // State for inputs - using string to allow empty state
   const [homeValue, setHomeValue] = useState<string>("");
+  const [mortgageBalance, setMortgageBalance] = useState<string>("");
+  const [monthlyMortgagePayment, setMonthlyMortgagePayment] = useState<string>("");
   const [monthlyRent, setMonthlyRent] = useState<string>("");
-  const [monthlyExpenses, setMonthlyExpenses] = useState<string>("");
+  const [otherMonthlyExpenses, setOtherMonthlyExpenses] = useState<string>("");
   const [appreciation, setAppreciation] = useState<string>("");
   const [yearsHolding, setYearsHolding] = useState<string>("");
   const [vacancyMaintenance, setVacancyMaintenance] = useState<string>("8"); // Default to 8%
 
   // Calculations
   const val = parseFloat(homeValue) || 0;
+  const mortBal = parseFloat(mortgageBalance) || 0;
+  const mPayment = parseFloat(monthlyMortgagePayment) || 0;
   const rent = parseFloat(monthlyRent) || 0;
-  const exp = parseFloat(monthlyExpenses) || 0;
+  const otherExp = parseFloat(otherMonthlyExpenses) || 0;
   const appr = parseFloat(appreciation) || 0;
   const years = parseFloat(yearsHolding) || 0;
   const vacancyBuffer = parseFloat(vacancyMaintenance) || 0;
@@ -42,13 +46,21 @@ export default function SellVsRent() {
   // Adjusted Rent with buffer
   const adjustedRent = rent * (1 - vacancyBuffer / 100);
 
-  const annualCashFlow = (adjustedRent - exp) * 12;
-  const futureValue = val * Math.pow(1 + appr / 100, years);
-  const totalGainFromRenting = (futureValue - val) + (annualCashFlow * years);
-
   // Sell Scenario Calculation (7% selling cost)
   const sellingCostPercentage = 0.07;
-  const estimatedNetIfSoldToday = val * (1 - sellingCostPercentage);
+  const estimatedNetIfSoldToday = val - (val * sellingCostPercentage) - mortBal;
+
+  // Rent Scenario Calculations
+  const totalMonthlyExpensesIfRenting = otherExp + mPayment;
+  const annualCashFlowIfRenting = (adjustedRent - totalMonthlyExpensesIfRenting) * 12;
+  const futureValue = val * Math.pow(1 + appr / 100, years);
+  
+  // Simplified principal paid down for strategic comparison, not exact amortization
+  const estimatedPrincipalPaidDown = mPayment * 0.3 * years * 12; // Assuming ~30% of payment goes to principal initially
+  const futureMortgageBalance = Math.max(0, mortBal - estimatedPrincipalPaidDown); // Cannot go below zero
+
+  const totalGainFromRenting = (futureValue - val) + (annualCashFlowIfRenting * years);
+  const estimatedNetIfRented = futureValue - futureMortgageBalance - (futureValue * sellingCostPercentage); // Net after selling in the future
 
   const formatCurrency = (num: number) => 
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(num);
@@ -68,12 +80,12 @@ export default function SellVsRent() {
   const getStrategicTakeaway = () => {
     if (val === 0 || years === 0) return "Enter your home details to see a strategic comparison.";
 
-    if (totalGainFromRenting > estimatedNetIfSoldToday * 1.2) { // Renting gain significantly higher
-      return "This scenario leans toward holding as a rental, assuming these numbers hold. It suggests a strong financial benefit over selling now.";
-    } else if (totalGainFromRenting > estimatedNetIfSoldToday * 0.8) { // Renting gain close to selling
-      return "This is a close decision. The financial difference between selling now and holding as a rental is relatively small compared to the effort and risk of renting.";
+    if (estimatedNetIfRented > estimatedNetIfSoldToday * 1.2) { // Renting gain significantly higher
+      return "This scenario strongly favors holding as a rental, assuming these numbers hold. It suggests a significant financial benefit over selling now.";
+    } else if (estimatedNetIfRented > estimatedNetIfSoldToday * 0.8) { // Renting gain close to selling
+      return "This is a close decision. The financial difference between selling now and holding as a rental is relatively small compared to the effort and risk of renting. Consider non-financial factors.";
     } else { // Selling is stronger
-      return "Selling now may be the more efficient option based on these assumptions. The financial benefits of renting do not significantly outweigh the costs and effort.";
+      return "Selling now appears to be the more efficient option based on these assumptions. The financial benefits of renting do not significantly outweigh the costs and effort involved.";
     }
   };
 
@@ -115,6 +127,36 @@ export default function SellVsRent() {
                   </div>
                 </div>
 
+                <div>
+                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Outstanding Mortgage Balance</label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                    <input 
+                      type="text" 
+                      value={mortgageBalance}
+                      onChange={handleInputChange(setMortgageBalance)}
+                      onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
+                      onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
+                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Monthly Mortgage Payment (P&I)</label>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                    <input 
+                      type="text" 
+                      value={monthlyMortgagePayment}
+                      onChange={handleInputChange(setMonthlyMortgagePayment)}
+                      onFocus={(e) => e.target.value === "0" && setMonthlyMortgagePayment("")}
+                      onBlur={(e) => e.target.value === "" && setMonthlyMortgagePayment("0")}
+                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Monthly Rent</label>
@@ -131,15 +173,15 @@ export default function SellVsRent() {
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Monthly Expenses (PITI, HOA, etc.)</label>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Other Monthly Expenses (HOA, Taxes, Insurance)</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
                       <input 
                         type="text" 
-                        value={monthlyExpenses}
-                        onChange={handleInputChange(setMonthlyExpenses)}
-                        onFocus={(e) => e.target.value === "0" && setMonthlyExpenses("")}
-                        onBlur={(e) => e.target.value === "" && setMonthlyExpenses("0")}
+                        value={otherMonthlyExpenses}
+                        onChange={handleInputChange(setOtherMonthlyExpenses)}
+                        onFocus={(e) => e.target.value === "0" && setOtherMonthlyExpenses("")}
+                        onBlur={(e) => e.target.value === "" && setOtherMonthlyExpenses("0")}
                         className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all"
                       />
                     </div>
@@ -204,19 +246,19 @@ export default function SellVsRent() {
                   </div>
                   <div>
                     <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Annual Cash Flow (Adjusted)</p>
-                    <p className={`font-display text-4xl font-light ${annualCashFlow >= 0 ? "text-[#B8974A]" : "text-red-400"}`}>
-                      {formatCurrency(annualCashFlow)}
+                    <p className={`font-display text-4xl font-light ${annualCashFlowIfRenting >= 0 ? "text-[#B8974A]" : "text-red-400"}`}>
+                      {formatCurrency(annualCashFlowIfRenting)}
                     </p>
                   </div>
                 </div>
 
                 <div className="bg-white/5 p-8 border border-white/10">
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Total Gain from Renting</p>
+                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Estimated Net if Rented & Sold Later</p>
                   <p className="font-display text-5xl md:text-6xl font-light text-white mb-2">
-                    {formatCurrency(totalGainFromRenting)}
+                    {formatCurrency(estimatedNetIfRented)}
                   </p>
                   <p className="font-body text-xs text-white/40 leading-relaxed">
-                    Includes appreciation and rental cash flow over {years} years.
+                    Includes appreciation, rental cash flow, and mortgage paydown over {years} years, then selling.
                   </p>
                 </div>
               </div>

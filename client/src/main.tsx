@@ -1,11 +1,11 @@
-import { ViteSSG } from 'vite-ssg/single-page'; // Use 'single-page' if not using a complex router, or just 'vite-ssg'
+import { ViteSSG } from 'vite-ssg/single-page';
 import App from './App';
 import './index.css';
 
-// This replaces your existing ReactDOM.createRoot logic
 export const createApp = ViteSSG(
   App,
   ({ app, router, routes, isClient, initialState }) => {
-    // You can add plugins or analytics here if needed
+    // This function runs during both build and client-side hydration.
+    // You can add global plugins or analytics here if needed in the future.
   }
 );

@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -20,28 +18,19 @@ const routes = [
 ];
 
 const PORT = 8888;
-const BASE_URL = `http://localhost:${PORT}`;
+const BASE_URL = `http://0.0.0.0:${PORT}`;
 
 function createServer( ) {
   return http.createServer((req, res ) => {
-    let filePath = path.join(distDir, req.url);
-    if (req.url === '/' || req.url.endsWith('/')) {
-      filePath = path.join(filePath, 'index.html');
+    let filePath = path.join(distDir, req.url === '/' ? 'index.html' : req.url);
+    if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+      filePath = path.join(distDir, 'index.html');
     }
-    fs.stat(filePath, (err, stats) => {
-      if (err || !stats.isFile()) {
-        const indexPath = path.join(distDir, 'index.html');
-        res.writeHead(200, { 'Content-Type': 'text/html' });
-        createReadStream(indexPath).pipe(res);
-        return;
-      }
-      let contentType = 'text/plain';
-      if (filePath.endsWith('.html')) contentType = 'text/html';
-      else if (filePath.endsWith('.css')) contentType = 'text/css';
-      else if (filePath.endsWith('.js')) contentType = 'application/javascript';
-      res.writeHead(200, { 'Content-Type': contentType });
-      createReadStream(filePath).pipe(res);
-    });
+    let contentType = 'text/html';
+    if (filePath.endsWith('.css')) contentType = 'text/css';
+    if (filePath.endsWith('.js')) contentType = 'application/javascript';
+    res.writeHead(200, { 'Content-Type': contentType });
+    createReadStream(filePath).pipe(res);
   });
 }
 
@@ -50,15 +39,15 @@ function fetchUrl(url) {
     http.get(url, (res ) => {
       let data = '';
       res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => { resolve(data); });
+      res.on('end', () => resolve(data));
     }).on('error', reject);
   });
 }
 
 async function prerender() {
-  console.log('🎬 Starting prerendering process...');
+  console.log('🎬 Starting prerendering...');
   const server = createServer();
-  await new Promise((resolve) => server.listen(PORT, 'localhost', resolve));
+  await new Promise((resolve) => server.listen(PORT, '0.0.0.0', resolve));
   for (const route of routes) {
     try {
       const html = await fetchUrl(`${BASE_URL}${route}`);
@@ -72,4 +61,7 @@ async function prerender() {
   console.log('📊 Prerendering complete.');
 }
 
-prerender();
+prerender().catch(err => {
+  console.error('Prerender failed:', err);
+  process.exit(1);
+});

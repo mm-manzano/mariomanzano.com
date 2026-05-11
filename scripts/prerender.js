@@ -26,8 +26,19 @@ const routes = [
 async function prerender() {
   console.log('🎬 Starting Puppeteer prerender...');
 
-  const handler = sirv(distDir, { single: true });
-  const server = http.createServer(handler);
+  // Snapshot the current Vite-built shell before any writes. This guarantees
+  // every route gets the same clean HTML with correct asset hashes, regardless
+  // of stale subdirectory files left by previous prerender runs.
+  const spaShell = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
+
+  // sirv handles real asset files; unknown paths fall through to the SPA shell.
+  const assets = sirv(distDir);
+  const server = http.createServer((req, res) => {
+    assets(req, res, () => {
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.end(spaShell);
+    });
+  });
   await new Promise((resolve) => server.listen(PORT, 'localhost', resolve));
   console.log(`   Server listening on ${BASE_URL}`);
 
@@ -36,15 +47,15 @@ async function prerender() {
   });
 
   for (const route of routes) {
+    const page = await browser.newPage();
     try {
-      const page = await browser.newPage();
       await page.goto(`${BASE_URL}${route}`, { waitUntil: 'networkidle0' });
-      // Wait for React to render actual content into <main> before capture.
-      // networkidle0 alone fires before hydration completes with Framer Motion.
-      await page.waitForSelector('main > *', { timeout: 15000 });
+      await page.waitForFunction(
+        () => document.querySelector('#root')?.children.length > 0,
+        { timeout: 15000 }
+      );
       await new Promise((r) => setTimeout(r, 500));
       const html = await page.content();
-      await page.close();
 
       const routeDir = route === '/' ? distDir : path.join(distDir, route);
       fs.mkdirSync(routeDir, { recursive: true });
@@ -52,6 +63,8 @@ async function prerender() {
       console.log(`   ✓ ${route}`);
     } catch (e) {
       console.error(`   ✗ Error ${route}:`, e.message);
+    } finally {
+      await page.close();
     }
   }
 

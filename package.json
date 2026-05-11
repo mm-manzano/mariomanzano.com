@@ -8,7 +8,8 @@
     "build": "vite-ssg build",
     "preview": "vite preview --host",
     "check": "tsc --noEmit",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prebuild": "rm -f package-lock.json"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -45,7 +46,7 @@
     "date-fns": "^4.1.0",
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.4.7",
-    "i18next": "^24.2.2",
+    "i18next": "^25.10.9",
     "i18next-browser-languagedetector": "^8.0.4",
     "lucide-react": "^0.475.0",
     "nanoid": "^5.1.5",
@@ -54,7 +55,7 @@
     "react-day-picker": "^9.11.1",
     "react-dom": "^19.2.1",
     "react-hook-form": "^7.64.0",
-    "react-i18next": "^16.5.8",
+    "react-i18next": "^16.6.6",
     "react-resizable-panels": "^3.0.6",
     "recharts": "^2.15.2",
     "sonner": "^2.0.7",
@@ -75,6 +76,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.20",
     "esbuild": "^0.25.0",
+    "jsdom": "^26.0.0",
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.14",
@@ -82,17 +84,5 @@
     "vite": "^6.3.0",
     "vite-plugin-manus-runtime": "^0.0.57",
     "vite-ssg": "^0.24.3"
-  },
-  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
-  "pnpm": {
-    "patchedDependencies": {
-      "wouter@3.7.1": "patches/wouter@3.7.1.patch"
-    },
-    "overrides": {
-      "tailwindcss>nanoid": "3.3.7"
-    }
-  },
-  "overrides": {
-    "vite": "^6.3.0"
   }
 }

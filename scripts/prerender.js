@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import http from 'http';
 import { createReadStream } from 'fs';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url ));
+const __dirname = path.dirname(fileURLToPath(import.meta.url  ));
 const distDir = path.join(__dirname, '..', 'dist');
 
 const routes = [
@@ -20,8 +20,8 @@ const routes = [
 const PORT = 8888;
 const BASE_URL = `http://0.0.0.0:${PORT}`;
 
-function createServer( ) {
-  return http.createServer((req, res ) => {
+function createServer(  ) {
+  return http.createServer((req, res  ) => {
     let filePath = path.join(distDir, req.url === '/' ? 'index.html' : req.url);
     if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
       filePath = path.join(distDir, 'index.html');
@@ -36,7 +36,7 @@ function createServer( ) {
 
 function fetchUrl(url) {
   return new Promise((resolve, reject) => {
-    http.get(url, (res ) => {
+    http.get(url, (res  ) => {
       let data = '';
       res.on('data', (chunk) => { data += chunk; });
       res.on('end', () => resolve(data));

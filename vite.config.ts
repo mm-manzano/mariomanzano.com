@@ -1,4 +1,3 @@
-// import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc"; // Disabled - package not found
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import fs from "node:fs";
@@ -162,7 +161,7 @@ function vitePluginCacheBust(): Plugin {
       let modified = html.replace(
         /<meta charset="UTF-8" \/>/,
         `<meta charset="UTF-8" /><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="0" /><meta name="cache-bust" content="${timestamp}-${randomSuffix}" />`
-      );
+       );
       
       // Add query parameters to all script and link tags
       modified = modified.replace(/(<script[^>]*src="[^"]*)"/g, `$1?v=${timestamp}"`)
@@ -187,15 +186,13 @@ export default defineConfig({
   },
   envDir: path.resolve(import.meta.dirname),
   root: "client",
-  // Force new build output directory to bypass CDN cache
-  // GitHub Pages will serve from /build-v2 instead of /dist
   build: {
     outDir: "../dist",
     emptyOutDir: true,
   },
   server: {
     port: 3000,
-    strictPort: false, // Will find next available port if 3000 is busy
+    strictPort: false,
     host: true,
     allowedHosts: [
       ".manuspre.computer",

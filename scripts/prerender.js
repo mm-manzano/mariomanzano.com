@@ -39,6 +39,9 @@ async function prerender() {
     try {
       const page = await browser.newPage();
       await page.goto(`${BASE_URL}${route}`, { waitUntil: 'networkidle0' });
+      // Wait for React to render actual content into <main> before capture.
+      // networkidle0 alone fires before hydration completes with Framer Motion.
+      await page.waitForSelector('main > *', { timeout: 15000 });
       await new Promise((r) => setTimeout(r, 500));
       const html = await page.content();
       await page.close();

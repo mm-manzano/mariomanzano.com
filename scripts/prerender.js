@@ -92,10 +92,11 @@ async function prerender() {
       await new Promise((r) => setTimeout(r, 500));
       let html = await page.content();
 
-      // Strip the manus-runtime inline bundle — it's a Manus platform dev tool
-      // injected by vite-plugin-manus-runtime and must not appear in Vercel output.
-      // The real production bundle is assets/index-*.js referenced via <script type="module">.
+      // Strip Manus platform dev artifacts that must not appear in production output.
+      // manus-runtime: inline bundle injected by vite-plugin-manus-runtime (real bundle is assets/index-*.js).
+      // manus-previewer-root: empty div injected outside </html> by the Manus preview iframe bridge.
       html = html.replace(/<script\s[^>]*id="manus-runtime"[\s\S]*?<\/script>/i, '');
+      html = html.replace(/<div\s[^>]*id="manus-previewer-root"[^>]*>[\s\S]*?<\/div>/i, '');
 
       const routeDir = route === '/' ? distDir : path.join(distDir, route);
       fs.mkdirSync(routeDir, { recursive: true });

@@ -124,7 +124,7 @@ export default function Navigation() {
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center justify-center gap-4">
               {(isSpanish ? navLinksES : navLinks).map((link) => (
-                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
+                <a key={link.href} href={link.href} onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                   <span
                     className="nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
                   >
@@ -195,7 +195,7 @@ export default function Navigation() {
           <div className="container flex flex-col h-full pt-24 pb-12">
             <nav className="flex flex-col gap-8 flex-1">
               {(isSpanish ? navLinksES : navLinks).map((link, i) => (
-                <a key={link.href} href="#" onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
+                <a key={link.href} href={link.href} onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                   <span
                     className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}

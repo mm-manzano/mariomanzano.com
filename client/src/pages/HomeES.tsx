@@ -1,12 +1,11 @@
 /*
- * DESIGN: Quiet Luxury Editorial - Página de Inicio
- * Secciones: Hero (pantalla completa), Franja de Confianza, Introducción del Asesor, Cuadrícula de Servicios,
- *           Sección de Números, Herramientas Estratégicas (NUEVO), Análisis de Mercado, Testimonio, Franja de Proceso (Actualizado), 
- *           Sección de Guía, Banda Final de CTA
- * Imágenes: Imágenes de héroe generadas por IA (URLs de CDN)
- * Tipografía: Títulos Cormorant Garamond, cuerpo DM Sans
- * Optimización: Se agregó el esquema JSON-LD de RealEstateAgent para SEO local y visibilidad de IA.
- * REFINAMIENTO: Se integró la redacción estratégica de remodelación/refinanciamiento en la sección de Servicios.
+ * DESIGN: Quiet Luxury Editorial - Página de Inicio (Español)
+ * Secciones: Hero, Franja de Confianza, Introducción del Asesor, Cuadrícula de Servicios,
+ *           Sección de Números, Herramientas Estratégicas, Análisis de Mercado, Testimonio,
+ *           Proceso, Sección de Guía, Banda Final de CTA
+ * COPY UPDATE: Subtítulo del hero reescrito, mención de Westlake corregida a Cedar Park,
+ *              texto de mercado reescrito en voz de Mario, acordeón de proceso reescrito,
+ *              sección de guía en lenguaje claro, CTAs diferenciados.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -104,7 +103,7 @@ export default function HomeES() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
-      {/* ─── HERO ──────────────────────────────────────────────────── */}
+      {/* HERO */}
       <section className="relative h-auto md:min-h-screen flex items-start">
         <div className="absolute inset-0">
           <img src={HERO_IMG} alt="Casa de lujo en Cedar Park" className="w-full h-full object-cover" />
@@ -116,7 +115,7 @@ export default function HomeES() {
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                BIENES RAÍCES EN EL ÁREA DE AUSTIN
+                BIENES RAÍCES EN CEDAR PARK Y LEANDER
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.0] mb-6">
@@ -124,39 +123,39 @@ export default function HomeES() {
               Tu Decisión.<br />
               <em className="italic">Tu Asesor.</em>
             </h1>
-              <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
-                Toma decisiones basadas en estrategia, no solo en el valor de tu casa. Compara tus opciones para encontrar el camino más rentable para tu propiedad.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/es/strategy-hub">
-                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                    Compara Tus Opciones
-                    <ArrowRight size={14} />
-                  </span>
-                </Link>
-                <Link href="/es/home-value">
-                  <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
-                    Mira Cuánto Podría Valer Tu Casa
-                    <ArrowRight size={14} />
-                  </span>
-                </Link>
-              </div>
+            <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
+              La mayoría de los propietarios solo escuchan una opción. Yo te ayudo a entender todas, para que puedas decidir lo que realmente tiene sentido para tu situación.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/es/strategy-hub">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                  Ver Tus Opciones
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+              <Link href="/es/home-value">
+                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                  Mira Cuánto Podría Valer Tu Casa
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── STRATEGY HUB CTA ────────────────────────────────────────── */}
+      {/* FRANJA DE CONFIANZA */}
       <section className="bg-[#1A1A18] py-12">
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
-              Ayudo a los propietarios en toda el área de Austin a desarrollar una estrategia clara sobre vender, remodelar, alquilar o mantener. Mi papel es darte claridad para que tomes la decisión correcta para tu familia.
+              Ayudo a los propietarios en Cedar Park, Leander y el área de Austin a desarrollar una estrategia clara sobre vender, remodelar, alquilar o mantener. Mi trabajo es darte el panorama completo para que tomes la decisión correcta para tu familia.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── ADVISOR INTRO ─────────────────────────────────────────── */}
+      {/* INTRODUCCIÓN DEL ASESOR */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -176,10 +175,10 @@ export default function HomeES() {
                 <em className="italic">cualquier decisión.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Soy Mario Manzano, agente inmobiliario (REALTOR®) y estratega de ventas en Leander, Texas. Antes de que decidas algo sobre tu casa, mereces entender todas tus opciones.
+                Soy Mario Manzano, REALTOR® y estratega de ventas en Leander, Texas. Antes de que decidas algo sobre tu casa, mereces entender todas tus opciones.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                Eso puede significar vender, o puede significar algo diferente. Mi trabajo es guiarte a través de los datos, los costos y los tiempos para que tomes la decisión que tenga más sentido para tu situación.
+                Eso puede significar vender. O puede significar otra cosa. Mi trabajo es guiarte a través de los números, los costos y los tiempos para que tomes la decisión que realmente se adapte a tu situación.
               </p>
               <Link href="/es/acerca">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
@@ -192,7 +191,7 @@ export default function HomeES() {
         </div>
       </section>
 
-      {/* ─── SERVICES GRID ─────────────────────────────────────────── */}
+      {/* CUADRÍCULA DE SERVICIOS */}
       <section
         className="py-20 md:py-32 relative"
         style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover", backgroundPosition: "center" }}
@@ -208,16 +207,16 @@ export default function HomeES() {
               Cuatro caminos que los propietarios suelen considerar.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/60 mb-12 max-w-lg">
-              La mayoría de los propietarios no conocen todas sus opciones. Te ayudo a explorar cada una con datos reales y un análisis honesto.
+              La mayoría de los propietarios solo piensan en vender. Te ayudo a analizar cada opción con números reales para que decidas lo que realmente tiene sentido.
             </p>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E0D5]">
             {[
-              { num: "01", title: "Vender", desc: "Entiende el mercado, los tiempos y los costos que implica vender tu casa." },
-              { num: "02", title: "Remodelar", desc: "Explora mejoras para aumentar el valor o combinar con un refinanciamiento para tu próximo paso." },
-              { num: "03", title: "Alquilar", desc: "Considera si mantener la propiedad como alquiler sirve mejor a tus metas financieras a largo plazo." },
-              { num: "04", title: "Mantener", desc: "Evalúa si esperar podría fortalecer tu posición antes de vender." }
+              { num: "01", title: "Vender", desc: "Entiende el mercado, los tiempos y lo que realmente te llevarás después de los costos." },
+              { num: "02", title: "Remodelar", desc: "Descubre qué mejoras valen la pena y cuáles rara vez recuperan lo que cuestan." },
+              { num: "03", title: "Alquilar", desc: "Analiza si conservar la propiedad como alquiler tiene más sentido financiero que vender ahora." },
+              { num: "04", title: "Mantener", desc: "Evalúa si esperar podría ponerte en una posición más fuerte antes de tomar una decisión." }
             ].map((service, i) => (
               <RevealDiv
                 key={service.num}
@@ -245,35 +244,35 @@ export default function HomeES() {
         </div>
       </section>
 
-      {/* ─── START WITH THE NUMBERS ────────────────────────────────── */}
+      {/* EMPIEZA CON LOS NÚMEROS */}
       <section className="py-20 md:py-32">
         <div className="container text-center">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
-                  ¿Listo para dar un paso estratégico?
+              Empieza por saber cuánto te llevarías realmente.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
-                  Explora todas tus opciones y obtén una ruta clara para tu hogar.
+              Antes de cualquier conversación, ayuda conocer tus números. Haz una estimación rápida y ve dónde estás parado.
             </p>
-                <Link href="/es/strategy-hub">
-                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                    Compara Tus Opciones
-                    <ArrowRight size={14} />
-                  </span>
-                </Link>
+            <Link href="/es/net-sheet">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                Calcular Tus Ingresos Netos
+                <ArrowRight size={14} />
+              </span>
+            </Link>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── STRATEGIC TOOLS (NEW SECTION) ─────────────────────────── */}
+      {/* HERRAMIENTAS ESTRATÉGICAS */}
       <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
         <div className="container text-center">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6 max-w-2xl mx-auto">
-              Análisis Profundo. Decisiones Inteligentes.
+              Analiza los números de cada opción.
             </h2>
             <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
-              Ve más allá de las simples valoraciones. Explora el verdadero impacto financiero de tus opciones.
+              Vender no siempre es la respuesta correcta. Estas herramientas te ayudan a comparar tus opciones reales antes de decidir cualquier cosa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/es/sell-vs-rent">
@@ -293,7 +292,7 @@ export default function HomeES() {
         </div>
       </section>
 
-      {/* ─── MARKET INSIGHT ────────────────────────────────────────── */}
+      {/* ANÁLISIS DE MERCADO */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -307,14 +306,14 @@ export default function HomeES() {
                 <em className="italic">mercado local.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Entender el mercado de Austin va más allá de las noticias. Requiere profundizar en las microtendencias, los datos específicos de cada vecindario y las proyecciones de crecimiento futuro.
+                Los mercados de Cedar Park y Leander se mueven de manera diferente al área de Austin en general. Los precios, las tasas de absorción y la demanda de compradores cambian a nivel de vecindario, no de ciudad.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                Te brindo la información que necesitas para tomar decisiones informadas, ya sea que estés vendiendo una casa de lujo en Westlake o evaluando una propiedad de inversión en Leander.
+                Me enfoco en Cedar Park, Leander y el área circundante de Austin para darte una lectura honesta de cómo están las cosas y lo que eso significa para tu decisión, ya sea que estés pensando en vender ahora, esperar o algo diferente.
               </p>
               <Link href="/es/guia-para-propietarios">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
-                  Obtener la Guía
+                  Leer la Guía
                   <ArrowRight size={14} />
                 </span>
               </Link>
@@ -322,14 +321,14 @@ export default function HomeES() {
 
             <RevealDiv delay={150} className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={AERIAL_IMG} alt="Vista aérea de Austin" className="w-full h-full object-cover" />
+                <img src={AERIAL_IMG} alt="Vista aérea de Cedar Park" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── TESTIMONIAL ───────────────────────────────────────────── */}
+      {/* TESTIMONIO */}
       <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
         <div className="container max-w-3xl text-center">
           <RevealDiv>
@@ -337,13 +336,13 @@ export default function HomeES() {
               "La mayoría de los agentes solo me habrían presionado para poner la casa en venta. Mario hizo lo contrario. Me guió a través de cada opción, desde alquilar hasta subdividir, hasta que la decisión correcta fue clara. El proceso fue muy sencillo a partir de ahí."
             </p>
             <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
-              - Chris Stevens, Leander TX
+              — Chris Stevens, Leander TX
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── PROCESS STRIP (SELLING PROCESS ACCORDION) ──────────────── */}
+      {/* PROCESO */}
       <section className="py-20 md:py-32">
         <div className="container max-w-3xl">
           <RevealDiv>
@@ -355,56 +354,56 @@ export default function HomeES() {
               Tu camino, claramente definido.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
-              Ya sea que decidas vender, remodelar, alquilar o mantener, tener una comprensión clara del proceso reduce el estrés y asegura que siempre tengas el control.
+              Ya sea que decidas vender, remodelar, alquilar o mantener, saber qué sucede en cada etapa hace todo menos estresante. Así es como trabajo con los vendedores.
             </p>
           </RevealDiv>
 
           <div className="space-y-4">
             <AccordionItem
-              title="Antes de Vender: Preparación Estratégica"
+              title="Antes de Listar: Preparación y Estrategia"
               isOpen={openStep === 1}
               onClick={() => setOpenStep(openStep === 1 ? null : 1)}
             >
-              Esta fase se enfoca en entender tus metas, evaluar las condiciones del mercado y preparar tu casa para un impacto máximo. Discutiremos el momento ideal, las reparaciones necesarias frente a las actualizaciones estéticas y la preparación profesional para atraer a los compradores adecuados.
+              Aquí es donde la mayoría de los vendedores ganan o pierden dinero. Antes de que algo salga al mercado, analizamos tu situación de capital, lo que está pasando en tu vecindario específico y qué mejoras realmente valen la pena hacer. El objetivo es salir al mercado en la posición más fuerte posible, no solo la más rápida.
             </AccordionItem>
             <AccordionItem
               title="Salida al Mercado: Lanzamiento y Exposición"
               isOpen={openStep === 2}
               onClick={() => setOpenStep(openStep === 2 ? null : 2)}
             >
-              Una vez que tu casa está lista, la lanzamos al mercado con fotografía profesional, descripciones atractivas y campañas de marketing dirigidas. Esto asegura que tu propiedad llegue a una amplia audiencia de compradores calificados, generando un fuerte interés y visitas.
+              Cómo se presenta tu casa en los primeros días importa más de lo que la mayoría de los vendedores se da cuenta. La fotografía profesional, el precio preciso y los materiales de marketing claros son el punto de partida. Lo que diferencia un listado es el posicionamiento, la historia que les cuenta a los compradores sobre por qué esta casa vale lo que pides.
             </AccordionItem>
             <AccordionItem
-              title="Ofertas y Negociación: Asegurando los Mejores Términos"
+              title="Ofertas y Negociación: Asegurando los Términos Correctos"
               isOpen={openStep === 3}
               onClick={() => setOpenStep(openStep === 3 ? null : 3)}
             >
-              Recibir ofertas es solo el comienzo. Te guiaré en la evaluación de cada propuesta, negociando términos y manejando contraofertas para asegurar el mejor precio y condiciones posibles para tu venta. Mi meta es proteger tus intereses en cada paso.
+              El precio es solo una parte de una oferta. Los términos, las contingencias y los plazos de cierre importan igual. Te explico lo que cada oferta realmente significa, no solo el número en la parte superior, y te ayudo a negociar desde una posición clara en lugar de reaccionar bajo presión.
             </AccordionItem>
             <AccordionItem
-              title="Bajo Contrato hasta el Cierre: Una Transición Fluida"
+              title="Bajo Contrato hasta el Cierre: Manteniéndolo en Marcha"
               isOpen={openStep === 4}
               onClick={() => setOpenStep(openStep === 4 ? null : 4)}
             >
-              Desde la firma del contrato hasta el día del cierre, gestiono todos los detalles: inspecciones, tasaciones, trámites de título y comunicación con todas las partes. Mi enfoque es una transacción fluida y sin estrés, asegurando que se cumplan todos los requisitos y que llegues al cierre con éxito.
+              La mayoría de los negocios que se caen lo hacen entre el contrato y el cierre. Las inspecciones, las tasaciones y los problemas de título pueden crear fricciones. Me mantengo al tanto de cada detalle para que no tengas que perseguir actualizaciones ni preguntarte qué pasa a continuación. El objetivo es un cierre limpio sin sorpresas.
             </AccordionItem>
           </div>
         </div>
       </section>
 
-      {/* ─── GUIDE SECTION (MOVED LOWER) ───────────────────────────── */}
+      {/* SECCIÓN DE GUÍA */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container max-w-3xl text-center">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
-              Aprendizaje y Perspectivas Profundas.
+              ¿No sabes por dónde empezar?
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
-              Para una comprensión completa de tus opciones y del mercado de Austin, descarga mi guía exclusiva para propietarios.
+              La guía para propietarios explica la decisión de vender, remodelar, alquilar o mantener en lenguaje claro y con números reales. Sin presión, solo claridad.
             </p>
             <Link href="/es/guia-para-propietarios">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                Obtener la Guía Completa
+                Leer la Guía para Propietarios
                 <ArrowRight size={14} />
               </span>
             </Link>
@@ -412,19 +411,19 @@ export default function HomeES() {
         </div>
       </section>
 
-      {/* ─── FINAL CTA BAND ────────────────────────────────────────── */}
+      {/* BANDA FINAL DE CTA */}
       <section className="bg-[#1A1A18] py-20 md:py-32 text-center">
         <div className="container">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
-              ¿Listo para dar tu próximo paso?
+              ¿Listo para hablar sobre tus opciones?
             </h2>
             <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
-              Obtén una estrategia clara adaptada a tus metas. Compara tus opciones y gana la claridad que necesitas.
+              Sin discurso de ventas. Solo una conversación directa sobre tu casa, tu situación y lo que realmente tiene sentido para ti.
             </p>
-            <Link href="/es/strategy-hub">
+            <Link href="/es/contacto">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                Compara Tus Opciones
+                Iniciar una Conversación
                 <ArrowRight size={14} />
               </span>
             </Link>

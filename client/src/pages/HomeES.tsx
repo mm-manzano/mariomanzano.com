@@ -337,7 +337,7 @@ export default function HomeES() {
               "La mayoría de los agentes solo me habrían presionado para poner la casa en venta. Mario hizo lo contrario. Me guió a través de cada opción, desde alquilar hasta subdividir, hasta que la decisión correcta fue clara. El proceso fue muy sencillo a partir de ahí."
             </p>
             <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
-              - Propietario Satisfecho, Leander TX
+              - Chris Stevens, Leander TX
             </p>
           </RevealDiv>
         </div>

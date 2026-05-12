@@ -2,6 +2,8 @@
  * DESIGN: Quiet Luxury Editorial - About Page
  * Goal: Personal, real, based on lived experience
  * Sections: Intro, How It Started, Real Experience, Approach, Family, How I Work, Close
+ * COPY UPDATE: Removed quotation marks from pull quote in Section 4 per brand rules.
+ *              All other copy retained as-is. This is the strongest page on the site.
  */
 
 import { useEffect, useRef } from "react";
@@ -175,7 +177,7 @@ export default function About() {
             <RevealDiv delay={200}>
               <div className="border-l-2 border-[#B8974A] pl-6">
                 <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed mb-4">
-                  "The best advice I can give is sometimes to wait. Or to hold. Or to improve the property first. Whatever makes sense for your situation."
+                  The best advice I can give is sometimes to wait. Or to hold. Or to improve the property first. Whatever makes sense for your situation.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/50">Mario Manzano</p>
               </div>
@@ -204,7 +206,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-4xl">
             <RevealDiv delay={100}>
-                 <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
                 I'm married to my high school sweetheart. We have two kids and are now empty nesters. Our son house hacked his first home after college, which was a great experience for both of us.
               </p>
             </RevealDiv>
@@ -309,20 +311,20 @@ export default function About() {
               I help homeowners make decisions with clarity and confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
- <a
-  href={getCTALink("start-conversation", "en")}
-  target="_blank"
-  rel="noopener noreferrer"
-  onClick={() => {
-    if (window.fbq) {
-      window.fbq("track", "Contact");
-    }
-  }}
-  className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
->
-  Start a conversation
-  <ArrowRight size={14} />
-</a>
+              <a
+                href={getCTALink("start-conversation", "en")}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.fbq) {
+                    window.fbq("track", "Contact");
+                  }
+                }}
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+              >
+                Start a conversation
+                <ArrowRight size={14} />
+              </a>
             </div>
           </RevealDiv>
         </div>

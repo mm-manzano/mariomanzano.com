@@ -31,6 +31,11 @@ const routes = [
   '/es/guia-para-propietarios',
   '/es/acerca',
   '/es/contacto',
+  // Legal
+  '/privacy-policy',
+  '/terms-of-service',
+  '/es/privacy-policy',
+  '/es/terms-of-service',
 ];
 
 // Third-party domains that inject scripts into the live DOM at runtime.

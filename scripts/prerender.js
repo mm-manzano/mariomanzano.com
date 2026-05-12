@@ -11,16 +11,26 @@ const PORT = 5173;
 const BASE_URL = `http://localhost:${PORT}`;
 
 const routes = [
+  // English
   '/',
+  '/strategy-hub',
+  '/home-value',
+  '/sell-vs-rent',
+  '/remodel-vs-sell',
+  '/net-sheet',
+  '/homeowner-guide',
   '/about',
   '/contact',
-  '/homeowner-guide',
-  '/selling-process',
+  // Spanish
   '/es',
+  '/es/strategy-hub',
+  '/es/home-value',
+  '/es/sell-vs-rent',
+  '/es/remodel-vs-sell',
+  '/es/net-sheet',
+  '/es/guia-para-propietarios',
   '/es/acerca',
   '/es/contacto',
-  '/es/guia-para-propietarios',
-  '/es/proceso-de-venta',
 ];
 
 // Third-party domains that inject scripts into the live DOM at runtime.

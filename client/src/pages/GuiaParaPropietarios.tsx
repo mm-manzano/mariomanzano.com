@@ -1,10 +1,10 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Guía para Propietarios
- * Contenido extraído de la guía Gamma (Español)
- * Secciones: Héroe, Una Mirada Clara a las Opciones, Preparación vs Venta, Estrategia de Precios, Vender vs Alquilar, Mantener, Vender Tal Cual, Remodelar (Actualizado), Integrando Todo, CTA
- * Optimización: Se agregó Tabla Comparativa, Sección de Preguntas Frecuentes y Esquema JSON-LD para Visibilidad de IA.
- * Corrección: Diseño responsive-first para visibilidad en escritorio y móvil.
- * REFINAMIENTO: Sección de Remodelación actualizada con redacción estratégica de refinanciamiento/capital. Sin guiones largos.
+ * Secciones: Héroe, Una Mirada Clara a las Opciones, Preparación, Estrategia de Precios,
+ *            Vender vs Alquilar, Mantener, Remodelar, Integrando Todo, FAQ, CTA
+ * Optimización: Tabla Comparativa, Sección de Preguntas Frecuentes y Esquema JSON-LD.
+ * COPY UPDATE: Sección 01 reducida, etiquetas de precios corregidas, titular de remodelación
+ *              mejorado, sección de mantener reescrita en prosa, CTA final actualizado.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -14,7 +14,7 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
 
-function useScrollReveal( ) {
+function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -38,7 +38,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-[#E8E0D5] py-6">
-      <button 
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between text-left group focus:outline-none"
       >
@@ -68,7 +68,7 @@ export default function GuiaParaPropietarios() {
         "name": "¿Cuándo debería vender mi casa tal cual (as-is) en Austin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Vender tal cual tiene sentido cuando desea evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto es una compensación: acepta una oferta potencialmente más baja a cambio de una salida más rápida y segura. Es ideal si la propiedad necesita trabajos significativos que usted no está dispuesto a gestionar."
+          "text": "Vender tal cual tiene sentido cuando deseas evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto implica una compensación: aceptas una oferta potencialmente más baja a cambio de una salida más rápida y segura. Es la mejor opción cuando la propiedad necesita trabajos importantes que no estás preparado para gestionar."
         }
       },
       {
@@ -76,7 +76,7 @@ export default function GuiaParaPropietarios() {
         "name": "¿Es mejor alquilar que vender en Leander o Cedar Park?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En nuestro mercado local, alquilar es típicamente una apuesta por la apreciación a largo plazo. Si su tasa hipotecaria actual es significativamente más baja que los alquileres del mercado, puede ser una herramienta poderosa para generar riqueza. Sin embargo, si necesita esa plusvalía para el pago inicial de su próxima casa o desea evitar las responsabilidades de ser arrendador, vender suele ser el movimiento financiero más limpio."
+          "text": "En el mercado de Cedar Park y Leander, alquilar suele ser una estrategia de apreciación a largo plazo. Si tu tasa hipotecaria actual es significativamente más baja que los alquileres del mercado, puede ser una herramienta sólida para construir riqueza. Sin embargo, si necesitas ese capital para el pago inicial de tu próxima casa o quieres evitar las responsabilidades de ser arrendador, vender suele ser el movimiento financiero más limpio."
         }
       },
       {
@@ -84,7 +84,7 @@ export default function GuiaParaPropietarios() {
         "name": "¿Cómo sé si una remodelación realmente aumentará el valor de mi casa?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Enfóquese en limpieza básica, sistemas funcionales y una presentación neutral. Las grandes renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta significativamente la demanda de los compradores o su calidad de vida diaria, es probable que no sea un movimiento estratégico antes de vender."
+          "text": "Enfócate en la limpieza básica, sistemas funcionales y una presentación neutral. Las renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta de manera significativa la demanda de los compradores, probablemente no sea un movimiento estratégico antes de vender."
         }
       },
       {
@@ -92,7 +92,7 @@ export default function GuiaParaPropietarios() {
         "name": "¿Cuál es el mayor riesgo de mantener y no hacer nada?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El riesgo principal es el costo de oportunidad. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento. Mantener es una estrategia válida para obtener claridad, pero no debe usarse para evitar una decisión inevitable."
+          "text": "El riesgo principal es el costo de oportunidad. Aunque mantener evita el estrés inmediato, tu capital permanece ilíquido y sigues pagando impuestos, seguros y mantenimiento. Mantener es válido cuando necesitas claridad, pero no debe usarse para aplazar una decisión que ya tienes en mente."
         }
       },
       {
@@ -100,7 +100,7 @@ export default function GuiaParaPropietarios() {
         "name": "¿Por qué el precio es la decisión más importante en el proceso de venta?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "El precio dicta cómo el mercado percibe su casa. Un precio bajo deja dinero sobre la mesa, mientras que un precio excesivo hace que su casa sea invisible para los compradores calificados. Un precio estratégico posiciona su casa para atraer el interés adecuado de inmediato."
+          "text": "El precio define cómo el mercado percibe tu casa desde el primer día. Un precio bajo deja dinero sobre la mesa. Un precio demasiado alto aleja a los compradores calificados antes de que agenden una visita. Un precio bien posicionado genera el interés correcto de inmediato, antes de que el impulso se pierda."
         }
       }
     ]
@@ -108,13 +108,13 @@ export default function GuiaParaPropietarios() {
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── FAQ SCHEMA ───────────────────────────────────────────── */}
+      {/* FAQ SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ─── PAGE HERO ─────────────────────────────────────────────── */}
+      {/* HERO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-[#1A1A18]/65" />
@@ -142,13 +142,13 @@ export default function GuiaParaPropietarios() {
               <em className="italic">Alquilar o Mantener.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              Orientación para tu próximo paso. Claridad antes de decidir.
+              Una guía en lenguaje claro para las cuatro decisiones que enfrentan los propietarios en Cedar Park y Leander. Sin presión, solo claridad.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ─── A CLEAR LOOK AT YOUR OPTIONS ─────────────────────────── */}
+      {/* UNA MIRADA CLARA A TUS OPCIONES */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -160,25 +160,19 @@ export default function GuiaParaPropietarios() {
               Una mirada clara a tus opciones.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              La mayoría de los propietarios que están considerando una venta quieren claridad antes de comprometerse, especialmente cuando no están seguros de lo que su casa podría venderse de manera realista en el mercado actual.
+              La mayoría de los propietarios solo considera vender. Pero dependiendo de tus objetivos, tu plazo y tu situación financiera, uno de los otros tres caminos podría servirte mejor.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Si bien cada propiedad es diferente, comprender un rango de precios razonable suele ser el primer paso para decidir si vender, remodelar, alquilar o mantener tiene más sentido.
+              Esta guía presenta las cuatro opciones lado a lado para que puedas ver las ventajas y desventajas con claridad antes de comprometerte con cualquier decisión. El camino correcto depende de tu situación, no de una regla general.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Ya sea que aún estés sopesando tus opciones o ya te inclines por vender, ayuda dar un paso atrás y comparar los caminos uno al lado del otro.
-            </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Vender, remodelar, alquilar o mantener pueden tener sentido dependiendo de tus objetivos, plazos y nivel de estrés. La clave es comprender qué dirección se adapta realmente a tu situación.
-            </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
-              Esta guía ralentiza la decisión, expone claramente las ventajas y desventajas, y te ayuda a evitar movimientos innecesarios o costosos antes de comprometerte.
+              Tómate el tiempo que necesitas. Una decisión de este tamaño merece más que unas pocas horas de investigación.
             </p>
 
-            {/* ─── COMPARISON TABLE ─────────────────────────────────── */}
+            {/* TABLA COMPARATIVA */}
             <div className="mt-16 w-full">
               <div className="bg-white border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
-                <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">La Estrategia de los Cuatro Caminos</h3>
+                <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">Los Cuatro Caminos de un Vistazo</h3>
                 <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
                   <table className="w-full text-left border-collapse min-w-[700px]">
                     <thead>
@@ -200,9 +194,9 @@ export default function GuiaParaPropietarios() {
                       </tr>
                       <tr className="border-b border-[#F8F5F0]">
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Remodelar</td>
-                        <td className="py-6 pr-4">Tu casa tiene buena estructura pero necesita actualizaciones para funcionar mejor según tus necesidades.</td>
-                        <td className="py-6 pr-4">Mejora de la calidad de vida y posible aumento del valor de reventa. En algunos casos, también puede crear la opción de acceder al capital para un futuro movimiento.</td>
-                        <td className="py-6 pr-4">Altos costos iniciales; las mejoras de lujo rara vez recuperan el 100% de la inversión.</td>
+                        <td className="py-6 pr-4">Tu casa tiene buena estructura pero necesita actualizaciones para funcionar mejor.</td>
+                        <td className="py-6 pr-4">Mejora de la calidad de vida y posible aumento del valor de reventa. En algunos casos, puede crear la opción de acceder al capital para un futuro movimiento.</td>
+                        <td className="py-6 pr-4">Altos costos iniciales. Las mejoras de lujo rara vez recuperan el 100% de la inversión.</td>
                         <td className="py-6">Propietarios que aman su ubicación pero quieren que su casa funcione mejor.</td>
                       </tr>
                       <tr className="border-b border-[#F8F5F0]">
@@ -216,7 +210,7 @@ export default function GuiaParaPropietarios() {
                         <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Mantener</td>
                         <td className="py-6 pr-4">Necesitas más tiempo para decidir o las condiciones del mercado no favorecen tus objetivos.</td>
                         <td className="py-6 pr-4">Evita los costos de transacción y permite mayor claridad antes de actuar.</td>
-                        <td className="py-6 pr-4">El capital permanece inmovilizado; impuestos, seguros y mantenimiento continuos.</td>
+                        <td className="py-6 pr-4">El capital permanece inmovilizado. Impuestos, seguros y mantenimiento continúan.</td>
                         <td className="py-6">Propietarios que no están bajo presión y valoran la certeza sobre la velocidad.</td>
                       </tr>
                     </tbody>
@@ -228,7 +222,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── PREPARING VS SELLING ─────────────────────────────────── */}
+      {/* PREPARACIÓN */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>
@@ -240,34 +234,34 @@ export default function GuiaParaPropietarios() {
               Conoce la diferencia antes de listar.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
-              Antes de listar tu casa, es importante entender cuándo la preparación tiene sentido financiero y cuándo no. Muchos vendedores gastan dinero en reparaciones y mejoras que no aumentan significativamente el valor o la demanda del comprador.
+              Muchos vendedores gastan dinero en reparaciones y mejoras que no aumentan de manera significativa el valor o la demanda del comprador. Antes de empezar a gastar, ayuda entender qué mueve la aguja y qué no.
             </p>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <RevealDiv delay={100} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4 text-[#B8974A]">Lo que Importa</h3>
+              <h3 className="font-display text-xl font-light mb-4 text-[#B8974A]">Lo que Importa</h3>
               <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
-                La limpieza básica, los sistemas funcionales y una presentación neutral ayudan a los compradores a imaginarse en el espacio.
+                La limpieza básica, los sistemas funcionales y una presentación neutral ayudan a los compradores a imaginarse en el espacio sin distracciones.
               </p>
             </RevealDiv>
             <RevealDiv delay={200} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4 text-[#B8974A]">Lo que No Importa</h3>
+              <h3 className="font-display text-xl font-light mb-4 text-[#B8974A]">Lo que No Importa</h3>
               <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
-                Las renovaciones importantes, las mejoras de lujo y los proyectos de gusto personal rara vez ofrecen un retorno completo de la inversión.
+                Las renovaciones grandes, las mejoras de lujo y los proyectos de gusto personal rara vez ofrecen un retorno completo de la inversión antes de una venta.
               </p>
             </RevealDiv>
             <RevealDiv delay={300} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4 text-[#B8974A]">Pregúntate</h3>
+              <h3 className="font-display text-xl font-light mb-4 text-[#B8974A]">La Pregunta Correcta</h3>
               <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
-                ¿Esta mejora aumentará significativamente el interés del comprador o los ingresos netos? Si la respuesta no es clara, reconsidera.
+                ¿Esta mejora aumentará de manera significativa el interés del comprador o tus ingresos netos? Si la respuesta no es clara, probablemente no vale la pena hacerla.
               </p>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── PRICING STRATEGY ─────────────────────────────────────── */}
+      {/* ESTRATEGIA DE PRECIOS */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -277,14 +271,14 @@ export default function GuiaParaPropietarios() {
                 <span className="section-number">03. Precios</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-                Tu decisión <br />
+                Tu decisión<br />
                 <em className="italic">más importante.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-                Ponerle precio a tu casa correctamente es una de las decisiones más importantes que tomarás. Afecta tanto cómo se percibe tu casa como el resultado que finalmente obtengas.
+                El precio que eliges para tu casa define todo lo que sigue. Afecta cómo la perciben los compradores, con qué rapidez recibes ofertas y lo que finalmente te llevas.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                El precio correcto no se trata de perseguir el mercado o maximizar cada dólar. Se trata de posicionar tu casa donde debe estar.
+                El precio correcto no es el número más alto que puedas justificar. Es el número que te pone frente a los compradores correctos en el momento correcto.
               </p>
             </RevealDiv>
 
@@ -292,13 +286,13 @@ export default function GuiaParaPropietarios() {
               <RevealDiv delay={150} className="border-l-2 border-[#B8974A] pl-8">
                 <h3 className="font-display text-xl font-light text-[#1A1A18] mb-2">Riesgo de Subvaloración</h3>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
-                  Vender demasiado bajo significa dejar dinero sobre la mesa. Los compradores pueden preguntarse si hay algo mal con la propiedad.
+                  Poner un precio demasiado bajo deja dinero sobre la mesa. También puede hacer que los compradores se pregunten si hay algo malo con la propiedad, lo que invita a ofertas más bajas y negociaciones más difíciles.
                 </p>
               </RevealDiv>
               <RevealDiv delay={250} className="border-l-2 border-[#B8974A] pl-8">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-2">Precios Reflexivos</h3>
+                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-2">Riesgo de Sobrevaloración</h3>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
-                  Empezar demasiado alto puede hacer que tu casa sea invisible para la mayoría de los compradores y llevar a reducciones que señalen angustia.
+                  Empezar demasiado alto aleja a la mayoría de los compradores calificados antes de que agenden una visita. Las reducciones de precio que siguen transmiten desesperación y rara vez recuperan el impulso original.
                 </p>
               </RevealDiv>
             </div>
@@ -306,7 +300,7 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── SELLING VS RENTING ───────────────────────────────────── */}
+      {/* VENDER VS ALQUILAR */}
       <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
         <div className="container">
           <RevealDiv>
@@ -315,7 +309,7 @@ export default function GuiaParaPropietarios() {
               <span className="section-number text-[#B8974A]">04. Estrategia</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-12 max-w-2xl">
-              Comprendiendo tus ventajas y desventajas.
+              Comprendiendo tus compensaciones.
             </h2>
           </RevealDiv>
 
@@ -323,26 +317,26 @@ export default function GuiaParaPropietarios() {
             <RevealDiv delay={100}>
               <h3 className="font-display text-2xl font-light text-[#B8974A] mb-6">La Realidad de Alquilar</h3>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                Mantener tu casa como alquiler conlleva una responsabilidad continua. Tendrás que encargarte de la selección de inquilinos, el mantenimiento, la gestión de la propiedad y los períodos de vacancia.
+                Conservar tu casa como alquiler significa asumir una responsabilidad continua. La selección de inquilinos, el mantenimiento, la administración de la propiedad y los periodos de vacancia forman parte de la ecuación.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                En nuestro mercado local, alquilar es a menudo más una estrategia de capital y apreciación a largo plazo que una estrategia de flujo de caja fuerte. Tiende a tener más sentido cuando tu pago es bajo en relación con los alquileres.
+                En el mercado de Cedar Park y Leander, alquilar tiende a ser más una estrategia de capital y apreciación a largo plazo que una fuente de flujo de caja inmediato. Tiene más sentido cuando tu pago hipotecario es bajo en relación con lo que podría rentar la propiedad.
               </p>
             </RevealDiv>
             <RevealDiv delay={200}>
               <h3 className="font-display text-2xl font-light text-[#B8974A] mb-6">La Realidad de Vender</h3>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                Vender proporciona liquidez y te libera de la responsabilidad continua de la propiedad. Ya no estás atado a la casa, ni eres responsable de reparaciones o de la gestión de inquilinos.
+                Vender te da liquidez y te libera de la responsabilidad continua de ser propietario. Sin más reparaciones, inquilinos ni costos de tenencia relacionados con esa propiedad.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                La desventaja es renunciar a la apreciación futura y a los posibles ingresos por alquiler. Una vez vendida, ya no participas en las futuras ganancias del mercado ligadas a la propiedad.
+                La compensación es renunciar a la apreciación futura. Una vez vendida la casa, ya no participas en ninguna ganancia del mercado relacionada con esa propiedad.
               </p>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── REMODEL (UPDATED STRATEGIC WORDING) ──────────────────── */}
+      {/* REMODELAR */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -351,28 +345,28 @@ export default function GuiaParaPropietarios() {
               <span className="section-number">05. Remodelar</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
-              Más que solo <br />
-              <em className="italic">simplemente remodelar.</em>
+              Cuando remodelar<br />
+              <em className="italic">realmente tiene sentido.</em>
             </h2>
             <div className="max-w-2xl space-y-6">
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Remodelar puede ser una forma de hacer que tu hogar actual funcione mejor para tus necesidades o de posicionarlo mejor para la reventa. Para muchos propietarios, esto significa mejorar la distribución, actualizar áreas clave o abordar problemas funcionales que afectan la vida diaria o la percepción del comprador.
-              </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed font-medium text-[#1A1A18]">
-                Algunos propietarios abordan este momento de manera diferente.
+                Remodelar puede ayudar a que tu casa funcione mejor para tu vida actual o posicionarla de manera más competitiva para la venta. La clave es saber qué mejoras realmente mueven la aguja y cuáles simplemente cuestan dinero.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Una remodelación estratégica combinada con un refinanciamiento puede, en ciertas situaciones, reposicionar la propiedad para un uso o resultado diferente, o liberar capital para el próximo movimiento.
+                En la mayoría de los casos, las actualizaciones funcionales y una presentación neutral superan a las renovaciones de lujo en términos de retorno de inversión. Los compradores pagan por condición y ubicación, no por el gusto personal del vendedor.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Como cualquier camino, el valor de la remodelación depende de tus objetivos, plazos y de cómo resulten los números.
+                Para algunos propietarios, una remodelación estratégica combinada con un refinanciamiento puede abrir opciones que antes no estaban disponibles, incluyendo acceder al capital para el próximo movimiento o reposicionar la propiedad para un uso diferente.
+              </p>
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Como cualquier camino, esto solo tiene sentido cuando los números lo respaldan. Vale la pena analizarlo antes de comprometerse con cualquier cosa.
               </p>
             </div>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── HOLDING ─────────────────────────────────────────────── */}
+      {/* MANTENER */}
       <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container">
           <RevealDiv>
@@ -384,33 +378,28 @@ export default function GuiaParaPropietarios() {
               No hacer nada puede ser estratégico.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
-              Mantener tu propiedad no es procrastinación. Puede ser una estrategia válida cuando necesitas claridad o cuando las condiciones del mercado no favorecen tus objetivos.
+              Mantener tu propiedad no es procrastinación si hay una razón detrás de esa decisión. Esperar mayor claridad o mejores condiciones del mercado es una opción legítima. Lo importante es entender lo que realmente te está costando mientras esperas.
             </p>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <RevealDiv delay={100}>
               <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">Esperar Tiene Sentido Cuando</h3>
-              <ul className="font-body text-sm text-[#1A1A18]/65 leading-relaxed space-y-3 list-disc pl-5">
-                <li>Necesitas tiempo para decidir tu próximo movimiento</li>
-                <li>Prefieres esperar hasta que las condiciones sean más favorables</li>
-                <li>No estás listo para comprometerte a vender o alquilar</li>
-              </ul>
+              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                Necesitas tiempo para definir tu próximo paso. No estás bajo presión financiera para actuar. Las condiciones del mercado no se alinean con tus objetivos actuales. Quieres más certeza antes de comprometerte con cualquier dirección.
+              </p>
             </RevealDiv>
             <RevealDiv delay={200}>
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">Considera los Costos</h3>
-              <ul className="font-body text-sm text-[#1A1A18]/65 leading-relaxed space-y-3 list-disc pl-5">
-                <li>Tu capital permanece inmovilizado en la casa</li>
-                <li>Mantenimiento continuo y costos de tenencia</li>
-                <li>Es imposible predecir el momento futuro del mercado</li>
-                <li>Sigues siendo responsable de los impuestos a la propiedad y el seguro</li>
-              </ul>
+              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">El Costo de Esperar</h3>
+              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                Tu capital permanece bloqueado en la propiedad mientras pagas impuestos, seguros y mantenimiento. El momento del mercado en el futuro no es predecible, y mantener indefinidamente no es una estrategia, es un aplazamiento. Asegúrate de saber la diferencia.
+              </p>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── PUTTING IT TOGETHER ─────────────────────────────────── */}
+      {/* INTEGRANDO TODO */}
       <section className="py-20 md:py-32">
         <div className="container">
           <RevealDiv>
@@ -419,16 +408,16 @@ export default function GuiaParaPropietarios() {
               <span className="section-number">07. Resumen</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
-              La mejor elección depende de cuatro factores clave.
+              La mejor elección depende de cuatro cosas.
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Tus Objetivos", desc: "¿Qué intentas lograr? ¿Más espacio, flexibilidad financiera o planificación para la jubilación?" },
-              { title: "Tu Plazo", desc: "¿Cuándo necesitas tomar una decisión? ¿Estás bajo presión o tienes tiempo?" },
-              { title: "Tu Condición", desc: "¿En qué estado se encuentra tu propiedad? ¿Problemas importantes, actualizaciones menores o lista para mudarse?" },
-              { title: "Tu Capacidad", desc: "¿Cuánto esfuerzo e incertidumbre estás dispuesto a manejar?" }
+              { title: "Tus Objetivos", desc: "¿Qué estás tratando de lograr realmente? ¿Más espacio, flexibilidad financiera, planificación para la jubilación o algo completamente diferente?" },
+              { title: "Tu Plazo", desc: "¿Tienes tiempo para ser paciente o necesitas moverte dentro de una ventana específica? Eso cambia el análisis de cada opción." },
+              { title: "Tu Propiedad", desc: "¿En qué condición está? Una casa que necesita trabajo importante tiene un conjunto de opciones diferente a una que está lista para mudarse." },
+              { title: "Tu Capacidad", desc: "¿Cuánto tiempo, dinero e incertidumbre estás dispuesto a asumir? Cada camino tiene un costo más allá del financiero." }
             ].map((item, i) => (
               <RevealDiv key={item.title} delay={i * 100} className="border-t border-[#E8E0D5] pt-6">
                 <h3 className="font-display text-lg font-light text-[#B8974A] mb-3">{item.title}</h3>
@@ -439,52 +428,52 @@ export default function GuiaParaPropietarios() {
         </div>
       </section>
 
-      {/* ─── FAQ SECTION ───────────────────────────────────────────── */}
+      {/* PREGUNTAS FRECUENTES */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container max-w-3xl">
           <RevealDiv>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-12 text-center">
-              Preguntas Comunes y Claridad
+              Preguntas Comunes
             </h2>
             <div className="space-y-2">
-              <FAQItem 
-                question="¿Cuándo debería vender mi casa tal cual (as-is) en Austin?" 
-                answer="Vender tal cual tiene sentido cuando desea evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto es una compensación: acepta una oferta potencialmente más baja a cambio de una salida más rápida y segura."
+              <FAQItem
+                question="¿Cuándo debería vender mi casa tal cual (as-is) en Austin?"
+                answer="Vender tal cual tiene sentido cuando deseas evitar el tiempo, el estrés y el costo inicial de las reparaciones. En el mercado de Austin, esto implica una compensación: aceptas una oferta potencialmente más baja a cambio de una salida más rápida y segura. Es la mejor opción cuando la propiedad necesita trabajos importantes que no estás preparado para gestionar."
               />
-              <FAQItem 
-                question="¿Es mejor alquilar que vender en Leander o Cedar Park?" 
-                answer="En nuestro mercado local, alquilar es típicamente una apuesta por la apreciación a largo plazo. Si su tasa hipotecaria actual es significativamente más baja que los alquileres del mercado, puede ser una herramienta poderosa para generar riqueza."
+              <FAQItem
+                question="¿Es mejor alquilar que vender en Leander o Cedar Park?"
+                answer="En el mercado de Cedar Park y Leander, alquilar suele ser una estrategia de apreciación a largo plazo. Si tu tasa hipotecaria es significativamente más baja que los alquileres del mercado, puede ser una herramienta sólida para construir riqueza. Sin embargo, si necesitas ese capital para tu próxima casa o quieres evitar ser arrendador, vender suele ser el movimiento financiero más limpio."
               />
-              <FAQItem 
-                question="¿Cómo sé si una remodelación realmente aumentará el valor de mi casa?" 
-                answer="Enfóquese en limpieza básica, sistemas funcionales y una presentación neutral. Las grandes renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta significativamente la demanda de los compradores, es probable que no sea estratégica."
+              <FAQItem
+                question="¿Cómo sé si una remodelación realmente aumentará el valor de mi casa?"
+                answer="Enfócate en la limpieza básica, sistemas funcionales y una presentación neutral. Las renovaciones de lujo rara vez recuperan su costo total. Si la mejora no aumenta de manera significativa la demanda de los compradores, probablemente no sea el movimiento correcto antes de vender."
               />
-              <FAQItem 
-                question="¿Cuál es el mayor riesgo de mantener y no hacer nada?" 
-                answer="El riesgo principal es el costo de oportunidad. Aunque mantener la propiedad evita el estrés inmediato, su capital permanece ilíquido y usted sigue incurriendo en gastos de impuestos, seguros y mantenimiento."
+              <FAQItem
+                question="¿Cuál es el mayor riesgo de mantener y no hacer nada?"
+                answer="El riesgo principal es el costo de oportunidad. Tu capital permanece ilíquido y sigues pagando impuestos, seguros y mantenimiento. Mantener es válido cuando necesitas claridad, pero no debe usarse para aplazar una decisión que ya tienes en mente."
               />
-              <FAQItem 
-                question="¿Por qué el precio es la decisión más importante en el proceso de venta?" 
-                answer="El precio dicta cómo el mercado percibe su casa. Un precio bajo deja dinero sobre la mesa, mientras que un precio excesivo hace que su casa sea invisible para los compradores calificados."
+              <FAQItem
+                question="¿Por qué el precio es la decisión más importante en el proceso de venta?"
+                answer="El precio define cómo el mercado percibe tu casa desde el primer día. Un precio bajo deja dinero sobre la mesa. Uno demasiado alto aleja a los compradores calificados antes de que agenden una visita. Un precio bien posicionado genera el interés correcto de inmediato, antes de que el impulso se pierda."
               />
             </div>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── FINAL CTA ─────────────────────────────────────────────── */}
+      {/* CTA FINAL */}
       <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container text-center">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
-              ¿Listo para explorar tus opciones?
+              ¿No estás seguro de qué camino se adapta a tu situación?
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
-              Si deseas hablar sobre tu situación o comprender lo que tu casa podría venderse o alquilarse de manera realista, estoy disponible.
+              Puedo ayudarte a analizar los números de cada opción y determinar cuál tiene sentido para donde estás ahora. Sin presión, solo una conversación real.
             </p>
             <a href={getCTALink("get-plan", "es")}>
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
-                Obtener un plan
+                Iniciar una Conversación
                 <ArrowRight size={14} />
               </span>
             </a>

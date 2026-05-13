@@ -58,7 +58,31 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
+function setPageMeta(title: string, description: string, url: string) {
+  document.title = title;
+  const setMeta = (name: string, content: string, property = false) => {
+    const attr = property ? "property" : "name";
+    let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+    if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+    el.setAttribute("content", content);
+  };
+  setMeta("description", description);
+  setMeta("og:title", title, true);
+  setMeta("og:description", description, true);
+  setMeta("og:url", url, true);
+  setMeta("og:type", "website", true);
+  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+}
+
 export default function GuiaParaPropietarios() {
+  useEffect(() => {
+    setPageMeta(
+      "Guía para Propietarios: Vender, Remodelar, Alquilar o Mantener | Cedar Park y Leander TX",
+      "Guía en lenguaje claro para propietarios en Cedar Park y Leander TX. Entiende las cuatro opciones para tu casa antes de tomar cualquier decisión. Sin presión, solo claridad.",
+      "https://mariomanzano.com/es/guia-para-propietarios"
+    );
+  }, []);
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

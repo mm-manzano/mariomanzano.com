@@ -1,11 +1,9 @@
 /*
- * DESIGN: Quiet Luxury Editorial - Contact / Consultation Page (Spanish)
- * Goal: Conversion-focused with primary CTA button above the fold
- * Structure: Hero with primary CTA → Secondary options → Reassurance
- * NO FORMS - Direct contact channels only
+ * DESIGN: Quiet Luxury Editorial - Página de Contacto (Español)
+ * FINAL: Meta tags, Open Graph, ContactPage schema, copy en español.
  */
 
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
@@ -15,7 +13,6 @@ const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do5
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -26,7 +23,6 @@ function useScrollReveal() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
-  
   return ref;
 }
 
@@ -35,10 +31,54 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
   return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
+function setPageMeta(title: string, description: string, url: string) {
+  document.title = title;
+  const setMeta = (name: string, content: string, property = false) => {
+    const attr = property ? "property" : "name";
+    let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+    if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+    el.setAttribute("content", content);
+  };
+  setMeta("description", description);
+  setMeta("og:title", title, true);
+  setMeta("og:description", description, true);
+  setMeta("og:url", url, true);
+  setMeta("og:type", "website", true);
+  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+}
+
 export default function ContactES() {
+  useEffect(() => {
+    setPageMeta(
+      "Contactar a Mario Manzano | Agente de Bienes Raíces en Cedar Park y Leander TX",
+      "Contacta a Mario Manzano, REALTOR® en Cedar Park y Leander TX. Sin presión, sin discurso de ventas. Solo una conversación real sobre tu casa y tus opciones.",
+      "https://mariomanzano.com/es/contacto"
+    );
+  }, []);
+
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contactar a Mario Manzano",
+    "url": "https://mariomanzano.com/es/contacto",
+    "description": "Contacta a Mario Manzano, REALTOR® licenciado y estratega de ventas en Cedar Park y Leander, Texas.",
+    "mainEntity": {
+      "@type": "RealEstateAgent",
+      "name": "Mario Manzano",
+      "telephone": "+1-512-695-9255",
+      "email": "realtor@mariomanzano.com",
+      "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"]
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
-      {/* ─── HERO SECTION WITH PRIMARY CTA ──────────────────────────── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+
+      {/* HERO */}
       <section className="relative pt-24 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         <div className="absolute inset-0">
           <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
@@ -52,37 +92,40 @@ export default function ContactES() {
                 <em className="italic">conversación.</em>
               </h1>
               <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed mb-10">
-                Comunícate conmigo y te ayudaré a pensar tus opciones y lo que realmente tiene sentido para tu situación. Sin presión. Solo claridad.
+                Contáctame y te ayudaré a pensar en tus opciones y en lo que realmente tiene sentido para tu situación. Sin presión. Solo claridad.
               </p>
-              
-              {/* PRIMARY CTA BUTTON */}
-              <a href={getCTALink("start-conversation", "es")}>
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-2 md:gap-3 text-sm md:text-lg">
-                  Iniciar una Conversación
-                  <ArrowRight size={16} className="md:w-[18px] md:h-[18px]" />
-                </span>
+              <a
+                href={getCTALink("start-conversation", "es")}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.fbq) { window.fbq("track", "Contact"); }
+                }}
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+              >
+                Iniciar una conversación
+                <ArrowRight size={14} />
               </a>
             </RevealDiv>
           </div>
         </div>
       </section>
 
-      {/* ─── SECONDARY CONTACT OPTIONS ─────────────────────────────── */}
+      {/* OPCIONES DE CONTACTO */}
       <section className="py-16 md:py-20 bg-[#F8F5F0]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">O comunícate directamente</span>
+              <span className="section-number">O contáctame directamente</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-10 max-w-2xl">
-              Elige lo que funcione<br />
-              <em className="italic">mejor para ti.</em>
+              Elige lo que<br />
+              <em className="italic">funcione para ti.</em>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 max-w-3xl">
-            {/* Call or Text */}
             <RevealDiv delay={100}>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
@@ -93,13 +136,12 @@ export default function ContactES() {
                     (512) 695-9255
                   </a>
                   <p className="font-body text-sm text-[#1A1A18]/65">
-                    Llama o envía un mensaje
+                    Llama o manda un mensaje cuando quieras
                   </p>
                 </div>
               </div>
             </RevealDiv>
 
-            {/* Send a Message */}
             <RevealDiv delay={150}>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
@@ -108,18 +150,17 @@ export default function ContactES() {
                 <div>
                   <a
                     href="sms:+15126959255?body=Hola%20Mario,%20tengo%20una%20pregunta%20sobre%20mi%20casa."
-                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block"
+                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A]"
                   >
-                    Enviar un Mensaje
+                    Enviar un mensaje
                   </a>
                   <p className="font-body text-sm text-[#1A1A18]/65">
-                    Respondo dentro de 24 horas
+                    Respondo en menos de 24 horas
                   </p>
                 </div>
               </div>
             </RevealDiv>
 
-            {/* Email */}
             <RevealDiv delay={200}>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
@@ -130,7 +171,7 @@ export default function ContactES() {
                     realtor@mariomanzano.com
                   </a>
                   <p className="font-body text-sm text-[#1A1A18]/65">
-                    Envía un correo en cualquier momento
+                    Escríbeme cuando quieras
                   </p>
                 </div>
               </div>
@@ -139,7 +180,7 @@ export default function ContactES() {
         </div>
       </section>
 
-      {/* ─── EXPECTATION SETTING ───────────────────────────────────── */}
+      {/* QUÉ ESPERAR */}
       <section className="py-16 md:py-20">
         <div className="container">
           <RevealDiv>
@@ -149,16 +190,16 @@ export default function ContactES() {
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6 max-w-2xl">
               Una conversación,<br />
-              <em className="italic">no una venta.</em>
+              <em className="italic">no una llamada de ventas.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              Nuestra primera conversación es simple. Haré algunas preguntas, entenderé tu situación y te daré una dirección clara basada en tus objetivos. Sin discurso de ventas. Sin presión.
+              Nuestra primera conversación es simple. Te haré algunas preguntas, entenderé tu situación y te daré una dirección clara basada en tus objetivos. Sin discurso de ventas. Sin presión. Si vender tiene sentido, te lo digo. Si no lo tiene, también te lo digo.
             </p>
           </RevealDiv>
         </div>
       </section>
 
-      {/* ─── REASSURANCE STRIP ─────────────────────────────────────── */}
+      {/* FRANJA DE CONFIANZA */}
       <section
         className="py-16 relative"
         style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover" }}
@@ -169,14 +210,14 @@ export default function ContactES() {
             <RevealDiv>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" style={{ background: "#D4B878" }} />
-                <span className="section-number">Por Qué Elegir a Mario</span>
+                <span className="section-number" style={{ color: "#D4B878" }}>Sirviendo Cedar Park y Leander TX</span>
               </div>
               <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-6">
-                Un asesor que escucha,<br />
+                Un agente que escucha,<br />
                 <em className="italic">no solo vende.</em>
               </h2>
               <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
-                Primero entiendo tu situación, luego te guío hacia la opción que realmente tiene sentido.
+                Trabajo con propietarios en Cedar Park, Leander y el área de Austin que quieren claridad antes de comprometerse con cualquier decisión. Ya sea que estés pensando en vender, alquilar, remodelar o mantener, la conversación siempre empieza de la misma manera: con tu situación, no con un discurso de ventas.
               </p>
             </RevealDiv>
           </div>

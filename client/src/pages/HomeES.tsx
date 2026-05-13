@@ -71,8 +71,31 @@ function AccordionItem({ title, children, isOpen, onClick }: { title: string; ch
   );
 }
 
+function setPageMeta(title: string, description: string, url: string) {
+  document.title = title;
+  const setMeta = (name: string, content: string, property = false) => {
+    const attr = property ? "property" : "name";
+    let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+    if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+    el.setAttribute("content", content);
+  };
+  setMeta("description", description);
+  setMeta("og:title", title, true);
+  setMeta("og:description", description, true);
+  setMeta("og:url", url, true);
+  setMeta("og:type", "website", true);
+  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+}
+
 export default function HomeES() {
   const [openStep, setOpenStep] = useState<number | null>(null);
+  useEffect(() => {
+    setPageMeta(
+      "Agente de Bienes Raíces en Cedar Park y Leander TX | Mario Manzano",
+      "Mario Manzano ayuda a propietarios en Cedar Park y Leander TX a entender todas sus opciones antes de tomar una decisión. Vender, remodelar, alquilar o mantener. Sin presión.",
+      "https://mariomanzano.com/es"
+    );
+  }, []);
 
   const localBusinessSchema = {
     "@context": "https://schema.org",

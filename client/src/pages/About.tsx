@@ -1,9 +1,9 @@
 /*
- * DESIGN: Quiet Luxury Editorial - About Page
+ * DESIGN: Quiet Luxury Editorial - About Page (Spanish)
  * Goal: Personal, real, based on lived experience
  * Sections: Intro, How It Started, Real Experience, Approach, Family, How I Work, Close
- * COPY UPDATE: Removed quotation marks from pull quote in Section 4 per brand rules.
- *              All other copy retained as-is. This is the strongest page on the site.
+ * COPY UPDATE: Natural Spanish phrasing, consistent principles with English version,
+ *              minor improvements throughout for clarity and voice consistency.
  */
 
 import { useEffect, useRef } from "react";
@@ -51,12 +51,12 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
 }
 
-export default function About() {
+export default function AboutES() {
   useEffect(() => {
     setPageMeta(
-      "About Mario Manzano | Cedar Park & Leander TX Realtor | Seller Strategist",
-      "Mario Manzano is a licensed REALTOR® and Seller Strategist based in Leander TX. Learn his story, his investing background, and his approach to helping homeowners make clear decisions.",
-      "https://mariomanzano.com/about"
+      "Acerca de Mario Manzano | Agente de Bienes Raíces en Leander TX",
+      "Mario Manzano es un REALTOR® licenciado y estratega de ventas en Leander TX. Conoce su historia, su experiencia en inversiones y su enfoque para ayudar a propietarios a tomar decisiones claras.",
+      "https://mariomanzano.com/es/acerca"
     );
   }, []);
 
@@ -64,8 +64,8 @@ export default function About() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Mario Manzano",
-    "jobTitle": "REALTOR® and Seller Strategist",
-    "url": "https://mariomanzano.com/about",
+    "jobTitle": "REALTOR® y Estratega de Ventas",
+    "url": "https://mariomanzano.com/es/acerca",
     "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg",
     "telephone": "+1-512-695-9255",
     "email": "realtor@mariomanzano.com",
@@ -89,15 +89,15 @@ export default function About() {
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
-                About Mario
+                Acerca de Mario
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              The Advisor<br />
-              <em className="italic">Behind the Strategy.</em>
+              El Asesor<br />
+              <em className="italic">Detrás de la Estrategia.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              A licensed REALTOR® who believes the best real estate advice sometimes means telling you not to sell.
+              Un REALTOR® licenciado que cree que el mejor consejo inmobiliario a veces significa decirte que no vendas.
             </p>
           </div>
         </div>
@@ -122,26 +122,26 @@ export default function About() {
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01. How It Started</span>
+                <span className="section-number">01. Cómo Empezó</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
-                From debt to<br />
-                <em className="italic">real estate.</em>
+                De la deuda a<br />
+                <em className="italic">bienes raíces.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I found Dave Ramsey while I was thousands in debt. That changed everything. I committed to getting out of debt, saved aggressively, and changed how I thought about money.
+                Encontré a Dave Ramsey mientras estaba miles de dólares en deuda. Eso lo cambió todo. Me comprometí a salir de la deuda, ahorré con disciplina y cambié la forma en que pensaba sobre el dinero.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Once I got out of debt, I wanted financial independence. As I started researching what to do next, everything kept pointing back to real estate.
+                Una vez que salí de la deuda, quería independencia financiera. Mientras investigaba qué hacer a continuación, todo seguía apuntando hacia bienes raíces.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I spent time on BiggerPockets, read books, and started understanding how people actually build wealth through investing.
+                Pasé tiempo en BiggerPockets, leí libros y empecé a entender cómo la gente realmente construye riqueza a través de las inversiones inmobiliarias.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                That research led me to get licensed as a REALTOR®. But more importantly, it changed how I approached investing, pushed me to keep building my portfolio, and allowed me to help others navigate their own real estate decisions.
+                Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante es que cambió cómo abordo las inversiones, me impulsó a seguir construyendo mi cartera y me permitió ayudar a otros a tomar sus propias decisiones inmobiliarias con claridad.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Real estate has always been around me. My parents and siblings are all landlords.
+                Los bienes raíces siempre han sido parte de mi vida. Mis padres y hermanos son todos propietarios de inmuebles.
               </p>
             </RevealDiv>
           </div>
@@ -154,36 +154,36 @@ export default function About() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="section-number text-[#D4B878]">02. Real Experience</span>
+              <span className="section-number text-[#D4B878]">02. Experiencia Real</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-12 max-w-2xl">
-              I've lived through<br />
-              <em className="italic">the decisions.</em>
+              He vivido en carne propia<br />
+              <em className="italic">estas decisiones.</em>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 max-w-4xl items-start">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I didn't learn real estate from courses alone. I've had to make the decisions myself.
+                No aprendí bienes raíces solo de cursos. He tenido que tomar estas decisiones yo mismo.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I've wholesaled properties, bought deals off-market, flipped land, and taken on projects like demoing a property and selling the land. I've also done live-in flips, owned rentals, and been a landlord for about a decade. I've used DSCR loans in my own investing, so I understand how deals are evaluated based on the property's performance, not just personal income.
+                He comprado y vendido propiedades, conseguido negocios fuera del mercado, vendido terrenos y tomado proyectos como demoler una propiedad y vender el lote. También he hecho renovaciones viviendo en la propiedad, tenido alquileres y sido propietario durante casi una década. He usado préstamos DSCR en mis propias inversiones, así que entiendo cómo se evalúa un negocio según el rendimiento de la propiedad, no solo los ingresos personales.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                My wife and I built and ran an Airbnb. We renovated and furnished it ourselves and became a 5-star host. When it stopped performing, we shut it down and moved to long-term renting, which worked better.
+                Mi esposa y yo construimos y operamos un Airbnb. Lo renovamos y amueblamos nosotros mismos y nos convertimos en anfitriones de 5 estrellas. Cuando dejó de rendir, lo cerramos y cambiamos al alquiler a largo plazo, que funcionó mejor.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                A big part of how we approach homes comes from our eye for design. She's especially strong in this area. From our Airbnb to our own home, properties we've sold, and the clients we've helped, we've been hands-on with design, layout, and presentation. That shows up in how we help clients prepare and present their homes in a way that connects with buyers.
+                Parte de cómo abordamos las propiedades viene de nuestro ojo para el diseño. Ella es especialmente fuerte en esa área. Desde nuestro Airbnb hasta nuestra propia casa, propiedades que hemos vendido y clientes que hemos ayudado, hemos estado directamente involucrados en el diseño, la distribución y la presentación. Eso se refleja en cómo ayudamos a los clientes a preparar y presentar sus casas de una manera que conecta con los compradores.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                That includes everything from full remodel decisions to simple changes like furniture placement, organization, and finishing touches that make a home feel right to buyers.
+                Eso incluye desde decisiones de renovación completa hasta cambios simples como la colocación de muebles, la organización y los detalles finales que hacen que una casa se sienta bien para quien la visita.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
-                These were real decisions with real consequences. The kind you don't forget, and the kind that change how you guide others.
+                Fueron decisiones reales con consecuencias reales. El tipo que no se olvida, y el tipo que cambia cómo guías a otros.
               </p>
             </RevealDiv>
           </div>
@@ -196,28 +196,28 @@ export default function About() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03. My Approach</span>
+              <span className="section-number">03. Mi Enfoque</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
-              Selling isn't always<br />
-              <em className="italic">the best move.</em>
+              Vender no siempre es<br />
+              <em className="italic">la mejor opción.</em>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
-                Most people feel pressured to make a quick decision about their home. They're not sure what their options are. They don't have clear numbers. So they rush.
+                La mayoría de las personas se sienten presionadas a tomar una decisión rápida sobre su casa. No saben cuáles son sus opciones. No tienen números claros. Entonces actúan de prisa.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                I help people think through their decisions instead of pushing them. Holding can create more value than selling. Renting can make more sense than selling. Improving the property first can change everything.
+                Ayudo a las personas a pensar bien sus decisiones en lugar de empujarlas. Conservar puede crear más valor que vender. Alquilar puede tener más sentido que vender. Mejorar la propiedad primero puede cambiarlo todo.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <div className="border-l-2 border-[#B8974A] pl-6">
                 <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed mb-4">
-                  The best advice I can give is sometimes to wait. Or to hold. Or to improve the property first. Whatever makes sense for your situation.
+                  El mejor consejo que puedo dar a veces es esperar. O conservar. O mejorar la propiedad primero. Lo que tenga sentido para tu situación.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/50">Mario Manzano</p>
               </div>
@@ -236,24 +236,24 @@ export default function About() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">04. Family</span>
+              <span className="section-number">04. Familia</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
-              Married with<br />
-              <em className="italic">two kids.</em>
+              Casado con<br />
+              <em className="italic">dos hijos.</em>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-4xl">
             <RevealDiv delay={100}>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
-                I'm married to my high school sweetheart. We have two kids and are now empty nesters. Our son house hacked his first home after college, which was a great experience for both of us.
+                Estoy casado con mi amor de la preparatoria. Tenemos dos hijos y ahora somos nido vacío. Nuestro hijo hizo house hacking en su primera casa después de la universidad, lo cual fue una gran experiencia para los dos.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200} className="-mt-3 md:mt-0">
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Our daughter is studying Design Management with minors in Marketing and Home Furnishings, and plans to get her real estate license so we can work together and help clients at a deeper level. Real estate is part of our family's life, not just my work.
+                Nuestra hija estudia Gestión del Diseño con concentraciones en Marketing y Decoración de Interiores, y planea obtener su licencia de bienes raíces para que podamos trabajar juntos y ayudar a los clientes a un nivel más profundo. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
               </p>
             </RevealDiv>
           </div>
@@ -266,69 +266,97 @@ export default function About() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">05. How I Work</span>
+              <span className="section-number">05. Cómo Trabajo</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
-              Three principles<br />
-              <em className="italic">that guide everything.</em>
+              Tres principios que<br />
+              <em className="italic">guían todo lo que hago.</em>
             </h2>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">
-            {[
-              {
-                title: "Clarity Over Pressure",
-                desc: "Before we talk about anything else, you understand your situation. Your equity, your market, your timeline. Clarity first, always.",
-              },
-              {
-                title: "Tradeoffs Explained",
-                desc: "Every option has tradeoffs. I help you see them clearly, the financial side, the practical side, the timing. Then you decide.",
-              },
-              {
-                title: "Decisions Based on Real Numbers",
-                desc: "Your decision should be based on solid information. Comparable sales, market absorption rates, buyer demand. This gives you a realistic foundation.",
-              },
-            ].map((item, i) => (
-              <RevealDiv key={item.title} delay={i * 100} className="bg-[#F8F5F0] p-8 border-t-2 border-[#B8974A]">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
-              </RevealDiv>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+            <RevealDiv delay={100}>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#B8974A] text-white font-display text-lg font-light">
+                    1
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-light text-[#1A1A18] mb-2">Claridad Antes de Cualquier Cosa</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    Antes de hablar de cualquier otra cosa, entiendes tu situación. Tu capital, tu mercado, tu plazo. La claridad siempre va primero.
+                  </p>
+                </div>
+              </div>
+            </RevealDiv>
+
+            <RevealDiv delay={150}>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#B8974A] text-white font-display text-lg font-light">
+                    2
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-light text-[#1A1A18] mb-2">Las Compensaciones Explicadas</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    Cada opción tiene compensaciones. Te ayudo a verlas con claridad, el lado financiero, el lado práctico, el momento. Tú decides.
+                  </p>
+                </div>
+              </div>
+            </RevealDiv>
+
+            <RevealDiv delay={200}>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-[#B8974A] text-white font-display text-lg font-light">
+                    3
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-light text-[#1A1A18] mb-2">Decisiones Basadas en Números Reales</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    Tu decisión debe basarse en información sólida. Ventas comparables, tasas de absorción del mercado, demanda de compradores. Eso te da una base realista para actuar.
+                  </p>
+                </div>
+              </div>
+            </RevealDiv>
           </div>
         </div>
       </section>
 
       {/* SECTION 7: CREDENTIALS */}
-      <section className="py-20 md:py-28 bg-[#1A1A18]">
+      <section className="py-20 md:py-32 bg-[#1A1A18]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="section-number text-[#D4B878]">06. CREDENTIALS</span>
+              <span className="section-number text-[#D4B878]">06. Credenciales</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-10 max-w-2xl">
-              Expertise<br />
-              <em className="italic">you can verify.</em>
+              Experiencia<br />
+              <em className="italic">comprobable.</em>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
             {[
               {
-                title: "Licensed REALTOR®",
-                body: "Active member in good standing with the National Association of REALTORS®.",
+                title: "REALTOR® Licenciado",
+                body: "Miembro activo en buen estado con la Asociación Nacional de REALTORS®.",
               },
               {
-                title: "Pricing Strategy Advisor (PSA)",
-                body: "Focused training in pricing strategy, market analysis, and helping sellers make data-driven decisions.",
+                title: "Asesor en Estrategia de Precios (PSA)",
+                body: "Formación especializada en estrategia de precios, análisis de mercado y toma de decisiones basada en datos para vendedores.",
               },
               {
-                title: "Member, Austin Board of REALTORS® (ABOR)",
-                body: "Serving the greater Austin metropolitan area with local market expertise.",
+                title: "Miembro, Asociación de REALTORS® de Austin (ABOR)",
+                body: "Sirviendo el área metropolitana de Austin con conocimiento profundo del mercado local.",
               },
               {
-                title: "Member, National Association of REALTORS® (NAR)",
-                body: "Part of the largest professional real estate organization in the United States.",
+                title: "Miembro, Asociación Nacional de REALTORS® (NAR)",
+                body: "Parte de la organización profesional inmobiliaria más grande de Estados Unidos.",
               },
             ].map((cred, i) => (
               <RevealDiv key={cred.title} delay={i * 100} className="border-t border-white/10 pt-6">
@@ -341,29 +369,25 @@ export default function About() {
       </section>
 
       {/* SECTION 8: CLOSE */}
-      <section className="py-20 md:py-28">
-        <div className="container text-center">
+      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-[#1A1A18]/85" />
+        </div>
+        <div className="relative z-10 container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-xl mx-auto">
-              Based in Leander and working across the Austin area.
+            <h2 className="font-display text-4xl md:text-6xl font-light text-white mb-6 max-w-2xl mx-auto">
+              Hablemos de tu situación.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
-              I help homeowners make decisions with clarity and confidence.
+            <p className="font-body text-base text-white/60 mb-10 max-w-lg mx-auto">
+              Una conversación donde revisamos tu casa, tus opciones y lo que realmente tiene sentido para tu situación. Sin presión, solo claridad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={getCTALink("start-conversation", "en")}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  if (window.fbq) {
-                    window.fbq("track", "Contact");
-                  }
-                }}
-                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
-              >
-                Start a conversation
-                <ArrowRight size={14} />
+              <a href={getCTALink("start-conversation", "es")}>
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+                  Iniciar una Conversación
+                  <ArrowRight size={14} />
+                </span>
               </a>
             </div>
           </RevealDiv>

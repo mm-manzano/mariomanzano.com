@@ -35,9 +35,49 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
   return <div ref={ref} className={`fade-in-up ${className}`} style={{ transitionDelay: `${delay}ms` }}>{children}</div>;
 }
 
+function setPageMeta(title: string, description: string, url: string) {
+  document.title = title;
+  const setMeta = (name: string, content: string, property = false) => {
+    const attr = property ? "property" : "name";
+    let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+    if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+    el.setAttribute("content", content);
+  };
+  setMeta("description", description);
+  setMeta("og:title", title, true);
+  setMeta("og:description", description, true);
+  setMeta("og:url", url, true);
+  setMeta("og:type", "website", true);
+  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+}
+
 export default function About() {
+  useEffect(() => {
+    setPageMeta(
+      "About Mario Manzano | Cedar Park & Leander TX Realtor | Seller Strategist",
+      "Mario Manzano is a licensed REALTOR® and Seller Strategist based in Leander TX. Learn his story, his investing background, and his approach to helping homeowners make clear decisions.",
+      "https://mariomanzano.com/about"
+    );
+  }, []);
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mario Manzano",
+    "jobTitle": "REALTOR® and Seller Strategist",
+    "url": "https://mariomanzano.com/about",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg",
+    "telephone": "+1-512-695-9255",
+    "email": "realtor@mariomanzano.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Leander", "addressRegion": "TX", "addressCountry": "US" },
+    "worksFor": { "@type": "RealEstateAgent", "name": "eXp Realty" },
+    "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
+    "sameAs": ["https://www.instagram.com/mariomanzanoatx", "https://www.tiktok.com/@mariomanzanoatx"]
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       {/* SECTION 1: INTRO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">

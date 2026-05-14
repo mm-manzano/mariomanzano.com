@@ -33,14 +33,39 @@
   </head>
 <body>
   <div id="root"></div>
-
   <script type="module" src="/src/main.tsx"></script>
-
     <!-- LeadConnector Chat Widget -->
     <script src="https://widgets.leadconnectorhq.com/loader.js"
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
       data-widget-id="69cc1af2f10632131670f57c">
     </script>
     <!-- End LeadConnector Chat Widget -->
+
+    <!-- Hide secondary default LeadConnector widget -->
+    <script>
+      (function() {
+        function hideDefaultWidget() {
+          var iframes = document.querySelectorAll('iframe');
+          iframes.forEach(function(iframe) {
+            var src = iframe.src || '';
+            if (src.includes('leadconnectorhq') && !src.includes('69cc1af2f10632131670f57c')) {
+              var parent = iframe.closest('[class*="chat"], [id*="chat"], [class*="widget"], [id*="widget"]') || iframe.parentElement;
+              if (parent) parent.style.display = 'none';
+            }
+          });
+
+          var allElements = document.querySelectorAll('[id*="leadconnector"], [class*="leadconnector"]');
+          allElements.forEach(function(el) {
+            if (!el.innerHTML.includes('69cc1af2f10632131670f57c')) {
+              el.style.display = 'none';
+            }
+          });
+        }
+        setTimeout(hideDefaultWidget, 2000);
+        setTimeout(hideDefaultWidget, 4000);
+        setTimeout(hideDefaultWidget, 8000);
+      })();
+    </script>
+    <!-- End hide secondary widget -->
   </body>
 </html>

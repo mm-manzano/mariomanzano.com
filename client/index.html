@@ -34,11 +34,67 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.tsx"></script>
+
     <!-- LeadConnector Chat Widget -->
     <script src="https://widgets.leadconnectorhq.com/loader.js"
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
       data-widget-id="69cc1af2f10632131670f57c">
     </script>
     <!-- End LeadConnector Chat Widget -->
+
+    <!-- Remove default LeadConnector widget injected by chat-widget component -->
+    <script>
+      (function() {
+        var MY_WIDGET_ID = '69cc1af2f10632131670f57c';
+
+        function removeDefaultWidget(node) {
+          if (!node || !node.tagName) return;
+          var tag = node.tagName.toLowerCase();
+
+          // Remove rogue script tags loading chat-widget component files
+          if (tag === 'script') {
+            var src = node.src || '';
+            if (src.includes('chat-widget.esm.js') || src.includes('chat-widget.js')) {
+              if (!src.includes(MY_WIDGET_ID)) {
+                node.parentNode && node.parentNode.removeChild(node);
+                return;
+              }
+            }
+          }
+
+          // Remove rogue custom elements injected by the component
+          if (tag === 'chat-widget' || tag === 'leadconnector-chat-widget') {
+            var widgetId = node.getAttribute('widget-id') || node.getAttribute('data-widget-id') || '';
+            if (!widgetId.includes(MY_WIDGET_ID)) {
+              node.parentNode && node.parentNode.removeChild(node);
+              return;
+            }
+          }
+
+          // Remove rogue shadow host containers
+          if (node.id && (node.id.includes('leadconnector') || node.id.includes('chat-widget'))) {
+            var idAttr = node.id || '';
+            if (!idAttr.includes(MY_WIDGET_ID)) {
+              node.style.display = 'none';
+            }
+          }
+        }
+
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              removeDefaultWidget(node);
+            });
+          });
+        });
+
+        observer.observe(document.documentElement, {
+          childList: true,
+          subtree: true
+        });
+      })();
+    </script>
+    <!-- End remove default widget -->
+
   </body>
 </html>

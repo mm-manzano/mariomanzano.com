@@ -178,7 +178,38 @@ export default function HomeES() {
         </div>
       </section>
 
-      {/* INTRODUCCIÓN DEL ASESOR */}
+      {/* CAMINO DIRECTO PARA VENDEDOR MOTIVADO */}
+      <section className="py-16 border-b border-[#E8E0D5]">
+        <div className="container">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 max-w-4xl">
+            <div>
+              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A] mb-3">¿Ya sabes que quieres vender?</p>
+              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-3">
+                Empieza con tus números.
+              </h2>
+              <p className="font-body text-base text-[#1A1A18]/65 max-w-lg leading-relaxed">
+                Descubre cuánto te quedarías realmente después de la comisión, los costos de cierre y el saldo de tu hipoteca. Toma dos minutos.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+              <Link href="/es/net-sheet">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
+                  Calcular Ingresos Netos
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+              <Link href="/es/contacto">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
+                  Hablar con Mario
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INTRODUCCIÓN DEL ASESOR */}}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -198,10 +229,10 @@ export default function HomeES() {
                 <em className="italic">cualquier decisión.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Soy Mario Manzano, REALTOR® y estratega de ventas en Leander, Texas. Antes de que decidas algo sobre tu casa, mereces entender todas tus opciones.
+                Soy Mario Manzano, REALTOR® y estratega de ventas en Leander, Texas. He comprado y vendido propiedades, operado un Airbnb, hecho renovaciones viviendo en la propiedad, tenido alquileres y tomado la decisión de vender vs mantener con mi propio dinero en juego. Esa experiencia es lo que traigo a cada conversación.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                Eso puede significar vender. O puede significar otra cosa. Mi trabajo es guiarte a través de los números, los costos y los tiempos para que tomes la decisión que realmente se adapte a tu situación.
+                Antes de decidir cualquier cosa sobre tu casa, mereces entender todas tus opciones. Eso puede significar vender. Puede significar otra cosa. Mi trabajo es guiarte a través de los números para que tomes la decisión que realmente se adapte a tu situación.
               </p>
               <Link href="/es/acerca">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
@@ -211,6 +242,20 @@ export default function HomeES() {
               </Link>
             </RevealDiv>
           </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIO */}
+      <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
+        <div className="container max-w-3xl text-center">
+          <RevealDiv>
+            <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
+              "La mayoría de los agentes solo me habrían presionado para poner la casa en venta. Mario hizo lo contrario. Me guió a través de cada opción, desde alquilar hasta subdividir, hasta que la decisión correcta fue clara. El proceso fue muy sencillo a partir de ahí."
+            </p>
+            <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+              — Chris Stevens, Leander TX
+            </p>
+          </RevealDiv>
         </div>
       </section>
 
@@ -264,26 +309,6 @@ export default function HomeES() {
               </RevealDiv>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* EMPIEZA CON LOS NÚMEROS */}
-      <section className="py-20 md:py-32">
-        <div className="container text-center">
-          <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
-              Empieza por saber cuánto te llevarías realmente.
-            </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
-              Antes de cualquier conversación, ayuda conocer tus números. Haz una estimación rápida y ve dónde estás parado.
-            </p>
-            <Link href="/es/net-sheet">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                Calcular Tus Ingresos Netos
-                <ArrowRight size={14} />
-              </span>
-            </Link>
-          </RevealDiv>
         </div>
       </section>
 
@@ -351,16 +376,56 @@ export default function HomeES() {
         </div>
       </section>
 
-      {/* TESTIMONIO */}
-      <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
-        <div className="container max-w-3xl text-center">
+
+      {/* CÓMO FUNCIONA */}
+      <section className="py-20 md:py-32">
+        <div className="container max-w-3xl">
           <RevealDiv>
-            <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
-              "La mayoría de los agentes solo me habrían presionado para poner la casa en venta. Mario hizo lo contrario. Me guió a través de cada opción, desde alquilar hasta subdividir, hasta que la decisión correcta fue clara. El proceso fue muy sencillo a partir de ahí."
-            </p>
-            <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
-              — Chris Stevens, Leander TX
-            </p>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">Cómo Funciona</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12">
+              Lo que trabajar conmigo<br />
+              <em className="italic">realmente significa.</em>
+            </h2>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                title: "Tú te comunicas",
+                desc: "Sin formularios, sin presión. Un mensaje, una llamada o un texto. Me dices dónde estás y qué estás pensando."
+              },
+              {
+                step: "02",
+                title: "Revisamos tus números",
+                desc: "Te explico cuánto vale tu casa, cuánto te quedarías y cómo se ven realmente tus opciones en tu situación específica."
+              },
+              {
+                step: "03",
+                title: "Tú decides",
+                desc: "Vender, esperar, alquilar o remodelar. Mi trabajo es darte claridad, no empujarte hacia ningún resultado. La decisión siempre es tuya."
+              }
+            ].map((item, i) => (
+              <RevealDiv key={item.step} delay={i * 100}>
+                <div className="border-t-2 border-[#B8974A] pt-6">
+                  <p className="font-display text-4xl font-light text-[#E8E0D5] mb-4">{item.step}</p>
+                  <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+                </div>
+              </RevealDiv>
+            ))}
+          </div>
+
+          <RevealDiv delay={300} className="mt-12">
+            <Link href="/es/contacto">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                Iniciar una Conversación
+                <ArrowRight size={14} />
+              </span>
+            </Link>
           </RevealDiv>
         </div>
       </section>

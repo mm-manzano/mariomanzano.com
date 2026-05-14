@@ -247,6 +247,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TESTIMONIAL */}
+      <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
+        <div className="container max-w-3xl text-center">
+          <RevealDiv>
+            <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
+              "Most agents would have just pushed me to list. Mario did the opposite. He walked me through every option, from renting to subdividing, until the right decision became clear. The process was smooth from there."
+            </p>
+            <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+              — Chris Stevens, Leander TX
+            </p>
+          </RevealDiv>
+        </div>
+      </section>
+
       {/* SERVICES GRID */}
       <section
         className="py-20 md:py-32 relative"
@@ -361,20 +375,6 @@ export default function Home() {
               </div>
             </RevealDiv>
           </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIAL */}
-      <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
-        <div className="container max-w-3xl text-center">
-          <RevealDiv>
-            <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
-              "Most agents would have just pushed me to list. Mario did the opposite. He walked me through every option, from renting to subdividing, until the right decision became clear. The process was smooth from there."
-            </p>
-            <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
-              — Chris Stevens, Leander TX
-            </p>
-          </RevealDiv>
         </div>
       </section>
 

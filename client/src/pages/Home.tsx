@@ -1,13 +1,12 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Homepage
- * Sections: Hero (full-bleed), Trust Strip, Advisor Intro, Services Grid,
- *           Numbers Section, Strategic Tools, Market Insight, Testimonial, Process Strip,
- *           Guide Section, Final CTA Band
- * Images: Generated AI hero images (CDN URLs)
- * Typography: Cormorant Garamond headlines, DM Sans body
- * Optimization: Added RealEstateAgent JSON-LD Schema for Local SEO and AI Visibility.
- * COPY UPDATE: Rewrote hero subhead, market insight, process accordion, guide section,
- *              fixed Westlake reference, differentiated CTAs, plain language throughout.
+ * Sections: Hero (full-bleed), Trust Strip, Motivated Seller Direct Path (NEW),
+ *           Advisor Intro (with credibility pull), Services Grid,
+ *           Numbers Section, Strategic Tools, Market Insight, Testimonial,
+ *           How This Works (NEW), Process Strip, Guide Section, Final CTA Band
+ * TRACK 2 UPDATE: Added motivated seller direct path after trust strip,
+ *                 pulled investing credibility into advisor intro,
+ *                 added How This Works three-step section before process accordion.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -181,7 +180,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ADVISOR INTRO */}
+      {/* TRACK 2: MOTIVATED SELLER DIRECT PATH */}
+      <section className="py-16 border-b border-[#E8E0D5]">
+        <div className="container">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 max-w-4xl">
+            <div>
+              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A] mb-3">Already know you want to sell?</p>
+              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-3">
+                Start with your numbers.
+              </h2>
+              <p className="font-body text-base text-[#1A1A18]/65 max-w-lg leading-relaxed">
+                Find out what you would actually walk away with after commission, closing costs, and your mortgage payoff. Takes two minutes.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+              <Link href="/net-sheet">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
+                  Calculate Net Proceeds
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+              <Link href="/contact">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
+                  Talk to Mario
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ADVISOR INTRO with credibility pull */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -201,10 +231,10 @@ export default function Home() {
                 <em className="italic">any decision.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I am Mario Manzano, a licensed REALTOR® and Seller Strategist based in Leander, Texas. Before you decide anything about your home, you deserve to understand all your options.
+                I am Mario Manzano, a licensed REALTOR® and Seller Strategist based in Leander, Texas. I have bought and sold properties, run an Airbnb, done live-in flips, owned rentals, and made the sell vs hold decision with my own money on the line. That experience is what I bring to every conversation.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                That might mean selling. It might mean something else. My job is to walk you through the numbers, the costs, and the timing so you can make the call that actually fits your situation.
+                Before you decide anything about your home, you deserve to understand all your options. That might mean selling. It might mean something else. My job is to walk you through the numbers so you can make the call that actually fits your situation.
               </p>
               <Link href="/about">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
@@ -368,8 +398,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROCESS STRIP */}
+      {/* TRACK 2: HOW THIS WORKS */}
       <section className="py-20 md:py-32">
+        <div className="container max-w-3xl">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">How This Works</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12">
+              What working with me<br />
+              <em className="italic">actually looks like.</em>
+            </h2>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "01",
+                title: "You reach out",
+                desc: "No forms, no pressure. A text, a call, or a quick message. You tell me where you are and what you are thinking about."
+              },
+              {
+                step: "02",
+                title: "We look at your numbers",
+                desc: "I walk you through what your home is worth, what you would walk away with, and what your options actually look like in your specific situation."
+              },
+              {
+                step: "03",
+                title: "You decide",
+                desc: "Sell, wait, rent, or remodel. My job is to give you clarity, not push you toward any outcome. The decision is always yours."
+              }
+            ].map((item, i) => (
+              <RevealDiv key={item.step} delay={i * 100}>
+                <div className="border-t-2 border-[#B8974A] pt-6">
+                  <p className="font-display text-4xl font-light text-[#E8E0D5] mb-4">{item.step}</p>
+                  <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
+                  <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+                </div>
+              </RevealDiv>
+            ))}
+          </div>
+
+          <RevealDiv delay={300} className="mt-12">
+            <Link href="/contact">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                Start a Conversation
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* PROCESS STRIP */}
+      <section className="py-20 md:py-32 bg-white">
         <div className="container max-w-3xl">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
@@ -418,7 +501,7 @@ export default function Home() {
       </section>
 
       {/* GUIDE SECTION */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container max-w-3xl text-center">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">

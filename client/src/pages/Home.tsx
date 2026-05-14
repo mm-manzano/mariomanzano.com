@@ -300,26 +300,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* START WITH THE NUMBERS */}
-      <section className="py-20 md:py-32">
-        <div className="container text-center">
-          <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
-              Start with what you would actually walk away with.
-            </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
-              Before any conversation, it helps to know your numbers. Run a quick estimate and see where you stand.
-            </p>
-            <Link href="/net-sheet">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                Calculate Your Net Proceeds
-                <ArrowRight size={14} />
-              </span>
-            </Link>
-          </RevealDiv>
-        </div>
-      </section>
-
       {/* STRATEGIC TOOLS */}
       <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
         <div className="container text-center">

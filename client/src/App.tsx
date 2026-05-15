@@ -4,8 +4,8 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.5.2 - Links page rendered standalone without nav/footer
-const BUILD_VERSION = "2.5.2";
+// Build version: v2.5.3 - Links page standalone, route kept in Router
+const BUILD_VERSION = "2.5.3";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -93,6 +93,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/links" component={Links} />
 
       {/* Fallback */}
       <Route component={NotFound} />

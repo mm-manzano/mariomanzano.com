@@ -76,7 +76,7 @@ export default function Links() {
 
       <div className="w-full max-w-sm flex flex-col gap-3">
         {links.map((link) => (
-          
+          <a
             key={link.href}
             href={link.href}
             className="block w-full border border-white/10 bg-white/[0.03] px-5 py-4 hover:bg-white/[0.07] hover:border-[#c9a84c]/40 transition-all duration-200"

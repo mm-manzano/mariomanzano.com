@@ -21,6 +21,7 @@ const routes = [
   '/homeowner-guide',
   '/about',
   '/contact',
+  '/links',
   // Spanish
   '/es',
   '/es/strategy-hub',

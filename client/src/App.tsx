@@ -4,8 +4,8 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.5.0 - Finalized Spanish routes and file names
-const BUILD_VERSION = "2.5.0";
+// Build version: v2.5.1 - Added /links route for Instagram link in bio
+const BUILD_VERSION = "2.5.1";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -25,6 +25,7 @@ import RemodelVsSell from "./pages/RemodelVsSell";
 import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Links from "./pages/Links";
 
 // Spanish Pages - Matching user's exact file names
 import HomeES from "./pages/HomeES";
@@ -78,7 +79,7 @@ function Router() {
       <Route path="/es/consulta" component={ConsultaES} />
       <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
       <Route path="/es/terms-of-service" component={TermsOfServiceES} />
-      
+
       {/* English Routes */}
       <Route exact path="/" component={Home} />
       <Route path="/strategy-hub" component={StrategyHub} />
@@ -92,7 +93,8 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
-      
+      <Route path="/links" component={Links} />
+
       {/* Fallback */}
       <Route component={NotFound} />
     </Switch>

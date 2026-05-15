@@ -4,8 +4,8 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.5.1 - Added /Links route for Instagram link in bio
-const BUILD_VERSION = "2.5.1";
+// Build version: v2.5.2 - Links page rendered standalone without nav/footer
+const BUILD_VERSION = "2.5.2";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -93,7 +93,6 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
-      <Route path="/links" component={Links} />
 
       {/* Fallback */}
       <Route component={NotFound} />
@@ -103,6 +102,22 @@ function Router() {
 
 function App() {
   usePageTracking();
+  const [location] = useLocation();
+
+  // Links page renders standalone — no nav, no footer
+  if (location === "/links") {
+    return (
+      <ErrorBoundary>
+        <ThemeProvider defaultTheme="light">
+          <TooltipProvider>
+            <Toaster />
+            <ScrollToTop />
+            <Links />
+          </TooltipProvider>
+        </ThemeProvider>
+      </ErrorBoundary>
+    );
+  }
 
   return (
     <ErrorBoundary>

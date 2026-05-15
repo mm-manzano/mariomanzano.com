@@ -39,7 +39,7 @@ export default function Links() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#1c1c1c] flex flex-col items-center justify-start px-5 py-16">
+    <div className="min-h-screen bg-[#1c1c1c] flex flex-col items-center justify-start px-5 pt-28 pb-16">
       <div className="flex flex-col items-center mb-10">
         <img
           src="/images/logo.png"

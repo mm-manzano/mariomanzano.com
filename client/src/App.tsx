@@ -25,7 +25,7 @@ import RemodelVsSell from "./pages/RemodelVsSell";
 import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Links from "./pages/Links";
+import Links from "./pages/links";
 
 // Spanish Pages - Matching user's exact file names
 import HomeES from "./pages/HomeES";

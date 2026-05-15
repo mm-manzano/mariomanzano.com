@@ -41,22 +41,12 @@ export default function Links() {
   return (
     <div className="min-h-screen bg-[#1c1c1c] flex flex-col items-center justify-start px-5 py-16">
       <div className="flex flex-col items-center mb-10">
-        <div
-          className="flex items-center justify-center mb-5"
-          style={{ width: 40, height: 40, background: "#c9a84c" }}
-        >
-          <span
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: 20,
-              fontWeight: 600,
-              color: "#1c1c1c",
-              lineHeight: 1,
-            }}
-          >
-            M
-          </span>
-        </div>
+        <img
+          src="/images/logo.png"
+          alt="Mario Manzano"
+          style={{ width: 72, height: 72, objectFit: "contain" }}
+          className="mb-5"
+        />
         <p
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
           className="text-white text-3xl font-light tracking-wide"

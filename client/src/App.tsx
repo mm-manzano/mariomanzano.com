@@ -4,7 +4,7 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.5.1 - Added /links route for Instagram link in bio
+// Build version: v2.5.1 - Added /Links route for Instagram link in bio
 const BUILD_VERSION = "2.5.1";
 
 import { Toaster } from "@/components/ui/sonner";
@@ -25,7 +25,7 @@ import RemodelVsSell from "./pages/RemodelVsSell";
 import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Links from "./pages/links";
+import Links from "./pages/Links";
 
 // Spanish Pages - Matching user's exact file names
 import HomeES from "./pages/HomeES";

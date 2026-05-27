@@ -47,7 +47,7 @@ export default function NetSheetES() {
   const [salePrice, setSalePrice] = useState<string>("0");
   const [mortgageBalance, setMortgageBalance] = useState<string>("0");
   const [commission, setCommission] = useState<string>("6");
-  const [closingCosts, setClosingCosts] = useState<string>("1");
+  const [closingCosts, setClosingCosts] = useState<string>("2");
   const [repairs, setRepairs] = useState<string>("0");
 
   useEffect(() => {
@@ -146,14 +146,14 @@ export default function NetSheetES() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Comisión (%)</label>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Comisión (% prom)</label>
                     <input type="text" value={commission} onChange={handleInputChange(setCommission)}
                       onFocus={(e) => e.target.value === "0" && setCommission("")}
                       onBlur={(e) => e.target.value === "" && setCommission("0")}
                       className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Costos de Cierre (%)</label>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Costos de Cierre (% prom)</label>
                     <input type="text" value={closingCosts} onChange={handleInputChange(setClosingCosts)}
                       onFocus={(e) => e.target.value === "0" && setClosingCosts("")}
                       onBlur={(e) => e.target.value === "" && setClosingCosts("0")}
@@ -181,11 +181,11 @@ export default function NetSheetES() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Costo de Comisión</p>
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Costo de Comisión (prom)</p>
                     <p className="font-display text-3xl font-light text-white/60">{formatCurrency(commissionCost)}</p>
                   </div>
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Costos de Cierre</p>
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Costos de Cierre (prom)</p>
                     <p className="font-display text-3xl font-light text-white/60">{formatCurrency(closingCostAmount)}</p>
                   </div>
                   <div>
@@ -220,13 +220,16 @@ export default function NetSheetES() {
           <RevealDiv>
             <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Qué te dice realmente una hoja de ingresos netos?</h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-              Una hoja de ingresos netos es el documento que muestra cuánto te quedas después de la venta, no cuánto se vende tu casa. En Cedar Park y Leander, los vendedores frecuentemente se sorprenden de cuánto reducen sus ingresos los costos de la transacción. La comisión, los honorarios de título, los impuestos y cualquier costo de reparación o preparación se descuentan del precio de venta.
+              Una hoja de ingresos netos muestra cuánto te quedas después de la venta, no cuánto se vende tu casa. En Cedar Park y Leander, muchos vendedores se sorprenden de cuánto se reduce ese número una vez que se descuentan la comisión, los honorarios de título, los impuestos y los costos de preparación.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-              Esta estimación es un punto de partida. No incluye los impuestos a la propiedad prorrateados al cierre, las tarifas de transferencia de HOA ni las concesiones al comprador que puedas negociar. Una hoja neta real de una compañía de título será más precisa.
+              Este estimado parte de un cierre a mitad de año con costos de cierre típicos del 2%, que incluyen título, depósito en garantía, costos del prestamista, impuestos prorrateados, cuotas de HOA y una garantía de hogar estándar.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              El número real puede cambiar según el mes en que cierres. Cerrar en enero versus diciembre afecta bastante el prorrateo de impuestos que te acreditan. Las cuotas de HOA también varían según la propiedad y la comunidad, y algunas casas no tienen ninguna. Cualquier concesión adicional que negocies con el comprador también cambia este número. Una hoja neta real de una compañía de título será más precisa.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-              Si quieres revisar una hoja neta real basada en tu casa y situación específica, eso es algo con lo que puedo ayudarte. Toma unos quince minutos y te da un panorama mucho más claro antes de tomar cualquier decisión.
+              Si quieres revisar una hoja neta real basada en tu casa y situación, puedo ayudarte con eso. Toma unos quince minutos y te da un panorama mucho más claro antes de tomar cualquier decisión.
             </p>
           </RevealDiv>
         </div>

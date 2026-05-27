@@ -48,7 +48,7 @@ export default function NetSheet() {
   const [salePrice, setSalePrice] = useState<string>("0");
   const [mortgageBalance, setMortgageBalance] = useState<string>("0");
   const [commission, setCommission] = useState<string>("6");
-  const [closingCosts, setClosingCosts] = useState<string>("1");
+  const [closingCosts, setClosingCosts] = useState<string>("2");
   const [repairs, setRepairs] = useState<string>("0");
 
   useEffect(() => {
@@ -147,14 +147,14 @@ export default function NetSheet() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Commission (%)</label>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Commission (avg %)</label>
                     <input type="text" value={commission} onChange={handleInputChange(setCommission)}
                       onFocus={(e) => e.target.value === "0" && setCommission("")}
                       onBlur={(e) => e.target.value === "" && setCommission("0")}
                       className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Closing Costs (%)</label>
+                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Closing Costs (avg %)</label>
                     <input type="text" value={closingCosts} onChange={handleInputChange(setClosingCosts)}
                       onFocus={(e) => e.target.value === "0" && setClosingCosts("")}
                       onBlur={(e) => e.target.value === "" && setClosingCosts("0")}
@@ -182,11 +182,11 @@ export default function NetSheet() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Commission Cost</p>
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Commission Cost (avg)</p>
                     <p className="font-display text-3xl font-light text-white/60">{formatCurrency(commissionCost)}</p>
                   </div>
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Closing Costs</p>
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Closing Costs (avg)</p>
                     <p className="font-display text-3xl font-light text-white/60">{formatCurrency(closingCostAmount)}</p>
                   </div>
                   <div>
@@ -224,7 +224,10 @@ export default function NetSheet() {
               A net sheet is the document that shows you what you keep after a sale, not what your home sells for. In Cedar Park and Leander, sellers are often surprised by how much the transaction costs reduce their take-home number. Commission, title fees, taxes, and any repairs or prep costs all come off the top.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-              This estimate is a starting point. It does not account for property taxes prorated at closing, HOA transfer fees, or any seller concessions you may negotiate with a buyer. A real net sheet from a title company will be more precise.
+              This estimate is a starting point based on a mid-year closing with typical closing costs at 2%, which includes title work, escrow, lender costs, prorated taxes, HOA fees, and a standard home warranty.
+            </p>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              Your actual number shifts based on your closing month. Closing in January versus December significantly changes how much in prorated taxes gets credited back to you. HOA fees vary by property and community, and some homes have none at all. Any additional seller concessions you negotiate will affect this further. A real net sheet from a title company will be more precise.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
               If you want to walk through a real net sheet based on your specific home and situation, that is something I can help with. It takes about fifteen minutes and gives you a much clearer picture before you make any decisions.

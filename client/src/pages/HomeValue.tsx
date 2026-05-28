@@ -1,8 +1,8 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Home Value Page
  * Purpose: Primary conversion page for seller leads.
- * FINAL: Meta tags, Open Graph, schema, substantial educational copy added
- *        around iframe so page has real crawlable content for Google and AI tools.
+ * UPDATED: Removed repetitive estimate disclaimer, tightened copy flow,
+ *          added Austin as broader metro context in one clean placement.
  */
 
 import { useEffect } from "react";
@@ -71,17 +71,7 @@ export default function HomeValue() {
             <em className="italic">actually worth?</em>
           </h1>
           <p className="font-body text-base md:text-lg text-[#1A1A18]/60 max-w-2xl leading-relaxed">
-            Home values in Cedar Park and Leander have shifted significantly over the past few years. Automated estimates can be a useful starting point, but they do not account for your home's specific condition, upgrades, or how it compares to what is actually selling in your neighborhood right now.
-          </p>
-        </div>
-
-        {/* Educational context before tool */}
-        <div className="mb-10 max-w-2xl">
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            The estimate below pulls from public data and recent comparable sales in your area. It is a reasonable ballpark. But in a market like Cedar Park and Leander where buyer demand, interest rates, and neighborhood-level supply can shift quarter to quarter, the real number often looks different from what an algorithm produces.
-          </p>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            Use this as a starting point. Then, if you want to know what your home would realistically sell for today and what you would walk away with after costs, that is a fifteen-minute conversation.
+            Home values in Cedar Park and Leander have shifted significantly over the past few years. The estimate below pulls from public data and recent comparable sales in your area. It is a reasonable starting point, but it does not account for your home's condition, upgrades, or how it compares to what is actively selling in your neighborhood right now. Use it to get your bearings, then read on.
           </p>
         </div>
 
@@ -98,27 +88,17 @@ export default function HomeValue() {
           </div>
         </div>
 
-        {/* Disclaimer */}
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-          <p className="font-display text-xl md:text-2xl font-light text-[#1A1A18] mb-6">
-            <em className="italic">This is a starting point.</em>
-          </p>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            Automated estimates do not account for your home's condition, updates, or how it is positioned against active competition. In Cedar Park and Leander, a well-priced home in good condition can sell significantly above an automated estimate. A dated home or one in a slower pocket of the market may come in below it.
-          </p>
-        </div>
-
         {/* What affects home value section */}
         <div className="mb-16 max-w-2xl">
           <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">What actually determines what your home sells for?</h2>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            In the Cedar Park and Leander market, the gap between a good sale and a great sale usually comes down to three things: preparation, pricing, and timing. Automated tools can estimate value, but they cannot tell you whether your home should go to market in thirty days or ninety days, or whether a strategic price reduction on day ten would generate more net proceeds than holding firm at a higher number.
+            In Cedar Park and Leander, the gap between a good sale and a great sale usually comes down to three things: preparation, pricing, and timing. Buyers in this market are comparing your home against other options in real time. A home that shows well and is priced correctly from the start attracts competitive offers. One that is overpriced or needs visible work sits.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            Condition matters significantly in this price range. Buyers in Cedar Park and Leander are comparing your home against other options in real time. A home that shows well and is priced correctly attracts competitive offers. One that is overpriced or needs visible work sits.
+            Automated tools cannot tell you whether your home should go to market in thirty days or ninety days, or whether a specific upgrade would add more to your sale price than it costs. That is where a real conversation makes the difference.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            If you want a real picture of what your home is worth and what it would sell for with the right preparation and pricing strategy, that is what I help with. No pressure. Just clarity.
+            If you want a clear picture of what your home would realistically sell for today and what you would walk away with after costs, that is what I help with. No pressure. Just clarity.
           </p>
         </div>
 
@@ -140,7 +120,7 @@ export default function HomeValue() {
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-4">Want a real number for your specific home?</h2>
           <p className="font-body text-base text-[#1A1A18]/65 mb-8 leading-relaxed">
-            I work with homeowners in Cedar Park and Leander who want to understand what their home is actually worth before deciding anything. A short conversation is all it takes to get a clearer picture.
+            I work with homeowners in Cedar Park, Leander, and the greater Austin area who want to understand what their home is actually worth before deciding anything. A short conversation is all it takes to get a clearer picture.
           </p>
           <Link href="/contact">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

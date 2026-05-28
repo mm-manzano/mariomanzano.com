@@ -1,6 +1,7 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Valor de la Casa (Español)
- * FINAL: Meta tags, Open Graph, schema, substantial educational copy in Spanish.
+ * UPDATED: Removed repetitive estimate disclaimer, tightened copy flow,
+ *          added Austin as broader metro context in one clean placement.
  */
 
 import { useEffect } from "react";
@@ -69,17 +70,7 @@ export default function HomeValueES() {
             <em className="italic">realmente tu casa?</em>
           </h1>
           <p className="font-body text-base md:text-lg text-[#1A1A18]/60 max-w-2xl leading-relaxed">
-            Los valores de las casas en Cedar Park y Leander han cambiado significativamente en los últimos años. Las estimaciones automáticas pueden ser un punto de partida útil, pero no toman en cuenta las condiciones específicas de tu casa, las mejoras realizadas ni cómo se compara con lo que está vendiendo actualmente en tu vecindario.
-          </p>
-        </div>
-
-        {/* Contexto educativo antes de la herramienta */}
-        <div className="mb-10 max-w-2xl">
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            La estimación a continuación se basa en datos públicos y ventas comparables recientes en tu área. Es un punto de referencia razonable. Pero en un mercado como Cedar Park y Leander, donde la demanda de compradores, las tasas de interés y la oferta a nivel de vecindario pueden cambiar trimestre a trimestre, el número real frecuentemente se ve diferente a lo que produce un algoritmo.
-          </p>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            Úsalo como punto de partida. Luego, si quieres saber cuánto se vendería realmente tu casa hoy y cuánto te quedarías después de los costos, eso es una conversación de quince minutos.
+            Los valores de las casas en Cedar Park y Leander han cambiado significativamente en los últimos años. La estimación a continuación se basa en datos públicos y ventas comparables recientes en tu área. Es un punto de referencia razonable, pero no toma en cuenta las condiciones específicas de tu casa, las mejoras realizadas ni cómo se compara con lo que está vendiendo actualmente en tu vecindario. Úsala para orientarte y luego sigue leyendo.
           </p>
         </div>
 
@@ -96,27 +87,17 @@ export default function HomeValueES() {
           </div>
         </div>
 
-        {/* Aclaración */}
-        <div className="mb-16 text-center max-w-2xl mx-auto">
-          <p className="font-display text-xl md:text-2xl font-light text-[#1A1A18] mb-6">
-            <em className="italic">Este es un punto de partida.</em>
-          </p>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            Las estimaciones automáticas no toman en cuenta la condición de tu casa, las actualizaciones realizadas ni cómo está posicionada frente a la competencia activa. En Cedar Park y Leander, una casa bien posicionada en buen estado puede venderse significativamente por encima de una estimación automática. Una casa desactualizada o en un sector más lento del mercado puede quedar por debajo.
-          </p>
-        </div>
-
         {/* Qué determina el valor */}
         <div className="mb-16 max-w-2xl">
           <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Qué determina realmente en cuánto se vende tu casa?</h2>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            En el mercado de Cedar Park y Leander, la diferencia entre una buena venta y una excelente venta generalmente se reduce a tres cosas: preparación, precio y momento. Las herramientas automáticas pueden estimar el valor, pero no pueden decirte si tu casa debe salir al mercado en treinta días o en noventa, ni si una reducción estratégica de precio en el día diez generaría más ingresos netos que mantenerse firme en un número más alto.
+            En Cedar Park y Leander, la diferencia entre una buena venta y una excelente venta generalmente se reduce a tres cosas: preparación, precio y momento. Los compradores en este mercado están comparando tu casa con otras opciones en tiempo real. Una casa que se presenta bien y tiene el precio correcto desde el principio atrae ofertas competitivas. Una que está sobrevalorada o necesita trabajo visible se queda.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            La condición importa significativamente en este rango de precios. Los compradores en Cedar Park y Leander están comparando tu casa con otras opciones en tiempo real. Una casa que se presenta bien y tiene el precio correcto atrae ofertas competitivas. Una que está sobrevalorada o necesita trabajo visible se queda.
+            Las herramientas automáticas no pueden decirte si tu casa debe salir al mercado en treinta días o en noventa, ni si una mejora específica agregaría más al precio de venta de lo que cuesta. Ahí es donde una conversación real hace la diferencia.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            Si quieres una imagen real de cuánto vale tu casa y cuánto se vendería con la estrategia correcta de preparación y precio, eso es con lo que ayudo. Sin presión. Solo claridad.
+            Si quieres una imagen clara de cuánto se vendería realmente tu casa hoy y cuánto te quedarías después de los costos, eso es con lo que ayudo. Sin presión. Solo claridad.
           </p>
         </div>
 
@@ -138,7 +119,7 @@ export default function HomeValueES() {
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-4">¿Quieres un número real para tu casa específica?</h2>
           <p className="font-body text-base text-[#1A1A18]/65 mb-8 leading-relaxed">
-            Trabajo con propietarios en Cedar Park y Leander que quieren entender cuánto vale realmente su casa antes de decidir cualquier cosa. Una conversación corta es todo lo que se necesita para tener una imagen más clara.
+            Trabajo con propietarios en Cedar Park, Leander y el área metropolitana de Austin que quieren entender cuánto vale realmente su casa antes de decidir cualquier cosa. Una conversación corta es todo lo que se necesita para tener una imagen más clara.
           </p>
           <Link href="/es/contacto">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

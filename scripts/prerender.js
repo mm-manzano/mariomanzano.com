@@ -22,6 +22,7 @@ const routes = [
   '/about',
   '/contact',
   '/links',
+  '/listing-presentation',
   // Spanish
   '/es',
   '/es/strategy-hub',

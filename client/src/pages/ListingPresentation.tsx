@@ -248,21 +248,13 @@ export default function ListingPresentation() {
               <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8">
                 Why I do this differently.
               </h2>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-8">
+              <p className="font-body text-base text-white/70 leading-relaxed">
                 I am not just an agent who talks about real estate decisions. I
                 have made them with my own money on the line. I have bought and
                 sold properties, ran an Airbnb, done live-in flips, own rentals
                 growing my portfolio. That experience is what I bring to this
                 conversation.
               </p>
-              <div className="border-l-2 border-[#B8974A] pl-6 space-y-2">
-                <p className="font-body text-sm text-white/50">
-                  512-695-9255
-                </p>
-                <p className="font-body text-sm text-white/50">
-                  realtor@mariomanzano.com
-                </p>
-              </div>
             </RevealDiv>
           </div>
         </div>

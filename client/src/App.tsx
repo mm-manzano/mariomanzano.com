@@ -4,8 +4,8 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.5.3 - Links page standalone, route kept in Router
-const BUILD_VERSION = "2.5.3";
+// Build version: v2.5.4 - Listing Presentation page added
+const BUILD_VERSION = "2.5.4";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -26,6 +26,7 @@ import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Links from "./pages/Links";
+import ListingPresentation from "./pages/ListingPresentation";
 
 // Spanish Pages - Matching user's exact file names
 import HomeES from "./pages/HomeES";
@@ -91,6 +92,7 @@ function Router() {
       <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/listing-presentation" component={ListingPresentation} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/links" component={Links} />

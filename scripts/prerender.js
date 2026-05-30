@@ -33,6 +33,7 @@ const routes = [
   '/es/guia-para-propietarios',
   '/es/acerca',
   '/es/contacto',
+  '/es/presentacion-vendedores',
   // Legal
   '/privacy-policy',
   '/terms-of-service',
@@ -63,12 +64,8 @@ function isBlocked(url) {
 async function prerender() {
   console.log('🎬 Starting Puppeteer prerender...');
 
-  // Snapshot the current Vite-built shell before any writes. This guarantees
-  // every route gets the same clean HTML with correct asset hashes, regardless
-  // of stale subdirectory files left by previous prerender runs.
   const spaShell = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
 
-  // sirv handles real asset files; unknown paths fall through to the SPA shell.
   const assets = sirv(distDir);
   const server = http.createServer((req, res) => {
     assets(req, res, () => {
@@ -86,8 +83,6 @@ async function prerender() {
   for (const route of routes) {
     const page = await browser.newPage();
     try {
-      // Block analytics/tracking requests so they don't inject extra scripts
-      // into the DOM that would pollute page.content() output.
       await page.setRequestInterception(true);
       page.on('request', (req) => {
         if (isBlocked(req.url())) {
@@ -99,9 +94,6 @@ async function prerender() {
 
       await page.goto(`${BASE_URL}${route}`, { waitUntil: 'networkidle0' });
 
-      // Wait for the app <div> inside #root — the Sonner notifications mount as
-      // <section> and are always present; the real app shell mounts as <div>.
-      // This distinguishes a genuine React render from stale prerendered DOM.
       await page.waitForFunction(
         () => document.querySelector('#root > div') !== null,
         { timeout: 15000 }
@@ -109,9 +101,6 @@ async function prerender() {
       await new Promise((r) => setTimeout(r, 500));
       let html = await page.content();
 
-      // Strip Manus platform dev artifacts that must not appear in production output.
-      // manus-runtime: inline bundle injected by vite-plugin-manus-runtime (real bundle is assets/index-*.js).
-      // manus-previewer-root: empty div injected outside </html> by the Manus preview iframe bridge.
       html = html.replace(/<script\s[^>]*id="manus-runtime"[\s\S]*?<\/script>/i, '');
       html = html.replace(/<div\s[^>]*id="manus-previewer-root"[^>]*>[\s\S]*?<\/div>/i, '');
 

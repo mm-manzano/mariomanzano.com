@@ -5,7 +5,6 @@
  */
 
 import { useEffect, useRef } from "react";
-import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
 function useScrollReveal() {
@@ -128,7 +127,10 @@ export default function ListingPresentation() {
         <div className="relative z-10 container">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span
+                className="section-rule"
+                style={{ background: "#B8974A" }}
+              />
               <span
                 className="font-body text-[10px] tracking-[0.25em] uppercase"
                 style={{ color: "#B8974A" }}
@@ -253,7 +255,6 @@ export default function ListingPresentation() {
                 growing my portfolio. That experience is what I bring to this
                 conversation.
               </p>
-
               <div className="border-l-2 border-[#B8974A] pl-6 space-y-2">
                 <p className="font-body text-sm text-white/50">
                   512-695-9255
@@ -282,8 +283,7 @@ export default function ListingPresentation() {
               If you are ready to move forward, let's go over the next steps.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-lg mb-10">
-              We run your net sheet and take it from there. No pressure, no
-              rush.
+              We run your net sheet and take it from there. No pressure, no rush.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:5126959255">
@@ -293,4 +293,16 @@ export default function ListingPresentation() {
                 </span>
               </a>
               <a href="mailto:realtor@mariomanzano.com">
-                <span className="btn-luxury inline-
+                <span className="btn-luxury inline-flex items-center gap-3">
+                  Send an Email
+                  <ArrowRight size={14} />
+                </span>
+              </a>
+            </div>
+          </RevealDiv>
+        </div>
+      </section>
+
+    </div>
+  );
+}

@@ -262,9 +262,6 @@ export default function ListingPresentation() {
                 <p className="font-body text-sm text-white/50">
                   realtor@mariomanzano.com
                 </p>
-                <p className="font-body text-sm text-white/50">
-                  www.mariomanzano.com
-                </p>
               </div>
             </RevealDiv>
           </div>
@@ -279,12 +276,9 @@ export default function ListingPresentation() {
               <span className="section-rule" />
               <span className="section-number">03. Next Steps</span>
             </div>
-            <h2 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-6 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-10 max-w-2xl">
               If you are ready to move forward, let's go over the next steps.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-lg mb-10">
-              We run your net sheet and take it from there. No pressure, no rush.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:5126959255">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">

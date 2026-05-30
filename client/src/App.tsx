@@ -4,8 +4,8 @@
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
  */
 
-// Build version: v2.5.4 - Listing Presentation page added
-const BUILD_VERSION = "2.5.4";
+// Build version: v2.5.5 - Listing Presentation ES page added
+const BUILD_VERSION = "2.5.5";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -27,6 +27,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Links from "./pages/Links";
 import ListingPresentation from "./pages/ListingPresentation";
+import ListingPresentationES from "./pages/ListingPresentationES";
 
 // Spanish Pages - Matching user's exact file names
 import HomeES from "./pages/HomeES";
@@ -78,6 +79,7 @@ function Router() {
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />
       <Route path="/es/consulta" component={ConsultaES} />
+      <Route path="/es/presentacion-vendedores" component={ListingPresentationES} />
       <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
       <Route path="/es/terms-of-service" component={TermsOfServiceES} />
 

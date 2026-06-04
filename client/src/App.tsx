@@ -94,7 +94,7 @@ function Router() {
       <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/listing-presentation" component={ListingPresentation} />
+      <Route path="/seller-strategy" component={ListingPresentation} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/links" component={Links} />

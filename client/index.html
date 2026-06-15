@@ -31,14 +31,26 @@
     <!-- End Google Tag Manager -->
     
   </head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-    <!-- LeadConnector Chat Widget -->
-    <script src="https://widgets.leadconnectorhq.com/loader.js"
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-      data-widget-id="69cc1af2f10632131670f57c">
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJH7J7QZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- LeadConnector Chat Widget (8s delay) -->
+    <script>
+      setTimeout(function () {
+        var script = document.createElement('script');
+        script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+        script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+        script.setAttribute('data-widget-id', '69cc1af2f10632131670f57c');
+        document.body.appendChild(script);
+      }, 8000);
     </script>
     <!-- End LeadConnector Chat Widget -->
+
   </body>
 </html>

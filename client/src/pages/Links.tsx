@@ -4,32 +4,32 @@ const links = [
   {
     label: "What Is My Home Worth?",
     description: "Get a local estimate based on real Cedar Park & Leander data",
-    href: "/home-value",
+    href: "https://mariomanzano.com/home-value?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Calculate My Net Proceeds",
     description: "See what you actually walk away with after all costs",
-    href: "/net-sheet",
+    href: "https://mariomanzano.com/net-sheet?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Sell vs Rent Calculator",
     description: "Run the real numbers before you decide",
-    href: "/sell-vs-rent",
+    href: "https://mariomanzano.com/sell-vs-rent?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Remodel vs Sell Calculator",
     description: "Find out if the upgrade is worth it",
-    href: "/remodel-vs-sell",
+    href: "https://mariomanzano.com/remodel-vs-sell?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Free Homeowner Guide",
     description: "Sell, Remodel, Rent, or Hold — understand all four paths",
-    href: "/homeowner-guide",
+    href: "https://mariomanzano.com/homeowner-guide?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Talk to Mario",
     description: "No pitch. Just a clear conversation about your options",
-    href: "/contact",
+    href: "https://mariomanzano.com/contact?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
 ];
 
@@ -63,7 +63,6 @@ export default function Links() {
           Cedar Park & Leander, TX
         </p>
       </div>
-
       <div className="w-full max-w-sm flex flex-col gap-3">
         {links.map((link) => (
           <a
@@ -80,7 +79,6 @@ export default function Links() {
           </a>
         ))}
       </div>
-
       <p
         className="text-white/20 text-xs mt-10 uppercase"
         style={{ letterSpacing: "0.2em" }}

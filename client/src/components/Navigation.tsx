@@ -122,7 +122,13 @@ export default function Navigation() {
   // and the click handler (so the existing smooth client-side nav and
   // localStorage language preference still work for real visitors).
   const getLanguageTargetPath = (lang: "en" | "es") => {
-    const currentPath = location.split("?")[0];
+    // Normalize away a trailing slash (other than the root "/") before
+    // lookup, since prerendered routes resolve as e.g. "/net-sheet/" on
+    // the live site but the route maps above are keyed without it.
+    let currentPath = location.split("?")[0];
+    if (currentPath.length > 1 && currentPath.endsWith("/")) {
+      currentPath = currentPath.slice(0, -1);
+    }
     if (lang === "es") {
       return esRoutes[currentPath] || "/es";
     }

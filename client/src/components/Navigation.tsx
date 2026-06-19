@@ -177,23 +177,20 @@ export default function Navigation() {
 
               {/* Language Toggle */}
               <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-4 ml-2">
-                
-                  href={getLanguageTargetPath("en")}
+                <a href={getLanguageTargetPath("en")}
                   onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
                   className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                   English
                 </a>
                 <span className="opacity-50">|</span>
-                
-                  href={getLanguageTargetPath("es")}
+                <a href={getLanguageTargetPath("es")}
                   onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
                   className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                   Español
                 </a>
               </div>
 
-              
-                onClick={(e) => {
+              <a onClick={(e) => {
                   e.preventDefault();
                   const url = getCTALink("start-conversation", language);
                   if (window.fbq) {
@@ -202,9 +199,7 @@ export default function Navigation() {
                   setTimeout(() => {
                     window.open(url, "_blank");
                   }, 500);
-                }}
-                className="btn-luxury text-[10px] py-2 cursor-pointer"
-              >
+                }} className="btn-luxury text-[10px] py-2 cursor-pointer">
                 {language === "es"
                   ? "Iniciar una Conversación"
                   : "Start a conversation"}
@@ -242,23 +237,20 @@ export default function Navigation() {
 
             {/* Mobile Language Toggle */}
             <div className="flex items-center gap-3 mb-8 text-sm tracking-[0.15em] uppercase font-medium text-[#1A1A18]">
-              
-                href={getLanguageTargetPath("en")}
+              <a href={getLanguageTargetPath("en")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
                 className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                 English
               </a>
               <span className="opacity-50">|</span>
-              
-                href={getLanguageTargetPath("es")}
+              <a href={getLanguageTargetPath("es")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
                 className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                 Español
               </a>
             </div>
 
-            
-              onClick={(e) => {
+            <a onClick={(e) => {
                 e.preventDefault();
                 const url = getCTALink("start-conversation", language);
                 if (window.fbq) {
@@ -267,9 +259,7 @@ export default function Navigation() {
                 setTimeout(() => {
                   window.open(url, "_blank");
                 }, 300);
-              }}
-              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
-            >
+              }} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
               {language === "es"
                 ? "Iniciar una Conversación"
                 : "Start a conversation"}

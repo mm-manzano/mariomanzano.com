@@ -180,24 +180,14 @@ export default function Navigation() {
                 
                   href={getLanguageTargetPath("en")}
                   onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
-                  className={`transition-colors duration-300 ${
-                    language === "en"
-                      ? "text-[#B8974A]"
-                      : "opacity-50 hover:opacity-100"
-                  }`}
-                >
+                  className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                   English
                 </a>
                 <span className="opacity-50">|</span>
                 
                   href={getLanguageTargetPath("es")}
                   onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
-                  className={`transition-colors duration-300 ${
-                    language === "es"
-                      ? "text-[#B8974A]"
-                      : "opacity-50 hover:opacity-100"
-                  }`}
-                >
+                  className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                   Español
                 </a>
               </div>
@@ -255,20 +245,14 @@ export default function Navigation() {
               
                 href={getLanguageTargetPath("en")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
-                className={`transition-colors duration-300 ${
-                  language === "en" ? "text-[#B8974A]" : "opacity-50 hover:opacity-100"
-                }`}
-              >
+                className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                 English
               </a>
               <span className="opacity-50">|</span>
               
                 href={getLanguageTargetPath("es")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
-                className={`transition-colors duration-300 ${
-                  language === "es" ? "text-[#B8974A]" : "opacity-50 hover:opacity-100"
-                }`}
-              >
+                className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
                 Español
               </a>
             </div>

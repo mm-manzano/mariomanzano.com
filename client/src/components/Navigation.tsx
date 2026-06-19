@@ -1,11 +1,14 @@
 /*
- * DESIGN: Quiet Luxury Editorial
- * Nav: Minimal, transparent on hero, white on scroll. Logo = wordmark in Cormorant Garamond.
- * Links: DM Sans, small caps, gold underline on hover.
- * CTA: Single "Request Consultation" button in charcoal.
- * Language: Basic EN | ES toggle in top-right
- * FIX: Ensured Spanish menu items have the exact same font size and styling as English.
- */
+* DESIGN: Quiet Luxury Editorial
+* Nav: Minimal, transparent on hero, white on scroll. Logo = wordmark in Cormorant Garamond.
+* Links: DM Sans, small caps, gold underline on hover.
+* CTA: Single "Request Consultation" button in charcoal.
+* Language: Basic EN | ES toggle in top-right
+* FIX: Ensured Spanish menu items have the exact same font size and styling as English.
+* FIX: Language toggle is now a real <a href> (crawlable) instead of a button-only
+*       click handler, and the EN/ES route map covers every real route on the site
+*       instead of just five of them.
+*/
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
@@ -25,6 +28,54 @@ const navLinksES = [
   { label: "Contacto", href: "/es/contacto" },
 ];
 
+// Full EN -> ES route map. Every real route in scripts/prerender.js should
+// have an entry here so the language toggle always lands on the matching
+// page instead of falling back to the homepage.
+const esRoutes: { [key: string]: string } = {
+  "/": "/es",
+  "/strategy-hub": "/es/strategy-hub",
+  "/home-value": "/es/home-value",
+  "/sell-vs-rent": "/es/sell-vs-rent",
+  "/remodel-vs-sell": "/es/remodel-vs-sell",
+  "/net-sheet": "/es/net-sheet",
+  "/homeowner-guide": "/es/guia-para-propietarios",
+  "/about": "/es/acerca",
+  "/contact": "/es/contacto",
+  "/seller-strategy": "/es/presentacion-vendedores",
+  "/privacy-policy": "/es/privacy-policy",
+  "/terms-of-service": "/es/terms-of-service",
+  // Already-Spanish paths map to themselves so the toggle is idempotent
+  // if it's ever called while already on the ES side.
+  "/es": "/es",
+  "/es/strategy-hub": "/es/strategy-hub",
+  "/es/home-value": "/es/home-value",
+  "/es/sell-vs-rent": "/es/sell-vs-rent",
+  "/es/remodel-vs-sell": "/es/remodel-vs-sell",
+  "/es/net-sheet": "/es/net-sheet",
+  "/es/guia-para-propietarios": "/es/guia-para-propietarios",
+  "/es/acerca": "/es/acerca",
+  "/es/contacto": "/es/contacto",
+  "/es/presentacion-vendedores": "/es/presentacion-vendedores",
+  "/es/privacy-policy": "/es/privacy-policy",
+  "/es/terms-of-service": "/es/terms-of-service",
+};
+
+// Full ES -> EN route map, the inverse of esRoutes.
+const enRoutes: { [key: string]: string } = {
+  "/es": "/",
+  "/es/strategy-hub": "/strategy-hub",
+  "/es/home-value": "/home-value",
+  "/es/sell-vs-rent": "/sell-vs-rent",
+  "/es/remodel-vs-sell": "/remodel-vs-sell",
+  "/es/net-sheet": "/net-sheet",
+  "/es/guia-para-propietarios": "/homeowner-guide",
+  "/es/acerca": "/about",
+  "/es/contacto": "/contact",
+  "/es/presentacion-vendedores": "/seller-strategy",
+  "/es/privacy-policy": "/privacy-policy",
+  "/es/terms-of-service": "/terms-of-service",
+};
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -37,7 +88,7 @@ export default function Navigation() {
   const handleNavClick = (href: string) => {
     // Close mobile menu
     setMobileOpen(false);
-    
+
     // If clicking the same page, scroll to top
     if (location === href) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -66,31 +117,22 @@ export default function Navigation() {
     }
   }, [isSpanish, language]);
 
+  // Resolve the target path for the language toggle link, given the
+  // current location. Used for both the real href (so it's crawlable)
+  // and the click handler (so the existing smooth client-side nav and
+  // localStorage language preference still work for real visitors).
+  const getLanguageTargetPath = (lang: "en" | "es") => {
+    const currentPath = location.split("?")[0];
+    if (lang === "es") {
+      return esRoutes[currentPath] || "/es";
+    }
+    return enRoutes[currentPath] || "/";
+  };
+
   const handleLanguageChange = (lang: "en" | "es") => {
     setLanguage(lang);
     localStorage.setItem("language", lang);
-    if (lang === "es") {
-      const esRoutes = {
-        "/": "/es",
-        "/home-value": "/es",
-        "/homeowner-guide": "/es/guia-para-propietarios",
-        "/about": "/es/acerca",
-        "/contact": "/es/contacto",
-        "/es": "/es",
-        "/es/guia-para-propietarios": "/es/guia-para-propietarios",
-        "/es/acerca": "/es/acerca",
-        "/es/contacto": "/es/contacto",
-      };
-      setLocation(esRoutes[location.split("?")[0]] || "/es");
-    } else {
-      const enRoutes: { [key: string]: string } = {
-        "/es": "/",
-        "/es/guia-para-propietarios": "/homeowner-guide",
-        "/es/acerca": "/about",
-        "/es/contacto": "/contact",
-      };
-      setLocation(enRoutes[location.split("?")[0]] || "/");
-    }
+    setLocation(getLanguageTargetPath(lang));
   };
 
   return (
@@ -132,11 +174,12 @@ export default function Navigation() {
                   </span>
                 </a>
               ))}
-              
+
               {/* Language Toggle */}
               <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-4 ml-2">
-                <button
-                  onClick={() => handleLanguageChange("en")}
+                
+                  href={getLanguageTargetPath("en")}
+                  onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
                   className={`transition-colors duration-300 ${
                     language === "en"
                       ? "text-[#B8974A]"
@@ -144,10 +187,11 @@ export default function Navigation() {
                   }`}
                 >
                   English
-                </button>
+                </a>
                 <span className="opacity-50">|</span>
-                <button
-                  onClick={() => handleLanguageChange("es")}
+                
+                  href={getLanguageTargetPath("es")}
+                  onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
                   className={`transition-colors duration-300 ${
                     language === "es"
                       ? "text-[#B8974A]"
@@ -155,10 +199,10 @@ export default function Navigation() {
                   }`}
                 >
                   Español
-                </button>
+                </a>
               </div>
 
-              <a
+              
                 onClick={(e) => {
                   e.preventDefault();
                   const url = getCTALink("start-conversation", language);
@@ -205,29 +249,31 @@ export default function Navigation() {
                 </a>
               ))}
             </nav>
-        
+
             {/* Mobile Language Toggle */}
             <div className="flex items-center gap-3 mb-8 text-sm tracking-[0.15em] uppercase font-medium text-[#1A1A18]">
-              <button
-                onClick={() => handleLanguageChange("en")}
+              
+                href={getLanguageTargetPath("en")}
+                onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
                 className={`transition-colors duration-300 ${
                   language === "en" ? "text-[#B8974A]" : "opacity-50 hover:opacity-100"
                 }`}
               >
                 English
-              </button>
+              </a>
               <span className="opacity-50">|</span>
-              <button
-                onClick={() => handleLanguageChange("es")}
+              
+                href={getLanguageTargetPath("es")}
+                onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
                 className={`transition-colors duration-300 ${
                   language === "es" ? "text-[#B8974A]" : "opacity-50 hover:opacity-100"
                 }`}
               >
                 Español
-              </button>
+              </a>
             </div>
 
-            <a
+            
               onClick={(e) => {
                 e.preventDefault();
                 const url = getCTALink("start-conversation", language);

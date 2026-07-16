@@ -138,6 +138,30 @@ export default function Buyers() {
         </div>
       </section>
 
+      {/* SEARCH HOMES DIRECT PATH */}
+      <section className="py-16 border-b border-[#E8E0D5]">
+        <div className="container">
+          <div className="max-w-4xl">
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A] mb-3">Ready to start looking?</p>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-3">
+              Search homes in Cedar Park and Leander.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 max-w-lg leading-relaxed mb-8">
+              Browse active listings and see what is on the market right now, then let's talk through what actually fits your situation.
+            </p>
+            <div className="bg-white p-4 md:p-6 shadow-sm border border-[#E8E0D5]">
+              <iframe
+                style={{ width: "100%", height: "300px" }}
+                src="https://mariomanzano.exprealty.com/wide.php"
+                allowTransparency={true}
+                frameBorder="0"
+                title="Home Search Tool"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT / CREDIBILITY */}
       <section className="py-20 md:py-32">
         <div className="container">

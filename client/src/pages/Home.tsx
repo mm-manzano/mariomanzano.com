@@ -7,6 +7,7 @@
  * TRACK 2 UPDATE: Added motivated seller direct path after trust strip,
  *                 pulled investing credibility into advisor intro,
  *                 added How This Works three-step section before process accordion.
+ * BUYERS UPDATE: Trust Strip now links "buyers" to /buyers page.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -174,7 +175,13 @@ export default function Home() {
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
-              I help homeowners in Cedar Park, Leander, and the greater Austin area develop a clear strategy around selling, remodeling, renting, or holding. I bring that same strategic approach to buyers, helping them avoid overpaying.
+              I help homeowners in Cedar Park, Leander, and the greater Austin area develop a clear strategy around selling, remodeling, renting, or holding. I bring that same strategic approach to{" "}
+              <Link href="/buyers">
+                <span className="text-[#D4B878] underline decoration-[#D4B878]/50 hover:text-white hover:decoration-white cursor-pointer transition-colors">
+                  buyers
+                </span>
+              </Link>
+              , helping them avoid overpaying.
             </p>
           </div>
         </div>

@@ -4,6 +4,7 @@
  * Structure: Hero with primary CTA → Secondary options → Reassurance
  * NO FORMS - Direct contact channels only
  * FINAL: Meta tags, Open Graph, ContactPage schema added.
+ * BUYERS UPDATE: Reassurance Strip now includes buying alongside sell/rent/remodel/hold.
  */
 
 import { useEffect, useRef } from "react";
@@ -220,7 +221,7 @@ export default function Contact() {
                 <em className="italic">not just sells.</em>
               </h2>
               <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
-                I work with homeowners in Cedar Park, Leander, and the greater Austin area who want clarity before they commit to anything. Whether you are thinking about selling, renting, remodeling, or holding, the conversation starts the same way: with your situation, not a sales pitch.
+                I work with homeowners in Cedar Park, Leander, and the greater Austin area who want clarity before they commit to anything. Whether you are thinking about selling, renting, remodeling, holding, or buying your next home, the conversation starts the same way: with your situation, not a sales pitch.
               </p>
             </RevealDiv>
           </div>

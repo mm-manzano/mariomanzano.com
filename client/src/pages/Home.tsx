@@ -149,7 +149,7 @@ export default function Home() {
               <em className="italic">Your Advisor.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
-              Most homeowners only hear one option. I help you explore all your options, whether you're selling, remodeling, renting, holding, or buying your next home.
+              Most homeowners only hear one option. I help you understand all your options, whether you're selling, remodeling, renting, holding, or buying your next home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/strategy-hub">
@@ -174,7 +174,7 @@ export default function Home() {
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
-              I help homeowners in Cedar Park, Leander, and the greater Austin area develop a clear strategy around selling, remodeling, renting, or holding. For buyers, that means making smart offers instead of expensive mistakes.
+              I help homeowners in Cedar Park, Leander, and the greater Austin area develop a clear strategy around selling, remodeling, renting, or holding. I bring that same strategic approach to buyers, helping them avoid overpaying.
             </p>
           </div>
         </div>

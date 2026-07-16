@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 const links = [
   {
     label: "What Is My Home Worth?",
@@ -27,17 +26,20 @@ const links = [
     href: "https://mariomanzano.com/homeowner-guide?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
+    label: "Buying a Home?",
+    description: "Understand true market value before you make an offer",
+    href: "https://mariomanzano.com/buyers?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+  },
+  {
     label: "Talk to Mario",
     description: "No pitch. Just a clear conversation about your options",
     href: "https://mariomanzano.com/contact?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
 ];
-
 export default function Links() {
   useEffect(() => {
     document.title = "Mario Manzano | Links";
   }, []);
-
   return (
     <div className="min-h-screen bg-[#1c1c1c] flex flex-col items-center justify-start px-5 pt-28 pb-16">
       <div className="flex flex-col items-center mb-10">

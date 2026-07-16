@@ -21,6 +21,7 @@ const routes = [
   '/homeowner-guide',
   '/about',
   '/contact',
+  '/buyers',
   '/links',
   '/seller-strategy',
   // Spanish
@@ -33,6 +34,7 @@ const routes = [
   '/es/guia-para-propietarios',
   '/es/acerca',
   '/es/contacto',
+  '/es/buyers',
   '/es/presentacion-vendedores',
   // Legal
   '/privacy-policy',

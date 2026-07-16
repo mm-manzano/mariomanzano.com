@@ -18,12 +18,14 @@ import { getCTALink } from "@/lib/ctaLinks";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Guide", href: "/homeowner-guide" },
+  { label: "Buyers", href: "/buyers" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es" },
   { label: "Guía", href: "/es/guia-para-propietarios" },
+  { label: "Compradores", href: "/es/buyers" },
   { label: "Acerca", href: "/es/acerca" },
   { label: "Contacto", href: "/es/contacto" },
 ];
@@ -41,6 +43,7 @@ const esRoutes: { [key: string]: string } = {
   "/homeowner-guide": "/es/guia-para-propietarios",
   "/about": "/es/acerca",
   "/contact": "/es/contacto",
+  "/buyers": "/es/buyers",
   "/seller-strategy": "/es/presentacion-vendedores",
   "/privacy-policy": "/es/privacy-policy",
   "/terms-of-service": "/es/terms-of-service",
@@ -55,6 +58,7 @@ const esRoutes: { [key: string]: string } = {
   "/es/guia-para-propietarios": "/es/guia-para-propietarios",
   "/es/acerca": "/es/acerca",
   "/es/contacto": "/es/contacto",
+  "/es/buyers": "/es/buyers",
   "/es/presentacion-vendedores": "/es/presentacion-vendedores",
   "/es/privacy-policy": "/es/privacy-policy",
   "/es/terms-of-service": "/es/terms-of-service",
@@ -71,6 +75,7 @@ const enRoutes: { [key: string]: string } = {
   "/es/guia-para-propietarios": "/homeowner-guide",
   "/es/acerca": "/about",
   "/es/contacto": "/contact",
+  "/es/buyers": "/buyers",
   "/es/presentacion-vendedores": "/seller-strategy",
   "/es/privacy-policy": "/privacy-policy",
   "/es/terms-of-service": "/terms-of-service",

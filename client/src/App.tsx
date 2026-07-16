@@ -25,6 +25,7 @@ import RemodelVsSell from "./pages/RemodelVsSell";
 import HomeownerGuide from "./pages/HomeownerGuide";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Buyers from "./pages/Buyers";
 import Links from "./pages/Links";
 import ListingPresentation from "./pages/ListingPresentation";
 import ListingPresentationES from "./pages/ListingPresentationES";
@@ -39,6 +40,7 @@ import RemodelVsSellES from "./pages/RemodelVsSellES";
 import GuiaParaPropietarios from "./pages/GuiaParaPropietarios";
 import AboutES from "./pages/AboutES";
 import ContactES from "./pages/ContactES";
+import BuyersES from "./pages/BuyersES";
 import ConsultaES from "./pages/ConsultaES";
 
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -78,6 +80,7 @@ function Router() {
       <Route path="/es/guia-para-propietarios" component={GuiaParaPropietarios} />
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />
+      <Route path="/es/buyers" component={BuyersES} />
       <Route path="/es/consulta" component={ConsultaES} />
       <Route path="/es/presentacion-vendedores" component={ListingPresentationES} />
       <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
@@ -94,6 +97,7 @@ function Router() {
       <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/buyers" component={Buyers} />
       <Route path="/seller-strategy" component={ListingPresentation} />
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-of-service" component={TermsOfService} />

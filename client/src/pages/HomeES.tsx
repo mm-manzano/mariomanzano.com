@@ -147,7 +147,7 @@ export default function HomeES() {
               <em className="italic">Tu Asesor.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
-              La mayoría de los propietarios solo escuchan una opción. Yo te ayudo a entender todas, para que puedas decidir lo que realmente tiene sentido para tu situación.
+              La mayoría de los propietarios solo escuchan una opción. Yo te ayudo a conocer todas tus opciones, ya sea vender, remodelar, rentar, conservar tu casa o comprar la siguiente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/es/strategy-hub">
@@ -172,7 +172,7 @@ export default function HomeES() {
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
-              Ayudo a los propietarios en Cedar Park, Leander y el área de Austin a desarrollar una estrategia clara sobre vender, remodelar, alquilar o mantener. Mi trabajo es darte el panorama completo para que tomes la decisión correcta para tu familia.
+              Ayudo a propietarios en Cedar Park, Leander y el área de Austin a crear una estrategia clara para vender, remodelar, rentar o conservar su casa. Si estás buscando comprar, también te ayudo a no pagar de más.
             </p>
           </div>
         </div>

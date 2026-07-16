@@ -1,6 +1,7 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Página de Contacto (Español)
  * FINAL: Meta tags, Open Graph, ContactPage schema, copy en español.
+ * BUYERS UPDATE: Franja de Confianza ahora incluye comprar junto a vender/alquilar/remodelar/mantener.
  */
 
 import { useEffect, useRef } from "react";
@@ -217,7 +218,7 @@ export default function ContactES() {
                 <em className="italic">no solo vende.</em>
               </h2>
               <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
-                Trabajo con propietarios en Cedar Park, Leander y el área de Austin que quieren claridad antes de comprometerse con cualquier decisión. Ya sea que estés pensando en vender, alquilar, remodelar o mantener, la conversación siempre empieza de la misma manera: con tu situación, no con un discurso de ventas.
+                Trabajo con propietarios en Cedar Park, Leander y el área de Austin que quieren claridad antes de comprometerse con cualquier decisión. Ya sea que estés pensando en vender, alquilar, remodelar, mantener, o comprar tu próxima casa, la conversación siempre empieza de la misma manera: con tu situación, no con un discurso de ventas.
               </p>
             </RevealDiv>
           </div>

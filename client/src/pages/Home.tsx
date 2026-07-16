@@ -174,15 +174,15 @@ export default function Home() {
       <section className="bg-[#1A1A18] py-12">
         <div className="container">
           <div className="max-w-2xl">
-            <p className="font-body text-base text-white/70 leading-relaxed">
-              I help homeowners in Cedar Park, Leander, and the greater Austin area develop a clear strategy around selling, remodeling, renting, or holding. I bring that same strategic approach to{" "}
-              <Link href="/buyers">
-                <span className="text-[#D4B878] underline decoration-[#D4B878]/50 hover:text-white hover:decoration-white cursor-pointer transition-colors">
-                  buyers
-                </span>
-              </Link>
-              , helping them avoid overpaying.
+            <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+              I help homeowners in Cedar Park, Leander, and the greater Austin area develop a clear strategy around selling, remodeling, renting, or holding. I bring that same strategic approach to buyers, helping them avoid overpaying.
             </p>
+            <Link href="/buyers">
+              <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                For Buyers
+                <ArrowRight size={14} />
+              </span>
+            </Link>
           </div>
         </div>
       </section>

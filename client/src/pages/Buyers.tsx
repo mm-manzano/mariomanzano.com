@@ -70,8 +70,27 @@ export default function Buyers() {
     );
   }, []);
 
+  const buyerServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Home Buyer Representation",
+    "provider": {
+      "@type": "RealEstateAgent",
+      "name": "Mario Manzano",
+      "telephone": "+1-512-695-9255",
+      "url": "https://mariomanzano.com"
+    },
+    "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
+    "url": "https://mariomanzano.com/buyers",
+    "description": "Mario Manzano helps buyers in Cedar Park, Leander, and the greater Austin area understand true market value before making an offer, so they don't overpay."
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buyerServiceSchema) }}
+      />
 
       {/* HERO */}
       <section className="relative h-auto md:min-h-[70vh] flex items-start">

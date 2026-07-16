@@ -6,6 +6,7 @@
  * COPY UPDATE: Subtítulo del hero reescrito, mención de Westlake corregida a Cedar Park,
  *              texto de mercado reescrito en voz de Mario, acordeón de proceso reescrito,
  *              sección de guía en lenguaje claro, CTAs diferenciados.
+ * BUYERS UPDATE: Franja de Confianza ahora incluye botón CTA "Para Compradores".
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -171,9 +172,15 @@ export default function HomeES() {
       <section className="bg-[#1A1A18] py-12">
         <div className="container">
           <div className="max-w-2xl">
-            <p className="font-body text-base text-white/70 leading-relaxed">
+            <p className="font-body text-base text-white/70 leading-relaxed mb-6">
               Ayudo a propietarios en Cedar Park, Leander y el área de Austin a crear una estrategia clara para vender, remodelar, rentar o conservar su casa. Si estás buscando comprar, también te ayudo a no pagar de más.
             </p>
+            <Link href="/es/buyers">
+              <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                Para Compradores
+                <ArrowRight size={14} />
+              </span>
+            </Link>
           </div>
         </div>
       </section>

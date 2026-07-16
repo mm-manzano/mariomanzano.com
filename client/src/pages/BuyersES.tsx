@@ -2,7 +2,8 @@
  * DESIGN: Quiet Luxury Editorial - Buyers Page (Spanish)
  * Matches homepage theme: same fonts, colors, RevealDiv scroll animation,
  * same button styles, same section rhythm (label + headline + copy).
- * Sections: Hero, Trust Strip, How I Help Buyers (grid), How This Works, Final CTA
+ * Sections: Hero, Trust Strip, Search Homes Direct Path, About, How I Help Buyers (grid),
+ *           How This Works, Final CTA
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -70,8 +71,27 @@ export default function BuyersEs() {
     );
   }, []);
 
+  const buyerServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Representación para Compradores",
+    "provider": {
+      "@type": "RealEstateAgent",
+      "name": "Mario Manzano",
+      "telephone": "+1-512-695-9255",
+      "url": "https://mariomanzano.com"
+    },
+    "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
+    "url": "https://mariomanzano.com/es/buyers",
+    "description": "Mario Manzano ayuda a compradores en Cedar Park, Leander y el área de Austin a entender el valor real de una casa antes de hacer una oferta, para que no paguen de más."
+  };
+
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buyerServiceSchema) }}
+      />
 
       {/* HERO */}
       <section className="relative h-auto md:min-h-[70vh] flex items-start">
@@ -115,6 +135,30 @@ export default function BuyersEs() {
             <p className="font-body text-base text-white/70 leading-relaxed">
               Ayudo a compradores en Cedar Park, Leander y el área de Austin a entender cuánto vale realmente una casa antes de hacer una oferta. Mi trabajo es darte los hechos, explicarte tus opciones, y ayudarte a comprar con confianza en lugar de presión.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* BUSCAR CASAS - RUTA DIRECTA */}
+      <section className="py-16 border-b border-[#E8E0D5]">
+        <div className="container">
+          <div className="max-w-4xl">
+            <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A] mb-3">¿Listo para empezar a buscar?</p>
+            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-3">
+              Busca casas en Cedar Park y Leander.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 max-w-lg leading-relaxed mb-8">
+              Explora las propiedades activas y mira lo que hay disponible ahora mismo, luego hablamos sobre lo que realmente se ajusta a tu situación.
+            </p>
+            <div className="bg-white p-4 md:p-6 shadow-sm border border-[#E8E0D5]">
+              <iframe
+                style={{ width: "100%", height: "300px" }}
+                src="https://mariomanzano.exprealty.com/wide.php"
+                allowTransparency={true}
+                frameBorder="0"
+                title="Herramienta de Búsqueda de Casas"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>

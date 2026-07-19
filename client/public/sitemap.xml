@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
   <url>
     <loc>https://mariomanzano.com/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es" />
@@ -31,9 +30,9 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://mariomanzano.com/remodel-vs-sell/</loc>
+    <loc>https://mariomanzano.com/remodel-vs-sell</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es/remodel-vs-sell" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/remodel-vs-sell/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/remodel-vs-sell" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -84,7 +83,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://mariomanzano.com/es</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/" />
@@ -115,7 +113,7 @@
   </url>
   <url>
     <loc>https://mariomanzano.com/es/remodel-vs-sell</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/remodel-vs-sell/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/remodel-vs-sell" />
     <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es/remodel-vs-sell" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -162,7 +160,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://mariomanzano.com/privacy-policy</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es/privacy-policy" />
@@ -191,5 +188,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
-
 </urlset>

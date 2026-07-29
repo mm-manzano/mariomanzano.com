@@ -197,7 +197,7 @@ export default function Contact() {
               <em className="italic">not a sales call.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              Our first conversation is simple. I will ask a few questions, understand your situation, and give you a clear direction based on your goals. No sales pitch. No pressure. If selling makes sense, I will tell you. If it does not, I will tell you that too.
+              Our first conversation is simple. I will ask a few questions, understand your situation, and give you a clear direction based on your goals. No sales pitch. No pressure. If selling or buying makes sense, I will tell you. If it does not, I will tell you that too.
             </p>
           </RevealDiv>
         </div>

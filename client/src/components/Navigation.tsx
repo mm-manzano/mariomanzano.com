@@ -8,6 +8,9 @@
 * FIX: Language toggle is now a real <a href> (crawlable) instead of a button-only
 *       click handler, and the EN/ES route map covers every real route on the site
 *       instead of just five of them.
+* BUYERS UPDATE: "Start a conversation" CTA (desktop + mobile) now detects Buyers
+*       pages and routes to the buyer funnel with Lead_Buyer tracking instead of
+*       always sending everyone to the seller funnel with generic Contact tracking.
 */
 
 import { useState, useEffect } from "react";
@@ -81,6 +84,8 @@ const enRoutes: { [key: string]: string } = {
   "/es/terms-of-service": "/terms-of-service",
 };
 
+const BUYER_FUNNEL_URL = "https://go.mariomanzano.com/buyer-plan";
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -89,6 +94,27 @@ export default function Navigation() {
     location === "/es" ||
     location.startsWith("/es/");
   const [language, setLanguage] = useState<"en" | "es">("en");
+
+  // Detect whether the visitor is currently on a Buyers page (EN or ES),
+  // so the nav CTA can route buyer traffic to the buyer funnel instead of
+  // defaulting everyone to the seller funnel.
+  const currentPath = location.split("?")[0];
+  const isBuyerPage = currentPath === "/buyers" || currentPath === "/es/buyers";
+
+  const handleCTAClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const url = isBuyerPage ? BUYER_FUNNEL_URL : getCTALink("start-conversation", language);
+    if (window.fbq) {
+      if (isBuyerPage) {
+        window.fbq("trackCustom", "Lead_Buyer");
+      } else {
+        window.fbq("track", "Contact");
+      }
+    }
+    setTimeout(() => {
+      window.open(url, "_blank");
+    }, 500);
+  };
 
   const handleNavClick = (href: string) => {
     // Close mobile menu
@@ -130,14 +156,14 @@ export default function Navigation() {
     // Normalize away a trailing slash (other than the root "/") before
     // lookup, since prerendered routes resolve as e.g. "/net-sheet/" on
     // the live site but the route maps above are keyed without it.
-    let currentPath = location.split("?")[0];
-    if (currentPath.length > 1 && currentPath.endsWith("/")) {
-      currentPath = currentPath.slice(0, -1);
+    let normalizedPath = location.split("?")[0];
+    if (normalizedPath.length > 1 && normalizedPath.endsWith("/")) {
+      normalizedPath = normalizedPath.slice(0, -1);
     }
     if (lang === "es") {
-      return esRoutes[currentPath] || "/es";
+      return esRoutes[normalizedPath] || "/es";
     }
-    return enRoutes[currentPath] || "/";
+    return enRoutes[normalizedPath] || "/";
   };
 
   const handleLanguageChange = (lang: "en" | "es") => {
@@ -201,16 +227,7 @@ export default function Navigation() {
                 </a>
               </div>
 
-              <a onClick={(e) => {
-                  e.preventDefault();
-                  const url = getCTALink("start-conversation", language);
-                  if (window.fbq) {
-                    window.fbq("track", "Contact");
-                  }
-                  setTimeout(() => {
-                    window.open(url, "_blank");
-                  }, 500);
-                }} className="btn-luxury text-[10px] py-2 cursor-pointer">
+              <a onClick={handleCTAClick} className="btn-luxury text-[10px] py-2 cursor-pointer">
                 {language === "es"
                   ? "Iniciar una Conversación"
                   : "Start a conversation"}
@@ -261,16 +278,7 @@ export default function Navigation() {
               </a>
             </div>
 
-            <a onClick={(e) => {
-                e.preventDefault();
-                const url = getCTALink("start-conversation", language);
-                if (window.fbq) {
-                  window.fbq("track", "Contact");
-                }
-                setTimeout(() => {
-                  window.open(url, "_blank");
-                }, 300);
-              }} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
+            <a onClick={handleCTAClick} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
               {language === "es"
                 ? "Iniciar una Conversación"
                 : "Start a conversation"}

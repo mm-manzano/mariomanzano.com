@@ -120,12 +120,19 @@ export default function Navigation() {
     // Close mobile menu
     setMobileOpen(false);
 
+    // If clicking Contact while on a Buyers page, carry buyer intent forward
+    // so the Contact page's CTA routes to the buyer funnel instead of
+    // defaulting to the seller funnel.
+    const targetHref = (isBuyerPage && (href === "/contact" || href === "/es/contacto"))
+      ? `${href}?intent=buyer`
+      : href;
+
     // If clicking the same page, scroll to top
-    if (location === href) {
+    if (location === targetHref) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       // Navigate to different page
-      setLocation(href);
+      setLocation(targetHref);
     }
   };
 
@@ -202,15 +209,19 @@ export default function Navigation() {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center justify-center gap-4">
-              {(isSpanish ? navLinksES : navLinks).map((link) => (
-                <a key={link.href} href={link.href} onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
-                  <span
-                    className="nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
-                  >
-                    {link.label}
-                  </span>
-                </a>
-              ))}
+              {(isSpanish ? navLinksES : navLinks).map((link) => {
+                const isContactLink = link.href === "/contact" || link.href === "/es/contacto";
+                const resolvedHref = isContactLink && isBuyerPage ? `${link.href}?intent=buyer` : link.href;
+                return (
+                  <a key={link.href} href={resolvedHref} onClick={(e) => { e.preventDefault(); handleNavClick(resolvedHref); }}>
+                    <span
+                      className="nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
+                    >
+                      {link.label}
+                    </span>
+                  </a>
+                );
+              })}
 
               {/* Language Toggle */}
               <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-4 ml-2">

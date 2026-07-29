@@ -194,7 +194,7 @@ export default function ContactES() {
               <em className="italic">no una llamada de ventas.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
-              Nuestra primera conversación es simple. Te haré algunas preguntas, entenderé tu situación y te daré una dirección clara basada en tus objetivos. Sin discurso de ventas. Sin presión. Si vender tiene sentido, te lo digo. Si no lo tiene, también te lo digo.
+              Nuestra primera conversación es simple. Te haré algunas preguntas, entenderé tu situación y te daré una dirección clara basada en tus objetivos. Sin discurso de ventas. Sin presión. Si vender o comprar tiene sentido, te lo digo. Si no lo tiene, también te lo digo.
             </p>
           </RevealDiv>
         </div>

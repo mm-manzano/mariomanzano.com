@@ -8,6 +8,7 @@
  */
 
 import { useEffect, useRef } from "react";
+import { useSearch } from "wouter";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
@@ -52,6 +53,10 @@ function setPageMeta(title: string, description: string, url: string) {
 }
 
 export default function Contact() {
+  const search = useSearch();
+  const isBuyerIntent = new URLSearchParams(search).get("intent") === "buyer";
+  const ctaHref = isBuyerIntent ? "https://go.mariomanzano.com/buyer-plan" : getCTALink("start-conversation", "en");
+
   useEffect(() => {
     setPageMeta(
       "Contact Mario Manzano | Cedar Park & Leander Realtor",
@@ -99,11 +104,13 @@ export default function Contact() {
                 Reach out and I will help you think through your options and what actually makes sense for your situation. No pressure. Just clarity.
               </p>
               <a
-                href={getCTALink("start-conversation", "en")}
+                href={ctaHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  if (window.fbq) { window.fbq("track", "Contact"); }
+                  if (window.fbq) {
+                    window.fbq(isBuyerIntent ? "trackCustom" : "track", isBuyerIntent ? "Lead_Buyer" : "Contact");
+                  }
                 }}
                 className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
               >
@@ -153,7 +160,9 @@ export default function Contact() {
                 </div>
                 <div>
                   <a
-                    href="sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question%20about%20my%20home."
+                    href={isBuyerIntent
+                      ? "sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question%20about%20buying%20a%20home."
+                      : "sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question%20about%20my%20home."}
                     className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A]"
                   >
                     Send a Message

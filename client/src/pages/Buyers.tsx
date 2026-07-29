@@ -116,12 +116,18 @@ export default function Buyers() {
               Most buyers just want to know they're paying a fair price. I help you understand the numbers before you make an offer, so you can move with confidence instead of guessing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                  Start a Conversation
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
+              <a
+                href="https://go.mariomanzano.com/buyer-plan"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (window.fbq) { window.fbq("trackCustom", "Lead_Buyer"); }
+                }}
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+              >
+                Start a Conversation
+                <ArrowRight size={14} />
+              </a>
             </div>
           </div>
         </div>
@@ -288,12 +294,18 @@ export default function Buyers() {
           </div>
 
           <RevealDiv delay={300} className="mt-12">
-            <Link href="/contact">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                Start a Conversation
-                <ArrowRight size={14} />
-              </span>
-            </Link>
+            <a
+              href="https://go.mariomanzano.com/buyer-plan"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (window.fbq) { window.fbq("trackCustom", "Lead_Buyer"); }
+              }}
+              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+            >
+              Start a Conversation
+              <ArrowRight size={14} />
+            </a>
           </RevealDiv>
         </div>
       </section>
@@ -308,12 +320,18 @@ export default function Buyers() {
             <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
               No sales pitch. Just a straightforward conversation about what you are looking for and what it is actually worth.
             </p>
-            <Link href="/contact">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                Start a Conversation
-                <ArrowRight size={14} />
-              </span>
-            </Link>
+            <a
+              href="https://go.mariomanzano.com/buyer-plan"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                if (window.fbq) { window.fbq("trackCustom", "Lead_Buyer"); }
+              }}
+              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+            >
+              Start a Conversation
+              <ArrowRight size={14} />
+            </a>
           </RevealDiv>
         </div>
       </section>

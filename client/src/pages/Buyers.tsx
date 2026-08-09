@@ -3,6 +3,9 @@
  * Matches homepage theme: same fonts, colors, RevealDiv scroll animation,
  * same button styles, same section rhythm (label + headline + copy).
  * Sections: Hero, Trust Strip, How I Help Buyers (grid), How This Works, Final CTA
+ * SEO FIX: setPageMeta now also writes a <link rel="canonical"> tag, and the
+ *       page URL / schema URL both use the trailing-slash form (/buyers/) to
+ *       match where prerender.js actually writes the file (dist/buyers/index.html).
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -59,6 +62,17 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
   setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+
+  // Canonical tag. Without this, Google has to guess which version of the
+  // URL (with or without trailing slash) is the real one. Setting it
+  // explicitly stops the redirect confusion from recurring on this page.
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", url);
 }
 
 export default function Buyers() {
@@ -66,7 +80,7 @@ export default function Buyers() {
     setPageMeta(
       "Cedar Park & Leander TX Buyer Strategist | Mario Manzano",
       "Mario Manzano helps buyers in Cedar Park, Leander, and the greater Austin area avoid overpaying and buy with confidence. Clear numbers, no pressure.",
-      "https://mariomanzano.com/buyers"
+      "https://mariomanzano.com/buyers/"
     );
   }, []);
 
@@ -81,7 +95,7 @@ export default function Buyers() {
       "url": "https://mariomanzano.com"
     },
     "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
-    "url": "https://mariomanzano.com/buyers",
+    "url": "https://mariomanzano.com/buyers/",
     "description": "Mario Manzano helps buyers in Cedar Park, Leander, and the greater Austin area understand true market value before making an offer, so they don't overpay."
   };
 
@@ -197,7 +211,7 @@ export default function Buyers() {
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 When you are ready to make an offer, you will know exactly where you stand and why.
               </p>
-              <Link href="/about">
+              <Link href="/about/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   My Story
                   <ArrowRight size={14} />

@@ -2,6 +2,9 @@
  * DESIGN: Quiet Luxury Editorial - Página de Contacto (Español)
  * FINAL: Meta tags, Open Graph, ContactPage schema, copy en español.
  * BUYERS UPDATE: Franja de Confianza ahora incluye comprar junto a vender/alquilar/remodelar/mantener.
+ * SEO FIX: setPageMeta now also writes a <link rel="canonical"> tag, and the
+ *       page URL / schema URL both use the trailing-slash form (/es/contacto/) to
+ *       match where prerender.js actually writes the file (dist/es/contacto/index.html).
  */
 
 import { useEffect, useRef } from "react";
@@ -46,6 +49,17 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
   setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+
+  // Canonical tag. Without this, Google has to guess which version of the
+  // URL (with or without trailing slash) is the real one. Setting it
+  // explicitly stops the redirect confusion from recurring on this page.
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", url);
 }
 
 export default function ContactES() {
@@ -53,7 +67,7 @@ export default function ContactES() {
     setPageMeta(
       "Contactar a Mario Manzano | Agente de Bienes Raíces en Cedar Park y Leander TX",
       "Contacta a Mario Manzano, REALTOR® en Cedar Park y Leander TX. Sin presión, sin discurso de ventas. Solo una conversación real sobre tu casa y tus opciones.",
-      "https://mariomanzano.com/es/contacto"
+      "https://mariomanzano.com/es/contacto/"
     );
   }, []);
 
@@ -61,7 +75,7 @@ export default function ContactES() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contactar a Mario Manzano",
-    "url": "https://mariomanzano.com/es/contacto",
+    "url": "https://mariomanzano.com/es/contacto/",
     "description": "Contacta a Mario Manzano, REALTOR® licenciado y estratega de ventas en Cedar Park y Leander, Texas.",
     "mainEntity": {
       "@type": "RealEstateAgent",

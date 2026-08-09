@@ -2,10 +2,12 @@
  * DESIGN: Quiet Luxury Editorial
  * Routes: Home, HomeValue, NetSheet, SellVsRent, RemodelVsSell, HomeownerGuide, About, Contact (English & Spanish)
  * Layout: Navigation (fixed, transparent on hero) + page content + Footer
+ * CLEANUP: Removed the old /homeownerguide redirect route. /homeowner-guide/
+ *       is the only version that matters now, so the dead redirect route is gone.
  */
 
-// Build version: v2.5.5 - Listing Presentation ES page added
-const BUILD_VERSION = "2.5.5";
+// Build version: v2.5.6 - Removed old /homeownerguide redirect route
+const BUILD_VERSION = "2.5.6";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -94,7 +96,6 @@ function Router() {
       <Route path="/sell-vs-rent" component={SellVsRent} />
       <Route path="/remodel-vs-sell" component={RemodelVsSell} />
       <Route path="/homeowner-guide" component={HomeownerGuide} />
-      <Route path="/homeownerguide">{() => { window.location.href = "/homeowner-guide"; return null; }}</Route>
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/buyers" component={Buyers} />

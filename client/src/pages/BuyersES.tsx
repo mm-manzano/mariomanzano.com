@@ -4,6 +4,10 @@
  * same button styles, same section rhythm (label + headline + copy).
  * Sections: Hero, Trust Strip, Search Homes Direct Path, About, How I Help Buyers (grid),
  *           How This Works, Final CTA
+ * SEO FIX: setPageMeta now also writes a <link rel="canonical"> tag, and the
+ *       page URL, schema URL, and internal Link hrefs (/es/contacto, /es/acerca)
+ *       all use the trailing-slash form to match where prerender.js actually
+ *       writes the file (dist/es/buyers/index.html).
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -60,6 +64,17 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
   setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+
+  // Canonical tag. Without this, Google has to guess which version of the
+  // URL (with or without trailing slash) is the real one. Setting it
+  // explicitly stops the redirect confusion from recurring on this page.
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", url);
 }
 
 export default function BuyersEs() {
@@ -67,7 +82,7 @@ export default function BuyersEs() {
     setPageMeta(
       "Comprador en Cedar Park y Leander TX | Mario Manzano",
       "Mario Manzano ayuda a compradores en Cedar Park, Leander y el área de Austin a comprar sin pagar de más y con confianza. Números claros, sin presión.",
-      "https://mariomanzano.com/es/buyers"
+      "https://mariomanzano.com/es/buyers/"
     );
   }, []);
 
@@ -82,7 +97,7 @@ export default function BuyersEs() {
       "url": "https://mariomanzano.com"
     },
     "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
-    "url": "https://mariomanzano.com/es/buyers",
+    "url": "https://mariomanzano.com/es/buyers/",
     "description": "Mario Manzano ayuda a compradores en Cedar Park, Leander y el área de Austin a entender el valor real de una casa antes de hacer una oferta, para que no paguen de más."
   };
 
@@ -117,7 +132,7 @@ export default function BuyersEs() {
               La mayoría de los compradores solo quieren saber que están pagando un precio justo. Te ayudo a entender los números antes de hacer una oferta, para que puedas avanzar con confianza en lugar de adivinar.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/es/contacto">
+              <Link href="/es/contacto/">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                   Iniciar una Conversación
                   <ArrowRight size={14} />
@@ -188,7 +203,7 @@ export default function BuyersEs() {
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 Cuando estés listo para hacer una oferta, sabrás exactamente en dónde estás parado y por qué.
               </p>
-              <Link href="/es/acerca">
+              <Link href="/es/acerca/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   Mi Historia
                   <ArrowRight size={14} />
@@ -285,7 +300,7 @@ export default function BuyersEs() {
           </div>
 
           <RevealDiv delay={300} className="mt-12">
-            <Link href="/es/contacto">
+            <Link href="/es/contacto/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                 Iniciar una Conversación
                 <ArrowRight size={14} />
@@ -305,7 +320,7 @@ export default function BuyersEs() {
             <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
               Sin presión de venta. Solo una conversación honesta sobre lo que buscas y cuánto vale realmente.
             </p>
-            <Link href="/es/contacto">
+            <Link href="/es/contacto/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                 Iniciar una Conversación
                 <ArrowRight size={14} />

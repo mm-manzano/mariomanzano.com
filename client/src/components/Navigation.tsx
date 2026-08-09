@@ -11,6 +11,12 @@
 * BUYERS UPDATE: "Start a conversation" CTA (desktop + mobile) now detects Buyers
 *       pages and routes to the buyer funnel with Lead_Buyer tracking instead of
 *       always sending everyone to the seller funnel with generic Contact tracking.
+* SEO FIX: All internal hrefs and route map values now use trailing slashes to
+*       match the canonical prerendered URLs (e.g. /buyers/ not /buyers). Google
+*       Search Console was flagging these as "Page with redirect" because the nav
+*       kept linking to the non-slash version, which 301s to the slash version.
+*       Route map keys stay without trailing slash since getLanguageTargetPath
+*       strips the slash before doing the lookup, only the values changed.
 */
 
 import { useState, useEffect } from "react";
@@ -20,68 +26,72 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Guide", href: "/homeowner-guide" },
-  { label: "Buyers", href: "/buyers" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Guide", href: "/homeowner-guide/" },
+  { label: "Buyers", href: "/buyers/" },
+  { label: "About", href: "/about/" },
+  { label: "Contact", href: "/contact/" },
 ];
 const navLinksES = [
-  { label: "Inicio", href: "/es" },
-  { label: "Guía", href: "/es/guia-para-propietarios" },
-  { label: "Compradores", href: "/es/buyers" },
-  { label: "Acerca", href: "/es/acerca" },
-  { label: "Contacto", href: "/es/contacto" },
+  { label: "Inicio", href: "/es/" },
+  { label: "Guía", href: "/es/guia-para-propietarios/" },
+  { label: "Compradores", href: "/es/buyers/" },
+  { label: "Acerca", href: "/es/acerca/" },
+  { label: "Contacto", href: "/es/contacto/" },
 ];
 
 // Full EN -> ES route map. Every real route in scripts/prerender.js should
 // have an entry here so the language toggle always lands on the matching
 // page instead of falling back to the homepage.
+// Keys stay WITHOUT trailing slash (getLanguageTargetPath normalizes the
+// current path before lookup). Values now carry the trailing slash since
+// those become the actual href the visitor is sent to.
 const esRoutes: { [key: string]: string } = {
-  "/": "/es",
-  "/strategy-hub": "/es/strategy-hub",
-  "/home-value": "/es/home-value",
-  "/sell-vs-rent": "/es/sell-vs-rent",
-  "/remodel-vs-sell": "/es/remodel-vs-sell",
-  "/net-sheet": "/es/net-sheet",
-  "/homeowner-guide": "/es/guia-para-propietarios",
-  "/about": "/es/acerca",
-  "/contact": "/es/contacto",
-  "/buyers": "/es/buyers",
-  "/seller-strategy": "/es/presentacion-vendedores",
-  "/privacy-policy": "/es/privacy-policy",
-  "/terms-of-service": "/es/terms-of-service",
+  "/": "/es/",
+  "/strategy-hub": "/es/strategy-hub/",
+  "/home-value": "/es/home-value/",
+  "/sell-vs-rent": "/es/sell-vs-rent/",
+  "/remodel-vs-sell": "/es/remodel-vs-sell/",
+  "/net-sheet": "/es/net-sheet/",
+  "/homeowner-guide": "/es/guia-para-propietarios/",
+  "/about": "/es/acerca/",
+  "/contact": "/es/contacto/",
+  "/buyers": "/es/buyers/",
+  "/seller-strategy": "/es/presentacion-vendedores/",
+  "/privacy-policy": "/es/privacy-policy/",
+  "/terms-of-service": "/es/terms-of-service/",
   // Already-Spanish paths map to themselves so the toggle is idempotent
   // if it's ever called while already on the ES side.
-  "/es": "/es",
-  "/es/strategy-hub": "/es/strategy-hub",
-  "/es/home-value": "/es/home-value",
-  "/es/sell-vs-rent": "/es/sell-vs-rent",
-  "/es/remodel-vs-sell": "/es/remodel-vs-sell",
-  "/es/net-sheet": "/es/net-sheet",
-  "/es/guia-para-propietarios": "/es/guia-para-propietarios",
-  "/es/acerca": "/es/acerca",
-  "/es/contacto": "/es/contacto",
-  "/es/buyers": "/es/buyers",
-  "/es/presentacion-vendedores": "/es/presentacion-vendedores",
-  "/es/privacy-policy": "/es/privacy-policy",
-  "/es/terms-of-service": "/es/terms-of-service",
+  "/es": "/es/",
+  "/es/strategy-hub": "/es/strategy-hub/",
+  "/es/home-value": "/es/home-value/",
+  "/es/sell-vs-rent": "/es/sell-vs-rent/",
+  "/es/remodel-vs-sell": "/es/remodel-vs-sell/",
+  "/es/net-sheet": "/es/net-sheet/",
+  "/es/guia-para-propietarios": "/es/guia-para-propietarios/",
+  "/es/acerca": "/es/acerca/",
+  "/es/contacto": "/es/contacto/",
+  "/es/buyers": "/es/buyers/",
+  "/es/presentacion-vendedores": "/es/presentacion-vendedores/",
+  "/es/privacy-policy": "/es/privacy-policy/",
+  "/es/terms-of-service": "/es/terms-of-service/",
 };
 
-// Full ES -> EN route map, the inverse of esRoutes.
+// Full ES -> EN route map, the inverse of esRoutes. Same rule: keys without
+// trailing slash, values with it.
 const enRoutes: { [key: string]: string } = {
   "/es": "/",
-  "/es/strategy-hub": "/strategy-hub",
-  "/es/home-value": "/home-value",
-  "/es/sell-vs-rent": "/sell-vs-rent",
-  "/es/remodel-vs-sell": "/remodel-vs-sell",
-  "/es/net-sheet": "/net-sheet",
-  "/es/guia-para-propietarios": "/homeowner-guide",
-  "/es/acerca": "/about",
-  "/es/contacto": "/contact",
-  "/es/buyers": "/buyers",
-  "/es/presentacion-vendedores": "/seller-strategy",
-  "/es/privacy-policy": "/privacy-policy",
-  "/es/terms-of-service": "/terms-of-service",
+  "/es/strategy-hub": "/strategy-hub/",
+  "/es/home-value": "/home-value/",
+  "/es/sell-vs-rent": "/sell-vs-rent/",
+  "/es/remodel-vs-sell": "/remodel-vs-sell/",
+  "/es/net-sheet": "/net-sheet/",
+  "/es/guia-para-propietarios": "/homeowner-guide/",
+  "/es/acerca": "/about/",
+  "/es/contacto": "/contact/",
+  "/es/buyers": "/buyers/",
+  "/es/presentacion-vendedores": "/seller-strategy/",
+  "/es/privacy-policy": "/privacy-policy/",
+  "/es/terms-of-service": "/terms-of-service/",
 };
 
 const BUYER_FUNNEL_URL = "https://go.mariomanzano.com/buyer-plan";
@@ -92,14 +102,17 @@ export default function Navigation() {
   const [location, setLocation] = useLocation();
   const isSpanish =
     location === "/es" ||
+    location === "/es/" ||
     location.startsWith("/es/");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
   // Detect whether the visitor is currently on a Buyers page (EN or ES),
   // so the nav CTA can route buyer traffic to the buyer funnel instead of
   // defaulting everyone to the seller funnel.
+  // Checked against the trailing-slash form since that is what the live
+  // prerendered pages actually resolve to.
   const currentPath = location.split("?")[0];
-  const isBuyerPage = currentPath === "/buyers" || currentPath === "/es/buyers";
+  const isBuyerPage = currentPath === "/buyers/" || currentPath === "/es/buyers/";
 
   const handleCTAClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -123,7 +136,7 @@ export default function Navigation() {
     // If clicking Contact while on a Buyers page, carry buyer intent forward
     // so the Contact page's CTA routes to the buyer funnel instead of
     // defaulting to the seller funnel.
-    const targetHref = (isBuyerPage && (href === "/contact" || href === "/es/contacto"))
+    const targetHref = (isBuyerPage && (href === "/contact/" || href === "/es/contacto/"))
       ? `${href}?intent=buyer`
       : href;
 
@@ -162,13 +175,13 @@ export default function Navigation() {
   const getLanguageTargetPath = (lang: "en" | "es") => {
     // Normalize away a trailing slash (other than the root "/") before
     // lookup, since prerendered routes resolve as e.g. "/net-sheet/" on
-    // the live site but the route maps above are keyed without it.
+    // the live site but the route map keys above are stored without it.
     let normalizedPath = location.split("?")[0];
     if (normalizedPath.length > 1 && normalizedPath.endsWith("/")) {
       normalizedPath = normalizedPath.slice(0, -1);
     }
     if (lang === "es") {
-      return esRoutes[normalizedPath] || "/es";
+      return esRoutes[normalizedPath] || "/es/";
     }
     return enRoutes[normalizedPath] || "/";
   };
@@ -210,7 +223,7 @@ export default function Navigation() {
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center justify-center gap-4">
               {(isSpanish ? navLinksES : navLinks).map((link) => {
-                const isContactLink = link.href === "/contact" || link.href === "/es/contacto";
+                const isContactLink = link.href === "/contact/" || link.href === "/es/contacto/";
                 const resolvedHref = isContactLink && isBuyerPage ? `${link.href}?intent=buyer` : link.href;
                 return (
                   <a key={link.href} href={resolvedHref} onClick={(e) => { e.preventDefault(); handleNavClick(resolvedHref); }}>

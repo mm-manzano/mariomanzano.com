@@ -3,6 +3,10 @@
  * Footer: Deep charcoal background, warm off-white text, gold accents.
  * Minimal: wordmark, navigation, contact, legal.
  * Language-aware: English and Spanish translations
+ * SEO FIX: Bottom row links now use trailing slashes (/privacy-policy/,
+ *       /terms-of-service/, /homeowner-guide/, /buyers/, and the ES
+ *       equivalents) to match the canonical URLs prerender.js writes.
+ *       These were the last non-slash internal links left on the site.
  */
 
 import { useLocation } from "wouter";
@@ -92,16 +96,16 @@ export default function Footer() {
               {isSpanish ? "Representado por eXp Realty · Leander, TX" : "Brokered by eXp Realty · Leander, TX"}
             </p>
             <div className="flex gap-4 mt-2">
-              <a href={isSpanish ? "/es/privacy-policy" : "/privacy-policy"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
+              <a href={isSpanish ? "/es/privacy-policy/" : "/privacy-policy/"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
                 {isSpanish ? "Política de Privacidad" : "Privacy Policy"}
               </a>
-              <a href={isSpanish ? "/es/terms-of-service" : "/terms-of-service"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
+              <a href={isSpanish ? "/es/terms-of-service/" : "/terms-of-service/"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
                 {isSpanish ? "Términos de Servicio" : "Terms of Service"}
               </a>
-              <a href={isSpanish ? "/es/guia-para-propietarios" : "/homeowner-guide"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
+              <a href={isSpanish ? "/es/guia-para-propietarios/" : "/homeowner-guide/"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
                 {isSpanish ? "Guía del Propietario" : "Homeowner Guide"}
               </a>
-              <a href={isSpanish ? "/es/buyers" : "/buyers"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
+              <a href={isSpanish ? "/es/buyers/" : "/buyers/"} className="font-body text-xs text-white/40 hover:text-[#B8974A] transition-colors duration-300">
                 {isSpanish ? "Compradores" : "Buyers"}
               </a>
             </div>

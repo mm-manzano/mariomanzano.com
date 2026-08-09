@@ -5,6 +5,9 @@
  * NO FORMS - Direct contact channels only
  * FINAL: Meta tags, Open Graph, ContactPage schema added.
  * BUYERS UPDATE: Reassurance Strip now includes buying alongside sell/rent/remodel/hold.
+ * SEO FIX: setPageMeta now also writes a <link rel="canonical"> tag, and the
+ *       page URL / schema URL both use the trailing-slash form (/contact/) to
+ *       match where prerender.js actually writes the file (dist/contact/index.html).
  */
 
 import { useEffect, useRef } from "react";
@@ -50,6 +53,17 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
   setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+
+  // Canonical tag. Without this, Google has to guess which version of the
+  // URL (with or without trailing slash) is the real one. Setting it
+  // explicitly stops the redirect confusion from recurring on this page.
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", url);
 }
 
 export default function Contact() {
@@ -61,7 +75,7 @@ export default function Contact() {
     setPageMeta(
       "Contact Mario Manzano | Cedar Park & Leander Realtor",
       "Reach out to Mario Manzano, a licensed REALTOR® serving Cedar Park and Leander TX. No pressure, no sales pitch. Just a real conversation about your home and your options.",
-      "https://mariomanzano.com/contact"
+      "https://mariomanzano.com/contact/"
     );
   }, []);
 
@@ -69,7 +83,7 @@ export default function Contact() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Mario Manzano",
-    "url": "https://mariomanzano.com/contact",
+    "url": "https://mariomanzano.com/contact/",
     "description": "Contact Mario Manzano, a licensed REALTOR® and Seller Strategist serving Cedar Park and Leander, Texas.",
     "mainEntity": {
       "@type": "RealEstateAgent",

@@ -72,18 +72,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mariomanzano.com/links/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://mariomanzano.com/seller-strategy/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es/presentacion-vendedores/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/seller-strategy/" />
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://mariomanzano.com/es/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es/" />
@@ -152,13 +140,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es/contacto/" />
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://mariomanzano.com/es/presentacion-vendedores/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mariomanzano.com/seller-strategy/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://mariomanzano.com/es/presentacion-vendedores/" />
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mariomanzano.com/privacy-policy/</loc>

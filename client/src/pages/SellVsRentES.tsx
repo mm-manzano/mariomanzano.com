@@ -56,9 +56,10 @@ export default function SellVsRentES() {
 
   useEffect(() => {
     setPageMeta(
-      "Calculadora Vender vs. Alquilar | Cedar Park y Leander TX | Mario Manzano",
-      "¿Deberías vender tu casa o alquilarla? Compara el resultado financiero de vender ahora vs conservar como alquiler en Cedar Park y Leander TX. Herramienta gratuita para propietarios.",
+      "¿Debo Vender o Alquilar mi Casa? Calculadora Gratuita | Cedar Park y Leander TX",
+      "Haz los números antes de decidir. Compara vender ahora versus conservar como alquiler según tu equity real, potencial de renta y plazo. Herramienta gratuita para propietarios en Cedar Park y Leander TX.",
       "https://mariomanzano.com/es/sell-vs-rent"
+      
     );
   }, []);
 

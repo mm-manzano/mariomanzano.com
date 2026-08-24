@@ -51,8 +51,8 @@ export default function RemodelVsSell() {
 
   useEffect(() => {
     setPageMeta(
-      "Remodel vs. Sell Calculator | Cedar Park & Leander TX | Mario Manzano",
-      "Is remodeling worth it before selling your home in Cedar Park or Leander TX? Calculate the return on investment for your renovation versus selling as-is. Free tool for homeowners.",
+      "Should I Remodel or Sell? Free Calculator | Cedar Park & Leander TX",
+      "Run the numbers before you decide. Enter your home value, remodel cost, and expected price bump to see if renovating before selling is actually worth it. Cedar Park & Leander TX.",
       "https://mariomanzano.com/remodel-vs-sell"
     );
   }, []);

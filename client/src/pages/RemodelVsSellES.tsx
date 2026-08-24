@@ -50,8 +50,8 @@ export default function RemodelVsSellES() {
 
   useEffect(() => {
     setPageMeta(
-      "Calculadora Remodelar vs. Vender | Cedar Park y Leander TX | Mario Manzano",
-      "¿Vale la pena remodelar antes de vender tu casa en Cedar Park o Leander TX? Calcula el retorno de tu inversión en remodelación versus vender tal cual. Herramienta gratuita.",
+      "¿Debo Remodelar o Vender? Calculadora Gratuita | Cedar Park y Leander TX",
+      "Haz los números antes de decidir. Ingresa el valor de tu casa, el costo de remodelación y el aumento esperado para ver si renovar antes de vender realmente vale la pena. Cedar Park y Leander TX.",
       "https://mariomanzano.com/es/remodel-vs-sell"
     );
   }, []);

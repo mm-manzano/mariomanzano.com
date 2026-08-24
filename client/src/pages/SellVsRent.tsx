@@ -57,9 +57,9 @@ export default function SellVsRent() {
 
   useEffect(() => {
     setPageMeta(
-      "Sell vs. Rent Calculator for Cedar Park & Leander TX | Mario Manzano",
-      "Should you sell your home or rent it out? Compare the financial outcome of selling now vs holding as a rental in Cedar Park and Leander TX. Free calculator for homeowners.",
-      "https://mariomanzano.com/sell-vs-rent"
+      "Should I Sell or Rent My Home? Free Calculator | Cedar Park & Leander TX",
+"Run the numbers before you decide. Compare selling now versus holding as a rental based on your actual equity, rent potential, and timeline. Free tool for Cedar Park & Leander homeowners.",
+"https://mariomanzano.com/sell-vs-rent"
     );
   }, []);
 

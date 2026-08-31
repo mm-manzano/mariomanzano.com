@@ -201,7 +201,7 @@ export default function Navigation() {
             <Link to="/">
               <div className="flex items-center gap-3 cursor-pointer">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-logo_f81eb6dd.png"
+                  src="/images/logo.png"
                   alt="Mario Manzano"
                   className="w-8 h-8 md:w-10 md:h-10"
                 />

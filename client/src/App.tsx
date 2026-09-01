@@ -43,7 +43,6 @@ import GuiaParaPropietarios from "./pages/GuiaParaPropietarios";
 import AboutES from "./pages/AboutES";
 import ContactES from "./pages/ContactES";
 import BuyersES from "./pages/BuyersES";
-import ConsultaES from "./pages/ConsultaES";
 
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PrivacyPolicyES from "./pages/PrivacyPolicyES";
@@ -83,8 +82,7 @@ function Router() {
       <Route path="/es/acerca" component={AboutES} />
       <Route path="/es/contacto" component={ContactES} />
       <Route path="/es/buyers" component={BuyersES} />
-      <Route path="/es/consulta" component={ConsultaES} />
-      <Route path="/es/presentacion-vendedores" component={ListingPresentationES} />
+            <Route path="/es/presentacion-vendedores" component={ListingPresentationES} />
       <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
       <Route path="/es/terms-of-service" component={TermsOfServiceES} />
 

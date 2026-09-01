@@ -14,10 +14,10 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-4NeoK6eSrnasPK9gSeTzGq.webp";
-const INTERIOR_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-interior-luxury-8ttBRGUkDcTUkKucmQzirD.webp";
-const AERIAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/cedar-park-aerial-SPVZiqyQFqbArbkNwV7GJu.webp";
-const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
+const HERO_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-exterior.jpg";
+const INTERIOR_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-interior.jpg";
+const AERIAL_IMG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
+const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -86,7 +86,7 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:description", description, true);
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
-  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 }
 
 export default function Home() {
@@ -107,7 +107,7 @@ export default function Home() {
     "alternateName": ["Mario Manzano", "Mario Manzano Austin Realtor"],
     "@id": "https://mariomanzano.com",
     "url": "https://mariomanzano.com",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg",
+    "image": "/images/mario-manzano-austin-realtor-professional-headshot.JPG",
     "telephone": "+1-512-695-9255",
     "address": {
       "@type": "PostalAddress",

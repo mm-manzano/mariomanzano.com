@@ -14,7 +14,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 
-const HERO_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-exterior.jpg";
+const HERO_IMG = "/images/austin-texas-real-estate-home.jpg";
 const INTERIOR_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-interior.jpg";
 const AERIAL_IMG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";

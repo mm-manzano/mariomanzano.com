@@ -165,14 +165,16 @@ export default function BuyersEs() {
             <p className="font-body text-base text-[#1A1A18]/65 max-w-lg leading-relaxed mb-8">
               Explora las propiedades activas y mira lo que hay disponible ahora mismo, luego hablamos sobre lo que realmente se ajusta a tu situación.
             </p>
-            <div className="bg-white p-4 md:p-6 shadow-sm border border-[#E8E0D5]">
-              <iframe
-                style={{ width: "100%", height: "300px" }}
-                src="https://mariomanzano.exprealty.com/wide.php"
-                allowTransparency={true}
-                frameBorder="0"
-                title="Herramienta de Búsqueda de Casas"
-              ></iframe>
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-white p-3 shadow-sm border border-[#E8E0D5] inline-block">
+                <iframe
+                  style={{ width: "280px", height: "680px" }}
+                  src="https://mariomanzano.exprealty.com/embedsmall.php"
+                  allowTransparency={true}
+                  frameBorder="0"
+                  title="Herramienta de Búsqueda de Casas"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

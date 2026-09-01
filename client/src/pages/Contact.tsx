@@ -16,8 +16,6 @@ import { Phone, Mail, MessageSquare } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
 
-const ADVISOR_BG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-exterior.jpg";
-const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -102,12 +100,8 @@ export default function Contact() {
       />
 
       {/* HERO SECTION WITH PRIMARY CTA */}
-      <section className="relative pt-24 pb-16 md:pt-40 md:pb-24 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#1A1A18]/70" />
-        </div>
-        <div className="relative z-10 container">
+      <section className="bg-[#1A1A18] pt-24 pb-16 md:pt-40 md:pb-24">
+        <div className="container">
           <div className="max-w-2xl">
             <RevealDiv>
               <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
@@ -227,12 +221,8 @@ export default function Contact() {
       </section>
 
       {/* REASSURANCE STRIP */}
-      <section
-        className="py-16 relative"
-        style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover" }}
-      >
-        <div className="absolute inset-0 bg-[#1A1A18]/90" />
-        <div className="relative z-10 container">
+      <section className="py-16 bg-[#1A1A18]">
+        <div className="container">
           <div className="max-w-2xl">
             <RevealDiv>
               <div className="flex items-center gap-3 mb-6">

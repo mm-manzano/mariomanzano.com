@@ -11,9 +11,9 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
 
-const ADVISOR_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-advisor-bg-FFo7WwjyuZSVioVNUzZH62.webp";
-const MARIO_HEADSHOT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg";
-const TEXTURE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-hero-bg-Zzemi4ArQkuF2Ww9f72uuW.webp";
+const ADVISOR_BG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-exterior.jpg";
+const MARIO_HEADSHOT = "/images/mario-manzano-austin-realtor-professional-headshot.JPG";
+const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,7 +48,7 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:description", description, true);
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
-  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 }
 
 export default function About() {
@@ -66,7 +66,7 @@ export default function About() {
     "name": "Mario Manzano",
     "jobTitle": "REALTOR® and Seller Strategist",
     "url": "https://mariomanzano.com/about",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg",
+    "image": "/images/mario-manzano-austin-realtor-professional-headshot.JPG",
     "telephone": "+1-512-695-9255",
     "email": "realtor@mariomanzano.com",
     "address": { "@type": "PostalAddress", "addressLocality": "Leander", "addressRegion": "TX", "addressCountry": "US" },

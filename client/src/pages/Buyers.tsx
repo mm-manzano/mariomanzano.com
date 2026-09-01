@@ -12,7 +12,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
-const HERO_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-exterior.jpg";
+const HERO_IMG = "/images/austin-texas-real-estate-home.jpg";
 const INTERIOR_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-interior.jpg";
 
 function useScrollReveal() {

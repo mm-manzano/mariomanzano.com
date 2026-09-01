@@ -12,7 +12,7 @@ import { Link } from "wouter";
 import { ArrowRight, Plus, Minus } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
 
-const GUIDE_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/hero-cedar-park-home-KJyHvXlKKhLSVPNiGNFDEe.webp";
+const GUIDE_BG = "/images/austin-texas-real-estate-home.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -71,7 +71,7 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:description", description, true);
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
-  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 }
 
 export default function HomeownerGuide() {
@@ -139,11 +139,8 @@ export default function HomeownerGuide() {
       />
 
       {/* HERO */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[#1A1A18]/65" />
-        </div>
-        <div className="relative z-10 container">
+      <section className="bg-[#1A1A18] pt-32 pb-20 md:pt-44 md:pb-28">
+        <div className="container">
           <div className="flex justify-end mb-4">
             <a
               href="/homeowner-guide.pdf"

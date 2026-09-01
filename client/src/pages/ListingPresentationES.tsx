@@ -49,7 +49,7 @@ function RevealDiv({
 }
 
 const HEADSHOT =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg";
+  "/images/mario-manzano-austin-realtor-professional-headshot.JPG";
 
 export default function ListingPresentationES() {
   useEffect(() => {

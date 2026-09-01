@@ -11,9 +11,7 @@ import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
 
-const ADVISOR_BG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-exterior.jpg";
 const MARIO_HEADSHOT = "/images/mario-manzano-austin-realtor-professional-headshot.JPG";
-const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -79,12 +77,8 @@ export default function About() {
     <div className="min-h-screen bg-[#F8F5F0]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       {/* SECTION 1: INTRO */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={ADVISOR_BG} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-[#1A1A18]/65" />
-        </div>
-        <div className="relative z-10 container">
+      <section className="bg-[#1A1A18] pt-32 pb-20 md:pt-44 md:pb-28">
+        <div className="container">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#D4B878" }} />
@@ -227,12 +221,8 @@ export default function About() {
       </section>
 
       {/* SECTION 5: FAMILY */}
-      <section
-        className="py-20 md:py-28 relative"
-        style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover" }}
-      >
-        <div className="absolute inset-0 bg-[#F8F5F0]/90" />
-        <div className="relative z-10 container">
+      <section className="py-20 md:py-28 bg-[#F8F5F0]">
+        <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />

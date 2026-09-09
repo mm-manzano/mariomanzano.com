@@ -8,6 +8,7 @@
  *                 pulled investing credibility into advisor intro,
  *                 added How This Works three-step section before process accordion.
  * BUYERS UPDATE: Trust Strip now links "buyers" to /buyers page.
+ * TESTIMONIAL UPDATE: Replaced single quote with two testimonials (Chris S. + Alma S.)
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -254,16 +255,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
+      {/* TESTIMONIALS */}
       <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
-        <div className="container max-w-3xl text-center">
+        <div className="container">
           <RevealDiv>
-            <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
-              "Most agents would have just pushed me to list. Mario did the opposite. He walked me through every option, from renting to subdividing, until the right decision became clear. The process was smooth from there."
-            </p>
-            <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
-              — Chris Stevens, Leander TX
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
+              <div className="bg-[#1A1A18] p-10 md:p-14">
+                <p className="font-display text-xl md:text-2xl font-light italic leading-relaxed mb-8 text-white">
+                  "Instead of pushing me to sell, he walked me through renting, building, and other options. Once I understood all my choices, selling made sense."
+                </p>
+                <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+                  — Chris S., Leander TX
+                </p>
+              </div>
+              <div className="bg-[#1A1A18] p-10 md:p-14 border-t border-white/10 md:border-t-0 md:border-l border-white/10">
+                <p className="font-display text-xl md:text-2xl font-light italic leading-relaxed mb-8 text-white">
+                  "We had a previous realtor we were working with before our son recommended Mario. Hesitant at first, I'm glad I made the decision to meet with Mario because he set a great impression."
+                </p>
+                <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+                  — Alma S., Cedar Park TX
+                </p>
+              </div>
+            </div>
           </RevealDiv>
         </div>
       </section>

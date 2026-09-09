@@ -4,6 +4,8 @@
  * Sections: Intro, How It Started, Real Experience, Approach, Family, How I Work, Close
  * COPY UPDATE: Natural Spanish phrasing, consistent principles with English version,
  *              minor improvements throughout for clarity and voice consistency.
+ *              Removed Dave Ramsey/debt/BiggerPockets from Section 1, Airbnb story
+ *              and DSCR detail from Section 2, kids' specifics from Section 4.
  */
 
 import { useEffect, useRef } from "react";
@@ -119,23 +121,17 @@ export default function AboutES() {
                 <span className="section-number">01. Cómo Empezó</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
-                De la deuda a<br />
-                <em className="italic">bienes raíces.</em>
+                De aprender sobre el dinero<br />
+                <em className="italic">a los bienes raíces.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Encontré a Dave Ramsey mientras estaba miles de dólares en deuda. Eso lo cambió todo. Me comprometí a salir de la deuda, ahorré con disciplina y cambié la forma en que pensaba sobre el dinero.
+                Me puse serio con el dinero y empecé a investigar cómo la gente realmente construye riqueza. Todo seguía apuntando hacia los bienes raíces.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Una vez que salí de la deuda, quería independencia financiera. Mientras investigaba qué hacer a continuación, todo seguía apuntando hacia bienes raíces.
-              </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Pasé tiempo en BiggerPockets, leí libros y empecé a entender cómo la gente realmente construye riqueza a través de las inversiones inmobiliarias.
-              </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Esa investigación me llevó a obtener mi licencia como REALTOR®. Pero lo más importante es que cambió cómo abordo las inversiones, me impulsó a seguir construyendo mi cartera y me permitió ayudar a otros a tomar sus propias decisiones inmobiliarias con claridad.
+                Pasé años aprendiendo cómo funciona la inversión inmobiliaria, obtuve mi licencia como REALTOR® y empecé a construir mi propio portafolio.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Los bienes raíces siempre han sido parte de mi vida. Mis padres y hermanos son todos propietarios de inmuebles.
+                Los bienes raíces siempre han sido parte de mi vida. Mis padres y hermanos son todos propietarios de inmuebles. Nunca fue solo teoría para mí.
               </p>
             </RevealDiv>
           </div>
@@ -162,19 +158,13 @@ export default function AboutES() {
                 No aprendí bienes raíces solo de cursos. He tenido que tomar estas decisiones yo mismo.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                He comprado y vendido propiedades, conseguido negocios fuera del mercado, vendido terrenos y tomado proyectos como demoler una propiedad y vender el lote. También he hecho renovaciones viviendo en la propiedad, tenido alquileres y sido propietario durante casi una década. He usado préstamos DSCR en mis propias inversiones, así que entiendo cómo se evalúa un negocio según el rendimiento de la propiedad, no solo los ingresos personales.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                Mi esposa y yo construimos y operamos un Airbnb. Lo renovamos y amueblamos nosotros mismos y nos convertimos en anfitriones de 5 estrellas. Cuando dejó de rendir, lo cerramos y cambiamos al alquiler a largo plazo, que funcionó mejor.
+                He comprado y vendido propiedades, conseguido negocios fuera del mercado, vendido terrenos, hecho renovaciones viviendo en la propiedad, tenido alquileres y sido propietario durante casi una década. Esa experiencia cambia cómo veo cada propiedad y cada decisión.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                Parte de cómo abordamos las propiedades viene de nuestro ojo para el diseño. Ella es especialmente fuerte en esa área. Desde nuestro Airbnb hasta nuestra propia casa, propiedades que hemos vendido y clientes que hemos ayudado, hemos estado directamente involucrados en el diseño, la distribución y la presentación. Eso se refleja en cómo ayudamos a los clientes a preparar y presentar sus casas de una manera que conecta con los compradores.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                Eso incluye desde decisiones de renovación completa hasta cambios simples como la colocación de muebles, la organización y los detalles finales que hacen que una casa se sienta bien para quien la visita.
+                Mi esposa y yo tenemos buen ojo para el diseño. Eso se refleja en cómo ayudamos a los vendedores a preparar y presentar sus casas. Desde la distribución y el flujo hasta los detalles finales que hacen que un comprador sienta algo al entrar.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
                 Fueron decisiones reales con consecuencias reales. El tipo que no se olvida, y el tipo que cambia cómo guías a otros.
@@ -236,14 +226,14 @@ export default function AboutES() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-4xl">
             <RevealDiv delay={100}>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
-                Estoy casado con mi amor de la preparatoria. Tenemos dos hijos y ahora somos nido vacío. Nuestro hijo hizo house hacking en su primera casa después de la universidad, lo cual fue una gran experiencia para los dos.
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                Estoy casado con mi amor de la preparatoria. Tenemos dos hijos y ahora somos nido vacío.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200} className="-mt-3 md:mt-0">
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Nuestra hija estudia Gestión del Diseño con concentraciones en Marketing y Decoración de Interiores, y planea obtener su licencia de bienes raíces para que podamos trabajar juntos y ayudar a los clientes a un nivel más profundo. Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
+                Los bienes raíces son parte de la vida de nuestra familia, no solo mi trabajo.
               </p>
             </RevealDiv>
           </div>

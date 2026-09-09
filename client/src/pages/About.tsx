@@ -3,7 +3,8 @@
  * Goal: Personal, real, based on lived experience
  * Sections: Intro, How It Started, Real Experience, Approach, Family, How I Work, Close
  * COPY UPDATE: Removed quotation marks from pull quote in Section 4 per brand rules.
- *              All other copy retained as-is. This is the strongest page on the site.
+ *              Trimmed Section 1 (removed debt/Dave Ramsey/BiggerPockets), Section 2 (removed
+ *              Airbnb story and DSCR detail), Section 4 (removed kids' specifics).
  */
 
 import { useEffect, useRef } from "react";
@@ -119,23 +120,17 @@ export default function About() {
                 <span className="section-number">01. How It Started</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
-                From debt to<br />
-                <em className="italic">real estate.</em>
+                From learning about money<br />
+                <em className="italic">to real estate.</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I found Dave Ramsey while I was thousands in debt. That changed everything. I committed to getting out of debt, saved aggressively, and changed how I thought about money.
+                I got serious about money and started researching how people actually build wealth. Everything kept pointing back to real estate.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                Once I got out of debt, I wanted financial independence. As I started researching what to do next, everything kept pointing back to real estate.
-              </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I spent time on BiggerPockets, read books, and started understanding how people actually build wealth through investing.
-              </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                That research led me to get licensed as a REALTOR®. But more importantly, it changed how I approached investing, pushed me to keep building my portfolio, and allowed me to help others navigate their own real estate decisions.
+                I spent years learning how real estate investing works, got licensed as a REALTOR®, and started building my own portfolio.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Real estate has always been around me. My parents and siblings are all landlords.
+                Real estate has always been around me. My parents and siblings are all landlords. It was never just theory for me.
               </p>
             </RevealDiv>
           </div>
@@ -162,19 +157,13 @@ export default function About() {
                 I didn't learn real estate from courses alone. I've had to make the decisions myself.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                I've wholesaled properties, bought deals off-market, flipped land, and taken on projects like demoing a property and selling the land. I've also done live-in flips, owned rentals, and been a landlord for about a decade. I've used DSCR loans in my own investing, so I understand how deals are evaluated based on the property's performance, not just personal income.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                My wife and I built and ran an Airbnb. We renovated and furnished it ourselves and became a 5-star host. When it stopped performing, we shut it down and moved to long-term renting, which worked better.
+                I've wholesaled properties, bought deals off-market, flipped land, done live-in flips, owned rentals, and been a landlord for about a decade. That experience changes how I look at every property and every decision.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                A big part of how we approach homes comes from our eye for design. She's especially strong in this area. From our Airbnb to our own home, properties we've sold, and the clients we've helped, we've been hands-on with design, layout, and presentation. That shows up in how we help clients prepare and present their homes in a way that connects with buyers.
-              </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
-                That includes everything from full remodel decisions to simple changes like furniture placement, organization, and finishing touches that make a home feel right to buyers.
+                My wife and I have a strong eye for design. That shows up in how we help sellers prepare and present their homes. From layout and flow to the finishing details that make buyers feel something when they walk in.
               </p>
               <p className="font-body text-base text-white/70 leading-relaxed">
                 These were real decisions with real consequences. The kind you don't forget, and the kind that change how you guide others.
@@ -236,14 +225,14 @@ export default function About() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-4xl">
             <RevealDiv delay={100}>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed md:mb-6 mb-3">
-                I'm married to my high school sweetheart. We have two kids and are now empty nesters. Our son house hacked his first home after college, which was a great experience for both of us.
+              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+                I'm married to my high school sweetheart. We have two kids and are now empty nesters.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200} className="-mt-3 md:mt-0">
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-                Our daughter is studying Design Management with minors in Marketing and Home Furnishings, and plans to get her real estate license so we can work together and help clients at a deeper level. Real estate is part of our family's life, not just my work.
+                Real estate is part of our family's life, not just my work.
               </p>
             </RevealDiv>
           </div>

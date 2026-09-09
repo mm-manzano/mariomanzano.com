@@ -179,7 +179,7 @@ export default function Buyers() {
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
                 That is the conversation we should have before you start looking at listings. Once you know what your home is worth and what you can realistically net, the rest gets a lot clearer.
               </p>
-              <Link href="/sellers/">
+              <Link href="/seller-strategy/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   See How I Approach Selling
                   <ArrowRight size={14} />

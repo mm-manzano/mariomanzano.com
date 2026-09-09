@@ -1,7 +1,8 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Listing Presentation
- * Private route: /listing-presentation
+ * Route: /seller-strategy/ (now public)
  * Sections: Hero, Process & Timeline, Communication, About, Next Steps
+ * SEO: Full meta tags + canonical. noindex removed — page is now public.
  */
 
 import { useEffect, useRef } from "react";
@@ -48,26 +49,56 @@ function RevealDiv({
   );
 }
 
+function setPageMeta(title: string, description: string, url: string) {
+  document.title = title;
+  const setMeta = (name: string, content: string, property = false) => {
+    const attr = property ? "property" : "name";
+    let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+    if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+    el.setAttribute("content", content);
+  };
+  setMeta("description", description);
+  setMeta("og:title", title, true);
+  setMeta("og:description", description, true);
+  setMeta("og:url", url, true);
+  setMeta("og:type", "website", true);
+  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
+
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", url);
+}
+
 const HEADSHOT =
   "/images/mario-manzano-austin-realtor-professional-headshot.JPG";
 
 export default function ListingPresentation() {
   useEffect(() => {
-    document.title = "Seller Strategy | Mario Manzano";
-    const setMeta = (name: string, content: string, property = false) => {
-      const attr = property ? "property" : "name";
-      let el = document.querySelector(
-        `meta[${attr}="${name}"]`
-      ) as HTMLMetaElement;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta("robots", "noindex, nofollow");
+    setPageMeta(
+      "Seller Strategy | Cedar Park & Leander TX | Mario Manzano",
+      "How Mario Manzano approaches listing homes in Cedar Park and Leander — an 8-step process built around your situation, clear communication, and no pressure.",
+      "https://mariomanzano.com/seller-strategy/"
+    );
   }, []);
+
+  const sellerSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Home Seller Representation",
+    "provider": {
+      "@type": "RealEstateAgent",
+      "name": "Mario Manzano",
+      "telephone": "+1-512-695-9255",
+      "url": "https://mariomanzano.com"
+    },
+    "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
+    "url": "https://mariomanzano.com/seller-strategy/",
+    "description": "Mario Manzano helps Cedar Park and Leander homeowners sell with a clear plan, professional marketing, and guidance at every step."
+  };
 
   const processSteps = [
     {
@@ -121,6 +152,10 @@ export default function ListingPresentation() {
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sellerSchema) }}
+      />
 
       {/* HERO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 bg-[#1A1A18]">

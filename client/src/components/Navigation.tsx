@@ -1,25 +1,28 @@
 /*
-* DESIGN: Quiet Luxury Editorial
-* Nav: Minimal, transparent on hero, white on scroll. Logo = wordmark in Cormorant Garamond.
-* Links: DM Sans, small caps, gold underline on hover.
-* CTA: Single "Request Consultation" button in charcoal.
-* Language: Basic EN | ES toggle in top-right
-* FIX: Ensured Spanish menu items have the exact same font size and styling as English.
-* FIX: Language toggle is now a real <a href> (crawlable) instead of a button-only
-*       click handler, and the EN/ES route map covers every real route on the site
-*       instead of just five of them.
-* BUYERS UPDATE: "Start a conversation" CTA (desktop + mobile) now detects Buyers
-*       pages and routes to the buyer funnel with Lead_Buyer tracking instead of
-*       always sending everyone to the seller funnel with generic Contact tracking.
-* SEO FIX: All internal hrefs and route map values now use trailing slashes to
-*       match the canonical prerendered URLs (e.g. /buyers/ not /buyers). Google
-*       Search Console was flagging these as "Page with redirect" because the nav
-*       kept linking to the non-slash version, which 301s to the slash version.
-*       Route map keys stay without trailing slash since getLanguageTargetPath
-*       strips the slash before doing the lookup, only the values changed.
-* NAV LABEL FIX: "Guide" renamed to "Seller Guide" (EN) and "Guía del Vendedor" (ES)
-*       so buyers who land on the nav understand the guide is seller-specific content.
-*/
+ * DESIGN: Quiet Luxury Editorial
+ * Nav: Minimal, transparent on hero, white on scroll. Logo = wordmark in Cormorant Garamond.
+ * Links: DM Sans, small caps, gold underline on hover.
+ * CTA: Single "Request Consultation" button in charcoal.
+ * Language: Basic EN | ES toggle in top-right
+ * FIX: Ensured Spanish menu items have the exact same font size and styling as English.
+ * FIX: Language toggle is now a real <a href> (crawlable) instead of a button-only
+ *       click handler, and the EN/ES route map covers every real route on the site
+ *       instead of just five of them.
+ * BUYERS UPDATE: "Start a conversation" CTA (desktop + mobile) now detects Buyers
+ *       pages and routes to the buyer funnel with Lead_Buyer tracking instead of
+ *       always sending everyone to the seller funnel with generic Contact tracking.
+ * SEO FIX: All internal hrefs and route map values now use trailing slashes to
+ *       match the canonical prerendered URLs (e.g. /buyers/ not /buyers). Google
+ *       Search Console was flagging these as "Page with redirect" because the nav
+ *       kept linking to the non-slash version, which 301s to the slash version.
+ *       Route map keys stay without trailing slash since getLanguageTargetPath
+ *       strips the slash before doing the lookup, only the values changed.
+ * NAV LABEL FIX: "Guide" renamed to "Seller Guide" (EN) and "Guía del Vendedor" (ES)
+ *       so buyers who land on the nav understand the guide is seller-specific content.
+ * HAMBURGER UPDATE: Desktop nav replaced with hamburger menu on all screen sizes.
+ *       Solves crowding and allows unlimited nav items. Also adds "How I Work" /
+ *       "Cómo Trabajo" linking to /seller-strategy/ and /es/presentacion-vendedores/.
+ */
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
@@ -28,6 +31,7 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "How I Work", href: "/seller-strategy/" },
   { label: "Seller Guide", href: "/homeowner-guide/" },
   { label: "Buyers", href: "/buyers/" },
   { label: "About", href: "/about/" },
@@ -35,18 +39,13 @@ const navLinks = [
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es/" },
+  { label: "Cómo Trabajo", href: "/es/presentacion-vendedores/" },
   { label: "Guía del Vendedor", href: "/es/guia-para-propietarios/" },
   { label: "Compradores", href: "/es/buyers/" },
   { label: "Acerca", href: "/es/acerca/" },
   { label: "Contacto", href: "/es/contacto/" },
 ];
 
-// Full EN -> ES route map. Every real route in scripts/prerender.js should
-// have an entry here so the language toggle always lands on the matching
-// page instead of falling back to the homepage.
-// Keys stay WITHOUT trailing slash (getLanguageTargetPath normalizes the
-// current path before lookup). Values now carry the trailing slash since
-// those become the actual href the visitor is sent to.
 const esRoutes: { [key: string]: string } = {
   "/": "/es/",
   "/strategy-hub": "/es/strategy-hub/",
@@ -61,8 +60,6 @@ const esRoutes: { [key: string]: string } = {
   "/seller-strategy": "/es/presentacion-vendedores/",
   "/privacy-policy": "/es/privacy-policy/",
   "/terms-of-service": "/es/terms-of-service/",
-  // Already-Spanish paths map to themselves so the toggle is idempotent
-  // if it's ever called while already on the ES side.
   "/es": "/es/",
   "/es/strategy-hub": "/es/strategy-hub/",
   "/es/home-value": "/es/home-value/",
@@ -78,8 +75,6 @@ const esRoutes: { [key: string]: string } = {
   "/es/terms-of-service": "/es/terms-of-service/",
 };
 
-// Full ES -> EN route map, the inverse of esRoutes. Same rule: keys without
-// trailing slash, values with it.
 const enRoutes: { [key: string]: string } = {
   "/es": "/",
   "/es/strategy-hub": "/strategy-hub/",
@@ -108,11 +103,6 @@ export default function Navigation() {
     location.startsWith("/es/");
   const [language, setLanguage] = useState<"en" | "es">("en");
 
-  // Detect whether the visitor is currently on a Buyers page (EN or ES),
-  // so the nav CTA can route buyer traffic to the buyer funnel instead of
-  // defaulting everyone to the seller funnel.
-  // Checked against the trailing-slash form since that is what the live
-  // prerendered pages actually resolve to.
   const currentPath = location.split("?")[0];
   const isBuyerPage = currentPath === "/buyers/" || currentPath === "/es/buyers/";
 
@@ -132,21 +122,15 @@ export default function Navigation() {
   };
 
   const handleNavClick = (href: string) => {
-    // Close mobile menu
     setMobileOpen(false);
 
-    // If clicking Contact while on a Buyers page, carry buyer intent forward
-    // so the Contact page's CTA routes to the buyer funnel instead of
-    // defaulting to the seller funnel.
     const targetHref = (isBuyerPage && (href === "/contact/" || href === "/es/contacto/"))
       ? `${href}?intent=buyer`
       : href;
 
-    // If clicking the same page, scroll to top
     if (location === targetHref) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      // Navigate to different page
       setLocation(targetHref);
     }
   };
@@ -161,7 +145,6 @@ export default function Navigation() {
     setMobileOpen(false);
   }, [location]);
 
-  // Sync language state with current location
   useEffect(() => {
     if (isSpanish && language === "en") {
       setLanguage("es");
@@ -170,14 +153,7 @@ export default function Navigation() {
     }
   }, [isSpanish, language]);
 
-  // Resolve the target path for the language toggle link, given the
-  // current location. Used for both the real href (so it's crawlable)
-  // and the click handler (so the existing smooth client-side nav and
-  // localStorage language preference still work for real visitors).
   const getLanguageTargetPath = (lang: "en" | "es") => {
-    // Normalize away a trailing slash (other than the root "/") before
-    // lookup, since prerendered routes resolve as e.g. "/net-sheet/" on
-    // the live site but the route map keys above are stored without it.
     let normalizedPath = location.split("?")[0];
     if (normalizedPath.length > 1 && normalizedPath.endsWith("/")) {
       normalizedPath = normalizedPath.slice(0, -1);
@@ -208,61 +184,19 @@ export default function Navigation() {
                   className="w-8 h-8 md:w-10 md:h-10"
                 />
                 <div className="flex flex-col leading-none">
-                  <span
-                    className="font-display text-xl md:text-2xl font-light tracking-[0.04em] text-[#1A1A18]"
-                  >
+                  <span className="font-display text-xl md:text-2xl font-light tracking-[0.04em] text-[#1A1A18]">
                     Mario Manzano
                   </span>
-                  <span
-                    className="font-body text-[9px] md:text-[10px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A] whitespace-nowrap"
-                  >
+                  <span className="font-body text-[9px] md:text-[10px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A] whitespace-nowrap">
                     {isSpanish ? "Realtor En Austin | Estrategia de Venta" : "Austin Realtor | Seller Strategist"}
                   </span>
                 </div>
               </div>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center justify-end gap-2">
-              {(isSpanish ? navLinksES : navLinks).map((link) => {
-                const isContactLink = link.href === "/contact/" || link.href === "/es/contacto/";
-                const resolvedHref = isContactLink && isBuyerPage ? `${link.href}?intent=buyer` : link.href;
-                return (
-                  <a key={link.href} href={resolvedHref} onClick={(e) => { e.preventDefault(); handleNavClick(resolvedHref); }}>
-                    <span
-                      className="nav-link text-[11px] tracking-[0.1em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
-                    >
-                      {link.label}
-                    </span>
-                  </a>
-                );
-              })}
-
-              {/* Language Toggle */}
-              <div className="flex items-center gap-2 text-[11px] tracking-[0.1em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-3 ml-1">
-                <a href={getLanguageTargetPath("en")}
-                  onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
-                  className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
-                  English
-                </a>
-                <span className="opacity-50">|</span>
-                <a href={getLanguageTargetPath("es")}
-                  onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
-                  className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
-                  Español
-                </a>
-              </div>
-
-              <a onClick={handleCTAClick} className="btn-luxury text-[10px] py-2 !px-3 whitespace-nowrap cursor-pointer" style={{ marginLeft: "auto" }}>
-                {language === "es"
-                  ? "Iniciar una Conversación"
-                  : "Start a conversation"}
-              </a>
-            </nav>
-
-            {/* Mobile Menu Toggle */}
+            {/* Hamburger Toggle — all screen sizes */}
             <button
-              className="md:hidden p-2 text-[#1A1A18]"
+              className="p-2 text-[#1A1A18]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -272,7 +206,7 @@ export default function Navigation() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Menu Overlay — all screen sizes */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 bg-[#F8F5F0] flex flex-col transition-all duration-500">
           <div className="container flex flex-col h-full pt-24 pb-12">
@@ -289,25 +223,30 @@ export default function Navigation() {
               ))}
             </nav>
 
-            {/* Mobile Language Toggle */}
+            {/* Language Toggle */}
             <div className="flex items-center gap-3 mb-8 text-sm tracking-[0.15em] uppercase font-medium text-[#1A1A18]">
-              <a href={getLanguageTargetPath("en")}
+              <a
+                href={getLanguageTargetPath("en")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
-                className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
+                className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}
+              >
                 English
               </a>
               <span className="opacity-50">|</span>
-              <a href={getLanguageTargetPath("es")}
+              <a
+                href={getLanguageTargetPath("es")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
-                className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
+                className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}
+              >
                 Español
               </a>
             </div>
 
-            <a onClick={handleCTAClick} className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0">
-              {language === "es"
-                ? "Iniciar una Conversación"
-                : "Start a conversation"}
+            <a
+              onClick={handleCTAClick}
+              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+            >
+              {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
             </a>
           </div>
         </div>

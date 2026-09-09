@@ -176,7 +176,7 @@ export default function Contact() {
                     Send a Message
                   </a>
                   <p className="font-body text-sm text-[#1A1A18]/65">
-                    I respond within 24 hours
+                    I respond the same day
                   </p>
                 </div>
               </div>

@@ -8,6 +8,8 @@
  *              sección de guía en lenguaje claro, CTAs diferenciados.
  * BUYERS UPDATE: Franja de Confianza ahora incluye botón CTA "Para Compradores".
  * TESTIMONIAL UPDATE: Reemplazado testimonio único por dos testimonios en cuadrícula (Chris S. + Alma S.)
+ * SELLER STRATEGY UPDATE: Franja de vendedor motivado ahora enlaza a /es/presentacion-vendedores/;
+ *                          nuevo CTA añadido después del acordeón de proceso.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -206,9 +208,9 @@ export default function HomeES() {
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/es/contacto">
+              <Link href="/es/presentacion-vendedores">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
-                  Hablar con Mario
+                  Ver Cómo Trabajo
                   <ArrowRight size={14} />
                 </span>
               </Link>
@@ -495,6 +497,15 @@ export default function HomeES() {
               La mayoría de los negocios que se caen lo hacen entre el contrato y el cierre. Las inspecciones, las tasaciones y los problemas de título pueden crear fricciones. Me mantengo al tanto de cada detalle para que no tengas que perseguir actualizaciones ni preguntarte qué pasa a continuación. El objetivo es un cierre limpio sin sorpresas.
             </AccordionItem>
           </div>
+
+          <RevealDiv delay={200} className="mt-12">
+            <Link href="/es/presentacion-vendedores">
+              <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
+                Ver Mi Estrategia Completa para Vendedores
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+          </RevealDiv>
         </div>
       </section>
 

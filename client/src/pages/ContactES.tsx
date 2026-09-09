@@ -164,7 +164,7 @@ export default function ContactES() {
                     Enviar un mensaje
                   </a>
                   <p className="font-body text-sm text-[#1A1A18]/65">
-                    Respondo en menos de 24 horas
+                    Respondo el mismo día
                   </p>
                 </div>
               </div>

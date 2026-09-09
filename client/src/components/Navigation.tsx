@@ -35,7 +35,7 @@ const navLinks = [
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es/" },
-  { label: "Guía Vendedor", href: "/es/guia-para-propietarios/" },
+  { label: "Guía del Vendedor", href: "/es/guia-para-propietarios/" },
   { label: "Compradores", href: "/es/buyers/" },
   { label: "Acerca", href: "/es/acerca/" },
   { label: "Contacto", href: "/es/contacto/" },
@@ -253,7 +253,7 @@ export default function Navigation() {
                 </a>
               </div>
 
-              <a onClick={handleCTAClick} className="btn-luxury text-[10px] py-2 cursor-pointer">
+              <a onClick={handleCTAClick} className="btn-luxury text-[10px] py-2 !px-3 whitespace-nowrap cursor-pointer" style={{ marginLeft: "auto" }}>
                 {language === "es"
                   ? "Iniciar una Conversación"
                   : "Start a conversation"}

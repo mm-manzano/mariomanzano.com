@@ -223,14 +223,14 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center justify-center gap-4">
+            <nav className="hidden md:flex items-center justify-end gap-2">
               {(isSpanish ? navLinksES : navLinks).map((link) => {
                 const isContactLink = link.href === "/contact/" || link.href === "/es/contacto/";
                 const resolvedHref = isContactLink && isBuyerPage ? `${link.href}?intent=buyer` : link.href;
                 return (
                   <a key={link.href} href={resolvedHref} onClick={(e) => { e.preventDefault(); handleNavClick(resolvedHref); }}>
                     <span
-                      className="nav-link text-[11px] tracking-[0.15em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
+                      className="nav-link text-[11px] tracking-[0.1em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]"
                     >
                       {link.label}
                     </span>
@@ -239,7 +239,7 @@ export default function Navigation() {
               })}
 
               {/* Language Toggle */}
-              <div className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-4 ml-2">
+              <div className="flex items-center gap-2 text-[11px] tracking-[0.1em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-3 ml-1">
                 <a href={getLanguageTargetPath("en")}
                   onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
                   className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>

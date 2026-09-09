@@ -1,14 +1,13 @@
 /*
- * DESIGN: Quiet Luxury Editorial - Buyers Page
+ * DESIGN: Quiet Luxury Editorial - Buyers Page (Move-Up Buyer Primary, All Buyers Welcome)
+ * Audience: Cedar Park / Leander buyers. Move-up buyer is the primary story.
+ * Core message: Don't just find a house. Understand the move.
  * Matches homepage theme: same fonts, colors, RevealDiv scroll animation,
  * same button styles, same section rhythm (label + headline + copy).
- * Sections: Hero, Trust Strip, How I Help Buyers (grid), How This Works, Final CTA
- * SEO FIX: setPageMeta now also writes a <link rel="canonical"> tag, and the
- *       page URL / schema URL both use the trailing-slash form (/buyers/) to
- *       match where prerender.js actually writes the file (dist/buyers/index.html).
+ * SEO FIX: setPageMeta also writes a <link rel="canonical"> tag.
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
@@ -63,9 +62,6 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:type", "website", true);
   setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 
-  // Canonical tag. Without this, Google has to guess which version of the
-  // URL (with or without trailing slash) is the real one. Setting it
-  // explicitly stops the redirect confusion from recurring on this page.
   let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
   if (!canonical) {
     canonical = document.createElement("link");
@@ -78,8 +74,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function Buyers() {
   useEffect(() => {
     setPageMeta(
-      "Cedar Park & Leander TX Buyer Strategist | Mario Manzano",
-      "Mario Manzano helps buyers in Cedar Park, Leander, and the greater Austin area avoid overpaying and buy with confidence. Clear numbers, no pressure.",
+      "Buyer Strategy | Cedar Park & Leander TX | Mario Manzano",
+      "Buying a home in Cedar Park or Leander? Mario Manzano helps you understand the numbers and the timing before you make a move, whether you own already or you're buying for the first time.",
       "https://mariomanzano.com/buyers/"
     );
   }, []);
@@ -96,7 +92,7 @@ export default function Buyers() {
     },
     "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
     "url": "https://mariomanzano.com/buyers/",
-    "description": "Mario Manzano helps buyers in Cedar Park, Leander, and the greater Austin area understand true market value before making an offer, so they don't overpay."
+    "description": "Mario Manzano helps buyers in Cedar Park and Leander understand what a home is really worth and how to sequence the move before they commit to anything."
   };
 
   return (
@@ -109,7 +105,7 @@ export default function Buyers() {
       {/* HERO */}
       <section className="relative h-auto md:min-h-[70vh] flex items-start">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Cedar Park home for buyers" className="w-full h-full object-cover" />
+          <img src={HERO_IMG} alt="Cedar Park home" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         </div>
 
@@ -122,12 +118,12 @@ export default function Buyers() {
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.0] mb-6">
-              Buy Smart.<br />
-              Not Fast.<br />
-              <em className="italic">With Confidence.</em>
+              Don't just<br />
+              find a house.<br />
+              <em className="italic">Understand the move.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
-              Most buyers just want to know they're paying a fair price. I help you understand the numbers before you make an offer, so you can move with confidence instead of guessing.
+              Whether you own a home already or you're buying for the first time, the most important question is the same: do the numbers actually make sense before you commit? I help buyers in Cedar Park and Leander get a clear picture before they make an offer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -139,7 +135,7 @@ export default function Buyers() {
                 }}
                 className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
               >
-                Start a Conversation
+                Let's Map Out Your Situation
                 <ArrowRight size={14} />
               </a>
             </div>
@@ -152,68 +148,40 @@ export default function Buyers() {
         <div className="container">
           <div className="max-w-2xl">
             <p className="font-body text-base text-white/70 leading-relaxed">
-              I help buyers in Cedar Park, Leander, and the greater Austin area understand what a home is really worth before they make an offer. My job is to give you the facts, explain your options, and help you buy with confidence instead of pressure.
+              I am primarily a listing agent focused on Cedar Park and Leander. That means I see what sellers see, what homes are actually worth, and where buyers usually overpay. When I work with buyers, that perspective comes with me.
             </p>
           </div>
         </div>
       </section>
 
-      {/* SEARCH HOMES DIRECT PATH */}
-      <section className="py-16 border-b border-[#E8E0D5]">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A] mb-3">Ready to start looking?</p>
-              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-3">
-                Search homes in Cedar Park and Leander.
-              </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 max-w-lg leading-relaxed">
-                Browse active listings and see what is on the market right now, then let's talk through what actually fits your situation.
-              </p>
-            </div>
-            <div className="flex justify-center lg:justify-end">
-              <div className="bg-white p-3 shadow-sm border border-[#E8E0D5] inline-block">
-                <iframe
-                  style={{ width: "280px", height: "680px" }}
-                  src="https://mariomanzano.exprealty.com/embedsmall.php"
-                  allowTransparency={true}
-                  frameBorder="0"
-                  title="Home Search Tool"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT / CREDIBILITY */}
+      {/* THE REAL QUESTION */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealDiv className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={INTERIOR_IMG} alt="Home interior" className="w-full h-full object-cover" />
+                <img src={INTERIOR_IMG} alt="Home interior Cedar Park" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
 
             <RevealDiv delay={150}>
               <div className="flex items-center gap-3 mb-6">
                 <span className="section-rule" />
-                <span className="section-number">01. About</span>
+                <span className="section-number">01. The Real Question</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
-                A strategist,<br />
-                <em className="italic">not a salesperson.</em>
+                Sell first,<br />
+                <em className="italic">or buy first?</em>
               </h2>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-                I am Mario Manzano, a licensed REALTOR® based in Leander, Texas. I have bought and sold properties, run an Airbnb, done live-in flips, and owned rentals. I look at every home the way an investor would, what it is really worth, what it will cost you later, and whether the price makes sense.
+                If you already own a home, this is the question that shapes everything else. The answer depends on your equity, your timeline, and what the market is doing right now. Getting it wrong means either carrying two mortgages or scrambling for a rental in between.
               </p>
               <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
-                When you are ready to make an offer, you will know exactly where you stand and why.
+                That is the conversation we should have before you start looking at listings. Once you know what your home is worth and what you can realistically net, the rest gets a lot clearer.
               </p>
-              <Link href="/about/">
+              <Link href="/sellers/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
-                  My Story
+                  See How I Approach Selling
                   <ArrowRight size={14} />
                 </span>
               </Link>
@@ -222,7 +190,7 @@ export default function Buyers() {
         </div>
       </section>
 
-      {/* HOW I HELP BUYERS GRID */}
+      {/* HOW I HELP */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>
@@ -231,19 +199,30 @@ export default function Buyers() {
               <span className="section-number">02. How I Help</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-3 max-w-xl">
-              What buying with me actually looks like.
+              Both sides of the move.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/60 mb-12 max-w-lg">
-              No pressure to move fast. Just a clear read on the numbers before you commit to anything.
+              Buying is about more than finding a house. I help you think through the whole picture.
             </p>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E0D5]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E8E0D5]">
             {[
-              { num: "01", title: "The Value", desc: "See what a home is actually worth based on comparable sales, not just the list price." },
-              { num: "02", title: "The Offer", desc: "Build an offer that protects you on price and terms, not just the highest number you can afford." },
-              { num: "03", title: "The Condition", desc: "Understand what repairs or updates will actually cost before they become your problem." },
-              { num: "04", title: "The Close", desc: "Stay ahead of inspections, appraisals, and paperwork so nothing catches you off guard." }
+              {
+                num: "01",
+                title: "The Value",
+                desc: "What is this home actually worth, and what will it cost you later? That is the number you need before you make any offer, regardless of what the list price says."
+              },
+              {
+                num: "02",
+                title: "The Timing",
+                desc: "If you already own a home, sell first or buy first is not a one-size-fits-all answer. We look at your equity, the market, and your situation to find the right sequence."
+              },
+              {
+                num: "03",
+                title: "The Next Home",
+                desc: "Once the numbers make sense, finding the right home gets a lot less stressful. You will know your budget, your timeline, and exactly what you are working with."
+              }
             ].map((item, i) => (
               <RevealDiv
                 key={item.num}
@@ -274,8 +253,8 @@ export default function Buyers() {
               <span className="section-number">How This Works</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12">
-              Three steps,<br />
-              <em className="italic">no pressure.</em>
+              Start with a<br />
+              <em className="italic">real conversation.</em>
             </h2>
           </RevealDiv>
 
@@ -284,17 +263,17 @@ export default function Buyers() {
               {
                 step: "01",
                 title: "You reach out",
-                desc: "No forms, no pressure. Tell me what you are looking for and where you are in the process."
+                desc: "Tell me where you are in the process. No forms, no pressure. Just a conversation about your situation."
               },
               {
                 step: "02",
                 title: "We look at the numbers",
-                desc: "I pull real comps and walk you through what a home is actually worth before you make any decisions."
+                desc: "I walk you through what the home is actually worth, what comparable sales show, and how that shapes your options."
               },
               {
                 step: "03",
-                title: "You make your move",
-                desc: "When you are ready to offer, you will know exactly where you stand. The pace is always yours."
+                title: "You decide what to do next",
+                desc: "Some people are ready to move. Others need a few months. Either way, you will have the full picture to make a confident decision."
               }
             ].map((item, i) => (
               <RevealDiv key={item.step} delay={i * 100}>
@@ -329,10 +308,11 @@ export default function Buyers() {
         <div className="container">
           <RevealDiv>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
-              Ready to buy with confidence?
+              Ready to understand<br />
+              <em className="italic">the move?</em>
             </h2>
             <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
-              No sales pitch. Just a straightforward conversation about what you are looking for and what it is actually worth.
+              No sales pitch. Just a straight conversation about what the numbers look like and what makes sense for your situation.
             </p>
             <a
               href="https://go.mariomanzano.com/buyer-plan"
@@ -343,7 +323,7 @@ export default function Buyers() {
               }}
               className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
             >
-              Start a Conversation
+              Let's Map Out Your Situation
               <ArrowRight size={14} />
             </a>
           </RevealDiv>

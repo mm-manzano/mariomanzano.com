@@ -35,7 +35,7 @@ const navLinks = [
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es/" },
-  { label: "Guía del Vendedor", href: "/es/guia-para-propietarios/" },
+  { label: "Guía Vendedor", href: "/es/guia-para-propietarios/" },
   { label: "Compradores", href: "/es/buyers/" },
   { label: "Acerca", href: "/es/acerca/" },
   { label: "Contacto", href: "/es/contacto/" },

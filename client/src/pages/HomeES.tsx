@@ -7,6 +7,7 @@
  *              texto de mercado reescrito en voz de Mario, acordeón de proceso reescrito,
  *              sección de guía en lenguaje claro, CTAs diferenciados.
  * BUYERS UPDATE: Franja de Confianza ahora incluye botón CTA "Para Compradores".
+ * TESTIMONIAL UPDATE: Reemplazado testimonio único por dos testimonios en cuadrícula (Chris S. + Alma S.)
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -252,16 +253,28 @@ export default function HomeES() {
         </div>
       </section>
 
-      {/* TESTIMONIO */}
+      {/* TESTIMONIOS */}
       <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
-        <div className="container max-w-3xl text-center">
+        <div className="container">
           <RevealDiv>
-            <p className="font-display text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
-              "La mayoría de los agentes solo me habrían presionado para poner la casa en venta. Mario hizo lo contrario. Me guió a través de cada opción, desde alquilar hasta subdividir, hasta que la decisión correcta fue clara. El proceso fue muy sencillo a partir de ahí."
-            </p>
-            <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
-              — Chris Stevens, Leander TX
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
+              <div className="bg-[#1A1A18] p-10 md:p-14">
+                <p className="font-display text-xl md:text-2xl font-light italic leading-relaxed mb-8 text-white">
+                  "En lugar de presionarme para vender, me guió a través de opciones como alquilar, construir y otras alternativas. Una vez que entendí todas mis opciones, vender fue la decisión correcta."
+                </p>
+                <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+                  — Chris S., Leander TX
+                </p>
+              </div>
+              <div className="bg-[#1A1A18] p-10 md:p-14 border-t border-white/10 md:border-t-0 md:border-l border-white/10">
+                <p className="font-display text-xl md:text-2xl font-light italic leading-relaxed mb-8 text-white">
+                  "Teníamos otro agente antes de que nuestro hijo nos recomendara a Mario. Al principio dudé, pero me alegra haber tomado la decisión de reunirme con él porque causó una gran impresión desde el principio."
+                </p>
+                <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+                  — Alma S., Cedar Park TX
+                </p>
+              </div>
+            </div>
           </RevealDiv>
         </div>
       </section>
@@ -382,7 +395,6 @@ export default function HomeES() {
           </div>
         </div>
       </section>
-
 
       {/* CÓMO FUNCIONA */}
       <section className="py-20 md:py-32">

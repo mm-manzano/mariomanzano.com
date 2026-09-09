@@ -9,6 +9,8 @@
  *                 added How This Works three-step section before process accordion.
  * BUYERS UPDATE: Trust Strip now links "buyers" to /buyers page.
  * TESTIMONIAL UPDATE: Replaced single quote with two testimonials (Chris S. + Alma S.)
+ * SELLER STRATEGY UPDATE: "Talk to Mario" in motivated seller strip swapped for
+ *                 "See How I Work" → /seller-strategy. Added CTA after process accordion.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -208,9 +210,9 @@ export default function Home() {
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/contact">
+              <Link href="/seller-strategy">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
-                  Talk to Mario
+                  See How I Work
                   <ArrowRight size={14} />
                 </span>
               </Link>
@@ -497,6 +499,15 @@ export default function Home() {
               Most deals that fall apart do so between contract and closing. Inspections, appraisals, and title issues can all create friction. I stay on top of every moving piece so you are not chasing down updates or wondering what happens next. The goal is a clean close with no surprises.
             </AccordionItem>
           </div>
+
+          <RevealDiv delay={200} className="mt-12">
+            <Link href="/seller-strategy">
+              <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
+                See My Full Seller Strategy
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+          </RevealDiv>
         </div>
       </section>
 

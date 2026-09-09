@@ -1,7 +1,8 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Presentación para Vendedores
- * Private route: /es/presentacion-vendedores
+ * Route: /es/presentacion-vendedores/ (now public)
  * Sections: Hero, Process & Timeline, Communication, About, Next Steps
+ * SEO: Full meta tags + canonical. noindex removed — page is now public.
  */
 
 import { useEffect, useRef } from "react";
@@ -48,26 +49,56 @@ function RevealDiv({
   );
 }
 
+function setPageMeta(title: string, description: string, url: string) {
+  document.title = title;
+  const setMeta = (name: string, content: string, property = false) => {
+    const attr = property ? "property" : "name";
+    let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+    if (!el) { el = document.createElement("meta"); el.setAttribute(attr, name); document.head.appendChild(el); }
+    el.setAttribute("content", content);
+  };
+  setMeta("description", description);
+  setMeta("og:title", title, true);
+  setMeta("og:description", description, true);
+  setMeta("og:url", url, true);
+  setMeta("og:type", "website", true);
+  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
+
+  let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.setAttribute("rel", "canonical");
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute("href", url);
+}
+
 const HEADSHOT =
   "/images/mario-manzano-austin-realtor-professional-headshot.JPG";
 
 export default function ListingPresentationES() {
   useEffect(() => {
-    document.title = "Estrategia para Vendedores | Mario Manzano";
-    const setMeta = (name: string, content: string, property = false) => {
-      const attr = property ? "property" : "name";
-      let el = document.querySelector(
-        `meta[${attr}="${name}"]`
-      ) as HTMLMetaElement;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, name);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
-    setMeta("robots", "noindex, nofollow");
+    setPageMeta(
+      "Estrategia para Vendedores | Cedar Park y Leander TX | Mario Manzano",
+      "Cómo Mario Manzano maneja la venta de casas en Cedar Park y Leander: un proceso de 8 pasos basado en tu situación, comunicación clara y sin presión.",
+      "https://mariomanzano.com/es/presentacion-vendedores/"
+    );
   }, []);
+
+  const sellerSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Representación para Vendedores",
+    "provider": {
+      "@type": "RealEstateAgent",
+      "name": "Mario Manzano",
+      "telephone": "+1-512-695-9255",
+      "url": "https://mariomanzano.com"
+    },
+    "areaServed": ["Cedar Park TX", "Leander TX", "Austin TX"],
+    "url": "https://mariomanzano.com/es/presentacion-vendedores/",
+    "description": "Mario Manzano ayuda a propietarios en Cedar Park y Leander a vender con un plan claro, marketing profesional y orientación en cada paso."
+  };
 
   const processSteps = [
     {
@@ -113,7 +144,7 @@ export default function ListingPresentationES() {
   ];
 
   const communicationItems = [
-    "Comunicación según su preferencia",
+    "Comunicación según tu preferencia",
     "Retroalimentación después de las visitas cuando esté disponible",
     "Actualizaciones inmediatas sobre ofertas oficiales",
     "Orientación clara antes de tomar decisiones",
@@ -121,6 +152,10 @@ export default function ListingPresentationES() {
 
   return (
     <div className="min-h-screen bg-[#F8F5F0]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sellerSchema) }}
+      />
 
       {/* HERO */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 bg-[#1A1A18]">
@@ -139,11 +174,11 @@ export default function ListingPresentationES() {
               </span>
             </div>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-              Su Hogar.<br />
-              <em className="italic">Su Decisión.</em>
+              Tu Casa.<br />
+              <em className="italic">Tu Decisión.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
-              Un plan claro basado en su situación, no en una presentación de ventas.
+              Un plan claro basado en tu situación, no en una presentación de ventas.
             </p>
           </div>
         </div>
@@ -158,10 +193,10 @@ export default function ListingPresentationES() {
               <span className="section-number">01. Proceso</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
-              Si decide vender, así es como funciona.
+              Si decides vender, así es como funciona.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
-              Cada paso tiene un propósito. Nada ocurre sin su aprobación.
+              Cada paso tiene un propósito. Nada ocurre sin tu aprobación.
             </p>
           </RevealDiv>
 
@@ -196,10 +231,10 @@ export default function ListingPresentationES() {
               <span className="section-number">02. Comunicación</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
-              Siempre sabrá cómo van las cosas.
+              Siempre vas a saber cómo van las cosas.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
-              Si algo cambia, usted será el primero en saberlo.
+              Si algo cambia, tú eres el primero en saberlo.
             </p>
           </RevealDiv>
 
@@ -246,7 +281,7 @@ export default function ListingPresentationES() {
                 </span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8">
-                Por qué trabajo de manera diferente.
+                Por qué trabajo diferente.
               </h2>
               <p className="font-body text-base text-white/70 leading-relaxed">
                 No soy solo un agente que habla de decisiones inmobiliarias. Las
@@ -269,7 +304,7 @@ export default function ListingPresentationES() {
               <span className="section-number">03. Próximos Pasos</span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-10 max-w-2xl">
-              Si está listo para seguir adelante, hablemos sobre los próximos pasos.
+              Si estás listo para seguir adelante, hablemos.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:5126959255">

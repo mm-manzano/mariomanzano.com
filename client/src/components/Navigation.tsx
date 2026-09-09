@@ -17,6 +17,8 @@
 *       kept linking to the non-slash version, which 301s to the slash version.
 *       Route map keys stay without trailing slash since getLanguageTargetPath
 *       strips the slash before doing the lookup, only the values changed.
+* NAV LABEL FIX: "Guide" renamed to "Seller Guide" (EN) and "Guía del Vendedor" (ES)
+*       so buyers who land on the nav understand the guide is seller-specific content.
 */
 
 import { useState, useEffect } from "react";
@@ -26,14 +28,14 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Guide", href: "/homeowner-guide/" },
+  { label: "Seller Guide", href: "/homeowner-guide/" },
   { label: "Buyers", href: "/buyers/" },
   { label: "About", href: "/about/" },
   { label: "Contact", href: "/contact/" },
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es/" },
-  { label: "Guía", href: "/es/guia-para-propietarios/" },
+  { label: "Guía del Vendedor", href: "/es/guia-para-propietarios/" },
   { label: "Compradores", href: "/es/buyers/" },
   { label: "Acerca", href: "/es/acerca/" },
   { label: "Contacto", href: "/es/contacto/" },

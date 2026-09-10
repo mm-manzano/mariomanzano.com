@@ -19,9 +19,7 @@
  *       strips the slash before doing the lookup, only the values changed.
  * NAV LABEL FIX: "Guide" renamed to "Seller Guide" (EN) and "Guía del Vendedor" (ES)
  *       so buyers who land on the nav understand the guide is seller-specific content.
- * HAMBURGER UPDATE: Desktop nav replaced with hamburger menu on all screen sizes.
- *       Solves crowding and allows unlimited nav items. Also adds "How I Work" /
- *       "Cómo Trabajo" linking to /seller-strategy/ and /es/presentacion-vendedores/.
+ * NAV REVERT: Desktop inline nav restored. Hamburger on mobile only.
  */
 
 import { useState, useEffect } from "react";
@@ -192,9 +190,43 @@ export default function Navigation() {
               </div>
             </Link>
 
-            {/* Hamburger Toggle — all screen sizes */}
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center justify-end gap-2">
+              {(isSpanish ? navLinksES : navLinks).map((link) => {
+                const isContactLink = link.href === "/contact/" || link.href === "/es/contacto/";
+                const resolvedHref = isContactLink && isBuyerPage ? `${link.href}?intent=buyer` : link.href;
+                return (
+                  <a key={link.href} href={resolvedHref} onClick={(e) => { e.preventDefault(); handleNavClick(resolvedHref); }}>
+                    <span className="nav-link text-[11px] tracking-[0.1em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]">
+                      {link.label}
+                    </span>
+                  </a>
+                );
+              })}
+
+              {/* Language Toggle */}
+              <div className="flex items-center gap-2 text-[11px] tracking-[0.1em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-3 ml-1">
+                <a href={getLanguageTargetPath("en")}
+                  onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
+                  className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
+                  English
+                </a>
+                <span className="opacity-50">|</span>
+                <a href={getLanguageTargetPath("es")}
+                  onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
+                  className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
+                  Español
+                </a>
+              </div>
+
+              <a onClick={handleCTAClick} className="btn-luxury text-[10px] py-2 !px-3 whitespace-nowrap cursor-pointer" style={{ marginLeft: "auto" }}>
+                {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
+              </a>
+            </nav>
+
+            {/* Mobile Menu Toggle */}
             <button
-              className="p-2 text-[#1A1A18]"
+              className="md:hidden p-2 text-[#1A1A18]"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -204,7 +236,7 @@ export default function Navigation() {
         </div>
       </header>
 
-      {/* Menu Overlay — all screen sizes */}
+      {/* Mobile Menu Overlay */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 bg-[#F8F5F0] flex flex-col transition-all duration-500">
           <div className="container flex flex-col h-full pt-24 pb-12">

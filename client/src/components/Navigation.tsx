@@ -31,7 +31,6 @@ import { getCTALink } from "@/lib/ctaLinks";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "How I Work", href: "/seller-strategy/" },
   { label: "Seller Guide", href: "/homeowner-guide/" },
   { label: "Buyers", href: "/buyers/" },
   { label: "About", href: "/about/" },
@@ -39,7 +38,6 @@ const navLinks = [
 ];
 const navLinksES = [
   { label: "Inicio", href: "/es/" },
-  { label: "Cómo Trabajo", href: "/es/presentacion-vendedores/" },
   { label: "Guía del Vendedor", href: "/es/guia-para-propietarios/" },
   { label: "Compradores", href: "/es/buyers/" },
   { label: "Acerca", href: "/es/acerca/" },

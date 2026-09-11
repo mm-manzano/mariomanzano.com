@@ -269,7 +269,7 @@ export default function ListingPresentation() {
                   style={{ aspectRatio: "4/3" }}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
                     alt="Poor quality listing photo — dark and underlit"
                     className="w-full h-full object-cover"
                     style={{ filter: "brightness(0.3) saturate(0.4)" }}
@@ -289,7 +289,7 @@ export default function ListingPresentation() {
                   style={{ aspectRatio: "4/3" }}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80"
                     alt="Professional listing photo — bright and well-lit"
                     className="w-full h-full object-cover"
                     style={{ filter: "brightness(1.15) saturate(1.25) contrast(1.05)" }}

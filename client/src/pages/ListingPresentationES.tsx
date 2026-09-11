@@ -1,7 +1,7 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Presentación para Vendedores
  * Route: /es/presentacion-vendedores/ (now public)
- * Sections: Hero, Process & Timeline, Communication, About, Next Steps
+ * Sections: Hero, Process, Photography, Marketing, Commitments, No Contract, Communication, About, Next Steps
  * SEO: Full meta tags + canonical. noindex removed — page is now public.
  */
 
@@ -108,8 +108,8 @@ export default function ListingPresentationES() {
     },
     {
       number: "02",
-      title: "Fotografía y Marketing",
-      desc: "Fotografía profesional con drone y descripción de la propiedad.",
+      title: "Fotografía y Lanzamiento",
+      desc: "Fotografía profesional con drone, copy de la propiedad y activación completa de marketing.",
     },
     {
       number: "03",
@@ -143,11 +143,31 @@ export default function ListingPresentationES() {
     },
   ];
 
+  const marketingItems = [
+    "Publicación completa en MLS revisada contigo antes de salir al mercado",
+    "Difusión en Zillow, Realtor.com y todas las plataformas principales",
+    "Fotografía profesional con drone",
+    "Campaña en redes sociales dirigida a compradores activos",
+    "Anuncio de Nueva Propiedad enviado al vecindario por correo postal",
+    "Anuncio de Nueva Propiedad publicado en todas mis redes sociales",
+  ];
+
+  const commitments = [
+    "Siempre te daré orientación experta para que puedas tomar la mejor decisión para tu familia.",
+    "Siempre seré honesto sobre el precio de tu casa, su condición y lo que se necesita para venderla.",
+    "Siempre te diré la verdad, incluso cuando no sea lo que quieras escuchar.",
+    "Siempre actuaré en tu mejor interés, no en el mío.",
+    "Siempre trabajaré para que te vayas con el mayor dinero posible.",
+    "Siempre usaré las estrategias más efectivas para comercializar tu propiedad.",
+    "Siempre te mantendré informado antes de que algo cambie.",
+    "Nunca te voy a amarrar a un contrato de largo plazo.",
+  ];
+
   const communicationItems = [
-    "Comunicación según tu preferencia",
-    "Retroalimentación después de las visitas cuando esté disponible",
-    "Actualizaciones inmediatas sobre ofertas oficiales",
-    "Orientación clara antes de tomar decisiones",
+    "Comunicación según tus términos, llamada, texto o correo",
+    "Retroalimentación de visitas dentro de 24 horas cuando el agente del comprador la proporciona",
+    "Las ofertas se revisan contigo antes de que respondas, no después",
+    "Actualizaciones regulares durante todo el proceso, aunque no haya nada nuevo que reportar",
   ];
 
   return (
@@ -222,13 +242,172 @@ export default function ListingPresentationES() {
         </div>
       </section>
 
-      {/* COMMUNICATION */}
+      {/* PHOTOGRAPHY */}
       <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">02. Comunicación</span>
+              <span className="section-number">02. Fotografía</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+              La primera visita ocurre en línea.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+              Antes de que un comprador entre a tu casa, ya tomó una decisión basada en las fotos. La calidad aquí no es opcional.
+            </p>
+          </RevealDiv>
+
+          <RevealDiv delay={100}>
+            <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-3xl">
+              {/* Ejemplo deficiente */}
+              <div className="relative overflow-hidden">
+                <div
+                  className="w-full overflow-hidden"
+                  style={{ aspectRatio: "4/3" }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=800&q=80"
+                    alt="Foto de propiedad de baja calidad, oscura y mal iluminada"
+                    className="w-full h-full object-cover"
+                    style={{ filter: "brightness(0.3) saturate(0.4)" }}
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 py-2 px-4">
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/70">
+                    Ejemplo Deficiente
+                  </span>
+                </div>
+              </div>
+
+              {/* Mi ejemplo */}
+              <div className="relative overflow-hidden">
+                <div
+                  className="w-full overflow-hidden"
+                  style={{ aspectRatio: "4/3" }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=800&q=80"
+                    alt="Foto profesional de propiedad, bien iluminada"
+                    className="w-full h-full object-cover"
+                    style={{ filter: "brightness(1.15) saturate(1.25) contrast(1.05)" }}
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 py-2 px-4" style={{ background: "rgba(184,151,74,0.85)" }}>
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white">
+                    Mi Ejemplo
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p className="font-body text-sm text-[#1A1A18]/55 mt-6 max-w-md leading-relaxed">
+              Las casas con fotografía profesional se venden 32% más rápido y atraen ofertas más competitivas.
+            </p>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* MARKETING PLAN */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">03. Marketing</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+              Cómo pongo tu casa frente a los compradores.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+              Cada elemento a continuación es parte de cada propiedad que listo. Nada es un extra.
+            </p>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+            {marketingItems.map((item, i) => (
+              <RevealDiv
+                key={i}
+                delay={i * 75}
+                className="flex items-start gap-4 border-t border-[#1A1A18]/10 pt-5"
+              >
+                <span className="font-display text-[#B8974A] text-xs tracking-widest mt-0.5 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-body text-sm text-[#1A1A18]/75 leading-relaxed">
+                  {item}
+                </p>
+              </RevealDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMMITMENTS */}
+      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">04. Compromisos</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+              Lo que puedes exigirme.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+              Estos no son puntos de venta. Es el estándar que me exijo en cada propiedad.
+            </p>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {commitments.map((item, i) => (
+              <RevealDiv
+                key={i}
+                delay={i * 75}
+                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-white"
+              >
+                <p className="font-body text-base text-[#1A1A18]/75 leading-relaxed">
+                  {item}
+                </p>
+              </RevealDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NO CONTRACT */}
+      <section className="py-20 md:py-28 bg-[#1A1A18]">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span
+                className="section-rule"
+                style={{ background: "#B8974A" }}
+              />
+              <span
+                className="font-body text-[10px] tracking-[0.25em] uppercase"
+                style={{ color: "#B8974A" }}
+              >
+                Sin Compromiso
+              </span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+              Sin ataduras. Sin contrato a largo plazo.
+            </h2>
+            <p className="font-body text-base text-white/70 leading-relaxed max-w-xl">
+              Nunca te voy a amarrar a un contrato de largo plazo. Si en algún momento sientes que no me he ganado tu confianza, nos separamos sin penalizaciones y sin rencores. Tú mantienes el control todo el tiempo.
+            </p>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* COMMUNICATION */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">05. Comunicación</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
               Siempre vas a saber cómo van las cosas.
@@ -243,7 +422,7 @@ export default function ListingPresentationES() {
               <RevealDiv
                 key={item}
                 delay={i * 100}
-                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-white"
+                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-[#F8F5F0]"
               >
                 <p className="font-body text-base text-[#1A1A18]/75 leading-relaxed">
                   {item}
@@ -286,9 +465,9 @@ export default function ListingPresentationES() {
               <p className="font-body text-base text-white/70 leading-relaxed">
                 No soy solo un agente que habla de decisiones inmobiliarias. Las
                 he tomado con mi propio dinero en juego. He comprado y vendido
-                propiedades, operado un Airbnb, hecho renovaciones mientras
-                vivía en las propiedades, tengo rentas creciendo mi portafolio.
-                Esa experiencia es lo que traigo a esta conversación.
+                propiedades, hecho renovaciones mientras vivía en las propiedades,
+                y tengo rentas creciendo mi portafolio. Esa experiencia es lo que
+                traigo a esta conversación.
               </p>
             </RevealDiv>
           </div>
@@ -301,7 +480,7 @@ export default function ListingPresentationES() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03. Próximos Pasos</span>
+              <span className="section-number">06. Próximos Pasos</span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-10 max-w-2xl">
               Si estás listo para seguir adelante, hablemos.

@@ -108,8 +108,8 @@ export default function ListingPresentation() {
     },
     {
       number: "02",
-      title: "Photography & Marketing",
-      desc: "Professional photography with drone and listing copy.",
+      title: "Photography & Launch",
+      desc: "Professional photography, drone, listing copy, and full marketing activation.",
     },
     {
       number: "03",
@@ -143,6 +143,7 @@ export default function ListingPresentation() {
     },
   ];
 
+  // Marketing focuses specifically on buyer-facing exposure tactics
   const marketingItems = [
     "Full MLS listing reviewed with you before going live",
     "Syndicated to Zillow, Realtor.com, and all major platforms",
@@ -150,7 +151,6 @@ export default function ListingPresentation() {
     "Targeted social media campaign to reach active buyers",
     "Just Listed postcards sent to your neighborhood",
     "Direct outreach to top buyer's agents in the area",
-    "Feedback after showings when provided",
   ];
 
   const commitments = [
@@ -164,11 +164,12 @@ export default function ListingPresentation() {
     "I will never lock you into a long-term contract.",
   ];
 
+  // Communication focuses on HOW we stay connected — the mechanics, not the promises
   const communicationItems = [
-    "Communication based on your preference",
-    "Feedback after showings when provided",
-    "Immediate updates on official offers",
-    "Clear guidance before decisions",
+    "Your preferred method — call, text, or email",
+    "Showing feedback within 24 hours when provided by the buyer's agent",
+    "Offers reviewed with you before you respond, not after",
+    "Regular check-ins throughout the listing, even when there is nothing new to report",
   ];
 
   return (
@@ -260,40 +261,42 @@ export default function ListingPresentation() {
           </RevealDiv>
 
           <RevealDiv delay={100}>
-            {/* Photo comparison — swap src paths with your actual before/after images */}
             <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-3xl">
+              {/* Poor example — dark, underlit room */}
               <div className="relative overflow-hidden">
                 <div
-                  className="w-full bg-[#888] overflow-hidden"
+                  className="w-full overflow-hidden"
                   style={{ aspectRatio: "4/3" }}
                 >
                   <img
                     src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80"
-                    alt="Typical listing photo"
-                    className="w-full h-full object-cover opacity-80 grayscale"
+                    alt="Poor quality listing photo — dark and underlit"
+                    className="w-full h-full object-cover"
+                    style={{ filter: "brightness(0.45) saturate(0.7)" }}
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 py-2 px-4">
                   <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/70">
-                    Typical
+                    Poor Example
                   </span>
                 </div>
               </div>
 
+              {/* My example — same room type, bright and well-lit */}
               <div className="relative overflow-hidden">
                 <div
-                  className="w-full bg-[#1A1A18] overflow-hidden"
+                  className="w-full overflow-hidden"
                   style={{ aspectRatio: "4/3" }}
                 >
                   <img
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-                    alt="Professional listing photo"
+                    alt="Professional listing photo — bright and well-lit"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 py-2 px-4" style={{ background: "rgba(184,151,74,0.85)" }}>
                   <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white">
-                    What I use
+                    My Example
                   </span>
                 </div>
               </div>
@@ -315,7 +318,7 @@ export default function ListingPresentation() {
               <span className="section-number">03. Marketing</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
-              What I do to get your home seen.
+              How I get your home in front of buyers.
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
               Every item below is part of every listing. Nothing is an upgrade.
@@ -329,9 +332,7 @@ export default function ListingPresentation() {
                 delay={i * 75}
                 className="flex items-start gap-4 border-t border-[#1A1A18]/10 pt-5"
               >
-                <span
-                  className="font-display text-[#B8974A] text-xs tracking-widest mt-0.5 shrink-0"
-                >
+                <span className="font-display text-[#B8974A] text-xs tracking-widest mt-0.5 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="font-body text-sm text-[#1A1A18]/75 leading-relaxed">
@@ -401,7 +402,7 @@ export default function ListingPresentation() {
         </div>
       </section>
 
-      {/* COMMUNICATION */}
+      {/* COMMUNICATION — how we stay connected during the listing */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>

@@ -1,7 +1,7 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Listing Presentation
  * Route: /seller-strategy/ (now public)
- * Sections: Hero, Process & Timeline, Communication, About, Next Steps
+ * Sections: Hero, Process, Photography, Marketing, Commitments, No Contract, Communication, About, Next Steps
  * SEO: Full meta tags + canonical. noindex removed — page is now public.
  */
 
@@ -143,6 +143,27 @@ export default function ListingPresentation() {
     },
   ];
 
+  const marketingItems = [
+    "Full MLS listing reviewed with you before going live",
+    "Syndicated to Zillow, Realtor.com, and all major platforms",
+    "Professional photography with drone",
+    "Targeted social media campaign to reach active buyers",
+    "Just Listed postcards sent to your neighborhood",
+    "Direct outreach to top buyer's agents in the area",
+    "Feedback after showings when provided",
+  ];
+
+  const commitments = [
+    "I will always give you expert guidance so you can make the best decision for your family.",
+    "I will always be honest about your home's price, its condition, and what it takes to get it sold.",
+    "I will always give you the truth, even when it is not what you want to hear.",
+    "I will always act in your best interest, not mine.",
+    "I will always work to ensure you walk away with the most money possible.",
+    "I will always use the most effective strategies to market your home.",
+    "I will always keep you informed before anything changes.",
+    "I will never lock you into a long-term contract.",
+  ];
+
   const communicationItems = [
     "Communication based on your preference",
     "Feedback after showings when provided",
@@ -222,13 +243,171 @@ export default function ListingPresentation() {
         </div>
       </section>
 
-      {/* COMMUNICATION */}
+      {/* PHOTOGRAPHY */}
       <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">02. Communication</span>
+              <span className="section-number">02. Photography</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+              The first showing happens online.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+              Before a buyer sets foot in your home, they have already made a judgment from photos. Quality here is not optional.
+            </p>
+          </RevealDiv>
+
+          <RevealDiv delay={100}>
+            {/* Photo comparison — swap src paths with your actual before/after images */}
+            <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-3xl">
+              <div className="relative overflow-hidden">
+                <div
+                  className="w-full bg-[#888] overflow-hidden"
+                  style={{ aspectRatio: "4/3" }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80"
+                    alt="Typical listing photo"
+                    className="w-full h-full object-cover opacity-80 grayscale"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 py-2 px-4">
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/70">
+                    Typical
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative overflow-hidden">
+                <div
+                  className="w-full bg-[#1A1A18] overflow-hidden"
+                  style={{ aspectRatio: "4/3" }}
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+                    alt="Professional listing photo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 py-2 px-4" style={{ background: "rgba(184,151,74,0.85)" }}>
+                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white">
+                    What I use
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p className="font-body text-sm text-[#1A1A18]/55 mt-6 max-w-md leading-relaxed">
+              Homes with professional photography sell 32% faster and attract more competitive offers.
+            </p>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* MARKETING PLAN */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">03. Marketing</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+              What I do to get your home seen.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+              Every item below is part of every listing. Nothing is an upgrade.
+            </p>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+            {marketingItems.map((item, i) => (
+              <RevealDiv
+                key={i}
+                delay={i * 75}
+                className="flex items-start gap-4 border-t border-[#1A1A18]/10 pt-5"
+              >
+                <span
+                  className="font-display text-[#B8974A] text-xs tracking-widest mt-0.5 shrink-0"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-body text-sm text-[#1A1A18]/75 leading-relaxed">
+                  {item}
+                </p>
+              </RevealDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMMITMENTS */}
+      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">04. Commitments</span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+              What you can hold me to.
+            </h2>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+              These are not talking points. They are the standard I hold myself to on every listing.
+            </p>
+          </RevealDiv>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {commitments.map((item, i) => (
+              <RevealDiv
+                key={i}
+                delay={i * 75}
+                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-white"
+              >
+                <p className="font-body text-base text-[#1A1A18]/75 leading-relaxed">
+                  {item}
+                </p>
+              </RevealDiv>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NO CONTRACT */}
+      <section className="py-20 md:py-28 bg-[#1A1A18]">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span
+                className="section-rule"
+                style={{ background: "#B8974A" }}
+              />
+              <span
+                className="font-body text-[10px] tracking-[0.25em] uppercase"
+                style={{ color: "#B8974A" }}
+              >
+                No Obligation
+              </span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+              No lock-in. No long-term contract.
+            </h2>
+            <p className="font-body text-base text-white/70 leading-relaxed max-w-xl">
+              I will never lock you into a long-term agreement. If at any point you feel I have not earned your trust, we part ways, no penalties and no hard feelings. You stay in control the entire time.
+            </p>
+          </RevealDiv>
+        </div>
+      </section>
+
+      {/* COMMUNICATION */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="section-rule" />
+              <span className="section-number">05. Communication</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
               You will always know where things stand.
@@ -243,7 +422,7 @@ export default function ListingPresentation() {
               <RevealDiv
                 key={item}
                 delay={i * 100}
-                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-white"
+                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-[#F8F5F0]"
               >
                 <p className="font-body text-base text-[#1A1A18]/75 leading-relaxed">
                   {item}
@@ -286,9 +465,8 @@ export default function ListingPresentation() {
               <p className="font-body text-base text-white/70 leading-relaxed">
                 I am not just an agent who talks about real estate decisions. I
                 have made them with my own money on the line. I have bought and
-                sold properties, ran an Airbnb, done live-in flips, own rentals
-                growing my portfolio. That experience is what I bring to this
-                conversation.
+                sold properties, done live-in flips, and own rentals growing my
+                portfolio. That experience is what I bring to this conversation.
               </p>
             </RevealDiv>
           </div>
@@ -301,7 +479,7 @@ export default function ListingPresentation() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
-              <span className="section-number">03. Next Steps</span>
+              <span className="section-number">06. Next Steps</span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-10 max-w-2xl">
               If you are ready to move forward, let's go over the next steps.

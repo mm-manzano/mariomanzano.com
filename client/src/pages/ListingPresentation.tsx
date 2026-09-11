@@ -150,7 +150,7 @@ export default function ListingPresentation() {
     "Professional photography with drone",
     "Targeted social media campaign to reach active buyers",
     "Just Listed postcards sent to your neighborhood",
-    "Direct outreach to top buyer's agents in the area",
+    "Just Listed announcement sent across all my social platforms",
   ];
 
   const commitments = [
@@ -166,7 +166,7 @@ export default function ListingPresentation() {
 
   // Communication focuses on HOW we stay connected — the mechanics, not the promises
   const communicationItems = [
-    "Your preferred method — call, text, or email",
+    "Communication on your terms, call, text, or email",
     "Showing feedback within 24 hours when provided by the buyer's agent",
     "Offers reviewed with you before you respond, not after",
     "Regular check-ins throughout the listing, even when there is nothing new to report",
@@ -269,10 +269,10 @@ export default function ListingPresentation() {
                   style={{ aspectRatio: "4/3" }}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
                     alt="Poor quality listing photo — dark and underlit"
                     className="w-full h-full object-cover"
-                    style={{ filter: "brightness(0.45) saturate(0.7)" }}
+                    style={{ filter: "brightness(0.3) saturate(0.4)" }}
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 py-2 px-4">
@@ -292,6 +292,7 @@ export default function ListingPresentation() {
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
                     alt="Professional listing photo — bright and well-lit"
                     className="w-full h-full object-cover"
+                    style={{ filter: "brightness(1.15) saturate(1.25) contrast(1.05)" }}
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 py-2 px-4" style={{ background: "rgba(184,151,74,0.85)" }}>

@@ -10,7 +10,6 @@
  * TESTIMONIAL UPDATE: Reemplazado testimonio único por dos testimonios en cuadrícula (Chris S. + Alma S.)
  * SELLER STRATEGY UPDATE: Franja de vendedor motivado ahora enlaza a /es/presentacion-vendedores/;
  *                          nuevo CTA añadido después del acordeón de proceso.
- * LEASING UPDATE: Mención ligera del servicio de arrendamiento añadida en la Franja de Confianza.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -185,9 +184,6 @@ export default function HomeES() {
                 <ArrowRight size={14} />
               </span>
             </Link>
-            <p className="font-body text-sm text-white/40 mt-8 pt-6 border-t border-white/10">
-              ¿Ya rentas tu casa? También me encargo del arrendamiento. Publicación en MLS, fotos profesionales, selección de inquilinos y contrato firmado.
-            </p>
           </div>
         </div>
       </section>

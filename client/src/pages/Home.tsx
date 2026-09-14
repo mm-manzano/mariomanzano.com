@@ -11,6 +11,7 @@
  * TESTIMONIAL UPDATE: Replaced single quote with two testimonials (Chris S. + Alma S.)
  * SELLER STRATEGY UPDATE: "Talk to Mario" in motivated seller strip swapped for
  *                 "See How I Work" → /seller-strategy. Added CTA after process accordion.
+ * LEASING UPDATE: Added light leasing service mention to Trust Strip.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -186,6 +187,9 @@ export default function Home() {
                 <ArrowRight size={14} />
               </span>
             </Link>
+            <p className="font-body text-sm text-white/40 mt-8 pt-6 border-t border-white/10">
+              Already renting your home? I handle the leasing side too. MLS listing, professional photos, tenant screening, and a signed lease.
+            </p>
           </div>
         </div>
       </section>

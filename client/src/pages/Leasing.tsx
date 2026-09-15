@@ -159,6 +159,19 @@ const processSteps = [
     ),
   },
   {
+    title: "A property flyer for every showing",
+    body: "I put together a professional flyer with photos, key details, and any upgrades you want to highlight. Visitors leave with something in hand that helps your property stay top of mind after they've seen a few others.",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+        <polyline points="14 2 14 8 20 8" />
+        <line x1="16" y1="13" x2="8" y2="13" />
+        <line x1="16" y1="17" x2="8" y2="17" />
+        <polyline points="10 9 9 9 8 9" />
+      </svg>
+    ),
+  },
+  {
     title: "Screen applicants and get to a signed lease",
     body: "I handle inquiries, showings, applicant screening, and help you through the final decision. Once the lease is signed, my job is done.",
     icon: (
@@ -399,8 +412,11 @@ export default function Leasing() {
                   </div>
                 </div>
                 <div className="border-t border-[#E8D8B8] mb-4" />
+                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-4">
+                  Some leasing companies charge 100% of one month's rent, and others bundle leasing into ongoing management. I keep it simple: 80% of one month's rent, one time. You keep managing the property after the lease is signed.
+                </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-2">
-                  Professional photography, MLS listing, marketing, showings, applicant screening, and leasing support are all covered by my fee.
+                  Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and leasing support are all included.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
                   The first month's rent can be used to cover the leasing fee. No monthly management fee.

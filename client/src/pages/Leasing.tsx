@@ -416,7 +416,7 @@ export default function Leasing() {
                   Some leasing services charge 100% of one month's rent, while others bundle leasing with ongoing management. I keep it simple: 80% of one month's rent, one time. You keep managing the property after the lease is signed.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-2">
-                  Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and leasing support are all included.
+                  Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and leasing signing are all included.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
                   The first month's rent can be used to cover the leasing fee. 

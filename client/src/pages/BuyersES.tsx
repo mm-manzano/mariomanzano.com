@@ -3,6 +3,9 @@
  * Mirrors the English Buyers.tsx structure exactly.
  * Core message: No solo busques una casa. Entiende el paso.
  * SEO FIX: setPageMeta also writes a <link rel="canonical"> tag.
+ * UPDATE: Meta description geo gate removed from opening question.
+ *         Hero intro closing sentence geography removed.
+ *         Trust strip and identity labels retain Cedar Park & Leander (brand positioning).
  */
 
 import { useEffect, useRef } from "react";
@@ -73,7 +76,7 @@ export default function BuyersEs() {
   useEffect(() => {
     setPageMeta(
       "Compradores en Cedar Park y Leander TX | Mario Manzano",
-      "¿Comprando una casa en Cedar Park o Leander? Mario Manzano te ayuda a entender los números y el momento correcto antes de decidir, ya sea que tengas una casa o estés comprando por primera vez.",
+      "¿Pensando en comprar una casa en el área de Austin? Mario Manzano te ayuda a entender los números y el momento correcto antes de decidir, ya sea que tengas una casa o estés comprando por primera vez.",
       "https://mariomanzano.com/es/buyers/"
     );
   }, []);
@@ -121,7 +124,7 @@ export default function BuyersEs() {
               <em className="italic">Entiende el paso.</em>
             </h1>
             <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
-              Ya sea que tengas una casa o estés comprando por primera vez, la pregunta más importante es la misma: ¿los números tienen sentido antes de comprometerte? Ayudo a compradores en Cedar Park y Leander a tener esa claridad antes de hacer una oferta.
+              Ya sea que tengas una casa o estés comprando por primera vez, la pregunta más importante es la misma: ¿los números tienen sentido antes de comprometerte? Ayudo a compradores a tener esa claridad antes de hacer una oferta.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/es/contacto/">

@@ -1,6 +1,9 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Vender vs. Alquilar (Español)
  * FINAL: Meta tags, Open Graph, schema, educational copy in Spanish.
+ * UPDATE: Meta description and schema description broadened.
+ *         Geography removed from intro paragraph and educational CTA.
+ *         Educational section H2 and market context retained for local SEO.
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -57,9 +60,8 @@ export default function SellVsRentES() {
   useEffect(() => {
     setPageMeta(
       "¿Debo Vender o Alquilar mi Casa? Calculadora Gratuita | Cedar Park y Leander TX",
-      "Haz los números antes de decidir. Compara vender ahora versus conservar como alquiler según tu equity real, potencial de renta y plazo. Herramienta gratuita para propietarios en Cedar Park y Leander TX.",
+      "Haz los números antes de decidir. Compara vender ahora versus conservar como renta según tu equity real, potencial de renta y plazo. Herramienta gratuita para propietarios en el área de Austin.",
       "https://mariomanzano.com/es/sell-vs-rent"
-      
     );
   }, []);
 
@@ -68,7 +70,7 @@ export default function SellVsRentES() {
     "@type": "WebPage",
     "name": "Calculadora Vender vs. Alquilar",
     "url": "https://mariomanzano.com/es/sell-vs-rent",
-    "description": "Calculadora gratuita para propietarios en Cedar Park y Leander TX. Compara los resultados financieros a largo plazo de vender ahora versus conservar tu casa como propiedad de alquiler.",
+    "description": "Calculadora gratuita para propietarios en el área de Austin. Compara los resultados financieros a largo plazo de vender ahora versus conservar tu casa como propiedad de renta.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -126,11 +128,11 @@ export default function SellVsRentES() {
   const getStrategicTakeaway = () => {
     if (val === 0 || years === 0) return "Ingresa los detalles de tu casa para ver una comparación estratégica.";
     if (estimatedNetIfRented > estimatedNetIfSoldToday * 1.2) {
-      return "Según estos números, conservar la propiedad como alquiler parece producir un resultado a largo plazo significativamente mejor que vender ahora. Dicho esto, los números solo cuentan parte de la historia. Tu capacidad para gestionar un alquiler, tu necesidad de liquidez y tu plazo también importan.";
+      return "Según estos números, conservar la propiedad como renta parece producir un resultado a largo plazo significativamente mejor que vender ahora. Dicho esto, los números solo cuentan parte de la historia. Tu capacidad para gestionar una renta, tu necesidad de liquidez y tu plazo también importan.";
     } else if (estimatedNetIfRented > estimatedNetIfSoldToday * 0.8) {
-      return "La diferencia financiera entre vender ahora y conservar como alquiler es relativamente cercana en este escenario. La respuesta correcta depende de factores más allá de los números, incluyendo tu plazo, tu disposición a ser arrendador y qué planeas hacer con los ingresos.";
+      return "La diferencia financiera entre vender ahora y conservar como renta es relativamente cercana en este escenario. La respuesta correcta depende de factores más allá de los números, incluyendo tu plazo, tu disposición a ser arrendador y qué planeas hacer con los ingresos.";
     } else {
-      return "Según estos datos, vender ahora parece dejarte más dinero en el bolsillo que conservar como alquiler durante este período. Eso puede cambiar significativamente con diferentes supuestos de apreciación o niveles de renta. Vale la pena correr varios escenarios antes de decidir.";
+      return "Según estos datos, vender ahora parece dejarte más dinero en el bolsillo que conservar como renta durante este período. Eso puede cambiar con diferentes supuestos de apreciación o niveles de renta. Vale la pena correr varios escenarios antes de decidir.";
     }
   };
 
@@ -148,13 +150,13 @@ export default function SellVsRentES() {
             <span className="section-number">Herramienta Estratégica</span>
           </div>
           <h1 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-6">
-            ¿Deberías<br /><em className="italic">vender o alquilar?</em>
+            ¿Deberías<br /><em className="italic">vender o rentar?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-6 leading-relaxed">
-            Esta es una de las preguntas más frecuentes de los propietarios en Cedar Park y Leander. Vender te da liquidez y elimina la responsabilidad continua. Alquilar mantiene tu capital trabajando con el tiempo y puede ser una herramienta sólida para construir riqueza si los números lo respaldan.
+            Esta es una de las preguntas que más se hacen los propietarios. Vender te da liquidez y quitas la responsabilidad de encima. Rentar mantiene tu capital trabajando con el tiempo y puede ser una herramienta sólida para generar riqueza si los números lo respaldan.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            Esta herramienta compara ambos caminos lado a lado según tus números específicos. Ingresa los detalles de tu casa y un período de tenencia para ver qué opción sale adelante financieramente.
+            Esta herramienta compara los dos caminos con tus números reales. Ingresa los detalles de tu casa y un período de tenencia para ver cuál opción te conviene más.
           </p>
         </RevealDiv>
 
@@ -273,10 +275,10 @@ export default function SellVsRentES() {
                   </div>
                 </div>
                 <div className="bg-white/5 p-8 border border-white/10">
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Estimado Neto si Alquilas y Vendes Después</p>
+                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Estimado Neto si Rentas y Vendes Después</p>
                   <p className="font-display text-5xl md:text-6xl font-light text-white mb-2">{formatCurrency(estimatedNetIfRented)}</p>
                   <p className="font-body text-xs text-white/40 leading-relaxed">
-                    Incluye apreciación, flujo de caja del alquiler y reducción de hipoteca durante {years} años, luego venta.
+                    Incluye apreciación, flujo de caja de la renta y reducción de hipoteca durante {years} años, luego venta.
                   </p>
                 </div>
               </div>
@@ -297,15 +299,15 @@ export default function SellVsRentES() {
         {/* Sección educativa */}
         <div className="mt-20 max-w-3xl">
           <RevealDiv>
-            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Es mejor alquilar que vender en Cedar Park o Leander?</h2>
+            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Es mejor rentar que vender en Cedar Park o Leander?</h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-              En el mercado de Cedar Park y Leander, alquilar tiende a ser una estrategia de apreciación a largo plazo más que una fuente de flujo de caja inmediato. Las casas en esta área han mantenido bien su valor con el tiempo, lo que hace que el camino del alquiler sea atractivo si tu pago hipotecario es bajo en relación con lo que podría rentar la propiedad.
+              En el mercado de Cedar Park y Leander, rentar tiende a ser una estrategia de apreciación a largo plazo más que una fuente de flujo de caja inmediato. Las casas en esta área han mantenido bien su valor con el tiempo, lo que hace que el camino de la renta sea atractivo si tu pago hipotecario es bajo en relación con lo que podría rentar la propiedad.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-              Dicho esto, los números son solo parte de la decisión. Ser arrendador significa lidiar con inquilinos, mantenimiento, vacancias y administración de propiedades. Si no estás preparado para esa responsabilidad continua, la ventaja financiera de alquilar puede no valer el estrés.
+              Dicho esto, los números son solo parte de la decisión. Ser arrendador significa lidiar con inquilinos, mantenimiento, vacancias y administración de propiedades. Si no estás preparado para esa responsabilidad, la ventaja financiera de rentar puede no valer el estrés.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-              Si no estás seguro de qué camino tiene más sentido para tu situación, eso es exactamente el tipo de conversación que tengo con propietarios en esta área. Sin presión. Solo un análisis claro de los números y lo que realmente significan.
+              Si no sabes bien qué camino tomar, puedo ayudarte a verlo con claridad. Sin presión. Solo los números y lo que realmente significan.
             </p>
           </RevealDiv>
         </div>

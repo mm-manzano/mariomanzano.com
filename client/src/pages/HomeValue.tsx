@@ -3,6 +3,8 @@
  * Purpose: Primary conversion page for seller leads.
  * UPDATED: Removed repetitive estimate disclaimer, tightened copy flow,
  *          added Austin as broader metro context in one clean placement.
+ *          Refined estimate positioning, broadened messaging for all homeowner
+ *          intent types, restructured CTA hierarchy (CMA primary, Net Sheet secondary).
  */
 
 import { useEffect } from "react";
@@ -29,7 +31,7 @@ export default function HomeValue() {
   useEffect(() => {
     setPageMeta(
       "What Is My Home Worth in Cedar Park or Leander TX? | Mario Manzano",
-      "Get an instant home value estimate for Cedar Park and Leander TX. Then find out what your home would actually sell for in today's market with a real pricing conversation.",
+      "Get a free home value estimate for Cedar Park and Leander TX. Find out what your home is actually worth today with a personalized Comparative Market Analysis from a local Austin Realtor.",
       "https://mariomanzano.com/home-value"
     );
   }, []);
@@ -71,7 +73,7 @@ export default function HomeValue() {
             <em className="italic">actually worth?</em>
           </h1>
           <p className="font-body text-base md:text-lg text-[#1A1A18]/60 max-w-2xl leading-relaxed">
-            Home values in Cedar Park and Leander have shifted significantly over the past few years. The estimate below pulls from public data and recent comparable sales in your area. It is a reasonable starting point, but it does not account for your home's condition, upgrades, or how it compares to what is actively selling in your neighborhood right now. Use it to get your bearings, then read on.
+            The estimate below gives you a useful starting point based on available property and market data. Because automated estimates draw from a broader geographic area and generalized data, they may not reflect the precise value of your specific home. They also cannot account for your home's condition, upgrades, layout, or other property-specific characteristics. Use it to get your bearings, then read on.
           </p>
         </div>
 
@@ -90,23 +92,37 @@ export default function HomeValue() {
 
         {/* What affects home value section */}
         <div className="mb-16 max-w-2xl">
-          <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">What actually determines what your home sells for?</h2>
+          <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">What actually determines what your home is worth?</h2>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            In Cedar Park and Leander, the gap between a good sale and a great sale usually comes down to three things: preparation, pricing, and timing. Buyers in this market are comparing your home against other options in real time. A home that shows well and is priced correctly from the start attracts competitive offers. One that is overpriced or needs visible work sits.
+            Automated estimates are a useful starting point, but they work with generalized data. They may not account for your home's specific condition, the improvements you have made, how the layout compares to similar homes, or what is actively competing in your immediate neighborhood.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-            Automated tools cannot tell you whether your home should go to market in thirty days or ninety days, or whether a specific upgrade would add more to your sale price than it costs. That is where a real conversation makes the difference.
+            A personalized Comparative Market Analysis takes a closer look. It focuses on your specific property, the most relevant comparable sales, current market conditions in your area, and property-specific factors that affect value. Whether you are tracking equity, thinking through a future move, or weighing an improvement, that is the clearest picture available without a formal appraisal.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            If you want a clear picture of what your home would realistically sell for today and what you would walk away with after costs, that is what I help with. No pressure. Just clarity.
+            If you want a more accurate number for your home specifically, that is what the CMA below is for.
           </p>
         </div>
 
-        {/* Next Step Flow */}
+        {/* Primary CMA CTA */}
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-4">Want a more accurate number for your specific home?</h2>
+          <p className="font-body text-base text-[#1A1A18]/65 mb-8 leading-relaxed">
+            I can prepare a personalized Comparative Market Analysis based on your property and the current market. No obligation — just a clearer picture of where your home stands.
+          </p>
+          <Link href="/contact">
+            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+              Request My Personalized CMA
+              <ArrowRight size={14} />
+            </span>
+          </Link>
+        </div>
+
+        {/* Net Sheet - Secondary Resource */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white mb-12">
           <div>
-            <h4 className="font-display text-xl font-light mb-2">Next step: Calculate your net proceeds</h4>
-            <p className="font-body text-sm text-white/60">Find out exactly what you will walk away with after costs.</p>
+            <h4 className="font-display text-xl font-light mb-2">Also useful: Calculate your net proceeds</h4>
+            <p className="font-body text-sm text-white/60">If you are thinking about selling, find out what you would walk away with after costs.</p>
           </div>
           <Link href="/net-sheet">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
@@ -116,19 +132,6 @@ export default function HomeValue() {
           </Link>
         </div>
 
-        {/* Contact CTA */}
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-4">Want a real number for your specific home?</h2>
-          <p className="font-body text-base text-[#1A1A18]/65 mb-8 leading-relaxed">
-            I work with homeowners in Cedar Park, Leander, and the greater Austin area who want to understand what their home is actually worth before deciding anything. A short conversation is all it takes to get a clearer picture.
-          </p>
-          <Link href="/contact">
-            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-              Start a Conversation
-              <ArrowRight size={14} />
-            </span>
-          </Link>
-        </div>
       </div>
     </div>
   );

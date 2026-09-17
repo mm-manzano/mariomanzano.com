@@ -3,6 +3,8 @@
  * Purpose: Central hub linking to all three strategy tools
  * FINAL: Meta tags, Open Graph, WebPage schema, educational copy added.
  *        CTA copy corrected. Tool card descriptions improved.
+ * UPDATE: Meta description, schema description, and bottom CTA broadened
+ *         to serve Austin area homeowners (not Cedar Park & Leander only).
  */
 
 import { Link } from "wouter";
@@ -53,7 +55,7 @@ export default function StrategyHub() {
   useEffect(() => {
     setPageMeta(
       "Home Selling Strategy Hub | Cedar Park & Leander TX | Mario Manzano",
-      "Compare your real options before deciding anything. Calculate your net proceeds, compare selling vs renting, and analyze whether remodeling makes financial sense. Free tools for Cedar Park and Leander homeowners.",
+      "Compare your real options before deciding anything. Calculate your net proceeds, compare selling vs renting, and analyze whether remodeling makes financial sense. Free tools for Greater Austin homeowners.",
       "https://mariomanzano.com/strategy-hub"
     );
   }, []);
@@ -63,7 +65,7 @@ export default function StrategyHub() {
     "@type": "WebPage",
     "name": "Home Selling Strategy Hub",
     "url": "https://mariomanzano.com/strategy-hub",
-    "description": "Free strategy tools for Cedar Park and Leander homeowners. Compare selling vs renting, calculate net proceeds, and analyze remodel ROI before making any decisions.",
+    "description": "Free strategy tools for Greater Austin homeowners. Compare selling vs renting, calculate net proceeds, and analyze remodel ROI before making any decisions.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -158,7 +160,7 @@ export default function StrategyHub() {
             Want someone to walk through the numbers with you?
           </h2>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-xl mx-auto leading-relaxed mb-8">
-            The tools give you a starting point. A real conversation gives you a strategy. If you are a homeowner in Cedar Park or Leander and want to talk through what your numbers actually mean, reach out.
+            The tools give you a starting point. A real conversation gives you a strategy. If you want to talk through what your numbers actually mean, reach out.
           </p>
           <Link href="/contact">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

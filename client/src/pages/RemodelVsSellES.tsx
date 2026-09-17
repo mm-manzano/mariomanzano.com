@@ -1,6 +1,10 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Remodelar vs. Vender (Español)
+ * Purpose: Helps homeowners analyze the financial impact of renovations before selling.
  * FINAL: Meta tags, Open Graph, schema, educational copy in Spanish.
+ * UPDATE: Meta description and schema description broadened to Greater Austin.
+ *         Geography removed from intro body paragraph.
+ *         Educational section retains Cedar Park & Leander (local SEO content).
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -50,8 +54,8 @@ export default function RemodelVsSellES() {
 
   useEffect(() => {
     setPageMeta(
-      "¿Debo Remodelar o Vender? Calculadora Gratuita | Cedar Park y Leander TX",
-      "Haz los números antes de decidir. Ingresa el valor de tu casa, el costo de remodelación y el aumento esperado para ver si renovar antes de vender realmente vale la pena. Cedar Park y Leander TX.",
+      "¿Vale la Pena Remodelar Antes de Vender? Calculadora Gratuita | Cedar Park y Leander TX",
+      "Corre los números antes de decidir. Ingresa el valor de tu casa, el costo de remodelación y el aumento esperado para ver si renovar antes de vender realmente vale la pena. Herramienta gratuita para propietarios en el área de Austin.",
       "https://mariomanzano.com/es/remodel-vs-sell"
     );
   }, []);
@@ -59,9 +63,9 @@ export default function RemodelVsSellES() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Calculadora Remodelar vs. Vender",
+    "name": "Calculadora de Remodelar vs. Vender",
     "url": "https://mariomanzano.com/es/remodel-vs-sell",
-    "description": "Calculadora gratuita para propietarios en Cedar Park y Leander TX. Descubre si tu remodelación aumentará suficiente los ingresos netos para justificar el costo antes de vender.",
+    "description": "Calculadora gratuita de remodelar vs vender para propietarios en el área de Austin. Descubre si tu remodelación aumentará lo suficiente tus ganancias netas como para justificar el costo antes de vender.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -101,10 +105,10 @@ export default function RemodelVsSellES() {
   };
 
   const getStrategicTakeaway = (roiValue: number) => {
-    if (roiValue >= 20) return "Esta remodelación muestra un retorno sólido según estos datos. Dependiendo de tu plazo y el trabajo específico, puede valer la pena considerarla. Una conversación con un contratista y un análisis de ventas comparables recientes ayudaría a confirmar el estimado.";
-    if (roiValue >= 10) return "Esta remodelación muestra un retorno moderado. Puede tener sentido si mejora significativamente cómo se presenta la casa a los compradores. El riesgo es que los estimados de aumento de valor suelen ser optimistas. Enfócate en actualizaciones funcionales y presentación neutral en lugar de acabados de alta gama.";
-    if (roiValue >= 0) return "Esta remodelación produce un retorno limitado. En la mayoría de los casos, el tiempo, el costo y la molestia pueden no valer la pena. Vender tal cual y ajustar el precio en consecuencia frecuentemente te deja más dinero en el bolsillo más rápido.";
-    return "Según estos datos, es probable que la remodelación cueste más de lo que devuelve en valor. Vender tal cual es probablemente el movimiento financiero más sólido aquí.";
+    if (roiValue >= 20) return "Esta remodelación muestra un retorno sólido con estos números. Dependiendo de tu plazo y el trabajo específico, puede valer la pena considerarla. Hablar con un contratista y revisar ventas comparables recientes te ayudará a confirmar el estimado.";
+    if (roiValue >= 10) return "Esta remodelación muestra un retorno moderado. Puede tener sentido si mejora significativamente cómo se ve la casa para los compradores. El riesgo es que los estimados de aumento de valor suelen ser optimistas. Mejor enfocarse en actualizaciones funcionales y presentación neutra que en acabados de lujo.";
+    if (roiValue >= 0) return "Esta remodelación produce un retorno limitado. En la mayoría de los casos, el tiempo, el costo y la molestia no valen la pena. Vender como está y fijar el precio correctamente muchas veces te deja más dinero en el bolsillo, más rápido.";
+    return "Con estos números, es probable que la remodelación cueste más de lo que regresa en valor. Vender como está es probablemente la decisión financiera más sólida aquí.";
   };
 
   return (
@@ -124,21 +128,21 @@ export default function RemodelVsSellES() {
             ¿Vale la pena<br /><em className="italic">remodelar?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-6 leading-relaxed">
-            La mayoría de los propietarios en Cedar Park y Leander sobreestiman lo que una remodelación va a devolver. Las renovaciones de lujo rara vez recuperan el 100 por ciento de su costo al revender. Las actualizaciones funcionales y la presentación neutral tienden a superar los acabados de alta gama cuando se trata del comportamiento real del comprador.
+            La mayoría de los propietarios sobreestiman lo que una remodelación va a recuperar. Las renovaciones de lujo rara vez recuperan el 100 por ciento de su costo al momento de vender. Las actualizaciones funcionales y la presentación neutra tienden a superar los acabados de alto nivel cuando se trata del comportamiento real de los compradores.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            Esta herramienta te ayuda a revisar los números antes de comprometerte con cualquier trabajo. Ingresa el valor actual de tu casa, el costo proyectado de la remodelación y el aumento esperado en valor para ver si la inversión probablemente valdrá la pena.
+            Esta herramienta te ayuda a correr los números antes de comprometerte con cualquier trabajo. Ingresa el valor actual de tu casa, el costo proyectado de la remodelación y el aumento de valor esperado para ver si la inversión tiene sentido.
           </p>
         </RevealDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Entradas */}
+          {/* Inputs */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 border border-[#E8E0D5] shadow-sm">
               <h2 className="font-display text-2xl font-light text-[#1A1A18] mb-8 text-center">Detalles del Proyecto</h2>
               <div className="space-y-6">
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Valor Actual de la Casa (Tal Cual)</label>
+                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Valor Actual de la Casa (Como Está)</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
                     <input type="text" value={currentValue} onChange={handleInputChange(setCurrentValue)}
@@ -148,7 +152,7 @@ export default function RemodelVsSellES() {
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Costo Estimado de la Remodelación</label>
+                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Costo Estimado de Remodelación</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
                     <input type="text" value={remodelCost} onChange={handleInputChange(setRemodelCost)}
@@ -158,7 +162,7 @@ export default function RemodelVsSellES() {
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Aumento Esperado en Valor (%)</label>
+                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Aumento de Valor Esperado (%)</label>
                   <div className="relative">
                     <input type="text" value={expectedIncrease} onChange={handleInputChange(setExpectedIncrease)}
                       onFocus={(e) => e.target.value === "0" && setExpectedIncrease("")}
@@ -176,19 +180,19 @@ export default function RemodelVsSellES() {
             <div className="bg-[#F8F5F0] p-6 border border-[#E8E0D5] flex gap-4">
               <AlertCircle className="text-[#B8974A] shrink-0" size={20} />
               <p className="font-body text-xs text-[#1A1A18]/60 leading-relaxed">
-                Nota del asesor: La mayoría de las remodelaciones de lujo rara vez recuperan el 100 por ciento de su costo al revender. Enfócate en actualizaciones funcionales y presentación neutral para el mayor retorno. Cuando tengas dudas, precio la casa correctamente tal cual en lugar de gastar dinero para perseguir un número más alto.
+                Nota del asesor: La mayoría de las remodelaciones de lujo rara vez recuperan el 100 por ciento de su costo al vender. Concéntrate en actualizaciones funcionales y presentación neutra para el mayor retorno. Si tienes dudas, precio bien la casa como está en lugar de gastar dinero persiguiendo un número más alto.
               </p>
             </div>
           </div>
 
-          {/* Resultados */}
+          {/* Results */}
           <div className="lg:col-span-7">
             <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
               <h2 className="font-display text-3xl font-light mb-12 border-b border-white/10 pb-6">Análisis de Retorno</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Nuevo Valor Proyectado</p>
+                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Valor Nuevo Proyectado</p>
                     <p className="font-display text-4xl font-light text-white">{formatCurrency(newValue)}</p>
                   </div>
                   <div>
@@ -209,11 +213,11 @@ export default function RemodelVsSellES() {
                 </div>
               </div>
               <div className="mt-12 pt-12 border-t border-white/10">
-                <h3 className="font-display text-xl font-light text-white mb-4">Lo Que Esto Significa</h3>
+                <h3 className="font-display text-xl font-light text-white mb-4">Qué Significa Esto</h3>
                 <p className="font-body text-base text-white/70 leading-relaxed mb-8">{getStrategicTakeaway(roi)}</p>
                 <Link href="/es/contacto">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
-                    Revisar Esto Conmigo
+                    Revisemos Esto Juntos
                     <ArrowRight size={14} className="ml-2" />
                   </span>
                 </Link>
@@ -222,31 +226,31 @@ export default function RemodelVsSellES() {
           </div>
         </div>
 
-        {/* Sección educativa */}
+        {/* Educational section */}
         <div className="mt-20 max-w-3xl">
           <RevealDiv>
-            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Qué remodelaciones realmente valen la pena en Cedar Park y Leander?</h2>
+            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Qué retornan realmente las remodelaciones en Cedar Park y Leander?</h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-              En el área de Cedar Park y Leander, el comportamiento del comprador tiende a favorecer las casas limpias y listas para mudarse sobre las que han sido renovadas extensamente. Los compradores aquí con frecuencia están evaluando múltiples opciones y son sensibles al precio. Una casa con buen precio tal cual frecuentemente supera a una que ha sido renovada y cuyo precio subió para recuperar el costo.
+              En el área de Cedar Park y Leander, los compradores tienden a preferir casas limpias y listas para habitar sobre las que tienen renovaciones pesadas. Los compradores aquí suelen estar comparando varias opciones y son sensibles al precio. Una casa con el precio correcto como está frecuentemente supera a una que fue remodelada y cuyo precio subió para recuperar el costo.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
-              Las actualizaciones que tienden a marcar la diferencia son funcionales y cosméticas: pintura fresca, jardín limpio, accesorios actualizados y una presentación ordenada. Las renovaciones completas de cocina o baño antes de una venta rara vez valen la inversión a menos que la casa esté muy desactualizada en comparación con su competencia directa.
+              Las actualizaciones que suelen mover la aguja son funcionales y cosméticas: pintura fresca, jardín limpio, accesorios actualizados y una presentación despejada. Las renovaciones completas de cocina o baño antes de vender rara vez valen la inversión, a menos que la casa esté muy desactualizada en comparación con su competencia directa.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-              Antes de gastar cualquier cosa, vale la pena tener una conversación sobre dónde se posiciona tu casa en relación con las ventas comparables actuales. Ese contexto cambia significativamente el análisis de la remodelación.
+              Antes de gastar cualquier cosa, vale la pena revisar dónde está tu casa en relación con las ventas comparables actuales. Ese contexto cambia mucho los números de la remodelación.
             </p>
           </RevealDiv>
         </div>
 
         <div className="mt-20 pt-20 border-t border-[#E8E0D5]">
           <RevealDiv className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿No sabes cuánto vale tu casa tal cual?</h2>
+            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿No sabes cuánto vale tu casa como está?</h2>
             <p className="font-body text-base text-[#1A1A18]/65 mb-10 leading-relaxed">
-              Obtén primero una estimación base para que el análisis de tu remodelación parta del número correcto.
+              Obtén un estimado base primero para que los números de tu remodelación partan del número correcto.
             </p>
             <Link href="/es/home-value">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
-                Obtener Estimación Base
+                Obtener Estimado Base
                 <ArrowRight size={14} />
               </span>
             </Link>

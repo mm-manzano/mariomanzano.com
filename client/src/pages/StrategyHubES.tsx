@@ -1,6 +1,8 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Centro de Estrategia (Español)
  * FINAL: Meta tags, Open Graph, schema, educational copy in Spanish.
+ * UPDATE: Schema description broadened. Geography removed from body copy
+ *         and bottom CTA to match English version changes.
  */
 
 import { Link } from "wouter";
@@ -61,7 +63,7 @@ export default function StrategyHubES() {
     "@type": "WebPage",
     "name": "Centro de Estrategia para Propietarios",
     "url": "https://mariomanzano.com/es/strategy-hub",
-    "description": "Herramientas gratuitas para propietarios en Cedar Park y Leander TX. Compara vender vs alquilar, calcula ingresos netos y analiza el retorno de una remodelación antes de tomar cualquier decisión.",
+    "description": "Herramientas gratuitas para propietarios en el área de Austin. Compara vender vs alquilar, calcula ingresos netos y analiza el retorno de una remodelación antes de tomar cualquier decisión.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -87,10 +89,10 @@ export default function StrategyHubES() {
             <em className="italic">Decide con claridad.</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6 max-w-2xl">
-            La mayoría de los propietarios en Cedar Park y Leander toman su decisión financiera más importante sin revisar los números reales primero. Estas herramientas están diseñadas para cambiar eso.
+            La mayoría de los propietarios toman la decisión financiera más grande de su vida sin ver los números de verdad primero. Para eso están estas herramientas.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12 max-w-2xl">
-            Ya sea que estés considerando vender, evaluando un alquiler o preguntándote si una remodelación tiene sentido, empieza aquí. Cada herramienta toma unos dos minutos y te da un panorama financiero claro antes de cualquier conversación con un agente.
+            Si estás pensando en vender, evaluar una renta o preguntándote si remodelar vale la pena, empieza aquí. Cada herramienta toma unos dos minutos y te da un panorama financiero claro antes de hablar con cualquier agente.
           </p>
         </RevealDiv>
 
@@ -102,7 +104,7 @@ export default function StrategyHubES() {
                 Mira con qué <em className="italic">realmente</em> te quedarías.
               </h2>
               <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed mb-6 flex-grow">
-                El precio de venta no es lo que te llevas. Después de la comisión, los costos de cierre y el saldo pendiente de tu hipoteca, tus ingresos netos pueden verse muy diferentes al número en el contrato. Esta calculadora te muestra el número real antes de que te comprometas con cualquier cosa.
+                El precio de venta no es lo que te llevas a casa. Después de la comisión, los costos de cierre y lo que queda de tu hipoteca, el número real puede verse muy diferente. Esta calculadora te lo muestra antes de que firmes nada.
               </p>
               <Link href="/es/net-sheet">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
@@ -117,14 +119,14 @@ export default function StrategyHubES() {
           <RevealDiv delay={200}>
             <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
               <h2 className="font-display text-2xl font-light text-[#1A1A18] mb-4">
-                ¿Deberías <em className="italic">vender o alquilar</em> tu casa?
+                ¿Conviene más <em className="italic">vender o rentar</em> tu casa?
               </h2>
               <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed mb-6 flex-grow">
-                Vender te da liquidez ahora. Alquilar mantiene tu capital trabajando con el tiempo. Esta herramienta compara ambos caminos lado a lado para que veas cuál sale adelante financieramente según tus números y tu plazo específicos.
+                Vender te da el dinero ahora. Rentar mantiene tu capital trabajando a largo plazo. Esta herramienta compara los dos caminos con tus números reales para que veas cuál te conviene más según tu situación y tu plazo.
               </p>
               <Link href="/es/sell-vs-rent">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
-                  Comparar Vender vs. Alquilar
+                  Comparar Vender vs. Rentar
                   <ArrowRight size={14} />
                 </span>
               </Link>
@@ -138,7 +140,7 @@ export default function StrategyHubES() {
                 ¿Vale la pena <em className="italic">remodelar</em> antes de vender?
               </h2>
               <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed mb-6 flex-grow">
-                La mayoría de las renovaciones no recuperan el 100 por ciento de su costo al revender. Esta herramienta analiza tu inversión en la remodelación frente al aumento esperado en valor para que decidas si vale la pena o si vender tal cual te deja más dinero en el bolsillo.
+                La mayoría de las renovaciones no recuperan lo que cuestan al momento de vender. Esta herramienta compara lo que gastarías contra lo que podrías ganar para que decidas si remodelar tiene sentido o si vender como está te deja más dinero en el bolsillo.
               </p>
               <Link href="/es/remodel-vs-sell">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
@@ -156,7 +158,7 @@ export default function StrategyHubES() {
             ¿Quieres que alguien revise los números contigo?
           </h2>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-xl mx-auto leading-relaxed mb-8">
-            Las herramientas te dan un punto de partida. Una conversación real te da una estrategia. Si eres propietario en Cedar Park o Leander y quieres entender qué significan realmente tus números, contáctame.
+            Las herramientas te dan un punto de partida. Una conversación real te da una estrategia. Si quieres entender lo que significan tus números, escríbeme.
           </p>
           <Link href="/es/contacto">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

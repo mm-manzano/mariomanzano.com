@@ -100,7 +100,7 @@ export default function HomeValue() {
             A personalized Comparative Market Analysis takes a closer look. It focuses on your specific property, the most relevant comparable sales, current market conditions in your area, and property-specific factors that affect value. Whether you are tracking equity, thinking through a future move, or weighing an improvement, that is the clearest picture available without a formal appraisal.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-            If you want a more accurate number for your home specifically, that is what the CMA below is for.
+            If you want a more accurate number for your home specifically, that is what a personalized CMA is for.
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export default function HomeValue() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-4">Want a more accurate number for your specific home?</h2>
           <p className="font-body text-base text-[#1A1A18]/65 mb-8 leading-relaxed">
-            I can prepare a personalized Comparative Market Analysis based on your property and the current market. No obligation — just a clearer picture of where your home stands.
+            I can prepare a personalized Comparative Market Analysis based on your property and the current market. No obligation. Just a clearer picture of where your home stands.
           </p>
           <Link href="/contact">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

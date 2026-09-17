@@ -218,13 +218,17 @@ export default function Leasing() {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] leading-[1.1] mb-6">
               You listed your property<br />
               for rent.<br />
-              <em className="italic">That makes complete sense.</em>
+              <em className="italic">That makes complete sense.</em><br />
+              But let me be your Back-Up Plan.
             </h1>
             <p className="font-body text-base md:text-lg text-[#1A1A18]/65 leading-relaxed mb-3 max-w-xl">
               You may be testing the market, trying to avoid a management company, or simply want to handle it yourself. You can. And you probably have no problem doing that.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-xl">
               Either way, here are a few things worth knowing while your listing is active.
+            </p>
+            <p className="font-body text-sm text-[#1A1A18]/50 leading-relaxed max-w-xl mt-6 pt-6 border-t border-[#E8E0D5]">
+              If at some point the calls start piling up, an applicant doesn't check out, or you'd just rather have someone else handle it, I'm available as your backup plan. No property management, just the leasing piece from start to finish.
             </p>
           </RevealDiv>
         </div>
@@ -339,13 +343,16 @@ export default function Leasing() {
               </div>
             </div>
 
-            {/* Vacancy caution */}
+            {/* Vacancy + wrong tenant caution */}
             <div
-              className="rounded-md px-5 py-4"
+              className="rounded-md px-5 py-4 flex flex-col gap-3"
               style={{ background: "#F5EDE0" }}
             >
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
-                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Cedar Park and Leander, every month a property sits empty can cost a landlord between $1,600 and $3,000 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
+                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Leander and Cedar Park, every month a property sits empty can cost a landlord between $1,600 and $3,000 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
+              </p>
+              <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
+                <strong style={{ color: "#7D4A1A" }}>On the wrong tenant:</strong> Evictions in Texas average several months and thousands in lost rent and legal fees. Screening properly from the start is how you're more likely to avoid that.
               </p>
             </div>
           </RevealDiv>
@@ -419,8 +426,7 @@ export default function Leasing() {
                   Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and leasing signing are all included.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
-                  The first month's rent can be used to cover the leasing fee. 
-                  No monthly management fee.
+                  The first month's rent can be used to cover the leasing fee. No monthly management fee.
                 </p>
               </div>
             </div>

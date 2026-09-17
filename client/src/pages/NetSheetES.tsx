@@ -1,6 +1,9 @@
 /*
  * DESIGN: Quiet Luxury Editorial - Calculadora de Ingresos Netos (Español)
  * FINAL: Meta tags, Open Graph, schema, educational copy in Spanish.
+ * UPDATE: Meta description and schema description broadened to Greater Austin.
+ *         Geography removed from intro body paragraph.
+ *         Educational section retains Cedar Park & Leander (local SEO content).
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -53,7 +56,7 @@ export default function NetSheetES() {
   useEffect(() => {
     setPageMeta(
       "Calculadora de Ingresos Netos | Cedar Park y Leander TX | Mario Manzano",
-      "Descubre cuánto te quedarás realmente después de vender tu casa en Cedar Park o Leander TX. Calcula tus ingresos netos después de comisión, costos de cierre y saldo hipotecario. Herramienta gratuita.",
+      "Descubre cuánto te quedarás realmente después de vender tu casa. Calcula tus ingresos netos después de comisión, costos de cierre y saldo hipotecario. Herramienta gratuita para propietarios en el área de Austin.",
       "https://mariomanzano.com/es/net-sheet"
     );
   }, []);
@@ -63,7 +66,7 @@ export default function NetSheetES() {
     "@type": "WebPage",
     "name": "Calculadora de Ingresos Netos",
     "url": "https://mariomanzano.com/es/net-sheet",
-    "description": "Calculadora gratuita para propietarios en Cedar Park y Leander TX. Ve exactamente cuánto te quedarás después de comisión, costos de cierre y pago de hipoteca antes de decidir vender.",
+    "description": "Calculadora gratuita de ingresos netos para propietarios en el área de Austin. Ve exactamente cuánto te quedarás después de comisión, costos de cierre y pago de hipoteca antes de decidir vender.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -114,7 +117,7 @@ export default function NetSheetES() {
             El precio de venta no es lo que te llevas. Una vez que descuentas la comisión del agente, los costos de cierre, las reparaciones y el saldo pendiente de tu hipoteca, el número que llega a tu cuenta puede verse muy diferente al precio del contrato.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            Esta herramienta te da una estimación realista para propietarios en Cedar Park y Leander. No sustituye una conversación real, pero te da una base sólida antes de tomar cualquier decisión.
+            Esta herramienta te da una estimación realista antes de que hables con cualquiera. No sustituye una conversación real, pero te da una base sólida antes de tomar cualquier decisión.
           </p>
         </RevealDiv>
 

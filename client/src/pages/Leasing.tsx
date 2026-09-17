@@ -219,7 +219,7 @@ export default function Leasing() {
               You listed your property<br />
               for rent.<br />
               <em className="italic">That makes complete sense.</em><br />
-              But let me be your Back-Up Plan.
+              But let me be your Backup Plan.
             </h1>
             <p className="font-body text-base md:text-lg text-[#1A1A18]/65 leading-relaxed mb-3 max-w-xl">
               You may be testing the market, trying to avoid a management company, or simply want to handle it yourself. You can. And you probably have no problem doing that.

@@ -2,6 +2,9 @@
  * DESIGN: Quiet Luxury Editorial - Net Sheet Calculator
  * Purpose: Helps homeowners understand their actual take-home after a sale.
  * FINAL: Meta tags, Open Graph, schema, educational copy above and below calculator.
+ * UPDATE: Meta description and schema description broadened to Greater Austin.
+ *         Geography removed from intro body paragraph.
+ *         Educational section retains Cedar Park & Leander (local SEO content).
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -54,7 +57,7 @@ export default function NetSheet() {
   useEffect(() => {
     setPageMeta(
       "Home Sale Net Sheet Calculator | Cedar Park & Leander TX | Mario Manzano",
-      "Find out what you will actually walk away with after selling your home in Cedar Park or Leander TX. Calculate net proceeds after commission, closing costs, and mortgage payoff. Free tool.",
+      "Find out what you will actually walk away with after selling your home. Calculate net proceeds after commission, closing costs, and mortgage payoff. Free tool for Greater Austin homeowners.",
       "https://mariomanzano.com/net-sheet"
     );
   }, []);
@@ -64,7 +67,7 @@ export default function NetSheet() {
     "@type": "WebPage",
     "name": "Home Sale Net Sheet Calculator",
     "url": "https://mariomanzano.com/net-sheet",
-    "description": "Free net sheet calculator for Cedar Park and Leander TX homeowners. See exactly what you will keep after commission, closing costs, and mortgage payoff before deciding to sell.",
+    "description": "Free net sheet calculator for Greater Austin homeowners. See exactly what you will keep after commission, closing costs, and mortgage payoff before deciding to sell.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -115,7 +118,7 @@ export default function NetSheet() {
             The sale price is not what you keep. By the time you account for agent commission, closing costs, repairs, and your remaining mortgage balance, the number that lands in your account can look very different from the headline number.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
-            This tool gives you a realistic starting estimate for Cedar Park and Leander homeowners. It is not a substitute for a real conversation, but it gives you a solid foundation before you make any decisions.
+            This tool gives you a realistic starting estimate before you talk to anyone. It is not a substitute for a real conversation, but it gives you a solid foundation before you make any decisions.
           </p>
         </RevealDiv>
 

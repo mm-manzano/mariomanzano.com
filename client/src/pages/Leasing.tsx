@@ -149,7 +149,7 @@ const processSteps = [
   },
   {
     title: "List it on the MLS with professional photos",
-    body: "Your property gets in front of tenant agents and is syndicated across AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com Network, ListHub and social media platforms. Professional photography included.",
+    body: "Your property gets in front of tenant agents and is syndicated across AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com Network, ListHub, Zillow, and social media platforms. Professional photography included.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -188,8 +188,8 @@ const processSteps = [
 export default function Leasing() {
   useEffect(() => {
     setPageMeta(
-      "Lease Your Home in Cedar Park & Leander | Mario Manzano",
-      "Already listing your property for rent? Mario handles the leasing piece. MLS listing, professional photos, screening, and a signed lease. One flat fee. No property management.",
+      "Lease Your Home in Greater Austin | Mario Manzano",
+      "Already listing your property for rent? Mario handles the leasing piece. MLS listing, professional photos, screening, and a signed lease. One flat fee. No property management. Serving Greater Austin.",
       "https://mariomanzano.com/lease-your-home"
     );
     // Hidden utility page — prevent indexing
@@ -212,7 +212,7 @@ export default function Leasing() {
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A]">
-                For Rent By Owner · Cedar Park & Leander
+                For Rent By Owner · Greater Austin
               </span>
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] leading-[1.1] mb-6">
@@ -328,7 +328,7 @@ export default function Leasing() {
                   </p>
                   <ul className="flex flex-col gap-2">
                     {[
-                      "AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com Network, ListHub, Zillow, and social media platforms.",
+                      "AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com Network, ListHub, Zillow",
                       "Searchable by every tenant's agent actively working the area",
                       "More platforms and more opportunities for renters to see the property",
                       "Inquiries come through your agent, not directly to you",
@@ -349,7 +349,7 @@ export default function Leasing() {
               style={{ background: "#F5EDE0" }}
             >
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
-                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Leander and Cedar Park, every month a property sits empty can cost a landlord between $1,600 and $3,000 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
+                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Greater Austin, every month a property sits empty can cost a landlord between $1,600 and $3,000 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
                 <strong style={{ color: "#7D4A1A" }}>On the wrong tenant:</strong> Evictions in Texas average several months and thousands in lost rent and legal fees. Screening properly from the start is how you're more likely to avoid that.

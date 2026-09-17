@@ -128,7 +128,7 @@ export default function RemodelVsSell() {
             Is remodeling<br /><em className="italic">worth it?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-6 leading-relaxed">
-            Most homeowners overestimate what a remodel will return. Luxury renovations rarely recover 100 percent of their cost at resale. Functional updates and neutral presentation tend to outperform high-end finishes when it comes to actual buyer behavior.
+            Most homeowners over estimate what a remodel will return. Luxury renovations rarely recover 100 percent of their cost at resale. Functional updates and neutral presentation tend to outperform high-end finishes when it comes to actual buyer behavior.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
             This tool helps you run the numbers before committing to any work. Enter your home's current value, the projected remodel cost, and the expected value increase to see whether the investment is likely to pay off.

@@ -73,7 +73,7 @@ export default function HomeValue() {
             <em className="italic">actually worth?</em>
           </h1>
           <p className="font-body text-base md:text-lg text-[#1A1A18]/60 max-w-2xl leading-relaxed">
-            The estimate below gives you a useful starting point based on available property and market data. Because automated estimates draw from a broader geographic area and generalized data, they may not reflect the precise value of your specific home. They also cannot account for your home's condition, upgrades, layout, or other property-specific characteristics. Use it to get your bearings, then read on.
+            The estimate below gives you a useful starting point based on available property and market data. Because automated estimates draw from a broader geographic area and generalized data, they may not reflect the precise value of your specific home. They also cannot account for your home's condition, upgrades, layout, or other property-specific characteristics. Think of it as a general reference, not a precise number for your home.
           </p>
         </div>
 

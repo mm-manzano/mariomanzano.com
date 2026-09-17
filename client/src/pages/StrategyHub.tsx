@@ -91,7 +91,7 @@ export default function StrategyHub() {
             <em className="italic">Decide with clarity.</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6 max-w-2xl">
-            Most homeowners in Cedar Park and Leander make their biggest financial decision without running the actual numbers first. These tools are built to change that.
+            Most homeowners make their biggest financial decision without running the actual numbers first. These tools are built to change that.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12 max-w-2xl">
             Whether you are leaning toward selling, considering a rental, or wondering if a remodel makes sense, start here. Each tool takes about two minutes and gives you a clear financial picture before any conversation with an agent.

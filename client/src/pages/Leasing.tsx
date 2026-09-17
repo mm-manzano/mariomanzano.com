@@ -328,7 +328,7 @@ export default function Leasing() {
                   </p>
                   <ul className="flex flex-col gap-2">
                     {[
-                      "AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com Network, ListHub, Zillow",
+                      "AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com Network, ListHub, Zillow, and social media platforms.",
                       "Searchable by every tenant's agent actively working the area",
                       "More platforms and more opportunities for renters to see the property",
                       "Inquiries come through your agent, not directly to you",

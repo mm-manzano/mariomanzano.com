@@ -308,7 +308,7 @@ export default function SellVsRent() {
               That said, the numbers are only part of the decision. Being a landlord means dealing with tenants, maintenance, vacancies, and property management. If you are not prepared for that ongoing responsibility, the financial advantage of renting may not be worth the stress.
             </p>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
-              If you are unsure which path makes more sense for your situation, that is exactly the kind of conversation I have with homeowners in this area. No pressure. Just a clear look at the numbers and what they actually mean.
+              If you are unsure which path makes more sense for your situation, that is exactly the kind of conversation I can help with. No pressure. Just a clear look at the numbers and what they actually mean.
             </p>
           </RevealDiv>
         </div>

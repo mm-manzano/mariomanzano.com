@@ -2,6 +2,9 @@
  * DESIGN: Quiet Luxury Editorial - Remodel vs. Sell Calculator
  * Purpose: Helps homeowners analyze the financial impact of renovations before selling.
  * FINAL: Meta tags, Open Graph, schema, educational copy added.
+ * UPDATE: Meta description and schema description broadened to Greater Austin.
+ *         Geography removed from intro body paragraph.
+ *         Educational section retains Cedar Park & Leander (local SEO content).
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -52,7 +55,7 @@ export default function RemodelVsSell() {
   useEffect(() => {
     setPageMeta(
       "Should I Remodel or Sell? Free Calculator | Cedar Park & Leander TX",
-      "Run the numbers before you decide. Enter your home value, remodel cost, and expected price bump to see if renovating before selling is actually worth it. Cedar Park & Leander TX.",
+      "Run the numbers before you decide. Enter your home value, remodel cost, and expected price bump to see if renovating before selling is actually worth it. Free tool for Greater Austin homeowners.",
       "https://mariomanzano.com/remodel-vs-sell"
     );
   }, []);
@@ -62,7 +65,7 @@ export default function RemodelVsSell() {
     "@type": "WebPage",
     "name": "Remodel vs. Sell Calculator",
     "url": "https://mariomanzano.com/remodel-vs-sell",
-    "description": "Free remodel vs sell calculator for Cedar Park and Leander TX homeowners. Find out if your renovation will increase your net proceeds enough to justify the cost before selling.",
+    "description": "Free remodel vs sell calculator for Greater Austin homeowners. Find out if your renovation will increase your net proceeds enough to justify the cost before selling.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -125,7 +128,7 @@ export default function RemodelVsSell() {
             Is remodeling<br /><em className="italic">worth it?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-6 leading-relaxed">
-            Most homeowners in Cedar Park and Leander overestimate what a remodel will return. Luxury renovations rarely recover 100 percent of their cost at resale. Functional updates and neutral presentation tend to outperform high-end finishes when it comes to actual buyer behavior.
+            Most homeowners overestimate what a remodel will return. Luxury renovations rarely recover 100 percent of their cost at resale. Functional updates and neutral presentation tend to outperform high-end finishes when it comes to actual buyer behavior.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
             This tool helps you run the numbers before committing to any work. Enter your home's current value, the projected remodel cost, and the expected value increase to see whether the investment is likely to pay off.

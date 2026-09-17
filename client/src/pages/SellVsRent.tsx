@@ -2,6 +2,9 @@
  * DESIGN: Quiet Luxury Editorial - Sell vs. Rent Calculator
  * Purpose: Helps homeowners compare selling now vs holding as a rental.
  * FINAL: Meta tags, Open Graph, schema, educational copy added.
+ * UPDATE: Meta description and schema description broadened to Greater Austin.
+ *         Geography removed from intro body paragraph.
+ *         Educational section retains Cedar Park & Leander (local SEO content).
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -58,8 +61,8 @@ export default function SellVsRent() {
   useEffect(() => {
     setPageMeta(
       "Should I Sell or Rent My Home? Free Calculator | Cedar Park & Leander TX",
-"Run the numbers before you decide. Compare selling now versus holding as a rental based on your actual equity, rent potential, and timeline. Free tool for Cedar Park & Leander homeowners.",
-"https://mariomanzano.com/sell-vs-rent"
+      "Run the numbers before you decide. Compare selling now versus holding as a rental based on your actual equity, rent potential, and timeline. Free tool for Greater Austin homeowners.",
+      "https://mariomanzano.com/sell-vs-rent"
     );
   }, []);
 
@@ -68,7 +71,7 @@ export default function SellVsRent() {
     "@type": "WebPage",
     "name": "Sell vs. Rent Calculator",
     "url": "https://mariomanzano.com/sell-vs-rent",
-    "description": "Free sell vs rent calculator for Cedar Park and Leander TX homeowners. Compare long-term financial outcomes of selling now versus holding your home as a rental property.",
+    "description": "Free sell vs rent calculator for Greater Austin homeowners. Compare long-term financial outcomes of selling now versus holding your home as a rental property.",
     "author": {
       "@type": "RealEstateAgent",
       "name": "Mario Manzano",
@@ -151,7 +154,7 @@ export default function SellVsRent() {
             Should you<br /><em className="italic">sell or rent?</em>
           </h1>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-6 leading-relaxed">
-            This is one of the most common questions homeowners in Cedar Park and Leander face. Selling gives you liquidity and removes ongoing responsibility. Renting keeps your equity working over time and can be a strong wealth-building tool if the numbers support it.
+            This is one of the most common questions homeowners face. Selling gives you liquidity and removes ongoing responsibility. Renting keeps your equity working over time and can be a strong wealth-building tool if the numbers support it.
           </p>
           <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
             This tool compares both paths side by side based on your specific numbers. Enter your home details and a holding period to see which option comes out ahead financially.

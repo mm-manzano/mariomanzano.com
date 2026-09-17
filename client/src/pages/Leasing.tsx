@@ -345,7 +345,7 @@ export default function Leasing() {
               style={{ background: "#F5EDE0" }}
             >
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
-                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Leander and Cedar Park, every month a property sits empty can cost a landlord between $1,600 and $3,000 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
+                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Cedar Park and Leander, every month a property sits empty can cost a landlord between $1,600 and $3,000 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
               </p>
             </div>
           </RevealDiv>

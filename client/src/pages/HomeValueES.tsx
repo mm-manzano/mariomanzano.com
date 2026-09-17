@@ -71,7 +71,7 @@ export default function HomeValueES() {
             <em className="italic">realmente tu casa?</em>
           </h1>
           <p className="font-body text-base md:text-lg text-[#1A1A18]/60 max-w-2xl leading-relaxed">
-            La estimación de abajo te da un punto de partida útil basado en datos disponibles del mercado y la propiedad. Como estas estimaciones automáticas pueden usar datos de un área geográfica más amplia, puede que no reflejen el valor exacto de tu casa en particular. Tampoco toman en cuenta el estado de tu propiedad, las mejoras que has hecho, el diseño u otras características específicas. Úsala para orientarte y luego sigue leyendo.
+            La estimación de abajo te da un punto de partida útil basado en datos disponibles del mercado y la propiedad. Como estas estimaciones automáticas pueden usar datos de un área geográfica más amplia, puede que no reflejen el valor exacto de tu casa en particular. Tampoco toman en cuenta el estado de tu propiedad, las mejoras que has hecho, el diseño u otras características específicas. Úsala como referencia general y luego sigue leyendo.
           </p>
         </div>
 

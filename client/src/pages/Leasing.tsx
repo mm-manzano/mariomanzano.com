@@ -227,7 +227,7 @@ export default function Leasing() {
             <p className="font-body text-base text-white/65 leading-relaxed max-w-xl">
               Either way, here are a few things worth knowing while your listing is active.
             </p>
-            <p className="font-body text-sm text-white/40 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
+            <p className="font-body text-sm text-white/65 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
               If at some point the calls start piling up, an applicant doesn't check out, or you'd just rather have someone else handle it, I'm available as your backup plan. No property management, just the leasing piece from start to finish.
             </p>
           </RevealDiv>

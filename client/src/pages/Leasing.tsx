@@ -206,28 +206,28 @@ export default function Leasing() {
     <div className="min-h-screen bg-[#F8F5F0]">
 
       {/* HEADER */}
-      <section className="py-20 md:py-28 border-b border-[#E8E0D5]">
+      <section className="py-20 md:py-28 bg-[#1A1A18]">
         <div className="container max-w-2xl">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" />
+              <span className="section-rule" style={{ background: "#B8974A" }} />
               <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A]">
                 For Rent By Owner · Greater Austin
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] leading-[1.1] mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] mb-6">
               You listed your property<br />
               for rent.<br />
               <em className="italic">That makes complete sense.</em><br />
               But let me be your Backup Plan.
             </h1>
-            <p className="font-body text-base md:text-lg text-[#1A1A18]/65 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
               You may be testing the market, trying to avoid a management company, or simply want to handle it yourself. You can. And you probably have no problem doing that.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-xl">
+            <p className="font-body text-base text-white/65 leading-relaxed max-w-xl">
               Either way, here are a few things worth knowing while your listing is active.
             </p>
-            <p className="font-body text-sm text-[#1A1A18]/50 leading-relaxed max-w-xl mt-6 pt-6 border-t border-[#E8E0D5]">
+            <p className="font-body text-sm text-white/40 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
               If at some point the calls start piling up, an applicant doesn't check out, or you'd just rather have someone else handle it, I'm available as your backup plan. No property management, just the leasing piece from start to finish.
             </p>
           </RevealDiv>
@@ -349,7 +349,7 @@ export default function Leasing() {
               style={{ background: "#F5EDE0" }}
             >
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
-                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Greater Austin, every month a property sits empty can cost a landlord between $1,600 and $3,000 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
+                <strong style={{ color: "#7D4A1A" }}>On vacancy:</strong> With rents where they are in Greater Austin, every month a property sits empty can cost a landlord generally between $2,000 and $3,500 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
                 <strong style={{ color: "#7D4A1A" }}>On the wrong tenant:</strong> Evictions in Texas average several months and thousands in lost rent and legal fees. Screening properly from the start is how you're more likely to avoid that.

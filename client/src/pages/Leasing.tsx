@@ -410,7 +410,7 @@ export default function Leasing() {
               <div className="p-6" style={{ background: "#F5EDD8" }}>
                 <div className="flex gap-10 mb-5 flex-wrap">
                   <div>
-                    <p className="font-display text-4xl font-light text-[#B8974A] leading-none mb-1">80%</p>
+                    <p className="font-display text-4xl font-light text-[#B8974A] leading-none mb-1">100%</p>
                     <p className="font-body text-xs text-[#1A1A18]/50 tracking-wide">of one month's rent</p>
                   </div>
                   <div>

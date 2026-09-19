@@ -82,7 +82,7 @@ const points = [
   },
   {
     title: "Photography most owners skip",
-    body: "Many owners use phone photos. Properties with professional photography rent much faster and often for more money. It's one of the easiest ways to make your listing stand out before anyone ever sets foot inside.",
+    body: "Many owners use phone photos. Properties with professional photography rent 32% faster and often for more money. It's one of the easiest ways to make your listing stand out before anyone ever sets foot inside.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -228,7 +228,7 @@ export default function Leasing() {
               Either way, here are a few things worth knowing while your listing is active.
             </p>
             <p className="font-body text-sm text-white/65 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
-              If at some point the calls start piling up, an applicant doesn't check out, or you'd just rather have someone else handle it, I'm available as your backup plan. No property management, just the leasing piece from start to finish.
+              I've been a landlord myself for years. I know what it takes to find a good tenant, and I know why you'd want to handle it yourself. If at some point you'd rather hand that part off, I'm available as your backup plan. No property management, just the leasing side from start to finish.
             </p>
           </RevealDiv>
         </div>
@@ -410,7 +410,7 @@ export default function Leasing() {
               <div className="p-6" style={{ background: "#F5EDD8" }}>
                 <div className="flex gap-10 mb-5 flex-wrap">
                   <div>
-                    <p className="font-display text-4xl font-light text-[#B8974A] leading-none mb-1">100%</p>
+                    <p className="font-display text-4xl font-light text-[#B8974A] leading-none mb-1">80%</p>
                     <p className="font-body text-xs text-[#1A1A18]/50 tracking-wide">of one month's rent</p>
                   </div>
                   <div>
@@ -420,10 +420,10 @@ export default function Leasing() {
                 </div>
                 <div className="border-t border-[#E8D8B8] mb-4" />
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-4">
-                  Some leasing services want leasing with ongoing management. I keep it simple: 100% of one month's rent, one time. You keep managing the property after the lease is signed.
+                  Some leasing services charge 100% of one month's rent, while others bundle leasing with ongoing management. I keep it simple: 80% of one month's rent, one time. You keep managing the property after the lease is signed.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-2">
-                  Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and lease signing are all included.
+                  Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and leasing signing are all included.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
                   The first month's rent can be used to cover the leasing fee. No monthly management fee.

@@ -2,8 +2,9 @@
  * DESIGN: Quiet Luxury Editorial - FSBO Page
  * Route: /sell-your-home
  * Audience: Homeowners selling on their own who have spoken with Mario by phone
- * Goal: Personal follow-up after the call. Useful tips, then what Mario would take off their plate.
- * Sections: Header, Tips, Callout, How I Help, CTA, Strategy Hub line
+ * Goal: Personal follow-up after the call. Useful tips, then what Mario takes over.
+ * Sections: Header, Tips, Callout (with strategy hub line), How I Help, CTA
+ * Page ends on the CTA by design, no exits after the ask.
  * Note: No fee or compensation content on this page by design. The call covers it.
  */
 
@@ -62,8 +63,8 @@ function setPageMeta(title: string, description: string, url: string) {
 
 const tips = [
   {
-    title: "Price it from what sold, not from what Zillow says",
-    body: "Zillow's estimate is a model, not an appraisal. Look at homes that closed nearby in the last few months and compare size, condition, and updates. Price it from there.",
+    title: "Pricing it against what actually closed nearby",
+    body: "Zillow's estimate is a model, not a market read. If you're pricing it yourself, start with homes that closed nearby in recent months. I compare recent sales with current competition to help price your home correctly.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -71,8 +72,19 @@ const tips = [
     ),
   },
   {
-    title: "Decide how you'll handle the calls before they start",
-    body: "Agents and investors will reach out, some about your listing and some with a quick cash offer. Decide ahead of time what you'll say, so you aren't making decisions on the spot.",
+    title: "Presentation matters more than most owners think",
+    body: "A deep clean, less clutter, and small touch ups change how a home shows. Many owners also use phone photos, but professional photography helps a listing stand out before anyone ever sets foot inside.",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <polyline points="21 15 16 10 5 21" />
+      </svg>
+    ),
+  },
+  {
+    title: "Showings and phone calls add up fast",
+    body: "Agents, investors, and buyers will all reach out. Show by appointment only, keep a simple log of who came through, and ask every caller whether they're working with an agent.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.63a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -80,8 +92,8 @@ const tips = [
     ),
   },
   {
-    title: "Prequalify buyers before you schedule a showing",
-    body: "Ask for a preapproval letter or proof of funds first. It protects your time, and it keeps your home from being shown to people who can't buy it.",
+    title: "Check the buyer's financing when an offer comes in",
+    body: "An offer is only as strong as the buyer behind it. Ask for a preapproval letter or proof of funds with every offer, and make sure it matches the price and the type of loan.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -120,7 +132,7 @@ const tips = [
 const helpSteps = [
   {
     title: "Walk the home and set the price",
-    body: "We walk through together and flag what is worth touching up before photos. I pull the recent sales and give you a range with the reasoning behind it, so the final number is your call.",
+    body: "We walk through together and flag what is worth touching up before photos. I pull the recent sales and look at where the market is heading, then give you a range with the reasoning behind it, so the final number is your call. We go through the full pricing strategy when we meet.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -130,7 +142,7 @@ const helpSteps = [
   },
   {
     title: "List it on the MLS with professional photos",
-    body: "Your home reaches buyers' agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and social media. Professional photos help it stand out before anyone visits.",
+    body: "Your home reaches buyers' agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and social media, with professional photos. That's only part of it. A lot more goes into how a listing is positioned and presented, and we'll cover that when we talk.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -140,8 +152,8 @@ const helpSteps = [
     ),
   },
   {
-    title: "Showings with buyers who are ready",
-    body: "I prequalify buyers before a showing is scheduled, and every visitor leaves with a professional flyer. The calls and scheduling come to me, not you.",
+    title: "Calls, scheduling, and showings",
+    body: "Inquiries and scheduling come to me, not you. I handle the calls, coordinate every showing, and send you a weekly update on activity and showing feedback so you're never left wondering what's happening.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -153,7 +165,7 @@ const helpSteps = [
   },
   {
     title: "Offers, negotiation, and a signed contract",
-    body: "I go through every offer with you, including the terms behind the price. Then I negotiate on your behalf and work it to a signed contract.",
+    body: "I go through every offer with you, including the terms behind the price and the buyer's financing. Then I negotiate on your behalf and work it to a signed contract.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -166,7 +178,7 @@ const helpSteps = [
   },
   {
     title: "Inspection, appraisal, and closing",
-    body: "I guide you through each deadline until closing day. You get a weekly update the whole way, so you're never left wondering where things stand.",
+    body: "I guide you through the inspection, the appraisal, and every deadline until closing day.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="20 6 9 17 4 12" />
@@ -230,14 +242,14 @@ export default function FSBO() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">Five things worth doing</span>
+              <span className="section-number">What to know while you're listed</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               What tends to make a sale<br />
               <em className="italic">go smoothly on your own.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
-              These are the same things I'd look at on any sale. Take what's useful.
+              Here are a few things worth knowing if you're selling it yourself. Take what's useful.
             </p>
           </RevealDiv>
 
@@ -282,12 +294,20 @@ export default function FSBO() {
               style={{ background: "#F5EDE0" }}
             >
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
-                <strong style={{ color: "#7D4A1A" }}>On price:</strong> A home priced off an estimate can sit and go stale, or sell for less than it could have. Both are easy to miss without recent sales in front of you.
+                <strong style={{ color: "#7D4A1A" }}>On price:</strong> Price comes from recent sales and from where the market is heading right now. A home priced off an estimate can miss the market in either direction, and it takes more than pulling comps to get it right.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
                 <strong style={{ color: "#7D4A1A" }}>On the contract:</strong> Buyers' agents negotiate for a living, and most sellers do this once. The terms and deadlines are where deals tend to get tangled.
               </p>
             </div>
+            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mt-10 mb-3">
+              Still weighing whether to sell at all? The strategy hub has the net sheet, the sell vs rent calculator, and the remodel vs sell calculator in one place.
+            </p>
+            <Link href="/strategy-hub">
+              <span className="font-body text-sm text-[#B8974A] underline underline-offset-4 cursor-pointer">
+                Open the strategy hub
+              </span>
+            </Link>
           </RevealDiv>
         </div>
       </section>
@@ -301,11 +321,11 @@ export default function FSBO() {
               <span className="section-number">How I help</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
-              If you'd rather hand it off,<br />
-              <em className="italic">here's what I'd take on.</em>
+              If you'd rather not handle all of that,<br />
+              <em className="italic">here's what I take over.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
-              You've already done the hard part of deciding to sell. This is what it looks like when someone else handles the rest.
+              You've already done the hard part of deciding to sell. This is what changes when someone else handles the rest.
             </p>
           </RevealDiv>
 
@@ -355,22 +375,6 @@ export default function FSBO() {
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
                 Schedule a Call with Mario
                 <ArrowRight size={14} />
-              </span>
-            </Link>
-          </RevealDiv>
-        </div>
-      </section>
-
-      {/* STRATEGY HUB LINE */}
-      <section className="py-16 md:py-20 border-t border-[#E8E0D5]">
-        <div className="container max-w-2xl">
-          <RevealDiv>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-3">
-              Still weighing your options? The strategy hub has the net sheet, the sell vs rent calculator, and the remodel vs sell calculator in one place.
-            </p>
-            <Link href="/strategy-hub">
-              <span className="font-body text-sm text-[#B8974A] underline underline-offset-4 cursor-pointer">
-                Open the strategy hub
               </span>
             </Link>
           </RevealDiv>

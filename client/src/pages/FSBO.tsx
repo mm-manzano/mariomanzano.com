@@ -64,7 +64,7 @@ function setPageMeta(title: string, description: string, url: string) {
 const tips = [
   {
     title: "Pricing it against what actually closed nearby",
-    body: "Zillow's estimate is a model, not a market read. If you're pricing it yourself, start with homes that closed nearby in recent months. I compare recent sales with current competition to help price your home correctly.",
+    body: "Wherever your number came from, it's worth checking against the market. Look at homes that closed in recent months, then at what's currently listed and what's under contract, since listings show your competition and homes under contract show how much demand there is right now. Recent sales get you close, but condition, updates, and timing move the final number, and that part takes judgment.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -132,7 +132,7 @@ const tips = [
 const helpSteps = [
   {
     title: "Walk the home and set the price",
-    body: "We walk through together and flag what is worth touching up before photos. I pull the recent sales and look at where the market is heading, then give you a range with the reasoning behind it, so the final number is your call. This is the part of the process where I stand apart from most agents. My pricing strategy goes well beyond comps, and we go through it in detail when we meet.",
+    body: "We walk through together and flag what is worth touching up before photos. I pull the recent sales, the active listings, and the homes under contract, then read what they mean for your specific home and give you a range with the reasoning behind it, so the final number is your call. This is the part of the process where I stand apart from most agents. My pricing strategy goes well beyond comps, and we go through it in detail when we meet.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -294,7 +294,7 @@ export default function FSBO() {
               style={{ background: "#F5EDE0" }}
             >
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
-                <strong style={{ color: "#7D4A1A" }}>On price:</strong> Price comes from recent sales and from where the market is heading right now. A home priced off an estimate can miss the market in either direction, and it takes more than pulling comps to get it right.
+                <strong style={{ color: "#7D4A1A" }}>On price:</strong> A home priced off an estimate can miss the market in either direction, and it takes more than pulling comps to get it right.
               </p>
               <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
                 <strong style={{ color: "#7D4A1A" }}>On the contract:</strong> Buyers' agents negotiate for a living, and most sellers do this once. The terms and deadlines are where deals tend to get tangled.

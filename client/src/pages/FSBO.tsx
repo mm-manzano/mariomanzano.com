@@ -84,7 +84,7 @@ const tips = [
   },
   {
     title: "Showings and phone calls add up fast",
-    body: "Agents, investors, and buyers will all reach out. Show by appointment only, keep a simple log of who came through, and ask every caller whether they're working with an agent.",
+    body: "Ask each caller if they're working with an agent, so you know who you're dealing with, and only show your home by appointment so there are fewer surprises about who comes through and when.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.63a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -132,7 +132,7 @@ const tips = [
 const helpSteps = [
   {
     title: "Walk the home and set the price",
-    body: "We walk through together and flag what is worth touching up before photos. I pull the recent sales and look at where the market is heading, then give you a range with the reasoning behind it, so the final number is your call. We go through the full pricing strategy when we meet.",
+    body: "We walk through together and flag what is worth touching up before photos. I pull the recent sales and look at where the market is heading, then give you a range with the reasoning behind it, so the final number is your call. This is the part of the process where I stand apart from most agents. My pricing strategy goes well beyond comps, and we go through it in detail when we meet.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -153,7 +153,7 @@ const helpSteps = [
   },
   {
     title: "Calls, scheduling, and showings",
-    body: "Inquiries and scheduling come to me, not you. I handle the calls, coordinate every showing, and send you a weekly update on activity and showing feedback so you're never left wondering what's happening.",
+    body: "Inquiries and scheduling come to me, not you. I handle the calls and coordinate every showing, and an electronic lockbox means fewer unannounced visits and a better record of who came through and when. You also get a weekly update on activity and showing feedback so you're never left wondering what's happening.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -224,7 +224,7 @@ export default function FSBO() {
               But let me be your Backup Plan.
             </h1>
             <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
-              Thanks for taking my call. I'm not here to talk you out of it. Plenty of homeowners sell on their own, and you may be one of them.
+              Thanks for taking my call. I know your phone has probably been busy since you listed, with agents, investors, and buyers all reaching out, so I'll keep this useful. I'm not here to talk you out of selling on your own. Plenty of homeowners do.
             </p>
             <p className="font-body text-base text-white/65 leading-relaxed max-w-xl">
               Here are a few things worth knowing while your home is on the market.
@@ -325,7 +325,7 @@ export default function FSBO() {
               <em className="italic">here's what I take over.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
-              You've already done the hard part of deciding to sell. This is what changes when someone else handles the rest.
+              You've already done the hard part of deciding to sell. This is what changes when I handle the rest.
             </p>
           </RevealDiv>
 

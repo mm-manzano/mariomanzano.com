@@ -24,6 +24,8 @@ const routes = [
   '/buyers',
   '/links',
   '/seller-strategy',
+  '/lease-your-home',
+  '/sell-your-home',
   // Spanish
   '/es',
   '/es/strategy-hub',

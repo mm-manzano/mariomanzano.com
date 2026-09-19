@@ -424,7 +424,7 @@ export default function Home() {
               {
                 step: "02",
                 title: "We look at your numbers",
-                desc: "I walk you through what your home is worth, what you would walk away with, and what your options actually look like in your specific situation."
+                desc: "I walk you through a pricing analysis most sellers have never seen. You will know exactly where your home stands, what you would walk away with, and what your real options look like."
               },
               {
                 step: "03",

@@ -422,7 +422,7 @@ export default function HomeES() {
               {
                 step: "02",
                 title: "Revisamos tus números",
-                desc: "Te explico cuánto vale tu casa, cuánto te quedarías y cómo se ven realmente tus opciones en tu situación específica."
+                desc: "Te explico un análisis de precio que la mayoría de los vendedores nunca ha visto. Vas a saber exactamente dónde está tu casa, cuánto te quedarías y cuáles son tus opciones reales."
               },
               {
                 step: "03",

@@ -242,6 +242,32 @@ export default function ListingPresentationES() {
         </div>
       </section>
 
+      {/* PRICING STRATEGY */}
+      <section className="py-20 md:py-28 bg-[#1A1A18]">
+        <div className="container">
+          <RevealDiv>
+            <div className="flex items-center gap-3 mb-6">
+              <span
+                className="section-rule"
+                style={{ background: "#B8974A" }}
+              />
+              <span
+                className="font-body text-[10px] tracking-[0.25em] uppercase"
+                style={{ color: "#B8974A" }}
+              >
+                Estrategia de Precio
+              </span>
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+              La conversación de precio que nunca has tenido.
+            </h2>
+            <p className="font-body text-base text-white/70 leading-relaxed max-w-xl">
+              El análisis que hacemos juntos durante nuestra reunión de estrategia va más profundo de lo que la mayoría de los vendedores espera. Te mostraré exactamente dónde está tu casa y por qué.
+            </p>
+          </RevealDiv>
+        </div>
+      </section>
+
       {/* PHOTOGRAPHY */}
       <section className="py-20 md:py-32 bg-[#F8F5F0]">
         <div className="container">

@@ -410,7 +410,7 @@ export default function Leasing() {
               <div className="p-6" style={{ background: "#F5EDD8" }}>
                 <div className="flex gap-10 mb-5 flex-wrap">
                   <div>
-                    <p className="font-display text-4xl font-light text-[#B8974A] leading-none mb-1">80%</p>
+                    <p className="font-display text-4xl font-light text-[#B8974A] leading-none mb-1">100%</p>
                     <p className="font-body text-xs text-[#1A1A18]/50 tracking-wide">of one month's rent</p>
                   </div>
                   <div>
@@ -420,7 +420,7 @@ export default function Leasing() {
                 </div>
                 <div className="border-t border-[#E8D8B8] mb-4" />
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-4">
-                  Some leasing services charge 100% of one month's rent, while others bundle leasing with ongoing management. I keep it simple: 80% of one month's rent, one time. You keep managing the property after the lease is signed.
+                  Some leasing services bundle leasing with ongoing management. I keep it simple: 100% of one month's rent, one time. You keep managing the property after the lease is signed.
                 </p>
                 <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed mb-2">
                   Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and leasing signing are all included.

@@ -142,7 +142,7 @@ const helpSteps = [
   },
   {
     title: "List it on the MLS with professional photos",
-    body: "Your home reaches buyers' agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and social media, with professional photos. That's only part of it. A lot more goes into how a listing is positioned and presented, and we'll cover that when we talk.",
+    body: "Your home reaches buyers' agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and social media, with professional photos. That's only part of it. A lot more goes into how a listing is positioned and presented, and we'll cover that when we meet.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -252,7 +252,7 @@ export default function FSBO() {
               <em className="italic">go smoothly on your own.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
-              Here are a few things worth knowing if you're selling it yourself. Take what's useful.
+              Here are a few things worth knowing if you're selling it yourself. Take what's useful. This is a starting point, not the full picture, since every home and situation is different.
             </p>
           </RevealDiv>
 
@@ -372,7 +372,7 @@ export default function FSBO() {
               <em className="italic">makes sense.</em>
             </h2>
             <p className="font-body text-base text-white/65 leading-relaxed mb-8 max-w-lg">
-              A quick call is all it takes. I'll walk you through how it works, answer your questions, and be upfront about whether I think I can help. No pressure either way.
+              This page is the basics. The real value is in sitting down together, where everything is specific to your home and your situation. I'll be upfront about whether I think I can help. No pressure either way.
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

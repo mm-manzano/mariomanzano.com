@@ -63,8 +63,8 @@ function setPageMeta(title: string, description: string, url: string) {
 
 const tips = [
   {
-    title: "Pricing it against what actually closed nearby",
-    body: "Wherever your number came from, it's worth checking against the market. Look at homes that closed in recent months, then at what's currently listed and what's under contract, since listings show your competition and homes under contract show how much demand there is right now. Recent sales get you close, but condition, updates, and timing move the final number, and that part takes judgment.",
+    title: "Pricing it against the market, not an estimate",
+    body: "Wherever your number came from, it's worth checking against what's actually happening nearby. Recent sales get you close, but what you're competing against right now, the condition of the home, and timing all move the final number, and that part takes judgment.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />

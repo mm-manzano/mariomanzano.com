@@ -6,8 +6,8 @@
  *          is the only version that matters now, so the dead redirect route is gone.
  */
 
-// Build version: v2.5.8 - Renamed Leasing to FRBO, added /sell-your-home route (FSBO, hidden, noindex)
-const BUILD_VERSION = "2.5.8";
+// Build version: v2.5.9 - Added /relaunch-your-home route (Expired, hidden, noindex)
+const BUILD_VERSION = "2.5.9";
 
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -46,6 +46,7 @@ import BuyersES from "./pages/BuyersES";
 
 import FRBO from "./pages/FRBO";
 import FSBO from "./pages/FSBO";
+import Expired from "./pages/Expired";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PrivacyPolicyES from "./pages/PrivacyPolicyES";
 import TermsOfService from "./pages/TermsOfService";
@@ -104,6 +105,7 @@ function Router() {
       <Route path="/terms-of-service" component={TermsOfService} />
       <Route path="/lease-your-home" component={FRBO} />
       <Route path="/sell-your-home" component={FSBO} />
+      <Route path="/relaunch-your-home" component={Expired} />
       <Route path="/links" component={Links} />
 
       {/* Fallback */}

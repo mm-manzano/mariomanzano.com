@@ -224,7 +224,7 @@ export default function FSBO() {
               But let me be your Backup Plan.
             </h1>
             <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
-              Thanks for taking my call. I know your phone has probably been busy since you listed, with agents, investors, and buyers all reaching out. I get it. Mine never stops either. The same investors calling you are calling me, looking for a home they can buy below market, along with other agents and marketing companies trying to sell me something. So I'll keep this useful.
+              I know your phone has probably been busy since you listed, with agents, investors, and buyers all reaching out. I get it. Mine never stops either. The same investors calling you are calling me, looking for a home they can buy below market, along with other agents and marketing companies trying to sell me something. So I'll keep this useful.
             </p>
             <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
               I'm not here to talk you out of selling on your own. Plenty of homeowners do.

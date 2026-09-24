@@ -142,7 +142,7 @@ const processSteps = [
   },
   {
     title: "Price it against today's market",
-    body: "I look at what's leased recently, what's listed now, and what's already pending, then where your property fits among them. It's more than pulling comps, it's reading what the market is doing right now. You get a rent range with the reasoning behind it, and the final number is your call.",
+    body: "I look at what's happening in the market right now and where your property fits in it. You get a rent range with the reasoning behind it, and the final number is your call. How I get there goes well beyond pulling comps, and that's something I'd rather show you in person than explain here.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -485,7 +485,7 @@ export default function Leasing() {
               <em className="italic">makes sense.</em>
             </h2>
             <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
-              A quick call is all it takes. I'll listen to where you are, answer any questions you have, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, like your current listing, rent range, or questions from applicants. No pressure either way.
+              A quick call is all it takes. I'll listen to where you are, walk you through how I'd approach pricing your property, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, like your current listing, rent range, or questions from applicants. No pressure either way.
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

@@ -26,6 +26,7 @@ const routes = [
   '/seller-strategy',
   '/lease-your-home',
   '/sell-your-home',
+  '/relaunch-your-home',
   // Spanish
   '/es',
   '/es/strategy-hub',

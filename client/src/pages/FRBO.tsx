@@ -64,8 +64,8 @@ function setPageMeta(title: string, description: string, url: string) {
 
 const points = [
   {
-    title: "Pricing it against what actually leased nearby",
-    body: "Zillow's rent estimate is a model, not a market read. Check what similar homes actually leased for recently, then look at what's listed right now, since that's who you're competing against.",
+    title: "Pricing it against the market, not an estimate",
+    body: "Wherever your rent number came from, it's worth checking against what's actually happening nearby. Recent leases get you close, but what you're competing against right now, the condition of the home, and timing all move the final number, and that part takes judgment.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -95,7 +95,7 @@ const points = [
   },
   {
     title: "Showings and phone calls add up fast",
-    body: "Group showings into set time blocks instead of one at a time, confirm the day of to cut down on no shows, and ask for ID before letting anyone in.",
+    body: "A lot of inquiries won't turn into real applicants. Ask a few quick questions before scheduling, like their move in date, whether they meet your income requirements, and if they have pets. Then group showings into set time blocks so one listing doesn't take over your week.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.63a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -141,8 +141,8 @@ const processSteps = [
     ),
   },
   {
-    title: "Price it against what actually leased",
-    body: "I compare recent leased comps with current competition so your property hits the market at the right number.",
+    title: "Price it against today's market",
+    body: "I look at what's leased recently, what's listed now, and what's already pending, then where your property fits among them. It's more than pulling comps, it's reading what the market is doing right now. You get a rent range with the reasoning behind it, and the final number is your call.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />

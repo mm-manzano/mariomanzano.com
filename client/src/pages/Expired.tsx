@@ -448,7 +448,7 @@ export default function Expired() {
               If you'd like a second opinion, I'm happy to come by and walk you through what I'd do differently. If we already have a time set, bring any showing feedback, offers you received, and anything your last agent told you about why the home didn't sell. The more I know going in, the more useful our meeting will be.
             </p>
             <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
-              Whether you hire me or not, you should leave with a clearer picture of what happened, what I'd change, and what your options are. And if it's not for you, feel free to kick me out.
+              Whether you hire me or not, you should leave with a clearer picture of what happened, what I'd change, including how I'd approach your price and next launch, and what your options are. And if it's not for you, feel free to kick me out.
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

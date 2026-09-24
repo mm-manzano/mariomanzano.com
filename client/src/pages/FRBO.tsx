@@ -485,7 +485,7 @@ export default function Leasing() {
               <em className="italic">makes sense.</em>
             </h2>
             <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
-              A quick call is all it takes. I'll listen to where you are, walk you through how I'd approach pricing your property, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, like your current listing, rent range, or questions from applicants. No pressure either way.
+              A quick call is all it takes. I'll listen to where you are, walk you through how I'd approach pricing your property, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, offers or questions from applicants. No pressure either way.
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

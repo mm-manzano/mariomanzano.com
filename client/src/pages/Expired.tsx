@@ -239,15 +239,15 @@ function ItemList({ items, step = 60 }: { items: Item[]; step?: number }) {
               {item.icon}
             </div>
             <div>
-              <h3 className="font-body text-sm font-semibold text-[#1A1A18] mb-1 leading-snug">
+              <h3 className="font-body text-base md:text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
                 {item.title}
               </h3>
-              <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+              <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
                 {item.body}
               </p>
               {item.link && (
                 <Link href={item.link.href}>
-                  <span className="font-body text-sm text-[#B8974A] underline underline-offset-4 cursor-pointer inline-block mt-2">
+                  <span className="font-body text-base font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
                     {item.link.label}
                   </span>
                 </Link>
@@ -286,7 +286,7 @@ export default function Expired() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A]">
+              <span className="font-body text-sm font-semibold tracking-[0.2em] uppercase text-[#C9A85C]">
                 Relisting Your Home · Greater Austin
               </span>
             </div>
@@ -296,16 +296,16 @@ export default function Expired() {
               <em className="italic">makes complete sense.</em><br />
               Let me give you a second opinion.
             </h1>
-            <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed mb-3 max-w-xl">
               If your listing just came off the market, your phone has probably been busy with agents reaching out. I may have been one of them, so I'll keep this useful.
             </p>
-            <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed mb-3 max-w-xl">
               I'm not going to tell you your last agent did a bad job. I don't know that, and it isn't really the point. Homes don't sell for a handful of reasons, and there's usually something we can learn from what happened the first time.
             </p>
-            <p className="font-body text-base text-white/65 leading-relaxed max-w-xl">
+            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
               Here's what I'd look at first, and a few things worth knowing whether you relist with me or anyone else.
             </p>
-            <p className="font-body text-sm text-white/65 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
+            <p className="font-body text-base text-white/80 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
               And if selling isn't the right move right now, I'll tell you that too.
             </p>
           </RevealDiv>
@@ -318,13 +318,13 @@ export default function Expired() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">What usually stalls a listing</span>
+              <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">What usually stalls a listing</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               A lot of stalled listings<br />
               <em className="italic">come down to a few things.</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
+            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
               Usually it isn't one big mistake. It's a few small things that stack up. See which of these sounds familiar.
             </p>
           </RevealDiv>
@@ -338,13 +338,13 @@ export default function Expired() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">Before you relist</span>
+              <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">Before you relist</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               Questions to ask before you relist,<br />
               <em className="italic">with anyone, including me.</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
+            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
               Relisting with a new agent won't change much by itself. What matters is what's different this time. These are worth asking anyone you talk to.
             </p>
           </RevealDiv>
@@ -360,10 +360,9 @@ export default function Expired() {
               className="rounded-md px-5 py-4 flex flex-col gap-3"
               style={{ background: "#F5EDE0" }}
             >
-              <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
-                <strong style={{ color: "#7D4A1A" }}>On listing history:</strong> Buyers and their agents can see how long a home was on the market and any past price changes. As of September 2026, the Austin area MLS resets that day count once a home has been off the market for 30 days, down from 90. A short pause before relisting can help, as long as the relaunch looks and feels different, not just reappears.
-              </p>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
+              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
+                <strong style={{ color: "#7D4A1A" }}>On listing history:</strong> Agents, and often buyers on sites like Zillow, can still see a home's past listings and price changes. What changed in September 2026 is the day count. The Austin area MLS now resets it to zero once a home has been off the market for 30 days, down from 90. A short pause means the home won't carry a long day count into its next listing, but the history is still there, so the relaunch should look and feel different, not just reappear.</p>
+              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
                 <strong style={{ color: "#7D4A1A" }}>On price reductions:</strong> Repeatedly lowering the price in small steps can end up costing more than getting the price right from the start.
               </p>
             </div>
@@ -372,17 +371,17 @@ export default function Expired() {
           <RevealDiv className="mt-16">
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">Before you decide</span>
+              <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">Before you decide</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               What if selling isn't<br />
               <em className="italic">the best move right now?</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-4">
               I've owned rentals myself, so I ask this question when it makes sense. Depending on your mortgage, what the home could rent for, and your plans, keeping it might make more sense than selling. Or it might not. Either way, it's worth running the numbers before you decide.
             </p>
             <Link href="/sell-vs-rent">
-              <span className="font-body text-sm text-[#B8974A] underline underline-offset-4 cursor-pointer">
+              <span className="font-body text-base font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer">
                 Compare selling vs renting
               </span>
             </Link>
@@ -396,13 +395,13 @@ export default function Expired() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">How I help</span>
+              <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">How I help</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               Before I suggest anything,<br />
               <em className="italic">I want to know what happened.</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
+            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
               A relaunch starts with understanding the first listing. Then we build from there.
             </p>
           </RevealDiv>
@@ -417,13 +416,13 @@ export default function Expired() {
             <div className="rounded-md border border-[#B8974A] px-6 py-8 md:px-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="section-rule" style={{ background: "#B8974A" }} />
-                <span className="section-number">No lock-in</span>
+                <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No lock-in</span>
               </div>
               <h2 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
                 If it isn't working,<br />
                 <em className="italic">you're not stuck.</em>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
                 A listing agreement shouldn't feel like a trap. If you list with me and you're not happy with how things are going, you can walk away. We'll go through exactly how that works when we meet.
               </p>
             </div>
@@ -437,7 +436,7 @@ export default function Expired() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A]">
+              <span className="font-body text-sm font-semibold tracking-[0.2em] uppercase text-[#C9A85C]">
                 Let's talk
               </span>
             </div>
@@ -445,10 +444,10 @@ export default function Expired() {
               Bring your questions.<br />
               <em className="italic">I'll bring the plan.</em>
             </h2>
-            <p className="font-body text-base text-white/65 leading-relaxed mb-4 max-w-lg">
+            <p className="font-body text-base text-white/80 leading-relaxed mb-4 max-w-lg">
               If you'd like a second opinion, I'm happy to come by and walk you through what I'd do differently. If we already have a time set, bring any showing feedback, offers you received, and anything your last agent told you about why the home didn't sell. The more I know going in, the more useful our meeting will be.
             </p>
-            <p className="font-body text-base text-white/65 leading-relaxed mb-8 max-w-lg">
+            <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
               Whether you hire me or not, you should leave with a clearer picture of what happened, what I'd change, and what your options are. And if it's not for you, feel free to kick me out.
             </p>
             <Link href="/contact">

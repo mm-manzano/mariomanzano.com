@@ -1,9 +1,9 @@
 /*
  * DESIGN: Quiet Luxury Editorial - FSBO Page
  * Route: /sell-your-home
- * Audience: Homeowners selling on their own who have spoken with Mario by phone
- * Goal: Personal follow-up after the call. Useful tips, then what Mario takes over.
- * Sections: Header, Tips, Callout (with strategy hub line), How I Help, CTA
+ * Audience: Homeowners selling on their own. Works whether Mario reached them by phone or not.
+ * Goal: Useful tips, then what Mario takes over.
+ * Sections: Header, Tips, Callout (with strategy hub line), How I Help, No Lock-In, CTA
  * Page ends on the CTA by design, no exits after the ask.
  * Note: No fee or compensation content on this page by design. The call covers it.
  */
@@ -132,7 +132,7 @@ const tips = [
 const helpSteps = [
   {
     title: "Walk the home and set the price",
-    body: "We walk through together and flag what is worth touching up before photos. I pull the recent sales, the active listings, and the homes under contract, then read what they mean for your specific home and give you a range with the reasoning behind it, so the final number is your call. This is the part of the process where I stand apart from most agents. My pricing strategy goes well beyond comps, and we go through it in detail when we meet.",
+    body: "We walk through together and flag what's worth touching up before photos. Then I look at where your home fits in today's market and give you a range with the reasoning behind it, so the final number is your call. How I get there goes well beyond pulling comps, and that's something I'd rather show you in person than explain here.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -142,7 +142,7 @@ const helpSteps = [
   },
   {
     title: "List it on the MLS with professional photos",
-    body: "Your home reaches buyers' agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and social media, with professional photos. That's only part of it. A lot more goes into how a listing is positioned and presented, and we'll cover that when we meet.",
+    body: "Your home reaches buyers' agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and many other home search sites, plus social media, with professional photos. That's only part of it. A lot more goes into how a listing is positioned and presented, and we'll cover that when we meet.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -213,7 +213,7 @@ export default function FSBO() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A]">
+              <span className="font-body text-sm font-semibold tracking-[0.2em] uppercase text-[#C9A85C]">
                 For Sale By Owner · Greater Austin
               </span>
             </div>
@@ -223,16 +223,16 @@ export default function FSBO() {
               <em className="italic">That makes complete sense.</em><br />
               But let me be your Backup Plan.
             </h1>
-            <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed mb-3 max-w-xl">
               I know your phone has probably been busy since you listed, with agents, investors, and buyers all reaching out. I get it. Mine never stops either. The same investors calling you are calling me, looking for a home they can buy below market, along with other agents and marketing companies trying to sell me something. So I'll keep this useful.
             </p>
-            <p className="font-body text-base md:text-lg text-white/65 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed mb-3 max-w-xl">
               I'm not here to talk you out of selling on your own. Plenty of homeowners do.
             </p>
-            <p className="font-body text-base text-white/65 leading-relaxed max-w-xl">
+            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
               Here are a few things worth knowing while your home is on the market.
             </p>
-            <p className="font-body text-sm text-white/65 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
+            <p className="font-body text-base text-white/80 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
               If the calls pile up, an offer gets confusing, or you'd just rather have someone else handle it, I'm here as your backup plan.
             </p>
           </RevealDiv>
@@ -245,13 +245,13 @@ export default function FSBO() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">What to know while you're listed</span>
+              <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">What to know while you're listed</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               What tends to make a sale<br />
               <em className="italic">go smoothly on your own.</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
+            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
               Here are a few things worth knowing if you're selling it yourself. Take what's useful. This is a starting point, not the full picture, since every home and situation is different.
             </p>
           </RevealDiv>
@@ -267,15 +267,15 @@ export default function FSBO() {
                     {tip.icon}
                   </div>
                   <div>
-                    <h3 className="font-body text-sm font-semibold text-[#1A1A18] mb-1 leading-snug">
+                    <h3 className="font-body text-base md:text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
                       {tip.title}
                     </h3>
-                    <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
                       {tip.body}
                     </p>
                     {tip.link && (
                       <Link href={tip.link.href}>
-                        <span className="font-body text-sm text-[#B8974A] underline underline-offset-4 cursor-pointer inline-block mt-2">
+                        <span className="font-body text-base font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
                           {tip.link.label}
                         </span>
                       </Link>
@@ -296,18 +296,18 @@ export default function FSBO() {
               className="rounded-md px-5 py-4 flex flex-col gap-3"
               style={{ background: "#F5EDE0" }}
             >
-              <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
+              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
                 <strong style={{ color: "#7D4A1A" }}>On price:</strong> A home priced off an estimate can miss the market in either direction, and it takes more than pulling comps to get it right.
               </p>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "#7D4A1A" }}>
+              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
                 <strong style={{ color: "#7D4A1A" }}>On the contract:</strong> Buyers' agents negotiate for a living, and most sellers do this once. The terms and deadlines are where deals tend to get tangled.
               </p>
             </div>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mt-10 mb-3">
+            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mt-10 mb-3">
               Still weighing whether to sell at all? The strategy hub has the net sheet, the sell vs rent calculator, and the remodel vs sell calculator in one place.
             </p>
             <Link href="/strategy-hub">
-              <span className="font-body text-sm text-[#B8974A] underline underline-offset-4 cursor-pointer">
+              <span className="font-body text-base font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer">
                 Open the strategy hub
               </span>
             </Link>
@@ -321,13 +321,13 @@ export default function FSBO() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className="section-number">How I help</span>
+              <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">How I help</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               If you'd rather not handle all of that,<br />
               <em className="italic">here's what I take over.</em>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
+            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
               You've already done the hard part of deciding to sell. This is what changes when I handle the rest.
             </p>
           </RevealDiv>
@@ -343,10 +343,10 @@ export default function FSBO() {
                     {step.icon}
                   </div>
                   <div>
-                    <h3 className="font-body text-sm font-semibold text-[#1A1A18] mb-1 leading-snug">
+                    <h3 className="font-body text-base md:text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
                       {step.title}
                     </h3>
-                    <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed">
+                    <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
                       {step.body}
                     </p>
                   </div>
@@ -357,13 +357,34 @@ export default function FSBO() {
         </div>
       </section>
 
+      {/* NO LOCK-IN */}
+      <section className="py-16 md:py-20">
+        <div className="container max-w-2xl">
+          <RevealDiv>
+            <div className="rounded-md border border-[#B8974A] px-6 py-8 md:px-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="section-rule" style={{ background: "#B8974A" }} />
+                <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No lock-in</span>
+              </div>
+              <h2 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+                If it isn't working,<br />
+                <em className="italic">you're not stuck.</em>
+              </h2>
+              <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
+                A listing agreement shouldn't feel like a trap. If you list with me and you're not happy with how things are going, you can walk away. We'll go through exactly how that works when we meet.
+              </p>
+            </div>
+          </RevealDiv>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 md:py-28 bg-[#1A1A18] text-white">
         <div className="container max-w-2xl">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A]">
+              <span className="font-body text-sm font-semibold tracking-[0.2em] uppercase text-[#C9A85C]">
                 Let's talk
               </span>
             </div>
@@ -371,12 +392,12 @@ export default function FSBO() {
               See if working together<br />
               <em className="italic">makes sense.</em>
             </h2>
-            <p className="font-body text-base text-white/65 leading-relaxed mb-8 max-w-lg">
-              This page is the basics. The real value is in sitting down together, where everything is specific to your home and your situation. I'll be upfront about whether I think I can help. No pressure either way.
+            <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
+              This page is the basics. The real value is in sitting down together, where everything is specific to your home and your situation. If we already have a time set, bring anything you've gathered so far, like offers, showing feedback, or questions that have come up. I'll be upfront about whether I think I can help. No pressure either way.
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
-                Schedule a Call with Mario
+                Set Up a Time to Meet
                 <ArrowRight size={14} />
               </span>
             </Link>

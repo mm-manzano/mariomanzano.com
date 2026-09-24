@@ -393,7 +393,7 @@ export default function FSBO() {
               <em className="italic">makes sense.</em>
             </h2>
             <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
-              This page is the basics. The real value is in sitting down together, where everything is specific to your home and your situation. If we already have a time set, bring anything you've gathered so far, like offers, showing feedback, or questions that have come up. I'll be upfront about whether I think I can help. No pressure either way.
+              This page is the basics. The real value is in sitting down together, including how I'd price your home specifically. If we already have a time set, bring anything you've gathered so far, like offers, showing feedback, or questions that have come up. I'll be upfront about whether I think I can help. No pressure either way.
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

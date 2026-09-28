@@ -83,8 +83,8 @@ const tips = [
     ),
   },
   {
-    title: "Showings and phone calls add up fast",
-    body: "Ask each caller if they're working with an agent, so you know who you're dealing with, and only show your home by appointment so there are fewer surprises about who comes through and when.",
+    title: "Screen callers before you book a showing",
+    body: "Not every call is a real buyer. Before you set a time, ask if they're working with an agent, if they've talked to a lender, and when they need to move. Most serious buyers expect these questions. Ask for a preapproval letter or proof of funds before they walk through, and show by appointment only. It saves you time and keeps casual browsers out of your home.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.63a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -92,8 +92,8 @@ const tips = [
     ),
   },
   {
-    title: "Check the buyer's financing when an offer comes in",
-    body: "An offer is only as strong as the buyer behind it. Ask for a preapproval letter or proof of funds with every offer, and make sure it matches the price and the type of loan.",
+    title: "Verify the financing when an offer comes in",
+    body: "An offer is only as strong as the buyer behind it. Check that the preapproval letter matches the offer price, the loan type, and the down payment, and that it comes from a real lender. If anything doesn't line up, ask before you respond.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -115,8 +115,8 @@ const tips = [
     ),
   },
   {
-    title: "Get the paperwork ready before the first showing",
-    body: "Texas requires a seller's disclosure for most home sales, and the contract runs on firm deadlines. Have your disclosure done early, and read every date in the contract before you sign.",
+    title: "Have your paperwork ready before an offer comes in",
+    body: "Texas requires a seller's disclosure for most home sales, and the contract runs on firm deadlines. If yours isn't done yet, finish it now so an offer doesn't catch you off guard. Then read every date in the contract before you sign.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

@@ -115,8 +115,8 @@ const tips = [
     ),
   },
   {
-    title: "Have your paperwork ready before an offer comes in",
-    body: "Texas requires a seller's disclosure for most home sales, and the contract runs on firm deadlines. If yours isn't done yet, finish it now so an offer doesn't catch you off guard. Then read every date in the contract before you sign.",
+    title: "Know what happens after you accept an offer",
+    body: "Getting an offer accepted is only the beginning. Make sure you understand the inspection, appraisal, financing, closing timeline, and what happens if the buyer asks for repairs. Have your seller's disclosure ready beforehand, and make sure you understand the deadlines and what you've agreed to before you sign.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />

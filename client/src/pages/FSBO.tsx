@@ -73,7 +73,7 @@ const tips = [
   },
   {
     title: "Presentation matters more than most owners think",
-    body: "A deep clean, less clutter, and small touch ups change how a home shows. Many owners also use phone photos, but professional photography helps a listing stand out before anyone ever sets foot inside.",
+    body: "Even if your home is already listed, take another look at how it's showing. A deep clean, less clutter, removing personal and family photos, and taking care of small repairs can make a difference. And don't overlook the photos. Professional photography can make your home stand out online before a buyer ever walks through the door. Taking care of obvious issues can also help eliminate some avoidable inspection issues later.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />

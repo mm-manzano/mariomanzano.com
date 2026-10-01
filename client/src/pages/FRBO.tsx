@@ -4,12 +4,13 @@
  * Audience: Homeowners who have listed their property for rent on their own.
  *           Works whether Mario reached them by phone or not.
  * Goal: Educate, build trust, and offer leasing-only service
- * Sections: Header, What Separates Rentals, MLS Exposure Table,
- *           How I Handle It, Fee Block, What If Renting Isn't Right, CTA
+ * Sections: Header, What Separates Rentals, MLS Exposure Table + Vacancy
+ *           Calculator, How I Handle It (timeline), Fee Block,
+ *           What If Renting Isn't Right, CTA
  * Page ends on the CTA by design, no exits after the ask.
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 
@@ -62,6 +63,94 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 }
 
+function formatMoney(n: number) {
+  return n.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+}
+
+function VacancyCalculator() {
+  const [rent, setRent] = useState(1800);
+  const [months, setMonths] = useState(1);
+
+  const { expected, actual, effective, lost } = useMemo(() => {
+    const expectedAnnual = rent * 12;
+    const actualAnnual = rent * (12 - months);
+    const effectiveMonthly = actualAnnual / 12;
+    return {
+      expected: expectedAnnual,
+      actual: actualAnnual,
+      effective: effectiveMonthly,
+      lost: expectedAnnual - actualAnnual,
+    };
+  }, [rent, months]);
+
+  return (
+    <div className="rounded-md border border-[#E8E0D5] bg-white p-6 md:p-8">
+      <p className="font-body text-sm font-semibold tracking-[0.1em] uppercase text-[#7A5F24] mb-5">
+        See what vacancy actually costs
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <label className="font-body text-sm text-[#1A1A18]/70 block mb-2">
+            Monthly rent
+          </label>
+          <div className="flex items-center gap-2">
+            <span className="font-body text-base text-[#1A1A18]/60">$</span>
+            <input
+              type="number"
+              min={0}
+              step={50}
+              value={rent}
+              onChange={(e) => setRent(Math.max(0, Number(e.target.value) || 0))}
+              className="font-body text-lg w-full border border-[#E8E0D5] rounded px-3 py-2 bg-[#F8F5F0] text-[#1A1A18] focus:outline-none focus:ring-2 focus:ring-[#B8974A]"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="font-body text-sm text-[#1A1A18]/70 block mb-2">
+            Months vacant: <span className="font-semibold text-[#1A1A18]">{months}</span>
+          </label>
+          <input
+            type="range"
+            min={0}
+            max={6}
+            step={1}
+            value={months}
+            onChange={(e) => setMonths(Number(e.target.value))}
+            className="w-full accent-[#B8974A] mt-3"
+          />
+          <div className="flex justify-between font-body text-sm text-[#1A1A18]/50 mt-1">
+            <span>0</span>
+            <span>6 months</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-[#E8E0D5] pt-5 grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div>
+          <p className="font-body text-sm text-[#1A1A18]/60 mb-1">A full year at this rent</p>
+          <p className="font-display text-2xl font-light text-[#1A1A18]">{formatMoney(expected)}</p>
+        </div>
+        <div>
+          <p className="font-body text-sm text-[#1A1A18]/60 mb-1">What you'd actually collect</p>
+          <p className="font-display text-2xl font-light text-[#1A1A18]">{formatMoney(actual)}</p>
+        </div>
+        <div>
+          <p className="font-body text-sm text-[#1A1A18]/60 mb-1">Your real monthly rent for the year</p>
+          <p className="font-display text-2xl font-light text-[#A05030]">{formatMoney(effective)}</p>
+        </div>
+      </div>
+
+      {months > 0 && (
+        <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mt-5 pt-5 border-t border-[#E8E0D5]">
+          {months} {months === 1 ? "month" : "months"} vacant on a {formatMoney(rent)} rent means {formatMoney(lost)} in rent you don't get back. Spread across the year, your {formatMoney(rent)} rent is really acting like {formatMoney(effective)} a month.
+        </p>
+      )}
+    </div>
+  );
+}
+
 const points = [
   {
     title: "Pricing it against the market, not an estimate",
@@ -73,23 +162,12 @@ const points = [
     ),
   },
   {
-    title: "Presentation matters more than most owners think",
-    body: "A deep clean and minor touch-ups can make a big difference in how your property shows and how quickly it rents. If you need help getting it ready, I can connect you with trusted local contractors.",
+    title: "Presentation and photos matter more than most owners think",
+    body: "A deep clean, minor touch-ups, and real photography change how your property shows and how quickly it rents. Many owners use phone photos, but professional photography helps a listing stand out before anyone ever sets foot inside. If you need help getting it ready, I can connect you with trusted local contractors.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
         <polyline points="9 22 9 12 15 12 15 22" />
-      </svg>
-    ),
-  },
-  {
-    title: "Photography most owners skip",
-    body: "Many owners use phone photos, but professional photography helps a listing stand out before anyone ever sets foot inside, and often helps it rent faster.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-        <circle cx="8.5" cy="8.5" r="1.5" />
-        <polyline points="21 15 16 10 5 21" />
       </svg>
     ),
   },
@@ -115,6 +193,17 @@ const points = [
     ),
   },
   {
+    title: "Document the move-in condition before they get the keys",
+    body: "Photos or a simple checklist at move-in protect you if there's a dispute over the deposit later. It takes a few minutes, and it's one of the first things self-managing landlords skip.",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <polyline points="21 15 16 10 5 21" />
+      </svg>
+    ),
+  },
+  {
     title: "A lease that actually protects you",
     body: "Free online templates can miss important provisions, disclosures, or terms specific to your rental. A lease that protects you is more than one that simply sounds official.",
     icon: (
@@ -131,8 +220,8 @@ const points = [
 
 const processSteps = [
   {
-    title: "Walk through the property and prep it",
-    body: "We walk through together and flag what to clean, move, or touch up before your next showing or before professional photos go up.",
+    title: "Prepare and price the property",
+    body: "We walk through together and flag what to clean, move, or touch up before photos go up. Then I look at what's happening in the market right now and where your property fits in it. You get a rent range with the reasoning behind it, and the final number is your call. How I get there goes well beyond pulling comps, and that's something I'd rather show you in person than explain here.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -141,17 +230,8 @@ const processSteps = [
     ),
   },
   {
-    title: "Price it against today's market",
-    body: "I look at what's happening in the market right now and where your property fits in it. You get a rent range with the reasoning behind it, and the final number is your call. How I get there goes well beyond pulling comps, and that's something I'd rather show you in person than explain here.",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      </svg>
-    ),
-  },
-  {
-    title: "List it on the MLS with professional photos",
-    body: "Your property gets in front of tenant agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com, Zillow, and many other rental sites, plus social media. Professional photography included.",
+    title: "Launch on the MLS",
+    body: "Your property goes out through the MLS and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com, Zillow, and many other rental sites, plus social media, with professional photos and a flyer covering the details and any upgrades.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
@@ -161,8 +241,20 @@ const processSteps = [
     ),
   },
   {
-    title: "A property flyer for every showing",
-    body: "I put together a professional flyer with photos, key details, and any upgrades you want to highlight. Visitors leave with something in hand that helps your property stay top of mind after they've seen a few others.",
+    title: "Showings and screening",
+    body: "I coordinate every showing and pre-screen applicants before anyone walks through, so you're not opening the door to people who aren't a good fit. For anyone who meets your requirements, I help coordinate income, credit, and rental history checks.",
+    icon: (
+      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+  },
+  {
+    title: "You decide, I handle the rest",
+    body: "You get the full picture on each applicant, and the final call is yours. Once you've chosen, I help work through any requests on terms, like move in timing or lease length, before anything's signed.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -174,14 +266,11 @@ const processSteps = [
     ),
   },
   {
-    title: "Screen applicants and get to a signed lease",
-    body: "I pre-screen prospective tenants before scheduling a showing, so you're not opening your home to people who aren't a good fit. Once we find someone who meets your requirements, I help coordinate the full screening process, including income, credit, and rental history, so you have the information you need to make the final decision. Once the lease is signed, my job is done.",
+    title: "Lease signed",
+    body: "Once the lease is signed, my job is done.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        <polyline points="20 6 9 17 4 12" />
       </svg>
     ),
   },
@@ -290,14 +379,14 @@ export default function Leasing() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
-              <span className={labelLight}>Exposure</span>
+              <span className={labelLight}>What changes when I list it</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
               Where your listing lives matters<br />
               <em className="italic">more than most people realize.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-8">
-              When you list on your own, you're reaching whoever happens to find your post. When I list your property, I put it on all of these platforms at once and make it searchable by tenant agents working the area. That's a different level of reach.
+              When you list on your own, you're reaching whoever happens to find your post. When I list your property, it goes out through the MLS where tenant agents can find it, backed by professional photos and a flyer, and I handle the calls and the screening so you're not doing all of that on top of everything else.
             </p>
           </RevealDiv>
 
@@ -335,9 +424,9 @@ export default function Leasing() {
                     {[
                       "AustinHomeSearch.com, HAR.com, Realtor.com, Apartments.com, Zillow, and many other rental sites",
                       "Searchable by tenant agents working the area",
-                      "More platforms and more opportunities for renters to see the property",
-                      "Inquiries come through your agent, not directly to you",
-                      "More exposure and less time sitting vacant",
+                      "Professional photos and a flyer included",
+                      "Inquiries and showings come through me, not directly to you",
+                      "You step back while someone else handles the calls and showings",
                     ].map((item, i) => (
                       <li key={i} className="font-body text-base text-[#1A1A18]/80 leading-relaxed pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-[#B8974A] before:text-sm">
                         {item}
@@ -347,15 +436,17 @@ export default function Leasing() {
                 </div>
               </div>
             </div>
+          </RevealDiv>
 
-            {/* Vacancy + wrong tenant caution */}
+          <RevealDiv delay={150} className="mt-10">
+            <VacancyCalculator />
+          </RevealDiv>
+
+          <RevealDiv delay={200} className="mt-6">
             <div
-              className="rounded-md px-5 py-4 flex flex-col gap-3"
+              className="rounded-md px-5 py-4"
               style={{ background: "#F5EDE0" }}
             >
-              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
-                <strong style={{ color: "#6B3D12" }}>On vacancy:</strong> With rents where they are in Greater Austin, every month a property sits empty can cost a landlord generally between $2,000 and $3,500 in lost rent. Better marketing and wider reach can help reduce the time your property sits vacant.
-              </p>
               <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
                 <strong style={{ color: "#6B3D12" }}>On the wrong tenant:</strong> Late payments, damage, and early move outs can cost far more than a few extra weeks of searching. Screening properly from the start is the best way to avoid them.
               </p>
@@ -377,7 +468,7 @@ export default function Leasing() {
               <em className="italic">Just the leasing piece, done right.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
-              You keep managing the property. I handle the front end: preparing, marketing, finding the tenant, coordinating showings, screening applicants, and getting the lease signed.
+              You keep managing the property day to day. I handle getting it rented, priced right, marketed, and screened, and I keep you in the loop the whole way, while you stay in control of who you choose.
             </p>
           </RevealDiv>
 
@@ -485,7 +576,7 @@ export default function Leasing() {
               <em className="italic">makes sense.</em>
             </h2>
             <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
-              A quick call is all it takes. I'll listen to where you are, walk you through how I'd approach pricing your property, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, offers or questions from applicants. No pressure either way.
+              A quick call is all it takes. I'll listen to where you are, walk you through how I'd approach pricing your property, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, like your current listing, offers, or questions from applicants. No pressure either way.
             </p>
             <Link href="/contact">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">

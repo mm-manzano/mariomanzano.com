@@ -93,7 +93,7 @@ const tips = [
   },
   {
     title: "Verify the financing when an offer comes in",
-    body: "An offer is only as strong as the buyer behind it. Check that the preapproval letter matches the offer price, the loan type, and the down payment, and that it comes from a real lender. If anything doesn't line up, ask before you respond.",
+    body: "An offer is more than just a price. Make sure you understand who is actually buying the property. Some investors may put a home under contract and then sell their rights to the contract to another buyer for a profit. For financed buyers, check that the preapproval matches the offer price, loan type, and down payment.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />

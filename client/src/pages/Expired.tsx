@@ -128,33 +128,33 @@ const icons = {
 
 const stallReasons: Item[] = [
   {
-    title: "Price",
-    body: "Lots of showings and no offers, or offers well below asking, usually means buyers liked the home but not at that number. Price also determines which buyers see it, so even a small gap can change who you're competing against.",
-    icon: icons.pulse,
-  },
-  {
-    title: "Exposure",
-    body: "Few showings early on can be a sign that the listing wasn't reaching enough buyers, or wasn't showing up where they were looking. The price range buyers are searching in, the photos, and the first few lines of the description all play a part.",
-    icon: icons.eye,
-  },
-  {
-    title: "Marketing and presentation",
-    body: "Buyers make quick decisions while scrolling. The photos, the order they're in, and how the home is described set the first impression. Then the showing has to live up to it. Clutter, dark rooms, and small things left undone can undo a great listing in the first few minutes inside.",
-    icon: icons.image,
-  },
-  {
-    title: "Condition",
-    body: "If feedback kept pointing to updates, repairs, or one specific room, buyers were probably pricing that work into what they were willing to pay. Sometimes the fix is worth doing. Sometimes a price adjustment makes more sense. It comes down to the numbers.",
+    title: "Preparation",
+    body: "A home shows better when it's ready before it's seen. Cleaning, decluttering, repairs, and staging all shape that first impression, and a rough start is hard to undo once buyers have already walked through.",
     icon: icons.home,
   },
   {
-    title: "Strategy",
-    body: "Sometimes the house wasn't the issue. It was the plan behind the listing. Was there a clear reason behind the price, a strategy for the launch, and a backup plan for what would change if buyers weren't responding?",
+    title: "First impression",
+    body: "Buyers make quick decisions while scrolling, then again the moment they walk in. The photos, the description, and what greeted them at the door either earned a second look or didn't.",
+    icon: icons.image,
+  },
+  {
+    title: "Price",
+    body: "Buyers never judge a home on its own. They compare it to everything else they could buy at that price, so a number that looks fine on paper can still lose to the house next door.",
+    icon: icons.pulse,
+  },
+  {
+    title: "Market response",
+    body: "A price or a plan that made sense at launch doesn't always stay right. Showings, feedback, and what else came on the market all shift over time, and the response has to shift with them.",
+    icon: icons.eye,
+  },
+  {
+    title: "Negotiation",
+    body: "Getting an offer isn't the finish line. Repairs, timelines, and contingencies can undo a deal as easily as price, and how those get handled often decides whether it reaches closing.",
     icon: icons.compass,
   },
   {
-    title: "Behind the scenes",
-    body: "Some of what affects a listing happens where sellers can't see it. When buyers' agents reached out, did they hear back quickly and get clear answers? How easy was it to book a showing and get into the house? A missed showing, a slow response, or a difficult process can cost you a buyer you never hear about.",
+    title: "Execution and behind the scenes",
+    body: "Some of what affects a listing happens where sellers never see it. A missed showing, a slow reply to a buyer's agent, or feedback that went nowhere can cost a buyer without anyone ever knowing why.",
     icon: icons.key,
   },
 ];
@@ -174,6 +174,11 @@ const tips: Item[] = [
     title: "Ask how the price will be set, and when it would be revisited",
     body: "A good plan has a starting number with reasoning behind it, plus a clear point where you'll evaluate it again. Agree on that before listing, not after weeks of quiet.",
     icon: icons.pulse,
+  },
+  {
+    title: "Ask how they'd handle an offer, not just the price",
+    body: "A good offer can still fall apart over repairs, timelines, or other terms. Ask how they'd approach negotiating the whole offer, not just getting to a number you like.",
+    icon: icons.document,
   },
   {
     title: "Ask what happens before the home goes live",
@@ -211,7 +216,7 @@ const helpSteps: Item[] = [
   },
   {
     title: "A relaunch, not a repost",
-    body: "Your home goes back on the MLS and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and many other home search sites, plus social media. How it's positioned and presented this time matters just as much, and that's where the relaunch strategy comes in.",
+    body: "Your home goes back on the market, but nothing about the plan should look the same as last time. The price, the presentation, the launch, and how offers get handled all get built around what actually happened the first time, not repeated from it.",
     icon: icons.image,
   },
   {
@@ -221,7 +226,7 @@ const helpSteps: Item[] = [
   },
   {
     title: "Offers through closing",
-    body: "I go through every offer with you, negotiate on your behalf, and guide you through inspection, appraisal, and every deadline until closing day.",
+    body: "I look at the whole offer with you, not just the price. Repairs, timelines, and contingencies can sink a deal as fast as a low number, so I negotiate the terms as carefully as I negotiate the price, then guide you through inspection, appraisal, and every deadline through closing.",
     icon: icons.document,
   },
 ];
@@ -361,7 +366,7 @@ export default function Expired() {
               style={{ background: "#F5EDE0" }}
             >
               <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
-                <strong style={{ color: "#7D4A1A" }}>On listing history:</strong> Agents, and often buyers on sites like Zillow, can still see a home's past listings and price changes. What changed in September 2026 is the day count. The Austin area MLS now resets it to zero once a home has been off the market for 30 days, down from 90. A short pause means the home won't carry a long day count into its next listing, but the history is still there, so the relaunch should look and feel different, not just reappear.</p>
+                <strong style={{ color: "#7D4A1A" }}>On listing history:</strong> Agents, and often buyers on sites like Zillow, can still see a home's past listings and price history. What changed in September 2026 is the day count, now reset to zero after 30 days off market instead of 90. The count resets. The history doesn't. That's why the relaunch has to actually look different, not just reappear.</p>
               <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
                 <strong style={{ color: "#7D4A1A" }}>On price reductions:</strong> Repeatedly lowering the price in small steps can end up costing more than getting the price right from the start.
               </p>

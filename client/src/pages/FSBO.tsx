@@ -92,8 +92,8 @@ const tips = [
     ),
   },
   {
-    title: "Verify the financing when an offer comes in",
-    body: "An offer is more than just a price. Make sure you understand who is actually buying the property. Some investors may put a home under contract and then sell their rights to the contract to another buyer for a profit. For financed buyers, check that the preapproval matches the offer price, loan type, and down payment.",
+    title: "Look past the price when an offer comes in",
+    body: "The highest offer isn't always the strongest one. Repairs, contingencies, timelines, and how it's financed can matter as much as the number itself. Some investors put a home under contract, then sell their rights to another buyer for a profit. For financed buyers, check that the preapproval matches the offer price, loan type, and down payment.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -131,7 +131,7 @@ const tips = [
 
 const helpSteps = [
   {
-    title: "Walk the home and set the price",
+    title: "Prepare and price the home",
     body: "We walk through together and flag what's worth touching up before photos. Then I look at where your home fits in today's market and give you a range with the reasoning behind it, so the final number is your call. How I get there goes well beyond pulling comps, and that's something I'd rather show you in person than explain here.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -141,7 +141,7 @@ const helpSteps = [
     ),
   },
   {
-    title: "List it on the MLS with professional photos",
+    title: "Launch on the MLS",
     body: "Your home reaches buyers' agents and shows up on AustinHomeSearch.com, HAR.com, Realtor.com, Zillow, and many other home search sites, plus social media, with professional photos. That's only part of it. A lot more goes into how a listing is positioned and presented, and we'll cover that when we meet.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -152,8 +152,8 @@ const helpSteps = [
     ),
   },
   {
-    title: "Calls, scheduling, and showings",
-    body: "Inquiries and scheduling come to me, not you. I handle the calls and coordinate every showing, and an electronic lockbox means fewer unannounced visits and a better record of who came through and when. You also get a weekly update on activity and showing feedback so you're never left wondering what's happening.",
+    title: "Showings, feedback, and staying on track",
+    body: "Inquiries and scheduling come to me, not you. I handle the calls and coordinate every showing, and an electronic lockbox means fewer unannounced visits and a better record of who came through and when. You get a weekly update on activity and showing feedback, and if the response isn't matching what we expected, that's when we look at adjusting the price or the approach, not months later.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -164,8 +164,8 @@ const helpSteps = [
     ),
   },
   {
-    title: "Offers, negotiation, and a signed contract",
-    body: "I go through every offer with you, including the terms behind the price and the buyer's financing. Then I negotiate on your behalf and work it to a signed contract.",
+    title: "Offer and negotiation",
+    body: "An offer is more than a number. I go through the whole thing with you, repairs, contingencies, timelines, and financing, then negotiate the terms as carefully as the price and work it to a signed contract.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -177,7 +177,7 @@ const helpSteps = [
     ),
   },
   {
-    title: "Inspection, appraisal, and closing",
+    title: "Under contract to closing",
     body: "I guide you through the inspection, the appraisal, and every deadline until closing day.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -328,7 +328,7 @@ export default function FSBO() {
               <em className="italic">here's what I take over.</em>
             </h2>
             <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
-              You've already done the hard part of deciding to sell. This is what changes when I handle the rest.
+              You've already done the hard part of deciding to sell. This is what changes when I handle the rest, from prep to closing.
             </p>
           </RevealDiv>
 

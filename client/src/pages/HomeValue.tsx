@@ -47,7 +47,7 @@ export default function HomeValue() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "What Is My Home Worth?",
-    "url": "https://mariomanzano.com/home-value",
+    "url": "https://mariomanzano.com/home-value/",
     "description": "Get a home value estimate for Cedar Park and Leander TX. Mario Manzano helps homeowners understand what their home is actually worth in today's market before making any decisions.",
     "author": {
       "@type": "RealEstateAgent",

@@ -77,7 +77,7 @@ export default function SellVsRent() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Sell vs. Rent Calculator",
-    "url": "https://mariomanzano.com/sell-vs-rent",
+    "url": "https://mariomanzano.com/sell-vs-rent/",
     "description": "Free sell vs rent calculator for Greater Austin homeowners. Compare long-term financial outcomes of selling now versus holding your home as a rental property.",
     "author": {
       "@type": "RealEstateAgent",

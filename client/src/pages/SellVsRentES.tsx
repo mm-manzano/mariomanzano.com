@@ -76,7 +76,8 @@ export default function SellVsRentES() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Calculadora Vender vs. Alquilar",
-    "url": "https://mariomanzano.com/es/sell-vs-rent",
+    "url": "https://mariomanzano.com/es/sell-vs-rent/",
+    "inLanguage": "es",
     "description": "Calculadora gratuita para propietarios en el área de Austin. Compara los resultados financieros a largo plazo de vender ahora versus conservar tu casa como propiedad de renta.",
     "author": {
       "@type": "RealEstateAgent",

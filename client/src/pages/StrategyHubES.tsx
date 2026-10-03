@@ -69,7 +69,8 @@ export default function StrategyHubES() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Centro de Estrategia para Propietarios",
-    "url": "https://mariomanzano.com/es/strategy-hub",
+    "url": "https://mariomanzano.com/es/strategy-hub/",
+    "inLanguage": "es",
     "description": "Herramientas gratuitas para propietarios en el área de Austin. Compara vender vs alquilar, calcula ingresos netos y analiza el retorno de una remodelación antes de tomar cualquier decisión.",
     "author": {
       "@type": "RealEstateAgent",

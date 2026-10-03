@@ -72,7 +72,7 @@ export default function AboutES() {
     "@type": "Person",
     "name": "Mario Manzano",
     "jobTitle": "REALTOR® y Estratega de Ventas",
-    "url": "https://mariomanzano.com/es/acerca",
+    "url": "https://mariomanzano.com/es/acerca/",
     "image": "/images/mario-manzano-austin-realtor-professional-headshot.JPG",
     "telephone": "+1-512-695-9255",
     "email": "realtor@mariomanzano.com",

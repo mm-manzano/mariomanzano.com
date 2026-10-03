@@ -120,8 +120,18 @@ function Router() {
   );
 }
 
+function useDocumentLanguage() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    const isSpanish = location === "/es" || location.startsWith("/es/");
+    document.documentElement.lang = isSpanish ? "es" : "en";
+  }, [location]);
+}
+
 function App() {
   usePageTracking();
+  useDocumentLanguage();
   const [location] = useLocation();
 
   // Links page renders standalone, no nav, no footer

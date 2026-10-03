@@ -93,6 +93,7 @@ export default function GuiaParaPropietarios() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "inLanguage": "es",
     "mainEntity": [
       {
         "@type": "Question",

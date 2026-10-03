@@ -39,13 +39,14 @@ const links = [
 export default function Links() {
   useEffect(() => {
     document.title = "Mario Manzano | Links";
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
+    // Utility page for the Instagram bio: keep it out of search results
+    let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (!robotsMeta) {
+      robotsMeta = document.createElement("meta");
+      robotsMeta.setAttribute("name", "robots");
+      document.head.appendChild(robotsMeta);
     }
-    canonical.setAttribute("href", "https://mariomanzano.com/links/");
+    robotsMeta.setAttribute("content", "noindex, follow");
   }, []);
   return (
     <div className="min-h-screen bg-[#1c1c1c] flex flex-col items-center justify-start px-5 pt-28 pb-16">

@@ -71,7 +71,7 @@ export default function RemodelVsSell() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Remodel vs. Sell Calculator",
-    "url": "https://mariomanzano.com/remodel-vs-sell",
+    "url": "https://mariomanzano.com/remodel-vs-sell/",
     "description": "Free remodel vs sell calculator for Greater Austin homeowners. Find out if your renovation will increase your net proceeds enough to justify the cost before selling.",
     "author": {
       "@type": "RealEstateAgent",

@@ -71,7 +71,7 @@ export default function StrategyHub() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Home Selling Strategy Hub",
-    "url": "https://mariomanzano.com/strategy-hub",
+    "url": "https://mariomanzano.com/strategy-hub/",
     "description": "Free strategy tools for Greater Austin homeowners. Compare selling vs renting, calculate net proceeds, and analyze remodel ROI before making any decisions.",
     "author": {
       "@type": "RealEstateAgent",

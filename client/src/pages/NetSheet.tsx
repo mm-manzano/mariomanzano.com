@@ -73,7 +73,7 @@ export default function NetSheet() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Home Sale Net Sheet Calculator",
-    "url": "https://mariomanzano.com/net-sheet",
+    "url": "https://mariomanzano.com/net-sheet/",
     "description": "Free net sheet calculator for Greater Austin homeowners. See exactly what you will keep after commission, closing costs, and mortgage payoff before deciding to sell.",
     "author": {
       "@type": "RealEstateAgent",

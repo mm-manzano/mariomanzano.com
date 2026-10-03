@@ -72,7 +72,8 @@ export default function NetSheetES() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Calculadora de Ingresos Netos",
-    "url": "https://mariomanzano.com/es/net-sheet",
+    "url": "https://mariomanzano.com/es/net-sheet/",
+    "inLanguage": "es",
     "description": "Calculadora gratuita de ingresos netos para propietarios en el área de Austin. Ve exactamente cuánto te quedarás después de comisión, costos de cierre y pago de hipoteca antes de decidir vender.",
     "author": {
       "@type": "RealEstateAgent",

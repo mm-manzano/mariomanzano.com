@@ -71,7 +71,8 @@ export default function RemodelVsSellES() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Calculadora de Remodelar vs. Vender",
-    "url": "https://mariomanzano.com/es/remodel-vs-sell",
+    "url": "https://mariomanzano.com/es/remodel-vs-sell/",
+    "inLanguage": "es",
     "description": "Calculadora gratuita de remodelar vs vender para propietarios en el área de Austin. Descubre si tu remodelación aumentará lo suficiente tus ganancias netas como para justificar el costo antes de vender.",
     "author": {
       "@type": "RealEstateAgent",

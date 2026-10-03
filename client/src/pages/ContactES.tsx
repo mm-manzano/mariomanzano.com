@@ -74,6 +74,7 @@ export default function ContactES() {
     "@type": "ContactPage",
     "name": "Contactar a Mario Manzano",
     "url": "https://mariomanzano.com/es/contacto/",
+    "inLanguage": "es",
     "description": "Contacta a Mario Manzano, REALTOR® licenciado y estratega de ventas en Cedar Park y Leander, Texas.",
     "mainEntity": {
       "@type": "RealEstateAgent",

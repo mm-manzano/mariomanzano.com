@@ -71,7 +71,7 @@ export default function About() {
     "@type": "Person",
     "name": "Mario Manzano",
     "jobTitle": "REALTOR® and Seller Strategist",
-    "url": "https://mariomanzano.com/about",
+    "url": "https://mariomanzano.com/about/",
     "image": "/images/mario-manzano-austin-realtor-professional-headshot.JPG",
     "telephone": "+1-512-695-9255",
     "email": "realtor@mariomanzano.com",

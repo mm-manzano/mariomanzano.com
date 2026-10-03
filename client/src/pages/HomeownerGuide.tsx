@@ -12,8 +12,6 @@ import { Link } from "wouter";
 import { ArrowRight, Plus, Minus } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
 
-const GUIDE_BG = "/images/austin-texas-real-estate-home.jpg";
-
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
   useLayoutEffect(() => {

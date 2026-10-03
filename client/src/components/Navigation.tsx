@@ -193,7 +193,7 @@ export default function Navigation() {
             {/* Logo and Wordmark */}
             <Link to="/">
               <div className="flex items-center gap-3 cursor-pointer">
-                <img
+                <img width={160} height={160}
                   src="/images/logo.png"
                   alt="Mario Manzano"
                   className="w-8 h-8 md:w-10 md:h-10"

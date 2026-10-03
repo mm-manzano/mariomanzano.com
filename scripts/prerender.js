@@ -90,6 +90,8 @@ async function prerender() {
 
   for (const route of routes) {
     const page = await browser.newPage();
+    // Phone-sized window, so everything above the fold is marked visible in the saved HTML
+    await page.setViewport({ width: 390, height: 900 });
     try {
       await page.setRequestInterception(true);
       page.on('request', (req) => {

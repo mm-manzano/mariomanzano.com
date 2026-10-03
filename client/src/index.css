@@ -301,6 +301,11 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Content already on screen when the page loads: no fade, no hidden state */
+  .fade-in-up.no-fade {
+    transition: none;
+  }
   
   /* Luxury form input */
   .input-luxury {

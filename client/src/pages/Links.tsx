@@ -51,7 +51,7 @@ export default function Links() {
   return (
     <div className="min-h-screen bg-[#1c1c1c] flex flex-col items-center justify-start px-5 pt-28 pb-16">
       <div className="flex flex-col items-center mb-10">
-        <img
+        <img width={160} height={160}
           src="/images/logo.png"
           alt="Mario Manzano"
           style={{ width: 72, height: 72, objectFit: "contain" }}

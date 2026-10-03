@@ -7,7 +7,7 @@
  *              Airbnb story and DSCR detail), Section 4 (removed kids' specifics).
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
@@ -16,9 +16,15 @@ const MARIO_HEADSHOT = "/images/mario-manzano-austin-realtor-professional-headsh
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Above the fold: show right away with no fade, so the top of the page is never blank
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("visible", "no-fade");
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { el.classList.add("visible"); observer.disconnect(); } },
       { threshold: 0.12 }
@@ -112,7 +118,7 @@ export default function About() {
             <RevealDiv>
               <div className="relative">
                 <div className="overflow-hidden bg-[#E5E5E5]">
-                  <img
+                  <img width={1200} height={1200} fetchPriority="high"
                     src={MARIO_HEADSHOT}
                     alt="Mario Manzano"
                     className="w-full h-auto"

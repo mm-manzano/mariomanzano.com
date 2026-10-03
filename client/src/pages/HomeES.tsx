@@ -12,7 +12,7 @@
  *                          nuevo CTA añadido después del acordeón de proceso.
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 
@@ -23,9 +23,15 @@ const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Above the fold: show right away with no fade, so the top of the page is never blank
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("visible", "no-fade");
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -140,7 +146,7 @@ export default function HomeES() {
       {/* HERO */}
       <section className="relative h-auto md:min-h-screen flex items-start">
         <div className="absolute inset-0">
-          <img src={HERO_IMG} alt="Casa de lujo en Cedar Park" className="w-full h-full object-cover" />
+          <img width={1920} height={1282} fetchPriority="high" src={HERO_IMG} alt="Casa de lujo en Cedar Park" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
         </div>
 
@@ -232,7 +238,7 @@ export default function HomeES() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealDiv className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={INTERIOR_IMG} alt="Interior de lujo" className="w-full h-full object-cover" />
+                <img width={2400} height={1600} loading="lazy" decoding="async" src={INTERIOR_IMG} alt="Interior de lujo" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
 
@@ -398,7 +404,7 @@ export default function HomeES() {
 
             <RevealDiv delay={150} className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={AERIAL_IMG} alt="Vista aérea de Cedar Park" className="w-full h-full object-cover" />
+                <img width={1920} height={1279} loading="lazy" decoding="async" src={AERIAL_IMG} alt="Vista aérea de Cedar Park" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
           </div>

@@ -5,14 +5,20 @@
  * SEO: Full meta tags + canonical. noindex removed — page is now public.
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { ArrowRight } from "lucide-react";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Above the fold: show right away with no fade, so the top of the page is never blank
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add("visible", "no-fade");
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -294,7 +300,7 @@ export default function ListingPresentation() {
                   className="w-full overflow-hidden"
                   style={{ aspectRatio: "4/3" }}
                 >
-                  <img
+                  <img width={800} height={600} loading="lazy" decoding="async"
                     src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=800&q=80"
                     alt="Poor quality listing photo — dark and underlit"
                     className="w-full h-full object-cover"
@@ -314,7 +320,7 @@ export default function ListingPresentation() {
                   className="w-full overflow-hidden"
                   style={{ aspectRatio: "4/3" }}
                 >
-                  <img
+                  <img width={800} height={600} loading="lazy" decoding="async"
                     src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=800&q=80"
                     alt="Professional listing photo — bright and well-lit"
                     className="w-full h-full object-cover"
@@ -466,7 +472,7 @@ export default function ListingPresentation() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <RevealDiv>
-              <img
+              <img width={1200} height={1200} loading="lazy" decoding="async"
                 src={HEADSHOT}
                 alt="Mario Manzano"
                 className="w-full max-w-sm mx-auto lg:mx-0 object-cover"

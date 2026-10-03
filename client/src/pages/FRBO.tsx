@@ -84,31 +84,31 @@ function VacancyCalculator() {
   }, [rent, months]);
 
   return (
-    <div className="rounded-md border border-[#E8E0D5] bg-white p-6 md:p-8">
+    <div className="rounded-md border border-[#E5E5E5] bg-white p-6 md:p-8">
       <p className="font-body text-sm font-semibold tracking-[0.1em] uppercase text-[#7A5F24] mb-5">
         See what vacancy actually costs
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
-          <label className="font-body text-sm text-[#1A1A18]/70 block mb-2">
+          <label className="font-body text-sm text-[#2B2B2B] block mb-2">
             Monthly rent
           </label>
           <div className="flex items-center gap-2">
-            <span className="font-body text-base text-[#1A1A18]/60">$</span>
+            <span className="font-body text-lg text-[#2B2B2B]">$</span>
             <input
               type="number"
               min={0}
               step={50}
               value={rent}
               onChange={(e) => setRent(Math.max(0, Number(e.target.value) || 0))}
-              className="font-body text-lg w-full border border-[#E8E0D5] rounded px-3 py-2 bg-[#F8F5F0] text-[#1A1A18] focus:outline-none focus:ring-2 focus:ring-[#B8974A]"
+              className="font-body text-lg w-full border border-[#E5E5E5] rounded px-3 py-2 bg-white text-[#1A1A18] focus:outline-none focus:ring-2 focus:ring-[#B8974A]"
             />
           </div>
         </div>
 
         <div>
-          <label className="font-body text-sm text-[#1A1A18]/70 block mb-2">
+          <label className="font-body text-sm text-[#2B2B2B] block mb-2">
             Months vacant: <span className="font-semibold text-[#1A1A18]">{months}</span>
           </label>
           <input
@@ -120,30 +120,30 @@ function VacancyCalculator() {
             onChange={(e) => setMonths(Number(e.target.value))}
             className="w-full accent-[#B8974A] mt-3"
           />
-          <div className="flex justify-between font-body text-sm text-[#1A1A18]/50 mt-1">
+          <div className="flex justify-between font-body text-lg text-[#2B2B2B] mt-1">
             <span>0</span>
             <span>6 months</span>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-[#E8E0D5] pt-5 grid grid-cols-1 sm:grid-cols-3 gap-5">
+      <div className="border-t border-[#E5E5E5] pt-5 grid grid-cols-1 sm:grid-cols-3 gap-5">
         <div>
-          <p className="font-body text-sm text-[#1A1A18]/60 mb-1">A full year at this rent</p>
-          <p className="font-display text-2xl font-light text-[#1A1A18]">{formatMoney(expected)}</p>
+          <p className="font-body text-lg text-[#2B2B2B] mb-1">A full year at this rent</p>
+          <p className="font-display text-2xl font-medium text-[#1A1A18]">{formatMoney(expected)}</p>
         </div>
         <div>
-          <p className="font-body text-sm text-[#1A1A18]/60 mb-1">What you'd actually collect</p>
-          <p className="font-display text-2xl font-light text-[#1A1A18]">{formatMoney(actual)}</p>
+          <p className="font-body text-lg text-[#2B2B2B] mb-1">What you'd actually collect</p>
+          <p className="font-display text-2xl font-medium text-[#1A1A18]">{formatMoney(actual)}</p>
         </div>
         <div>
-          <p className="font-body text-sm text-[#1A1A18]/60 mb-1">Your real monthly rent for the year</p>
-          <p className="font-display text-2xl font-light text-[#A05030]">{formatMoney(effective)}</p>
+          <p className="font-body text-lg text-[#2B2B2B] mb-1">Your real monthly rent for the year</p>
+          <p className="font-display text-2xl font-medium text-[#A05030]">{formatMoney(effective)}</p>
         </div>
       </div>
 
       {months > 0 && (
-        <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mt-5 pt-5 border-t border-[#E8E0D5]">
+        <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mt-5 pt-5 border-t border-[#E5E5E5]">
           {months} {months === 1 ? "month" : "months"} vacant on a {formatMoney(rent)} rent means {formatMoney(lost)} in rent you don't get back. Spread across the year, your {formatMoney(rent)} rent is really acting like {formatMoney(effective)} a month.
         </p>
       )}
@@ -297,7 +297,7 @@ export default function Leasing() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
 
       {/* HEADER */}
       <section className="py-20 md:py-28 bg-[#1A1A18]">
@@ -309,19 +309,19 @@ export default function Leasing() {
                 For Rent By Owner · Greater Austin
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6">
               You listed your property<br />
               for rent.<br />
-              <em className="italic">That makes complete sense.</em><br />
+              <span className="font-semibold">That makes complete sense.</span><br />
               But let me be your Backup Plan.
             </h1>
-            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-lg text-white/90 leading-relaxed mb-3 max-w-xl">
               You may be testing the market, trying to avoid a management company, or simply want to handle it yourself. You can. And you probably have no problem doing that.
             </p>
-            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
+            <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl">
               Either way, here are a few things worth knowing while your listing is active.
             </p>
-            <p className="font-body text-base text-white/80 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
+            <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
               I've been a landlord myself for years. I know what it takes to find a good tenant, and I know why you'd want to handle it yourself. If at some point you'd rather hand that part off, I'm available as your backup plan. No property management, just the leasing side from start to finish.
             </p>
           </RevealDiv>
@@ -336,14 +336,14 @@ export default function Leasing() {
               <span className="section-rule" />
               <span className={labelLight}>What actually makes or breaks a rental listing</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-4">
               What separates rentals that move<br />
-              <em className="italic">from ones that sit.</em>
+              <span className="font-semibold">from ones that sit.</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-2">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-2">
               I put these together for owners handling their own rental. These are the same things I look at on my own rentals. Take what's useful.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12">
               Getting a tenant in isn't the hard part. Getting the right tenant in quickly, without it taking over your life, is where things get complicated.
             </p>
           </RevealDiv>
@@ -354,15 +354,15 @@ export default function Leasing() {
                 <div className="flex gap-4 items-start">
                   <div
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5"
-                    style={{ background: "#F5EDD8", color: "#B8974A" }}
+                    style={{ background: "#F0F0F0", color: "#B8974A" }}
                   >
                     {point.icon}
                   </div>
                   <div>
-                    <h3 className="font-body text-base md:text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
+                    <h3 className="font-body text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
                       {point.title}
                     </h3>
-                    <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
+                    <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                       {point.body}
                     </p>
                   </div>
@@ -374,32 +374,32 @@ export default function Leasing() {
       </section>
 
       {/* MLS EXPOSURE */}
-      <section className="py-20 md:py-28 bg-white border-y border-[#E8E0D5]">
+      <section className="py-20 md:py-28 bg-white border-y border-[#E5E5E5]">
         <div className="container max-w-2xl">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
               <span className={labelLight}>What changes when I list it</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-4">
               Where your listing lives matters<br />
-              <em className="italic">more than most people realize.</em>
+              <span className="font-semibold">more than most people realize.</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-8">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
               When you list on your own, you're reaching whoever happens to find your post. When I list your property, it goes out through the MLS where tenant agents can find it, backed by professional photos and a flyer, and I handle the calls and the screening so you're not doing all of that on top of everything else.
             </p>
           </RevealDiv>
 
           <RevealDiv delay={100}>
             {/* Comparison table */}
-            <div className="border border-[#E8E0D5] rounded-md overflow-hidden mb-6">
-              <div className="bg-[#F8F5F0] px-5 py-3 border-b border-[#E8E0D5]">
-                <span className="font-body text-sm font-semibold tracking-[0.09em] uppercase text-[#1A1A18]/75">
+            <div className="border border-[#E5E5E5] rounded-md overflow-hidden mb-6">
+              <div className="bg-white px-5 py-3 border-b border-[#E5E5E5]">
+                <span className="font-body text-sm font-semibold tracking-[0.09em] uppercase text-[#2B2B2B]">
                   Reach comparison
                 </span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="p-5 md:p-6 border-b md:border-b-0 md:border-r border-[#E8E0D5]">
+                <div className="p-5 md:p-6 border-b md:border-b-0 md:border-r border-[#E5E5E5]">
                   <p className="font-body text-sm font-semibold tracking-[0.1em] uppercase text-[#A05030] mb-4">
                     Listed on your own
                   </p>
@@ -410,7 +410,7 @@ export default function Leasing() {
                       "No agent-to-agent exposure",
                       "You handle every inquiry yourself",
                     ].map((item, i) => (
-                      <li key={i} className="font-body text-base text-[#1A1A18]/80 leading-relaxed pl-4 relative before:content-['·'] before:absolute before:left-0 before:text-[#1A1A18]/40">
+                      <li key={i} className="font-body text-lg text-[#2B2B2B] leading-relaxed pl-4 relative before:content-['·'] before:absolute before:left-0 before:text-[#2B2B2B]">
                         {item}
                       </li>
                     ))}
@@ -428,7 +428,7 @@ export default function Leasing() {
                       "Inquiries and showings come through me, not directly to you",
                       "You step back while someone else handles the calls and showings",
                     ].map((item, i) => (
-                      <li key={i} className="font-body text-base text-[#1A1A18]/80 leading-relaxed pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-[#B8974A] before:text-sm">
+                      <li key={i} className="font-body text-lg text-[#2B2B2B] leading-relaxed pl-5 relative before:content-['✓'] before:absolute before:left-0 before:text-[#B8974A] before:text-sm">
                         {item}
                       </li>
                     ))}
@@ -445,10 +445,10 @@ export default function Leasing() {
           <RevealDiv delay={200} className="mt-6">
             <div
               className="rounded-md px-5 py-4"
-              style={{ background: "#F5EDE0" }}
+              style={{ background: "#F2F2F2" }}
             >
-              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
-                <strong style={{ color: "#6B3D12" }}>On the wrong tenant:</strong> Late payments, damage, and early move outs can cost far more than a few extra weeks of searching. Screening properly from the start is the best way to avoid them.
+              <p className="font-body text-lg leading-relaxed" style={{ color: "#1A1A18" }}>
+                <strong style={{ color: "#1A1A18" }}>On the wrong tenant:</strong> Late payments, damage, and early move outs can cost far more than a few extra weeks of searching. Screening properly from the start is the best way to avoid them.
               </p>
             </div>
           </RevealDiv>
@@ -463,11 +463,11 @@ export default function Leasing() {
               <span className="section-rule" />
               <span className={labelLight}>How I handle it</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-4">
               Not a property manager.<br />
-              <em className="italic">Just the leasing piece, done right.</em>
+              <span className="font-semibold">Just the leasing piece, done right.</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12">
               You keep managing the property day to day. I handle getting it rented, priced right, marketed, and screened, and I keep you in the loop the whole way, while you stay in control of who you choose.
             </p>
           </RevealDiv>
@@ -478,15 +478,15 @@ export default function Leasing() {
                 <div className="flex gap-4 items-start">
                   <div
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5"
-                    style={{ background: "#F5EDD8", color: "#B8974A" }}
+                    style={{ background: "#F0F0F0", color: "#B8974A" }}
                   >
                     {step.icon}
                   </div>
                   <div>
-                    <h3 className="font-body text-base md:text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
+                    <h3 className="font-body text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
                       {step.title}
                     </h3>
-                    <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
+                    <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                       {step.body}
                     </p>
                   </div>
@@ -497,31 +497,31 @@ export default function Leasing() {
 
           {/* FEE BLOCK */}
           <RevealDiv delay={200} className="mt-12">
-            <div className="border border-[#E8E0D5] rounded-md overflow-hidden">
+            <div className="border border-[#E5E5E5] rounded-md overflow-hidden">
               <div className="bg-[#1A1A18] px-5 py-3">
                 <span className="font-body text-sm font-semibold tracking-[0.12em] uppercase text-white/90">
                   One-Time Leasing Fee
                 </span>
               </div>
-              <div className="p-6" style={{ background: "#F5EDD8" }}>
+              <div className="p-6" style={{ background: "#F2F2F2" }}>
                 <div className="flex gap-10 mb-5 flex-wrap">
                   <div>
-                    <p className="font-display text-4xl font-light text-[#7A5F24] leading-none mb-1">100%</p>
-                    <p className="font-body text-sm text-[#1A1A18]/75 tracking-wide">of one month's rent</p>
+                    <p className="font-display text-4xl font-medium text-[#7A5F24] leading-none mb-1">100%</p>
+                    <p className="font-body text-lg text-[#2B2B2B] tracking-wide">of one month's rent</p>
                   </div>
                   <div>
-                    <p className="font-display text-4xl font-light text-[#7A5F24] leading-none mb-1">$0</p>
-                    <p className="font-body text-sm text-[#1A1A18]/75 tracking-wide">upfront</p>
+                    <p className="font-display text-4xl font-medium text-[#7A5F24] leading-none mb-1">$0</p>
+                    <p className="font-body text-lg text-[#2B2B2B] tracking-wide">upfront</p>
                   </div>
                 </div>
-                <div className="border-t border-[#E8D8B8] mb-4" />
-                <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-4">
+                <div className="border-t border-[#E5E5E5] mb-4" />
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
                   Some leasing services bundle leasing with ongoing management. I keep it simple: 100% of one month's rent, one time. You keep managing the property after the lease is signed.
                 </p>
-                <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-2">
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-2">
                   Professional photography, a property flyer with your upgrade list, MLS listing, marketing, showings, applicant screening, and lease signing are all included.
                 </p>
-                <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                   The first month's rent can be used to cover the leasing fee. No monthly management fee.
                 </p>
               </div>
@@ -531,24 +531,24 @@ export default function Leasing() {
       </section>
 
       {/* WHAT IF RENTING ISN'T RIGHT */}
-      <section className="py-20 md:py-28 border-t border-[#E8E0D5]">
+      <section className="py-20 md:py-28 border-t border-[#E5E5E5]">
         <div className="container max-w-2xl">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
               <span className={labelLight}>Before you decide</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-4">
               What if renting isn't<br />
-              <em className="italic">the best option?</em>
+              <span className="font-semibold">the best option?</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-4">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               Before committing to another tenant, it may be worth comparing the numbers. I can help you look at what the property could rent for, what it could sell for, your estimated net proceeds, and what your options look like if you keep it as an investment.
             </p>
-            <p className="font-display text-2xl font-light text-[#7A5F24] mb-4">
+            <p className="font-display text-2xl font-medium text-[#7A5F24] mb-4">
               Rent. Sell. Remodel. Hold.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-8">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
               You don't have to decide today. You just need to know the numbers.
             </p>
             <Link href="/homeowner-guide">
@@ -571,15 +571,15 @@ export default function Leasing() {
                 Let's talk
               </span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-4">
               See if working together<br />
-              <em className="italic">makes sense.</em>
+              <span className="font-semibold">makes sense.</span>
             </h2>
-            <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
+            <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               A quick call is all it takes. I'll listen to where you are, walk you through how I'd approach pricing your property, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, like your current listing, offers, or questions from applicants. No pressure either way.
             </p>
             <Link href="/contact">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Schedule a Call with Mario
                 <ArrowRight size={14} />
               </span>

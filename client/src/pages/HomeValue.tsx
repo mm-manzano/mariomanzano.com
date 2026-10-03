@@ -51,7 +51,7 @@ export default function HomeValue() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pt-24 pb-16 md:pt-32">
+    <div className="min-h-screen bg-white pt-24 pb-16 md:pt-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -60,7 +60,7 @@ export default function HomeValue() {
       <div className="container max-w-4xl">
         {/* Back Link */}
         <Link href="/">
-          <span className="inline-flex items-center gap-2 text-[#1A1A18]/40 hover:text-[#B8974A] transition-colors mb-8 cursor-pointer font-body text-sm uppercase tracking-widest">
+          <span className="section-number inline-flex items-center gap-2 text-[#2B2B2B] transition-colors mb-8 cursor-pointer">
             <ChevronLeft size={16} />
             Back to Strategy
           </span>
@@ -68,17 +68,17 @@ export default function HomeValue() {
 
         {/* Header */}
         <div className="mb-8">
-          <h1 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-6">
+          <h1 className="font-display text-4xl md:text-6xl font-medium text-[#1A1A18] mb-6">
             What is your home<br />
-            <em className="italic">actually worth?</em>
+            <span className="font-semibold">actually worth?</span>
           </h1>
-          <p className="font-body text-base md:text-lg text-[#1A1A18]/60 max-w-2xl leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl leading-relaxed">
             The estimate below gives you a useful starting point based on available property and market data. Because automated estimates draw from a broader geographic area and generalized data, they may not reflect the precise value of your specific home. They also cannot account for your home's condition, upgrades, layout, or other property-specific characteristics. Use it as a general reference, then read on.
           </p>
         </div>
 
         {/* Tool Container */}
-        <div className="bg-white p-4 md:p-8 shadow-sm border border-[#E8E0D5] min-h-[200px] flex flex-col items-center justify-center mb-12">
+        <div className="bg-white p-4 md:p-8 shadow-sm border border-[#E5E5E5] min-h-[200px] flex flex-col items-center justify-center mb-12">
           <div className="w-full">
             <iframe
               style={{ width: "100%", height: "160px" }}
@@ -92,26 +92,26 @@ export default function HomeValue() {
 
         {/* What affects home value section */}
         <div className="mb-16 max-w-2xl">
-          <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">What actually determines what your home is worth?</h2>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+          <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">What actually determines what your home is worth?</h2>
+          <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
             Automated estimates are a useful starting point, but they work with generalized data. They may not account for your home's specific condition, the improvements you have made, how the layout compares to similar homes, or what is actively competing in your immediate neighborhood.
           </p>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+          <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
             A personalized Comparative Market Analysis takes a closer look. It focuses on your specific property, the most relevant comparable sales, current market conditions in your area, and property-specific factors that affect value. Whether you are tracking equity, thinking through a future move, or weighing an improvement, that is the clearest picture available without a formal appraisal.
           </p>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
             If you want a more accurate number for your home specifically, that is what a personalized CMA is for.
           </p>
         </div>
 
         {/* Primary CMA CTA */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-4">Want a more accurate number for your specific home?</h2>
-          <p className="font-body text-base text-[#1A1A18]/65 mb-8 leading-relaxed">
+          <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-4">Want a more accurate number for your specific home?</h2>
+          <p className="font-body text-lg text-[#2B2B2B] mb-8 leading-relaxed">
             I can prepare a personalized Comparative Market Analysis based on your property and the current market. No obligation. Just a clearer picture of where your home stands.
           </p>
           <Link href="/contact">
-            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
               Request My Personalized CMA
               <ArrowRight size={14} />
             </span>
@@ -121,11 +121,11 @@ export default function HomeValue() {
         {/* Net Sheet - Secondary Resource */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white mb-12">
           <div>
-            <h4 className="font-display text-xl font-light mb-2">Also useful: Calculate your net proceeds</h4>
-            <p className="font-body text-sm text-white/60">If you are thinking about selling, find out what you would walk away with after costs.</p>
+            <h4 className="font-display text-xl font-medium mb-2">Also useful: Calculate your net proceeds</h4>
+            <p className="font-body text-lg text-white/90">If you are thinking about selling, find out what you would walk away with after costs.</p>
           </div>
           <Link href="/net-sheet">
-            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
+            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
               Go to Net Sheet
               <ArrowRight size={14} />
             </span>

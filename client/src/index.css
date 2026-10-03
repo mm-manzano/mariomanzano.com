@@ -1,7 +1,7 @@
 /*
  * DESIGN SYSTEM: Quiet Luxury Editorial
  * Movement: Architectural Digest / High-End Brokerage Editorial
- * Color: Warm off-white (#F8F5F0) base, deep charcoal (#1A1A18) text, gold (#B8974A) accent
+ * Color: Pure white base, deep charcoal (#1A1A18) text, gold (#B8974A) accent, neutral greys
  * Typography: Cormorant Garamond (display) + DM Sans (body)
  * Layout: Asymmetric editorial columns, generous whitespace, photography as hero
  * Signature: Thin horizontal rules, large numerals, oversized pull-quotes
@@ -47,32 +47,32 @@
   --radius: 0.125rem;
   
   /* Quiet Luxury Palette */
-  --background: oklch(0.978 0.008 75);        /* warm off-white #F8F5F0 */
+  --background: #ffffff;                        /* pure white */
   --foreground: oklch(0.16 0.008 65);          /* deep charcoal #1A1A18 */
-  --card: oklch(0.985 0.005 75);
+  --card: #ffffff;
   --card-foreground: oklch(0.16 0.008 65);
-  --popover: oklch(0.985 0.005 75);
+  --popover: #ffffff;
   --popover-foreground: oklch(0.16 0.008 65);
   --primary: oklch(0.56 0.07 75);             /* gold #B8974A */
-  --primary-foreground: oklch(0.978 0.008 75);
-  --secondary: oklch(0.94 0.01 75);           /* warm light gray */
+  --primary-foreground: oklch(0.16 0.008 65);
+  --secondary: #f2f2f2;                         /* neutral light gray */
   --secondary-foreground: oklch(0.25 0.008 65);
-  --muted: oklch(0.94 0.01 75);
+  --muted: #f2f2f2;
   --muted-foreground: oklch(0.52 0.012 65);
   --accent: oklch(0.56 0.07 75);
-  --accent-foreground: oklch(0.978 0.008 75);
+  --accent-foreground: oklch(0.16 0.008 65);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.88 0.012 75);
-  --input: oklch(0.88 0.012 75);
+  --border: #e5e5e5;
+  --input: #e5e5e5;
   --ring: oklch(0.56 0.07 75);
   
   /* Custom tokens */
   --gold: oklch(0.56 0.07 75);
   --gold-light: oklch(0.72 0.06 80);
   --charcoal: oklch(0.16 0.008 65);
-  --cream: oklch(0.978 0.008 75);
-  --cream-dark: oklch(0.94 0.012 75);
+  --cream: #ffffff;
+  --cream-dark: #f2f2f2;
 }
 
 @layer base {
@@ -99,7 +99,7 @@
   
   h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1.1;
   }
@@ -177,10 +177,11 @@
   
   /* Editorial section number */
   .section-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    color: oklch(0.56 0.07 75);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #7A5F24;
     text-transform: uppercase;
   }
   
@@ -191,7 +192,7 @@
     gap: 0.75rem;
     padding: 0.875rem 2rem;
     background-color: oklch(0.16 0.008 65);
-    color: oklch(0.978 0.008 75);
+    color: #ffffff;
     font-family: 'DM Sans', sans-serif;
     font-size: 0.8125rem;
     font-weight: 500;
@@ -200,10 +201,11 @@
     transition: all 0.3s ease;
     border: 1px solid oklch(0.16 0.008 65);
   }
-  
+
   .btn-luxury:hover {
-    background-color: oklch(0.56 0.07 75);
-    border-color: oklch(0.56 0.07 75);
+    background-color: #C9A85C;
+    border-color: #C9A85C;
+    color: #1A1A18;
   }
   
   .btn-luxury-outline {
@@ -224,7 +226,7 @@
   
   .btn-luxury-outline:hover {
     background-color: oklch(0.16 0.008 65);
-    color: oklch(0.978 0.008 75);
+    color: #ffffff;
   }
   
   /* Scroll fade-in animation */

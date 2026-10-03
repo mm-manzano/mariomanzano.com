@@ -37,20 +37,20 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="border-b border-[#E8E0D5] py-6">
+    <div className="border-b border-[#E5E5E5] py-6">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between text-left group focus:outline-none"
       >
-        <span className="font-display text-xl md:text-2xl font-light text-[#1A1A18] group-hover:text-[#B8974A] transition-colors">
+        <span className="font-display text-xl md:text-2xl font-medium text-[#1A1A18] group-hover:text-[#7A5F24] transition-colors">
           {question}
         </span>
-        <span className="text-[#B8974A] ml-4 flex-shrink-0">
+        <span className="text-[#7A5F24] ml-4 flex-shrink-0">
           {isOpen ? <Minus size={20} /> : <Plus size={20} />}
         </span>
       </button>
       <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+        <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
           {answer}
         </p>
       </div>
@@ -131,7 +131,7 @@ export default function GuiaParaPropietarios() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
       {/* FAQ SCHEMA */}
       <script
         type="application/ld+json"
@@ -146,23 +146,23 @@ export default function GuiaParaPropietarios() {
               href="/guia-para-propietarios.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-sm md:text-base opacity-90 hover:opacity-100 font-light tracking-wide border-b border-white/40 pb-1"
+              className="text-white text-lg opacity-90 hover:opacity-100 font-medium tracking-wide border-b border-white/40 pb-1"
             >
               Descargar PDF
             </a>
           </div>
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#C9A85C]">
                 GUÍA PARA PROPIETARIOS
               </span>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
+            <h1 className="font-display text-5xl md:text-7xl font-medium text-white leading-tight mb-6">
               Vender, Remodelar,<br />
-              <em className="italic">Alquilar o Mantener.</em>
+              <span className="font-semibold">Alquilar o Mantener.</span>
             </h1>
-            <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
+            <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed">
               Una guía en lenguaje claro para las cuatro decisiones que enfrentan los propietarios en Cedar Park y Leander. Sin presión, solo claridad.
             </p>
           </div>
@@ -177,58 +177,58 @@ export default function GuiaParaPropietarios() {
               <span className="section-rule" />
               <span className="section-number">01. Tus Opciones</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-8 max-w-2xl">
               Una mirada clara a tus opciones.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-6">
               La mayoría de los propietarios solo considera vender. Pero dependiendo de tus objetivos, tu plazo y tu situación financiera, uno de los otros tres caminos podría servirte mejor.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-6">
               Esta guía presenta las cuatro opciones lado a lado para que puedas ver las ventajas y desventajas con claridad antes de comprometerte con cualquier decisión. El camino correcto depende de tu situación, no de una regla general.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-6">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-6">
               Tómate el tiempo que necesitas. Una decisión de este tamaño merece más que unas pocas horas de investigación.
             </p>
 
             {/* TABLA COMPARATIVA */}
             <div className="mt-16 w-full">
-              <div className="bg-white border border-[#E8E0D5] p-6 md:p-12 shadow-sm">
-                <h3 className="font-display text-2xl font-light text-[#1A1A18] mb-8">Los Cuatro Caminos de un Vistazo</h3>
+              <div className="bg-white border border-[#E5E5E5] p-6 md:p-12 shadow-sm">
+                <h3 className="font-display text-2xl font-medium text-[#1A1A18] mb-8">Los Cuatro Caminos de un Vistazo</h3>
                 <div className="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0">
                   <table className="w-full text-left border-collapse min-w-[700px]">
                     <thead>
-                      <tr className="border-b border-[#E8E0D5]">
-                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Estrategia</th>
-                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/4">Cuando Tiene Sentido</th>
-                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Ventaja Financiera</th>
-                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Riesgos y Desventajas</th>
-                        <th className="pb-4 font-display text-sm uppercase tracking-widest text-[#B8974A] font-medium w-1/5">Mejor Para</th>
+                      <tr className="border-b border-[#E5E5E5]">
+                        <th className="section-number pb-4 font-display w-1/5">Estrategia</th>
+                        <th className="section-number pb-4 font-display w-1/4">Cuando Tiene Sentido</th>
+                        <th className="section-number pb-4 font-display w-1/5">Ventaja Financiera</th>
+                        <th className="section-number pb-4 font-display w-1/5">Riesgos y Desventajas</th>
+                        <th className="section-number pb-4 font-display w-1/5">Mejor Para</th>
                       </tr>
                     </thead>
-                    <tbody className="font-body text-sm text-[#1A1A18]/75 leading-relaxed">
-                      <tr className="border-b border-[#F8F5F0]">
-                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Vender</td>
+                    <tbody className="font-body text-lg text-[#2B2B2B] leading-relaxed">
+                      <tr className="border-b border-[#E5E5E5]">
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-medium">Vender</td>
                         <td className="py-6 pr-4">Necesitas liquidez, un espacio diferente o quieres capturar el capital actual.</td>
                         <td className="py-6 pr-4">Acceso inmediato a los ingresos netos para tu próximo movimiento o inversión.</td>
                         <td className="py-6 pr-4">Renunciar a la apreciación futura y a los posibles ingresos por alquiler.</td>
                         <td className="py-6">Propietarios listos para un cambio limpio y flexibilidad financiera.</td>
                       </tr>
-                      <tr className="border-b border-[#F8F5F0]">
-                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Remodelar</td>
+                      <tr className="border-b border-[#E5E5E5]">
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-medium">Remodelar</td>
                         <td className="py-6 pr-4">Tu casa tiene buena estructura pero necesita actualizaciones para funcionar mejor.</td>
                         <td className="py-6 pr-4">Mejora de la calidad de vida y posible aumento del valor de reventa. En algunos casos, puede crear la opción de acceder al capital para un futuro movimiento.</td>
                         <td className="py-6 pr-4">Altos costos iniciales. Las mejoras de lujo rara vez recuperan el 100% de la inversión.</td>
                         <td className="py-6">Propietarios que aman su ubicación pero quieren que su casa funcione mejor.</td>
                       </tr>
-                      <tr className="border-b border-[#F8F5F0]">
-                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Alquilar</td>
+                      <tr className="border-b border-[#E5E5E5]">
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-medium">Alquilar</td>
                         <td className="py-6 pr-4">Tu pago hipotecario es bajo y quieres construir riqueza a largo plazo.</td>
                         <td className="py-6 pr-4">Crecimiento del capital a largo plazo y potencial de apreciación futura.</td>
                         <td className="py-6 pr-4">Mantenimiento continuo, gestión de inquilinos y riesgos de vacancia.</td>
                         <td className="py-6">Inversores enfocados en la riqueza a largo plazo en lugar del flujo de caja inmediato.</td>
                       </tr>
-                      <tr className="border-b border-[#F8F5F0]">
-                        <td className="py-6 font-display text-lg text-[#1A1A18] font-light">Mantener</td>
+                      <tr className="border-b border-[#E5E5E5]">
+                        <td className="py-6 font-display text-lg text-[#1A1A18] font-medium">Mantener</td>
                         <td className="py-6 pr-4">Necesitas más tiempo para decidir o las condiciones del mercado no favorecen tus objetivos.</td>
                         <td className="py-6 pr-4">Evita los costos de transacción y permite mayor claridad antes de actuar.</td>
                         <td className="py-6 pr-4">El capital permanece inmovilizado. Impuestos, seguros y mantenimiento continúan.</td>
@@ -244,37 +244,37 @@ export default function GuiaParaPropietarios() {
       </section>
 
       {/* PREPARACIÓN */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white border-y border-[#E5E5E5]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">02. Preparación</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-8 max-w-2xl">
               Conoce la diferencia antes de listar.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-12">
               Muchos vendedores gastan dinero en reparaciones y mejoras que no aumentan de manera significativa el valor o la demanda del comprador. Antes de empezar a gastar, ayuda entender qué mueve la aguja y qué no.
             </p>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <RevealDiv delay={100} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
-              <h3 className="font-display text-xl font-light mb-4 text-[#B8974A]">Lo que Importa</h3>
-              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+            <RevealDiv delay={100} className="p-8 bg-white border border-[#E5E5E5]">
+              <h3 className="font-display text-xl font-medium mb-4 text-[#7A5F24]">Lo que Importa</h3>
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 La limpieza básica, los sistemas funcionales y una presentación neutral ayudan a los compradores a imaginarse en el espacio sin distracciones.
               </p>
             </RevealDiv>
-            <RevealDiv delay={200} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
-              <h3 className="font-display text-xl font-light mb-4 text-[#B8974A]">Lo que No Importa</h3>
-              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+            <RevealDiv delay={200} className="p-8 bg-white border border-[#E5E5E5]">
+              <h3 className="font-display text-xl font-medium mb-4 text-[#7A5F24]">Lo que No Importa</h3>
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Las renovaciones grandes, las mejoras de lujo y los proyectos de gusto personal rara vez ofrecen un retorno completo de la inversión antes de una venta.
               </p>
             </RevealDiv>
-            <RevealDiv delay={300} className="p-8 bg-[#F8F5F0] border border-[#E8E0D5]">
-              <h3 className="font-display text-xl font-light mb-4 text-[#B8974A]">La Pregunta Correcta</h3>
-              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+            <RevealDiv delay={300} className="p-8 bg-white border border-[#E5E5E5]">
+              <h3 className="font-display text-xl font-medium mb-4 text-[#7A5F24]">La Pregunta Correcta</h3>
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 ¿Esta mejora aumentará de manera significativa el interés del comprador o tus ingresos netos? Si la respuesta no es clara, probablemente no vale la pena hacerla.
               </p>
             </RevealDiv>
@@ -291,28 +291,28 @@ export default function GuiaParaPropietarios() {
                 <span className="section-rule" />
                 <span className="section-number">03. Precios</span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-[#1A1A18] mb-6">
                 Tu decisión<br />
-                <em className="italic">más importante.</em>
+                <span className="font-semibold">más importante.</span>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6">
                 El precio que eliges para tu casa define todo lo que sigue. Afecta cómo la perciben los compradores, con qué rapidez recibes ofertas y lo que finalmente te llevas.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 El precio correcto no es el número más alto que puedas justificar. Es el número que te pone frente a los compradores correctos en el momento correcto.
               </p>
             </RevealDiv>
 
             <div className="space-y-8">
               <RevealDiv delay={150} className="border-l-2 border-[#B8974A] pl-8">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-2">Riesgo de Subvaloración</h3>
-                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                <h3 className="font-display text-xl font-medium text-[#1A1A18] mb-2">Riesgo de Subvaloración</h3>
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                   Poner un precio demasiado bajo deja dinero sobre la mesa. También puede hacer que los compradores se pregunten si hay algo malo con la propiedad, lo que invita a ofertas más bajas y negociaciones más difíciles.
                 </p>
               </RevealDiv>
               <RevealDiv delay={250} className="border-l-2 border-[#B8974A] pl-8">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-2">Riesgo de Sobrevaloración</h3>
-                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                <h3 className="font-display text-xl font-medium text-[#1A1A18] mb-2">Riesgo de Sobrevaloración</h3>
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                   Empezar demasiado alto aleja a la mayoría de los compradores calificados antes de que agenden una visita. Las reducciones de precio que siguen transmiten desesperación y rara vez recuperan el impulso original.
                 </p>
               </RevealDiv>
@@ -327,29 +327,29 @@ export default function GuiaParaPropietarios() {
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
-              <span className="section-number text-[#B8974A]">04. Estrategia</span>
+              <span className="section-number text-[#C9A85C] text-[#C9A85C]">04. Estrategia</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-12 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-12 max-w-2xl">
               Comprendiendo tus compensaciones.
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
             <RevealDiv delay={100}>
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-6">La Realidad de Alquilar</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+              <h3 className="font-display text-2xl font-medium text-[#C9A85C] mb-6">La Realidad de Alquilar</h3>
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 Conservar tu casa como alquiler significa asumir una responsabilidad continua. La selección de inquilinos, el mantenimiento, la administración de la propiedad y los periodos de vacancia forman parte de la ecuación.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed">
                 En el mercado de Cedar Park y Leander, alquilar tiende a ser más una estrategia de capital y apreciación a largo plazo que una fuente de flujo de caja inmediato. Tiene más sentido cuando tu pago hipotecario es bajo en relación con lo que podría rentar la propiedad.
               </p>
             </RevealDiv>
             <RevealDiv delay={200}>
-              <h3 className="font-display text-2xl font-light text-[#B8974A] mb-6">La Realidad de Vender</h3>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+              <h3 className="font-display text-2xl font-medium text-[#C9A85C] mb-6">La Realidad de Vender</h3>
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 Vender te da liquidez y te libera de la responsabilidad continua de ser propietario. Sin más reparaciones, inquilinos ni costos de tenencia relacionados con esa propiedad.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed">
                 La compensación es renunciar a la apreciación futura. Una vez vendida la casa, ya no participas en ninguna ganancia del mercado relacionada con esa propiedad.
               </p>
             </RevealDiv>
@@ -365,21 +365,21 @@ export default function GuiaParaPropietarios() {
               <span className="section-rule" />
               <span className="section-number">05. Remodelar</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-8 max-w-2xl">
               Cuando remodelar<br />
-              <em className="italic">realmente tiene sentido.</em>
+              <span className="font-semibold">realmente tiene sentido.</span>
             </h2>
             <div className="max-w-2xl space-y-6">
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Remodelar puede ayudar a que tu casa funcione mejor para tu vida actual o posicionarla de manera más competitiva para la venta. La clave es saber qué mejoras realmente mueven la aguja y cuáles simplemente cuestan dinero.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 En la mayoría de los casos, las actualizaciones funcionales y una presentación neutral superan a las renovaciones de lujo en términos de retorno de inversión. Los compradores pagan por condición y ubicación, no por el gusto personal del vendedor.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Para algunos propietarios, una remodelación estratégica combinada con un refinanciamiento puede abrir opciones que antes no estaban disponibles, incluyendo acceder al capital para el próximo movimiento o reposicionar la propiedad para un uso diferente.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Como cualquier camino, esto solo tiene sentido cuando los números lo respaldan. Vale la pena analizarlo antes de comprometerse con cualquier cosa.
               </p>
             </div>
@@ -388,31 +388,31 @@ export default function GuiaParaPropietarios() {
       </section>
 
       {/* MANTENER */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">06. Mantener</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-8 max-w-2xl">
               No hacer nada puede ser estratégico.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-12">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-12">
               Mantener tu propiedad no es procrastinación si hay una razón detrás de esa decisión. Esperar mayor claridad o mejores condiciones del mercado es una opción legítima. Lo importante es entender lo que realmente te está costando mientras esperas.
             </p>
           </RevealDiv>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <RevealDiv delay={100}>
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">Esperar Tiene Sentido Cuando</h3>
-              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+              <h3 className="font-display text-xl font-medium text-[#1A1A18] mb-4">Esperar Tiene Sentido Cuando</h3>
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Necesitas tiempo para definir tu próximo paso. No estás bajo presión financiera para actuar. Las condiciones del mercado no se alinean con tus objetivos actuales. Quieres más certeza antes de comprometerte con cualquier dirección.
               </p>
             </RevealDiv>
             <RevealDiv delay={200}>
-              <h3 className="font-display text-xl font-light text-[#1A1A18] mb-4">El Costo de Esperar</h3>
-              <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+              <h3 className="font-display text-xl font-medium text-[#1A1A18] mb-4">El Costo de Esperar</h3>
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Tu capital permanece bloqueado en la propiedad mientras pagas impuestos, seguros y mantenimiento. El momento del mercado en el futuro no es predecible, y mantener indefinidamente no es una estrategia, es un aplazamiento. Asegúrate de saber la diferencia.
               </p>
             </RevealDiv>
@@ -428,7 +428,7 @@ export default function GuiaParaPropietarios() {
               <span className="section-rule" />
               <span className="section-number">07. Resumen</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-12 max-w-2xl">
               La mejor elección depende de cuatro cosas.
             </h2>
           </RevealDiv>
@@ -440,9 +440,9 @@ export default function GuiaParaPropietarios() {
               { title: "Tu Propiedad", desc: "¿En qué condición está? Una casa que necesita trabajo importante tiene un conjunto de opciones diferente a una que está lista para mudarse." },
               { title: "Tu Capacidad", desc: "¿Cuánto tiempo, dinero e incertidumbre estás dispuesto a asumir? Cada camino tiene un costo más allá del financiero." }
             ].map((item, i) => (
-              <RevealDiv key={item.title} delay={i * 100} className="border-t border-[#E8E0D5] pt-6">
-                <h3 className="font-display text-lg font-light text-[#B8974A] mb-3">{item.title}</h3>
-                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+              <RevealDiv key={item.title} delay={i * 100} className="border-t border-[#E5E5E5] pt-6">
+                <h3 className="font-display text-lg font-medium text-[#7A5F24] mb-3">{item.title}</h3>
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">{item.desc}</p>
               </RevealDiv>
             ))}
           </div>
@@ -450,10 +450,10 @@ export default function GuiaParaPropietarios() {
       </section>
 
       {/* PREGUNTAS FRECUENTES */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white border-y border-[#E5E5E5]">
         <div className="container max-w-3xl">
           <RevealDiv>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-12 text-center">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-12 text-center">
               Preguntas Comunes
             </h2>
             <div className="space-y-2">
@@ -483,17 +483,17 @@ export default function GuiaParaPropietarios() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-6 max-w-2xl mx-auto">
               ¿No estás seguro de qué camino se adapta a tu situación?
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
+            <p className="font-body text-lg text-[#2B2B2B] mb-10 max-w-lg mx-auto">
               Puedo ayudarte a analizar los números de cada opción y determinar cuál tiene sentido para donde estás ahora. Sin presión, solo una conversación real.
             </p>
             <a href={getCTALink("get-plan", "es")}>
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3">
                 Iniciar una Conversación
                 <ArrowRight size={14} />
               </span>

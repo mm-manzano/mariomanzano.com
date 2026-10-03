@@ -93,7 +93,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
@@ -104,11 +104,11 @@ export default function Contact() {
         <div className="container">
           <div className="max-w-2xl">
             <RevealDiv>
-              <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
+              <h1 className="font-display text-5xl md:text-7xl font-medium text-white leading-tight mb-6">
                 Start the<br />
-                <em className="italic">conversation.</em>
+                <span className="font-semibold">conversation.</span>
               </h1>
-              <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed mb-10">
+              <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-10">
                 Reach out and I will help you think through your options and what actually makes sense for your situation. No pressure. Just clarity.
               </p>
               <a
@@ -120,7 +120,7 @@ export default function Contact() {
                     window.fbq(isBuyerIntent ? "trackCustom" : "track", isBuyerIntent ? "Lead_Buyer" : "Contact");
                   }
                 }}
-                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer border-0"
               >
                 Start a conversation
                 <ArrowRight size={14} />
@@ -131,16 +131,16 @@ export default function Contact() {
       </section>
 
       {/* SECONDARY CONTACT OPTIONS */}
-      <section className="py-16 md:py-20 bg-[#F8F5F0]">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">Or reach me directly</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-10 max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-10 max-w-2xl">
               Choose what works<br />
-              <em className="italic">for you.</em>
+              <span className="font-semibold">for you.</span>
             </h2>
           </RevealDiv>
 
@@ -151,10 +151,10 @@ export default function Contact() {
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
+                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     (512) 695-9255
                   </a>
-                  <p className="font-body text-sm text-[#1A1A18]/65">
+                  <p className="font-body text-lg text-[#2B2B2B]">
                     Call or text anytime
                   </p>
                 </div>
@@ -171,11 +171,11 @@ export default function Contact() {
                     href={isBuyerIntent
                       ? "sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question%20about%20buying%20a%20home."
                       : "sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question%20about%20my%20home."}
-                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A]"
+                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24]"
                   >
                     Send a Message
                   </a>
-                  <p className="font-body text-sm text-[#1A1A18]/65">
+                  <p className="font-body text-lg text-[#2B2B2B]">
                     I respond the same day
                   </p>
                 </div>
@@ -188,10 +188,10 @@ export default function Contact() {
                   <Mail size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="mailto:realtor@mariomanzano.com" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
+                  <a href="mailto:realtor@mariomanzano.com" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     realtor@mariomanzano.com
                   </a>
-                  <p className="font-body text-sm text-[#1A1A18]/65">
+                  <p className="font-body text-lg text-[#2B2B2B]">
                     Email anytime
                   </p>
                 </div>
@@ -209,11 +209,11 @@ export default function Contact() {
               <span className="section-rule" />
               <span className="section-number">What to expect</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6 max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-6 max-w-2xl">
               A conversation,<br />
-              <em className="italic">not a sales call.</em>
+              <span className="font-semibold">not a sales call.</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl">
               Our first conversation is simple. I will ask a few questions, understand your situation, and give you a clear direction based on your goals. No sales pitch. No pressure. If selling or buying makes sense, I will tell you. If it does not, I will tell you that too.
             </p>
           </RevealDiv>
@@ -226,14 +226,14 @@ export default function Contact() {
           <div className="max-w-2xl">
             <RevealDiv>
               <div className="flex items-center gap-3 mb-6">
-                <span className="section-rule" style={{ background: "#D4B878" }} />
-                <span className="section-number" style={{ color: "#D4B878" }}>Serving Cedar Park and Leander TX</span>
+                <span className="section-rule" style={{ background: "#B8974A" }} />
+                <span className="section-number" style={{ color: "#C9A85C" }}>Serving Cedar Park and Leander TX</span>
               </div>
-              <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-6">
                 A realtor who listens,<br />
-                <em className="italic">not just sells.</em>
+                <span className="font-semibold">not just sells.</span>
               </h2>
-              <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
+              <p className="font-body text-lg text-white/90 leading-relaxed max-w-lg">
                 I work with homeowners in Cedar Park, Leander, and the greater Austin area who want clarity before they commit to anything. Whether you are thinking about selling, renting, remodeling, holding, or buying your next home, the conversation starts the same way: with your situation, not a sales pitch.
               </p>
             </RevealDiv>

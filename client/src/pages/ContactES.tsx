@@ -85,7 +85,7 @@ export default function ContactES() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
@@ -96,11 +96,11 @@ export default function ContactES() {
         <div className="container">
           <div className="max-w-2xl">
             <RevealDiv>
-              <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
+              <h1 className="font-display text-5xl md:text-7xl font-medium text-white leading-tight mb-6">
                 Inicia la<br />
-                <em className="italic">conversación.</em>
+                <span className="font-semibold">conversación.</span>
               </h1>
-              <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed mb-10">
+              <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-10">
                 Contáctame y te ayudaré a pensar en tus opciones y en lo que realmente tiene sentido para tu situación. Sin presión. Solo claridad.
               </p>
               <a
@@ -110,7 +110,7 @@ export default function ContactES() {
                 onClick={() => {
                   if (window.fbq) { window.fbq("track", "Contact"); }
                 }}
-                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer border-0"
               >
                 Iniciar una conversación
                 <ArrowRight size={14} />
@@ -121,16 +121,16 @@ export default function ContactES() {
       </section>
 
       {/* OPCIONES DE CONTACTO */}
-      <section className="py-16 md:py-20 bg-[#F8F5F0]">
+      <section className="py-16 md:py-20 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">O contáctame directamente</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-10 max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-10 max-w-2xl">
               Elige lo que<br />
-              <em className="italic">funcione para ti.</em>
+              <span className="font-semibold">funcione para ti.</span>
             </h2>
           </RevealDiv>
 
@@ -141,10 +141,10 @@ export default function ContactES() {
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
+                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     (512) 695-9255
                   </a>
-                  <p className="font-body text-sm text-[#1A1A18]/65">
+                  <p className="font-body text-lg text-[#2B2B2B]">
                     Llama o manda un mensaje cuando quieras
                   </p>
                 </div>
@@ -159,11 +159,11 @@ export default function ContactES() {
                 <div>
                   <a
                     href="sms:+15126959255?body=Hola%20Mario,%20tengo%20una%20pregunta%20sobre%20mi%20casa."
-                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A]"
+                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24]"
                   >
                     Enviar un mensaje
                   </a>
-                  <p className="font-body text-sm text-[#1A1A18]/65">
+                  <p className="font-body text-lg text-[#2B2B2B]">
                     Respondo el mismo día
                   </p>
                 </div>
@@ -176,10 +176,10 @@ export default function ContactES() {
                   <Mail size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="mailto:realtor@mariomanzano.com" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#B8974A] transition-colors no-underline block">
+                  <a href="mailto:realtor@mariomanzano.com" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     realtor@mariomanzano.com
                   </a>
-                  <p className="font-body text-sm text-[#1A1A18]/65">
+                  <p className="font-body text-lg text-[#2B2B2B]">
                     Escríbeme cuando quieras
                   </p>
                 </div>
@@ -197,11 +197,11 @@ export default function ContactES() {
               <span className="section-rule" />
               <span className="section-number">Qué esperar</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-6 max-w-2xl">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-6 max-w-2xl">
               Una conversación,<br />
-              <em className="italic">no una llamada de ventas.</em>
+              <span className="font-semibold">no una llamada de ventas.</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl">
               Nuestra primera conversación es simple. Te haré algunas preguntas, entenderé tu situación y te daré una dirección clara basada en tus objetivos. Sin discurso de ventas. Sin presión. Si vender o comprar tiene sentido, te lo digo. Si no lo tiene, también te lo digo.
             </p>
           </RevealDiv>
@@ -214,14 +214,14 @@ export default function ContactES() {
           <div className="max-w-2xl">
             <RevealDiv>
               <div className="flex items-center gap-3 mb-6">
-                <span className="section-rule" style={{ background: "#D4B878" }} />
-                <span className="section-number" style={{ color: "#D4B878" }}>Sirviendo Cedar Park y Leander TX</span>
+                <span className="section-rule" style={{ background: "#B8974A" }} />
+                <span className="section-number" style={{ color: "#C9A85C" }}>Sirviendo Cedar Park y Leander TX</span>
               </div>
-              <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-6">
                 Un agente que escucha,<br />
-                <em className="italic">no solo vende.</em>
+                <span className="font-semibold">no solo vende.</span>
               </h2>
-              <p className="font-body text-base text-white/70 leading-relaxed max-w-lg">
+              <p className="font-body text-lg text-white/90 leading-relaxed max-w-lg">
                 Trabajo con propietarios en Cedar Park, Leander y el área de Austin que quieren claridad antes de comprometerse con cualquier decisión. Ya sea que estés pensando en vender, alquilar, remodelar, mantener, o comprar tu próxima casa, la conversación siempre empieza de la misma manera: con tu situación, no con un discurso de ventas.
               </p>
             </RevealDiv>

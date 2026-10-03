@@ -75,23 +75,23 @@ export default function About() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       {/* SECTION 1: INTRO */}
       <section className="bg-[#1A1A18] pt-32 pb-20 md:pt-44 md:pb-28">
         <div className="container">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#C9A85C]">
                 About Mario
               </span>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
+            <h1 className="font-display text-5xl md:text-7xl font-medium text-white leading-tight mb-6">
               The Advisor<br />
-              <em className="italic">Behind the Strategy.</em>
+              <span className="font-semibold">Behind the Strategy.</span>
             </h1>
-            <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
+            <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed">
               A licensed REALTOR® who believes the best real estate advice sometimes means telling you not to sell.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <RevealDiv>
               <div className="relative">
-                <div className="overflow-hidden bg-[#E8E0D5]">
+                <div className="overflow-hidden bg-[#E5E5E5]">
                   <img
                     src={MARIO_HEADSHOT}
                     alt="Mario Manzano"
@@ -119,17 +119,17 @@ export default function About() {
                 <span className="section-rule" />
                 <span className="section-number">01. How It Started</span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6">
+              <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-6">
                 From learning about money<br />
-                <em className="italic">to real estate.</em>
+                <span className="font-semibold">to real estate.</span>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
                 I got serious about money and started researching how people actually build wealth. Everything kept pointing back to real estate.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
                 I spent years learning how real estate investing works, got licensed as a REALTOR®, and started building my own portfolio.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Real estate has always been around me. My parents and siblings are all landlords. It was never just theory for me.
               </p>
             </RevealDiv>
@@ -142,30 +142,30 @@ export default function About() {
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="section-number text-[#D4B878]">02. Real Experience</span>
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#C9A85C] text-[#C9A85C]">02. Real Experience</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-12 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-12 max-w-2xl">
               I've lived through<br />
-              <em className="italic">the decisions.</em>
+              <span className="font-semibold">the decisions.</span>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 max-w-4xl items-start">
             <RevealDiv delay={100}>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 I didn't learn real estate from courses alone. I've had to make the decisions myself.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 I've wholesaled properties, bought deals off-market, flipped land, done live-in flips, owned rentals, and been a landlord for about a decade. That experience changes how I look at every property and every decision.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
-              <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 My wife and I have a strong eye for design. That shows up in how we help sellers prepare and present their homes. From layout and flow to the finishing details that make buyers feel something when they walk in.
               </p>
-              <p className="font-body text-base text-white/70 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed">
                 These were real decisions with real consequences. The kind you don't forget, and the kind that change how you guide others.
               </p>
             </RevealDiv>
@@ -181,28 +181,28 @@ export default function About() {
               <span className="section-rule" />
               <span className="section-number">03. My Approach</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-12 max-w-2xl">
               Selling isn't always<br />
-              <em className="italic">the best move.</em>
+              <span className="font-semibold">the best move.</span>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl">
             <RevealDiv delay={100}>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6">
                 Most people feel pressured to make a quick decision about their home. They're not sure what their options are. They don't have clear numbers. So they rush.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 I help people think through their decisions instead of pushing them. Holding can create more value than selling. Renting can make more sense than selling. Improving the property first can change everything.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200}>
               <div className="border-l-2 border-[#B8974A] pl-6">
-                <p className="font-display text-xl italic font-light text-[#1A1A18] leading-relaxed mb-4">
+                <p className="font-display text-xl font-medium text-[#1A1A18] leading-relaxed mb-4">
                   The best advice I can give is sometimes to wait. Or to hold. Or to improve the property first. Whatever makes sense for your situation.
                 </p>
-                <p className="font-body text-sm text-[#1A1A18]/50">Mario Manzano</p>
+                <p className="font-body text-lg text-[#2B2B2B]">Mario Manzano</p>
               </div>
             </RevealDiv>
           </div>
@@ -210,28 +210,28 @@ export default function About() {
       </section>
 
       {/* SECTION 5: FAMILY */}
-      <section className="py-20 md:py-28 bg-[#F8F5F0]">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">04. Family</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-12 max-w-2xl">
               Married with<br />
-              <em className="italic">two kids.</em>
+              <span className="font-semibold">two kids.</span>
             </h2>
           </RevealDiv>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-4xl">
             <RevealDiv delay={100}>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 I'm married to my high school sweetheart. We have two kids and are now empty nesters.
               </p>
             </RevealDiv>
 
             <RevealDiv delay={200} className="-mt-3 md:mt-0">
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Real estate is part of our family's life, not just my work.
               </p>
             </RevealDiv>
@@ -247,9 +247,9 @@ export default function About() {
               <span className="section-rule" />
               <span className="section-number">05. How I Work</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-12 max-w-2xl">
               Three principles<br />
-              <em className="italic">that guide everything.</em>
+              <span className="font-semibold">that guide everything.</span>
             </h2>
           </RevealDiv>
 
@@ -268,9 +268,9 @@ export default function About() {
                 desc: "Your decision should be based on solid information. Comparable sales, market absorption rates, buyer demand. This gives you a realistic foundation.",
               },
             ].map((item, i) => (
-              <RevealDiv key={item.title} delay={i * 100} className="bg-[#F8F5F0] p-8 border-t-2 border-[#B8974A]">
-                <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+              <RevealDiv key={item.title} delay={i * 100} className="bg-white p-8 border-t-2 border-[#B8974A]">
+                <h3 className="font-display text-xl font-medium text-[#1A1A18] mb-3">{item.title}</h3>
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">{item.desc}</p>
               </RevealDiv>
             ))}
           </div>
@@ -282,12 +282,12 @@ export default function About() {
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="section-number text-[#D4B878]">06. CREDENTIALS</span>
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#C9A85C] text-[#C9A85C]">06. CREDENTIALS</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-10 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-10 max-w-2xl">
               Expertise<br />
-              <em className="italic">you can verify.</em>
+              <span className="font-semibold">you can verify.</span>
             </h2>
           </RevealDiv>
 
@@ -311,8 +311,8 @@ export default function About() {
               },
             ].map((cred, i) => (
               <RevealDiv key={cred.title} delay={i * 100} className="border-t border-white/10 pt-6">
-                <h3 className="font-display text-lg font-light text-white mb-2">{cred.title}</h3>
-                <p className="font-body text-sm text-white/60 leading-relaxed">{cred.body}</p>
+                <h3 className="font-display text-lg font-medium text-white mb-2">{cred.title}</h3>
+                <p className="font-body text-lg text-white/90 leading-relaxed">{cred.body}</p>
               </RevealDiv>
             ))}
           </div>
@@ -323,10 +323,10 @@ export default function About() {
       <section className="py-20 md:py-28">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-6 max-w-xl mx-auto">
               Based in Leander and working across the Austin area.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/60 mb-10 max-w-lg mx-auto">
+            <p className="font-body text-lg text-[#2B2B2B] mb-10 max-w-lg mx-auto">
               I help homeowners make decisions with clarity and confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -339,7 +339,7 @@ export default function About() {
                     window.fbq("track", "Contact");
                   }
                 }}
-                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer border-0"
               >
                 Start a conversation
                 <ArrowRight size={14} />

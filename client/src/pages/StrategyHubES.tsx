@@ -72,7 +72,7 @@ export default function StrategyHubES() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] py-20 md:py-32">
+    <div className="min-h-screen bg-white py-20 md:py-32">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -84,14 +84,14 @@ export default function StrategyHubES() {
             <span className="section-rule" />
             <span className="section-number">01. Tu Estrategia</span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-[#1A1A18] mb-6">
             Empieza con los números.<br />
-            <em className="italic">Decide con claridad.</em>
+            <span className="font-semibold">Decide con claridad.</span>
           </h1>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-6 max-w-2xl">
+          <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 max-w-2xl">
             La mayoría de los propietarios toman la decisión financiera más grande de su vida sin ver los números de verdad primero. Para eso están estas herramientas.
           </p>
-          <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12 max-w-2xl">
+          <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12 max-w-2xl">
             Si estás pensando en vender, evaluar una renta o preguntándote si remodelar vale la pena, empieza aquí. Cada herramienta toma unos dos minutos y te da un panorama financiero claro antes de hablar con cualquier agente.
           </p>
         </RevealDiv>
@@ -100,10 +100,10 @@ export default function StrategyHubES() {
           {/* Hoja de Ingresos Netos */}
           <RevealDiv delay={100}>
             <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
-              <h2 className="font-display text-2xl font-light text-[#1A1A18] mb-4">
-                Mira con qué <em className="italic">realmente</em> te quedarías.
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-4">
+                Mira con qué <span className="font-semibold">realmente</span> te quedarías.
               </h2>
-              <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed mb-6 flex-grow">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 El precio de venta no es lo que te llevas a casa. Después de la comisión, los costos de cierre y lo que queda de tu hipoteca, el número real puede verse muy diferente. Esta calculadora te lo muestra antes de que firmes nada.
               </p>
               <Link href="/es/net-sheet">
@@ -118,10 +118,10 @@ export default function StrategyHubES() {
           {/* Vender vs Alquilar */}
           <RevealDiv delay={200}>
             <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
-              <h2 className="font-display text-2xl font-light text-[#1A1A18] mb-4">
-                ¿Conviene más <em className="italic">vender o rentar</em> tu casa?
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-4">
+                ¿Conviene más <span className="font-semibold">vender o rentar</span> tu casa?
               </h2>
-              <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed mb-6 flex-grow">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 Vender te da el dinero ahora. Rentar mantiene tu capital trabajando a largo plazo. Esta herramienta compara los dos caminos con tus números reales para que veas cuál te conviene más según tu situación y tu plazo.
               </p>
               <Link href="/es/sell-vs-rent">
@@ -136,10 +136,10 @@ export default function StrategyHubES() {
           {/* Remodelar vs Vender */}
           <RevealDiv delay={300}>
             <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
-              <h2 className="font-display text-2xl font-light text-[#1A1A18] mb-4">
-                ¿Vale la pena <em className="italic">remodelar</em> antes de vender?
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-4">
+                ¿Vale la pena <span className="font-semibold">remodelar</span> antes de vender?
               </h2>
-              <p className="font-body text-sm text-[#1A1A18]/60 leading-relaxed mb-6 flex-grow">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 La mayoría de las renovaciones no recuperan lo que cuestan al momento de vender. Esta herramienta compara lo que gastarías contra lo que podrías ganar para que decidas si remodelar tiene sentido o si vender como está te deja más dinero en el bolsillo.
               </p>
               <Link href="/es/remodel-vs-sell">
@@ -154,14 +154,14 @@ export default function StrategyHubES() {
 
         {/* CTA inferior */}
         <RevealDiv delay={400} className="mt-20 text-center">
-          <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-4">
+          <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-4">
             ¿Quieres que alguien revise los números contigo?
           </h2>
-          <p className="font-body text-base text-[#1A1A18]/65 max-w-xl mx-auto leading-relaxed mb-8">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-xl mx-auto leading-relaxed mb-8">
             Las herramientas te dan un punto de partida. Una conversación real te da una estrategia. Si quieres entender lo que significan tus números, escríbeme.
           </p>
           <Link href="/es/contacto">
-            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+            <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
               Iniciar una Conversación
               <ArrowRight size={14} />
             </span>

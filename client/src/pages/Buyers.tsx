@@ -96,7 +96,7 @@ export default function Buyers() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(buyerServiceSchema) }}
@@ -112,17 +112,17 @@ export default function Buyers() {
         <div className="relative z-10 container py-16 md:py-0 md:pt-32 lg:pt-40 md:pb-16 lg:pb-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#C9A85C]">
                 CEDAR PARK AND LEANDER REAL ESTATE
               </span>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.0] mb-6">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-white leading-[1.0] mb-6">
               Don't just<br />
               find a house.<br />
-              <em className="italic">Understand the move.</em>
+              <span className="font-semibold">Understand the move.</span>
             </h1>
-            <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
+            <p className="font-body text-lg text-white/90 max-w-xl leading-relaxed mb-10">
               Whether you own a home already or you're buying for the first time, the most important question is the same: do the numbers actually make sense before you commit? I help buyers in Cedar Park and Leander get a clear picture before they make an offer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -133,7 +133,7 @@ export default function Buyers() {
                 onClick={() => {
                   if (window.fbq) { window.fbq("trackCustom", "Lead_Buyer"); }
                 }}
-                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+                className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer border-0"
               >
                 Let's Map Out Your Situation
                 <ArrowRight size={14} />
@@ -147,7 +147,7 @@ export default function Buyers() {
       <section className="bg-[#1A1A18] py-12">
         <div className="container">
           <div className="max-w-2xl">
-            <p className="font-body text-base text-white/70 leading-relaxed">
+            <p className="font-body text-lg text-white/90 leading-relaxed">
               I am primarily a listing agent focused on Cedar Park and Leander. That means I see what sellers see, what homes are actually worth, and where buyers usually overpay. When I work with buyers, that perspective comes with me.
             </p>
           </div>
@@ -169,14 +169,14 @@ export default function Buyers() {
                 <span className="section-rule" />
                 <span className="section-number">01. The Real Question</span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-[#1A1A18] mb-6">
                 Sell first,<br />
-                <em className="italic">or buy first?</em>
+                <span className="font-semibold">or buy first?</span>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
                 If you already own a home, this is the question that shapes everything else. The answer depends on your equity, your timeline, and what the market is doing right now. Getting it wrong means either carrying two mortgages or scrambling for a rental in between.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
                 That is the conversation we should have before you start looking at listings. Once you know what your home is worth and what you can realistically net, the rest gets a lot clearer.
               </p>
               <Link href="/seller-strategy/">
@@ -191,22 +191,22 @@ export default function Buyers() {
       </section>
 
       {/* HOW I HELP */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white border-y border-[#E5E5E5]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
               <span className="section-number">02. How I Help</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-3 max-w-xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-3 max-w-xl">
               Both sides of the move.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/60 mb-12 max-w-lg">
+            <p className="font-body text-lg text-[#2B2B2B] mb-12 max-w-lg">
               Buying is about more than finding a house. I help you think through the whole picture.
             </p>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E8E0D5]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#E5E5E5]">
             {[
               {
                 num: "01",
@@ -227,15 +227,15 @@ export default function Buyers() {
               <RevealDiv
                 key={item.num}
                 delay={i * 80}
-                className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
+                className="bg-white p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
+                <div className="font-display text-5xl font-medium text-[#E5E5E5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                   {item.num}
                 </div>
-                <h3 className="font-display text-3xl font-light text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
+                <h3 className="font-display text-3xl font-medium text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
                   {item.title}
                 </h3>
-                <p className="font-body text-base text-[#1A1A18]/60 group-hover:text-white/60 transition-colors duration-500">
+                <p className="font-body text-lg text-[#2B2B2B] group-hover:text-white/90 transition-colors duration-500">
                   {item.desc}
                 </p>
               </RevealDiv>
@@ -252,9 +252,9 @@ export default function Buyers() {
               <span className="section-rule" />
               <span className="section-number">How This Works</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-12">
               Start with a<br />
-              <em className="italic">real conversation.</em>
+              <span className="font-semibold">real conversation.</span>
             </h2>
           </RevealDiv>
 
@@ -278,9 +278,9 @@ export default function Buyers() {
             ].map((item, i) => (
               <RevealDiv key={item.step} delay={i * 100}>
                 <div className="border-t-2 border-[#B8974A] pt-6">
-                  <p className="font-display text-4xl font-light text-[#E8E0D5] mb-4">{item.step}</p>
-                  <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                  <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+                  <p className="font-display text-4xl font-medium text-[#E5E5E5] mb-4">{item.step}</p>
+                  <h3 className="font-display text-xl font-medium text-[#1A1A18] mb-3">{item.title}</h3>
+                  <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">{item.desc}</p>
                 </div>
               </RevealDiv>
             ))}
@@ -294,7 +294,7 @@ export default function Buyers() {
               onClick={() => {
                 if (window.fbq) { window.fbq("trackCustom", "Lead_Buyer"); }
               }}
-              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer border-0"
             >
               Start a Conversation
               <ArrowRight size={14} />
@@ -307,11 +307,11 @@ export default function Buyers() {
       <section className="bg-[#1A1A18] py-20 md:py-32 text-center">
         <div className="container">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-6">
               Ready to understand<br />
-              <em className="italic">the move?</em>
+              <span className="font-semibold">the move?</span>
             </h2>
-            <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="font-body text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mb-10">
               No sales pitch. Just a straight conversation about what the numbers look like and what makes sense for your situation.
             </p>
             <a
@@ -321,7 +321,7 @@ export default function Buyers() {
               onClick={() => {
                 if (window.fbq) { window.fbq("trackCustom", "Lead_Buyer"); }
               }}
-              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer border-0"
             >
               Let's Map Out Your Situation
               <ArrowRight size={14} />

@@ -51,7 +51,7 @@ export default function Links() {
         />
         <p
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
-          className="text-white text-3xl font-light tracking-wide"
+          className="text-white text-3xl font-medium tracking-wide"
         >
           Mario Manzano
         </p>
@@ -59,7 +59,7 @@ export default function Links() {
           Austin Realtor · Seller Strategist
         </p>
         <p
-          className="text-white/40 text-xs mt-1 uppercase"
+          className="text-white/80 text-xs mt-1 uppercase"
           style={{ letterSpacing: "0.12em" }}
         >
           Cedar Park & Leander, TX
@@ -75,14 +75,14 @@ export default function Links() {
             <p className="text-white text-sm font-medium tracking-wide">
               {link.label}
             </p>
-            <p className="text-white/40 text-xs mt-0.5 font-light">
+            <p className="text-white/80 text-xs mt-0.5 font-light">
               {link.description}
             </p>
           </a>
         ))}
       </div>
       <p
-        className="text-white/20 text-xs mt-10 uppercase"
+        className="text-white/70 text-xs mt-10 uppercase"
         style={{ letterSpacing: "0.2em" }}
       >
         mariomanzano.com

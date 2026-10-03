@@ -98,7 +98,7 @@ export default function NetSheetES() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pt-32 pb-20">
+    <div className="min-h-screen bg-white pt-32 pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -110,13 +110,13 @@ export default function NetSheetES() {
             <span className="section-rule" />
             <span className="section-number">Herramienta Estratégica</span>
           </div>
-          <h1 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-6">
-            Calcula tus<br /><em className="italic">ingresos netos.</em>
+          <h1 className="font-display text-4xl md:text-6xl font-medium text-[#1A1A18] mb-6">
+            Calcula tus<br /><span className="font-semibold">ingresos netos.</span>
           </h1>
-          <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-6 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             El precio de venta no es lo que te llevas. Una vez que descuentas la comisión del agente, los costos de cierre, las reparaciones y el saldo pendiente de tu hipoteca, el número que llega a tu cuenta puede verse muy diferente al precio del contrato.
           </p>
-          <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
             Esta herramienta te da una estimación realista antes de que hables con cualquiera. No sustituye una conversación real, pero te da una base sólida antes de tomar cualquier decisión.
           </p>
         </RevealDiv>
@@ -124,53 +124,53 @@ export default function NetSheetES() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Entradas */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 border border-[#E8E0D5] shadow-sm">
-              <h2 className="font-display text-2xl font-light text-[#1A1A18] mb-8 text-center">Detalles de la Venta</h2>
+            <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Detalles de la Venta</h2>
               <div className="space-y-6">
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Precio de Venta Estimado</label>
+                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Precio de Venta Estimado</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                     <input type="text" value={salePrice} onChange={handleInputChange(setSalePrice)}
                       onFocus={(e) => e.target.value === "0" && setSalePrice("")}
                       onBlur={(e) => e.target.value === "" && setSalePrice("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Saldo de Hipoteca</label>
+                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Saldo de Hipoteca</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                     <input type="text" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
                       onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
                       onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Comisión (% prom)</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Comisión (% prom)</label>
                     <input type="text" value={commission} onChange={handleInputChange(setCommission)}
                       onFocus={(e) => e.target.value === "0" && setCommission("")}
                       onBlur={(e) => e.target.value === "" && setCommission("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Costos de Cierre (% prom)</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Costos de Cierre (% prom)</label>
                     <input type="text" value={closingCosts} onChange={handleInputChange(setClosingCosts)}
                       onFocus={(e) => e.target.value === "0" && setClosingCosts("")}
                       onBlur={(e) => e.target.value === "" && setClosingCosts("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Reparaciones / Costos de Preparación</label>
+                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Reparaciones / Costos de Preparación</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                     <input type="text" value={repairs} onChange={handleInputChange(setRepairs)}
                       onFocus={(e) => e.target.value === "0" && setRepairs("")}
                       onBlur={(e) => e.target.value === "" && setRepairs("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                 </div>
               </div>
@@ -180,35 +180,35 @@ export default function NetSheetES() {
           {/* Resultados */}
           <div className="lg:col-span-7">
             <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
-              <h2 className="font-display text-3xl font-light mb-12 border-b border-white/10 pb-6">Estimado Neto</h2>
+              <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">Estimado Neto</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Costo de Comisión (prom)</p>
-                    <p className="font-display text-3xl font-light text-white/60">{formatCurrency(commissionCost)}</p>
+                    <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Costo de Comisión (prom)</p>
+                    <p className="font-display text-3xl font-medium text-white/90">{formatCurrency(commissionCost)}</p>
                   </div>
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Costos de Cierre (prom)</p>
-                    <p className="font-display text-3xl font-light text-white/60">{formatCurrency(closingCostAmount)}</p>
+                    <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Costos de Cierre (prom)</p>
+                    <p className="font-display text-3xl font-medium text-white/90">{formatCurrency(closingCostAmount)}</p>
                   </div>
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Total de Costos de Venta</p>
-                    <p className="font-display text-3xl font-light text-white/60">{formatCurrency(totalCosts)}</p>
+                    <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Total de Costos de Venta</p>
+                    <p className="font-display text-3xl font-medium text-white/90">{formatCurrency(totalCosts)}</p>
                   </div>
                 </div>
                 <div className="bg-white/5 p-8 border border-white/10">
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Ingresos Netos Estimados</p>
-                  <p className={`font-display text-5xl md:text-6xl font-light mb-4 ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className="section-number mb-4 text-[#C9A85C]">Ingresos Netos Estimados</p>
+                  <p className={`font-display text-5xl md:text-6xl font-medium mb-4 ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netProceeds)}
                   </p>
-                  <p className="font-body text-xs text-white/40 leading-relaxed">
+                  <p className="font-body text-sm text-white/90 leading-relaxed">
                     Esta es la cantidad estimada que recibirás después de pagar tu hipoteca y todos los costos de la transacción.
                   </p>
                 </div>
               </div>
               <div className="mt-12 pt-12 border-t border-white/10">
                 <Link href="/es/contacto">
-                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
+                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
                     Obtener una Hoja Neta Precisa
                     <ArrowRight size={14} className="ml-2" />
                   </span>
@@ -221,26 +221,26 @@ export default function NetSheetES() {
         {/* Sección educativa */}
         <div className="mt-20 max-w-3xl">
           <RevealDiv>
-            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Qué te dice realmente una hoja de ingresos netos?</h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">¿Qué te dice realmente una hoja de ingresos netos?</h2>
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               Una hoja de ingresos netos muestra cuánto te quedas después de la venta, no cuánto se vende tu casa. En Cedar Park y Leander, muchos vendedores se sorprenden de cuánto se reduce ese número una vez que se descuentan la comisión, los honorarios de título, los impuestos y los costos de preparación.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               Este estimado parte de un cierre a mitad de año con costos de cierre típicos del 2%, que incluyen título, depósito en garantía, costos del prestamista, impuestos prorrateados, cuotas de HOA y una garantía de hogar estándar.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               El número real puede cambiar según el mes en que cierres. Cerrar en enero versus diciembre afecta bastante el prorrateo de impuestos que te acreditan. Las cuotas de HOA también varían según la propiedad y la comunidad, y algunas casas no tienen ninguna. Cualquier concesión adicional que negocies con el comprador también cambia este número. Una hoja neta real de una compañía de título será más precisa.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
               Si quieres revisar una hoja neta real basada en tu casa y situación, puedo ayudarte con eso. Toma unos quince minutos y te da un panorama mucho más claro antes de tomar cualquier decisión.
             </p>
           </RevealDiv>
         </div>
 
-        <div className="mt-20 pt-20 border-t border-[#E8E0D5]">
+        <div className="mt-20 pt-20 border-t border-[#E5E5E5]">
           <RevealDiv className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿No sabes cuánto vale tu casa?</h2>
-            <p className="font-body text-base text-[#1A1A18]/65 mb-10 leading-relaxed">
+            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">¿No sabes cuánto vale tu casa?</h2>
+            <p className="font-body text-lg text-[#2B2B2B] mb-10 leading-relaxed">
               Estas estimaciones usan el precio de venta que tú ingresas. Si quieres un punto de referencia antes de correr los números, obtén primero una estimación del valor de tu casa.
             </p>
             <Link href="/es/home-value">

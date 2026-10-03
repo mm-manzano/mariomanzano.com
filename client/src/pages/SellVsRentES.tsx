@@ -137,7 +137,7 @@ export default function SellVsRentES() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pt-32 pb-20">
+    <div className="min-h-screen bg-white pt-32 pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -149,13 +149,13 @@ export default function SellVsRentES() {
             <span className="section-rule" />
             <span className="section-number">Herramienta Estratégica</span>
           </div>
-          <h1 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-6">
-            ¿Deberías<br /><em className="italic">vender o rentar?</em>
+          <h1 className="font-display text-4xl md:text-6xl font-medium text-[#1A1A18] mb-6">
+            ¿Deberías<br /><span className="font-semibold">vender o rentar?</span>
           </h1>
-          <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-6 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             Esta es una de las preguntas que más se hacen los propietarios. Vender te da liquidez y quitas la responsabilidad de encima. Rentar mantiene tu capital trabajando con el tiempo y puede ser una herramienta sólida para generar riqueza si los números lo respaldan.
           </p>
-          <p className="font-body text-base text-[#1A1A18]/65 max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
             Esta herramienta compara los dos caminos con tus números reales. Ingresa los detalles de tu casa y un período de tenencia para ver cuál opción te conviene más.
           </p>
         </RevealDiv>
@@ -163,95 +163,95 @@ export default function SellVsRentES() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Entradas */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white p-8 border border-[#E8E0D5] shadow-sm">
-              <h2 className="font-display text-2xl font-light text-[#1A1A18] mb-8 text-center">Detalles de tu Casa</h2>
+            <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Detalles de tu Casa</h2>
               <div className="space-y-6">
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Valor Estimado de la Casa</label>
+                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Valor Estimado de la Casa</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                     <input type="text" value={homeValue} onChange={handleInputChange(setHomeValue)}
                       onFocus={(e) => e.target.value === "0" && setHomeValue("")}
                       onBlur={(e) => e.target.value === "" && setHomeValue("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Saldo Pendiente de Hipoteca</label>
+                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Saldo Pendiente de Hipoteca</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                     <input type="text" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
                       onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
                       onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Pago Mensual de Hipoteca (P&I)</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Pago Mensual de Hipoteca (P&I)</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                       <input type="text" value={monthlyMortgagePayment} onChange={handleInputChange(setMonthlyMortgagePayment)}
                         onFocus={(e) => e.target.value === "0" && setMonthlyMortgagePayment("")}
                         onBlur={(e) => e.target.value === "" && setMonthlyMortgagePayment("0")}
-                        className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                        className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Tasa de Interés Anual (%)</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Tasa de Interés Anual (%)</label>
                     <input type="text" value={interestRate} onChange={handleInputChange(setInterestRate)}
                       onFocus={(e) => e.target.value === "0" && setInterestRate("")}
                       onBlur={(e) => e.target.value === "" && setInterestRate("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
-                    <p className="font-body text-xs text-[#1A1A18]/50 mt-2 leading-relaxed">Tu tasa de interés anual actual.</p>
+                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                    <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Tu tasa de interés anual actual.</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Renta Mensual</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Renta Mensual</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                       <input type="text" value={monthlyRent} onChange={handleInputChange(setMonthlyRent)}
                         onFocus={(e) => e.target.value === "0" && setMonthlyRent("")}
                         onBlur={(e) => e.target.value === "" && setMonthlyRent("0")}
-                        className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                        className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Otros Gastos Mensuales (HOA, Impuestos, Seguro)</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Otros Gastos Mensuales (HOA, Impuestos, Seguro)</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#1A1A18]/30">$</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
                       <input type="text" value={otherMonthlyExpenses} onChange={handleInputChange(setOtherMonthlyExpenses)}
                         onFocus={(e) => e.target.value === "0" && setOtherMonthlyExpenses("")}
                         onBlur={(e) => e.target.value === "" && setOtherMonthlyExpenses("0")}
-                        className="w-full bg-[#F8F5F0] border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                        className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                     </div>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Apreciación Anual (%)</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Apreciación Anual (%)</label>
                     <input type="text" value={appreciation} onChange={handleInputChange(setAppreciation)}
                       onFocus={(e) => e.target.value === "0" && setAppreciation("")}
                       onBlur={(e) => e.target.value === "" && setAppreciation("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
-                    <p className="font-body text-xs text-[#1A1A18]/50 mt-2 leading-relaxed">Crecimiento anual promedio del valor. Ej: ingresa 3 para 3%.</p>
+                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                    <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Crecimiento anual promedio del valor. Ej: ingresa 3 para 3%.</p>
                   </div>
                   <div>
-                    <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Años de Tenencia</label>
+                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Años de Tenencia</label>
                     <input type="text" value={yearsHolding} onChange={handleInputChange(setYearsHolding)}
                       onFocus={(e) => e.target.value === "0" && setYearsHolding("")}
                       onBlur={(e) => e.target.value === "" && setYearsHolding("0")}
-                      className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-[10px] tracking-[0.2em] uppercase text-[#1A1A18]/50 mb-2">Margen de Vacancia / Mantenimiento (%)</label>
+                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Margen de Vacancia / Mantenimiento (%)</label>
                   <input type="text" value={vacancyMaintenance} onChange={handleInputChange(setVacancyMaintenance)}
                     onFocus={(e) => e.target.value === "0" && setVacancyMaintenance("")}
                     onBlur={(e) => e.target.value === "" && setVacancyMaintenance("0")}
-                    className="w-full bg-[#F8F5F0] border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
-                  <p className="font-body text-xs text-[#1A1A18]/50 mt-2 leading-relaxed">Cubre vacancias, reparaciones y costos de tenencia. Típico: 5 a 10%.</p>
+                    className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                  <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Cubre vacancias, reparaciones y costos de tenencia. Típico: 5 a 10%.</p>
                 </div>
               </div>
             </div>
@@ -260,33 +260,33 @@ export default function SellVsRentES() {
           {/* Resultados */}
           <div className="lg:col-span-7">
             <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
-              <h2 className="font-display text-3xl font-light mb-12 border-b border-white/10 pb-6">Análisis Estratégico</h2>
+              <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">Análisis Estratégico</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Estimado Neto si Vendes Hoy</p>
-                    <p className="font-display text-4xl font-light text-white">{formatCurrency(estimatedNetIfSoldToday)}</p>
+                    <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Estimado Neto si Vendes Hoy</p>
+                    <p className="font-display text-4xl font-medium text-white">{formatCurrency(estimatedNetIfSoldToday)}</p>
                   </div>
                   <div>
-                    <p className="font-body text-[10px] tracking-[0.2em] uppercase text-white/40 mb-2">Flujo de Caja Anual (Ajustado)</p>
-                    <p className={`font-display text-4xl font-light ${annualCashFlowIfRenting >= 0 ? "text-[#B8974A]" : "text-red-400"}`}>
+                    <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Flujo de Caja Anual (Ajustado)</p>
+                    <p className={`font-display text-4xl font-medium ${annualCashFlowIfRenting >= 0 ? "text-[#C9A85C]" : "text-red-400"}`}>
                       {formatCurrency(annualCashFlowIfRenting)}
                     </p>
                   </div>
                 </div>
                 <div className="bg-white/5 p-8 border border-white/10">
-                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-[#B8974A] mb-4">Estimado Neto si Rentas y Vendes Después</p>
-                  <p className="font-display text-5xl md:text-6xl font-light text-white mb-2">{formatCurrency(estimatedNetIfRented)}</p>
-                  <p className="font-body text-xs text-white/40 leading-relaxed">
+                  <p className="section-number mb-4 text-[#C9A85C]">Estimado Neto si Rentas y Vendes Después</p>
+                  <p className="font-display text-5xl md:text-6xl font-medium text-white mb-2">{formatCurrency(estimatedNetIfRented)}</p>
+                  <p className="font-body text-sm text-white/90 leading-relaxed">
                     Incluye apreciación, flujo de caja de la renta y reducción de hipoteca durante {years} años, luego venta.
                   </p>
                 </div>
               </div>
               <div className="mt-12 pt-12 border-t border-white/10">
-                <h3 className="font-display text-xl font-light text-white mb-4">Lo Que Esto Significa</h3>
-                <p className="font-body text-base text-white/70 leading-relaxed mb-8">{getStrategicTakeaway()}</p>
+                <h3 className="font-display text-xl font-medium text-white mb-4">Lo Que Esto Significa</h3>
+                <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway()}</p>
                 <Link href="/es/contacto">
-                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
+                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
                     Hablar Sobre Tu Estrategia
                     <ArrowRight size={14} className="ml-2" />
                   </span>
@@ -299,23 +299,23 @@ export default function SellVsRentES() {
         {/* Sección educativa */}
         <div className="mt-20 max-w-3xl">
           <RevealDiv>
-            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿Es mejor rentar que vender en Cedar Park o Leander?</h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">¿Es mejor rentar que vender en Cedar Park o Leander?</h2>
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               En el mercado de Cedar Park y Leander, rentar tiende a ser una estrategia de apreciación a largo plazo más que una fuente de flujo de caja inmediato. Las casas en esta área han mantenido bien su valor con el tiempo, lo que hace que el camino de la renta sea atractivo si tu pago hipotecario es bajo en relación con lo que podría rentar la propiedad.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               Dicho esto, los números son solo parte de la decisión. Ser arrendador significa lidiar con inquilinos, mantenimiento, vacancias y administración de propiedades. Si no estás preparado para esa responsabilidad, la ventaja financiera de rentar puede no valer el estrés.
             </p>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
               Si no sabes bien qué camino tomar, puedo ayudarte a verlo con claridad. Sin presión. Solo los números y lo que realmente significan.
             </p>
           </RevealDiv>
         </div>
 
-        <div className="mt-20 pt-20 border-t border-[#E8E0D5]">
+        <div className="mt-20 pt-20 border-t border-[#E5E5E5]">
           <RevealDiv className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-light text-[#1A1A18] mb-6">¿No sabes cuánto vale tu casa?</h2>
-            <p className="font-body text-base text-[#1A1A18]/65 mb-10 leading-relaxed">
+            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">¿No sabes cuánto vale tu casa?</h2>
+            <p className="font-body text-lg text-[#2B2B2B] mb-10 leading-relaxed">
               Obtén una estimación base antes de correr la comparación.
             </p>
             <Link href="/es/home-value">

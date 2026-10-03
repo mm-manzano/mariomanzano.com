@@ -205,7 +205,7 @@ export default function FSBO() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
 
       {/* HEADER */}
       <section className="py-20 md:py-28 bg-[#1A1A18]">
@@ -217,22 +217,22 @@ export default function FSBO() {
                 For Sale By Owner · Greater Austin
               </span>
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-white leading-[1.1] mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6">
               You're selling your<br />
               home yourself.<br />
-              <em className="italic">That makes complete sense.</em><br />
+              <span className="font-semibold">That makes complete sense.</span><br />
               But let me be your Backup Plan.
             </h1>
-            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-lg text-white/90 leading-relaxed mb-3 max-w-xl">
               I know your phone has probably been busy since you listed, with agents, investors, and buyers all reaching out. I get it. Mine never stops either. The same investors calling you are calling me, looking for a home they can buy below market, along with other agents and marketing companies trying to sell me something. So I'll keep this useful.
             </p>
-            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed mb-3 max-w-xl">
+            <p className="font-body text-lg text-white/90 leading-relaxed mb-3 max-w-xl">
               I'm not here to talk you out of selling on your own. Plenty of homeowners do.
             </p>
-            <p className="font-body text-base md:text-lg text-white/80 leading-relaxed max-w-xl">
+            <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl">
               Here are a few things worth knowing while your home is on the market.
             </p>
-            <p className="font-body text-base text-white/80 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
+            <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl mt-6 pt-6 border-t border-white/15">
               If the calls pile up, an offer gets confusing, or you'd just rather have someone else handle it, I'm here as your backup plan.
             </p>
           </RevealDiv>
@@ -247,11 +247,11 @@ export default function FSBO() {
               <span className="section-rule" />
               <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">What to know while you're listed</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-4">
               What tends to make a sale<br />
-              <em className="italic">go smoothly on your own.</em>
+              <span className="font-semibold">go smoothly on your own.</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12">
               Here are a few things worth knowing if you're selling it yourself. Take what's useful. This is a starting point, not the full picture, since every home and situation is different.
             </p>
           </RevealDiv>
@@ -262,20 +262,20 @@ export default function FSBO() {
                 <div className="flex gap-4 items-start">
                   <div
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5"
-                    style={{ background: "#F5EDD8", color: "#B8974A" }}
+                    style={{ background: "#F0F0F0", color: "#B8974A" }}
                   >
                     {tip.icon}
                   </div>
                   <div>
-                    <h3 className="font-body text-base md:text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
+                    <h3 className="font-body text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
                       {tip.title}
                     </h3>
-                    <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
+                    <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                       {tip.body}
                     </p>
                     {tip.link && (
                       <Link href={tip.link.href}>
-                        <span className="font-body text-base font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
+                        <span className="font-body text-lg font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
                           {tip.link.label}
                         </span>
                       </Link>
@@ -294,20 +294,20 @@ export default function FSBO() {
           <RevealDiv>
             <div
               className="rounded-md px-5 py-4 flex flex-col gap-3"
-              style={{ background: "#F5EDE0" }}
+              style={{ background: "#F2F2F2" }}
             >
-              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
-                <strong style={{ color: "#7D4A1A" }}>On price:</strong> A home priced off an estimate can miss the market in either direction, and it takes more than pulling comps to get it right.
+              <p className="font-body text-lg leading-relaxed" style={{ color: "#1A1A18" }}>
+                <strong style={{ color: "#1A1A18" }}>On price:</strong> A home priced off an estimate can miss the market in either direction, and it takes more than pulling comps to get it right.
               </p>
-              <p className="font-body text-base leading-relaxed" style={{ color: "#6B3D12" }}>
-                <strong style={{ color: "#7D4A1A" }}>On the contract:</strong> Buyers' agents negotiate for a living, and most sellers do this once. The terms and deadlines are where deals tend to get tangled.
+              <p className="font-body text-lg leading-relaxed" style={{ color: "#1A1A18" }}>
+                <strong style={{ color: "#1A1A18" }}>On the contract:</strong> Buyers' agents negotiate for a living, and most sellers do this once. The terms and deadlines are where deals tend to get tangled.
               </p>
             </div>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mt-10 mb-3">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mt-10 mb-3">
               Still weighing whether to sell at all? The strategy hub has the net sheet, the sell vs rent calculator, and the remodel vs sell calculator in one place.
             </p>
             <Link href="/strategy-hub">
-              <span className="font-body text-base font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer">
+              <span className="font-body text-lg font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer">
                 Open the strategy hub
               </span>
             </Link>
@@ -316,18 +316,18 @@ export default function FSBO() {
       </section>
 
       {/* HOW I HELP */}
-      <section className="py-20 md:py-28 bg-white border-y border-[#E8E0D5]">
+      <section className="py-20 md:py-28 bg-white border-y border-[#E5E5E5]">
         <div className="container max-w-2xl">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
               <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">How I help</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-4">
               If you'd rather not handle all of that,<br />
-              <em className="italic">here's what I take over.</em>
+              <span className="font-semibold">here's what I take over.</span>
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed mb-12">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12">
               You've already done the hard part of deciding to sell. This is what changes when I handle the rest, from prep to closing.
             </p>
           </RevealDiv>
@@ -338,15 +338,15 @@ export default function FSBO() {
                 <div className="flex gap-4 items-start">
                   <div
                     className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center mt-0.5"
-                    style={{ background: "#F5EDD8", color: "#B8974A" }}
+                    style={{ background: "#F0F0F0", color: "#B8974A" }}
                   >
                     {step.icon}
                   </div>
                   <div>
-                    <h3 className="font-body text-base md:text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
+                    <h3 className="font-body text-lg font-semibold text-[#1A1A18] mb-1 leading-snug">
                       {step.title}
                     </h3>
-                    <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
+                    <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                       {step.body}
                     </p>
                   </div>
@@ -366,11 +366,11 @@ export default function FSBO() {
                 <span className="section-rule" style={{ background: "#B8974A" }} />
                 <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No lock-in</span>
               </div>
-              <h2 className="font-display text-2xl md:text-3xl font-light text-[#1A1A18] mb-4">
+              <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18] mb-4">
                 If it isn't working,<br />
-                <em className="italic">you're not stuck.</em>
+                <span className="font-semibold">you're not stuck.</span>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/80 leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 A listing agreement shouldn't feel like a trap. If you list with me and you're not happy with how things are going, you can walk away. We'll go through exactly how that works when we meet.
               </p>
             </div>
@@ -388,15 +388,15 @@ export default function FSBO() {
                 Let's talk
               </span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-light text-white mb-4">
+            <h2 className="font-display text-3xl md:text-4xl font-medium text-white mb-4">
               See if working together<br />
-              <em className="italic">makes sense.</em>
+              <span className="font-semibold">makes sense.</span>
             </h2>
-            <p className="font-body text-base text-white/80 leading-relaxed mb-8 max-w-lg">
+            <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               This page is the basics. The real value is in sitting down together, including how I'd price your home specifically. If we already have a time set, bring anything you've gathered so far, like offers, showing feedback, or questions that have come up. I'll be upfront about whether I think I can help. No pressure either way.
             </p>
             <Link href="/contact">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Set Up a Time to Meet
                 <ArrowRight size={14} />
               </span>

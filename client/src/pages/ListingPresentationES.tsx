@@ -171,7 +171,7 @@ export default function ListingPresentationES() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(sellerSchema) }}
@@ -187,17 +187,17 @@ export default function ListingPresentationES() {
                 style={{ background: "#B8974A" }}
               />
               <span
-                className="font-body text-[10px] tracking-[0.25em] uppercase"
+                className="font-body text-sm tracking-[0.25em] uppercase"
                 style={{ color: "#B8974A" }}
               >
                 Estrategia para Vendedores
               </span>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-tight mb-6">
+            <h1 className="font-display text-5xl md:text-7xl font-medium text-white leading-tight mb-6">
               Tu Casa.<br />
-              <em className="italic">Tu Decisión.</em>
+              <span className="font-semibold">Tu Decisión.</span>
             </h1>
-            <p className="font-body text-base md:text-lg text-white/70 max-w-lg leading-relaxed">
+            <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed">
               Un plan claro basado en tu situación, no en una presentación de ventas.
             </p>
           </div>
@@ -212,10 +212,10 @@ export default function ListingPresentationES() {
               <span className="section-rule" />
               <span className="section-number">01. Proceso</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-4 max-w-2xl">
               Si decides vender, así es como funciona.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-16">
               Cada paso tiene un propósito. Nada ocurre sin tu aprobación.
             </p>
           </RevealDiv>
@@ -227,13 +227,13 @@ export default function ListingPresentationES() {
                 delay={i * 75}
                 className="border-t-2 border-[#B8974A] pt-6"
               >
-                <span className="font-display text-sm text-[#B8974A] tracking-widest block mb-3">
+                <span className="font-display text-lg text-[#7A5F24] tracking-widest block mb-3">
                   {step.number}
                 </span>
-                <h3 className="font-display text-lg font-light text-[#1A1A18] mb-3">
+                <h3 className="font-display text-lg font-medium text-[#1A1A18] mb-3">
                   {step.title}
                 </h3>
-                <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                   {step.desc}
                 </p>
               </RevealDiv>
@@ -252,16 +252,16 @@ export default function ListingPresentationES() {
                 style={{ background: "#B8974A" }}
               />
               <span
-                className="font-body text-[10px] tracking-[0.25em] uppercase"
+                className="font-body text-sm tracking-[0.25em] uppercase"
                 style={{ color: "#B8974A" }}
               >
                 Estrategia de Precio
               </span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-8 max-w-2xl">
               La conversación de precio que nunca has tenido.
             </h2>
-            <p className="font-body text-base text-white/70 leading-relaxed max-w-xl">
+            <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl">
               El análisis que hacemos juntos durante nuestra reunión de estrategia va más profundo de lo que la mayoría de los vendedores espera. Te mostraré exactamente dónde está tu casa y por qué.
             </p>
           </RevealDiv>
@@ -269,17 +269,17 @@ export default function ListingPresentationES() {
       </section>
 
       {/* PHOTOGRAPHY */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">02. Fotografía</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-4 max-w-2xl">
               La primera visita ocurre en línea.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-16">
               Antes de que un comprador entre a tu casa, ya tomó una decisión basada en las fotos. La calidad aquí no es opcional.
             </p>
           </RevealDiv>
@@ -300,7 +300,7 @@ export default function ListingPresentationES() {
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 py-2 px-4">
-                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white/70">
+                  <span className="font-body text-sm tracking-[0.2em] uppercase text-white/90">
                     Ejemplo Deficiente
                   </span>
                 </div>
@@ -320,14 +320,14 @@ export default function ListingPresentationES() {
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 py-2 px-4" style={{ background: "rgba(184,151,74,0.85)" }}>
-                  <span className="font-body text-[10px] tracking-[0.2em] uppercase text-white">
+                  <span className="font-body text-sm tracking-[0.2em] uppercase font-semibold text-[#1A1A18]">
                     Mi Ejemplo
                   </span>
                 </div>
               </div>
             </div>
 
-            <p className="font-body text-sm text-[#1A1A18]/55 mt-6 max-w-md leading-relaxed">
+            <p className="font-body text-lg text-[#2B2B2B] mt-6 max-w-md leading-relaxed">
               Las casas con fotografía profesional se venden 32% más rápido y atraen ofertas más competitivas.
             </p>
           </RevealDiv>
@@ -335,17 +335,17 @@ export default function ListingPresentationES() {
       </section>
 
       {/* MARKETING PLAN */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white border-y border-[#E5E5E5]">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">03. Marketing</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-4 max-w-2xl">
               Cómo pongo tu casa frente a los compradores.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-16">
               Cada elemento a continuación es parte de cada propiedad que listo. Nada es un extra.
             </p>
           </RevealDiv>
@@ -357,10 +357,10 @@ export default function ListingPresentationES() {
                 delay={i * 75}
                 className="flex items-start gap-4 border-t border-[#1A1A18]/10 pt-5"
               >
-                <span className="font-display text-[#B8974A] text-xs tracking-widest mt-0.5 shrink-0">
+                <span className="font-display text-[#7A5F24] text-lg tracking-widest mt-0.5 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="font-body text-sm text-[#1A1A18]/75 leading-relaxed">
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                   {item}
                 </p>
               </RevealDiv>
@@ -370,17 +370,17 @@ export default function ListingPresentationES() {
       </section>
 
       {/* COMMITMENTS */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">04. Compromisos</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-4 max-w-2xl">
               Lo que puedes exigirme.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-16">
               Estos no son puntos de venta. Es el estándar que me exijo en cada propiedad.
             </p>
           </RevealDiv>
@@ -392,7 +392,7 @@ export default function ListingPresentationES() {
                 delay={i * 75}
                 className="border-l-2 border-[#B8974A] pl-8 py-6 bg-white"
               >
-                <p className="font-body text-base text-[#1A1A18]/75 leading-relaxed">
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                   {item}
                 </p>
               </RevealDiv>
@@ -411,16 +411,16 @@ export default function ListingPresentationES() {
                 style={{ background: "#B8974A" }}
               />
               <span
-                className="font-body text-[10px] tracking-[0.25em] uppercase"
+                className="font-body text-sm tracking-[0.25em] uppercase"
                 style={{ color: "#B8974A" }}
               >
                 Sin Compromiso
               </span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-8 max-w-2xl">
               Sin ataduras. Sin contrato a largo plazo.
             </h2>
-            <p className="font-body text-base text-white/70 leading-relaxed max-w-xl">
+            <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl">
               Nunca te voy a amarrar a un contrato de largo plazo. Si en algún momento sientes que no me he ganado tu confianza, nos separamos sin penalizaciones y sin rencores. Tú mantienes el control todo el tiempo.
             </p>
           </RevealDiv>
@@ -435,10 +435,10 @@ export default function ListingPresentationES() {
               <span className="section-rule" />
               <span className="section-number">05. Comunicación</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-4 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-4 max-w-2xl">
               Siempre vas a saber cómo van las cosas.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed max-w-2xl mb-16">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl mb-16">
               Si algo cambia, tú eres el primero en saberlo.
             </p>
           </RevealDiv>
@@ -448,9 +448,9 @@ export default function ListingPresentationES() {
               <RevealDiv
                 key={item}
                 delay={i * 100}
-                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-[#F8F5F0]"
+                className="border-l-2 border-[#B8974A] pl-8 py-6 bg-white"
               >
-                <p className="font-body text-base text-[#1A1A18]/75 leading-relaxed">
+                <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                   {item}
                 </p>
               </RevealDiv>
@@ -479,16 +479,16 @@ export default function ListingPresentationES() {
                   style={{ background: "#B8974A" }}
                 />
                 <span
-                  className="font-body text-[10px] tracking-[0.25em] uppercase"
+                  className="font-body text-sm tracking-[0.25em] uppercase"
                   style={{ color: "#B8974A" }}
                 >
                   Acerca de Mario
                 </span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-8">
+              <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-8">
                 Por qué trabajo diferente.
               </h2>
-              <p className="font-body text-base text-white/70 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed">
                 No soy solo un agente que habla de decisiones inmobiliarias. Las
                 he tomado con mi propio dinero en juego. He comprado y vendido
                 propiedades, hecho renovaciones mientras vivía en las propiedades,
@@ -501,19 +501,19 @@ export default function ListingPresentationES() {
       </section>
 
       {/* NEXT STEPS */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">06. Próximos Pasos</span>
             </div>
-            <h2 className="font-display text-4xl md:text-6xl font-light text-[#1A1A18] mb-10 max-w-2xl">
+            <h2 className="font-display text-4xl md:text-6xl font-medium text-[#1A1A18] mb-10 max-w-2xl">
               Si estás listo para seguir adelante, hablemos.
             </h2>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:5126959255">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3">
                   Llamar 512-695-9255
                   <ArrowRight size={14} />
                 </span>

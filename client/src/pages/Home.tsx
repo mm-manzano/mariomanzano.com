@@ -57,18 +57,18 @@ function RevealDiv({ children, className = "", delay = 0 }: { children: React.Re
 
 function AccordionItem({ title, children, isOpen, onClick }: { title: string; children: React.ReactNode; isOpen: boolean; onClick: () => void }) {
   return (
-    <div className="border-b border-[#E8E0D5] last:border-0">
+    <div className="border-b border-[#E5E5E5] last:border-0">
       <button
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group"
       >
-        <span className="font-display text-xl md:text-2xl font-light text-[#1A1A18] group-hover:text-[#B8974A] transition-colors">
+        <span className="font-display text-xl md:text-2xl font-medium text-[#1A1A18] group-hover:text-[#7A5F24] transition-colors">
           {title}
         </span>
-        {isOpen ? <Minus size={20} className="text-[#B8974A]" /> : <Plus size={20} className="text-[#1A1A18]/40" />}
+        {isOpen ? <Minus size={20} className="text-[#B8974A]" /> : <Plus size={20} className="text-[#2B2B2B]" />}
       </button>
       <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[500px] pb-8" : "max-h-0"}`}>
-        <div className="font-body text-sm md:text-base text-[#1A1A18]/60 leading-relaxed">
+        <div className="font-body text-lg text-[#2B2B2B] leading-relaxed">
           {children}
         </div>
       </div>
@@ -126,7 +126,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0]">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -142,22 +142,22 @@ export default function Home() {
         <div className="relative z-10 container py-16 md:py-0 md:pt-32 lg:pt-40 md:pb-16 lg:pb-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">
-              <span className="section-rule" style={{ background: "#D4B878" }} />
-              <span className="font-body text-[10px] tracking-[0.25em] uppercase text-[#D4B878]">
+              <span className="section-rule" style={{ background: "#B8974A" }} />
+              <span className="section-number text-[#C9A85C]">
                 CEDAR PARK AND LEANDER REAL ESTATE
               </span>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white leading-[1.0] mb-6">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-white leading-[1.0] mb-6">
               Your Home.<br />
               Your Decision.<br />
-              <em className="italic">Your Advisor.</em>
+              <span className="font-semibold">Your Advisor.</span>
             </h1>
-            <p className="font-body text-base md:text-lg text-white/75 max-w-xl leading-relaxed mb-10">
+            <p className="font-body text-lg text-white/90 max-w-xl leading-relaxed mb-10">
               Most homeowners only hear one option. I help you understand all your options, whether you're selling, remodeling, renting, holding, or buying your next home.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/strategy-hub">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                   See Your Options
                   <ArrowRight size={14} />
                 </span>
@@ -177,7 +177,7 @@ export default function Home() {
       <section className="bg-[#1A1A18] py-12">
         <div className="container">
           <div className="max-w-2xl">
-            <p className="font-body text-base text-white/70 leading-relaxed mb-6">
+            <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
               I help homeowners in Cedar Park, Leander, and the greater Austin area develop a clear strategy around selling, remodeling, renting, or holding. I bring that same strategic approach to buyers, helping them avoid overpaying.
             </p>
             <Link href="/buyers">
@@ -191,21 +191,21 @@ export default function Home() {
       </section>
 
       {/* TRACK 2: MOTIVATED SELLER DIRECT PATH */}
-      <section className="py-16 border-b border-[#E8E0D5]">
+      <section className="py-16 border-b border-[#E5E5E5]">
         <div className="container">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 max-w-4xl">
             <div>
-              <p className="font-body text-[10px] tracking-[0.25em] uppercase text-[#B8974A] mb-3">Already know you want to sell?</p>
-              <h2 className="font-display text-3xl md:text-4xl font-light text-[#1A1A18] mb-3">
+              <p className="section-number mb-3">Already know you want to sell?</p>
+              <h2 className="font-display text-3xl md:text-4xl font-medium text-[#1A1A18] mb-3">
                 Start with your numbers.
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 max-w-lg leading-relaxed">
+              <p className="font-body text-lg text-[#2B2B2B] max-w-lg leading-relaxed">
                 Find out what you would actually walk away with after commission, closing costs, and your mortgage payoff. Takes two minutes.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
               <Link href="/net-sheet">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
                   Calculate Net Proceeds
                   <ArrowRight size={14} />
                 </span>
@@ -236,14 +236,14 @@ export default function Home() {
                 <span className="section-rule" />
                 <span className="section-number">01. About</span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-[#1A1A18] mb-6">
                 Clarity before<br />
-                <em className="italic">any decision.</em>
+                <span className="font-semibold">any decision.</span>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
                 I am Mario Manzano, a licensed REALTOR® and Seller Strategist based in Leander, Texas. I have bought and sold properties, run an Airbnb, done live-in flips, owned rentals, and made the sell vs hold decision with my own money on the line. That experience is what I bring to every conversation.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
                 Before you decide anything about your home, you deserve to understand all your options. That might mean selling. It might mean something else. My job is to walk you through the numbers so you can make the call that actually fits your situation.
               </p>
               <Link href="/about">
@@ -263,18 +263,18 @@ export default function Home() {
           <RevealDiv>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
               <div className="bg-[#1A1A18] p-10 md:p-14">
-                <p className="font-display text-xl md:text-2xl font-light italic leading-relaxed mb-8 text-white">
+                <p className="font-display text-xl md:text-2xl font-medium leading-relaxed mb-8 text-white">
                   "Instead of pushing me to sell, he walked me through renting, building, and other options. Once I understood all my choices, selling made sense."
                 </p>
-                <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+                <p className="section-number text-[#C9A85C]">
                   — Chris S., Leander TX
                 </p>
               </div>
               <div className="bg-[#1A1A18] p-10 md:p-14 border-t border-white/10 md:border-t-0 md:border-l border-white/10">
-                <p className="font-display text-xl md:text-2xl font-light italic leading-relaxed mb-8 text-white">
+                <p className="font-display text-xl md:text-2xl font-medium leading-relaxed mb-8 text-white">
                   "We had a previous realtor we were working with before our son recommended Mario. Hesitant at first, I'm glad I made the decision to meet with Mario because he set a great impression."
                 </p>
-                <p className="font-body text-sm uppercase tracking-widest text-[#B8974A]">
+                <p className="section-number text-[#C9A85C]">
                   — Alma S., Cedar Park TX
                 </p>
               </div>
@@ -288,22 +288,22 @@ export default function Home() {
         className="py-20 md:py-32 relative"
         style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="absolute inset-0 bg-[#F8F5F0]/90" />
+        <div className="absolute inset-0 bg-white/90" />
         <div className="relative z-10 container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
               <span className="section-rule" />
               <span className="section-number">02. How I Help</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-3 max-w-xl">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-3 max-w-xl">
               Four paths homeowners often consider.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/60 mb-12 max-w-lg">
+            <p className="font-body text-lg text-[#2B2B2B] mb-12 max-w-lg">
               Most homeowners only think about selling. I help you look at every option with real numbers so you can decide what actually makes sense.
             </p>
           </RevealDiv>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E8E0D5]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E5E5E5]">
             {[
               { num: "01", title: "Sell", desc: "Understand the market, timing, and what you will actually walk away with after costs." },
               { num: "02", title: "Remodel", desc: "Find out which improvements are worth it and which ones rarely return what they cost." },
@@ -313,19 +313,19 @@ export default function Home() {
               <RevealDiv
                 key={service.num}
                 delay={i * 80}
-                className="bg-[#F8F5F0] p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
+                className="bg-white p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
                 <Link href="/homeowner-guide" className="block h-full cursor-pointer">
-                  <div className="font-display text-5xl font-light text-[#E8E0D5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
+                  <div className="font-display text-5xl font-medium text-[#E5E5E5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
-                  <h3 className="font-display text-3xl font-light text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
+                  <h3 className="font-display text-3xl font-medium text-[#1A1A18] group-hover:text-white mb-3 transition-colors duration-500">
                     {service.title}
                   </h3>
-                  <p className="font-body text-base text-[#1A1A18]/60 group-hover:text-white/60 mb-6 transition-colors duration-500">
+                  <p className="font-body text-lg text-[#2B2B2B] group-hover:text-white/90 mb-6 transition-colors duration-500">
                     {service.desc}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[#B8974A] group-hover:text-white font-body text-sm uppercase tracking-widest">
+                  <span className="section-number inline-flex items-center gap-2 group-hover:text-white">
                     Explore Options
                     <ArrowRight size={14} />
                   </span>
@@ -340,15 +340,15 @@ export default function Home() {
       <section className="py-20 md:py-32 bg-[#1A1A18] text-white">
         <div className="container text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6 max-w-2xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-6 max-w-2xl mx-auto">
               Run the numbers on every option.
             </h2>
-            <p className="font-body text-base text-white/70 mb-10 max-w-lg mx-auto">
+            <p className="font-body text-lg text-white/90 mb-10 max-w-lg mx-auto">
               Selling is not always the right answer. These tools help you compare your real options before you decide anything.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/sell-vs-rent">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                   Sell vs. Rent Calculator
                   <ArrowRight size={14} />
                 </span>
@@ -373,14 +373,14 @@ export default function Home() {
                 <span className="section-rule" />
                 <span className="section-number">03. Insight</span>
               </div>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-[#1A1A18] mb-6">
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-[#1A1A18] mb-6">
                 Local market<br />
-                <em className="italic">intelligence.</em>
+                <span className="font-semibold">intelligence.</span>
               </h2>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-4">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
                 The Cedar Park and Leander markets move differently than the broader Austin area. Pricing, absorption rates, and buyer demand shift at the neighborhood level, not the city level.
               </p>
-              <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-8">
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
                 I focus on Cedar Park, Leander, and the surrounding Austin area so I can give you an honest read on where things stand and what that means for your decision, whether you are thinking about selling now, waiting, or something else entirely.
               </p>
               <Link href="/homeowner-guide">
@@ -408,9 +408,9 @@ export default function Home() {
               <span className="section-rule" />
               <span className="section-number">How This Works</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-12">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-12">
               What working with me<br />
-              <em className="italic">actually looks like.</em>
+              <span className="font-semibold">actually looks like.</span>
             </h2>
           </RevealDiv>
 
@@ -434,9 +434,9 @@ export default function Home() {
             ].map((item, i) => (
               <RevealDiv key={item.step} delay={i * 100}>
                 <div className="border-t-2 border-[#B8974A] pt-6">
-                  <p className="font-display text-4xl font-light text-[#E8E0D5] mb-4">{item.step}</p>
-                  <h3 className="font-display text-xl font-light text-[#1A1A18] mb-3">{item.title}</h3>
-                  <p className="font-body text-sm text-[#1A1A18]/65 leading-relaxed">{item.desc}</p>
+                  <p className="font-display text-4xl font-medium text-[#E5E5E5] mb-4">{item.step}</p>
+                  <h3 className="font-display text-xl font-medium text-[#1A1A18] mb-3">{item.title}</h3>
+                  <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">{item.desc}</p>
                 </div>
               </RevealDiv>
             ))}
@@ -444,7 +444,7 @@ export default function Home() {
 
           <RevealDiv delay={300} className="mt-12">
             <Link href="/contact">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Start a Conversation
                 <ArrowRight size={14} />
               </span>
@@ -454,17 +454,17 @@ export default function Home() {
       </section>
 
       {/* PROCESS STRIP */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 bg-white border-y border-[#E5E5E5]">
         <div className="container max-w-3xl">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" />
               <span className="section-number">04. Process</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-8">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-8">
               Your journey, clearly defined.
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 leading-relaxed mb-12">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12">
               Whether you decide to sell, remodel, rent, or hold, knowing what happens at each stage makes the whole thing less stressful. Here is how I work with sellers.
             </p>
           </RevealDiv>
@@ -512,17 +512,17 @@ export default function Home() {
       </section>
 
       {/* GUIDE SECTION */}
-      <section className="py-20 md:py-32 bg-[#F8F5F0]">
+      <section className="py-20 md:py-32 bg-white">
         <div className="container max-w-3xl text-center">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-[#1A1A18] mb-6 max-w-2xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-6 max-w-2xl mx-auto">
               Not sure where to start?
             </h2>
-            <p className="font-body text-base text-[#1A1A18]/65 mb-10 max-w-lg mx-auto">
+            <p className="font-body text-lg text-[#2B2B2B] mb-10 max-w-lg mx-auto">
               The homeowner guide walks you through the sell, remodel, rent, and hold decision with plain language and real numbers. No pressure, just clarity.
             </p>
             <Link href="/homeowner-guide">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3">
                 Read the Homeowner Guide
                 <ArrowRight size={14} />
               </span>
@@ -535,14 +535,14 @@ export default function Home() {
       <section className="bg-[#1A1A18] py-20 md:py-32 text-center">
         <div className="container">
           <RevealDiv>
-            <h2 className="font-display text-4xl md:text-5xl font-light text-white mb-6">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-6">
               Ready to talk through your options?
             </h2>
-            <p className="font-body text-base text-white/70 max-w-2xl mx-auto leading-relaxed mb-10">
+            <p className="font-body text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mb-10">
               No sales pitch. Just a straightforward conversation about your home, your situation, and what actually makes sense for you.
             </p>
             <Link href="/contact">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Start a Conversation
                 <ArrowRight size={14} />
               </span>

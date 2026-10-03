@@ -196,8 +196,8 @@ const helpSteps = [
 export default function FSBOES() {
   useEffect(() => {
     setPageMeta(
-      "Vende Tu Casa por Tu Cuenta en el Área de Austin | Mario Manzano",
-      "¿Vendes tu casa por tu cuenta? Aquí tienes algunas cosas que vale la pena saber, y cómo sería trabajar con Mario si quieres un plan de respaldo. Atendemos el área de Austin.",
+      "Vende Tu Casa por Tu Cuenta | Área de Austin | Mario Manzano",
+      "¿Vendes tu casa por tu cuenta? Cosas que vale la pena saber y cómo sería trabajar con Mario como tu plan de respaldo. Mario atiende el área de Austin.",
       "https://mariomanzano.com/es/vende-tu-casa/"
     );
     // Hidden utility page: prevent indexing

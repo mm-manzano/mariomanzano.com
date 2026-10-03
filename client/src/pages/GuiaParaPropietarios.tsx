@@ -90,8 +90,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function GuiaParaPropietarios() {
   useEffect(() => {
     setPageMeta(
-      "Guía para Propietarios: Vender, Remodelar, Alquilar o Mantener | Cedar Park y Leander TX",
-      "Guía en lenguaje claro para propietarios en Cedar Park y Leander TX. Entiende las cuatro opciones para tu casa antes de tomar cualquier decisión. Sin presión, solo claridad.",
+      "Guía para Propietarios: Vender, Remodelar, Rentar o Mantener",
+      "Guía clara para propietarios en Cedar Park y Leander TX. Entiende las cuatro opciones para tu casa antes de decidir. Sin presión, solo claridad.",
       "https://mariomanzano.com/es/guia-para-propietarios/"
     );
   }, []);

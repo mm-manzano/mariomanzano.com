@@ -67,8 +67,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function AboutES() {
   useEffect(() => {
     setPageMeta(
-      "Acerca de Mario Manzano | Agente de Bienes Raíces en Leander TX",
-      "Mario Manzano es un REALTOR® licenciado y estratega de ventas en Leander TX. Conoce su historia, su experiencia en inversiones y su enfoque para ayudar a propietarios a tomar decisiones claras.",
+      "Acerca de Mario Manzano | Agente de Bienes Raíces en Leander",
+      "Mario Manzano es un REALTOR® licenciado y estratega de ventas en Leander TX. Conoce su historia, su experiencia en inversiones y cómo ayuda a propietarios.",
       "https://mariomanzano.com/es/acerca/"
     );
   }, []);

@@ -73,8 +73,8 @@ export default function SellVsRent() {
 
   useEffect(() => {
     setPageMeta(
-      "Should I Sell or Rent My Home? Free Calculator | Cedar Park & Leander TX",
-      "Run the numbers before you decide. Compare selling now versus holding as a rental based on your actual equity, rent potential, and timeline. Free tool for Greater Austin homeowners.",
+      "Sell or Rent? Free Calculator | Cedar Park & Leander TX",
+      "Compare selling now versus renting based on your equity, rent potential, and timeline. Free tool for Greater Austin homeowners.",
       "https://mariomanzano.com/sell-vs-rent/"
     );
   }, []);

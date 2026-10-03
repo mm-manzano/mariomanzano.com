@@ -2,6 +2,14 @@ import { useEffect } from "react";
 
 export default function TermsOfServiceES() {
   useEffect(() => {
+    document.title = "Términos de Servicio | Mario Manzano";
+    let description = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+    description.setAttribute("content", "Los términos de uso de mariomanzano.com, incluyendo el consentimiento para llamadas y textos y cómo cancelar. Mario Manzano, Cedar Park y Leander TX.");
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement("link");

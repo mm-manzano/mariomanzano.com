@@ -65,8 +65,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function StrategyHubES() {
   useEffect(() => {
     setPageMeta(
-      "Centro de Estrategia para Propietarios | Cedar Park y Leander TX | Mario Manzano",
-      "Compara tus opciones reales antes de decidir cualquier cosa. Calcula tus ingresos netos, compara vender vs alquilar y analiza si remodelar tiene sentido financiero. Herramientas gratuitas.",
+      "Centro de Estrategia | Propietarios en Cedar Park y Leander",
+      "Compara tus opciones reales antes de decidir. Calcula tus ingresos netos, compara vender o rentar y analiza si remodelar conviene. Herramientas gratuitas.",
       "https://mariomanzano.com/es/strategy-hub/"
     );
   }, []);

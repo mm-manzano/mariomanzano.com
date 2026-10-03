@@ -35,8 +35,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function HomeValueES() {
   useEffect(() => {
     setPageMeta(
-      "¿Cuánto Vale Mi Casa en Cedar Park o Leander TX? | Mario Manzano",
-      "Obtén una estimación gratuita del valor de tu casa en Cedar Park y Leander TX. Descubre cuánto vale realmente tu propiedad hoy con un Análisis Comparativo de Mercado personalizado de un Realtor local en Austin.",
+      "¿Cuánto Vale Mi Casa en Cedar Park o Leander TX?",
+      "Obtén una estimación gratuita del valor de tu casa en Cedar Park y Leander TX con un Análisis Comparativo de Mercado de un Realtor local en Austin.",
       "https://mariomanzano.com/es/home-value/"
     );
   }, []);

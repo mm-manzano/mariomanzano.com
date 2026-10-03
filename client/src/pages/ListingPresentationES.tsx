@@ -85,7 +85,7 @@ const HEADSHOT =
 export default function ListingPresentationES() {
   useEffect(() => {
     setPageMeta(
-      "Estrategia para Vendedores | Cedar Park y Leander TX | Mario Manzano",
+      "Estrategia para Vendedores | Cedar Park y Leander TX",
       "Cómo Mario Manzano maneja la venta de casas en Cedar Park y Leander: un proceso de 8 pasos basado en tu situación, comunicación clara y sin presión.",
       "https://mariomanzano.com/es/presentacion-vendedores/"
     );

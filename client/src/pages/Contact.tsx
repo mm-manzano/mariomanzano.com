@@ -78,7 +78,7 @@ export default function Contact() {
   useEffect(() => {
     setPageMeta(
       "Contact Mario Manzano | Cedar Park & Leander Realtor",
-      "Reach out to Mario Manzano, a licensed REALTOR® serving Cedar Park and Leander TX. No pressure, no sales pitch. Just a real conversation about your home and your options.",
+      "Reach out to Mario Manzano, a licensed REALTOR® serving Cedar Park and Leander TX. No pressure, no sales pitch. Just a real conversation.",
       "https://mariomanzano.com/contact/"
     );
   }, []);

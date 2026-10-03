@@ -81,7 +81,7 @@ export default function Buyers() {
   useEffect(() => {
     setPageMeta(
       "Buyer Strategy | Cedar Park & Leander TX | Mario Manzano",
-      "Buying a home in Cedar Park or Leander? Mario Manzano helps you understand the numbers and the timing before you make a move, whether you own already or you're buying for the first time.",
+      "Buying in Cedar Park or Leander? Mario Manzano helps you understand the numbers and the timing before you make a move, whether you own or are buying first.",
       "https://mariomanzano.com/buyers/"
     );
   }, []);

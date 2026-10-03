@@ -67,8 +67,8 @@ export default function RemodelVsSellES() {
 
   useEffect(() => {
     setPageMeta(
-      "¿Vale la Pena Remodelar Antes de Vender? Calculadora Gratuita | Cedar Park y Leander TX",
-      "Corre los números antes de decidir. Ingresa el valor de tu casa, el costo de remodelación y el aumento esperado para ver si renovar antes de vender realmente vale la pena. Herramienta gratuita para propietarios en el área de Austin.",
+      "¿Remodelar Antes de Vender? Calculadora Gratis | Cedar Park",
+      "Ingresa el valor de tu casa, el costo de remodelación y el aumento esperado para ver si renovar antes de vender vale la pena. Herramienta gratuita.",
       "https://mariomanzano.com/es/remodel-vs-sell/"
     );
   }, []);

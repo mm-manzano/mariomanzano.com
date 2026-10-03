@@ -2,6 +2,14 @@ import { useEffect } from "react";
 
 export default function TermsOfService() {
   useEffect(() => {
+    document.title = "Terms of Service | Mario Manzano";
+    let description = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+    description.setAttribute("content", "The terms for using mariomanzano.com, including consent to calls and texts and how to opt out. Mario Manzano, Cedar Park and Leander TX.");
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement("link");

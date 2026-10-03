@@ -37,8 +37,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function HomeValue() {
   useEffect(() => {
     setPageMeta(
-      "What Is My Home Worth in Cedar Park or Leander TX? | Mario Manzano",
-      "Get a free home value estimate for Cedar Park and Leander TX. Find out what your home is actually worth today with a personalized Comparative Market Analysis from a local Austin Realtor.",
+      "What Is My Home Worth? | Cedar Park & Leander TX",
+      "Get a free home value estimate for Cedar Park and Leander TX with a personalized Comparative Market Analysis from a local Austin Realtor.",
       "https://mariomanzano.com/home-value/"
     );
   }, []);

@@ -69,8 +69,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function ContactES() {
   useEffect(() => {
     setPageMeta(
-      "Contactar a Mario Manzano | Agente de Bienes Raíces en Cedar Park y Leander TX",
-      "Contacta a Mario Manzano, REALTOR® en Cedar Park y Leander TX. Sin presión, sin discurso de ventas. Solo una conversación real sobre tu casa y tus opciones.",
+      "Contacta a Mario Manzano | Realtor en Cedar Park y Leander",
+      "Contacta a Mario Manzano, REALTOR® en Cedar Park y Leander TX. Sin presión ni discurso de ventas. Solo una conversación real sobre tu casa y tus opciones.",
       "https://mariomanzano.com/es/contacto/"
     );
   }, []);

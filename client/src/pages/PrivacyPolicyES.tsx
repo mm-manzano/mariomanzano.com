@@ -2,6 +2,14 @@ import { useEffect } from "react";
 
 export default function PrivacyPolicyES() {
   useEffect(() => {
+    document.title = "Política de Privacidad | Mario Manzano";
+    let description = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!description) {
+      description = document.createElement("meta");
+      description.setAttribute("name", "description");
+      document.head.appendChild(description);
+    }
+    description.setAttribute("content", "Cómo este sitio web recopila, usa y protege tu información, incluyendo los términos de mensajes de texto. Mario Manzano, Cedar Park y Leander TX.");
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonical) {
       canonical = document.createElement("link");

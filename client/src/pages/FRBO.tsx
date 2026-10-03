@@ -289,7 +289,7 @@ export default function Leasing() {
   useEffect(() => {
     setPageMeta(
       "Lease Your Home in Greater Austin | Mario Manzano",
-      "Already listing your property for rent? Mario handles the leasing piece. MLS listing, professional photos, screening, and a signed lease. One flat fee. No property management. Serving Greater Austin.",
+      "Listing your rental yourself? Mario handles the leasing: MLS listing, photos, screening, and a signed lease. One flat fee. No property management.",
       "https://mariomanzano.com/lease-your-home/"
     );
     // Hidden utility page: prevent indexing

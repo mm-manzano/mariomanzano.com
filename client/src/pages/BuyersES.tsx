@@ -82,7 +82,7 @@ export default function BuyersEs() {
   useEffect(() => {
     setPageMeta(
       "Compradores en Cedar Park y Leander TX | Mario Manzano",
-      "¿Pensando en comprar una casa en el área de Austin? Mario Manzano te ayuda a entender los números y el momento correcto antes de decidir, ya sea que tengas una casa o estés comprando por primera vez.",
+      "¿Pensando en comprar en el área de Austin? Mario Manzano te ayuda a entender los números y el momento correcto antes de decidir, tengas casa o no.",
       "https://mariomanzano.com/es/buyers/"
     );
   }, []);

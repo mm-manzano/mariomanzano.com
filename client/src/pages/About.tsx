@@ -66,8 +66,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function About() {
   useEffect(() => {
     setPageMeta(
-      "About Mario Manzano | Cedar Park & Leander TX Realtor | Seller Strategist",
-      "Mario Manzano is a licensed REALTOR® and Seller Strategist based in Leander TX. Learn his story, his investing background, and his approach to helping homeowners make clear decisions.",
+      "About Mario Manzano | Cedar Park & Leander Realtor",
+      "Mario Manzano is a licensed REALTOR® and Seller Strategist in Leander TX. Learn his story, his investing background, and how he helps homeowners decide.",
       "https://mariomanzano.com/about/"
     );
   }, []);

@@ -90,8 +90,8 @@ function setPageMeta(title: string, description: string, url: string) {
 export default function HomeownerGuide() {
   useEffect(() => {
     setPageMeta(
-      "Homeowner Guide: Sell, Remodel, Rent or Hold | Cedar Park & Leander TX",
-      "Not sure what to do with your home? This guide walks Cedar Park and Leander TX homeowners through all four options with plain language and real tradeoffs. No pressure.",
+      "Sell, Remodel, Rent or Hold Guide | Cedar Park & Leander",
+      "Not sure what to do with your home? This guide walks Cedar Park and Leander homeowners through all four options in plain language. No pressure.",
       "https://mariomanzano.com/homeowner-guide/"
     );
   }, []);

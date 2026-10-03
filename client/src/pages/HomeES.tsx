@@ -108,8 +108,8 @@ export default function HomeES() {
   const [openStep, setOpenStep] = useState<number | null>(null);
   useEffect(() => {
     setPageMeta(
-      "Agente de Bienes Raíces en Cedar Park y Leander TX | Mario Manzano",
-      "Mario Manzano ayuda a propietarios en Cedar Park y Leander TX a entender todas sus opciones antes de tomar una decisión. Vender, remodelar, alquilar o mantener. Sin presión.",
+      "Mario Manzano | Realtor en Cedar Park y Leander TX",
+      "Mario Manzano ayuda a propietarios de Cedar Park y Leander TX a conocer sus opciones antes de decidir. Vender, remodelar, rentar o mantener. Sin presión.",
       "https://mariomanzano.com/es/"
     );
   }, []);

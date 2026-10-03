@@ -58,7 +58,7 @@ export default function NetSheet() {
     setPageMeta(
       "Home Sale Net Sheet Calculator | Cedar Park & Leander TX | Mario Manzano",
       "Find out what you will actually walk away with after selling your home. Calculate net proceeds after commission, closing costs, and mortgage payoff. Free tool for Greater Austin homeowners.",
-      "https://mariomanzano.com/net-sheet"
+      "https://mariomanzano.com/net-sheet/"
     );
   }, []);
 

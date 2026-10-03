@@ -61,7 +61,7 @@ export default function SellVsRentES() {
     setPageMeta(
       "¿Debo Vender o Alquilar mi Casa? Calculadora Gratuita | Cedar Park y Leander TX",
       "Haz los números antes de decidir. Compara vender ahora versus conservar como renta según tu equity real, potencial de renta y plazo. Herramienta gratuita para propietarios en el área de Austin.",
-      "https://mariomanzano.com/es/sell-vs-rent"
+      "https://mariomanzano.com/es/sell-vs-rent/"
     );
   }, []);
 

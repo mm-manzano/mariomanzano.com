@@ -79,7 +79,7 @@ export default function HomeownerGuide() {
     setPageMeta(
       "Homeowner Guide: Sell, Remodel, Rent or Hold | Cedar Park & Leander TX",
       "Not sure what to do with your home? This guide walks Cedar Park and Leander TX homeowners through all four options with plain language and real tradeoffs. No pressure.",
-      "https://mariomanzano.com/homeowner-guide"
+      "https://mariomanzano.com/homeowner-guide/"
     );
   }, []);
 

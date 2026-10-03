@@ -273,7 +273,7 @@ export default function Expired() {
     setPageMeta(
       "Relisting Your Home in Greater Austin | Mario Manzano",
       "Your listing expired. Before relisting, here's what commonly stalls a home, what to ask any agent, and how Mario approaches a relaunch. Serving Greater Austin.",
-      "https://mariomanzano.com/relaunch-your-home"
+      "https://mariomanzano.com/relaunch-your-home/"
     );
     // Hidden utility page: prevent indexing
     let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;

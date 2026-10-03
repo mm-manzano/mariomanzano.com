@@ -56,7 +56,7 @@ export default function StrategyHub() {
     setPageMeta(
       "Home Selling Strategy Hub | Cedar Park & Leander TX | Mario Manzano",
       "Compare your real options before deciding anything. Calculate your net proceeds, compare selling vs renting, and analyze whether remodeling makes financial sense. Free tools for Greater Austin homeowners.",
-      "https://mariomanzano.com/strategy-hub"
+      "https://mariomanzano.com/strategy-hub/"
     );
   }, []);
 

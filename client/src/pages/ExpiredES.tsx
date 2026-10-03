@@ -273,7 +273,7 @@ export default function ExpiredES() {
     setPageMeta(
       "Vuelve a Listar Tu Casa en el Área de Austin | Mario Manzano",
       "Tu listado venció. Antes de volver a listar, esto es lo que suele detener a una casa, qué preguntarle a cualquier agente y cómo enfoca Mario un relanzamiento. Atendemos el área de Austin.",
-      "https://mariomanzano.com/es/relanza-tu-casa"
+      "https://mariomanzano.com/es/relanza-tu-casa/"
     );
     // Hidden utility page: prevent indexing
     let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;

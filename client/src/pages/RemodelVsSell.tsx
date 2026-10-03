@@ -56,7 +56,7 @@ export default function RemodelVsSell() {
     setPageMeta(
       "Should I Remodel or Sell? Free Calculator | Cedar Park & Leander TX",
       "Run the numbers before you decide. Enter your home value, remodel cost, and expected price bump to see if renovating before selling is actually worth it. Free tool for Greater Austin homeowners.",
-      "https://mariomanzano.com/remodel-vs-sell"
+      "https://mariomanzano.com/remodel-vs-sell/"
     );
   }, []);
 

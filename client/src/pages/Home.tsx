@@ -99,7 +99,7 @@ export default function Home() {
     setPageMeta(
       "Cedar Park & Leander TX Realtor | Sell, Remodel, Rent or Hold | Mario Manzano",
       "Mario Manzano helps homeowners in Cedar Park and Leander TX understand all their options before deciding anything. Sell, remodel, rent, or hold. Calm guidance. No pressure.",
-      "https://mariomanzano.com"
+      "https://mariomanzano.com/"
     );
   }, []);
 

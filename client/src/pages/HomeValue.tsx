@@ -32,7 +32,7 @@ export default function HomeValue() {
     setPageMeta(
       "What Is My Home Worth in Cedar Park or Leander TX? | Mario Manzano",
       "Get a free home value estimate for Cedar Park and Leander TX. Find out what your home is actually worth today with a personalized Comparative Market Analysis from a local Austin Realtor.",
-      "https://mariomanzano.com/home-value"
+      "https://mariomanzano.com/home-value/"
     );
   }, []);
 

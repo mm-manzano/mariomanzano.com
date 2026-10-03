@@ -284,7 +284,7 @@ export default function LeasingES() {
     setPageMeta(
       "Renta Tu Propiedad en el Área de Austin | Mario Manzano",
       "¿Ya publicaste tu propiedad en renta? Mario se encarga de la parte de rentarla. Listado en el MLS, fotos profesionales, revisión de solicitantes y un contrato firmado. Una sola tarifa. Sin administración de la propiedad. Atendemos el área de Austin.",
-      "https://mariomanzano.com/es/renta-tu-casa"
+      "https://mariomanzano.com/es/renta-tu-casa/"
     );
     // Hidden utility page: prevent indexing
     let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;

@@ -192,7 +192,7 @@ export default function FSBO() {
     setPageMeta(
       "Selling Your Home Yourself in Greater Austin | Mario Manzano",
       "Selling your home on your own? Here are a few things worth knowing, and what working with Mario would look like if you want a backup plan. Serving Greater Austin.",
-      "https://mariomanzano.com/sell-your-home"
+      "https://mariomanzano.com/sell-your-home/"
     );
     // Hidden utility page: prevent indexing
     let robotsMeta = document.querySelector('meta[name="robots"]') as HTMLMetaElement;

@@ -115,7 +115,7 @@ export default function StrategyHub() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 The sale price is not what you keep. After commission, closing costs, and your remaining mortgage balance, your net proceeds can look very different. This calculator shows you the real number before you commit to anything.
               </p>
-              <Link href="/net-sheet">
+              <Link href="/net-sheet/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Calculate Net Proceeds
                   <ArrowRight size={14} />
@@ -133,7 +133,7 @@ export default function StrategyHub() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 Selling gives you liquidity now. Renting keeps your equity working over time. This tool compares both paths side by side so you can see which one actually comes out ahead based on your specific numbers and timeline.
               </p>
-              <Link href="/sell-vs-rent">
+              <Link href="/sell-vs-rent/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Compare Sell vs. Rent
                   <ArrowRight size={14} />
@@ -151,7 +151,7 @@ export default function StrategyHub() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 Most renovations do not return 100 percent of their cost. This tool analyzes your remodel investment against the expected value increase so you can decide whether it is worth it or whether selling as-is puts more money in your pocket.
               </p>
-              <Link href="/remodel-vs-sell">
+              <Link href="/remodel-vs-sell/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Analyze Remodel vs. Sell
                   <ArrowRight size={14} />
@@ -169,7 +169,7 @@ export default function StrategyHub() {
           <p className="font-body text-lg text-[#2B2B2B] max-w-xl mx-auto leading-relaxed mb-8">
             The tools give you a starting point. A real conversation gives you a strategy. If you want to talk through what your numbers actually mean, reach out.
           </p>
-          <Link href="/contact">
+          <Link href="/contact/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
               Start a Conversation
               <ArrowRight size={14} />

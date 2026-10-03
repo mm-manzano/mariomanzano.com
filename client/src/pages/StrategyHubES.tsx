@@ -114,7 +114,7 @@ export default function StrategyHubES() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 El precio de venta no es lo que te llevas a casa. Después de la comisión, los costos de cierre y lo que queda de tu hipoteca, el número real puede verse muy diferente. Esta calculadora te lo muestra antes de que firmes nada.
               </p>
-              <Link href="/es/net-sheet">
+              <Link href="/es/net-sheet/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Calcular Ingresos Netos
                   <ArrowRight size={14} />
@@ -132,7 +132,7 @@ export default function StrategyHubES() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 Vender te da el dinero ahora. Rentar mantiene tu capital trabajando a largo plazo. Esta herramienta compara los dos caminos con tus números reales para que veas cuál te conviene más según tu situación y tu plazo.
               </p>
-              <Link href="/es/sell-vs-rent">
+              <Link href="/es/sell-vs-rent/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Comparar Vender vs. Rentar
                   <ArrowRight size={14} />
@@ -150,7 +150,7 @@ export default function StrategyHubES() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 flex-grow">
                 La mayoría de las renovaciones no recuperan lo que cuestan al momento de vender. Esta herramienta compara lo que gastarías contra lo que podrías ganar para que decidas si remodelar tiene sentido o si vender como está te deja más dinero en el bolsillo.
               </p>
-              <Link href="/es/remodel-vs-sell">
+              <Link href="/es/remodel-vs-sell/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                   Analizar Remodelar vs. Vender
                   <ArrowRight size={14} />
@@ -168,7 +168,7 @@ export default function StrategyHubES() {
           <p className="font-body text-lg text-[#2B2B2B] max-w-xl mx-auto leading-relaxed mb-8">
             Las herramientas te dan un punto de partida. Una conversación real te da una estrategia. Si quieres entender lo que significan tus números, escríbeme.
           </p>
-          <Link href="/es/contacto">
+          <Link href="/es/contacto/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
               Iniciar una Conversación
               <ArrowRight size={14} />

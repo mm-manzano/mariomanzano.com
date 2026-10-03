@@ -161,13 +161,13 @@ export default function HomeES() {
               La mayoría de los propietarios solo escuchan una opción. Yo te ayudo a conocer todas tus opciones, ya sea vender, remodelar, rentar, conservar tu casa o comprar la siguiente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/es/strategy-hub">
+              <Link href="/es/strategy-hub/">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                   Ver Tus Opciones
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/es/home-value">
+              <Link href="/es/home-value/">
                 <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
                   Mira Cuánto Podría Valer Tu Casa
                   <ArrowRight size={14} />
@@ -185,7 +185,7 @@ export default function HomeES() {
             <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
               Ayudo a propietarios en Cedar Park, Leander y el área de Austin a crear una estrategia clara para vender, remodelar, rentar o conservar su casa. Si estás buscando comprar, también te ayudo a no pagar de más.
             </p>
-            <Link href="/es/buyers">
+            <Link href="/es/buyers/">
               <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
                 Para Compradores
                 <ArrowRight size={14} />
@@ -209,13 +209,13 @@ export default function HomeES() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
-              <Link href="/es/net-sheet">
+              <Link href="/es/net-sheet/">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
                   Calcular Ingresos Netos
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/es/presentacion-vendedores">
+              <Link href="/es/presentacion-vendedores/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
                   Ver Cómo Trabajo
                   <ArrowRight size={14} />
@@ -251,7 +251,7 @@ export default function HomeES() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
                 Antes de decidir cualquier cosa sobre tu casa, mereces entender todas tus opciones. Eso puede significar vender. Puede significar otra cosa. Mi trabajo es guiarte a través de los números para que tomes la decisión que realmente se adapte a tu situación.
               </p>
-              <Link href="/es/acerca">
+              <Link href="/es/acerca/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   Mi Historia
                   <ArrowRight size={14} />
@@ -320,7 +320,7 @@ export default function HomeES() {
                 delay={i * 80}
                 className="bg-white p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <Link href="/es/guia-para-propietarios" className="block h-full cursor-pointer">
+                <Link href="/es/guia-para-propietarios/" className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-medium text-[#E5E5E5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -352,13 +352,13 @@ export default function HomeES() {
               Vender no siempre es la respuesta correcta. Estas herramientas te ayudan a comparar tus opciones reales antes de decidir cualquier cosa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/es/sell-vs-rent">
+              <Link href="/es/sell-vs-rent/">
                 <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                   Calculadora Vender vs. Alquilar
                   <ArrowRight size={14} />
                 </span>
               </Link>
-              <Link href="/es/remodel-vs-sell">
+              <Link href="/es/remodel-vs-sell/">
                 <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
                   Calculadora Remodelar vs. Vender
                   <ArrowRight size={14} />
@@ -388,7 +388,7 @@ export default function HomeES() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
                 Me enfoco en Cedar Park, Leander y el área circundante de Austin para darte una lectura honesta de cómo están las cosas y lo que eso significa para tu decisión, ya sea que estés pensando en vender ahora, esperar o algo diferente.
               </p>
-              <Link href="/es/guia-para-propietarios">
+              <Link href="/es/guia-para-propietarios/">
                 <span className="btn-luxury-outline inline-flex items-center gap-3">
                   Leer la Guía
                   <ArrowRight size={14} />
@@ -448,7 +448,7 @@ export default function HomeES() {
           </div>
 
           <RevealDiv delay={300} className="mt-12">
-            <Link href="/es/contacto">
+            <Link href="/es/contacto/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Iniciar una Conversación
                 <ArrowRight size={14} />
@@ -506,7 +506,7 @@ export default function HomeES() {
           </div>
 
           <RevealDiv delay={200} className="mt-12">
-            <Link href="/es/presentacion-vendedores">
+            <Link href="/es/presentacion-vendedores/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                 Ver Mi Estrategia Completa para Vendedores
                 <ArrowRight size={14} />
@@ -526,7 +526,7 @@ export default function HomeES() {
             <p className="font-body text-lg text-[#2B2B2B] mb-10 max-w-lg mx-auto">
               La guía para propietarios explica la decisión de vender, remodelar, alquilar o mantener en lenguaje claro y con números reales. Sin presión, solo claridad.
             </p>
-            <Link href="/es/guia-para-propietarios">
+            <Link href="/es/guia-para-propietarios/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3">
                 Leer la Guía para Propietarios
                 <ArrowRight size={14} />
@@ -546,7 +546,7 @@ export default function HomeES() {
             <p className="font-body text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mb-10">
               Sin discurso de ventas. Solo una conversación directa sobre tu casa, tu situación y lo que realmente tiene sentido para ti.
             </p>
-            <Link href="/es/contacto">
+            <Link href="/es/contacto/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Iniciar una Conversación
                 <ArrowRight size={14} />

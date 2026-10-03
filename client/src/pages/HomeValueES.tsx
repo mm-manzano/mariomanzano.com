@@ -65,7 +65,7 @@ export default function HomeValueES() {
 
       <div className="container max-w-4xl">
         {/* Enlace de regreso */}
-        <Link href="/es">
+        <Link href="/es/" className="tap-area">
           <span className="section-number inline-flex items-center gap-2 text-[#2B2B2B] transition-colors mb-8 cursor-pointer">
             <ChevronLeft size={16} />
             Volver a Estrategia
@@ -116,7 +116,7 @@ export default function HomeValueES() {
           <p className="font-body text-lg text-[#2B2B2B] mb-8 leading-relaxed">
             Te puedo preparar un Análisis Comparativo de Mercado personalizado basado en tu propiedad y el mercado actual. Sin compromiso. Solo un panorama más claro de dónde está parada tu casa.
           </p>
-          <Link href="/es/contacto">
+          <Link href="/es/contacto/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
               Solicitar mi CMA personalizado
               <ArrowRight size={14} />
@@ -130,7 +130,7 @@ export default function HomeValueES() {
             <h4 className="font-display text-xl font-medium mb-2">También útil: Calcula tus ingresos netos</h4>
             <p className="font-body text-lg text-white/90">Si estás pensando en vender, descubre cuánto te quedarás después de los costos.</p>
           </div>
-          <Link href="/es/net-sheet">
+          <Link href="/es/net-sheet/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
               Ir a Ingresos Netos
               <ArrowRight size={14} />

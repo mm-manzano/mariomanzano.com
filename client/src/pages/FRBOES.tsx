@@ -551,7 +551,7 @@ export default function LeasingES() {
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
               No tienes que decidir hoy. Solo necesitas saber los números.
             </p>
-            <Link href="/es/guia-para-propietarios">
+            <Link href="/es/guia-para-propietarios/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                 Ver Todas Tus Opciones
                 <ArrowRight size={14} />
@@ -578,7 +578,7 @@ export default function LeasingES() {
             <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               Basta con una llamada corta. Escucho dónde estás, te explico cómo le pondría precio a tu propiedad y te digo con franqueza si creo que realmente puedo ayudarte. Si ya tenemos una hora apartada, trae lo que tengas hasta ahora, como tu anuncio actual, ofertas o preguntas de los solicitantes. Sin presión, sea cual sea tu decisión.
             </p>
-            <Link href="/es/contacto">
+            <Link href="/es/contacto/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Agenda una Llamada con Mario
                 <ArrowRight size={14} />

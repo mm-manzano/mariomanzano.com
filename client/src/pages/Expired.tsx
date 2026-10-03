@@ -196,7 +196,7 @@ const tips: Item[] = [
   {
     title: "Know your net before you pick a number",
     body: "Your price is only part of it. Closing costs, repairs, and your payoff all change what you walk away with.",
-    link: { href: "/net-sheet", label: "Run your net sheet" },
+    link: { href: "/net-sheet/", label: "Run your net sheet" },
     icon: icons.dollar,
   },
 ];
@@ -254,7 +254,7 @@ function ItemList({ items, step = 60 }: { items: Item[]; step?: number }) {
                 {item.body}
               </p>
               {item.link && (
-                <Link href={item.link.href}>
+                <Link href={item.link.href} className="tap-area">
                   <span className="font-body text-lg font-semibold text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
                     {item.link.label}
                   </span>
@@ -386,7 +386,7 @@ export default function Expired() {
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               I've owned rentals myself, so I ask this question when it makes sense. Depending on your mortgage, what the home could rent for, and your plans, keeping it might make more sense than selling. Or it might not. Either way, it's worth running the numbers before you decide.
             </p>
-            <Link href="/sell-vs-rent">
+            <Link href="/sell-vs-rent/" className="tap-area">
               <span className="font-body text-lg font-semibold text-[#7A5F24] underline underline-offset-4 cursor-pointer">
                 Compare selling vs renting
               </span>
@@ -456,7 +456,7 @@ export default function Expired() {
             <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               Whether you hire me or not, you should leave with a clearer picture of what happened, what I'd change, including how I'd approach your price and next launch, and what your options are. And if it's not for you, feel free to kick me out.
             </p>
-            <Link href="/contact">
+            <Link href="/contact/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Set Up a Time to Meet
                 <ArrowRight size={16} />

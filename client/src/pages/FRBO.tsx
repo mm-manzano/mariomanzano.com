@@ -551,7 +551,7 @@ export default function Leasing() {
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-8">
               You don't have to decide today. You just need to know the numbers.
             </p>
-            <Link href="/homeowner-guide">
+            <Link href="/homeowner-guide/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                 See All Your Options
                 <ArrowRight size={14} />
@@ -578,7 +578,7 @@ export default function Leasing() {
             <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               A quick call is all it takes. I'll listen to where you are, walk you through how I'd approach pricing your property, and be upfront about whether I think I can actually help. If we already have a time set, bring anything you have so far, like your current listing, offers, or questions from applicants. No pressure either way.
             </p>
-            <Link href="/contact">
+            <Link href="/contact/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Schedule a Call with Mario
                 <ArrowRight size={14} />

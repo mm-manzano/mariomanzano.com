@@ -154,7 +154,7 @@ export default function GuiaParaPropietarios() {
               href="/guia-para-propietarios.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-lg opacity-90 hover:opacity-100 font-medium tracking-wide border-b border-white/40 pb-1"
+              className="tap-area text-white text-lg opacity-90 hover:opacity-100 font-medium tracking-wide border-b border-white/40 pb-1"
             >
               Descargar PDF
             </a>

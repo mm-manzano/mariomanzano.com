@@ -215,7 +215,7 @@ export default function NetSheetES() {
                 </div>
               </div>
               <div className="mt-12 pt-12 border-t border-white/10">
-                <Link href="/es/contacto">
+                <Link href="/es/contacto/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Obtener una Hoja Neta Precisa
                     <ArrowRight size={14} className="ml-2" />
@@ -251,7 +251,7 @@ export default function NetSheetES() {
             <p className="font-body text-lg text-[#2B2B2B] mb-10 leading-relaxed">
               Estas estimaciones usan el precio de venta que tú ingresas. Si quieres un punto de referencia antes de correr los números, obtén primero una estimación del valor de tu casa.
             </p>
-            <Link href="/es/home-value">
+            <Link href="/es/home-value/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                 Obtener Estimación Base
                 <ArrowRight size={14} />

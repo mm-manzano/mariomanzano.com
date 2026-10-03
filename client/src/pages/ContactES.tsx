@@ -142,7 +142,7 @@ export default function ContactES() {
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
+                  <a href="tel:(512)695-9255" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     (512) 695-9255
                   </a>
                   <p className="font-body text-lg text-[#2B2B2B]">
@@ -160,7 +160,7 @@ export default function ContactES() {
                 <div>
                   <a
                     href="sms:+15126959255?body=Hola%20Mario,%20tengo%20una%20pregunta%20sobre%20mi%20casa."
-                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24]"
+                    className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24]"
                   >
                     Enviar un mensaje
                   </a>
@@ -177,7 +177,7 @@ export default function ContactES() {
                   <Mail size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="mailto:realtor@mariomanzano.com" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
+                  <a href="mailto:realtor@mariomanzano.com" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     realtor@mariomanzano.com
                   </a>
                   <p className="font-body text-lg text-[#2B2B2B]">

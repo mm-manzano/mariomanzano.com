@@ -106,7 +106,7 @@ const tips = [
   {
     title: "Entérate de cuánto te llevas antes de responder a una oferta",
     body: "Una oferta es más que un precio. Los costos de cierre, las reparaciones y la fecha del closing cambian lo que realmente te llevas a casa. Haz tu cálculo primero y luego decide.",
-    link: { href: "/es/net-sheet", label: "Calcula tu ganancia neta" },
+    link: { href: "/es/net-sheet/", label: "Calcula tu ganancia neta" },
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23" />
@@ -274,7 +274,7 @@ export default function FSBOES() {
                       {tip.body}
                     </p>
                     {tip.link && (
-                      <Link href={tip.link.href}>
+                      <Link href={tip.link.href} className="tap-area">
                         <span className="font-body text-lg font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
                           {tip.link.label}
                         </span>
@@ -306,7 +306,7 @@ export default function FSBOES() {
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mt-10 mb-3">
               ¿Todavía estás pensando si vender o no? El centro de estrategia tiene la calculadora de ingresos netos, la calculadora de vender o rentar y la de remodelar o vender, todo en un solo lugar.
             </p>
-            <Link href="/es/strategy-hub">
+            <Link href="/es/strategy-hub/" className="tap-area">
               <span className="font-body text-lg font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer">
                 Abre el centro de estrategia
               </span>
@@ -395,7 +395,7 @@ export default function FSBOES() {
             <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               Esta página es lo básico. El verdadero valor está en sentarnos a platicar, incluyendo cómo le pondría precio a tu casa en específico. Si ya tenemos una hora apartada, trae lo que hayas reunido hasta ahora, como ofertas, comentarios de las visitas o preguntas que hayan surgido. Te diré con franqueza si creo que puedo ayudarte. Sin presión, sea cual sea tu decisión.
             </p>
-            <Link href="/es/contacto">
+            <Link href="/es/contacto/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Agendar una Cita
                 <ArrowRight size={14} />

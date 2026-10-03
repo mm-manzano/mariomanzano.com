@@ -196,7 +196,7 @@ const tips: Item[] = [
   {
     title: "Entérate de cuánto te queda antes de escoger un precio",
     body: "Tu precio es solo una parte. Los costos de cierre, las reparaciones y lo que todavía debes de tu préstamo cambian lo que te llevas al final.",
-    link: { href: "/es/net-sheet", label: "Calcula tu ganancia neta" },
+    link: { href: "/es/net-sheet/", label: "Calcula tu ganancia neta" },
     icon: icons.dollar,
   },
 ];
@@ -254,7 +254,7 @@ function ItemList({ items, step = 60 }: { items: Item[]; step?: number }) {
                 {item.body}
               </p>
               {item.link && (
-                <Link href={item.link.href}>
+                <Link href={item.link.href} className="tap-area">
                   <span className="font-body text-lg font-semibold text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
                     {item.link.label}
                   </span>
@@ -386,7 +386,7 @@ export default function ExpiredES() {
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
               Yo mismo he tenido propiedades en renta, así que hago esta pregunta cuando tiene sentido. Dependiendo de tu hipoteca, de cuánto podría rentar la casa y de tus planes, conservarla puede tener más sentido que venderla. O puede que no. De cualquier forma, vale la pena hacer los números antes de decidir.
             </p>
-            <Link href="/es/sell-vs-rent">
+            <Link href="/es/sell-vs-rent/" className="tap-area">
               <span className="font-body text-lg font-semibold text-[#7A5F24] underline underline-offset-4 cursor-pointer">
                 Compara vender o rentar
               </span>
@@ -456,7 +456,7 @@ export default function ExpiredES() {
             <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               Me contrates o no, deberías salir con una idea más clara de lo que pasó, de lo que yo cambiaría, incluyendo cómo manejaría tu precio y el próximo lanzamiento, y de cuáles son tus opciones. Y si no es para ti, no dudes en decirme que me vaya.
             </p>
-            <Link href="/es/contacto">
+            <Link href="/es/contacto/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Agendar una Cita
                 <ArrowRight size={16} />

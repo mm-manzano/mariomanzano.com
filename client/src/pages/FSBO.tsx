@@ -106,7 +106,7 @@ const tips = [
   {
     title: "Know your net before you respond to an offer",
     body: "An offer is more than a price. Closing costs, repairs, and the closing date all change what you take home. Run your number first, then decide.",
-    link: { href: "/net-sheet", label: "Run your net sheet" },
+    link: { href: "/net-sheet/", label: "Run your net sheet" },
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23" />
@@ -274,7 +274,7 @@ export default function FSBO() {
                       {tip.body}
                     </p>
                     {tip.link && (
-                      <Link href={tip.link.href}>
+                      <Link href={tip.link.href} className="tap-area">
                         <span className="font-body text-lg font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer inline-block mt-2">
                           {tip.link.label}
                         </span>
@@ -306,7 +306,7 @@ export default function FSBO() {
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mt-10 mb-3">
               Still weighing whether to sell at all? The strategy hub has the net sheet, the sell vs rent calculator, and the remodel vs sell calculator in one place.
             </p>
-            <Link href="/strategy-hub">
+            <Link href="/strategy-hub/" className="tap-area">
               <span className="font-body text-lg font-medium text-[#7A5F24] underline underline-offset-4 cursor-pointer">
                 Open the strategy hub
               </span>
@@ -395,7 +395,7 @@ export default function FSBO() {
             <p className="font-body text-lg text-white/90 leading-relaxed mb-8 max-w-lg">
               This page is the basics. The real value is in sitting down together, including how I'd price your home specifically. If we already have a time set, bring anything you've gathered so far, like offers, showing feedback, or questions that have come up. I'll be upfront about whether I think I can help. No pressure either way.
             </p>
-            <Link href="/contact">
+            <Link href="/contact/">
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                 Set Up a Time to Meet
                 <ArrowRight size={14} />

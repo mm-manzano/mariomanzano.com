@@ -151,7 +151,7 @@ export default function Contact() {
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
+                  <a href="tel:(512)695-9255" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     (512) 695-9255
                   </a>
                   <p className="font-body text-lg text-[#2B2B2B]">
@@ -171,7 +171,7 @@ export default function Contact() {
                     href={isBuyerIntent
                       ? "sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question%20about%20buying%20a%20home."
                       : "sms:+15126959255?body=Hi%20Mario,%20I%20have%20a%20quick%20question%20about%20my%20home."}
-                    className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24]"
+                    className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24]"
                   >
                     Send a Message
                   </a>
@@ -188,7 +188,7 @@ export default function Contact() {
                   <Mail size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="mailto:realtor@mariomanzano.com" className="font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
+                  <a href="mailto:realtor@mariomanzano.com" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     realtor@mariomanzano.com
                   </a>
                   <p className="font-body text-lg text-[#2B2B2B]">

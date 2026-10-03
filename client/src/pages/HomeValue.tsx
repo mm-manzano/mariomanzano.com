@@ -66,7 +66,7 @@ export default function HomeValue() {
 
       <div className="container max-w-4xl">
         {/* Back Link */}
-        <Link href="/">
+        <Link href="/" className="tap-area">
           <span className="section-number inline-flex items-center gap-2 text-[#2B2B2B] transition-colors mb-8 cursor-pointer">
             <ChevronLeft size={16} />
             Back to Strategy
@@ -117,7 +117,7 @@ export default function HomeValue() {
           <p className="font-body text-lg text-[#2B2B2B] mb-8 leading-relaxed">
             I can prepare a personalized Comparative Market Analysis based on your property and the current market. No obligation. Just a clearer picture of where your home stands.
           </p>
-          <Link href="/contact">
+          <Link href="/contact/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
               Request My Personalized CMA
               <ArrowRight size={14} />
@@ -131,7 +131,7 @@ export default function HomeValue() {
             <h4 className="font-display text-xl font-medium mb-2">Also useful: Calculate your net proceeds</h4>
             <p className="font-body text-lg text-white/90">If you are thinking about selling, find out what you would walk away with after costs.</p>
           </div>
-          <Link href="/net-sheet">
+          <Link href="/net-sheet/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer whitespace-nowrap">
               Go to Net Sheet
               <ArrowRight size={14} />

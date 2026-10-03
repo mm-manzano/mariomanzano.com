@@ -249,7 +249,7 @@ export default function Navigation() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="lg:hidden p-2 text-white"
+              className="lg:hidden p-2 ml-3 text-white"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >

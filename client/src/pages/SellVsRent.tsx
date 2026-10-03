@@ -293,7 +293,7 @@ export default function SellVsRent() {
               <div className="mt-12 pt-12 border-t border-white/10">
                 <h3 className="font-display text-xl font-medium text-white mb-4">What This Means</h3>
                 <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway()}</p>
-                <Link href="/contact">
+                <Link href="/contact/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Talk Through Your Numbers
                     <ArrowRight size={14} className="ml-2" />
@@ -326,7 +326,7 @@ export default function SellVsRent() {
             <p className="font-body text-lg text-[#2B2B2B] mb-10 leading-relaxed">
               Get a baseline estimate before running the comparison.
             </p>
-            <Link href="/home-value">
+            <Link href="/home-value/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                 Get Baseline Estimate
                 <ArrowRight size={14} />

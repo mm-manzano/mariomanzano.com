@@ -215,7 +215,7 @@ export default function NetSheet() {
                 </div>
               </div>
               <div className="mt-12 pt-12 border-t border-white/10">
-                <Link href="/contact">
+                <Link href="/contact/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Get a Precise Net Sheet
                     <ArrowRight size={14} className="ml-2" />
@@ -252,7 +252,7 @@ export default function NetSheet() {
             <p className="font-body text-lg text-[#2B2B2B] mb-10 leading-relaxed">
               These estimates assume a sale price you enter. If you want a ballpark before you run the numbers, get a baseline home value estimate first.
             </p>
-            <Link href="/home-value">
+            <Link href="/home-value/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
                 Get Baseline Estimate
                 <ArrowRight size={14} />

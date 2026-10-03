@@ -3,37 +3,37 @@ const links = [
   {
     label: "What Is My Home Worth?",
     description: "Get a local estimate based on real Cedar Park & Leander data",
-    href: "https://mariomanzano.com/home-value?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+    href: "https://mariomanzano.com/home-value/?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Calculate My Net Proceeds",
     description: "See what you actually walk away with after all costs",
-    href: "https://mariomanzano.com/net-sheet?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+    href: "https://mariomanzano.com/net-sheet/?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Sell vs Rent Calculator",
     description: "Run the real numbers before you decide",
-    href: "https://mariomanzano.com/sell-vs-rent?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+    href: "https://mariomanzano.com/sell-vs-rent/?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Remodel vs Sell Calculator",
     description: "Find out if the upgrade is worth it",
-    href: "https://mariomanzano.com/remodel-vs-sell?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+    href: "https://mariomanzano.com/remodel-vs-sell/?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Free Homeowner Guide",
     description: "Sell, Remodel, Rent, or Hold — understand all four paths",
-    href: "https://mariomanzano.com/homeowner-guide?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+    href: "https://mariomanzano.com/homeowner-guide/?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Buying a Home?",
     description: "Understand true market value before you make an offer",
-    href: "https://mariomanzano.com/buyers?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+    href: "https://mariomanzano.com/buyers/?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
   {
     label: "Talk to Mario",
     description: "No pitch. Just a clear conversation about your options",
-    href: "https://mariomanzano.com/contact?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
+    href: "https://mariomanzano.com/contact/?utm_source=instagram&utm_medium=bio&utm_campaign=links_page",
   },
 ];
 export default function Links() {

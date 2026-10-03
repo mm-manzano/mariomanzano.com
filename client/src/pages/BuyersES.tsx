@@ -61,7 +61,7 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:description", description, true);
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
-  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
+  setMeta("og:image", "https://mariomanzano.com/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 
   let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
   if (!canonical) {

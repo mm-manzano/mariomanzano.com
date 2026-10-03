@@ -50,7 +50,7 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:description", description, true);
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
-  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
+  setMeta("og:image", "https://mariomanzano.com/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 
   // Canonical tag. Without this, Google has to guess which version of the
   // URL (with or without trailing slash) is the real one. Setting it

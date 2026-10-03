@@ -63,6 +63,9 @@ const BLOCKED_DOMAINS = [
   'analytics.google.com',
   'hotjar.com',
   'clarity.ms',
+  // LeadConnector chat widget: it must not run during the build, otherwise the
+  // widget it creates gets saved into the page and a second one appears for visitors.
+  'leadconnectorhq.com',
 ];
 
 function isBlocked(url) {
@@ -109,6 +112,21 @@ async function prerender() {
         { timeout: 15000 }
       );
       await new Promise((r) => setTimeout(r, 500));
+
+      // Remove anything a third party script injected while the page rendered.
+      // The loader tag in index.html and the inline Tag Manager snippet stay as written
+      // (the inline snippet has no src, so only the injected gtm.js copy is matched).
+      await page.evaluate(() => {
+        document
+          .querySelectorAll(
+            'chat-widget, ' +
+              'script[src*="leadconnectorhq.com/chat-widget/chat-widget"], ' +
+              'script[src*="stcdn.leadconnectorhq.com"], ' +
+              'script[src*="googletagmanager.com/gtm.js"]'
+          )
+          .forEach((el) => el.remove());
+      });
+
       let html = await page.content();
 
       html = html.replace(/<script\s[^>]*id="manus-runtime"[\s\S]*?<\/script>/i, '');

@@ -17,7 +17,6 @@ import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { Link } from "wouter";
 import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 
-const HERO_IMG = "/images/austin-texas-real-estate-home.jpg";
 const INTERIOR_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-interior.jpg";
 const AERIAL_IMG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
@@ -146,12 +145,7 @@ export default function Home() {
       />
 
       {/* HERO */}
-      <section className="relative h-auto md:min-h-screen flex items-start">
-        <div className="absolute inset-0">
-          <img width={1920} height={1282} fetchPriority="high" src={HERO_IMG} alt="Luxury Cedar Park home" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
-        </div>
-
+      <section className="relative flex items-start bg-[#1A1A18]">
         <div className="relative z-10 container py-16 md:py-0 md:pt-32 lg:pt-40 md:pb-16 lg:pb-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-10 md:mb-12 pt-4 md:pt-0">

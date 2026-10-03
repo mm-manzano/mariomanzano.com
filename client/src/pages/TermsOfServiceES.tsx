@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+
 export default function TermsOfServiceES() {
+  useEffect(() => {
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://mariomanzano.com/es/terms-of-service/");
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <section className="py-20 md:py-28">

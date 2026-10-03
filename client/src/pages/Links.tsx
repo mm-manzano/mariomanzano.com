@@ -39,6 +39,13 @@ const links = [
 export default function Links() {
   useEffect(() => {
     document.title = "Mario Manzano | Links";
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", "https://mariomanzano.com/links/");
   }, []);
   return (
     <div className="min-h-screen bg-[#1c1c1c] flex flex-col items-center justify-start px-5 pt-28 pb-16">

@@ -44,7 +44,7 @@ function setPageMeta(title: string, description: string, url: string) {
   setMeta("og:description", description, true);
   setMeta("og:url", url, true);
   setMeta("og:type", "website", true);
-  setMeta("og:image", "https://d2xsxph8kpxj0f.cloudfront.net/310519663431995309/do52YrznpEuUcnj2ufXuis/mario-headshot_b14ad6c2.jpg", true);
+  setMeta("og:image", "/images/mario-manzano-austin-realtor-professional-headshot.JPG", true);
 }
 
 export default function SellVsRent() {

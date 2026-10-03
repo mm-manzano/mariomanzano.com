@@ -20,6 +20,13 @@
  * NAV LABEL FIX: "Guide" renamed to "Seller Guide" (EN) and "Guía del Vendedor" (ES)
  *       so buyers who land on the nav understand the guide is seller-specific content.
  * NAV REVERT: Desktop inline nav restored. Hamburger on mobile only.
+ * READABILITY UPDATE (H4): Header and mobile menu are now slate grey #3A3A3A
+ *       instead of cream. White text, brighter gold #D4B56A for the tagline and
+ *       active language, white CTA button with dark text. Nav links 11px to 13px,
+ *       tagline 10px to 12px, CTA 10px to 13px. Inactive language uses white/70
+ *       instead of opacity-50 for readable contrast. Desktop inline nav now starts
+ *       at lg (1024px) instead of md, since the larger text no longer fits on
+ *       tablets. Tablets get the hamburger menu.
  */
 
 import { useState, useEffect } from "react";
@@ -166,9 +173,12 @@ export default function Navigation() {
     setLocation(getLanguageTargetPath(lang));
   };
 
+  const langActive = "transition-colors duration-300 text-[#D4B56A]";
+  const langInactive = "transition-colors duration-300 text-white/70 hover:text-white";
+
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#F8F5F0]/95 backdrop-blur-sm border-b border-[#E8E0D5] shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#3A3A3A] border-b border-[#4A4A4A] shadow-sm">
         <div className="container">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo and Wordmark */}
@@ -180,10 +190,10 @@ export default function Navigation() {
                   className="w-8 h-8 md:w-10 md:h-10"
                 />
                 <div className="flex flex-col leading-none">
-                  <span className="font-display text-xl md:text-2xl font-light tracking-[0.04em] text-[#1A1A18]">
+                  <span className="font-display text-xl md:text-2xl font-normal tracking-[0.04em] text-white">
                     Mario Manzano
                   </span>
-                  <span className="font-body text-[9px] md:text-[10px] tracking-[0.2em] uppercase mt-0.5 text-[#B8974A] whitespace-nowrap">
+                  <span className="font-body text-[11px] md:text-xs tracking-[0.12em] md:tracking-[0.18em] uppercase mt-1 text-[#D4B56A] whitespace-normal md:whitespace-nowrap">
                     {isSpanish ? "Realtor En Austin | Estrategia de Venta" : "Austin Realtor | Seller Strategist"}
                   </span>
                 </div>
@@ -191,13 +201,13 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center justify-end gap-2">
+            <nav className="hidden lg:flex items-center justify-end gap-3">
               {(isSpanish ? navLinksES : navLinks).map((link) => {
                 const isContactLink = link.href === "/contact/" || link.href === "/es/contacto/";
                 const resolvedHref = isContactLink && isBuyerPage ? `${link.href}?intent=buyer` : link.href;
                 return (
                   <a key={link.href} href={resolvedHref} onClick={(e) => { e.preventDefault(); handleNavClick(resolvedHref); }}>
-                    <span className="nav-link text-[11px] tracking-[0.1em] uppercase font-medium transition-colors duration-300 whitespace-nowrap text-[#1A1A18]">
+                    <span className="nav-link text-[13px] tracking-[0.08em] uppercase font-semibold transition-colors duration-300 whitespace-nowrap text-white">
                       {link.label}
                     </span>
                   </a>
@@ -205,32 +215,36 @@ export default function Navigation() {
               })}
 
               {/* Language Toggle */}
-              <div className="flex items-center gap-2 text-[11px] tracking-[0.1em] uppercase font-medium border-l border-[#1A1A18] text-[#1A1A18] pl-3 ml-1">
+              <div className="flex items-center gap-2 text-[13px] tracking-[0.08em] uppercase font-semibold border-l border-white/40 text-white pl-3 ml-1">
                 <a href={getLanguageTargetPath("en")}
                   onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
-                  className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
+                  className={language === "en" ? langActive : langInactive}>
                   English
                 </a>
-                <span className="opacity-50">|</span>
+                <span className="text-white/50">|</span>
                 <a href={getLanguageTargetPath("es")}
                   onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
-                  className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}>
+                  className={language === "es" ? langActive : langInactive}>
                   Español
                 </a>
               </div>
 
-              <a onClick={handleCTAClick} className="btn-luxury text-[10px] py-2 !px-3 whitespace-nowrap cursor-pointer" style={{ marginLeft: "auto" }}>
+              <a
+                onClick={handleCTAClick}
+                className="btn-luxury text-[13px] font-semibold py-2.5 !px-4 whitespace-nowrap cursor-pointer !bg-white !text-[#1A1A1A] !border-white hover:!bg-[#E6E6E6] hover:!border-[#E6E6E6]"
+                style={{ marginLeft: "auto" }}
+              >
                 {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
               </a>
             </nav>
 
             {/* Mobile Menu Toggle */}
             <button
-              className="md:hidden p-2 text-[#1A1A18]"
+              className="lg:hidden p-2 text-white"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -238,13 +252,13 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-[#F8F5F0] flex flex-col transition-all duration-500">
+        <div className="fixed inset-0 z-40 bg-[#3A3A3A] flex flex-col transition-all duration-500">
           <div className="container flex flex-col h-full pt-24 pb-12">
             <nav className="flex flex-col gap-8 flex-1">
               {(isSpanish ? navLinksES : navLinks).map((link, i) => (
                 <a key={link.href} href={link.href} onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
                   <span
-                    className="font-display text-4xl font-light text-[#1A1A18] hover:text-[#B8974A] transition-colors duration-300 block"
+                    className="font-display text-4xl font-normal text-white hover:text-[#D4B56A] transition-colors duration-300 block"
                     style={{ transitionDelay: `${i * 60}ms` }}
                   >
                     {link.label}
@@ -254,19 +268,19 @@ export default function Navigation() {
             </nav>
 
             {/* Language Toggle */}
-            <div className="flex items-center gap-3 mb-8 text-sm tracking-[0.15em] uppercase font-medium text-[#1A1A18]">
+            <div className="flex items-center gap-3 mb-8 text-base tracking-[0.12em] uppercase font-semibold text-white">
               <a
                 href={getLanguageTargetPath("en")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("en"); }}
-                className={language === "en" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}
+                className={language === "en" ? langActive : langInactive}
               >
                 English
               </a>
-              <span className="opacity-50">|</span>
+              <span className="text-white/50">|</span>
               <a
                 href={getLanguageTargetPath("es")}
                 onClick={(e) => { e.preventDefault(); handleLanguageChange("es"); }}
-                className={language === "es" ? "transition-colors duration-300 text-[#B8974A]" : "transition-colors duration-300 opacity-50 hover:opacity-100"}
+                className={language === "es" ? langActive : langInactive}
               >
                 Español
               </a>
@@ -274,7 +288,7 @@ export default function Navigation() {
 
             <a
               onClick={handleCTAClick}
-              className="btn-luxury bg-[#B8974A] border-[#B8974A] text-white hover:bg-[#9A7D3A] hover:border-[#9A7D3A] inline-flex items-center gap-3 cursor-pointer border-0"
+              className="btn-luxury inline-flex items-center justify-center gap-3 cursor-pointer text-base font-semibold !bg-white !text-[#1A1A1A] !border-white hover:!bg-[#E6E6E6] hover:!border-[#E6E6E6]"
             >
               {language === "es" ? "Iniciar una Conversación" : "Start a conversation"}
             </a>

@@ -68,7 +68,7 @@ export default function NetSheetES() {
 
   useEffect(() => {
     setPageMeta(
-      "Calculadora de Ingresos Netos | Cedar Park y Leander TX | Mario Manzano",
+      "¿Cuánto Te Queda al Vender? | Cedar Park y Leander TX",
       "Descubre cuánto te quedas después de vender tu casa. Calcula tus ingresos netos tras comisión, costos de cierre y saldo hipotecario. Herramienta gratuita.",
       "https://mariomanzano.com/es/net-sheet/"
     );

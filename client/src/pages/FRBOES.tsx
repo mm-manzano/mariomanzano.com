@@ -468,7 +468,7 @@ export default function LeasingES() {
               <span className="font-semibold">Solo la parte de rentar, bien hecha.</span>
             </h2>
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12">
-              Tú sigues administrando la propiedad día a día. Yo me encargo de que se rente con el precio correcto, bien promocionada y con los solicitantes revisados, y te mantengo informado todo el camino, mientras tú controlas a quién escoges.
+              Tú sigues administrando la propiedad día a día. Yo me encargo de que se rente con el precio correcto, bien promocionada y con los solicitantes revisados, y te mantengo informado todo el camino. Tú sigues decidiendo a quién escoger.
             </p>
           </RevealDiv>
 
@@ -516,7 +516,7 @@ export default function LeasingES() {
                 </div>
                 <div className="border-t border-[#E5E5E5] mb-4" />
                 <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
-                  Algunos servicios de renta incluyen la administración continua junto con conseguir al inquilino. Yo lo mantengo simple: 100% de un mes de renta, una sola vez. Tú sigues administrando la propiedad después de que se firma el contrato.
+                  Algunos servicios combinan conseguir al inquilino con la administración continua de la propiedad. Yo lo mantengo simple: 100% de un mes de renta, una sola vez. Tú sigues administrando la propiedad después de que se firma el contrato.
                 </p>
                 <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-2">
                   La fotografía profesional, un volante de la propiedad con tu lista de mejoras, el listado en el MLS, la promoción, las visitas, la revisión de solicitantes y la firma del contrato de renta están todos incluidos.

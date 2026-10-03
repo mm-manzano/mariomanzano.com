@@ -47,6 +47,9 @@ import BuyersES from "./pages/BuyersES";
 import FRBO from "./pages/FRBO";
 import FSBO from "./pages/FSBO";
 import Expired from "./pages/Expired";
+import FRBOES from "./pages/FRBOES";
+import FSBOES from "./pages/FSBOES";
+import ExpiredES from "./pages/ExpiredES";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import PrivacyPolicyES from "./pages/PrivacyPolicyES";
 import TermsOfService from "./pages/TermsOfService";
@@ -86,6 +89,9 @@ function Router() {
       <Route path="/es/contacto" component={ContactES} />
       <Route path="/es/buyers" component={BuyersES} />
       <Route path="/es/presentacion-vendedores" component={ListingPresentationES} />
+      <Route path="/es/vende-tu-casa" component={FSBOES} />
+      <Route path="/es/renta-tu-casa" component={FRBOES} />
+      <Route path="/es/relanza-tu-casa" component={ExpiredES} />
       <Route path="/es/privacy-policy" component={PrivacyPolicyES} />
       <Route path="/es/terms-of-service" component={TermsOfServiceES} />
 

@@ -39,6 +39,9 @@ const routes = [
   '/es/contacto',
   '/es/buyers',
   '/es/presentacion-vendedores',
+  '/es/vende-tu-casa',
+  '/es/renta-tu-casa',
+  '/es/relanza-tu-casa',
   // Legal
   '/privacy-policy',
   '/terms-of-service',

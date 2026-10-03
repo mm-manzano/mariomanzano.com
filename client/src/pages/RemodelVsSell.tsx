@@ -144,21 +144,21 @@ export default function RemodelVsSell() {
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Current Home Value (As-Is)</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
                     <input type="text" value={currentValue} onChange={handleInputChange(setCurrentValue)}
                       onFocus={(e) => e.target.value === "0" && setCurrentValue("")}
                       onBlur={(e) => e.target.value === "" && setCurrentValue("0")}
-                      className="w-full bg-white border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Estimated Remodel Cost</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
                     <input type="text" value={remodelCost} onChange={handleInputChange(setRemodelCost)}
                       onFocus={(e) => e.target.value === "0" && setRemodelCost("")}
                       onBlur={(e) => e.target.value === "" && setRemodelCost("0")}
-                      className="w-full bg-white border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
@@ -167,8 +167,8 @@ export default function RemodelVsSell() {
                     <input type="text" value={expectedIncrease} onChange={handleInputChange(setExpectedIncrease)}
                       onFocus={(e) => e.target.value === "0" && setExpectedIncrease("")}
                       onBlur={(e) => e.target.value === "" && setExpectedIncrease("0")}
-                      className="w-full bg-white border-none p-4 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">%</span>
+                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">%</span>
                   </div>
                   <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">
                     Typical ranges: Cosmetic updates 3 to 7% | Kitchen/bath upgrades 5 to 12% | Full renovation 10 to 20%+
@@ -193,16 +193,16 @@ export default function RemodelVsSell() {
                 <div className="space-y-8">
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Projected New Value</p>
-                    <p className="font-display text-4xl font-medium text-white">{formatCurrency(newValue)}</p>
+                    <p className="font-body text-4xl font-semibold text-white">{formatCurrency(newValue)}</p>
                   </div>
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Remodel Investment</p>
-                    <p className="font-display text-4xl font-medium text-white/90">{formatCurrency(cost)}</p>
+                    <p className="font-body text-4xl font-semibold text-white">{formatCurrency(cost)}</p>
                   </div>
                 </div>
                 <div className="bg-white/5 p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimated Net Gain After Remodel</p>
-                  <p className={`font-display text-5xl md:text-6xl font-medium mb-2 ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className={`font-body text-5xl md:text-6xl font-semibold mb-2 ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netGain)}
                   </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed mb-4">
@@ -216,7 +216,7 @@ export default function RemodelVsSell() {
                 <h3 className="font-display text-xl font-medium text-white mb-4">What This Means</h3>
                 <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway(roi)}</p>
                 <Link href="/contact">
-                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
+                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Walk Through This With Me
                     <ArrowRight size={14} className="ml-2" />
                   </span>

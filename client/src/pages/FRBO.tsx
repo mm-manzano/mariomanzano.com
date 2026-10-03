@@ -95,14 +95,14 @@ function VacancyCalculator() {
             Monthly rent
           </label>
           <div className="flex items-center gap-2">
-            <span className="font-body text-lg text-[#2B2B2B]">$</span>
+            <span className="font-body text-lg font-semibold text-[#1A1A1A]">$</span>
             <input
               type="number"
               min={0}
               step={50}
               value={rent}
               onChange={(e) => setRent(Math.max(0, Number(e.target.value) || 0))}
-              className="font-body text-lg w-full border border-[#E5E5E5] rounded px-3 py-2 bg-white text-[#1A1A18] focus:outline-none focus:ring-2 focus:ring-[#B8974A]"
+              className="font-body text-lg font-semibold w-full border border-[#767676] rounded px-3 py-2 bg-white text-[#1A1A1A] focus:outline-none focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A]"
             />
           </div>
         </div>
@@ -118,7 +118,7 @@ function VacancyCalculator() {
             step={1}
             value={months}
             onChange={(e) => setMonths(Number(e.target.value))}
-            className="w-full accent-[#B8974A] mt-3"
+            className="w-full range-visible mt-3"
           />
           <div className="flex justify-between font-body text-lg text-[#2B2B2B] mt-1">
             <span>0</span>
@@ -130,15 +130,15 @@ function VacancyCalculator() {
       <div className="border-t border-[#E5E5E5] pt-5 grid grid-cols-1 sm:grid-cols-3 gap-5">
         <div>
           <p className="font-body text-lg text-[#2B2B2B] mb-1">A full year at this rent</p>
-          <p className="font-display text-2xl font-medium text-[#1A1A18]">{formatMoney(expected)}</p>
+          <p className="font-body text-2xl font-semibold text-[#1A1A18]">{formatMoney(expected)}</p>
         </div>
         <div>
           <p className="font-body text-lg text-[#2B2B2B] mb-1">What you'd actually collect</p>
-          <p className="font-display text-2xl font-medium text-[#1A1A18]">{formatMoney(actual)}</p>
+          <p className="font-body text-2xl font-semibold text-[#1A1A18]">{formatMoney(actual)}</p>
         </div>
         <div>
           <p className="font-body text-lg text-[#2B2B2B] mb-1">Your real monthly rent for the year</p>
-          <p className="font-display text-2xl font-medium text-[#A05030]">{formatMoney(effective)}</p>
+          <p className="font-body text-2xl font-semibold text-[#A05030]">{formatMoney(effective)}</p>
         </div>
       </div>
 

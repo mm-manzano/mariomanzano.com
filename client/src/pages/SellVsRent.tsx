@@ -170,32 +170,32 @@ export default function SellVsRent() {
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Estimated Home Value</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
                     <input type="text" value={homeValue} onChange={handleInputChange(setHomeValue)}
                       onFocus={(e) => e.target.value === "0" && setHomeValue("")}
                       onBlur={(e) => e.target.value === "" && setHomeValue("0")}
-                      className="w-full bg-white border-none p-4 pl-8 font-display text-2xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Outstanding Mortgage Balance</label>
                   <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
                     <input type="text" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
                       onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
                       onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
-                      className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Monthly Mortgage Payment (P&I)</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
                       <input type="text" value={monthlyMortgagePayment} onChange={handleInputChange(setMonthlyMortgagePayment)}
                         onFocus={(e) => e.target.value === "0" && setMonthlyMortgagePayment("")}
                         onBlur={(e) => e.target.value === "" && setMonthlyMortgagePayment("0")}
-                        className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                     </div>
                   </div>
                   <div>
@@ -203,7 +203,7 @@ export default function SellVsRent() {
                     <input type="text" value={interestRate} onChange={handleInputChange(setInterestRate)}
                       onFocus={(e) => e.target.value === "0" && setInterestRate("")}
                       onBlur={(e) => e.target.value === "" && setInterestRate("0")}
-                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                     <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Your current annual interest rate.</p>
                   </div>
                 </div>
@@ -211,21 +211,21 @@ export default function SellVsRent() {
                   <div>
                     <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Monthly Rent</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
                       <input type="text" value={monthlyRent} onChange={handleInputChange(setMonthlyRent)}
                         onFocus={(e) => e.target.value === "0" && setMonthlyRent("")}
                         onBlur={(e) => e.target.value === "" && setMonthlyRent("0")}
-                        className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                     </div>
                   </div>
                   <div>
                     <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Other Monthly Expenses (HOA, Taxes, Insurance)</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#2B2B2B]">$</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
                       <input type="text" value={otherMonthlyExpenses} onChange={handleInputChange(setOtherMonthlyExpenses)}
                         onFocus={(e) => e.target.value === "0" && setOtherMonthlyExpenses("")}
                         onBlur={(e) => e.target.value === "" && setOtherMonthlyExpenses("0")}
-                        className="w-full bg-white border-none p-4 pl-8 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                     </div>
                   </div>
                 </div>
@@ -235,7 +235,7 @@ export default function SellVsRent() {
                     <input type="text" value={appreciation} onChange={handleInputChange(setAppreciation)}
                       onFocus={(e) => e.target.value === "0" && setAppreciation("")}
                       onBlur={(e) => e.target.value === "" && setAppreciation("0")}
-                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                     <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Average annual home value growth. e.g., enter 3 for 3%.</p>
                   </div>
                   <div>
@@ -243,7 +243,7 @@ export default function SellVsRent() {
                     <input type="text" value={yearsHolding} onChange={handleInputChange(setYearsHolding)}
                       onFocus={(e) => e.target.value === "0" && setYearsHolding("")}
                       onBlur={(e) => e.target.value === "" && setYearsHolding("0")}
-                      className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
                 </div>
                 <div>
@@ -251,7 +251,7 @@ export default function SellVsRent() {
                   <input type="text" value={vacancyMaintenance} onChange={handleInputChange(setVacancyMaintenance)}
                     onFocus={(e) => e.target.value === "0" && setVacancyMaintenance("")}
                     onBlur={(e) => e.target.value === "" && setVacancyMaintenance("0")}
-                    className="w-full bg-white border-none p-4 font-display text-xl focus:ring-1 focus:ring-[#B8974A] outline-none transition-all" />
+                    className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Accounts for vacancies, repairs, and holding costs. Typical: 5 to 10%.</p>
                 </div>
               </div>
@@ -266,18 +266,18 @@ export default function SellVsRent() {
                 <div className="space-y-8">
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Estimated Net if Sold Today</p>
-                    <p className="font-display text-4xl font-medium text-white">{formatCurrency(estimatedNetIfSoldToday)}</p>
+                    <p className="font-body text-4xl font-semibold text-white">{formatCurrency(estimatedNetIfSoldToday)}</p>
                   </div>
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Annual Cash Flow (Adjusted)</p>
-                    <p className={`font-display text-4xl font-medium ${annualCashFlowIfRenting >= 0 ? "text-[#C9A85C]" : "text-red-400"}`}>
+                    <p className={`font-body text-4xl font-semibold ${annualCashFlowIfRenting >= 0 ? "text-white" : "text-red-400"}`}>
                       {formatCurrency(annualCashFlowIfRenting)}
                     </p>
                   </div>
                 </div>
                 <div className="bg-white/5 p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimated Net if Rented and Sold Later</p>
-                  <p className="font-display text-5xl md:text-6xl font-medium text-white mb-2">{formatCurrency(estimatedNetIfRented)}</p>
+                  <p className="font-body text-5xl md:text-6xl font-semibold text-white mb-2">{formatCurrency(estimatedNetIfRented)}</p>
                   <p className="font-body text-sm text-white/90 leading-relaxed">
                     Includes appreciation, rental cash flow, and mortgage paydown over {years} years, then selling.
                   </p>
@@ -287,7 +287,7 @@ export default function SellVsRent() {
                 <h3 className="font-display text-xl font-medium text-white mb-4">What This Means</h3>
                 <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway()}</p>
                 <Link href="/contact">
-                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#9A7D3A] w-full justify-center cursor-pointer">
+                  <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Talk Through Your Numbers
                     <ArrowRight size={14} className="ml-2" />
                   </span>

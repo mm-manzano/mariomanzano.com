@@ -229,6 +229,53 @@
     color: #ffffff;
   }
   
+  /* Visible range slider (vacancy calculator) */
+  .range-visible {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 24px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .range-visible::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 9999px;
+    background: #767676;
+  }
+
+  .range-visible::-moz-range-track {
+    height: 8px;
+    border-radius: 9999px;
+    background: #767676;
+  }
+
+  .range-visible::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    margin-top: -8px;
+    border-radius: 9999px;
+    background: #1A1A1A;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px #767676;
+  }
+
+  .range-visible::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: #1A1A1A;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px #767676;
+  }
+
+  .range-visible:focus-visible {
+    outline: 2px solid #1A1A1A;
+    outline-offset: 4px;
+  }
+
   /* Scroll fade-in animation */
   .fade-in-up {
     opacity: 0;

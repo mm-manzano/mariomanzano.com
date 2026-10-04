@@ -5,6 +5,8 @@
  * Fix: Responsive-first layout for Desktop and Mobile visibility.
  * COPY UPDATE: Fixed hero image, tightened section 01, fixed pricing labels, sharper remodel
  *              headline and copy, removed broken PDF link, stronger final CTA.
+ * CONVERSION UPDATE: Removed the Download PDF link. Added links to the matching free calculators
+ *              (hero, selling vs renting, remodel, final section) and a lead-in above the final button.
  */
 
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
@@ -152,16 +154,6 @@ export default function HomeownerGuide() {
       {/* HERO */}
       <section className="bg-[#1A1A18] pt-32 pb-20 md:pt-44 md:pb-28">
         <div className="container">
-          <div className="flex justify-end mb-4">
-            <a
-              href="/homeowner-guide.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tap-area text-white text-lg opacity-90 hover:opacity-100 font-medium tracking-wide border-b border-white/40 pb-1"
-            >
-              Download PDF
-            </a>
-          </div>
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
@@ -173,8 +165,15 @@ export default function HomeownerGuide() {
               Sell, Remodel,<br />
               <span className="font-semibold">Rent, or Hold.</span>
             </h1>
-            <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed">
+            <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-6">
               A plain-language guide to the four decisions Cedar Park and Leander homeowners face. No pressure, just clarity.
+            </p>
+            <p className="font-body text-base text-white/90 max-w-lg leading-relaxed">
+              Want your own numbers first?{" "}
+              <Link href="/strategy-hub/">
+                <span className="font-semibold text-white underline underline-offset-4 cursor-pointer">Run the free calculators</span>
+              </Link>
+              . Each takes about 30 seconds.
             </p>
           </div>
         </div>
@@ -351,18 +350,30 @@ export default function HomeownerGuide() {
               <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 Keeping your home as a rental means taking on ongoing responsibility. Tenant screening, maintenance, property management, and vacancy periods are all part of the equation.
               </p>
-              <p className="font-body text-lg text-white/90 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 In the Cedar Park and Leander market, renting tends to be a long-term equity play more than a cash flow strategy. It makes the most sense when your mortgage payment is low relative to what the home could rent for.
               </p>
+              <Link href="/sell-vs-rent/">
+                <span className="font-body text-base font-semibold text-white underline underline-offset-4 inline-flex items-center gap-2 cursor-pointer">
+                  Compare sell vs. rent with your numbers
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </RevealDiv>
             <RevealDiv delay={200}>
               <h3 className="font-display text-2xl font-medium text-[#C9A85C] mb-6">The Reality of Selling</h3>
               <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 Selling gives you liquidity and removes the ongoing responsibility of owning the property. No more repairs, tenants, or carrying costs tied to that home.
               </p>
-              <p className="font-body text-lg text-white/90 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 The tradeoff is giving up future appreciation. Once the home is sold, you no longer participate in any market gains tied to that property.
               </p>
+              <Link href="/net-sheet/">
+                <span className="font-body text-base font-semibold text-white underline underline-offset-4 inline-flex items-center gap-2 cursor-pointer">
+                  See what you would net if you sold
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </RevealDiv>
           </div>
         </div>
@@ -393,6 +404,12 @@ export default function HomeownerGuide() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Like any path, this only makes sense when the numbers support it. That is worth running before you commit to anything.
               </p>
+              <Link href="/remodel-vs-sell/">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
+                  Run Your Remodel Numbers
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </div>
           </RevealDiv>
         </div>
@@ -500,8 +517,15 @@ export default function HomeownerGuide() {
             <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-6 max-w-2xl mx-auto">
               Not sure which path fits your situation?
             </h2>
-            <p className="font-body text-lg text-[#2B2B2B] mb-10 max-w-lg mx-auto">
+            <p className="font-body text-lg text-[#2B2B2B] mb-4 max-w-lg mx-auto">
               I can walk you through the numbers on each option and help you figure out which one actually makes sense for where you are right now. No pressure, just a real conversation.
+            </p>
+            <p className="font-body text-base text-[#2B2B2B] mb-10 max-w-lg mx-auto">
+              Want to see the numbers yourself first? Try the{" "}
+              <Link href="/strategy-hub/">
+                <span className="font-semibold text-[#1A1A18] underline underline-offset-4 cursor-pointer">free calculators</span>
+              </Link>
+              .
             </p>
             <a href={getCTALink("get-plan", "en")}>
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3">

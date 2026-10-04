@@ -5,6 +5,9 @@
  * Optimización: Tabla Comparativa, Sección de Preguntas Frecuentes y Esquema JSON-LD.
  * COPY UPDATE: Sección 01 reducida, etiquetas de precios corregidas, titular de remodelación
  *              mejorado, sección de mantener reescrita en prosa, CTA final actualizado.
+ * CONVERSION UPDATE: Alineado con la versión en inglés. Se quitó el enlace de Descargar PDF. Enlaces a las
+ *              calculadoras gratuitas (héroe, vender vs alquilar, remodelar, sección final) y una frase
+ *              antes del botón final.
  */
 
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
@@ -153,16 +156,6 @@ export default function GuiaParaPropietarios() {
       {/* HERO */}
       <section className="bg-[#1A1A18] pt-32 pb-20 md:pt-44 md:pb-28">
         <div className="container">
-          <div className="flex justify-end mb-4">
-            <a
-              href="/guia-para-propietarios.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tap-area text-white text-lg opacity-90 hover:opacity-100 font-medium tracking-wide border-b border-white/40 pb-1"
-            >
-              Descargar PDF
-            </a>
-          </div>
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-6">
               <span className="section-rule" style={{ background: "#B8974A" }} />
@@ -174,8 +167,15 @@ export default function GuiaParaPropietarios() {
               Vender, Remodelar,<br />
               <span className="font-semibold">Alquilar o Mantener.</span>
             </h1>
-            <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed">
+            <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-6">
               Una guía en lenguaje claro para las cuatro decisiones que enfrentan los propietarios en Cedar Park y Leander. Sin presión, solo claridad.
+            </p>
+            <p className="font-body text-base text-white/90 max-w-lg leading-relaxed">
+              ¿Quieres ver tus propios números primero?{" "}
+              <Link href="/es/strategy-hub/">
+                <span className="font-semibold text-white underline underline-offset-4 cursor-pointer">Usa las calculadoras gratuitas</span>
+              </Link>
+              . Cada una toma unos 30 segundos.
             </p>
           </div>
         </div>
@@ -352,18 +352,30 @@ export default function GuiaParaPropietarios() {
               <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 Conservar tu casa como alquiler significa asumir una responsabilidad continua. La selección de inquilinos, el mantenimiento, la administración de la propiedad y los periodos de vacancia forman parte de la ecuación.
               </p>
-              <p className="font-body text-lg text-white/90 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 En el mercado de Cedar Park y Leander, alquilar tiende a ser más una estrategia de capital y apreciación a largo plazo que una fuente de flujo de caja inmediato. Tiene más sentido cuando tu pago hipotecario es bajo en relación con lo que podría rentar la propiedad.
               </p>
+              <Link href="/es/sell-vs-rent/">
+                <span className="font-body text-base font-semibold text-white underline underline-offset-4 inline-flex items-center gap-2 cursor-pointer">
+                  Compara vender vs. rentar con tus números
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </RevealDiv>
             <RevealDiv delay={200}>
               <h3 className="font-display text-2xl font-medium text-[#C9A85C] mb-6">La Realidad de Vender</h3>
               <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 Vender te da liquidez y te libera de la responsabilidad continua de ser propietario. Sin más reparaciones, inquilinos ni costos de tenencia relacionados con esa propiedad.
               </p>
-              <p className="font-body text-lg text-white/90 leading-relaxed">
+              <p className="font-body text-lg text-white/90 leading-relaxed mb-6">
                 La compensación es renunciar a la apreciación futura. Una vez vendida la casa, ya no participas en ninguna ganancia del mercado relacionada con esa propiedad.
               </p>
+              <Link href="/es/net-sheet/">
+                <span className="font-body text-base font-semibold text-white underline underline-offset-4 inline-flex items-center gap-2 cursor-pointer">
+                  Mira cuánto te quedaría si vendes
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </RevealDiv>
           </div>
         </div>
@@ -394,6 +406,12 @@ export default function GuiaParaPropietarios() {
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Como cualquier camino, esto solo tiene sentido cuando los números lo respaldan. Vale la pena analizarlo antes de comprometerse con cualquier cosa.
               </p>
+              <Link href="/es/remodel-vs-sell/">
+                <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
+                  Calcula tu Remodelación
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </div>
           </RevealDiv>
         </div>
@@ -501,8 +519,15 @@ export default function GuiaParaPropietarios() {
             <h2 className="font-display text-4xl md:text-5xl font-medium text-[#1A1A18] mb-6 max-w-2xl mx-auto">
               ¿No estás seguro de qué camino se adapta a tu situación?
             </h2>
-            <p className="font-body text-lg text-[#2B2B2B] mb-10 max-w-lg mx-auto">
+            <p className="font-body text-lg text-[#2B2B2B] mb-4 max-w-lg mx-auto">
               Puedo ayudarte a analizar los números de cada opción y determinar cuál tiene sentido para donde estás ahora. Sin presión, solo una conversación real.
+            </p>
+            <p className="font-body text-base text-[#2B2B2B] mb-10 max-w-lg mx-auto">
+              ¿Quieres ver los números tú mismo primero? Prueba las{" "}
+              <Link href="/es/strategy-hub/">
+                <span className="font-semibold text-[#1A1A18] underline underline-offset-4 cursor-pointer">calculadoras gratuitas</span>
+              </Link>
+              .
             </p>
             <a href={getCTALink("get-plan", "es")}>
               <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3">

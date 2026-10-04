@@ -5,9 +5,13 @@
  * SEO FIX: setPageMeta now also writes a <link rel="canonical"> tag, and the
  *       page URL / schema URL both use the trailing-slash form (/es/contacto/) to
  *       match where prerender.js actually writes the file (dist/es/contacto/index.html).
+ * CONVERSION UPDATE: Alineado con la versión en inglés. Introducción que continúa desde las calculadoras,
+ *       línea para quienes prefieren llamar o mandar un texto, enlace a las calculadoras,
+ *       "La primera conversación" en lugar de "Nuestra", y enlace tel: limpio.
  */
 
 import { useEffect, useRef, useLayoutEffect } from "react";
+import { Link } from "wouter";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
@@ -107,8 +111,15 @@ export default function ContactES() {
                 Inicia la<br />
                 <span className="font-semibold">conversación.</span>
               </h1>
-              <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-10">
-                Contáctame y te ayudaré a pensar en tus opciones y en lo que realmente tiene sentido para tu situación. Sin presión. Solo claridad.
+              <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-4">
+                Cuéntame sobre tu casa y reviso tus números contra ventas recientes cerca de ti. Si usaste alguna de las calculadoras, dime qué encontraste y empiezo desde ahí. Sin presión. Solo claridad.
+              </p>
+              <p className="font-body text-base text-white/80 max-w-lg leading-relaxed mb-10">
+                ¿Prefieres no llenar el formulario? Llama o manda un texto al{" "}
+                <a href="tel:+15126959255" className="font-semibold text-white underline underline-offset-4">
+                  (512) 695-9255
+                </a>
+                .
               </p>
               <a
                 href={getCTALink("start-conversation", "es")}
@@ -148,7 +159,7 @@ export default function ContactES() {
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
+                  <a href="tel:+15126959255" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     (512) 695-9255
                   </a>
                   <p className="font-body text-lg text-[#2B2B2B]">
@@ -193,6 +204,16 @@ export default function ContactES() {
               </div>
             </RevealDiv>
           </div>
+
+          <RevealDiv delay={250}>
+            <p className="font-body text-base text-[#2B2B2B] mt-10 max-w-2xl leading-relaxed">
+              ¿Todavía no estás listo para hablar? Corre primero tus números con las{" "}
+              <Link href="/es/strategy-hub/">
+                <span className="font-semibold text-[#1A1A18] underline underline-offset-4 cursor-pointer">calculadoras gratuitas</span>
+              </Link>
+              .
+            </p>
+          </RevealDiv>
         </div>
       </section>
 
@@ -209,7 +230,7 @@ export default function ContactES() {
               <span className="font-semibold">no una llamada de ventas.</span>
             </h2>
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl">
-              Nuestra primera conversación es simple. Te haré algunas preguntas, entenderé tu situación y te daré una dirección clara basada en tus objetivos. Sin discurso de ventas. Sin presión. Si vender o comprar tiene sentido, te lo digo. Si no lo tiene, también te lo digo.
+              La primera conversación es simple. Te haré algunas preguntas, entenderé tu situación y te daré una dirección clara basada en tus objetivos. Sin discurso de ventas. Sin presión. Si vender o comprar tiene sentido, te lo digo. Si no lo tiene, también te lo digo.
             </p>
           </RevealDiv>
         </div>

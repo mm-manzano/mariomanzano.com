@@ -5,6 +5,14 @@
  * UPDATE: Meta description and schema description broadened to Greater Austin.
  *         Geography removed from intro body paragraph.
  *         Educational section retains Cedar Park & Leander (local SEO content).
+ * UPDATE (lead capture pass, matches the remodel page):
+ *         Quick time line added under the intro ("about 30 seconds, no signup").
+ *         Calculator opens with example numbers so results are not $0.
+ *         Inputs select all text on focus so visitors can type over the example.
+ *         Results call to action now has a short lead in line above the button.
+ * UPDATE (mobile pass):
+ *         Results panel only sticks on large screens (it was covering content on phones).
+ *         Smaller padding and net proceeds size on phones so large dollar amounts do not overflow.
  */
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
@@ -61,11 +69,12 @@ function setPageMeta(title: string, description: string, url: string) {
 }
 
 export default function NetSheet() {
-  const [salePrice, setSalePrice] = useState<string>("0");
-  const [mortgageBalance, setMortgageBalance] = useState<string>("0");
+  // Example numbers so the results are never blank. Visitors type over them.
+  const [salePrice, setSalePrice] = useState<string>("450000");
+  const [mortgageBalance, setMortgageBalance] = useState<string>("250000");
   const [commission, setCommission] = useState<string>("6");
   const [closingCosts, setClosingCosts] = useState<string>("2");
-  const [repairs, setRepairs] = useState<string>("0");
+  const [repairs, setRepairs] = useState<string>("5000");
 
   useEffect(() => {
     setPageMeta(
@@ -130,8 +139,13 @@ export default function NetSheet() {
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             The sale price is not what you keep. By the time you account for agent commission, closing costs, repairs, and your remaining mortgage balance, the number that lands in your account can look very different from the headline number.
           </p>
-          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             This tool gives you a realistic starting estimate before you talk to anyone. It is not a substitute for a real conversation, but it gives you a solid foundation before you make any decisions.
+          </p>
+
+          {/* Top quick note */}
+          <p className="font-body text-sm text-[#2B2B2B] leading-relaxed mb-12">
+            Takes about 30 seconds, no signup needed.
           </p>
         </RevealDiv>
 
@@ -139,14 +153,17 @@ export default function NetSheet() {
           {/* Inputs */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
-              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Sale Details</h2>
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-2 text-center">Sale Details</h2>
+              <p className="font-body text-sm text-[#2B2B2B] text-center mb-8 leading-relaxed">
+                Example numbers are shown. Type over them with yours.
+              </p>
               <div className="space-y-6">
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Estimated Sale Price</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={salePrice} onChange={handleInputChange(setSalePrice)}
-                      onFocus={(e) => e.target.value === "0" && setSalePrice("")}
+                    <input type="text" inputMode="decimal" value={salePrice} onChange={handleInputChange(setSalePrice)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setSalePrice("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -155,8 +172,8 @@ export default function NetSheet() {
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Mortgage Balance</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
-                      onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
+                    <input type="text" inputMode="decimal" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -164,15 +181,15 @@ export default function NetSheet() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Commission (avg %)</label>
-                    <input type="text" value={commission} onChange={handleInputChange(setCommission)}
-                      onFocus={(e) => e.target.value === "0" && setCommission("")}
+                    <input type="text" inputMode="decimal" value={commission} onChange={handleInputChange(setCommission)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setCommission("0")}
                       className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
                   <div>
                     <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Closing Costs (avg %)</label>
-                    <input type="text" value={closingCosts} onChange={handleInputChange(setClosingCosts)}
-                      onFocus={(e) => e.target.value === "0" && setClosingCosts("")}
+                    <input type="text" inputMode="decimal" value={closingCosts} onChange={handleInputChange(setClosingCosts)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setClosingCosts("0")}
                       className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -181,8 +198,8 @@ export default function NetSheet() {
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Repairs / Prep Costs</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={repairs} onChange={handleInputChange(setRepairs)}
-                      onFocus={(e) => e.target.value === "0" && setRepairs("")}
+                    <input type="text" inputMode="decimal" value={repairs} onChange={handleInputChange(setRepairs)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setRepairs("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -193,7 +210,7 @@ export default function NetSheet() {
 
           {/* Results */}
           <div className="lg:col-span-7">
-            <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
+            <div className="bg-[#1A1A18] p-6 md:p-12 text-white lg:sticky lg:top-32">
               <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">Estimated Net</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
@@ -210,9 +227,9 @@ export default function NetSheet() {
                     <p className="font-body text-3xl font-semibold text-white">{formatCurrency(totalCosts)}</p>
                   </div>
                 </div>
-                <div className="bg-white/5 p-8 border border-white/10">
+                <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimated Net Proceeds</p>
-                  <p className={`font-body text-5xl md:text-6xl font-semibold mb-4 ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className={`font-body text-4xl md:text-6xl font-semibold mb-4 break-words ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netProceeds)}
                   </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed">
@@ -221,6 +238,9 @@ export default function NetSheet() {
                 </div>
               </div>
               <div className="mt-12 pt-12 border-t border-white/10">
+                <p className="font-body text-base text-white/90 leading-relaxed mb-4">
+                  Want a precise number for your home? A real net sheet takes about fifteen minutes.
+                </p>
                 <Link href="/contact/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Get a Precise Net Sheet

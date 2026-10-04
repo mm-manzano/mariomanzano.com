@@ -12,6 +12,10 @@
  *         Calculator opens with example numbers so results are not $0.
  *         Inputs select all text on focus so visitors can type over the example.
  *         Results call to action now has a short lead in line above the button.
+ * UPDATE (mobile pass):
+ *         Results panel only sticks on large screens (it was covering content on phones).
+ *         Top button is full width on phones.
+ *         Smaller padding and net gain size on phones so large dollar amounts do not overflow.
  */
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
@@ -158,7 +162,7 @@ export default function RemodelVsSell() {
           {/* Top call to action */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
             <Link href="/home-value/">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center justify-center cursor-pointer">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full sm:w-auto inline-flex items-center justify-center cursor-pointer">
                 Get a Free Home Value Estimate
                 <ArrowRight size={14} className="ml-2" />
               </span>
@@ -225,7 +229,7 @@ export default function RemodelVsSell() {
 
           {/* Results */}
           <div className="lg:col-span-7">
-            <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
+            <div className="bg-[#1A1A18] p-6 md:p-12 text-white lg:sticky lg:top-32">
               <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">ROI Analysis</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
@@ -238,9 +242,9 @@ export default function RemodelVsSell() {
                     <p className="font-body text-4xl font-semibold text-white">{formatCurrency(cost)}</p>
                   </div>
                 </div>
-                <div className="bg-white/5 p-8 border border-white/10">
+                <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimated Net Gain After Remodel</p>
-                  <p className={`font-body text-5xl md:text-6xl font-semibold mb-2 ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className={`font-body text-4xl md:text-6xl font-semibold mb-2 break-words ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netGain)}
                   </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed mb-4">

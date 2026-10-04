@@ -5,6 +5,9 @@
  * UPDATE: Meta description and schema description broadened to Greater Austin.
  *         Geography removed from intro body paragraph.
  *         Educational section retains Cedar Park & Leander (local SEO content).
+ * UPDATE: Matched to Remodel vs Sell and Net Sheet. Example numbers prefilled,
+ *         select on focus, numeric keypad on mobile, no-wrap result figures,
+ *         lead-in above the contact button.
  */
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
@@ -60,15 +63,18 @@ function setPageMeta(title: string, description: string, url: string) {
   canonical.setAttribute("href", url);
 }
 
+const labelCls = "block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium";
+const inputCls = "w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all";
+
 export default function SellVsRent() {
-  const [homeValue, setHomeValue] = useState<string>("");
-  const [mortgageBalance, setMortgageBalance] = useState<string>("");
-  const [monthlyMortgagePayment, setMonthlyMortgagePayment] = useState<string>("");
-  const [interestRate, setInterestRate] = useState<string>("");
-  const [monthlyRent, setMonthlyRent] = useState<string>("");
-  const [otherMonthlyExpenses, setOtherMonthlyExpenses] = useState<string>("");
-  const [appreciation, setAppreciation] = useState<string>("");
-  const [yearsHolding, setYearsHolding] = useState<string>("");
+  const [homeValue, setHomeValue] = useState<string>("450000");
+  const [mortgageBalance, setMortgageBalance] = useState<string>("250000");
+  const [monthlyMortgagePayment, setMonthlyMortgagePayment] = useState<string>("1500");
+  const [interestRate, setInterestRate] = useState<string>("4");
+  const [monthlyRent, setMonthlyRent] = useState<string>("2600");
+  const [otherMonthlyExpenses, setOtherMonthlyExpenses] = useState<string>("700");
+  const [appreciation, setAppreciation] = useState<string>("3");
+  const [yearsHolding, setYearsHolding] = useState<string>("5");
   const [vacancyMaintenance, setVacancyMaintenance] = useState<string>("8");
 
   useEffect(() => {
@@ -125,7 +131,8 @@ export default function SellVsRent() {
   const annualCashFlowIfRenting = (adjustedRent - totalMonthlyExpensesIfRenting) * 12;
   const futureValue = val * Math.pow(1 + appr / 100, years);
   const futureMortgageBalance = Math.max(0, mortBal - totalPrincipalPaidDown);
-  const estimatedNetIfRented = futureValue - futureMortgageBalance - (futureValue * sellingCostPercentage);
+  const totalCashFlowWhileHolding = annualCashFlowIfRenting * years;
+  const estimatedNetIfRented = futureValue - futureMortgageBalance - (futureValue * sellingCostPercentage) + totalCashFlowWhileHolding;
 
   const formatCurrency = (num: number) =>
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(num);
@@ -138,6 +145,16 @@ export default function SellVsRent() {
       setter(cleanValue);
     }
   };
+
+  // Shared props for every input: numeric keypad on phones, select all on focus, reset to 0 if left blank
+  const fieldProps = (value: string, setter: (val: string) => void) => ({
+    type: "text",
+    inputMode: "decimal" as const,
+    value,
+    onChange: handleInputChange(setter),
+    onFocus: (e: React.FocusEvent<HTMLInputElement>) => e.target.select(),
+    onBlur: (e: React.FocusEvent<HTMLInputElement>) => { if (e.target.value === "") setter("0"); },
+  });
 
   const getStrategicTakeaway = () => {
     if (val === 0 || years === 0) return "Enter your home details to see a strategic comparison.";
@@ -169,8 +186,13 @@ export default function SellVsRent() {
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             This is one of the most common questions homeowners face. Selling gives you liquidity and removes ongoing responsibility. Renting keeps your equity working over time and can be a strong wealth-building tool if the numbers support it.
           </p>
-          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             This tool compares both paths side by side based on your specific numbers. Enter your home details and a holding period to see which option comes out ahead financially.
+          </p>
+
+          {/* Top quick note */}
+          <p className="font-body text-sm text-[#2B2B2B] leading-relaxed mb-12">
+            Takes about 30 seconds, no signup needed.
           </p>
         </RevealDiv>
 
@@ -178,93 +200,69 @@ export default function SellVsRent() {
           {/* Inputs */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
-              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Your Home Details</h2>
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-2 text-center">Your Home Details</h2>
+              <p className="font-body text-sm text-[#2B2B2B] text-center mb-8 leading-relaxed">
+                Example numbers are shown. Type over them with yours.
+              </p>
               <div className="space-y-6">
                 <div>
-                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Estimated Home Value</label>
+                  <label className={labelCls}>Estimated Home Value</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={homeValue} onChange={handleInputChange(setHomeValue)}
-                      onFocus={(e) => e.target.value === "0" && setHomeValue("")}
-                      onBlur={(e) => e.target.value === "" && setHomeValue("0")}
-                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <input {...fieldProps(homeValue, setHomeValue)} className={`${inputCls} pl-8`} />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Outstanding Mortgage Balance</label>
+                  <label className={labelCls}>Outstanding Mortgage Balance</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
-                      onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
-                      onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
-                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <input {...fieldProps(mortgageBalance, setMortgageBalance)} className={`${inputCls} pl-8`} />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Monthly Mortgage Payment (P&I)</label>
+                    <label className={labelCls}>Monthly Mortgage Payment (P&I)</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                      <input type="text" value={monthlyMortgagePayment} onChange={handleInputChange(setMonthlyMortgagePayment)}
-                        onFocus={(e) => e.target.value === "0" && setMonthlyMortgagePayment("")}
-                        onBlur={(e) => e.target.value === "" && setMonthlyMortgagePayment("0")}
-                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                      <input {...fieldProps(monthlyMortgagePayment, setMonthlyMortgagePayment)} className={`${inputCls} pl-8`} />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Annual Interest Rate (%)</label>
-                    <input type="text" value={interestRate} onChange={handleInputChange(setInterestRate)}
-                      onFocus={(e) => e.target.value === "0" && setInterestRate("")}
-                      onBlur={(e) => e.target.value === "" && setInterestRate("0")}
-                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <label className={labelCls}>Annual Interest Rate (%)</label>
+                    <input {...fieldProps(interestRate, setInterestRate)} className={inputCls} />
                     <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Your current annual interest rate.</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Monthly Rent</label>
+                    <label className={labelCls}>Monthly Rent</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                      <input type="text" value={monthlyRent} onChange={handleInputChange(setMonthlyRent)}
-                        onFocus={(e) => e.target.value === "0" && setMonthlyRent("")}
-                        onBlur={(e) => e.target.value === "" && setMonthlyRent("0")}
-                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                      <input {...fieldProps(monthlyRent, setMonthlyRent)} className={`${inputCls} pl-8`} />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Other Monthly Expenses (HOA, Taxes, Insurance)</label>
+                    <label className={labelCls}>Other Monthly Expenses (HOA, Taxes, Insurance)</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                      <input type="text" value={otherMonthlyExpenses} onChange={handleInputChange(setOtherMonthlyExpenses)}
-                        onFocus={(e) => e.target.value === "0" && setOtherMonthlyExpenses("")}
-                        onBlur={(e) => e.target.value === "" && setOtherMonthlyExpenses("0")}
-                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                      <input {...fieldProps(otherMonthlyExpenses, setOtherMonthlyExpenses)} className={`${inputCls} pl-8`} />
                     </div>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Yearly Appreciation (%)</label>
-                    <input type="text" value={appreciation} onChange={handleInputChange(setAppreciation)}
-                      onFocus={(e) => e.target.value === "0" && setAppreciation("")}
-                      onBlur={(e) => e.target.value === "" && setAppreciation("0")}
-                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <label className={labelCls}>Yearly Appreciation (%)</label>
+                    <input {...fieldProps(appreciation, setAppreciation)} className={inputCls} />
                     <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Average annual home value growth. e.g., enter 3 for 3%.</p>
                   </div>
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Years Holding</label>
-                    <input type="text" value={yearsHolding} onChange={handleInputChange(setYearsHolding)}
-                      onFocus={(e) => e.target.value === "0" && setYearsHolding("")}
-                      onBlur={(e) => e.target.value === "" && setYearsHolding("0")}
-                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <label className={labelCls}>Years Holding</label>
+                    <input {...fieldProps(yearsHolding, setYearsHolding)} className={inputCls} />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Vacancy / Maintenance Buffer (%)</label>
-                  <input type="text" value={vacancyMaintenance} onChange={handleInputChange(setVacancyMaintenance)}
-                    onFocus={(e) => e.target.value === "0" && setVacancyMaintenance("")}
-                    onBlur={(e) => e.target.value === "" && setVacancyMaintenance("0")}
-                    className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                  <label className={labelCls}>Vacancy / Maintenance Buffer (%)</label>
+                  <input {...fieldProps(vacancyMaintenance, setVacancyMaintenance)} className={inputCls} />
                   <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Accounts for vacancies, repairs, and holding costs. Typical: 5 to 10%.</p>
                 </div>
               </div>
@@ -273,24 +271,28 @@ export default function SellVsRent() {
 
           {/* Results */}
           <div className="lg:col-span-7">
-            <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
+            <div className="bg-[#1A1A18] p-6 md:p-12 text-white lg:sticky lg:top-32">
               <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">Strategic Analysis</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Estimated Net if Sold Today</p>
-                    <p className="font-body text-4xl font-semibold text-white">{formatCurrency(estimatedNetIfSoldToday)}</p>
+                    <p className={`font-body text-3xl md:text-4xl font-semibold whitespace-nowrap ${estimatedNetIfSoldToday >= 0 ? "text-white" : "text-red-400"}`}>
+                      {formatCurrency(estimatedNetIfSoldToday)}
+                    </p>
                   </div>
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Annual Cash Flow (Adjusted)</p>
-                    <p className={`font-body text-4xl font-semibold ${annualCashFlowIfRenting >= 0 ? "text-white" : "text-red-400"}`}>
+                    <p className={`font-body text-3xl md:text-4xl font-semibold whitespace-nowrap ${annualCashFlowIfRenting >= 0 ? "text-white" : "text-red-400"}`}>
                       {formatCurrency(annualCashFlowIfRenting)}
                     </p>
                   </div>
                 </div>
-                <div className="bg-white/5 p-8 border border-white/10">
+                <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimated Net if Rented and Sold Later</p>
-                  <p className="font-body text-5xl md:text-6xl font-semibold text-white mb-2">{formatCurrency(estimatedNetIfRented)}</p>
+                  <p className={`font-body text-4xl md:text-5xl font-semibold mb-2 whitespace-nowrap ${estimatedNetIfRented >= 0 ? "text-white" : "text-red-400"}`}>
+                    {formatCurrency(estimatedNetIfRented)}
+                  </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed">
                     Includes appreciation, rental cash flow, and mortgage paydown over {years} years, then selling.
                   </p>
@@ -299,6 +301,9 @@ export default function SellVsRent() {
               <div className="mt-12 pt-12 border-t border-white/10">
                 <h3 className="font-display text-xl font-medium text-white mb-4">What This Means</h3>
                 <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway()}</p>
+                <p className="font-body text-base text-white/90 leading-relaxed mb-4">
+                  Want me to check these numbers against what homes and rentals near you are really getting?
+                </p>
                 <Link href="/contact/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Talk Through Your Numbers

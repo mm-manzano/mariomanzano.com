@@ -11,6 +11,9 @@
  * TESTIMONIAL UPDATE: Replaced single quote with two testimonials (Chris S. + Alma S.)
  * SELLER STRATEGY UPDATE: "Talk to Mario" in motivated seller strip swapped for
  *                 "See How I Work" → /seller-strategy. Added CTA after process accordion.
+ * CONVERSION UPDATE: Free calculators line under hero buttons, time claim set to 30 seconds,
+ *                 service cards now open the matching calculator, tools section links to all
+ *                 calculators, call or text line under the final button, image alt text improved.
  */
 
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
@@ -110,7 +113,7 @@ export default function Home() {
   useEffect(() => {
     setPageMeta(
       "Mario Manzano | Cedar Park & Leander Realtor",
-      "Mario Manzano helps Cedar Park and Leander TX homeowners understand every option before deciding. Sell, remodel, rent, or hold. No pressure.",
+      "Mario Manzano helps Cedar Park and Leander TX homeowners understand every option before deciding. Free home selling calculators. Sell, remodel, rent, or hold. No pressure.",
       "https://mariomanzano.com/"
     );
   }, []);
@@ -176,6 +179,9 @@ export default function Home() {
                 </span>
               </Link>
             </div>
+            <p className="font-body text-sm text-white/80 mt-6">
+              Free calculators for Cedar Park, Leander, and Austin homeowners. About 30 seconds, no signup needed.
+            </p>
           </div>
         </div>
       </section>
@@ -207,7 +213,7 @@ export default function Home() {
                 Start with your numbers.
               </h2>
               <p className="font-body text-lg text-[#2B2B2B] max-w-lg leading-relaxed">
-                Find out what you would actually walk away with after commission, closing costs, and your mortgage payoff. Takes two minutes.
+                Find out what you would actually walk away with after commission, closing costs, and your mortgage payoff. Takes about 30 seconds.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
@@ -234,7 +240,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealDiv className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img width={2400} height={1600} loading="lazy" decoding="async" src={INTERIOR_IMG} alt="Luxury interior" className="w-full h-full object-cover" />
+                <img width={2400} height={1600} loading="lazy" decoding="async" src={INTERIOR_IMG} alt="Interior of a home in Cedar Park, TX" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
 
@@ -312,17 +318,17 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E5E5E5]">
             {[
-              { num: "01", title: "Sell", desc: "Understand the market, timing, and what you will actually walk away with after costs." },
-              { num: "02", title: "Remodel", desc: "Find out which improvements are worth it and which ones rarely return what they cost." },
-              { num: "03", title: "Rent", desc: "See whether holding as a rental makes more financial sense than selling right now." },
-              { num: "04", title: "Hold", desc: "Evaluate whether waiting could put you in a stronger position before you make a move." }
+              { num: "01", title: "Sell", desc: "Understand the market, timing, and what you will actually walk away with after costs.", href: "/net-sheet/", cta: "Run Your Net Numbers" },
+              { num: "02", title: "Remodel", desc: "Find out which improvements are worth it and which ones rarely return what they cost.", href: "/remodel-vs-sell/", cta: "Run the Remodel Numbers" },
+              { num: "03", title: "Rent", desc: "See whether holding as a rental makes more financial sense than selling right now.", href: "/sell-vs-rent/", cta: "Compare Sell vs. Rent" },
+              { num: "04", title: "Hold", desc: "Evaluate whether waiting could put you in a stronger position before you make a move.", href: "/homeowner-guide/", cta: "Explore Options" }
             ].map((service, i) => (
               <RevealDiv
                 key={service.num}
                 delay={i * 80}
                 className="bg-white p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <Link href="/homeowner-guide/" className="block h-full cursor-pointer">
+                <Link href={service.href} className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-medium text-[#E5E5E5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -333,7 +339,7 @@ export default function Home() {
                     {service.desc}
                   </p>
                   <span className="section-number inline-flex items-center gap-2 group-hover:text-white">
-                    Explore Options
+                    {service.cta}
                     <ArrowRight size={14} />
                   </span>
                 </Link>
@@ -351,22 +357,27 @@ export default function Home() {
               Run the numbers on every option.
             </h2>
             <p className="font-body text-lg text-white/90 mb-10 max-w-lg mx-auto">
-              Selling is not always the right answer. These tools help you compare your real options before you decide anything.
+              Selling is not always the right answer. These free tools help you compare your real options before you decide anything.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/sell-vs-rent/">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
-                  Sell vs. Rent Calculator
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
               <Link href="/remodel-vs-sell/">
-                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                   Remodel vs. Sell Calculator
                   <ArrowRight size={14} />
                 </span>
               </Link>
+              <Link href="/sell-vs-rent/">
+                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                  Sell vs. Rent Calculator
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </div>
+            <p className="font-body text-base text-white/90 mt-8">
+              <Link href="/strategy-hub/">
+                <span className="font-semibold underline underline-offset-4 cursor-pointer">See all the free calculators</span>
+              </Link>
+            </p>
           </RevealDiv>
         </div>
       </section>
@@ -426,7 +437,7 @@ export default function Home() {
               {
                 step: "01",
                 title: "You reach out",
-                desc: "No forms, no pressure. A text, a call, or a quick message. You tell me where you are and what you are thinking about."
+                desc: "No pressure. A text, a call, or a quick message. You tell me where you are and what you are thinking about."
               },
               {
                 step: "02",
@@ -554,6 +565,13 @@ export default function Home() {
                 <ArrowRight size={14} />
               </span>
             </Link>
+            <p className="font-body text-base text-white/90 mt-6">
+              Prefer to call or text? Reach me at{" "}
+              <a href="tel:+15126959255" className="font-semibold underline underline-offset-4">
+                (512) 695-9255
+              </a>
+              .
+            </p>
           </RevealDiv>
         </div>
       </section>

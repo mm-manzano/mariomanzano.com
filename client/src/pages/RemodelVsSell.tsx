@@ -5,6 +5,13 @@
  * UPDATE: Meta description and schema description broadened to Greater Austin.
  *         Geography removed from intro body paragraph.
  *         Educational section retains Cedar Park & Leander (local SEO content).
+ * UPDATE (lead capture pass):
+ *         H1 changed to match search wording (sell or remodel).
+ *         Top call to action button added under the intro.
+ *         Quick time line added ("about 30 seconds, no signup").
+ *         Calculator opens with example numbers so results are not $0.
+ *         Inputs select all text on focus so visitors can type over the example.
+ *         Results call to action now has a short lead in line above the button.
  */
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
@@ -61,9 +68,10 @@ function setPageMeta(title: string, description: string, url: string) {
 }
 
 export default function RemodelVsSell() {
-  const [currentValue, setCurrentValue] = useState<string>("");
-  const [remodelCost, setRemodelCost] = useState<string>("");
-  const [expectedIncrease, setExpectedIncrease] = useState<string>("");
+  // Example numbers so the results are never blank. Visitors type over them.
+  const [currentValue, setCurrentValue] = useState<string>("450000");
+  const [remodelCost, setRemodelCost] = useState<string>("30000");
+  const [expectedIncrease, setExpectedIncrease] = useState<string>("5");
 
   useEffect(() => {
     setPageMeta(
@@ -138,28 +146,45 @@ export default function RemodelVsSell() {
             <span className="section-number">Strategy Tool</span>
           </div>
           <h1 className="font-display text-4xl md:text-6xl font-medium text-[#1A1A18] mb-6">
-            Is remodeling<br /><span className="font-semibold">worth it?</span>
+            Should you sell or<br /><span className="font-semibold">remodel your home?</span>
           </h1>
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             Most homeowners over estimate what a remodel will return. Luxury renovations rarely recover 100 percent of their cost at resale. Functional updates and neutral presentation tend to outperform high-end finishes when it comes to actual buyer behavior.
           </p>
-          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             This tool helps you run the numbers before committing to any work. Enter your home's current value, the projected remodel cost, and the expected value increase to see whether the investment is likely to pay off.
           </p>
+
+          {/* Top call to action */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
+            <Link href="/home-value/">
+              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center justify-center cursor-pointer">
+                Get a Free Home Value Estimate
+                <ArrowRight size={14} className="ml-2" />
+              </span>
+            </Link>
+            <p className="font-body text-sm text-[#2B2B2B] leading-relaxed">
+              Or run the numbers below. Takes about 30 seconds, no signup needed.
+            </p>
+          </div>
+          <div className="mb-12" />
         </RevealDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Inputs */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
-              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Project Details</h2>
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-2 text-center">Project Details</h2>
+              <p className="font-body text-sm text-[#2B2B2B] text-center mb-8 leading-relaxed">
+                Example numbers are shown. Type over them with yours.
+              </p>
               <div className="space-y-6">
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Current Home Value (As-Is)</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={currentValue} onChange={handleInputChange(setCurrentValue)}
-                      onFocus={(e) => e.target.value === "0" && setCurrentValue("")}
+                    <input type="text" inputMode="decimal" value={currentValue} onChange={handleInputChange(setCurrentValue)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setCurrentValue("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -168,8 +193,8 @@ export default function RemodelVsSell() {
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Estimated Remodel Cost</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={remodelCost} onChange={handleInputChange(setRemodelCost)}
-                      onFocus={(e) => e.target.value === "0" && setRemodelCost("")}
+                    <input type="text" inputMode="decimal" value={remodelCost} onChange={handleInputChange(setRemodelCost)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setRemodelCost("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -177,8 +202,8 @@ export default function RemodelVsSell() {
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Expected Value Increase (%)</label>
                   <div className="relative">
-                    <input type="text" value={expectedIncrease} onChange={handleInputChange(setExpectedIncrease)}
-                      onFocus={(e) => e.target.value === "0" && setExpectedIncrease("")}
+                    <input type="text" inputMode="decimal" value={expectedIncrease} onChange={handleInputChange(setExpectedIncrease)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setExpectedIncrease("0")}
                       className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">%</span>
@@ -228,6 +253,9 @@ export default function RemodelVsSell() {
               <div className="mt-12 pt-12 border-t border-white/10">
                 <h3 className="font-display text-xl font-medium text-white mb-4">What This Means</h3>
                 <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway(roi)}</p>
+                <p className="font-body text-base text-white/90 leading-relaxed mb-4">
+                  Want me to check your numbers against recent sales near you?
+                </p>
                 <Link href="/contact/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Walk Through This With Me

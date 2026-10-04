@@ -145,7 +145,7 @@ export default function StrategyHubES() {
             <span className="font-semibold">Decide con claridad.</span>
           </h1>
           <p className="font-body text-xl text-[#1A1A18] font-medium leading-relaxed mb-6 max-w-2xl">
-            Calculadoras gratuitas para propietarios en Cedar Park, Leander y Austin.
+            Calculadoras gratuitas para propietarios. Mira tus números antes de decidir.
           </p>
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 max-w-2xl">
             La mayoría de los propietarios toman la decisión financiera más grande de su vida sin ver los números de verdad primero. Para eso están estas herramientas.

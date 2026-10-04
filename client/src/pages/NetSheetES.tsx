@@ -4,6 +4,8 @@
  * UPDATE: Meta description and schema description broadened to Greater Austin.
  *         Geography removed from intro body paragraph.
  *         Educational section retains Cedar Park & Leander (local SEO content).
+ * UPDATE: Matched to English version. Example numbers prefilled, select on focus,
+ *         numeric keypad on mobile, no-wrap result figure, lead-in above the contact button.
  */
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
@@ -60,11 +62,11 @@ function setPageMeta(title: string, description: string, url: string) {
 }
 
 export default function NetSheetES() {
-  const [salePrice, setSalePrice] = useState<string>("0");
-  const [mortgageBalance, setMortgageBalance] = useState<string>("0");
+  const [salePrice, setSalePrice] = useState<string>("450000");
+  const [mortgageBalance, setMortgageBalance] = useState<string>("250000");
   const [commission, setCommission] = useState<string>("6");
   const [closingCosts, setClosingCosts] = useState<string>("2");
-  const [repairs, setRepairs] = useState<string>("0");
+  const [repairs, setRepairs] = useState<string>("5000");
 
   useEffect(() => {
     setPageMeta(
@@ -130,8 +132,13 @@ export default function NetSheetES() {
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             El precio de venta no es lo que te llevas. Una vez que descuentas la comisión del agente, los costos de cierre, las reparaciones y el saldo pendiente de tu hipoteca, el número que llega a tu cuenta puede verse muy diferente al precio del contrato.
           </p>
-          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             Esta herramienta te da una estimación realista antes de que hables con cualquiera. No sustituye una conversación real, pero te da una base sólida antes de tomar cualquier decisión.
+          </p>
+
+          {/* Nota rápida */}
+          <p className="font-body text-sm text-[#2B2B2B] leading-relaxed mb-12">
+            Toma unos 30 segundos, sin registro.
           </p>
         </RevealDiv>
 
@@ -139,14 +146,17 @@ export default function NetSheetES() {
           {/* Entradas */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
-              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Detalles de la Venta</h2>
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-2 text-center">Detalles de la Venta</h2>
+              <p className="font-body text-sm text-[#2B2B2B] text-center mb-8 leading-relaxed">
+                Se muestran números de ejemplo. Escribe encima los tuyos.
+              </p>
               <div className="space-y-6">
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Precio de Venta Estimado</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={salePrice} onChange={handleInputChange(setSalePrice)}
-                      onFocus={(e) => e.target.value === "0" && setSalePrice("")}
+                    <input type="text" inputMode="decimal" value={salePrice} onChange={handleInputChange(setSalePrice)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setSalePrice("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -155,8 +165,8 @@ export default function NetSheetES() {
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Saldo de Hipoteca</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
-                      onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
+                    <input type="text" inputMode="decimal" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -164,15 +174,15 @@ export default function NetSheetES() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Comisión (% prom)</label>
-                    <input type="text" value={commission} onChange={handleInputChange(setCommission)}
-                      onFocus={(e) => e.target.value === "0" && setCommission("")}
+                    <input type="text" inputMode="decimal" value={commission} onChange={handleInputChange(setCommission)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setCommission("0")}
                       className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
                   <div>
                     <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Costos de Cierre (% prom)</label>
-                    <input type="text" value={closingCosts} onChange={handleInputChange(setClosingCosts)}
-                      onFocus={(e) => e.target.value === "0" && setClosingCosts("")}
+                    <input type="text" inputMode="decimal" value={closingCosts} onChange={handleInputChange(setClosingCosts)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setClosingCosts("0")}
                       className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -181,8 +191,8 @@ export default function NetSheetES() {
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Reparaciones / Costos de Preparación</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={repairs} onChange={handleInputChange(setRepairs)}
-                      onFocus={(e) => e.target.value === "0" && setRepairs("")}
+                    <input type="text" inputMode="decimal" value={repairs} onChange={handleInputChange(setRepairs)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setRepairs("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -193,7 +203,7 @@ export default function NetSheetES() {
 
           {/* Resultados */}
           <div className="lg:col-span-7">
-            <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
+            <div className="bg-[#1A1A18] p-6 md:p-12 text-white lg:sticky lg:top-32">
               <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">Estimado Neto</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
@@ -210,9 +220,9 @@ export default function NetSheetES() {
                     <p className="font-body text-3xl font-semibold text-white">{formatCurrency(totalCosts)}</p>
                   </div>
                 </div>
-                <div className="bg-white/5 p-8 border border-white/10">
+                <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Ingresos Netos Estimados</p>
-                  <p className={`font-body text-5xl md:text-6xl font-semibold mb-4 ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className={`font-body text-4xl md:text-5xl font-semibold mb-4 whitespace-nowrap ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netProceeds)}
                   </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed">
@@ -221,6 +231,9 @@ export default function NetSheetES() {
                 </div>
               </div>
               <div className="mt-12 pt-12 border-t border-white/10">
+                <p className="font-body text-base text-white/90 leading-relaxed mb-4">
+                  ¿Quieres un número preciso para tu casa? Una hoja neta real toma unos quince minutos.
+                </p>
                 <Link href="/es/contacto/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Obtener una Hoja Neta Precisa

@@ -145,7 +145,7 @@ export default function StrategyHub() {
             <span className="font-semibold">Decide with clarity.</span>
           </h1>
           <p className="font-body text-xl text-[#1A1A18] font-medium leading-relaxed mb-6 max-w-2xl">
-            Free home selling calculators for Cedar Park, Leander, and Austin homeowners.
+            Free home selling calculators for homeowners. See your numbers before you decide.
           </p>
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-6 max-w-2xl">
             Most homeowners make their biggest financial decision without running the actual numbers first. These tools are built to change that.

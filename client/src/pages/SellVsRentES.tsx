@@ -1,9 +1,13 @@
 /*
- * DESIGN: Quiet Luxury Editorial - Vender vs. Alquilar (Español)
- * FINAL: Meta tags, Open Graph, schema, educational copy in Spanish.
- * UPDATE: Meta description and schema description broadened.
- *         Geography removed from intro paragraph and educational CTA.
- *         Educational section H2 and market context retained for local SEO.
+ * DESIGN: Quiet Luxury Editorial - Sell vs. Rent Calculator
+ * Purpose: Helps homeowners compare selling now vs holding as a rental.
+ * FINAL: Meta tags, Open Graph, schema, educational copy added.
+ * UPDATE: Meta description and schema description broadened to Greater Austin.
+ *         Geography removed from intro body paragraph.
+ *         Sección educativa retains Cedar Park & Leander (local SEO content).
+ * UPDATE: Matched to the English version. Example numbers prefilled,
+ *         select on focus, numeric keypad on mobile, no-wrap result figures,
+ *         lead-in above the contact button.
  */
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
@@ -59,15 +63,18 @@ function setPageMeta(title: string, description: string, url: string) {
   canonical.setAttribute("href", url);
 }
 
+const labelCls = "block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium";
+const inputCls = "w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all";
+
 export default function SellVsRentES() {
-  const [homeValue, setHomeValue] = useState<string>("");
-  const [mortgageBalance, setMortgageBalance] = useState<string>("");
-  const [monthlyMortgagePayment, setMonthlyMortgagePayment] = useState<string>("");
-  const [interestRate, setInterestRate] = useState<string>("");
-  const [monthlyRent, setMonthlyRent] = useState<string>("");
-  const [otherMonthlyExpenses, setOtherMonthlyExpenses] = useState<string>("");
-  const [appreciation, setAppreciation] = useState<string>("");
-  const [yearsHolding, setYearsHolding] = useState<string>("");
+  const [homeValue, setHomeValue] = useState<string>("450000");
+  const [mortgageBalance, setMortgageBalance] = useState<string>("250000");
+  const [monthlyMortgagePayment, setMonthlyMortgagePayment] = useState<string>("1500");
+  const [interestRate, setInterestRate] = useState<string>("4");
+  const [monthlyRent, setMonthlyRent] = useState<string>("2600");
+  const [otherMonthlyExpenses, setOtherMonthlyExpenses] = useState<string>("700");
+  const [appreciation, setAppreciation] = useState<string>("3");
+  const [yearsHolding, setYearsHolding] = useState<string>("5");
   const [vacancyMaintenance, setVacancyMaintenance] = useState<string>("8");
 
   useEffect(() => {
@@ -82,8 +89,8 @@ export default function SellVsRentES() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Calculadora Vender vs. Alquilar",
-    "url": "https://mariomanzano.com/es/sell-vs-rent/",
     "inLanguage": "es",
+    "url": "https://mariomanzano.com/es/sell-vs-rent/",
     "description": "Calculadora gratuita para propietarios en el área de Austin. Compara los resultados financieros a largo plazo de vender ahora versus conservar tu casa como propiedad de renta.",
     "author": {
       "@type": "RealEstateAgent",
@@ -93,7 +100,7 @@ export default function SellVsRentES() {
   };
 
   const val = parseFloat(homeValue) || 0;
-  const mortBal = parseFloat(mortgageBalance) || 0;
+  let mortBal = parseFloat(mortgageBalance) || 0;
   const mPayment = parseFloat(monthlyMortgagePayment) || 0;
   const intRate = parseFloat(interestRate) || 0;
   const rent = parseFloat(monthlyRent) || 0;
@@ -125,7 +132,8 @@ export default function SellVsRentES() {
   const annualCashFlowIfRenting = (adjustedRent - totalMonthlyExpensesIfRenting) * 12;
   const futureValue = val * Math.pow(1 + appr / 100, years);
   const futureMortgageBalance = Math.max(0, mortBal - totalPrincipalPaidDown);
-  const estimatedNetIfRented = futureValue - futureMortgageBalance - (futureValue * sellingCostPercentage);
+  const totalCashFlowWhileHolding = annualCashFlowIfRenting * years;
+  const estimatedNetIfRented = futureValue - futureMortgageBalance - (futureValue * sellingCostPercentage) + totalCashFlowWhileHolding;
 
   const formatCurrency = (num: number) =>
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(num);
@@ -138,6 +146,16 @@ export default function SellVsRentES() {
       setter(cleanValue);
     }
   };
+
+  // Shared props for every input: numeric keypad on phones, select all on focus, reset to 0 if left blank
+  const fieldProps = (value: string, setter: (val: string) => void) => ({
+    type: "text",
+    inputMode: "decimal" as const,
+    value,
+    onChange: handleInputChange(setter),
+    onFocus: (e: React.FocusEvent<HTMLInputElement>) => e.target.select(),
+    onBlur: (e: React.FocusEvent<HTMLInputElement>) => { if (e.target.value === "") setter("0"); },
+  });
 
   const getStrategicTakeaway = () => {
     if (val === 0 || years === 0) return "Ingresa los detalles de tu casa para ver una comparación estratégica.";
@@ -169,128 +187,113 @@ export default function SellVsRentES() {
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             Esta es una de las preguntas que más se hacen los propietarios. Vender te da liquidez y quitas la responsabilidad de encima. Rentar mantiene tu capital trabajando con el tiempo y puede ser una herramienta sólida para generar riqueza si los números lo respaldan.
           </p>
-          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             Esta herramienta compara los dos caminos con tus números reales. Ingresa los detalles de tu casa y un período de tenencia para ver cuál opción te conviene más.
+          </p>
+
+          {/* Nota rápida */}
+          <p className="font-body text-sm text-[#2B2B2B] leading-relaxed mb-12">
+            Toma unos 30 segundos, sin registro.
           </p>
         </RevealDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Entradas */}
+          {/* Inputs */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
-              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Detalles de tu Casa</h2>
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-2 text-center">Detalles de tu Casa</h2>
+              <p className="font-body text-sm text-[#2B2B2B] text-center mb-8 leading-relaxed">
+                Se muestran números de ejemplo. Escribe encima los tuyos.
+              </p>
               <div className="space-y-6">
                 <div>
-                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Valor Estimado de la Casa</label>
+                  <label className={labelCls}>Valor Estimado de la Casa</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={homeValue} onChange={handleInputChange(setHomeValue)}
-                      onFocus={(e) => e.target.value === "0" && setHomeValue("")}
-                      onBlur={(e) => e.target.value === "" && setHomeValue("0")}
-                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <input {...fieldProps(homeValue, setHomeValue)} className={`${inputCls} pl-8`} />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Saldo Pendiente de Hipoteca</label>
+                  <label className={labelCls}>Saldo Pendiente de Hipoteca</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={mortgageBalance} onChange={handleInputChange(setMortgageBalance)}
-                      onFocus={(e) => e.target.value === "0" && setMortgageBalance("")}
-                      onBlur={(e) => e.target.value === "" && setMortgageBalance("0")}
-                      className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <input {...fieldProps(mortgageBalance, setMortgageBalance)} className={`${inputCls} pl-8`} />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Pago Mensual de Hipoteca (P&I)</label>
+                    <label className={labelCls}>Pago Mensual de Hipoteca (P&I)</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                      <input type="text" value={monthlyMortgagePayment} onChange={handleInputChange(setMonthlyMortgagePayment)}
-                        onFocus={(e) => e.target.value === "0" && setMonthlyMortgagePayment("")}
-                        onBlur={(e) => e.target.value === "" && setMonthlyMortgagePayment("0")}
-                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                      <input {...fieldProps(monthlyMortgagePayment, setMonthlyMortgagePayment)} className={`${inputCls} pl-8`} />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Tasa de Interés Anual (%)</label>
-                    <input type="text" value={interestRate} onChange={handleInputChange(setInterestRate)}
-                      onFocus={(e) => e.target.value === "0" && setInterestRate("")}
-                      onBlur={(e) => e.target.value === "" && setInterestRate("0")}
-                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <label className={labelCls}>Tasa de Interés Anual (%)</label>
+                    <input {...fieldProps(interestRate, setInterestRate)} className={inputCls} />
                     <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Tu tasa de interés anual actual.</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Renta Mensual</label>
+                    <label className={labelCls}>Renta Mensual</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                      <input type="text" value={monthlyRent} onChange={handleInputChange(setMonthlyRent)}
-                        onFocus={(e) => e.target.value === "0" && setMonthlyRent("")}
-                        onBlur={(e) => e.target.value === "" && setMonthlyRent("0")}
-                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                      <input {...fieldProps(monthlyRent, setMonthlyRent)} className={`${inputCls} pl-8`} />
                     </div>
                   </div>
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Otros Gastos Mensuales (HOA, Impuestos, Seguro)</label>
+                    <label className={labelCls}>Otros Gastos Mensuales (HOA, Impuestos, Seguro)</label>
                     <div className="relative">
                       <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                      <input type="text" value={otherMonthlyExpenses} onChange={handleInputChange(setOtherMonthlyExpenses)}
-                        onFocus={(e) => e.target.value === "0" && setOtherMonthlyExpenses("")}
-                        onBlur={(e) => e.target.value === "" && setOtherMonthlyExpenses("0")}
-                        className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                      <input {...fieldProps(otherMonthlyExpenses, setOtherMonthlyExpenses)} className={`${inputCls} pl-8`} />
                     </div>
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Apreciación Anual (%)</label>
-                    <input type="text" value={appreciation} onChange={handleInputChange(setAppreciation)}
-                      onFocus={(e) => e.target.value === "0" && setAppreciation("")}
-                      onBlur={(e) => e.target.value === "" && setAppreciation("0")}
-                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <label className={labelCls}>Apreciación Anual (%)</label>
+                    <input {...fieldProps(appreciation, setAppreciation)} className={inputCls} />
                     <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Crecimiento anual promedio del valor. Ej: ingresa 3 para 3%.</p>
                   </div>
                   <div>
-                    <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Años de Tenencia</label>
-                    <input type="text" value={yearsHolding} onChange={handleInputChange(setYearsHolding)}
-                      onFocus={(e) => e.target.value === "0" && setYearsHolding("")}
-                      onBlur={(e) => e.target.value === "" && setYearsHolding("0")}
-                      className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                    <label className={labelCls}>Años de Tenencia</label>
+                    <input {...fieldProps(yearsHolding, setYearsHolding)} className={inputCls} />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Margen de Vacancia / Mantenimiento (%)</label>
-                  <input type="text" value={vacancyMaintenance} onChange={handleInputChange(setVacancyMaintenance)}
-                    onFocus={(e) => e.target.value === "0" && setVacancyMaintenance("")}
-                    onBlur={(e) => e.target.value === "" && setVacancyMaintenance("0")}
-                    className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
+                  <label className={labelCls}>Margen de Vacancia / Mantenimiento (%)</label>
+                  <input {...fieldProps(vacancyMaintenance, setVacancyMaintenance)} className={inputCls} />
                   <p className="font-body text-sm text-[#2B2B2B] mt-2 leading-relaxed">Cubre vacancias, reparaciones y costos de tenencia. Típico: 5 a 10%.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Resultados */}
+          {/* Results */}
           <div className="lg:col-span-7">
-            <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
+            <div className="bg-[#1A1A18] p-6 md:p-12 text-white lg:sticky lg:top-32">
               <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">Análisis Estratégico</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Estimado Neto si Vendes Hoy</p>
-                    <p className="font-body text-4xl font-semibold text-white">{formatCurrency(estimatedNetIfSoldToday)}</p>
+                    <p className={`font-body text-3xl md:text-4xl font-semibold whitespace-nowrap ${estimatedNetIfSoldToday >= 0 ? "text-white" : "text-red-400"}`}>
+                      {formatCurrency(estimatedNetIfSoldToday)}
+                    </p>
                   </div>
                   <div>
                     <p className="font-body text-sm tracking-[0.2em] uppercase text-white/90 mb-2">Flujo de Caja Anual (Ajustado)</p>
-                    <p className={`font-body text-4xl font-semibold ${annualCashFlowIfRenting >= 0 ? "text-white" : "text-red-400"}`}>
+                    <p className={`font-body text-3xl md:text-4xl font-semibold whitespace-nowrap ${annualCashFlowIfRenting >= 0 ? "text-white" : "text-red-400"}`}>
                       {formatCurrency(annualCashFlowIfRenting)}
                     </p>
                   </div>
                 </div>
-                <div className="bg-white/5 p-8 border border-white/10">
+                <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimado Neto si Rentas y Vendes Después</p>
-                  <p className="font-body text-5xl md:text-6xl font-semibold text-white mb-2">{formatCurrency(estimatedNetIfRented)}</p>
+                  <p className={`font-body text-4xl md:text-5xl font-semibold mb-2 whitespace-nowrap ${estimatedNetIfRented >= 0 ? "text-white" : "text-red-400"}`}>
+                    {formatCurrency(estimatedNetIfRented)}
+                  </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed">
                     Incluye apreciación, flujo de caja de la renta y reducción de hipoteca durante {years} años, luego venta.
                   </p>
@@ -299,6 +302,9 @@ export default function SellVsRentES() {
               <div className="mt-12 pt-12 border-t border-white/10">
                 <h3 className="font-display text-xl font-medium text-white mb-4">Lo Que Esto Significa</h3>
                 <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway()}</p>
+                <p className="font-body text-base text-white/90 leading-relaxed mb-4">
+                  ¿Quieres que revise estos números contra lo que realmente se vende y se renta cerca de ti?
+                </p>
                 <Link href="/es/contacto/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Hablar Sobre Tu Estrategia

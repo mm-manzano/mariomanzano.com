@@ -229,7 +229,7 @@ export default function NetSheet() {
                 </div>
                 <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimated Net Proceeds</p>
-                  <p className={`font-body text-4xl md:text-6xl font-semibold mb-4 break-words ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className={`font-body text-4xl md:text-5xl font-semibold mb-4 whitespace-nowrap ${netProceeds >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netProceeds)}
                   </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed">

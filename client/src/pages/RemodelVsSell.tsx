@@ -7,8 +7,9 @@
  *         Educational section retains Cedar Park & Leander (local SEO content).
  * UPDATE (lead capture pass):
  *         H1 changed to match search wording (sell or remodel).
- *         Quick time line added under the intro ("about 30 seconds, no signup") with a soft text link
- *         to the home value page. The big home value button stays at the bottom only, so it is not repeated.
+ *         Quick time line added under the intro ("about 30 seconds, no signup").
+ *         Bottom button now goes to the net sheet (the sell side of the comparison).
+ *         Walk Through This With Me button still goes to Contact, which ends in the GHL form.
  *         Calculator opens with example numbers so results are not $0.
  *         Inputs select all text on focus so visitors can type over the example.
  *         Results call to action now has a short lead in line above the button.
@@ -158,12 +159,9 @@ export default function RemodelVsSell() {
             This tool helps you run the numbers before committing to any work. Enter your home's current value, the projected remodel cost, and the expected value increase to see whether the investment is likely to pay off.
           </p>
 
-          {/* Top quick note and soft link. The main home value button stays at the bottom. */}
+          {/* Top quick note */}
           <p className="font-body text-sm text-[#2B2B2B] leading-relaxed mb-12">
-            Takes about 30 seconds, no signup needed. Not sure what your home is worth?{" "}
-            <Link href="/home-value/">
-              <span className="underline underline-offset-4 cursor-pointer">Get a free estimate first.</span>
-            </Link>
+            Takes about 30 seconds, no signup needed.
           </p>
         </RevealDiv>
 
@@ -282,13 +280,13 @@ export default function RemodelVsSell() {
 
         <div className="mt-20 pt-20 border-t border-[#E5E5E5]">
           <RevealDiv className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">Not sure what your home is worth as-is?</h2>
+            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">Curious what you would walk away with if you sold?</h2>
             <p className="font-body text-lg text-[#2B2B2B] mb-10 leading-relaxed">
-              Get a baseline estimate first so your remodel math starts from the right number.
+              See what you would keep after your mortgage, commission, and closing costs, so you can compare it to the remodel math above.
             </p>
-            <Link href="/home-value/">
+            <Link href="/net-sheet/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
-                Get Baseline Estimate
+                See What You Would Net If You Sold
                 <ArrowRight size={14} />
               </span>
             </Link>

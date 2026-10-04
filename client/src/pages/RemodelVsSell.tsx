@@ -235,7 +235,7 @@ export default function RemodelVsSell() {
                 </div>
                 <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Estimated Net Gain After Remodel</p>
-                  <p className={`font-body text-4xl md:text-6xl font-semibold mb-2 break-words ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className={`font-body text-4xl md:text-5xl font-semibold mb-2 whitespace-nowrap ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netGain)}
                   </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed mb-4">

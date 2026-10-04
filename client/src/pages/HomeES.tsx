@@ -178,7 +178,7 @@ export default function HomeES() {
               </Link>
             </div>
             <p className="font-body text-sm text-white/80 mt-6">
-              Calculadoras gratuitas para propietarios en Cedar Park, Leander y Austin. Unos 30 segundos, sin registro.
+              Calculadoras gratuitas para propietarios. Unos 30 segundos, sin registro.
             </p>
           </div>
         </div>

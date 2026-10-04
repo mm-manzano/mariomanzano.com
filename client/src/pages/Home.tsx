@@ -180,7 +180,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="font-body text-sm text-white/80 mt-6">
-              Free calculators for Cedar Park, Leander, and Austin homeowners. About 30 seconds, no signup needed.
+              Free calculators for homeowners. About 30 seconds, no signup needed.
             </p>
           </div>
         </div>

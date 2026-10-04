@@ -8,10 +8,14 @@
  * SEO FIX: setPageMeta now also writes a <link rel="canonical"> tag, and the
  *       page URL / schema URL both use the trailing-slash form (/contact/) to
  *       match where prerender.js actually writes the file (dist/contact/index.html).
+ * CONVERSION UPDATE: Intro now picks up from the calculators ("check your numbers against recent
+ *       sales near you"), a line under the button for people who prefer to call or text,
+ *       a link to the calculators for people not ready to talk, first person wording in
+ *       "What to expect", and a clean tel: link.
  */
 
 import { useEffect, useRef, useLayoutEffect } from "react";
-import { useSearch } from "wouter";
+import { useSearch, Link } from "wouter";
 import { Phone, Mail, MessageSquare } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { getCTALink } from "@/lib/ctaLinks";
@@ -114,8 +118,17 @@ export default function Contact() {
                 Start the<br />
                 <span className="font-semibold">conversation.</span>
               </h1>
-              <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-10">
-                Reach out and I will help you think through your options and what actually makes sense for your situation. No pressure. Just clarity.
+              <p className="font-body text-lg text-white/90 max-w-lg leading-relaxed mb-4">
+                {isBuyerIntent
+                  ? "Tell me what you are looking for and I will help you think through your options. No pressure. Just clarity."
+                  : "Tell me about your home and I will check your numbers against recent sales near you. If you ran one of the calculators, tell me what you found and I will start from there. No pressure. Just clarity."}
+              </p>
+              <p className="font-body text-base text-white/80 max-w-lg leading-relaxed mb-10">
+                Prefer to skip the form? Call or text me at{" "}
+                <a href="tel:+15126959255" className="font-semibold text-white underline underline-offset-4">
+                  (512) 695-9255
+                </a>
+                .
               </p>
               <a
                 href={ctaHref}
@@ -157,7 +170,7 @@ export default function Contact() {
                   <Phone size={24} className="text-[#B8974A]" />
                 </div>
                 <div>
-                  <a href="tel:(512)695-9255" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
+                  <a href="tel:+15126959255" className="tap-area font-body text-lg font-semibold text-[#1A1A18] mb-2 hover:text-[#7A5F24] transition-colors no-underline block">
                     (512) 695-9255
                   </a>
                   <p className="font-body text-lg text-[#2B2B2B]">
@@ -204,6 +217,18 @@ export default function Contact() {
               </div>
             </RevealDiv>
           </div>
+
+          {!isBuyerIntent && (
+            <RevealDiv delay={250}>
+              <p className="font-body text-base text-[#2B2B2B] mt-10 max-w-2xl leading-relaxed">
+                Not ready to talk yet? Run your numbers first with the{" "}
+                <Link href="/strategy-hub/">
+                  <span className="font-semibold text-[#1A1A18] underline underline-offset-4 cursor-pointer">free calculators</span>
+                </Link>
+                .
+              </p>
+            </RevealDiv>
+          )}
         </div>
       </section>
 
@@ -220,7 +245,7 @@ export default function Contact() {
               <span className="font-semibold">not a sales call.</span>
             </h2>
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed max-w-2xl">
-              Our first conversation is simple. I will ask a few questions, understand your situation, and give you a clear direction based on your goals. No sales pitch. No pressure. If selling or buying makes sense, I will tell you. If it does not, I will tell you that too.
+              The first conversation is simple. I will ask a few questions, understand your situation, and give you a clear direction based on your goals. No sales pitch. No pressure. If selling or buying makes sense, I will tell you. If it does not, I will tell you that too.
             </p>
           </RevealDiv>
         </div>

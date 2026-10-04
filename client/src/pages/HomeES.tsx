@@ -10,6 +10,9 @@
  * TESTIMONIAL UPDATE: Reemplazado testimonio único por dos testimonios en cuadrícula (Chris S. + Alma S.)
  * SELLER STRATEGY UPDATE: Franja de vendedor motivado ahora enlaza a /es/presentacion-vendedores/;
  *                          nuevo CTA añadido después del acordeón de proceso.
+ * CONVERSION UPDATE: Alineado con la versión en inglés. Línea de calculadoras gratuitas bajo los botones
+ *                    del hero, tiempo de 30 segundos, tarjetas de servicio abren la calculadora correcta,
+ *                    enlace a todas las calculadoras, línea de llamada o texto al final, texto alt mejorado.
  */
 
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
@@ -108,7 +111,7 @@ export default function HomeES() {
   useEffect(() => {
     setPageMeta(
       "Mario Manzano | Realtor en Cedar Park y Leander TX",
-      "Mario Manzano ayuda a propietarios de Cedar Park y Leander TX a conocer sus opciones antes de decidir. Vender, remodelar, rentar o mantener. Sin presión.",
+      "Mario Manzano ayuda a propietarios de Cedar Park y Leander TX a conocer sus opciones antes de decidir. Calculadoras gratuitas. Vender, remodelar, rentar o mantener. Sin presión.",
       "https://mariomanzano.com/es/"
     );
   }, []);
@@ -174,6 +177,9 @@ export default function HomeES() {
                 </span>
               </Link>
             </div>
+            <p className="font-body text-sm text-white/80 mt-6">
+              Calculadoras gratuitas para propietarios en Cedar Park, Leander y Austin. Unos 30 segundos, sin registro.
+            </p>
           </div>
         </div>
       </section>
@@ -205,7 +211,7 @@ export default function HomeES() {
                 Empieza con tus números.
               </h2>
               <p className="font-body text-lg text-[#2B2B2B] max-w-lg leading-relaxed">
-                Descubre cuánto te quedarías realmente después de la comisión, los costos de cierre y el saldo de tu hipoteca. Toma dos minutos.
+                Descubre cuánto te quedarías realmente después de la comisión, los costos de cierre y el saldo de tu hipoteca. Toma unos 30 segundos.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
@@ -232,7 +238,7 @@ export default function HomeES() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealDiv className="relative">
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img width={2400} height={1600} loading="lazy" decoding="async" src={INTERIOR_IMG} alt="Interior de lujo" className="w-full h-full object-cover" />
+                <img width={2400} height={1600} loading="lazy" decoding="async" src={INTERIOR_IMG} alt="Interior de una casa en Cedar Park, TX" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
 
@@ -310,17 +316,17 @@ export default function HomeES() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#E5E5E5]">
             {[
-              { num: "01", title: "Vender", desc: "Entiende el mercado, los tiempos y lo que realmente te llevarás después de los costos." },
-              { num: "02", title: "Remodelar", desc: "Descubre qué mejoras valen la pena y cuáles rara vez recuperan lo que cuestan." },
-              { num: "03", title: "Alquilar", desc: "Analiza si conservar la propiedad como alquiler tiene más sentido financiero que vender ahora." },
-              { num: "04", title: "Mantener", desc: "Evalúa si esperar podría ponerte en una posición más fuerte antes de tomar una decisión." }
+              { num: "01", title: "Vender", desc: "Entiende el mercado, los tiempos y lo que realmente te llevarás después de los costos.", href: "/es/net-sheet/", cta: "Calcular Tus Ingresos Netos" },
+              { num: "02", title: "Remodelar", desc: "Descubre qué mejoras valen la pena y cuáles rara vez recuperan lo que cuestan.", href: "/es/remodel-vs-sell/", cta: "Calcular la Remodelación" },
+              { num: "03", title: "Alquilar", desc: "Analiza si conservar la propiedad como alquiler tiene más sentido financiero que vender ahora.", href: "/es/sell-vs-rent/", cta: "Comparar Vender vs. Rentar" },
+              { num: "04", title: "Mantener", desc: "Evalúa si esperar podría ponerte en una posición más fuerte antes de tomar una decisión.", href: "/es/guia-para-propietarios/", cta: "Explorar Opciones" }
             ].map((service, i) => (
               <RevealDiv
                 key={service.num}
                 delay={i * 80}
                 className="bg-white p-8 md:p-10 group hover:bg-[#1A1A18] transition-colors duration-500"
               >
-                <Link href="/es/guia-para-propietarios/" className="block h-full cursor-pointer">
+                <Link href={service.href} className="block h-full cursor-pointer">
                   <div className="font-display text-5xl font-medium text-[#E5E5E5] group-hover:text-[#B8974A]/30 mb-4 transition-colors duration-500">
                     {service.num}
                   </div>
@@ -331,7 +337,7 @@ export default function HomeES() {
                     {service.desc}
                   </p>
                   <span className="section-number inline-flex items-center gap-2 group-hover:text-white">
-                    Explorar Opciones
+                    {service.cta}
                     <ArrowRight size={14} />
                   </span>
                 </Link>
@@ -349,22 +355,27 @@ export default function HomeES() {
               Analiza los números de cada opción.
             </h2>
             <p className="font-body text-lg text-white/90 mb-10 max-w-lg mx-auto">
-              Vender no siempre es la respuesta correcta. Estas herramientas te ayudan a comparar tus opciones reales antes de decidir cualquier cosa.
+              Vender no siempre es la respuesta correcta. Estas herramientas gratuitas te ayudan a comparar tus opciones reales antes de decidir cualquier cosa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/es/sell-vs-rent/">
-                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
-                  Calculadora Vender vs. Alquilar
-                  <ArrowRight size={14} />
-                </span>
-              </Link>
               <Link href="/es/remodel-vs-sell/">
-                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
                   Calculadora Remodelar vs. Vender
                   <ArrowRight size={14} />
                 </span>
               </Link>
+              <Link href="/es/sell-vs-rent/">
+                <span className="btn-luxury-outline border-white text-white hover:bg-white hover:text-black inline-flex items-center gap-3 cursor-pointer">
+                  Calculadora Vender vs. Alquilar
+                  <ArrowRight size={14} />
+                </span>
+              </Link>
             </div>
+            <p className="font-body text-base text-white/90 mt-8">
+              <Link href="/es/strategy-hub/">
+                <span className="font-semibold underline underline-offset-4 cursor-pointer">Ver todas las calculadoras gratuitas</span>
+              </Link>
+            </p>
           </RevealDiv>
         </div>
       </section>
@@ -424,7 +435,7 @@ export default function HomeES() {
               {
                 step: "01",
                 title: "Tú te comunicas",
-                desc: "Sin formularios, sin presión. Un mensaje, una llamada o un texto. Me dices dónde estás y qué estás pensando."
+                desc: "Sin presión. Un mensaje, una llamada o un texto. Me dices dónde estás y qué estás pensando."
               },
               {
                 step: "02",
@@ -552,6 +563,13 @@ export default function HomeES() {
                 <ArrowRight size={14} />
               </span>
             </Link>
+            <p className="font-body text-base text-white/90 mt-6">
+              ¿Prefieres llamar o mandar un texto? Escríbeme al{" "}
+              <a href="tel:+15126959255" className="font-semibold underline underline-offset-4">
+                (512) 695-9255
+              </a>
+              .
+            </p>
           </RevealDiv>
         </div>
       </section>

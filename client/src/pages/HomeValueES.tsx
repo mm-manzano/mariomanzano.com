@@ -3,6 +3,9 @@
  * UPDATED: Alineado con versión en inglés. Estimación reposicionada como punto
  *          de partida general, mensajería ampliada para todo tipo de propietario,
  *          jerarquía de CTAs actualizada (CMA primario, hoja neta secundaria).
+ * UPDATE: Alineado con la versión en inglés. Introducción corta, aviso una sola vez debajo de la
+ *         herramienta, botón principal en lenguaje claro, frase antes del botón, enlace de regreso
+ *         al centro de estrategia y enlace a todas las calculadoras.
  */
 
 import { useEffect } from "react";
@@ -65,7 +68,7 @@ export default function HomeValueES() {
 
       <div className="container max-w-4xl">
         {/* Enlace de regreso */}
-        <Link href="/es/" className="tap-area">
+        <Link href="/es/strategy-hub/" className="tap-area">
           <span className="section-number inline-flex items-center gap-2 text-[#2B2B2B] transition-colors mb-8 cursor-pointer">
             <ChevronLeft size={16} />
             Volver a Estrategia
@@ -78,8 +81,11 @@ export default function HomeValueES() {
             ¿Cuánto vale<br />
             <span className="font-semibold">realmente tu casa?</span>
           </h1>
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl leading-relaxed mb-4">
+            Ingresa tu dirección abajo para ver una estimación de partida. Toma unos 30 segundos.
+          </p>
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl leading-relaxed">
-            La estimación de abajo te da un punto de partida útil basado en datos disponibles del mercado y la propiedad. Como estas estimaciones automáticas pueden usar datos de un área geográfica más amplia, puede que no reflejen el valor exacto de tu casa en particular. Tampoco toman en cuenta el estado de tu propiedad, las mejoras que has hecho, el diseño u otras características específicas. Úsala como referencia general y luego sigue leyendo.
+            Tómala como una referencia general, no como un número final. Debajo de la herramienta te explico por qué, y cómo obtener uno más preciso.
           </p>
         </div>
 
@@ -100,7 +106,7 @@ export default function HomeValueES() {
         <div className="mb-16 max-w-2xl">
           <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">¿Qué determina realmente cuánto vale tu casa?</h2>
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
-            Las estimaciones automáticas son un buen punto de partida, pero trabajan con datos generales. Puede que no tomen en cuenta el estado específico de tu casa, las mejoras que has hecho, cómo se compara el diseño con casas similares, ni lo que está compitiendo actualmente en tu vecindario.
+            Las estimaciones automáticas son un buen punto de partida, pero trabajan con datos generales de un área amplia. No pueden tomar en cuenta el estado de tu casa, las mejoras que has hecho, cómo se compara el diseño con casas similares, ni lo que está compitiendo actualmente en tu vecindario.
           </p>
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
             Un Análisis Comparativo de Mercado personalizado va más a fondo. Se enfoca en tu propiedad específica, las ventas comparables más relevantes, las condiciones actuales del mercado en tu área y los factores propios de tu casa que afectan el valor. Ya sea que estés revisando tu capital, pensando en un movimiento futuro o evaluando una mejora, eso te da el panorama más claro que puedes obtener sin una tasación formal.
@@ -113,19 +119,22 @@ export default function HomeValueES() {
         {/* CTA principal: CMA */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-4">¿Quieres un número más preciso para tu casa?</h2>
-          <p className="font-body text-lg text-[#2B2B2B] mb-8 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] mb-4 leading-relaxed">
             Te puedo preparar un Análisis Comparativo de Mercado personalizado basado en tu propiedad y el mercado actual. Sin compromiso. Solo un panorama más claro de dónde está parada tu casa.
+          </p>
+          <p className="font-body text-base text-[#2B2B2B] mb-8 leading-relaxed">
+            Mándame tu dirección y yo me encargo del resto.
           </p>
           <Link href="/es/contacto/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
-              Solicitar mi CMA personalizado
+              Quiero un Número Real para Mi Casa
               <ArrowRight size={14} />
             </span>
           </Link>
         </div>
 
         {/* Hoja neta: recurso secundario */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white mb-8">
           <div>
             <h4 className="font-display text-xl font-medium mb-2">También útil: Calcula tus ingresos netos</h4>
             <p className="font-body text-lg text-white/90">Si estás pensando en vender, descubre cuánto te quedarás después de los costos.</p>
@@ -137,6 +146,15 @@ export default function HomeValueES() {
             </span>
           </Link>
         </div>
+
+        {/* Todas las calculadoras */}
+        <p className="font-body text-base text-[#2B2B2B] text-center mb-12">
+          ¿Evaluando una remodelación o una renta? Mira{" "}
+          <Link href="/es/strategy-hub/">
+            <span className="font-semibold text-[#1A1A18] underline underline-offset-4 cursor-pointer">todas las calculadoras gratuitas</span>
+          </Link>
+          .
+        </p>
 
       </div>
     </div>

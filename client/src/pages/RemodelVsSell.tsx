@@ -7,14 +7,13 @@
  *         Educational section retains Cedar Park & Leander (local SEO content).
  * UPDATE (lead capture pass):
  *         H1 changed to match search wording (sell or remodel).
- *         Top call to action button added under the intro.
- *         Quick time line added ("about 30 seconds, no signup").
+ *         Quick time line added under the intro ("about 30 seconds, no signup") with a soft text link
+ *         to the home value page. The big home value button stays at the bottom only, so it is not repeated.
  *         Calculator opens with example numbers so results are not $0.
  *         Inputs select all text on focus so visitors can type over the example.
  *         Results call to action now has a short lead in line above the button.
  * UPDATE (mobile pass):
  *         Results panel only sticks on large screens (it was covering content on phones).
- *         Top button is full width on phones.
  *         Smaller padding and net gain size on phones so large dollar amounts do not overflow.
  */
 
@@ -159,19 +158,13 @@ export default function RemodelVsSell() {
             This tool helps you run the numbers before committing to any work. Enter your home's current value, the projected remodel cost, and the expected value increase to see whether the investment is likely to pay off.
           </p>
 
-          {/* Top call to action */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
+          {/* Top quick note and soft link. The main home value button stays at the bottom. */}
+          <p className="font-body text-sm text-[#2B2B2B] leading-relaxed mb-12">
+            Takes about 30 seconds, no signup needed. Not sure what your home is worth?{" "}
             <Link href="/home-value/">
-              <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full sm:w-auto inline-flex items-center justify-center cursor-pointer">
-                Get a Free Home Value Estimate
-                <ArrowRight size={14} className="ml-2" />
-              </span>
+              <span className="underline underline-offset-4 cursor-pointer">Get a free estimate first.</span>
             </Link>
-            <p className="font-body text-sm text-[#2B2B2B] leading-relaxed">
-              Or run the numbers below. Takes about 30 seconds, no signup needed.
-            </p>
-          </div>
-          <div className="mb-12" />
+          </p>
         </RevealDiv>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

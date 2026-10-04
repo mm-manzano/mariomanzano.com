@@ -5,6 +5,17 @@
  * UPDATE: Meta description and schema description broadened to Greater Austin.
  *         Geography removed from intro body paragraph.
  *         Educational section retains Cedar Park & Leander (local SEO content).
+ * UPDATE (lead capture pass, matches the English page):
+ *         H1 changed to match search wording (vender o remodelar).
+ *         Quick time line added under the intro ("unos 30 segundos, sin registrarte").
+ *         Calculator opens with example numbers so results are not $0.
+ *         Inputs select all text on focus so visitors can type over the example.
+ *         Results call to action now has a short lead in line above the button.
+ *         Bottom button now goes to the net sheet (the sell side of the comparison).
+ *         Walk Through This With Me button (Revisemos Esto Juntos) still goes to Contact.
+ * UPDATE (mobile pass):
+ *         Results panel only sticks on large screens (it was covering content on phones).
+ *         Smaller padding and net gain size on phones so large dollar amounts do not overflow.
  */
 
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
@@ -61,9 +72,10 @@ function setPageMeta(title: string, description: string, url: string) {
 }
 
 export default function RemodelVsSellES() {
-  const [currentValue, setCurrentValue] = useState<string>("");
-  const [remodelCost, setRemodelCost] = useState<string>("");
-  const [expectedIncrease, setExpectedIncrease] = useState<string>("");
+  // Example numbers so the results are never blank. Visitors type over them.
+  const [currentValue, setCurrentValue] = useState<string>("450000");
+  const [remodelCost, setRemodelCost] = useState<string>("30000");
+  const [expectedIncrease, setExpectedIncrease] = useState<string>("5");
 
   useEffect(() => {
     setPageMeta(
@@ -139,13 +151,18 @@ export default function RemodelVsSellES() {
             <span className="section-number">Herramienta Estratégica</span>
           </div>
           <h1 className="font-display text-4xl md:text-6xl font-medium text-[#1A1A18] mb-6">
-            ¿Vale la pena<br /><span className="font-semibold">remodelar?</span>
+            ¿Deberías vender o<br /><span className="font-semibold">remodelar tu casa?</span>
           </h1>
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             La mayoría de los propietarios sobreestiman lo que una remodelación va a recuperar. Las renovaciones de lujo rara vez recuperan el 100 por ciento de su costo al momento de vender. Las actualizaciones funcionales y la presentación neutra tienden a superar los acabados de alto nivel cuando se trata del comportamiento real de los compradores.
           </p>
-          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-12 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl mb-6 leading-relaxed">
             Esta herramienta te ayuda a correr los números antes de comprometerte con cualquier trabajo. Ingresa el valor actual de tu casa, el costo proyectado de la remodelación y el aumento de valor esperado para ver si la inversión tiene sentido.
+          </p>
+
+          {/* Top quick note */}
+          <p className="font-body text-sm text-[#2B2B2B] leading-relaxed mb-12">
+            Toma unos 30 segundos, sin necesidad de registrarte.
           </p>
         </RevealDiv>
 
@@ -153,14 +170,17 @@ export default function RemodelVsSellES() {
           {/* Inputs */}
           <div className="lg:col-span-5 space-y-8">
             <div className="bg-white p-8 border border-[#E5E5E5] shadow-sm">
-              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-8 text-center">Detalles del Proyecto</h2>
+              <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-2 text-center">Detalles del Proyecto</h2>
+              <p className="font-body text-sm text-[#2B2B2B] text-center mb-8 leading-relaxed">
+                Se muestran números de ejemplo. Escribe los tuyos encima.
+              </p>
               <div className="space-y-6">
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Valor Actual de la Casa (Como Está)</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={currentValue} onChange={handleInputChange(setCurrentValue)}
-                      onFocus={(e) => e.target.value === "0" && setCurrentValue("")}
+                    <input type="text" inputMode="decimal" value={currentValue} onChange={handleInputChange(setCurrentValue)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setCurrentValue("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -169,8 +189,8 @@ export default function RemodelVsSellES() {
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Costo Estimado de Remodelación</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">$</span>
-                    <input type="text" value={remodelCost} onChange={handleInputChange(setRemodelCost)}
-                      onFocus={(e) => e.target.value === "0" && setRemodelCost("")}
+                    <input type="text" inputMode="decimal" value={remodelCost} onChange={handleInputChange(setRemodelCost)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setRemodelCost("0")}
                       className="w-full bg-white border border-[#767676] p-4 pl-8 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                   </div>
@@ -178,8 +198,8 @@ export default function RemodelVsSellES() {
                 <div>
                   <label className="block font-body text-sm tracking-[0.2em] uppercase text-[#2B2B2B] mb-2 font-medium">Aumento de Valor Esperado (%)</label>
                   <div className="relative">
-                    <input type="text" value={expectedIncrease} onChange={handleInputChange(setExpectedIncrease)}
-                      onFocus={(e) => e.target.value === "0" && setExpectedIncrease("")}
+                    <input type="text" inputMode="decimal" value={expectedIncrease} onChange={handleInputChange(setExpectedIncrease)}
+                      onFocus={(e) => e.target.select()}
                       onBlur={(e) => e.target.value === "" && setExpectedIncrease("0")}
                       className="w-full bg-white border border-[#767676] p-4 font-body text-lg font-semibold text-[#1A1A1A] focus:border-[#1A1A1A] focus:shadow-[0_0_0_1px_#1A1A1A] outline-none transition-all" />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 font-body text-lg font-semibold text-[#1A1A1A]">%</span>
@@ -201,7 +221,7 @@ export default function RemodelVsSellES() {
 
           {/* Results */}
           <div className="lg:col-span-7">
-            <div className="bg-[#1A1A18] p-8 md:p-12 text-white sticky top-32">
+            <div className="bg-[#1A1A18] p-6 md:p-12 text-white lg:sticky lg:top-32">
               <h2 className="font-display text-3xl font-medium mb-12 border-b border-white/10 pb-6">Análisis de Retorno</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div className="space-y-8">
@@ -214,9 +234,9 @@ export default function RemodelVsSellES() {
                     <p className="font-body text-4xl font-semibold text-white">{formatCurrency(cost)}</p>
                   </div>
                 </div>
-                <div className="bg-white/5 p-8 border border-white/10">
+                <div className="bg-white/5 p-6 md:p-8 border border-white/10">
                   <p className="section-number mb-4 text-[#C9A85C]">Ganancia Neta Estimada Después de Remodelar</p>
-                  <p className={`font-body text-5xl md:text-6xl font-semibold mb-2 ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
+                  <p className={`font-body text-4xl md:text-6xl font-semibold mb-2 break-words ${netGain >= 0 ? "text-white" : "text-red-400"}`}>
                     {formatCurrency(netGain)}
                   </p>
                   <p className="font-body text-sm text-white/90 leading-relaxed mb-4">
@@ -229,6 +249,9 @@ export default function RemodelVsSellES() {
               <div className="mt-12 pt-12 border-t border-white/10">
                 <h3 className="font-display text-xl font-medium text-white mb-4">Qué Significa Esto</h3>
                 <p className="font-body text-lg text-white/90 leading-relaxed mb-8">{getStrategicTakeaway(roi)}</p>
+                <p className="font-body text-base text-white/90 leading-relaxed mb-4">
+                  ¿Quieres que revise tus números con ventas recientes cerca de ti?
+                </p>
                 <Link href="/es/contacto/">
                   <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] w-full justify-center cursor-pointer">
                     Revisemos Esto Juntos
@@ -258,13 +281,13 @@ export default function RemodelVsSellES() {
 
         <div className="mt-20 pt-20 border-t border-[#E5E5E5]">
           <RevealDiv className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">¿No sabes cuánto vale tu casa como está?</h2>
+            <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">¿Te da curiosidad cuánto te quedaría si vendes?</h2>
             <p className="font-body text-lg text-[#2B2B2B] mb-10 leading-relaxed">
-              Obtén un estimado base primero para que los números de tu remodelación partan del número correcto.
+              Mira cuánto te quedaría después de tu hipoteca, la comisión y los gastos de cierre, para compararlo con los números de la remodelación de arriba.
             </p>
-            <Link href="/es/home-value/">
+            <Link href="/es/net-sheet/">
               <span className="btn-luxury-outline inline-flex items-center gap-3 cursor-pointer">
-                Obtener Estimado Base
+                Ver Cuánto Te Quedaría Si Vendes
                 <ArrowRight size={14} />
               </span>
             </Link>

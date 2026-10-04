@@ -5,6 +5,9 @@
  *          added Austin as broader metro context in one clean placement.
  *          Refined estimate positioning, broadened messaging for all homeowner
  *          intent types, restructured CTA hierarchy (CMA primary, Net Sheet secondary).
+ * UPDATE: Short intro so the tool is the first thing seen, disclaimer kept once below the tool,
+ *         plain wording on the main button, lead-in above it, back link goes to the hub,
+ *         link to all tools added.
  */
 
 import { useEffect } from "react";
@@ -66,7 +69,7 @@ export default function HomeValue() {
 
       <div className="container max-w-4xl">
         {/* Back Link */}
-        <Link href="/" className="tap-area">
+        <Link href="/strategy-hub/" className="tap-area">
           <span className="section-number inline-flex items-center gap-2 text-[#2B2B2B] transition-colors mb-8 cursor-pointer">
             <ChevronLeft size={16} />
             Back to Strategy
@@ -79,8 +82,11 @@ export default function HomeValue() {
             What is your home<br />
             <span className="font-semibold">actually worth?</span>
           </h1>
+          <p className="font-body text-lg text-[#2B2B2B] max-w-2xl leading-relaxed mb-4">
+            Enter your address below for a starting estimate. It takes about 30 seconds.
+          </p>
           <p className="font-body text-lg text-[#2B2B2B] max-w-2xl leading-relaxed">
-            The estimate below gives you a useful starting point based on available property and market data. Because automated estimates draw from a broader geographic area and generalized data, they may not reflect the precise value of your specific home. They also cannot account for your home's condition, upgrades, layout, or other property-specific characteristics. Use it as a general reference, then read on.
+            Treat it as a general reference, not a final number. Below the tool, I explain why, and how to get a more accurate one.
           </p>
         </div>
 
@@ -101,7 +107,7 @@ export default function HomeValue() {
         <div className="mb-16 max-w-2xl">
           <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-6">What actually determines what your home is worth?</h2>
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
-            Automated estimates are a useful starting point, but they work with generalized data. They may not account for your home's specific condition, the improvements you have made, how the layout compares to similar homes, or what is actively competing in your immediate neighborhood.
+            Automated estimates are a useful starting point, but they work with generalized data drawn from a broad area. They cannot account for your home's condition, the improvements you have made, how the layout compares to similar homes, or what is actively competing in your immediate neighborhood.
           </p>
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
             A personalized Comparative Market Analysis takes a closer look. It focuses on your specific property, the most relevant comparable sales, current market conditions in your area, and property-specific factors that affect value. Whether you are tracking equity, thinking through a future move, or weighing an improvement, that is the clearest picture available without a formal appraisal.
@@ -114,19 +120,22 @@ export default function HomeValue() {
         {/* Primary CMA CTA */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-display text-3xl font-medium text-[#1A1A18] mb-4">Want a more accurate number for your specific home?</h2>
-          <p className="font-body text-lg text-[#2B2B2B] mb-8 leading-relaxed">
+          <p className="font-body text-lg text-[#2B2B2B] mb-4 leading-relaxed">
             I can prepare a personalized Comparative Market Analysis based on your property and the current market. No obligation. Just a clearer picture of where your home stands.
+          </p>
+          <p className="font-body text-base text-[#2B2B2B] mb-8 leading-relaxed">
+            Send me your address and I will take it from there.
           </p>
           <Link href="/contact/">
             <span className="btn-luxury bg-[#B8974A] border-[#B8974A] text-[#1A1A18] font-semibold hover:bg-[#C9A85C] hover:border-[#C9A85C] inline-flex items-center gap-3 cursor-pointer">
-              Request My Personalized CMA
+              Get a Real Number for My Home
               <ArrowRight size={14} />
             </span>
           </Link>
         </div>
 
         {/* Net Sheet - Secondary Resource */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white mb-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 p-8 bg-[#1A1A18] text-white mb-8">
           <div>
             <h4 className="font-display text-xl font-medium mb-2">Also useful: Calculate your net proceeds</h4>
             <p className="font-body text-lg text-white/90">If you are thinking about selling, find out what you would walk away with after costs.</p>
@@ -138,6 +147,15 @@ export default function HomeValue() {
             </span>
           </Link>
         </div>
+
+        {/* All tools */}
+        <p className="font-body text-base text-[#2B2B2B] text-center mb-12">
+          Weighing a remodel or a rental? See{" "}
+          <Link href="/strategy-hub/">
+            <span className="font-semibold text-[#1A1A18] underline underline-offset-4 cursor-pointer">all the free calculators</span>
+          </Link>
+          .
+        </p>
 
       </div>
     </div>

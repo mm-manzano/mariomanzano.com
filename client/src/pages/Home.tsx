@@ -14,6 +14,10 @@
  * CONVERSION UPDATE: Free calculators line under hero buttons, time claim set to 30 seconds,
  *                 service cards now open the matching calculator, tools section links to all
  *                 calculators, call or text line under the final button, image alt text improved.
+ * MOBILE SPEED UPDATE: Removed the aerial photo used as the services section background,
+ *                 which downloaded a large file on every phone for an image almost nobody
+ *                 could see. Photo boxes are now shorter on phones (4 by 3) and keep the
+ *                 tall crop (4 by 5) from tablet size up. Schema image is now a full web address.
  */
 
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
@@ -22,7 +26,6 @@ import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 
 const INTERIOR_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-interior.jpg";
 const AERIAL_IMG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
-const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -125,7 +128,7 @@ export default function Home() {
     "alternateName": ["Mario Manzano", "Mario Manzano Austin Realtor"],
     "@id": "https://mariomanzano.com",
     "url": "https://mariomanzano.com",
-    "image": "/images/mario-manzano-austin-realtor-professional-headshot.JPG",
+    "image": "https://mariomanzano.com/images/mario-manzano-austin-realtor-professional-headshot.JPG",
     "telephone": "+1-512-695-9255",
     "address": {
       "@type": "PostalAddress",
@@ -239,7 +242,7 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealDiv className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/3] md:aspect-[4/5] overflow-hidden">
                 <img width={2400} height={1600} loading="lazy" decoding="async" src={INTERIOR_IMG} alt="Interior of a home in Cedar Park, TX" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
@@ -297,11 +300,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES GRID */}
-      <section
-        className="py-20 md:py-32 relative"
-        style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="absolute inset-0 bg-white/90" />
+      <section className="py-20 md:py-32 relative bg-[#F7F6F3]">
         <div className="relative z-10 container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
@@ -410,7 +409,7 @@ export default function Home() {
             </RevealDiv>
 
             <RevealDiv delay={150} className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/3] md:aspect-[4/5] overflow-hidden">
                 <img width={1920} height={1279} loading="lazy" decoding="async" src={AERIAL_IMG} alt="Cedar Park aerial view" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>

@@ -13,6 +13,10 @@
  * CONVERSION UPDATE: Alineado con la versión en inglés. Línea de calculadoras gratuitas bajo los botones
  *                    del hero, tiempo de 30 segundos, tarjetas de servicio abren la calculadora correcta,
  *                    enlace a todas las calculadoras, línea de llamada o texto al final, texto alt mejorado.
+ * MOBILE SPEED UPDATE: Alineado con la versión en inglés. Se quitó la foto aérea usada como fondo de la
+ *                    sección de servicios, que descargaba un archivo grande en cada teléfono. Las cajas de
+ *                    fotos ahora son más cortas en teléfonos (4 por 3) y mantienen el recorte alto (4 por 5)
+ *                    desde tamaño tableta. La imagen del schema ahora es una dirección web completa.
  */
 
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
@@ -21,7 +25,6 @@ import { ArrowRight, ChevronDown, Plus, Minus } from "lucide-react";
 
 const INTERIOR_IMG = "/images/cedar-park-tx-sold-home-clover-ridge-mario-manzano-interior.jpg";
 const AERIAL_IMG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
-const TEXTURE_BG = "/images/Cedar-Park-Leander-Suburban-Neighborhood-Ariel.jpg";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -123,7 +126,7 @@ export default function HomeES() {
     "alternateName": ["Mario Manzano", "Mario Manzano Agente Inmobiliario Austin"],
     "@id": "https://mariomanzano.com",
     "url": "https://mariomanzano.com",
-    "image": "/images/mario-manzano-austin-realtor-professional-headshot.JPG",
+    "image": "https://mariomanzano.com/images/mario-manzano-austin-realtor-professional-headshot.JPG",
     "telephone": "+1-512-695-9255",
     "address": {
       "@type": "PostalAddress",
@@ -237,7 +240,7 @@ export default function HomeES() {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <RevealDiv className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/3] md:aspect-[4/5] overflow-hidden">
                 <img width={2400} height={1600} loading="lazy" decoding="async" src={INTERIOR_IMG} alt="Interior de una casa en Cedar Park, TX" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>
@@ -295,11 +298,7 @@ export default function HomeES() {
       </section>
 
       {/* CUADRÍCULA DE SERVICIOS */}
-      <section
-        className="py-20 md:py-32 relative"
-        style={{ backgroundImage: `url(${TEXTURE_BG})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="absolute inset-0 bg-white/90" />
+      <section className="py-20 md:py-32 relative bg-[#F7F6F3]">
         <div className="relative z-10 container">
           <RevealDiv>
             <div className="flex items-center gap-3 mb-4">
@@ -408,7 +407,7 @@ export default function HomeES() {
             </RevealDiv>
 
             <RevealDiv delay={150} className="relative">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[4/3] md:aspect-[4/5] overflow-hidden">
                 <img width={1920} height={1279} loading="lazy" decoding="async" src={AERIAL_IMG} alt="Vista aérea de Cedar Park" className="w-full h-full object-cover" />
               </div>
             </RevealDiv>

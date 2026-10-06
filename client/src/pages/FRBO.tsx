@@ -160,7 +160,7 @@ function VacancyCalculator() {
 const points = [
   {
     title: "Pricing it against the market, not an estimate",
-    body: "Wherever your rent number came from, it's worth checking against what's actually happening nearby. Recent leases get you close, but what you're competing against right now, the condition of the home, and timing all move the final number, and that part takes judgment.",
+    body: "Wherever your rent number came from, it's worth checking against what's actually happening nearby. Pricing is part numbers and part feel, and a few hundred dollars either way changes how fast it rents. Recent leases get you close, but what you're competing against right now, the condition of the home, and timing all move the final number, and that part takes judgment.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -227,7 +227,7 @@ const points = [
 const processSteps = [
   {
     title: "Prepare and price the property",
-    body: "We walk through together and flag what to clean, move, or touch up before photos go up. Then I look at what's happening in the market right now and where your property fits in it. You get a rent range with the reasoning behind it, and the final number is your call. How I get there goes well beyond pulling comps, and that's something I'd rather show you in person than explain here.",
+    body: "We walk through together and flag what to clean, move, or touch up before photos go up. Then I look at what you're actually competing against right now, how your home compares on condition and finishes, and how fast similar homes are moving at different prices. You get a rent range with the reasoning behind it, and the final number is your call.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />

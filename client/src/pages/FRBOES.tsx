@@ -160,7 +160,7 @@ function VacancyCalculator() {
 const points = [
   {
     title: "Ponle precio según el mercado, no según un estimado",
-    body: "Venga de donde venga tu número de renta, conviene compararlo con lo que realmente está pasando cerca. Las rentas recientes te acercan, pero contra qué estás compitiendo ahora mismo, el estado de la propiedad y el momento también mueven el número final, y esa parte requiere criterio.",
+    body: "Venga de donde venga tu número de renta, conviene compararlo con lo que realmente está pasando cerca. Ponerle precio es en parte números y en parte instinto, y unos cientos de dólares de diferencia cambian qué tan rápido se renta. Las rentas recientes te acercan, pero contra qué estás compitiendo ahora mismo, el estado de la propiedad y el momento también mueven el número final, y esa parte requiere criterio.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
@@ -227,7 +227,7 @@ const points = [
 const processSteps = [
   {
     title: "Preparar la propiedad y ponerle precio",
-    body: "Recorremos la propiedad juntos y señalamos qué limpiar, mover o retocar antes de subir las fotos. Luego reviso lo que está pasando en el mercado ahorita y dónde queda tu propiedad. Recibes un rango de renta con las razones detrás, y el número final lo decides tú. Cómo llego a ese rango va mucho más allá de buscar comparables, y prefiero mostrártelo en persona que explicarlo aquí.",
+    body: "Recorremos la propiedad juntos y señalamos qué limpiar, mover o retocar antes de subir las fotos. Luego reviso contra qué está compitiendo tu propiedad ahorita, cómo se compara en estado y acabados, y qué tan rápido se están rentando propiedades parecidas a distintos precios. Recibes un rango de renta con las razones detrás, y el número final lo decides tú.",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />

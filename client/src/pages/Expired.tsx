@@ -6,7 +6,7 @@
  * Goal: Diagnose what commonly stalls a listing, give useful questions to ask
  *       before relisting with anyone, then show how Mario approaches it.
  * Sections: Header, What Stalls a Listing, Before You Relist, Callout + Rent
- *           or Hold, How I Help, No Lock-In, CTA
+ *           or Hold, How I Help, No Handcuff Agreement, CTA
  * Page ends on the CTA by design, no exits after the ask.
  * Note: No fee or compensation content on this page by design.
  * Style: Black hero and CTA, pure white body, neutral grey callout and icon
@@ -421,14 +421,14 @@ export default function Expired() {
         </div>
       </section>
 
-      {/* NO LOCK-IN */}
+      {/* NO HANDCUFF AGREEMENT */}
       <section className="py-16 md:py-20">
         <div className="container max-w-2xl">
           <RevealDiv>
             <div className="rounded-md border border-[#B8974A] px-6 py-8 md:px-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="section-rule" style={{ background: "#B8974A" }} />
-                <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No lock-in</span>
+                <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No Handcuff Agreement</span>
               </div>
               <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18] leading-tight mb-5">
                 If it isn't working,<br />

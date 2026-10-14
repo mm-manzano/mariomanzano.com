@@ -372,10 +372,20 @@ export default function FSBO() {
                 <span className="section-rule" style={{ background: "#B8974A" }} />
                 <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No Handcuff Agreement</span>
               </div>
-              <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18] mb-4">
-                If it isn't working,<br />
-                <span className="font-semibold">you're not stuck.</span>
-              </h2>
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18]">
+                  If it isn't working,<br />
+                  <span className="font-semibold">you're not stuck.</span>
+                </h2>
+                <img
+                  src="/images/no-handcuff-agreement-icon.png"
+                  alt="Handcuffs icon for the No Handcuff Agreement"
+                  width={96}
+                  height={96}
+                  loading="lazy"
+                  className="w-16 h-16 md:w-24 md:h-24 mr-6 md:mr-36 flex-shrink-0 object-contain"
+                />
+              </div>
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 A listing agreement shouldn't feel like a trap. If you list with me and you're not happy with how things are going, you can walk away. We'll go through exactly how that works when we meet.
               </p>

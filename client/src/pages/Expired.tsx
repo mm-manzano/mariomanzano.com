@@ -426,29 +426,27 @@ export default function Expired() {
         <div className="container max-w-2xl">
           <RevealDiv>
             <div className="rounded-md border border-[#B8974A] px-6 py-8 md:px-8">
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="section-rule" style={{ background: "#B8974A" }} />
+                <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No Handcuff Agreement</span>
+              </div>
+              <div className="flex items-center justify-between gap-4 mb-5">
+                <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18] leading-tight">
+                  If it isn't working,<br />
+                  <span className="font-semibold">you're not stuck.</span>
+                </h2>
                 <img
                   src="/images/no-handcuff-agreement-icon.png"
                   alt="Handcuffs icon for the No Handcuff Agreement"
                   width={96}
                   height={96}
                   loading="lazy"
-                  className="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 object-contain"
+                  className="w-16 h-16 md:w-24 md:h-24 flex-shrink-0 object-contain"
                 />
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="section-rule" style={{ background: "#B8974A" }} />
-                    <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">No Handcuff Agreement</span>
-                  </div>
-                  <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18] leading-tight mb-5">
-                    If it isn't working,<br />
-                    <span className="font-semibold">you're not stuck.</span>
-                  </h2>
-                  <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
-                    A listing agreement shouldn't feel like a trap. If you list with me and you're not happy with how things are going, you can walk away. We'll go through exactly how that works when we meet.
-                  </p>
-                </div>
               </div>
+              <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
+                A listing agreement shouldn't feel like a trap. If you list with me and you're not happy with how things are going, you can walk away. We'll go through exactly how that works when we meet.
+              </p>
             </div>
           </RevealDiv>
         </div>

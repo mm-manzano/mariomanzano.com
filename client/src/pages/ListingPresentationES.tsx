@@ -420,14 +420,25 @@ export default function ListingPresentationES() {
                 className="font-body text-sm tracking-[0.25em] uppercase"
                 style={{ color: "#B8974A" }}
               >
-                Sin Compromiso
+                Acuerdo sin compromiso
               </span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-8 max-w-2xl">
-              Sin ataduras. Sin contrato a largo plazo.
-            </h2>
+            <div className="flex items-center justify-between gap-4 max-w-xl mb-8">
+              <h2 className="font-display text-4xl md:text-5xl font-medium text-white">
+                Si no está funcionando,<br />
+                <span className="font-semibold">no tienes que quedarte.</span>
+              </h2>
+              <img
+                src="/images/no-handcuff-agreement-icon.png"
+                alt="Icono de esposas para el acuerdo sin compromiso"
+                width={96}
+                height={96}
+                loading="lazy"
+                className="w-14 h-14 md:w-20 md:h-20 flex-shrink-0 object-contain invert"
+              />
+            </div>
             <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl">
-              Nunca te voy a amarrar a un contrato de largo plazo. Si en algún momento sientes que no me he ganado tu confianza, nos separamos sin penalizaciones y sin rencores. Tú mantienes el control todo el tiempo.
+              Un contrato de listado no debería sentirse como una trampa. Si listas conmigo y no estás conforme con cómo van las cosas, puedes irte. Vemos exactamente cómo funciona eso cuando nos reunamos.
             </p>
           </RevealDiv>
         </div>

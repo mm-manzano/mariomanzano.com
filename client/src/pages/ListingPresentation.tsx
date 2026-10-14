@@ -422,14 +422,25 @@ export default function ListingPresentation() {
                 className="font-body text-sm tracking-[0.25em] uppercase"
                 style={{ color: "#B8974A" }}
               >
-                No Obligation
+                No Handcuff Agreement
               </span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl font-medium text-white mb-8 max-w-2xl">
-              No lock-in. No long-term contract.
-            </h2>
+            <div className="flex items-center justify-between gap-4 max-w-xl mb-8">
+              <h2 className="font-display text-4xl md:text-5xl font-medium text-white">
+                If it isn't working,<br />
+                <span className="font-semibold">you're not stuck.</span>
+              </h2>
+              <img
+                src="/images/no-handcuff-agreement-icon.png"
+                alt="Handcuffs icon for the No Handcuff Agreement"
+                width={96}
+                height={96}
+                loading="lazy"
+                className="w-14 h-14 md:w-20 md:h-20 flex-shrink-0 object-contain invert"
+              />
+            </div>
             <p className="font-body text-lg text-white/90 leading-relaxed max-w-xl">
-              I will never lock you into a long-term agreement. If at any point you feel I have not earned your trust, we part ways, no penalties and no hard feelings. You stay in control the entire time.
+              A listing agreement shouldn't feel like a trap. If you list with me and you're not happy with how things are going, you can walk away. We'll go through exactly how that works when we meet.
             </p>
           </RevealDiv>
         </div>

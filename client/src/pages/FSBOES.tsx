@@ -372,10 +372,20 @@ export default function FSBOES() {
                 <span className="section-rule" style={{ background: "#B8974A" }} />
                 <span className="font-body text-sm font-semibold tracking-[0.15em] uppercase text-[#7A5F24]">Acuerdo sin compromiso</span>
               </div>
-              <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18] mb-4">
-                Si no está funcionando,<br />
-                <span className="font-semibold">no tienes que quedarte.</span>
-              </h2>
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <h2 className="font-display text-2xl md:text-3xl font-medium text-[#1A1A18]">
+                  Si no está funcionando,<br />
+                  <span className="font-semibold">no tienes que quedarte.</span>
+                </h2>
+                <img
+                  src="/images/no-handcuff-agreement-icon.png"
+                  alt="Icono de esposas para el acuerdo sin compromiso"
+                  width={96}
+                  height={96}
+                  loading="lazy"
+                  className="w-16 h-16 md:w-24 md:h-24 mr-6 md:mr-36 flex-shrink-0 object-contain"
+                />
+              </div>
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">
                 Un contrato de listado no debería sentirse como una trampa. Si listas conmigo y no estás conforme con cómo van las cosas, puedes irte. Vemos exactamente cómo funciona eso cuando nos reunamos.
               </p>

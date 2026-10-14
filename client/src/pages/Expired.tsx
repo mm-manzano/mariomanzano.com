@@ -441,7 +441,7 @@ export default function Expired() {
                   width={96}
                   height={96}
                   loading="lazy"
-                  className="w-16 h-16 md:w-24 md:h-24 flex-shrink-0 object-contain"
+                  className="w-16 h-16 md:w-24 md:h-24 mr-6 md:mr-36 flex-shrink-0 object-contain"
                 />
               </div>
               <p className="font-body text-lg text-[#2B2B2B] leading-relaxed">

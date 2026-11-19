@@ -7,6 +7,8 @@
  *         to serve Austin area homeowners (not Cedar Park & Leander only).
  * UPDATE: Search wording added to title and intro, time claim matched to the tools (30 seconds),
  *         Home Value card added, card order set by what sellers ask most, FAQ section with FAQ schema.
+ * UPDATE: Added a short Four Paths summary above the tool cards, plus a link through to the
+ *         full Homeowner Guide for anyone who wants the deeper read before running numbers.
  */
 
 import { Link } from "wouter";
@@ -153,6 +155,30 @@ export default function StrategyHub() {
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12 max-w-2xl">
             Whether you are leaning toward selling, considering a rental, or wondering if a remodel makes sense, start here. Each tool takes about 30 seconds, needs no signup, and gives you a clear financial picture before any conversation with an agent.
           </p>
+        </RevealDiv>
+
+        {/* Four Paths summary, plus a link through to the full Homeowner Guide */}
+        <RevealDiv delay={50} className="mb-16">
+          <div className="max-w-2xl border-l-2 border-[#B8974A] pl-6">
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
+              Most homeowners only hear one option, sell. Depending on your goals, timeline, and property, remodeling, renting, or holding might actually serve you better.
+            </p>
+            <ul className="font-body text-lg text-[#2B2B2B] leading-relaxed space-y-1 mb-4">
+              <li><span className="font-semibold text-[#1A1A18]">Sell</span>, for liquidity and a clean break.</li>
+              <li><span className="font-semibold text-[#1A1A18]">Remodel</span>, when updates would meaningfully boost value or livability.</li>
+              <li><span className="font-semibold text-[#1A1A18]">Rent</span>, to build long term equity if your payment is low relative to market rent.</li>
+              <li><span className="font-semibold text-[#1A1A18]">Hold</span>, when the market or your timeline isn't right yet, and waiting is a real choice, not a delay.</li>
+            </ul>
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
+              Run the numbers on whichever ones apply to you below.
+            </p>
+            <Link href="/homeowner-guide/">
+              <span className="font-body text-base font-semibold text-[#1A1A18] underline underline-offset-4 inline-flex items-center gap-2 cursor-pointer">
+                Want the full breakdown? Read the Homeowner Guide
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+          </div>
         </RevealDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

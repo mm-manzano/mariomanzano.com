@@ -160,7 +160,7 @@ export default function StrategyHub() {
         {/* Four Paths summary, plus a link through to the full Homeowner Guide */}
         <RevealDiv delay={50} className="mb-16">
           <div className="max-w-2xl border-l-2 border-[#B8974A] pl-6">
-            <h2 className="font-display text-xl font-medium text-[#1A1A18] mb-4">
+            <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-4">
               The four paths, briefly.
             </h2>
             <ul className="font-body text-lg text-[#2B2B2B] leading-relaxed space-y-1 mb-4">

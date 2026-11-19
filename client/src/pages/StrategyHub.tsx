@@ -161,7 +161,7 @@ export default function StrategyHub() {
         <RevealDiv delay={50} className="mb-16">
           <div className="max-w-2xl border-l-2 border-[#B8974A] pl-6">
             <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
-              Most homeowners only hear one option, sell. Depending on your goals, timeline, and property, remodeling, renting, or holding might actually serve you better.
+              The four paths, briefly.
             </p>
             <ul className="font-body text-lg text-[#2B2B2B] leading-relaxed space-y-1 mb-4">
               <li><span className="font-semibold text-[#1A1A18]">Sell</span>, for liquidity and a clean break.</li>

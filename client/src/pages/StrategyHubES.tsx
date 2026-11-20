@@ -5,6 +5,10 @@
  *         and bottom CTA to match English version changes.
  * UPDATE: Matched to the English version. Search wording in title and intro, time claim set to
  *         30 seconds, Home Value card added, card order changed, FAQ section with FAQ schema.
+ * UPDATE: Added the Four Paths summary above the tool cards (matching the English version,
+ *         heading sized text-2xl to match the other section headings), plus a link through
+ *         to the full Homeowner Guide (/es/guia-para-propietarios/) for anyone who wants the
+ *         deeper read before running numbers.
  */
 
 import { Link } from "wouter";
@@ -153,6 +157,30 @@ export default function StrategyHubES() {
           <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-12 max-w-2xl">
             Si estás pensando en vender, evaluar una renta o preguntándote si remodelar vale la pena, empieza aquí. Cada herramienta toma unos 30 segundos, no requiere registro y te da un panorama financiero claro antes de hablar con cualquier agente.
           </p>
+        </RevealDiv>
+
+        {/* Los cuatro caminos, más el enlace a la Guía para Propietarios completa */}
+        <RevealDiv delay={50} className="mb-16">
+          <div className="max-w-2xl border-l-2 border-[#B8974A] pl-6">
+            <h2 className="font-display text-2xl font-medium text-[#1A1A18] mb-4">
+              Los cuatro caminos, en breve.
+            </h2>
+            <ul className="font-body text-lg text-[#2B2B2B] leading-relaxed space-y-1 mb-4">
+              <li><span className="font-semibold text-[#1A1A18]">Vender</span>, para liquidez y un cierre limpio.</li>
+              <li><span className="font-semibold text-[#1A1A18]">Remodelar</span>, cuando las mejoras aumentarían claramente el valor o la comodidad de la casa.</li>
+              <li><span className="font-semibold text-[#1A1A18]">Rentar</span>, para construir capital a largo plazo si tu pago es bajo comparado con lo que rentaría la casa.</li>
+              <li><span className="font-semibold text-[#1A1A18]">Esperar</span>, cuando el mercado o tu momento aún no son los correctos, y esperar es una decisión real, no un aplazamiento.</li>
+            </ul>
+            <p className="font-body text-lg text-[#2B2B2B] leading-relaxed mb-4">
+              Corre los números en los que apliquen a tu situación aquí abajo.
+            </p>
+            <Link href="/es/guia-para-propietarios/">
+              <span className="font-body text-base font-semibold text-[#1A1A18] underline underline-offset-4 inline-flex items-center gap-2 cursor-pointer">
+                ¿Quieres el panorama completo? Lee la Guía para Propietarios
+                <ArrowRight size={14} />
+              </span>
+            </Link>
+          </div>
         </RevealDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
